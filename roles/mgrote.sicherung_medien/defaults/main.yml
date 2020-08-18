@@ -2,3 +2,6 @@
   sicherung_medien_bitrate: 500K
   sicherung_medien_ziel_youtube: "/shares_videos/Youtube/"
   sicherung_medien_ziel_podcast: "/shares/Musik/Podcasts/"
+  youtubedl_cron_minutes: "40"
+  youtubedl_cron_hours: "21"
+  youtubedl_cron_day: "/3"

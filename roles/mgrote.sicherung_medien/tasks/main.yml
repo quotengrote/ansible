@@ -54,6 +54,7 @@
       job: "/usr/local/bin/{{ item }}"
       minute: "{{ youtubedl_cron_minutes }}"
       hour: "{{ youtubedl_cron_hours }}"
+      day: "{{ youtubedl_cron_day }}"
     with_items:
       - ytdl-youtube.sh
       - ytdl-podcast.sh
