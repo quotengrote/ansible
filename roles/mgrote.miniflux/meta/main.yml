@@ -1,0 +1,14 @@
+---
+dependencies:
+- role: mgrote.postgresql
+galaxy_info:
+  author: mgrote
+  description: installs miniflux
+  min_ansible_version: 2.0
+  license: GPLv3
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  galaxy_tags:
+    - system

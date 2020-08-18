@@ -1,0 +1,30 @@
+---
+  # Default Value for Sanoid Cron Hours
+  sanoid_cron_hours: '*'
+
+  # Default Value for Sanoid Cron Minutes
+  sanoid_cron_minutes: '*'
+
+  # Default Value for Sanoid Keep Hourly Snapshot
+  sanoid_snapshot_keep_hourly: '1'
+
+  # Default Value for Sanoid Keep Daily Snapshot
+  sanoid_snapshot_keep_daily: '14'
+
+  # Default Value for Sanoid Keep Monthly Snapshot
+  sanoid_snapshot_keep_monthly: '3'
+
+  # Default Value for Sanoid Keep Yearly Snapshot
+  sanoid_snapshot_keep_yearly: '0'
+
+  # Default Value for Sanoid Auto Snapshot
+  sanoid_auto_snap: 'yes'
+
+  # Default Value for Sanoid Auto Prune
+  sanoid_auto_prune: 'yes'
+
+  # Default Value for Sanoid ZFS Dataset Name
+  sanoid_zfs_dataset: 'hdd_data_raidz/data'
+
+  # Default Value for Sanoid ZFS Recursive Snapshot
+  sanoid_zfs_recursive: 'yes'

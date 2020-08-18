@@ -1,0 +1,14 @@
+{
+  "uploadOnSave": true,
+  "useAtomicWrites": true,
+  "deleteLocal": false,
+  "hostname": "ansible.grote.lan",
+  "port": "22",
+  "target": "/home/mg/ansible",
+  "ignore": [
+    ".git/**"
+  ],
+  "username": "mg",
+  "keyfile": "C:/Users/mg/Desktop/NextCloud/Rest/ssh-keys/heimserver/private.ppk",
+  "transport": "scp"
+}

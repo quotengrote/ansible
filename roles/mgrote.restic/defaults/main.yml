@@ -1,0 +1,2 @@
+---
+  restic_folders_to_backup: "/usr/local /etc /root /var/www /home"

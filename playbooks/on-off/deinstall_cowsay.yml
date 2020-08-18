@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+    - name: cowsay deinstallieren
+      become: yes
+      apt:
+        name: cowsay
+        state: absent

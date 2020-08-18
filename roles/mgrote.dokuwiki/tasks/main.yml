@@ -1,0 +1,91 @@
+  - name: install packages
+    become: yes
+    apt:
+      name:
+        - php
+        - php-mbstring
+        - php-xml
+        - apache2
+        - libapache2-mod-php
+        - php-xml
+        - php-gd
+      state: present
+
+  # aktiviert das module rewrite = a2enmod rewrite
+  - name: activate a2enmod rewrite
+    become: yes
+    apache2_module:
+      state: present
+      name: rewrite
+
+  - name: Download latest dokuwiki
+    become: yes
+    get_url:
+      url: https://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz
+      dest: /tmp/dokuwiki-stable.tgz
+    when: dokuwiki_update  # noqa 601  # entspricht when: dokuwiki_update == true; noqa sorgt dafür dass das beispiel nicht "gemeldet" wird
+
+  - name: create dokuwiki install path
+    become: yes
+    file:
+      path: "{{ dokuwiki_install_path }}"
+      state: directory
+      owner: www-data
+      group: www-data
+
+  - name: Unarchive dokuwiki-stable.tgz to {{ dokuwiki_install_path }}
+    become: yes
+    unarchive:
+      src: /tmp/dokuwiki-stable.tgz
+      dest: "{{ dokuwiki_install_path }}"
+      owner: www-data
+      remote_src: yes
+      list_files: yes
+      extra_opts: [--strip-components=1] # entfernt die erste Ebene des Archives
+    when: dokuwiki_update
+
+  - name: Remove default plugins
+    become: yes
+    file:
+      path: '{{ dokuwiki_install_path }}/lib/plugins/{{ item }}'
+      state: absent
+    with_items:
+      - authpdo
+      - authmysql
+      - authpgsql
+      - authad
+    when: dokuwiki_update
+
+  - name: Change file ownership, group and permissions
+    become: yes
+    file:
+      path: "{{ dokuwiki_install_path }}"
+      owner: www-data
+      group: www-data
+
+  - name: copy apache2.conf
+    become: yes
+    template:
+      src: "apache2.conf"
+      dest: "/etc/apache2/apache2.conf"
+    notify: restart_apache2
+
+  - name: copy 000-default.conf
+    become: yes
+    template:
+      src: "000-default.conf"
+      dest: "/etc/apache2/sites-enabled/000-default.conf"
+    notify: restart_apache2
+
+  - name: remove tmp files
+    become: yes
+    file:
+      path: /tmp/dokuwiki-stable.tgz
+      state: absent
+
+  - name: remove install.php
+    become: yes
+    file:
+      path: '{{ dokuwiki_install_path }}/install.php'
+      state: absent
+    when: not dokuwiki_install # noqa 601  # entspricht when: dokuwiki_update == true; noqa sorgt dafür dass das beispiel nicht "gemeldet" wird # entspricht == false

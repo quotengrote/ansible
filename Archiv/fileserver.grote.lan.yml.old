@@ -1,0 +1,6 @@
+---
+  ### mgrote.fileserver_mergerfs
+  laufwerke: ## Muessen als HDD* in /mnt gemountet damit sie in mergerFS eingebunden werden
+    - { pfad: '/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1', ordner: 'HDD1'}
+    - { pfad: '/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2', ordner: 'HDD2'}
+    - { pfad: '/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi3', ordner: 'HDD3'}

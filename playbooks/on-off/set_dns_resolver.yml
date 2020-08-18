@@ -1,0 +1,11 @@
+---
+- hosts: dns
+  become: yes
+
+  tasks:
+    - name: Setze DNS-Resolver fuer pihole-*
+      lineinfile:
+        path: /etc/resolv.conf.head
+        line: nameserver 192.168.2.2
+        create: yes
+        backrefs: false

@@ -1,0 +1,3 @@
+---
+pfad_zu_rclone: "/usr/local/bin/rclone"
+sicherung_nextcloud_ziel: "/shares/backup/NextCloud"

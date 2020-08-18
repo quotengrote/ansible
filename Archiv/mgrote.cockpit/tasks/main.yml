@@ -1,0 +1,6 @@
+  - name: install cockpit
+    become: yes
+    apt:
+      name:
+        - cockpit
+      state: present

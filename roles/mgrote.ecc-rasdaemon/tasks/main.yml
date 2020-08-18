@@ -1,0 +1,66 @@
+  - name: Install rasdaemon
+    become: true
+    package:
+      name:
+        - rasdaemon
+        - logrotate
+      state: present
+    notify: labels
+
+  - name: Enable rasdaemon service
+    become: true
+    service:
+      name: rasdaemon
+      enabled: true
+
+  - name: Start rasdaemon service
+    become: true
+    service:
+      name: rasdaemon
+      state: started
+
+  - name: Create rasdaemon log
+    become: true
+    file:
+      path: /var/log/rasdaemon.log
+      state: touch
+      access_time: preserve
+      modification_time: preserve
+
+  - name: Add rasdaemon Log to be Rotated
+    become: true
+    blockinfile:
+      path: /etc/logrotate.d/rasdaemon
+      state: present
+      create: yes
+      owner: root
+      group: root
+      mode: 0644
+      block: |
+        /var/log/rasdaemon.log {
+          su root root
+          create 0640 root root
+          rotate 4
+          weekly
+          compress
+          missingok
+          notifempty
+          dateext
+          dateyesterday
+        }
+
+  - name: rasdaemon-cron kopieren
+    become: yes
+    template:
+      src: rasdaemon-cron.sh
+      dest: "/usr/local/bin/rasdaemon-cron.sh"
+      mode: a+x
+
+  - name: create cronjob
+    become: yes
+    cron:
+      name: rasdaemon-log
+      state: present
+      job: /usr/local/bin/rasdaemon-cron.sh
+      minute: "5"
+      hour: "4,8,12,16,20,0"

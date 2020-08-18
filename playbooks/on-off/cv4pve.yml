@@ -1,0 +1,7 @@
+---
+- hosts: pve2.grote.lan
+  become: yes
+  roles:
+    - { role: mgrote.cv4pve-autosnap, tags: "cv4pve" }
+  vars:
+    cv4pve_vmid: all,-109

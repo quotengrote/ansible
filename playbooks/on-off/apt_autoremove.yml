@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  serial: 5
+
+  tasks:
+    - name: apt autoremove
+      become: yes
+      apt:
+        autoremove: yes

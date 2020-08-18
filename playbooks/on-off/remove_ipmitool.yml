@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: remove Packages
+      become: yes
+      apt:
+        name:
+          - hddtemp
+          - ipmitool
+          - powertop
+        state: absent

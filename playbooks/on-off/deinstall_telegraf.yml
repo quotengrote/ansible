@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+    - name: telegraf deinstallieren
+      become: yes
+      apt:
+        name: telegraf
+        state: absent
+    - name: telegraf-repository entfernen
+      become: yes
+      apt_repository:
+        repo: 'deb https://repos.influxdata.com/ubuntu {{ ansible_distribution_release }} stable'
+        state: absent
+        filename: telegraf_repo

@@ -1,0 +1,5 @@
+---
+mount_optionen: defaults,allow_other,direct_io,use_ino,moveonenospc=true,category.create=mfs,minfreespace=100G,nonempty
+mergerfs_mountpoint: "/shares"
+mergerfs_tree_cron_minutes: 30
+mergerfs_tree_cron_hours: 5

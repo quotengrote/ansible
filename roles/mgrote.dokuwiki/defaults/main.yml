@@ -1,0 +1,4 @@
+---
+  dokuwiki_install_path: /var/www/dokuwiki
+  dokuwiki_update: false
+  dokuwiki_install: false

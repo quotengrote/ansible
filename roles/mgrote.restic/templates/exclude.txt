@@ -1,0 +1,9 @@
+._*
+desktop.ini
+.Trash-*
+**/**cache***/**
+**/**Cache***/**
+**/**AppData***/**
+
+# https://github.com/restic/restic/issues/1005
+# https://forum.restic.net/t/exclude-syntax-confusion/1531/12

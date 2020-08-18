@@ -1,0 +1,13 @@
+  - name: create_db_passwordfile
+    become: yes
+    command: /usr/sbin/postmap hash:/etc/postfix/sasl_passwd
+
+  - name: postfix_reload
+    become: yes
+    systemd:
+      name: postfix
+      enabled: yes
+      state: restarted
+
+  - name: postfix_testmail
+    shell: echo "postfix ist eingerichtet" | mail -s "{{ ansible_hostname }} - postfix" {{ empfaenger_mail }}

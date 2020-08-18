@@ -1,0 +1,10 @@
+---
+- hosts: ovpn
+  become: yes
+  serial: 5
+
+  tasks:
+    - name: update apt cache
+      become: yes
+      apt:
+        update_cache: yes

@@ -1,0 +1,2 @@
+smtp.gmail.com {{ nutzer_gmail }}:{{ passwort_gmail }}
+ 

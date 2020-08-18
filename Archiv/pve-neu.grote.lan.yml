@@ -1,0 +1,18 @@
+---
+### mgrote.zfs_tools
+zfs_arc_max: "12884901888"
+zfs_pool:
+  - { name: "zfs_vm_mirror", cron_minute_zfs_trim: "12", cron_hour_zfs_trim: "23", cron_month_zfs_trim: "4,8,12", cron_day_zfs_trim: "2", cron_weekday_zfs_scrub: "0", cron_minutes_zfs_scrub: "0", cron_hour_zfs_scrub: "3"}
+  - { name: "zfs_single_hdd", cron_minute_zfs_trim: "12", cron_hour_zfs_trim: "23", cron_month_zfs_trim: "4,8,12", cron_day_zfs_trim: "3", cron_weekday_zfs_scrub: "0", cron_minutes_zfs_scrub: "0", cron_hour_zfs_scrub: "5"}
+### mgrote.apcupsd
+ONBATTERYDELAY: 10
+BATTERYLEVEL: 50
+MINUTES: 10
+### mgrote.postfix-gmail
+mail_nach_cronjob: false
+### mgrote.smart
+smart_smartctlmail_cron_minutes: "15"
+smart_smartctlmail_cron_hours: "6"
+smart_smartctlmail_cron_weekday: "3"
+### Extra
+sudo: false

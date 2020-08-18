@@ -1,0 +1,38 @@
+---
+#############################################################
+# Wenn das OS ProxMox ist:
+# vorher PVE-Nag-Buster ausführen
+# wget https://raw.githubusercontent.com/foundObjects/pve-nag-buster/master/install.sh
+# bash install.sh
+# rm install.sh
+#############################################################
+  - hosts: all
+    become: yes
+    gather_facts: false
+    max_fail_percentage: 20%
+    pre_tasks:
+      - name: install python
+        raw: test -e /usr/bin/python || ( apt update && apt install python -y ) # noqa 301 301
+      - name: erstelle "/etc/sudoers"
+        file:
+          path: /etc/sudoers
+          state: touch
+  #    - name: install sudo
+  #      raw: test -e /usr/bin/sudo || ( apt update && apt install sudo -y )  # noqa 301 301
+      - name: gather facts
+        setup:
+
+    roles:
+      - { role: nickjj.ansible-user, tags: "ansible-user" }
+
+    vars:
+      ### fuer rolle nickjj.ansible-user
+      user_name: "ansible-user"
+      user_generate_ssh_key: true
+      user_local_ssh_key_path: "~/.ssh/id_rsa.pub"
+      user_enable_passwordless_sudo: True
+
+      ansible_user: "mg" # Hier ändern wenn ein anderer Nutzer für die Erstanmeldung verwendet werden soll.
+      ansible_password: "hallowelt"
+      ansible_become_password: "hallowelt"
+      ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"

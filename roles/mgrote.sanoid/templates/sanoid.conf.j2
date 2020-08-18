@@ -1,0 +1,15 @@
+## ZFS Section ##
+[{{ sanoid_zfs_dataset }}]
+  use_template = production
+  recursive    = {{ sanoid_zfs_recursive }}
+
+## Template Section ##
+[template_production]
+  ## Keep-Rules
+  hourly       = {{ sanoid_snapshot_keep_hourly }}
+  daily        = {{ sanoid_snapshot_keep_daily }}
+  monthly      = {{ sanoid_snapshot_keep_monthly }}
+  yearly       = {{ sanoid_snapshot_keep_yearly }}
+  ## Other Options
+  autosnap     = {{ sanoid_auto_snap }}
+  autoprune    = {{ sanoid_auto_prune }}

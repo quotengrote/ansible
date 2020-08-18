@@ -1,0 +1,36 @@
+#erzwinge ipv4
+--force-ipv4
+#bei fehlern weitermachen
+--ignore-errors
+#downloadrate begrenzen
+--limit-rate {{ sicherung_medien_bitrate }}
+#wartezeit zwischen downloads
+--sleep-interval 30
+#kein tls check
+--no-check-certificate
+#lese und schreibe archiv log
+--download-archive "{{ sicherung_medien_ziel_youtube }}/archive-youtube.log"
+#nehme nur gueltige dateinamenszeichen
+--restrict-filenames
+#ueberschreibe keine dateien
+--no-overwrites
+#ordner + dateinamen
+--output "{{ sicherung_medien_ziel_youtube }}%(playlist)s/%(title)s-%(id)s.%(ext)s"
+#login
+--username {{ sicherung_medien_username }}
+--password {{ sicherung_medien_passwort }}
+# fuer linux
+--encoding utf-8
+
+--embed-subs
+--add-metadata
+--write-info-json
+--write-description
+--write-annotations
+
+#playlisten
+
+{% for item in playlisten_youtube %}
+## {{item.titel}}
+{{item.url}}
+{% endfor %}

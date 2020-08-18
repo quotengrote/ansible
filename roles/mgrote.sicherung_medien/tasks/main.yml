@@ -1,0 +1,84 @@
+  - name: install ffmpeg
+    become: yes
+    apt:
+      name: ffmpeg
+      state: present
+
+  - name: create /etc/sicherung_medien
+    become: yes
+    file:
+      path: /etc/sicherung_medien
+      state: directory
+
+  - name: create sicherung_medien_* log
+    become: true
+    file:
+      path: "{{ item }}"
+      state: touch
+      owner: root
+      group: root
+      mode: 0644
+      access_time: preserve
+      modification_time: preserve
+    with_items:
+      - /var/log/sicherung_medien_youtube.log
+      - /var/log/sicherung_medien_podcast.log
+
+  - name: copy conf-*.txt
+    become: yes
+    template:
+      src: "{{ item }}"
+      dest: "/etc/sicherung_medien/{{ item }}"
+      owner: root
+      group: root
+      mode: 0700
+    with_items:
+      - conf-youtube.txt
+      - conf-podcast.txt
+
+  - name: copy ytdl-*.sh
+    become: yes
+    template:
+      src: "{{ item }}"
+      dest: "/usr/local/bin/{{ item }}"
+      mode: a+x
+    with_items:
+      - ytdl-youtube.sh
+      - ytdl-podcast.sh
+
+  - name: create cronjob sicherung_medien_*
+    become: yes
+    cron:
+      name: sicherung_medien_{{ item }}
+      state: present
+      job: "/usr/local/bin/{{ item }}"
+      minute: "{{ youtubedl_cron_minutes }}"
+      hour: "{{ youtubedl_cron_hours }}"
+    with_items:
+      - ytdl-youtube.sh
+      - ytdl-podcast.sh
+
+  - name: Add logs to logrotate
+    become: true
+    blockinfile:
+      path: "/etc/logrotate.d/{{ item }}"
+      state: present
+      create: yes
+      owner: root
+      group: root
+      mode: 0644
+      block: |
+        /var/log/{{ item }} {
+          su root root
+          create 0640 root root
+          rotate 4
+          weekly
+          compress
+          missingok
+          notifempty
+          dateext
+          dateyesterday
+        }
+    with_items:
+      - sicherung_medien_youtube.log
+      - sicherung_medien_podcast.log

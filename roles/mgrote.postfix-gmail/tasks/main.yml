@@ -1,0 +1,47 @@
+### postfix fuer gmail; http://dokuwiki2.grote.lan/artikel/technik/postfix_mit_gmail_fuer_benachrichtigungen_einrichten
+
+  - name: postfix + Hilfsprogramme installieren
+    become: yes
+    apt:
+      name:
+        - postfix
+        - mailutils
+        - libsasl2-modules
+      state: present
+
+  - name: kopiere sasl_passwd
+    become: yes
+    template:
+      src: sasl_passwd
+      dest: /etc/postfix/sasl_passwd
+      force: yes
+    notify:
+      - create_db_passwordfile
+      - postfix_testmail
+
+  - name: kopiere postfix_main.cf
+    become: yes
+    template:
+      src: main.cf
+      dest: /etc/postfix/main.cf
+    notify:
+      - postfix_reload
+      - postfix_testmail
+
+  - name: Mail Cronjob - Anlegen
+    become: yes
+    when: mail_nach_cronjob # ohne parameter wird auf true geprueft  https://www.buildahomelab.com/2018/11/12/using-ansible-when-statements/
+    cron:
+      name: MAILTO
+      env: yes
+      job: "{{ empfaenger_mail }}"
+    notify:
+      - postfix_testmail
+
+  - name: Mail Cronjob - Entfernen
+    become: yes
+    when: not mail_nach_cronjob
+    cron:
+      name: MAILTO
+      env: yes
+      job: ""

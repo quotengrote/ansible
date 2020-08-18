@@ -1,0 +1,73 @@
+---
+  - name: create directories
+    become: yes
+    file:
+      path: "{{ item }}"
+      state: directory
+    loop:
+      - '/tmp/cv4pve'
+      - '/usr/local/bin/cv4pve'
+
+  - name: download archives
+    become: yes
+    get_url: ## hier variable für version
+      url: https://github.com/Corsinvest/cv4pve-autosnap/releases/download/{{ cv4pve_version }}/cv4pve-autosnap-linux-x64.zip
+      dest: /tmp/cv4pve/cv4pve-autosnap-linux-x64.zip
+      mode: '0775'
+
+  - name: Extract archives
+    become: yes
+    unarchive:
+      src: /tmp/cv4pve/cv4pve-autosnap-linux-x64.zip
+      dest: /usr/local/bin/cv4pve
+      remote_src: yes
+      mode: a+x
+
+  - name: copy bash-script
+    become: yes
+    template:
+      src: "cv4pve-script.sh"
+      dest: "/usr/local/bin/cv4pve/cv4pve-script.sh"
+      mode: a+x
+
+  - name: create cronjob
+    become: yes
+    cron:
+      name: cv4pve-autosnap
+      state: present
+      job: "/usr/local/bin/cv4pve/cv4pve-script.sh"
+      minute: "{{ cv4pve_cron_minute }}"
+      hour: "{{ cv4pve_cron_hour }}"
+
+  - name: Create log
+    become: true
+    file:
+      path: /var/log/cv4pve-autosnap.log
+      state: touch
+      owner: root
+      group: root
+      mode: 0644
+      access_time: preserve
+      modification_time: preserve
+
+  - name: Add Log to be Rotated
+    become: true
+    blockinfile:
+      path: /etc/logrotate.d/cv4pve-autosnap
+      state: present
+      create: yes
+      owner: root
+      group: root
+      mode: 0644
+      block: |
+        /var/log/cv4pve-autosnap.log {
+          su root root
+          create 0640 root root
+          rotate 4
+          weekly
+          compress
+          missingok
+          notifempty
+          dateext
+          dateyesterday
+        }
