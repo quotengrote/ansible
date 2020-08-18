@@ -31,7 +31,7 @@ jobs:
         #   When testing playbooks you have to tell ansible
         #   the group you that we write in our hosts file.
         #   example:
-        #   group: 'servers'
+        #   group: 'servers'ffff
         #
         # hosts: ""
         #  [optional]
