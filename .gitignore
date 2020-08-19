@@ -1,3 +1,4 @@
 .git/
-ansible-vault-password.yml
+keepass-pw.yml
+keepass_db.kdbx
 # https://www.atlassian.com/git/tutorials/saving-changes/gitignore

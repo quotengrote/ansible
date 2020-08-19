@@ -2,3 +2,4 @@
 - hosts: ansible
   roles:
     - { role: mgrote.ansible, tags: "ansible_host" }
+    - { role: geerlingguy.pip, tags: "pip", become: true }
