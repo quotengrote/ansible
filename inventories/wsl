@@ -1,5 +1,5 @@
 all:
   children:
-    virt:
+    wsl:
       hosts:
         irantu.grote.lan:
