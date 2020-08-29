@@ -29,6 +29,3 @@ all:
         ansible:
           hosts:
             ansible-staging.grote.lan:
-        ovpn:
-          hosts:
-            ovpn-staging.grote.lan:

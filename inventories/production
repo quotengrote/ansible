@@ -29,6 +29,3 @@ all:
         docker:
           hosts:
             docker.grote.lan:
-        ovpn:
-          hosts:
-            ovpn.grote.lan:
