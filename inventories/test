@@ -33,9 +33,6 @@ all:
           hosts:
             vm-test.grote.lan:
             lxc-test.grote.lan:
-        ovpn:
-          hosts:
-            ovpn-test.grote.lan:
         baseimage:
           hosts:
     #        vorlagebaseimage.grote.lan:
