@@ -81,5 +81,5 @@
     become: yes
     template:
       mode: 0555
-      src: zfs-free.sh.j2
+      src: zfs-free.sh
       dest: /usr/local/bin/zfs-free.sh
