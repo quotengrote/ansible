@@ -2,46 +2,37 @@
     become: yes
     apt:
       name: ffmpeg
-      state: present
+      state: absent
 
   - name: create /etc/sicherung_medien
     become: yes
     file:
       path: /etc/sicherung_medien
-      state: directory
+      state: absent
 
   - name: create sicherung_medien_* log
     become: true
     file:
       path: "{{ item }}"
-      state: touch
-      owner: root
-      group: root
-      mode: 0644
-      access_time: preserve
-      modification_time: preserve
+      state: absent
     with_items:
       - /var/log/sicherung_medien_youtube.log
       - /var/log/sicherung_medien_podcast.log
 
   - name: copy conf-*.txt
     become: yes
-    template:
-      src: "{{ item }}"
-      dest: "/etc/sicherung_medien/{{ item }}"
-      owner: root
-      group: root
-      mode: 0700
+    file:
+      path: "/etc/sicherung_medien/{{ item }}"
+      state: absent
     with_items:
       - conf-youtube.txt
       - conf-podcast.txt
 
   - name: copy ytdl-*.sh
     become: yes
-    template:
-      src: "{{ item }}"
-      dest: "/usr/local/bin/{{ item }}"
-      mode: a+x
+    file:
+      path: "/usr/local/bin/{{ item }}"
+      state: absent
     with_items:
       - ytdl-youtube.sh
       - ytdl-podcast.sh
@@ -50,7 +41,7 @@
     become: yes
     cron:
       name: sicherung_medien_{{ item }}
-      state: present
+      state: absent
       job: "/usr/local/bin/{{ item }}"
       minute: "{{ youtubedl_cron_minutes }}"
       hour: "{{ youtubedl_cron_hours }}"
@@ -61,25 +52,9 @@
 
   - name: Add logs to logrotate
     become: true
-    blockinfile:
+    file:
       path: "/etc/logrotate.d/{{ item }}"
-      state: present
-      create: yes
-      owner: root
-      group: root
-      mode: 0644
-      block: |
-        /var/log/{{ item }} {
-          su root root
-          create 0640 root root
-          rotate 4
-          weekly
-          compress
-          missingok
-          notifempty
-          dateext
-          dateyesterday
-        }
+      state: absent
     with_items:
       - sicherung_medien_youtube.log
       - sicherung_medien_podcast.log
