@@ -20,25 +20,6 @@
   smb_workgroup: WORKGROUP
   smb_nutzer_loeschen:
     - { name: 'platzhalter' }
-  ### mgrote.sicherung_medien
-  sicherung_medien_username:  michael.grote@posteo.de
-  sicherung_medien_passwort: "{{ lookup('keepass', 'sicherung_medien_passwort', 'password') }}"
-  youtubedl_update: false
-  youtubedl_cron_minutes: "40"
-  youtubedl_cron_hours: "21"
-  youtubedl_cron_day: "*/2,*/5"
-  playlisten_youtube:
-    - { url: 'https://www.youtube.com/playlist?list=PLPM-eyPokAWNhhDNO4YzC5cGRwuI2ykwE', titel: 'music'}
-    - { url: 'https://www.youtube.com/playlist?list=PLPM-eyPokAWNnDxuyX131R5wkl8fzvu7D', titel: 'lost and found'}
-    - { url: 'https://www.youtube.com/playlist?list=PLPM-eyPokAWPmStfh37roJge-JuLfgma0', titel: 'lost and found 2'}
-    - { url: 'https://www.youtube.com/watch?v=rj1RVBjEbTY&list=PLKSNR-nHKRS9B_mdvJp1m48augOyIL1zJ', titel: 'Sommerfigur in 14 Tagen'}
-    - { url: 'https://www.youtube.com/watch?v=ba60qzHoBL0&list=PLKSNR-nHKRS_jbfveFFlD07PUdEHg8Nlt', titel: '14 Tage Abnehmen & Figur'}
-    - { url: 'https://www.youtube.com/channel/UCwRH985XgMYXQ6NxXDo8npw', titel: 'Kurzgesagt - Deutsch'}
-    - { url: 'https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q', titel: 'Kurzgesagt - Englisch'}
-    - { url: 'https://www.youtube.com/watch?v=siIQ1jPtmEQ&list=PLs4hTtftqnlAkiQNdWn6bbKUr-P1wuSm0', titel: 'Jimmy Kimmel - Mean Tweets'}
-  playlisten_podcast:
-    - { url: 'https://sternengeschichten.podigee.io/feed/aac', titel: 'Kurzgesagt - Deutsch'}
-    - { url: 'https://feeds.br.de/radiowissen/feed.xml', titel: 'Kurzgesagt - Englisch'}
   ### mgrote.nextcloud_sicherung
   nextcloud_sicherung_cron_minutes: "20"
   nextcloud_sicherung_cron_hours: "21"
