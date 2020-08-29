@@ -15,6 +15,7 @@
     - { freigabename: 'mg', ordnerpfad: '/shares/mg', lese_nutzer: '', schreibe_nutzer: 'win10 michaelgrote' }
     - { freigabename: 'musik', ordnerpfad: '/shares/Musik', lese_nutzer: 'kodi annemariedroessler', schreibe_nutzer: 'win10 michaelgrote' }
     - { freigabename: 'tmp', ordnerpfad: '/shares/tmp', lese_nutzer: '', schreibe_nutzer: 'kodi annemariedroessler restic win10 michaelgrote' }
+    - { freigabename: 'bilder', ordnerpfad: '/shares/bilder', lese_nutzer: '', schreibe_nutzer: 'annemariedroessler michaelgrote' }
 
   smb_workgroup: WORKGROUP
   smb_nutzer_loeschen:
@@ -34,6 +35,7 @@
     - { url: 'https://www.youtube.com/watch?v=ba60qzHoBL0&list=PLKSNR-nHKRS_jbfveFFlD07PUdEHg8Nlt', titel: '14 Tage Abnehmen & Figur'}
     - { url: 'https://www.youtube.com/channel/UCwRH985XgMYXQ6NxXDo8npw', titel: 'Kurzgesagt - Deutsch'}
     - { url: 'https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q', titel: 'Kurzgesagt - Englisch'}
+    - { url: 'https://www.youtube.com/watch?v=siIQ1jPtmEQ&list=PLs4hTtftqnlAkiQNdWn6bbKUr-P1wuSm0', titel: 'Jimmy Kimmel - Mean Tweets'}
   playlisten_podcast:
     - { url: 'https://sternengeschichten.podigee.io/feed/aac', titel: 'Kurzgesagt - Deutsch'}
     - { url: 'https://feeds.br.de/radiowissen/feed.xml', titel: 'Kurzgesagt - Englisch'}
