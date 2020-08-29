@@ -23,6 +23,7 @@
       name: "{{ item.name }}"
       group: "{{ item.groups }}"
       state: present
+      create_home: no
     loop: "{{ smb_nutzer }}"
     no_log: True
     notify: set_samba_passwords
