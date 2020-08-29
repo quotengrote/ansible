@@ -1,25 +1,19 @@
-<s># Verschlüsseln
-ansible-vault encrypt /home/mg/ansible/inventories/group_vars/* --vault-password-file /home/mg/ansible/ansible-vault-password.yml
-# Entschlüsseln
-ansible-vault decrypt /home/mg/ansible/inventories/group_vars/* --vault-password-file /home/mg/ansible/ansible-vault-password.yml
-# Schlüssel liegt in Keepas + Datei
-- Datei ist bei .gitignore ausgenommen</s>
+# Ansible Vault + KeePass LookUp-Plugin
 
-Die Secrets sind in einer KeepassDB gespeichert und werden über ein Lookup-Plugin abgerufen.
-In der DB keine Ebenen und title = Variablenname.
+# Einrichtung
+Das Plugin wird bei einer Installation mit dem Playbook "ansible" mit eingerichtet.
 
-restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
+Die "Secrets" liegen in der KeepassDB die mit dem Kennwort aus "vault-pass.yml" verschlüsselt ist.
+"vault-pass.yml" steht mit in der .gitignore
+Die Variable "vault_password_file" ist mit " ~/ansible/vault-pass.yml" in der ansible.cfg gesetzt.
 
+# Abfrage der Secrets in tasks/playbooks
+`restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"`
 
-Variabeln in Dictionarys vorher definieren
+## Erklärung
 ```
-x = lookup
-
-dict: z: x
-```
-```
-  # Variable für Lookup
-  lookup_var_postgres_user_and_db: "{{ lookup('keepass', 'postgres_user_and_db', 'password') }}"
-  postgres_user_and_db:
-    - { name_db: 'miniflux_db', name_db_user: 'miniflux_db_user', password_db_user: "{{ lookup_var_postgres_user_and_db }}" }
+restic_repository_password:         <-- Ansible Variablen Name
+lookup('keepass'                    <-- Aufruf Keepass-Lookup-Plugin
+restic_repository_password          <-- Titel Eintrag mit Secret
+password                            <-- Feldbzeichner in KeepassDB
 ```
