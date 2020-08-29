@@ -1,0 +1,5 @@
+all:
+  children:
+    virt:
+      hosts:
+        irantu.grote.lan:
