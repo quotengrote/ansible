@@ -1,5 +1,5 @@
 ---
-  - hosts: lxc-test.grote.lan
+  - hosts: all
     become: yes
     gather_facts: false
     max_fail_percentage: 20%

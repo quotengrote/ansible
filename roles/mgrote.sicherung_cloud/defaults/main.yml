@@ -1,5 +1,0 @@
----
-  rclone_bandbreite: "500"
-  rclone_cron_minutes: "30"
-  rclone_cron_hours: "22"
-  rclone_pfad: "/usr/local/bin/rclone"
