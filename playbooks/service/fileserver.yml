@@ -16,5 +16,3 @@
   roles:
     - { role: mgrote.postfix-gmail, tags: "postfix-gmail" }
     - { role: mgrote.fileserver_smb, tags: "fileserver_smb" }
-    - { role: mgrote.sicherung_nextcloud, tags: "nextcloud_sicherung", when: ansible_hostname  == "fileserver2" }
-    - { role: mgrote.sicherung_cloud, tags: "cloud", when: ansible_hostname  == "fileserver2" }
