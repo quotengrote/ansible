@@ -3,3 +3,5 @@
   pip_install_packages:
     # Specify names and versions.
     - name: pykeepass
+  ### robertdebock.mitogen
+  mitogen_ansible_file: /home/mg/ansible/ansible.cfg
