@@ -1,0 +1,4 @@
+---
+- robertdebock.core_dependencies
+- robertdebock.epel
+- robertdebock.python_pip
