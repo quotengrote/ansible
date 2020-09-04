@@ -20,20 +20,6 @@
   smb_workgroup: WORKGROUP
   smb_nutzer_loeschen:
     - { name: 'platzhalter' }
-  ### mgrote.nextcloud_sicherung
-  nextcloud_sicherung_cron_minutes: "20"
-  nextcloud_sicherung_cron_hours: "21"
-  sicherung_nextcloud_ziel: "/shares/Backup/NextCloud"
-  sicherung_nextcloud_user: michaelgrote
-  sicherung_nextcloud_pass: "{{ lookup('keepass', 'sicherung_nextcloud_pass', 'password') }}"
-  ### mgrote.sicherung_cloud
-  sicherung_cloud_onedrive_token: "{{ lookup('keepass', 'sicherung_cloud_onedrive_token', 'password') }}"
-  sicherung_cloud_onedrive_password: "{{ lookup('keepass', 'sicherung_cloud_onedrive_password', 'password') }}"
-  sicherung_cloud_onedrive_password2: "{{ lookup('keepass', 'sicherung_cloud_onedrive_password', 'password') }}"
-  sicherung_cloud_mega_user: xcddcx@gmail.com
-  sicherung_cloud_mega_pass: "{{ lookup('keepass', 'sicherung_cloud_mega_pass', 'password') }}"
-  sicherung_cloud_mega_password: "{{ lookup('keepass', 'sicherung_cloud_mega_password', 'password') }}"
-  sicherung_cloud_mega_password2: "{{ lookup('keepass', 'sicherung_cloud_mega_password2', 'password') }}"
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow
