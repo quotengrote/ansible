@@ -1,5 +1,12 @@
 ---
-  - hosts: all
+  - hosts: docker
     roles:
       - { role: mgrote.deploy_ssh_keys, tags: "ssh", become: yes }
-      - { role: mgrote.create_users, tags: "users" }
+      - { role: nickjj.ansible-user, tags: "ansible-user", become: yes }
+
+    vars:
+      ### fuer rolle nickjj.ansible-user
+      user_name: "mg"
+      user_generate_ssh_key: true
+      user_local_ssh_key_path: "~/.ssh/id_rsa.pub"
+      user_enable_passwordless_sudo: True
