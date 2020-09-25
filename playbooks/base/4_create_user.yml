@@ -1,8 +1,8 @@
 ---
   - hosts: docker
     roles:
-      - { role: mgrote.deploy_ssh_keys, tags: "ssh", become: yes }
       - { role: nickjj.ansible-user, tags: "ansible-user", become: yes }
+      - { role: mgrote.deploy_ssh_keys, tags: "ssh", become: yes }
 
     vars:
       ### fuer rolle nickjj.ansible-user
