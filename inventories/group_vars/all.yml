@@ -19,8 +19,9 @@
   ssh_user: mg
   ssh_pubkey: "{{ lookup('keepass', 'ssh_pubkey', 'password') }}"
   ### mgrote.create_users
-  base_users:
-    - { name: 'mg', password: 'hallowelt', groups: 'sudo, ssh'}
+  create_user_name: 'mg'
+  create_user_password: 'hallowelt'
+  create_user_groups: 'sudo, ssh'
   ### mgrote.tmux
   tmux_conf_destination: "/home/mg/.tmux.conf"
   tmux_bashrc_destination: "/home/mg/.bashrc"

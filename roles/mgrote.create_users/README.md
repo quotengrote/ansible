@@ -8,5 +8,6 @@ erstellt Nutzer.
 
 ### Variablen + Defaults
 ##### Nutzer anlegen
-base_users:
-    - { name: 'mg', password: 'hallowelt', groups: 'sudo, ssh'}
+  create_user_name: 'mg'
+  create_user_password: 'hallowelt'
+  create_user_groups: 'sudo, ssh'
