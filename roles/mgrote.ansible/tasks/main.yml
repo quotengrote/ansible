@@ -1,18 +1,3 @@
-  - name: ansible installieren
-    become: yes
-    apt:
-      name:
-        - ansible
-        - yamllint
-      state: present
-
-  - name: ansible-lint und yaml-lint installieren
-    become: yes
-    pip:
-      name:
-        - ansible-lint
-      state: present
-
   # pykeepass wird durch geerlingguy.pip mit installiert
   # https://github.com/viczem/ansible-keepass#readme
   - name: create ~/.ansible/plugins/lookup
