@@ -10,3 +10,4 @@
     - rule: allow
       to_port: 3000
       comment: 'rssbridge'
+  ansible_user: "ansible-user"
