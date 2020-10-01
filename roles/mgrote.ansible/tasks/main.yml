@@ -12,3 +12,11 @@
       url: https://raw.githubusercontent.com/viczem/ansible-keepass/master/keepass.py
       dest: /home/mg/.ansible/plugins/lookup/keepass.py
       backup: yes
+
+  - name: cronjob fuer ansible
+    become: yes
+    cron:
+      name: ansible-script
+      state: absent
+      job: /home/mg/ansible/ansible-cron.sh
+      hour: '22'

@@ -1,0 +1,14 @@
+---
+  - import_playbook: base/1_bootstrap.yml
+  - import_playbook: base/2_packages.yml
+  - import_playbook: base/3_base.yml
+  - import_playbook: base/4_create_user.yml
+  - import_playbook: base/5_personalisierung.yml
+  - import_playbook: base/6_haertung.yml
+  - import_playbook: service/acng.yml
+  - import_playbook: service/ansible.yml
+  - import_playbook: service/docker.yml
+  - import_playbook: service/dokuwiki.yml
+  - import_playbook: service/fileserver.yml
+  - import_playbook: service/miniflux.yml
+  - import_playbook: service/nginx_reverse_proxy.yml
