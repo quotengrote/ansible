@@ -1,0 +1,7 @@
+all:
+  children:
+    k8s:
+      hosts:
+        k8s-1.grote.lan:
+        k8s-2.grote.lan:
+        k8s-3.grote.lan:
