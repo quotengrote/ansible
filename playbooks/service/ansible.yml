@@ -3,3 +3,4 @@
   roles:
     - { role: geerlingguy.pip, tags: "pip", become: true }
     - { role: geerlingguy.ansible, tags: "ansible" }
+    - { role: mgrote.ansible, tags: "ansible-mg" }
