@@ -1,5 +1,27 @@
 ---
-
+  ### mgrote.install_packages
+  programs_common:
+    - locales
+    - build-essential
+    - ntp
+    - htop
+    - git
+    - dnsutils
+    - nano
+    - mc
+    - cifs-utils
+    - netdiscover
+    - tree
+    - curl
+    - logrotate
+    - ncdu
+    - net-tools
+    - sysstat
+    - apt-transport-https
+    - neofetch
+    - ntpdate
+    - acl
+    - ifupdown2
   ### mgrote.dotfiles
   dotfiles_local_repo_directory: "/root/dotfiles-repo"
   dotfiles_user: "root"
