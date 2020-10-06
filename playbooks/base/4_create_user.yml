@@ -1,5 +1,5 @@
 ---
-  - hosts: docker
+  - hosts: all
     roles:
       - { role: mgrote.create_users, tags: "user", become: yes }
       - { role: mgrote.deploy_ssh_keys, tags: "ssh", become: yes }

@@ -12,8 +12,8 @@
       ### reobertdebock.bootstrap
       bootstrap_user: mg
       bootstrap_wait_for_host: no
-      bootstrap_timeout: 3
-      bootstrap_retries: 3
+      bootstrap_timeout: 1
+      bootstrap_retries: 1
       ### fuer rolle nickjj.ansible-user
       user_name: "ansible-user"
       user_generate_ssh_key: true
