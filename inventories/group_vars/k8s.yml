@@ -1,0 +1,6 @@
+---
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: ''
+      comment: 'allow all traffic'
