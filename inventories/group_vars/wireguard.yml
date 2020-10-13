@@ -7,6 +7,11 @@
       comment: 'ssh'
       interface: ens18
     - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+      interface: wg0
+    - rule: allow
       to_port: 51820
       comment: 'wireguard'
       interface: ens18
