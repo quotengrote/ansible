@@ -9,3 +9,4 @@
         line: nameserver 192.168.2.2
         create: yes
         backrefs: false
+        mode: 0664
