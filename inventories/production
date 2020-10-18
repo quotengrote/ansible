@@ -5,9 +5,6 @@ all:
         wireguard:
           hosts:
             wireguard.grote.lan
-        reverseproxy:
-          hosts:
-            reverseproxy-v2.grote.lan:
         dokuwiki:
           hosts:
             dokuwiki2.grote.lan:
