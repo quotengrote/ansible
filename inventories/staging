@@ -5,9 +5,6 @@ all:
         wireguard:
           hosts:
             wireguard-staging.grote.lan:
-        reverseproxy:
-          hosts:
-            reverseproxy-staging.grote.lan:
         dokuwiki:
           hosts:
             dokuwiki-staging.grote.lan:
