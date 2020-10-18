@@ -3,10 +3,12 @@
   restic_folders_to_backup: /usr/local /etc /root /var/www /home /var/lib/docker
   ### oefenweb.ufw
   ufw_rules:
+#    - rule: allow
+#      to_port: 22
+#      protocol: tcp
+#      comment: 'ssh'
+#    - rule: allow
+#      to_port: 3000
+#      comment: 'rssbridge'
     - rule: allow
-      to_port: 22
-      protocol: tcp
-      comment: 'ssh'
-    - rule: allow
-      to_port: 3000
-      comment: 'rssbridge'
+      comment: 'alles erlauben'
