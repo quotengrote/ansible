@@ -94,3 +94,4 @@
       force: yes
       backup: yes
       mode: 0440
+      validate: /usr/sbin/visudo -cf %s

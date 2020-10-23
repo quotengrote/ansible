@@ -38,4 +38,5 @@
     template:
       src: sudoers
       dest: /etc/sudoers.d/{{ create_user_name }}
+      validate: /usr/sbin/visudo -cf %s
 #    no_log: true
