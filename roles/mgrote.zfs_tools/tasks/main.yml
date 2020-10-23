@@ -83,3 +83,15 @@
       mode: 0555
       src: zfs-free.sh
       dest: /usr/local/bin/zfs-free.sh
+
+  - name: Erlaube "non-root" Usern Read-Only ZFS Commands
+    become: yes
+    template:
+      src: sudoers_zfs
+      dest: /etc/sudoers.d/zfs
+      owner: root
+      group: root
+      force: yes
+      backup: yes
+      mode: 0440
+      validate: /usr/sbin/visudo -cf %s
