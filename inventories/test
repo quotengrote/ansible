@@ -8,9 +8,6 @@ all:
         dokuwiki:
           hosts:
             dokuwiki-test.grote.lan:
-        miniflux:
-          hosts:
-            miniflux-test.grote.lan:
         storage:
           hosts:
             fileserver-test.grote.lan:
