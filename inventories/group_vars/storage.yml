@@ -32,13 +32,3 @@
     - rule: allow
       to_port: 139
       comment: 'smb'
-    - rule: allow
-      to_port: 111
-      comment: 'nfs'
-    - rule: allow
-      to_port: 2049
-      comment: 'nfs'
-
-
-  ### geerlingguy.nfs
-  nfs_exports: [ "/shares_nfs/docker    *(rw,sync,no_root_squash)" ]
