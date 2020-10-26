@@ -41,4 +41,4 @@
 
 
   ### geerlingguy.nfs
-  nfs_exports: [ "/shares_nfs/docker    *(rw,sync,no_root_squash)" ]
+  nfs_exports: [ "/shares_nfs/docker *(rw,sync,no_root_squash)" ]
