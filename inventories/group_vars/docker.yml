@@ -14,3 +14,8 @@
       comment: 'alles erlauben'
   ### mgrote.create_users
   create_user_groups: 'sudo, ssh, docker'
+  ### geerlingguy.docker
+  docker_users:
+    - mg
+    - root
+    - ansible-user
