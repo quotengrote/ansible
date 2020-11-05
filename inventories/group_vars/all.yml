@@ -19,15 +19,6 @@
   tmux_conf_destination: "/home/mg/.tmux.conf"
   tmux_bashrc_destination: "/home/mg/.bashrc"
   tmux_standardsession_name: "default"
-  ### mgrote.dotfiles
-  dotfiles_local_repo_directory: "/home/mg/dotfiles-repo"
-  dotfiles_user: mg
-  dotfiles_link_target: "/home/mg"
-  dotfiles_remote_repo: "https://github.com/quotengrote/dotfiles"
-  dotfiles_files_to_copy:
-    - .tmux.conf
-    - .bash_aliases
-    - .gitconfig
   ### mgrote.fail2ban
   f2b_bantime: 300
   f2b_findtime: 300
@@ -53,7 +44,16 @@
       - staging
       - test
       - virt
-
+  ### geerlingguy.dotfiles
+  dotfiles_repo: "https://github.com/quotengrote/dotfiles.git"
+  dotfiles_repo_local_destination: "/home/mg/dotfiles-repo"
+  dotfiles_home:  "/home/mg"
+  dotfiles_user: "mg"
+  dotfiles_repo_accept_hostkey: true
+  dotfiles_files:
+    - .bash_aliases
+    - .tmux.conf
+    - .gitconfig
 
 
   # Ansible Variablen
