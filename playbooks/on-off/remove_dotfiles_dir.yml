@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: delete /home/mg/dotfiles-repo
+      become: yes
+      file:
+        path: /home/mg/dotfiles-repo
+        state: absent
+    - name: delete /home/mg/.bash_aliases
+      become: yes
+      file:
+        path: /home/mg/.bash_aliases
+        state: absent
+    - name: delete /home/mg/.tmux.conf
+      become: yes
+      file:
+        path: /home/mg/.tmux.conf
+        state: absent
+    - name: delete /home/mg/.gitconfig
+      become: yes
+      file:
+        path: /home/mg/.gitconfig
+        state: absent
