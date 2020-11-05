@@ -34,7 +34,7 @@
   - username: mg
     password: "{{ lookup('keepass', 'linux_mg_user_password', 'password') }}"
     update_password: on_create
-    ssh_key: "{{ lookup('keepass', 'ssh_pubkey', 'password') }}"
+    ssh_key: "{{ lookup('keepass', 'ssh_pubkey_mg', 'password') }}"
     use_sudo: yes
     use_sudo_nopass: yes
     user_state: present
