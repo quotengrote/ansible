@@ -15,13 +15,6 @@
   restic_mount: "/mnt/restic"
   restic_mount_user: restic
   restic_mount_password: restic
-  ### mgrote.deploy_ssh_keys
-  ssh_user: mg
-  ssh_pubkey: "{{ lookup('keepass', 'ssh_pubkey', 'password') }}"
-  ### mgrote.create_users
-  create_user_name: 'mg'
-  create_user_password: 'hallowelt'
-  create_user_groups: 'sudo, ssh'
   ### mgrote.tmux
   tmux_conf_destination: "/home/mg/.tmux.conf"
   tmux_bashrc_destination: "/home/mg/.bashrc"
@@ -45,6 +38,23 @@
       to_port: 22
       protocol: tcp
       comment: 'ssh'
+  ### ryandaniels.create_users
+  users:
+  - username: mg
+    password: "{{ lookup('keepass', 'linux_mg_user_password', 'password') }}"
+    update_password: on_create
+    ssh_key: "{{ lookup('keepass', 'ssh_pubkey', 'password') }}"
+    use_sudo: yes
+    use_sudo_nopass: yes
+    user_state: present
+    groups: ssh
+    servers:
+      - production
+      - staging
+      - test
+      - virt
+
+
 
   # Ansible Variablen
   ### User
