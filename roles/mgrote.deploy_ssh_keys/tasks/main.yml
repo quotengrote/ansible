@@ -17,6 +17,6 @@
     become: yes
     lineinfile:
       path: "/home/{{ ssh_user }}/.ssh/authorized_keys"
-      line: "{{ ssh_pubkey }}"
+      line: "{{ ssh_pubkey_mg }}"
       state: present
       backup: yes
