@@ -3,3 +3,4 @@
     roles:
       - { role: mgrote.create_users, tags: "user", become: yes }
       - { role: mgrote.deploy_ssh_keys, tags: "ssh", become: yes }
+      - { role: ryandaniels.create_users, tags: "user", become: yes }
