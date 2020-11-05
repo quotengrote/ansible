@@ -5,4 +5,6 @@
       - { role: mgrote.tmux,
           tags: "tmux",
           when: "not 'virt' in group_names" }
-      - { role: mgrote.dotfiles, tags: "dotfiles" }
+      - { role: geerlingguy.dotfiles,
+          ansible_user: "{{ dotfiles_user }}" ,
+          tags: "dotfiles" }
