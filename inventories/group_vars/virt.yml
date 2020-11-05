@@ -1,13 +1,14 @@
 ---
 
-  ### mgrote.dotfiles
-  dotfiles_local_repo_directory: "/root/dotfiles-repo"
-  dotfiles_user: "root"
-  dotfiles_link_target: "/root"
-  dotfiles_remote_repo: "https://github.com/quotengrote/dotfiles"
-  dotfiles_files_to_copy:
-    - .tmux.conf
+  ### geerlingguy.dotfiles
+  dotfiles_repo: "https://github.com/quotengrote/dotfiles.git"
+  dotfiles_repo_local_destination: "/home/mg/dotfiles-repo"
+  dotfiles_home:  "/home/mg"
+  dotfiles_user: "mg"
+  dotfiles_repo_accept_hostkey: true
+  dotfiles_files:
     - .bash_aliases
+    - .tmux.conf
     - .gitconfig
   ### mgrote.sanoid
   sanoid_snapshot_keep_hourly: '24'
