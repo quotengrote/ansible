@@ -27,6 +27,6 @@ all:
           hosts:
             vm-test.grote.lan:
             lxc-test.grote.lan:
-        baseimage:
-          hosts:
-    #        vorlagebaseimage.grote.lan:
+#       baseimage:
+#         hosts:
+#           vorlagebaseimage.grote.lan:
