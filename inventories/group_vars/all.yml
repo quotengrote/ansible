@@ -19,15 +19,6 @@
   tmux_conf_destination: "/home/mg/.tmux.conf"
   tmux_bashrc_destination: "/home/mg/.bashrc"
   tmux_standardsession_name: "default"
-  ### mgrote.dotfiles
-  dotfiles_local_repo_directory: "/home/mg/dotfiles-repo"
-  dotfiles_user: mg
-  dotfiles_link_target: "/home/mg"
-  dotfiles_remote_repo: "https://github.com/quotengrote/dotfiles"
-  dotfiles_files_to_copy:
-    - .tmux.conf
-    - .bash_aliases
-    - .gitconfig
   ### mgrote.fail2ban
   f2b_bantime: 300
   f2b_findtime: 300
@@ -43,17 +34,39 @@
   - username: mg
     password: "{{ lookup('keepass', 'linux_mg_user_password', 'password') }}"
     update_password: on_create
-    ssh_key: "{{ lookup('keepass', 'ssh_pubkey', 'password') }}"
+    ssh_key: "{{ lookup('keepass', 'ssh_pubkey_mg', 'password') }}"
     use_sudo: yes
     use_sudo_nopass: yes
     user_state: present
-    groups: ssh
+    groups: ssh, sudo
     servers:
       - production
       - staging
       - test
       - virt
-
+  - username: ansible-user
+    password: "{{ lookup('keepass', 'linux_mg_user_password', 'password') }}"
+    update_password: on_create
+    ssh_key: "{{ lookup('keepass', 'ssh_pubkey_ansible-user', 'password') }}"
+    use_sudo: yes
+    use_sudo_nopass: yes
+    user_state: present
+    groups: ssh, ansible, sudo
+    servers:
+      - production
+      - staging
+      - test
+      - virt
+  ### geerlingguy.dotfiles
+  dotfiles_repo: "https://github.com/quotengrote/dotfiles.git"
+  dotfiles_repo_local_destination: "/home/mg/dotfiles-repo"
+  dotfiles_home:  "/home/mg"
+  dotfiles_user: "mg"
+  dotfiles_repo_accept_hostkey: true
+  dotfiles_files:
+    - .bash_aliases
+    - .tmux.conf
+    - .gitconfig
 
 
   # Ansible Variablen
@@ -64,7 +77,7 @@
   ### python3
   # https://docs.ansible.com/ansible/latest/reference_appendices/python_3_support.html
   ansible_python_interpreter: "/usr/bin/python3"
-
+  ansible_ssh_private_key_file: /home/mg/ansible/id_rsa_ansible_user
 
   # Ansible Plugin Variablen
   ### Keepass

@@ -1,4 +1,6 @@
 .git/
 vault-pass.yml
 keepass_db.kdbx
+id_rsa_ansible_user
+id_rsa_ansible_user_pub
 # https://www.atlassian.com/git/tutorials/saving-changes/gitignore
