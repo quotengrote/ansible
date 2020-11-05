@@ -38,7 +38,20 @@
     use_sudo: yes
     use_sudo_nopass: yes
     user_state: present
-    groups: ssh
+    groups: ssh, sudo
+    servers:
+      - production
+      - staging
+      - test
+      - virt
+  - username: ansible-user
+    password: "{{ lookup('keepass', 'linux_mg_user_password', 'password') }}"
+    update_password: on_create
+    ssh_key: "{{ lookup('keepass', 'ssh_pubkey_ansible-user', 'password') }}"
+    use_sudo: yes
+    use_sudo_nopass: yes
+    user_state: present
+    groups: ssh, ansible, sudo
     servers:
       - production
       - staging
