@@ -21,8 +21,6 @@
   smart_smartctlmail_cron_minutes: "15"
   smart_smartctlmail_cron_hours: "6"
   smart_smartctlmail_cron_weekday: "3"
-  ### mgrote.pve_nag-buster
-  pve_nag_buster_update: false
   ### mgrote.tmux
   tmux_conf_destination: "/root/.tmux.conf"
   tmux_bashrc_destination: "/root/.bashrc"
