@@ -1,6 +1,0 @@
-all:
-  children:
-    qmk:
-      hosts:
-        qmk-planck.grote.lan:
-        qmk-crkbd.grote.lan:
