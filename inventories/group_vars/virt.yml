@@ -11,12 +11,13 @@
     - .tmux.conf
     - .gitconfig
   ### mgrote.sanoid
-  sanoid_snapshot_keep_hourly: '24'
   sanoid_zfs_recursive: 'yes'
-  sanoid_cron_minutes: '10,20,30,40,50,59'
   sanoid_zfs_dataset: "hdd_data_raidz/data"
+  sanoid_snapshot_interval_underhour: '5'
+  sanoid_snapshot_keep_underhour: '36'
   sanoid_snapshot_keep_daily: '31'
   sanoid_snapshot_keep_monthly: '6'
+  sanoid_snapshot_keep_hourly: '24'
   ### mgrote.smart
   smart_smartctlmail_cron_minutes: "15"
   smart_smartctlmail_cron_hours: "6"
