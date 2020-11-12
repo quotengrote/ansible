@@ -22,16 +22,15 @@ function unlock() {
 exlock
 
 (
- echo "--------------------------------------------------"
- echo $(date) sanoid start
-
- echo ""
-/usr/local/bin/sanoid --cron --verbose
- echo ""
- zfs list hdd_data_raidz/data -o space -t snapshot
-zfs list hdd_data_raidz/data/videos -o space -t snapshot
- echo $(date) sanoid end
- echo "--------------------------------------------------"
+  echo "--------------------------------------------------"
+  echo $(date) sanoid start
+  echo ""
+  /usr/local/bin/sanoid --cron --verbose
+  echo ""
+  zfs list hdd_data_raidz/data -o space -t snapshot
+  zfs list hdd_data_raidz/data/videos -o space -t snapshot
+  echo $(date) sanoid end
+  echo "--------------------------------------------------"
 ) >> /var/log/sanoid-cron.log 2>&1 &
 
 
