@@ -29,7 +29,7 @@
 
   - name: kopiere "zfs-health.sh"
     become: yes
-    template:
+    ansible.builtin.template:
       src: zfs-health.sh
       dest: /usr/local/bin/zfs-health.sh
       mode: "+x"
