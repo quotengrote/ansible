@@ -32,7 +32,7 @@
 
   - name: create cronjob
     become: yes
-    cron:
+    ansible.builtin.cron:
       name: cv4pve-autosnap
       state: present
       job: "/usr/local/bin/cv4pve/cv4pve-script.sh"

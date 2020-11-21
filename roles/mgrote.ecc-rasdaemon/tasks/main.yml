@@ -58,7 +58,7 @@
 
   - name: create cronjob
     become: yes
-    cron:
+    ansible.builtin.cron:
       name: rasdaemon-log
       state: present
       job: /usr/local/bin/rasdaemon-cron.sh

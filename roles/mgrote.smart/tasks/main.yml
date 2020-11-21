@@ -42,7 +42,7 @@
 # smartctl output als mail
   - name: cronjob fuer smartctl-mail
     become: yes
-    cron:
+    ansible.builtin.cron:
       name: smart-mail
       state: present
       job: "/root/smart/smartctl_mail.sh"

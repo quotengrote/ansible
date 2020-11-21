@@ -54,7 +54,7 @@
 
   - name: create restic cronjob
     become: yes
-    cron:
+    ansible.builtin.cron:
       name: restic
       state: present
       job: "/usr/local/bin/restic_backup.sh"

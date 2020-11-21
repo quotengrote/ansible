@@ -36,7 +36,7 @@
 
   - name: lege cronjob fuer "zfs-health.sh" an
     become: yes
-    cron:
+    ansible.builtin.cron:
       name: zfs-health
       state: present
       job: "/usr/local/bin/zfs-health.sh"
@@ -45,7 +45,7 @@
 
   - name: lege cronjob fuer "zfs-scrub" an
     become: yes
-    cron:
+    ansible.builtin.cron:
       name: zfs-scrub - "{{ item.name }}"
       state: present
       job: "{{ pfad_zu_zpool }} scrub {{ item.name }}"
@@ -56,7 +56,7 @@
 
   - name: lege cronjob fuer "zfs-trim" an
     become: yes
-    cron:
+    ansible.builtin.cron:
       name: zfs-trim - "{{ item.name }}"
       state: present
       job: "{{ pfad_zu_zpool }} trim {{ item.name }}"

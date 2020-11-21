@@ -107,7 +107,7 @@
 
   - name: Configure Sanoid Cron Job
     become: true
-    cron:
+    ansible.builtin.cron:
       name: sanoid-cron
       job: /usr/local/bin/sanoid-cron.sh
       minute: "{{ sanoid_cron_minutes }}"
