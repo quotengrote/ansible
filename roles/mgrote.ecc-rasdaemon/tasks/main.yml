@@ -9,13 +9,13 @@
 
   - name: Enable rasdaemon service
     become: true
-    service:
+    ansible.builtin.service:
       name: rasdaemon
       enabled: true
 
   - name: Start rasdaemon service
     become: true
-    service:
+    ansible.builtin.service:
       name: rasdaemon
       state: started
 
