@@ -1,6 +1,6 @@
   - name: Install rasdaemon
     become: true
-    package:
+    ansible.builtin.apt:
       name:
         - rasdaemon
         - logrotate
