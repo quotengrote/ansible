@@ -15,4 +15,5 @@
       to_port: 51820
       comment: 'wireguard'
       interface: ens18
+      protocol: udp
   ufw_etc_default_default_forward_policy: ACCEPT
