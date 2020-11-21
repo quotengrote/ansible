@@ -17,7 +17,7 @@
 
   - name: Extract archives
     become: yes
-    unarchive:
+    ansible.builtin.unarchive:
       src: /tmp/cv4pve/cv4pve-autosnap-linux-x64.zip
       dest: /usr/local/bin/cv4pve
       remote_src: yes

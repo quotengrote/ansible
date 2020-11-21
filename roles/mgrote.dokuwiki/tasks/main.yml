@@ -35,7 +35,7 @@
 
   - name: Unarchive dokuwiki-stable.tgz to {{ dokuwiki_install_path }}
     become: yes
-    unarchive:
+    ansible.builtin.unarchive:
       src: /tmp/dokuwiki-stable.tgz
       dest: "{{ dokuwiki_install_path }}"
       owner: www-data
