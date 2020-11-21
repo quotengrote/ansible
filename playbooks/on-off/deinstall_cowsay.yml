@@ -3,6 +3,6 @@
   tasks:
     - name: cowsay deinstallieren
       become: yes
-      apt:
+      ansible.builtin.apt:
         name: cowsay
         state: absent

@@ -1,7 +1,7 @@
 ---
     - name: install fail2ban-packages
       become: yes
-      apt:
+      ansible.builtin.apt:
         name: fail2ban
         state: present
 

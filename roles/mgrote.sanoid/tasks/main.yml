@@ -1,7 +1,7 @@
 ---
   - name: Install Required Packages
     become: true
-    apt:
+    ansible.builtin.apt:
       name:
         - ca-certificates
         - apt-transport-https
@@ -27,7 +27,7 @@
 
   - name: Install Sanoid Dependencies Packages
     become: true
-    apt:
+    ansible.builtin.apt:
       name:
         - libconfig-inifiles-perl
       force_apt_get: yes

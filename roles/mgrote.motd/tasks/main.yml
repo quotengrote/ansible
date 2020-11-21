@@ -1,6 +1,6 @@
   - name: install fortune
     become: yes
-    apt:
+    ansible.builtin.apt:
       name:
         - fortune
       state: present
@@ -8,7 +8,7 @@
 
   - name: install packages
     become: yes
-    apt:
+    ansible.builtin.apt:
       name:
         - update-motd
       state: present

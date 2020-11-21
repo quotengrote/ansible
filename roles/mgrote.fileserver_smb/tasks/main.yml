@@ -1,6 +1,6 @@
   - name: SAMBA installieren
     become: yes
-    apt:
+    ansible.builtin.apt:
       name:
         - samba
         - cifs-utils

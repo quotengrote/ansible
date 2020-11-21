@@ -3,7 +3,7 @@
   tasks:
     - name: telegraf deinstallieren
       become: yes
-      apt:
+      ansible.builtin.apt:
         name: telegraf
         state: absent
     - name: telegraf-repository entfernen

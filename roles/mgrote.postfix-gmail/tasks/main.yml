@@ -2,7 +2,7 @@
 
   - name: postfix + Hilfsprogramme installieren
     become: yes
-    apt:
+    ansible.builtin.apt:
       name:
         - postfix
         - mailutils

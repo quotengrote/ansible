@@ -11,6 +11,6 @@
 
   - name: apt_update # noqa 503 503
     become: yes
-    apt:
+    ansible.builtin.apt:
       update_cache: yes
     when: copy_src.changed

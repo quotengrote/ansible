@@ -1,6 +1,6 @@
   - name: install restic-packages
     become: yes
-    apt:
+    ansible.builtin.apt:
       name:
         - restic
         - logrotate

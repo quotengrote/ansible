@@ -1,6 +1,6 @@
   - name: install tmux packages
     become: yes
-    apt:
+    ansible.builtin.apt:
       name:
         - tmux
       state: present

@@ -6,5 +6,5 @@
   tasks:
     - name: apt autoremove
       become: yes
-      apt:
+      ansible.builtin.apt:
         autoremove: yes
