@@ -19,7 +19,7 @@
 
   - name: Erstelle Linux-Nutzer #kommt aus vars im playbook
     become: yes
-    user:
+    ansible.builtin.user:
       name: "{{ item.name }}"
       group: "{{ item.groups }}"
       state: present
@@ -30,7 +30,7 @@
 
   - name: Loesche alte Linux-Nutzer #kommt aus vars im playbook
     become: yes
-    user:
+    ansible.builtin.user:
       name: "{{ item.name }}"
       state: absent
     loop: "{{ smb_nutzer_loeschen }}"

@@ -1,6 +1,6 @@
   - name: Erstelle Nutzer
     become: yes
-    user:
+    ansible.builtin.user:
       name: "{{ create_user_name }}"
       groups: "{{ create_user_groups }}"
       state: present
