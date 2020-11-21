@@ -26,7 +26,7 @@
 
   - name: copy hddtemps.sh
     become: yes
-    template:
+    ansible.builtin.template:
       src: "hddtemps.sh"
       dest: "/usr/local/bin/hddtemps.sh"
       mode: a+x
@@ -34,7 +34,7 @@
 
   - name: copy systemtemps.sh
     become: yes
-    template:
+    ansible.builtin.template:
       src: "systemtemps.sh"
       dest: "/usr/local/bin/systemtemps.sh"
       mode: a+x

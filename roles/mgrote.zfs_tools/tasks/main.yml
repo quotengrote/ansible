@@ -70,7 +70,7 @@
 
   - name: kopiere zed.rc
     become: yes
-    template:
+    ansible.builtin.template:
       owner: root
       mode: 0600
       src: zed.rc
@@ -79,14 +79,14 @@
 
   - name: copy zfs-free.sh
     become: yes
-    template:
+    ansible.builtin.template:
       mode: 0555
       src: zfs-free.sh
       dest: /usr/local/bin/zfs-free.sh
 
   - name: Erlaube "non-root" Usern Read-Only ZFS Commands
     become: yes
-    template:
+    ansible.builtin.template:
       src: sudoers_zfs
       dest: /etc/sudoers.d/zfs
       owner: root

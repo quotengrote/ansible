@@ -58,7 +58,7 @@
 
   - name: setup new motd - fortune
     become: yes
-    template:
+    ansible.builtin.template:
       src: '05-fortune-mgrote'
       dest: '/etc/update-motd.d/05-fortune-mgrote'
       owner: root
@@ -76,7 +76,7 @@
 
   - name: setup new motd - wetter
     become: yes
-    template:
+    ansible.builtin.template:
       src: '10-wetter-mgrote'
       dest: '/etc/update-motd.d/10-wetter-mgrote'
       owner: root

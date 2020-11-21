@@ -10,7 +10,7 @@
 
   - name: apcupsd kopieren
     become: yes
-    template:
+    ansible.builtin.template:
       src: "apcupsd"
       dest: "/etc/default/apcupsd"
 
@@ -24,7 +24,7 @@
 
   - name: apcupsd.conf_kopieren
     become: yes
-    template:
+    ansible.builtin.template:
       src: "apcupsd.conf"
       dest: "/etc/apcupsd/apcupsd.conf"
     notify: restart_apcupsd #benachrchtigt handlers/main.yml-restart-apcupsd_restart um den dient neuzustarten, nur wenn hier status "changed" ausgeworfen wird"

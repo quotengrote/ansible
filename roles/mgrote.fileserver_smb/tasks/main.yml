@@ -45,7 +45,7 @@
 
   - name: "Konfiguriere Freigaben"
     become: yes
-    template:
+    ansible.builtin.template:
       src: smb.conf.j2
       dest: /etc/samba/smb.conf
       validate: 'testparm -s %s'

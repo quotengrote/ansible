@@ -11,13 +11,13 @@
 
   - name: copy restic_backup.sh
     become: yes
-    template:
+    ansible.builtin.template:
       src: "restic_backup.sh"
       dest: "/usr/local/bin/restic_backup.sh"
       mode: a+x
   - name: copy exclude.txt
     become: yes
-    template:
+    ansible.builtin.template:
       src: "exclude.txt"
       dest: "/etc/restic/exclude.txt"
 

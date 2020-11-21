@@ -11,7 +11,7 @@
 
   - name: kopiere sasl_passwd
     become: yes
-    template:
+    ansible.builtin.template:
       src: sasl_passwd
       dest: /etc/postfix/sasl_passwd
       force: yes
@@ -21,7 +21,7 @@
 
   - name: kopiere postfix_main.cf
     become: yes
-    template:
+    ansible.builtin.template:
       src: main.cf
       dest: /etc/postfix/main.cf
     notify:

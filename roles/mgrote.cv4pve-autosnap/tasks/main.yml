@@ -25,7 +25,7 @@
 
   - name: copy bash-script
     become: yes
-    template:
+    ansible.builtin.template:
       src: "cv4pve-script.sh"
       dest: "/usr/local/bin/cv4pve/cv4pve-script.sh"
       mode: a+x

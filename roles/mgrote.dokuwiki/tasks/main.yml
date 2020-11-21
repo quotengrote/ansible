@@ -65,14 +65,14 @@
 
   - name: copy apache2.conf
     become: yes
-    template:
+    ansible.builtin.template:
       src: "apache2.conf"
       dest: "/etc/apache2/apache2.conf"
     notify: restart_apache2
 
   - name: copy 000-default.conf
     become: yes
-    template:
+    ansible.builtin.template:
       src: "000-default.conf"
       dest: "/etc/apache2/sites-enabled/000-default.conf"
     notify: restart_apache2

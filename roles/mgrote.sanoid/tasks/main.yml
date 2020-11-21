@@ -98,7 +98,7 @@
 
   - name: Generate Sanoid Cron Scripts
     become: true
-    template:
+    ansible.builtin.template:
       src: sanoid-cron.sh
       dest: /usr/local/bin/sanoid-cron.sh
       owner: root

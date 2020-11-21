@@ -27,7 +27,7 @@
 
   - name: create .selected_editor
     become: yes
-    template:
+    ansible.builtin.template:
       src: ".selected_editor"
       dest: "/home/{{ create_user_name }}/.selected_editor"
 #    no_log: true
@@ -35,7 +35,7 @@
   # Validate the sudoers file before saving
   - name: set sudo without  password
     become: yes
-    template:
+    ansible.builtin.template:
       src: sudoers
       dest: /etc/sudoers.d/{{ create_user_name }}
       validate: /usr/sbin/visudo -cf %s

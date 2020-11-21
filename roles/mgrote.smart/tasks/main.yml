@@ -7,14 +7,14 @@
 
   - name: smartmontools kopieren
     become: yes
-    template:
+    ansible.builtin.template:
       src: "smartmontools"
       dest: "/etc/default/smartmontools"
     notify: smartmontools_starten_aktivieren
 
   - name: smartd.conf kopieren
     become: yes
-    template:
+    ansible.builtin.template:
       src: "smartd.conf"
       dest: "/etc/smartd.conf"
     notify: smartmontools_starten_aktivieren
@@ -27,14 +27,14 @@
 
   - name: smartctl_mail.sh kopieren
     become: yes
-    template:
+    ansible.builtin.template:
       src: "smartctl_mail.sh"
       dest: "/root/smart/smartctl_mail.sh"
       mode: a+x
 
   - name: smart_status.sh kopieren
     become: yes
-    template:
+    ansible.builtin.template:
       src: "smart_status.sh"
       dest: "/usr/local/bin/smart_status.sh"
       mode: a+x

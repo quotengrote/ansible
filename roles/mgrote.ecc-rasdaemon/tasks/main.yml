@@ -51,7 +51,7 @@
 
   - name: rasdaemon-cron kopieren
     become: yes
-    template:
+    ansible.builtin.template:
       src: rasdaemon-cron.sh
       dest: "/usr/local/bin/rasdaemon-cron.sh"
       mode: a+x

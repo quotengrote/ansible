@@ -14,7 +14,7 @@
 
 #  - name: copy .tmux.conf
 #    become: yes
-#    template:
+#    ansible.builtin.template:
 #      src: ".tmux.conf"
 #      dest: "{{ tmux_conf_destination }}"
 #      backup: true
