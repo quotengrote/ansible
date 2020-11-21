@@ -7,7 +7,13 @@
     roles:
       - { role: robertdebock.bootstrap, tags: "bootstrap" }
       - { role: ryandaniels.create_users, tags: "user", become: yes }
+      - { role: nickjj.ansible-user, tag: "ansible", become: yes }
+
     vars:
+      ### nickjj.ansible-users
+      user_name: "ansible-user"
+      user_local_ssh_key_path: "/home/mg/ansible/id_rsa_ansible_user_pub"
+      user_enable_passwordless_sudo: True
       ### reobertdebock.bootstrap
       bootstrap_user: mg
       bootstrap_wait_for_host: no
