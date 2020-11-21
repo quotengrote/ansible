@@ -1,13 +1,13 @@
 ---
     - name: install fail2ban-packages
       become: yes
-      apt:
+      ansible.builtin.apt:
         name: fail2ban
         state: present
 
     - name: copy jail.local
       become: yes
-      template:
+      ansible.builtin.template:
         src: jail.local
         dest: /etc/fail2ban/jail.local
         mode: 0750
@@ -15,7 +15,7 @@
 
     - name: copy sendmail-common.local
       become: yes
-      template:
+      ansible.builtin.template:
         src: sendmail-common.local
         dest: /etc/fail2ban/action.d/sendmail-common.local
         mode: 0750

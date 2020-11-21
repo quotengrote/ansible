@@ -1,6 +1,6 @@
   - name: zfs-tools installieren
     become: yes
-    apt:
+    ansible.builtin.apt:
       name:
         - zfsutils
         - zfs-initramfs
@@ -9,34 +9,34 @@
 
   - name: Limit ZFS Memory Usage
     become: yes
-    lineinfile:
+    ansible.builtin.lineinfile:
       path: /etc/modprobe.d/zfs.conf
       line: options zfs zfs_arc_max={{ zfs_arc_max }}
       create: yes
 
   - name: remove system scrub job #https://forum.proxmox.com/threads/script-sequential-zfs-scrub-for-cron.25124/
     become: true
-    lineinfile:
+    ansible.builtin.lineinfile:
       path: /etc/cron.d/zfsutils-linux
       state: absent
       line: '24 0 8-14 * * root [ $(date +\%w) -eq 0 ] && [ -x /usr/lib/zfs-linux/scrub ] && /usr/lib/zfs-linux/scrub'
 
   - name: erstelle Ordner "root-zfs"
     become: yes
-    file:
+    ansible.builtin.file:
       path: /root/zfs
       state: directory
 
   - name: kopiere "zfs-health.sh"
     become: yes
-    template:
+    ansible.builtin.template:
       src: zfs-health.sh
       dest: /usr/local/bin/zfs-health.sh
       mode: "+x"
 
   - name: lege cronjob fuer "zfs-health.sh" an
     become: yes
-    cron:
+    ansible.builtin.cron:
       name: zfs-health
       state: present
       job: "/usr/local/bin/zfs-health.sh"
@@ -45,7 +45,7 @@
 
   - name: lege cronjob fuer "zfs-scrub" an
     become: yes
-    cron:
+    ansible.builtin.cron:
       name: zfs-scrub - "{{ item.name }}"
       state: present
       job: "{{ pfad_zu_zpool }} scrub {{ item.name }}"
@@ -56,7 +56,7 @@
 
   - name: lege cronjob fuer "zfs-trim" an
     become: yes
-    cron:
+    ansible.builtin.cron:
       name: zfs-trim - "{{ item.name }}"
       state: present
       job: "{{ pfad_zu_zpool }} trim {{ item.name }}"
@@ -70,7 +70,7 @@
 
   - name: kopiere zed.rc
     become: yes
-    template:
+    ansible.builtin.template:
       owner: root
       mode: 0600
       src: zed.rc
@@ -79,14 +79,14 @@
 
   - name: copy zfs-free.sh
     become: yes
-    template:
+    ansible.builtin.template:
       mode: 0555
       src: zfs-free.sh
       dest: /usr/local/bin/zfs-free.sh
 
   - name: Erlaube "non-root" Usern Read-Only ZFS Commands
     become: yes
-    template:
+    ansible.builtin.template:
       src: sudoers_zfs
       dest: /etc/sudoers.d/zfs
       owner: root

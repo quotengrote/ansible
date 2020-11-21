@@ -1,6 +1,6 @@
   - name: install tmux packages
     become: yes
-    apt:
+    ansible.builtin.apt:
       name:
         - tmux
       state: present
@@ -8,20 +8,20 @@
 
 #  - name: ensure homedir exists
 #    become: yes
-#    file:
+#    ansible.builtin.file:
 #      path: " {{ tmux_conf_destination }}"
 #      state: directory
 
 #  - name: copy .tmux.conf
 #    become: yes
-#    template:
+#    ansible.builtin.template:
 #      src: ".tmux.conf"
 #      dest: "{{ tmux_conf_destination }}"
 #      backup: true
 
   - name: add tmux-session config to .bashrc
     become: yes
-    blockinfile:
+    ansible.builtin.blockinfile:
       path: "{{ tmux_bashrc_destination }}"
       block: |
         if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then

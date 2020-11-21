@@ -2,7 +2,7 @@
 # deb http://{{ acng_server }}:{{ acng_server_port }}/security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security multiverse
   - name: sources.list kopieren
     become: yes
-    template:
+    ansible.builtin.template:
       src: "sources.list"
       dest: "/etc/apt/sources.list"
       backup: yes
@@ -11,6 +11,6 @@
 
   - name: apt_update # noqa 503 503
     become: yes
-    apt:
+    ansible.builtin.apt:
       update_cache: yes
     when: copy_src.changed

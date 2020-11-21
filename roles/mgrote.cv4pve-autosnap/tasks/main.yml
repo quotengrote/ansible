@@ -1,7 +1,7 @@
 ---
   - name: create directories
     become: yes
-    file:
+    ansible.builtin.file:
       path: "{{ item }}"
       state: directory
     loop:
@@ -10,14 +10,14 @@
 
   - name: download archives
     become: yes
-    get_url: ## hier variable für version
+    ansible.builtin.get_url: ## hier variable für version
       url: https://github.com/Corsinvest/cv4pve-autosnap/releases/download/{{ cv4pve_version }}/cv4pve-autosnap-linux-x64.zip
       dest: /tmp/cv4pve/cv4pve-autosnap-linux-x64.zip
       mode: '0775'
 
   - name: Extract archives
     become: yes
-    unarchive:
+    ansible.builtin.unarchive:
       src: /tmp/cv4pve/cv4pve-autosnap-linux-x64.zip
       dest: /usr/local/bin/cv4pve
       remote_src: yes
@@ -25,14 +25,14 @@
 
   - name: copy bash-script
     become: yes
-    template:
+    ansible.builtin.template:
       src: "cv4pve-script.sh"
       dest: "/usr/local/bin/cv4pve/cv4pve-script.sh"
       mode: a+x
 
   - name: create cronjob
     become: yes
-    cron:
+    ansible.builtin.cron:
       name: cv4pve-autosnap
       state: present
       job: "/usr/local/bin/cv4pve/cv4pve-script.sh"
@@ -41,7 +41,7 @@
 
   - name: Create log
     become: true
-    file:
+    ansible.builtin.file:
       path: /var/log/cv4pve-autosnap.log
       state: touch
       owner: root
@@ -52,7 +52,7 @@
 
   - name: Add Log to be Rotated
     become: true
-    blockinfile:
+    ansible.builtin.blockinfile:
       path: /etc/logrotate.d/cv4pve-autosnap
       state: present
       create: yes

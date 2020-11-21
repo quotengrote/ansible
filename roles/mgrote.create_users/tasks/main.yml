@@ -1,6 +1,6 @@
   - name: Erstelle Nutzer
     become: yes
-    user:
+    ansible.builtin.user:
       name: "{{ create_user_name }}"
       groups: "{{ create_user_groups }}"
       state: present
@@ -14,7 +14,7 @@
   - name: touch ".sudo_as_admin_successful"
     become: yes
 #    when: sudo_as_admin_successful_existiert.stat.exists == False
-    file:
+    ansible.builtin.file:
       path: /home/{{ create_user_name }}/.sudo_as_admin_successful
       state: touch
       access_time: preserve
@@ -27,7 +27,7 @@
 
   - name: create .selected_editor
     become: yes
-    template:
+    ansible.builtin.template:
       src: ".selected_editor"
       dest: "/home/{{ create_user_name }}/.selected_editor"
 #    no_log: true
@@ -35,7 +35,7 @@
   # Validate the sudoers file before saving
   - name: set sudo without  password
     become: yes
-    template:
+    ansible.builtin.template:
       src: sudoers
       dest: /etc/sudoers.d/{{ create_user_name }}
       validate: /usr/sbin/visudo -cf %s

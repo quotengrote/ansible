@@ -1,7 +1,7 @@
 ---
   - name: Install Required Packages
     become: true
-    apt:
+    ansible.builtin.apt:
       name:
         - ca-certificates
         - apt-transport-https
@@ -15,7 +15,7 @@
 
   - name: Create Sanoid Directory
     become: true
-    file:
+    ansible.builtin.file:
       path: "{{ item }}"
       state: directory
       owner: root
@@ -27,7 +27,7 @@
 
   - name: Install Sanoid Dependencies Packages
     become: true
-    apt:
+    ansible.builtin.apt:
       name:
         - libconfig-inifiles-perl
       force_apt_get: yes
@@ -38,7 +38,7 @@
 
   - name: Install Sanoid Binary
     become: true
-    get_url:
+    ansible.builtin.get_url:
       url: https://raw.githubusercontent.com/jimsalterjrs/sanoid/master/sanoid
       dest: /usr/local/bin/sanoid
       owner: root
@@ -47,7 +47,7 @@
 
   - name: Install Sanoid Defaults Configuration
     become: true
-    get_url:
+    ansible.builtin.get_url:
       url: https://raw.githubusercontent.com/jimsalterjrs/sanoid/master/sanoid.defaults.conf
       dest: /etc/sanoid/sanoid.defaults.conf
       owner: root
@@ -56,7 +56,7 @@
 
   - name: Generate Sanoid Configuration
     become: true
-    template:
+    ansible.builtin.template:
       src: sanoid.conf.j2
       dest: /etc/sanoid/sanoid.conf
       owner: root
@@ -65,7 +65,7 @@
 
   - name: Create Sanoid Log
     become: true
-    file:
+    ansible.builtin.file:
       path: /var/log/sanoid-cron.log
       state: touch
       owner: root
@@ -76,7 +76,7 @@
 
   - name: Add Sanoid Log to be Rotated
     become: true
-    blockinfile:
+    ansible.builtin.blockinfile:
       path: /etc/logrotate.d/sanoid
       state: present
       create: yes
@@ -98,7 +98,7 @@
 
   - name: Generate Sanoid Cron Scripts
     become: true
-    template:
+    ansible.builtin.template:
       src: sanoid-cron.sh
       dest: /usr/local/bin/sanoid-cron.sh
       owner: root
@@ -107,7 +107,7 @@
 
   - name: Configure Sanoid Cron Job
     become: true
-    cron:
+    ansible.builtin.cron:
       name: sanoid-cron
       job: /usr/local/bin/sanoid-cron.sh
       minute: "{{ sanoid_cron_minutes }}"

@@ -2,7 +2,7 @@
 
   - name: postfix + Hilfsprogramme installieren
     become: yes
-    apt:
+    ansible.builtin.apt:
       name:
         - postfix
         - mailutils
@@ -11,7 +11,7 @@
 
   - name: kopiere sasl_passwd
     become: yes
-    template:
+    ansible.builtin.template:
       src: sasl_passwd
       dest: /etc/postfix/sasl_passwd
       force: yes
@@ -21,7 +21,7 @@
 
   - name: kopiere postfix_main.cf
     become: yes
-    template:
+    ansible.builtin.template:
       src: main.cf
       dest: /etc/postfix/main.cf
     notify:
@@ -31,7 +31,7 @@
   - name: Mail Cronjob - Anlegen
     become: yes
     when: mail_nach_cronjob # ohne parameter wird auf true geprueft  https://www.buildahomelab.com/2018/11/12/using-ansible-when-statements/
-    cron:
+    ansible.builtin.cron:
       name: MAILTO
       env: yes
       job: "{{ empfaenger_mail }}"
@@ -41,7 +41,7 @@
   - name: Mail Cronjob - Entfernen
     become: yes
     when: not mail_nach_cronjob
-    cron:
+    ansible.builtin.cron:
       name: MAILTO
       env: yes
       job: ""

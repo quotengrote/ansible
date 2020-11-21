@@ -4,7 +4,7 @@
 
   tasks:
     - name: Setze DNS-Resolver fuer pihole-*
-      lineinfile:
+      ansible.builtin.lineinfile:
         path: /etc/resolv.conf.head
         line: nameserver 192.168.2.2
         create: yes

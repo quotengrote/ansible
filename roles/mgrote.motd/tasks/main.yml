@@ -1,6 +1,6 @@
   - name: install fortune
     become: yes
-    apt:
+    ansible.builtin.apt:
       name:
         - fortune
       state: present
@@ -8,7 +8,7 @@
 
   - name: install packages
     become: yes
-    apt:
+    ansible.builtin.apt:
       name:
         - update-motd
       state: present
@@ -16,7 +16,7 @@
 ##################
   - name: 'Ubuntu : remove motd'
     become: yes
-    file:
+    ansible.builtin.file:
       path: '/etc/update-motd.d/{{ item }}'
       state: absent
     with_items:
@@ -34,7 +34,7 @@
 ##################
   - name: delete "Last Login" - Message
     become: yes
-    lineinfile:
+    ansible.builtin.lineinfile:
       path: /etc/ssh/sshd_config
       regexp: "#PrintLastLog yes"
       line: "PrintLastLog no"
@@ -43,7 +43,7 @@
 
   - name: setup new motd
     become: yes
-    template:
+    ansible.builtin.template:
       src: '{{ item }}'
       dest: '/etc/update-motd.d/{{ item }}'
       owner: root
@@ -58,7 +58,7 @@
 
   - name: setup new motd - fortune
     become: yes
-    template:
+    ansible.builtin.template:
       src: '05-fortune-mgrote'
       dest: '/etc/update-motd.d/05-fortune-mgrote'
       owner: root
@@ -69,14 +69,14 @@
 
   - name: delete fortune
     become: yes
-    file:
+    ansible.builtin.file:
       path: /etc/update-motd.d/05-fortune-mgrote
       state: absent
     when: not motd_fortune_aktiv
 
   - name: setup new motd - wetter
     become: yes
-    template:
+    ansible.builtin.template:
       src: '10-wetter-mgrote'
       dest: '/etc/update-motd.d/10-wetter-mgrote'
       owner: root
@@ -87,7 +87,7 @@
 
   - name: delete Wetter
     become: yes
-    file:
+    ansible.builtin.file:
       path: '/etc/update-motd.d/10-wetter-mgrote'
       state: absent
     when: not motd_wetter_aktiv

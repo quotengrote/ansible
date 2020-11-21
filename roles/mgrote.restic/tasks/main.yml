@@ -1,6 +1,6 @@
   - name: install restic-packages
     become: yes
-    apt:
+    ansible.builtin.apt:
       name:
         - restic
         - logrotate
@@ -8,13 +8,13 @@
 
   - name: create /etc/restic
     become: yes
-    file:
+    ansible.builtin.file:
       path: /etc/restic
       state: directory
 
   - name: create restic mount-directory
     become: yes
-    file:
+    ansible.builtin.file:
       path: "{{ restic_mount }}"
       state: directory
       owner: root
@@ -23,7 +23,7 @@
 
   - name: copy smb_password.txt
     become: yes
-    template:
+    ansible.builtin.template:
       src: "smb_password.txt"
       dest: "/etc/restic/smb_password.txt"
       owner: root
@@ -32,20 +32,20 @@
 
   - name: copy restic_backup.sh
     become: yes
-    template:
+    ansible.builtin.template:
       src: "restic_backup.sh"
       dest: "/usr/local/bin/restic_backup.sh"
       mode: a+x
 
   - name: copy exclude.txt
     become: yes
-    template:
+    ansible.builtin.template:
       src: "exclude.txt"
       dest: "/etc/restic/exclude.txt"
 
   - name: copy password.txt
     become: yes
-    template:
+    ansible.builtin.template:
       src: "password.txt"
       dest: "/etc/restic/password.txt"
       owner: root
@@ -54,7 +54,7 @@
 
   - name: create restic cronjob
     become: yes
-    cron:
+    ansible.builtin.cron:
       name: restic
       state: present
       job: "/usr/local/bin/restic_backup.sh"
@@ -64,7 +64,7 @@
 
   - name: Create restic log
     become: true
-    file:
+    ansible.builtin.file:
       path: /var/log/restic.log
       state: touch
       owner: root
@@ -75,7 +75,7 @@
 
   - name: Add restic Log to be Rotated
     become: true
-    blockinfile:
+    ansible.builtin.blockinfile:
       path: /etc/logrotate.d/restic
       state: present
       create: yes

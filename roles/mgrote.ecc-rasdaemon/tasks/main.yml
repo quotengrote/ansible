@@ -1,6 +1,6 @@
   - name: Install rasdaemon
     become: true
-    package:
+    ansible.builtin.apt:
       name:
         - rasdaemon
         - logrotate
@@ -9,19 +9,19 @@
 
   - name: Enable rasdaemon service
     become: true
-    service:
+    ansible.builtin.service:
       name: rasdaemon
       enabled: true
 
   - name: Start rasdaemon service
     become: true
-    service:
+    ansible.builtin.service:
       name: rasdaemon
       state: started
 
   - name: Create rasdaemon log
     become: true
-    file:
+    ansible.builtin.file:
       path: /var/log/rasdaemon.log
       state: touch
       access_time: preserve
@@ -29,7 +29,7 @@
 
   - name: Add rasdaemon Log to be Rotated
     become: true
-    blockinfile:
+    ansible.builtin.blockinfile:
       path: /etc/logrotate.d/rasdaemon
       state: present
       create: yes
@@ -51,14 +51,14 @@
 
   - name: rasdaemon-cron kopieren
     become: yes
-    template:
+    ansible.builtin.template:
       src: rasdaemon-cron.sh
       dest: "/usr/local/bin/rasdaemon-cron.sh"
       mode: a+x
 
   - name: create cronjob
     become: yes
-    cron:
+    ansible.builtin.cron:
       name: rasdaemon-log
       state: present
       job: /usr/local/bin/rasdaemon-cron.sh
