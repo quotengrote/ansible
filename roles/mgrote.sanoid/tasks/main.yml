@@ -38,7 +38,7 @@
 
   - name: Install Sanoid Binary
     become: true
-    get_url:
+    ansible.builtin.get_url:
       url: https://raw.githubusercontent.com/jimsalterjrs/sanoid/master/sanoid
       dest: /usr/local/bin/sanoid
       owner: root
@@ -47,7 +47,7 @@
 
   - name: Install Sanoid Defaults Configuration
     become: true
-    get_url:
+    ansible.builtin.get_url:
       url: https://raw.githubusercontent.com/jimsalterjrs/sanoid/master/sanoid.defaults.conf
       dest: /etc/sanoid/sanoid.defaults.conf
       owner: root

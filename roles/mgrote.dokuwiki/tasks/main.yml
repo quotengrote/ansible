@@ -20,7 +20,7 @@
 
   - name: Download latest dokuwiki
     become: yes
-    get_url:
+    ansible.builtin.get_url:
       url: https://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz
       dest: /tmp/dokuwiki-stable.tgz
     when: dokuwiki_update  # noqa 601  # entspricht when: dokuwiki_update == true; noqa sorgt dafür dass das beispiel nicht "gemeldet" wird
