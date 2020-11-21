@@ -1,7 +1,7 @@
 ---
   - name: create directories
     become: yes
-    file:
+    ansible.builtin.file:
       path: "{{ item }}"
       state: directory
     loop:
@@ -41,7 +41,7 @@
 
   - name: Create log
     become: true
-    file:
+    ansible.builtin.file:
       path: /var/log/cv4pve-autosnap.log
       state: touch
       owner: root

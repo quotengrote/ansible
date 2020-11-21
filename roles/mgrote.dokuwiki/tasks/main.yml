@@ -27,7 +27,7 @@
 
   - name: create dokuwiki install path
     become: yes
-    file:
+    ansible.builtin.file:
       path: "{{ dokuwiki_install_path }}"
       state: directory
       owner: www-data
@@ -46,7 +46,7 @@
 
   - name: Remove default plugins
     become: yes
-    file:
+    ansible.builtin.file:
       path: '{{ dokuwiki_install_path }}/lib/plugins/{{ item }}'
       state: absent
     with_items:
@@ -58,7 +58,7 @@
 
   - name: Change file ownership, group and permissions
     become: yes
-    file:
+    ansible.builtin.file:
       path: "{{ dokuwiki_install_path }}"
       owner: www-data
       group: www-data
@@ -79,13 +79,13 @@
 
   - name: remove tmp files
     become: yes
-    file:
+    ansible.builtin.file:
       path: /tmp/dokuwiki-stable.tgz
       state: absent
 
   - name: remove install.php
     become: yes
-    file:
+    ansible.builtin.file:
       path: '{{ dokuwiki_install_path }}/install.php'
       state: absent
     when: not dokuwiki_install # noqa 601  # entspricht when: dokuwiki_update == true; noqa sorgt dafür dass das beispiel nicht "gemeldet" wird # entspricht == false

@@ -37,7 +37,7 @@
 
   - name: Erstelle Freigabeordner
     become: yes
-    file:
+    ansible.builtin.file:
       path: "{{ item.ordnerpfad }}"
       state: directory
       mode: 0777

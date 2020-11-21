@@ -1,7 +1,7 @@
 # für scripte
   - name: create /etc/restic
     become: yes
-    file:
+    ansible.builtin.file:
       path: /etc/restic
       state: directory
 
@@ -23,7 +23,7 @@
 
   - name: Create restic log
     become: true
-    file:
+    ansible.builtin.file:
       path: /var/log/restic.log
       state: touch
       owner: root

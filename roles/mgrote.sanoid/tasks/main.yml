@@ -15,7 +15,7 @@
 
   - name: Create Sanoid Directory
     become: true
-    file:
+    ansible.builtin.file:
       path: "{{ item }}"
       state: directory
       owner: root
@@ -65,7 +65,7 @@
 
   - name: Create Sanoid Log
     become: true
-    file:
+    ansible.builtin.file:
       path: /var/log/sanoid-cron.log
       state: touch
       owner: root

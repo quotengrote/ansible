@@ -21,7 +21,7 @@
 
   - name: Create rasdaemon log
     become: true
-    file:
+    ansible.builtin.file:
       path: /var/log/rasdaemon.log
       state: touch
       access_time: preserve

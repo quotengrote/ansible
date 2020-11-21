@@ -23,7 +23,7 @@
 
   - name: erstelle Ordner "root-zfs"
     become: yes
-    file:
+    ansible.builtin.file:
       path: /root/zfs
       state: directory
 

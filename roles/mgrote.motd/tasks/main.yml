@@ -16,7 +16,7 @@
 ##################
   - name: 'Ubuntu : remove motd'
     become: yes
-    file:
+    ansible.builtin.file:
       path: '/etc/update-motd.d/{{ item }}'
       state: absent
     with_items:
@@ -69,7 +69,7 @@
 
   - name: delete fortune
     become: yes
-    file:
+    ansible.builtin.file:
       path: /etc/update-motd.d/05-fortune-mgrote
       state: absent
     when: not motd_fortune_aktiv
@@ -87,7 +87,7 @@
 
   - name: delete Wetter
     become: yes
-    file:
+    ansible.builtin.file:
       path: '/etc/update-motd.d/10-wetter-mgrote'
       state: absent
     when: not motd_wetter_aktiv

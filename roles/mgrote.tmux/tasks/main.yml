@@ -8,7 +8,7 @@
 
 #  - name: ensure homedir exists
 #    become: yes
-#    file:
+#    ansible.builtin.file:
 #      path: " {{ tmux_conf_destination }}"
 #      state: directory
 

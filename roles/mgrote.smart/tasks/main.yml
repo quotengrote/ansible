@@ -21,7 +21,7 @@
 
   - name: Ordner "smart" erstellen
     become: yes
-    file:
+    ansible.builtin.file:
       path: "/root/smart"
       state: directory
 

@@ -2,7 +2,7 @@
   # https://github.com/viczem/ansible-keepass#readme
   - name: create ~/.ansible/plugins/lookup
     become: yes
-    file:
+    ansible.builtin.file:
       path: /home/mg/.ansible/plugins/lookup
       state: directory
 

@@ -14,7 +14,7 @@
   - name: touch ".sudo_as_admin_successful"
     become: yes
 #    when: sudo_as_admin_successful_existiert.stat.exists == False
-    file:
+    ansible.builtin.file:
       path: /home/{{ create_user_name }}/.sudo_as_admin_successful
       state: touch
       access_time: preserve
