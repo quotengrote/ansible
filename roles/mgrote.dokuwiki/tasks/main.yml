@@ -14,7 +14,7 @@
   # aktiviert das module rewrite = a2enmod rewrite
   - name: activate a2enmod rewrite
     become: yes
-    apache2_module:
+    ansible.builtin.apache2_module:
       state: present
       name: rewrite
 
