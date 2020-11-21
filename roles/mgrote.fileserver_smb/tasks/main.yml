@@ -11,7 +11,7 @@
 
   - name: Erstelle Linux-Gruppen # vat /etc/group  #kommt aus vars im playbook
     become: yes
-    group:
+    ansible.builtin.group:
       name: "{{ item.groups }}"
       state: present
     loop: "{{ smb_nutzer }}"
