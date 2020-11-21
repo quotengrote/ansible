@@ -9,14 +9,14 @@
 
   - name: Limit ZFS Memory Usage
     become: yes
-    lineinfile:
+    ansible.builtin.lineinfile:
       path: /etc/modprobe.d/zfs.conf
       line: options zfs zfs_arc_max={{ zfs_arc_max }}
       create: yes
 
   - name: remove system scrub job #https://forum.proxmox.com/threads/script-sequential-zfs-scrub-for-cron.25124/
     become: true
-    lineinfile:
+    ansible.builtin.lineinfile:
       path: /etc/cron.d/zfsutils-linux
       state: absent
       line: '24 0 8-14 * * root [ $(date +\%w) -eq 0 ] && [ -x /usr/lib/zfs-linux/scrub ] && /usr/lib/zfs-linux/scrub'

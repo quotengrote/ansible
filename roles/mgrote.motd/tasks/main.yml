@@ -34,7 +34,7 @@
 ##################
   - name: delete "Last Login" - Message
     become: yes
-    lineinfile:
+    ansible.builtin.lineinfile:
       path: /etc/ssh/sshd_config
       regexp: "#PrintLastLog yes"
       line: "PrintLastLog no"

@@ -16,7 +16,7 @@
 
   - name: empfaenger_mail_setzen
     become: yes
-    lineinfile:
+    ansible.builtin.lineinfile:
       path: /etc/apcupsd/apccontrol #wo
       regexp: export SYSADMIN=root #suche nach
       line: export SYSADMIN={{ empfaenger_mail }} #ersetze durch...
