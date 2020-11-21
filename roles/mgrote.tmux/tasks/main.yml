@@ -21,7 +21,7 @@
 
   - name: add tmux-session config to .bashrc
     become: yes
-    blockinfile:
+    ansible.builtin.blockinfile:
       path: "{{ tmux_bashrc_destination }}"
       block: |
         if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then

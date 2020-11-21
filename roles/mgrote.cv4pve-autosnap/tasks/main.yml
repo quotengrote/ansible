@@ -52,7 +52,7 @@
 
   - name: Add Log to be Rotated
     become: true
-    blockinfile:
+    ansible.builtin.blockinfile:
       path: /etc/logrotate.d/cv4pve-autosnap
       state: present
       create: yes

@@ -76,7 +76,7 @@
 
   - name: Add Sanoid Log to be Rotated
     become: true
-    blockinfile:
+    ansible.builtin.blockinfile:
       path: /etc/logrotate.d/sanoid
       state: present
       create: yes

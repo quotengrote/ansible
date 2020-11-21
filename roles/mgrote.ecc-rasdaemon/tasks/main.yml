@@ -29,7 +29,7 @@
 
   - name: Add rasdaemon Log to be Rotated
     become: true
-    blockinfile:
+    ansible.builtin.blockinfile:
       path: /etc/logrotate.d/rasdaemon
       state: present
       create: yes

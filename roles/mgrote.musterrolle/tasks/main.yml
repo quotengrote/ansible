@@ -34,7 +34,7 @@
 
   - name: Add restic Log to be Rotated
     become: true
-    blockinfile:
+    ansible.builtin.blockinfile:
       path: /etc/logrotate.d/restic
       state: present
       create: yes
