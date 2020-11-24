@@ -16,8 +16,8 @@
 [submodule "roles/hedii.youtube-dl"]
 	path = roles/hedii.youtube-dl
 	url = https://github.com/hedii/ansible-role-youtube-dl
-[submodule "roles/ironicbadger.ansible-role-nag-removal"]
-	path = roles/ironicbadger.ansible-role-nag-removal
+[submodule "roles/ironicbadger.proxmox-nag-removal"]
+	path = roles/ironicbadger.proxmox-nag-removal
 	url = https://github.com/IronicBadger/ansible-role-proxmox-nag-removal
 [submodule "roles/nickjj.ansible-user"]
 	path = roles/nickjj.ansible-user
