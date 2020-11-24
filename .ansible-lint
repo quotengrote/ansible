@@ -12,6 +12,7 @@ skip_list:
   - '701'
   - '208'
   - '106'
+  - '306'
 use_default_rules: true
 verbosity: 0
 # https://github.com/ansible/ansible-lint#false-positives-skipping-rules
