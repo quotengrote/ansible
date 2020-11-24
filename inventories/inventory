@@ -39,34 +39,34 @@ all:
       hosts:
         vm-test.grote.lan:
         lxc-test.grote.lan:
-    baseimage:
-      hosts:
-        vorlagebaseimage.grote.lan:
     virt:
       hosts:
         pve-staging.grote.lan:
         pve-test.grote.lan:
         pve2.grote.lan:
-    wsl:
-      hosts:
-        irantu.grote.lan:
-    qmk:
-      hosts:
-        qmk.grote.lan:
-    ceph:
-      hosts:
-        ceph-1.grote.lan:
-        ceph-2.grote.lan:
-        ceph-3.grote.lan:
-        ceph-4.grote.lan:
-        ceph-5.grote.lan:
-        ceph-6.grote.lan:
-        ceph-7.grote.lan:
-    k8s:
-      hosts:
-        k8s-1.grote.lan:
-        k8s-2.grote.lan:
-        k8s-3.grote.lan:
+#    wsl:
+#      hosts:
+#        irantu.grote.lan:
+#    baseimage:
+#      hosts:
+#        vorlagebaseimage.grote.lan:
+#    qmk:
+#      hosts:
+#        qmk.grote.lan:
+#    ceph:
+#      hosts:
+#        ceph-1.grote.lan:
+#        ceph-2.grote.lan:
+#        ceph-3.grote.lan:
+#        ceph-4.grote.lan:
+#        ceph-5.grote.lan:
+#        ceph-6.grote.lan:
+#        ceph-7.grote.lan:
+#    k8s:
+#      hosts:
+#        k8s-1.grote.lan:
+#        k8s-2.grote.lan:
+#        k8s-3.grote.lan:
 
 
     production:
