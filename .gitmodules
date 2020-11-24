@@ -1,3 +1,6 @@
 [submodule "roles/gantsign.ctop"]
 	path = roles/gantsign.ctop
 	url = https://github.com/gantsign/ansible_role_ctop
+[submodule "roles/geerlingguy.ansible"]
+	path = roles/geerlingguy.ansible
+	url = https://github.com/geerlingguy/ansible-role-ansible
