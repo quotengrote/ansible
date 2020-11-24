@@ -28,3 +28,6 @@
 [submodule "roles/robertdebock.bootstrap"]
 	path = roles/robertdebock.bootstrap
 	url = https://github.com/robertdebock/ansible-role-bootstrap
+[submodule "roles/ryandaniels.create_users"]
+	path = roles/ryandaniels.create_users
+	url = https://github.com/ryandaniels/ansible-role-create-users
