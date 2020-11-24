@@ -4,3 +4,6 @@
 [submodule "roles/geerlingguy.ansible"]
 	path = roles/geerlingguy.ansible
 	url = https://github.com/geerlingguy/ansible-role-ansible
+[submodule "roles/geerlingguy.docker"]
+	path = roles/geerlingguy.docker
+	url = https://github.com/geerlingguy/ansible-role-docker
