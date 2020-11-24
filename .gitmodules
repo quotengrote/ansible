@@ -25,3 +25,6 @@
 [submodule "roles/oefenweb.ufw"]
 	path = roles/oefenweb.ufw
 	url = https://github.com/Oefenweb/ansible-ufw
+[submodule "roles/robertdebock.bootstrap"]
+	path = roles/robertdebock.bootstrap
+	url = https://github.com/robertdebock/ansible-role-bootstrap
