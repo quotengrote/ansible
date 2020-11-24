@@ -7,3 +7,6 @@
 [submodule "roles/geerlingguy.docker"]
 	path = roles/geerlingguy.docker
 	url = https://github.com/geerlingguy/ansible-role-docker
+[submodule "roles/geerlingguy.dotfiles"]
+	path = roles/geerlingguy.dotfiles
+	url = https://github.com/geerlingguy/dotfiles
