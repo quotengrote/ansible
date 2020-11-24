@@ -19,3 +19,6 @@
 [submodule "roles/ironicbadger.ansible-role-nag-removal"]
 	path = roles/ironicbadger.ansible-role-nag-removal
 	url = https://github.com/IronicBadger/ansible-role-proxmox-nag-removal
+[submodule "roles/nickjj.ansible-user"]
+	path = roles/nickjj.ansible-user
+	url = https://github.com/nickjj/ansible-user
