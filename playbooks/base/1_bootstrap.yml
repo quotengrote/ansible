@@ -18,7 +18,6 @@
       bootstrap_user: mg
       bootstrap_wait_for_host: no
       bootstrap_timeout: 1
-      bootstrap_retries: 1
       ### ansible
       ansible_user: "mg"
       ansible_password: "hallowelt"
