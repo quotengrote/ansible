@@ -1,0 +1,26 @@
+---
+- hosts: all
+  tasks:
+    - name: delete /home/mg/.ssh/authorized_keys
+      become: yes
+      ansible.builtin.file:
+        name: /home/mg/.ssh/authorized_keys
+        state: absent
+    - name: delete /home/ansible-user/.ssh/authorized_keys
+      become: yes
+      ansible.builtin.file:
+        name: /home/ansible-user/.ssh/authorized_keys
+        state: absent
+    - name: prohibit ssh login with password
+      become: yes
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: 'PasswordAuthentication no'
+        line: 'PasswordAuthentication yes'
+        state: present
+    - name: restart_sshd
+      become: yes
+      systemd:
+        name: sshd
+        enabled: yes
+        state: restarted
