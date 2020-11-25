@@ -6,7 +6,7 @@ Das Plugin wird bei einer Installation mit dem Playbook "ansible" mit eingericht
 Die "Secrets" liegen in der KeepassDB die mit dem Kennwort aus "vault-pass.yml" verschlüsselt ist.
 "vault-pass.yml" steht mit in der .gitignore
 Die Variable "vault_password_file" ist mit " ~/ansible/vault-pass.yml" in der ansible.cfg gesetzt.
-
+Diese Datei enthält das Passwort mit dem die KeePassDb verschlüsselt ist.
 Das vault-secret für die GroupVars wird mit `ansible-vault encrypt_string <password>` erstellt.
 
 
