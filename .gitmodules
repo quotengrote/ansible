@@ -7,9 +7,6 @@
 [submodule "roles/geerlingguy.docker"]
 	path = roles/geerlingguy.docker
 	url = https://github.com/geerlingguy/ansible-role-docker
-[submodule "roles/geerlingguy.dotfiles"]
-	path = roles/geerlingguy.dotfiles
-	url = https://github.com/geerlingguy/dotfiles
 [submodule "roles/geerlingguy.pip"]
 	path = roles/geerlingguy.pip
 	url = https://github.com/geerlingguy/ansible-role-pip
@@ -31,3 +28,6 @@
 [submodule "roles/ryandaniels.create_users"]
 	path = roles/ryandaniels.create_users
 	url = https://github.com/ryandaniels/ansible-role-create-users
+[submodule "roles/geerlingguy.dotfiles"]
+	path = roles/geerlingguy.dotfiles
+	url = https://github.com/geerlingguy/ansible-role-dotfiles
