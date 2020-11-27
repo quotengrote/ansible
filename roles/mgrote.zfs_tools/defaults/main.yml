@@ -1,8 +1,8 @@
 ---
 zfs_arc_max: "8589934592"
 
-cron_minutes_zfs_health: "15"
-cron_hours_zfs_health: "6,18"
+cron_minutes_zfs_health: "0,15,30,45"
+cron_hours_zfs_health: "*"
 
 cron_weekday_zfs_scrub: "0"
 cron_minutes_zfs_scrub: "5"
