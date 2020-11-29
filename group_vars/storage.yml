@@ -6,6 +6,7 @@
     - { name: 'win10', groups: 'users', password: 'hallowelt' }
     - { name: 'kodi', groups: 'users', password: 'hallowelt' }
     - { name: 'michaelgrote', groups: 'users', password: 'hallowelt' }
+    - { name: 'airsonic', groups: 'users', password: 'hallowelt' }
   smb_freigaben:
     - { freigabename: 'videos', ordnerpfad: '/shares_videos', lese_nutzer: 'kodi', schreibe_nutzer: 'annemariedroessler michaelgrote' }
     - { freigabename: 'ag', ordnerpfad: '/shares/ag', lese_nutzer: '', schreibe_nutzer: ' michaelgrote' }
@@ -13,7 +14,7 @@
     - { freigabename: 'backup', ordnerpfad: '/shares/Backup', lese_nutzer: '', schreibe_nutzer: 'annemariedroessler restic win10 michaelgrote' }
     - { freigabename: 'hm', ordnerpfad: '/shares/hm', lese_nutzer: '', schreibe_nutzer: 'michaelgrote' }
     - { freigabename: 'mg', ordnerpfad: '/shares/mg', lese_nutzer: '', schreibe_nutzer: 'win10 michaelgrote' }
-    - { freigabename: 'musik', ordnerpfad: '/shares/Musik', lese_nutzer: 'kodi annemariedroessler', schreibe_nutzer: 'win10 michaelgrote' }
+    - { freigabename: 'musik', ordnerpfad: '/shares/Musik', lese_nutzer: 'kodi annemariedroessler airsonic', schreibe_nutzer: 'win10 michaelgrote' }
     - { freigabename: 'tmp', ordnerpfad: '/shares/tmp', lese_nutzer: '', schreibe_nutzer: 'kodi annemariedroessler restic win10 michaelgrote' }
     - { freigabename: 'bilder', ordnerpfad: '/shares/bilder', lese_nutzer: '', schreibe_nutzer: 'annemariedroessler michaelgrote' }
 
