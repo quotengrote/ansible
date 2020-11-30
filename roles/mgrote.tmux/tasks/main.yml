@@ -6,6 +6,11 @@
       state: present
       cache_valid_time: 360
 
+  - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+    file:
+      path: "{{ tmux_bashrc_destination }}"
+      state: touch
+
 #  - name: ensure homedir exists
 #    become: yes
 #    ansible.builtin.file:
