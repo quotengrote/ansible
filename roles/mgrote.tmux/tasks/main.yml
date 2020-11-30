@@ -6,7 +6,7 @@
       state: present
       cache_valid_time: 360
 
-  - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+  - name: touch "{{ tmux_bashrc_destination }}"
     become: yes
     file:
       path: "{{ tmux_bashrc_destination }}"
