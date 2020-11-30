@@ -17,3 +17,20 @@
     - mg
     - root
     - ansible-user
+  ### ryandaniels.create_users
+  users:
+  - username: mg
+    password: "{{ lookup('keepass', 'linux_mg_user_password', 'password') }}"
+    update_password: on_create
+    ssh_key: "{{ lookup('keepass', 'ssh_pubkey_mg', 'password') }}"
+    use_sudo: yes
+    use_sudo_nopass: yes
+    user_state: present
+    groups: ssh, sudo, docker
+    servers:
+      - production
+      - staging
+      - test
+      - virt
+      - cephq
+      - k8s
