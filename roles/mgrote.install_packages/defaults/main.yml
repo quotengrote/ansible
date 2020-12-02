@@ -20,6 +20,7 @@
     - neofetch
     - ntpdate
     - acl
+    - python3
   programs_only_physical:
     - hddtemp
     - ipmitool
