@@ -5,9 +5,25 @@
     max_fail_percentage: 20%
 
     roles:
-      - { role: robertdebock.bootstrap, tags: "bootstrap" }
-      - { role: ryandaniels.create_users, tags: "user", become: yes }
-      - { role: nickjj.ansible-user, tag: "ansible", become: yes }
+      - { role: robertdebock.bootstrap,
+        tags: "bootstrap"
+        }
+      - { role: ryandaniels.create_users,
+        tags: "user",
+        become: yes
+        }
+      - { role: nickjj.ansible-user,
+        tag: "ansible",
+        become: yes,
+        ansible_password: "{{ lookup('keepass', 'linux_mg_user_password_cleartext', 'password') }}",
+        ansible_become_password: "{{ lookup('keepass', 'linux_mg_user_password_cleartext', 'password') }}"
+        }
+    tasks:
+      - name: Change user password
+        user:
+          name: mg
+          update_password: always
+          password: "{{ lookup('keepass', 'linux_mg_user_password_hash', 'password') }}"
 
     vars:
       ### nickjj.ansible-users
