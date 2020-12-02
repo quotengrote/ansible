@@ -1,12 +1,13 @@
 ---
   ### mgrote.smb_fileserver
   smb_nutzer:
-    - { name: 'annemariedroessler', groups: 'users', password: 'hallowelt' }
-    - { name: 'restic', groups: 'users', password: 'restic' }
-    - { name: 'win10', groups: 'users', password: 'hallowelt' }
-    - { name: 'kodi', groups: 'users', password: 'hallowelt' }
-    - { name: 'michaelgrote', groups: 'users', password: 'hallowelt' }
-    - { name: 'airsonic', groups: 'users', password: 'hallowelt' }
+    - { name: 'annemariedroessler', groups: 'users', password: "{{ lookup('keepass', 'fileserver_smb_user_amd', 'password') }}" }
+    - { name: 'restic', groups: 'users', password: "{{ lookup('keepass', 'fileserver_smb_user_restic', 'password') }}" }
+    - { name: 'win10', groups: 'users', password: "{{ lookup('keepass', 'fileserver_smb_user_win10', 'password') }}" }
+    - { name: 'kodi', groups: 'users', password: "{{ lookup('keepass', 'fileserver_smb_user_kodi', 'password') }}" }
+    - { name: 'michaelgrote', groups: 'users', password: "{{ lookup('keepass', 'fileserver_smb_user_mg', 'password') }}" }
+    - { name: 'airsonic', groups: 'users', password: "{{ lookup('keepass', 'fileserver_smb_user_airsonic', 'password') }}" }
+    - { name: 'docker', groups: 'users', password: "{{ lookup('keepass', 'fileserver_smb_user_docker', 'password') }}" }
   smb_freigaben:
     - { freigabename: 'videos', ordnerpfad: '/shares_videos', lese_nutzer: 'kodi', schreibe_nutzer: 'annemariedroessler michaelgrote' }
     - { freigabename: 'ag', ordnerpfad: '/shares/ag', lese_nutzer: '', schreibe_nutzer: ' michaelgrote' }
@@ -17,6 +18,7 @@
     - { freigabename: 'musik', ordnerpfad: '/shares/Musik', lese_nutzer: 'kodi annemariedroessler airsonic', schreibe_nutzer: 'win10 michaelgrote' }
     - { freigabename: 'tmp', ordnerpfad: '/shares/tmp', lese_nutzer: '', schreibe_nutzer: 'kodi annemariedroessler restic win10 michaelgrote' }
     - { freigabename: 'bilder', ordnerpfad: '/shares/bilder', lese_nutzer: '', schreibe_nutzer: 'annemariedroessler michaelgrote' }
+    - { freigabename: 'docker', ordnerpfad: '/shares/docker', lese_nutzer: '', schreibe_nutzer: 'docker' }
 
   smb_workgroup: WORKGROUP
   smb_nutzer_loeschen:
