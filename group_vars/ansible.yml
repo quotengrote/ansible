@@ -7,3 +7,4 @@
     - name: Jinja2
   ### geerlingguy.ansible
   ansible_install_method: pip
+  ansible_install_version_pip: '2.10'
