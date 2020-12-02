@@ -20,7 +20,7 @@
   ### ryandaniels.create_users
   users:
   - username: mg
-    password: "{{ lookup('keepass', 'linux_mg_user_password', 'password') }}"
+    password: "{{ lookup('keepass', 'linux_mg_user_password_hash', 'password') }}"
     update_password: on_create
     ssh_key: "{{ lookup('keepass', 'ssh_pubkey_mg', 'password') }}"
     use_sudo: yes
