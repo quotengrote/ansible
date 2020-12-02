@@ -6,24 +6,17 @@
       state: present
       cache_valid_time: 360
 
-  - name: touch "{{ tmux_bashrc_destination }}"
+  - name: Check if "{{ tmux_bashrc_destination }}" exists
+    stat:
+      path: "{{ tmux_bashrc_destination }}"
+    register: stat_result
+
+  - name: touch "{{ tmux_bashrc_destination }}" , if it doesnt exist already
     become: yes
     file:
       path: "{{ tmux_bashrc_destination }}"
       state: touch
-
-#  - name: ensure homedir exists
-#    become: yes
-#    ansible.builtin.file:
-#      path: " {{ tmux_conf_destination }}"
-#      state: directory
-
-#  - name: copy .tmux.conf
-#    become: yes
-#    ansible.builtin.template:
-#      src: ".tmux.conf"
-#      dest: "{{ tmux_conf_destination }}"
-#      backup: true
+    when: not stat_result.stat.exists
 
   - name: add tmux-session config to .bashrc
     become: yes
