@@ -33,5 +33,5 @@
       - cephq
       - k8s
   ### mgrote.restic
-  restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker/volumes
+  restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker
   restic_cron_hours: "*"
