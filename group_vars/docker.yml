@@ -1,6 +1,4 @@
 ---
-  ### mgrote.restic
-  restic_folders_to_backup: /usr/local /etc /root /var/www /home /var/lib/docker
   ### oefenweb.ufw
   ufw_rules:
 #    - rule: allow
@@ -34,5 +32,6 @@
       - virt
       - cephq
       - k8s
-### mgrote.restic
+  ### mgrote.restic
+  restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker/volumes
   restic_cron_hours: "*"
