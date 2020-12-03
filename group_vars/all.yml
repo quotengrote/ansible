@@ -14,7 +14,7 @@
   restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
   restic_mount: "/mnt/restic"
   restic_mount_user: restic
-  restic_mount_password: restic
+  restic_mount_password: "{{ lookup('keepass', 'fileserver_smb_user_restic', 'password') }}"
   ### mgrote.tmux
   tmux_conf_destination: "/home/mg/.tmux.conf"
   tmux_bashrc_destination: "/home/mg/.bashrc"

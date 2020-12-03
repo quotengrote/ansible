@@ -35,4 +35,4 @@
       - cephq
       - k8s
 ### mgrote.restic
-  restic_cron_hours: "/2"
+  restic_cron_hours: "*"
