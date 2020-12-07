@@ -1,7 +1,0 @@
----
-  ### oefenweb.ufw
-  ufw_rules:
-    - rule: allow
-      interface: ens18
-    - rule: allow
-      interface: ens19
