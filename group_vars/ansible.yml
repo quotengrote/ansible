@@ -5,6 +5,7 @@
     # Specify names and versions.
     - name: pykeepass
     - name: Jinja2
+    - name: markupsafe
   ### geerlingguy.ansible
   ansible_install_method: pip
   ansible_install_version_pip: '2.10'
