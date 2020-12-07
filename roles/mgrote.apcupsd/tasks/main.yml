@@ -27,4 +27,4 @@
     ansible.builtin.template:
       src: "apcupsd.conf"
       dest: "/etc/apcupsd/apcupsd.conf"
-    notify: restart_apcupsd #benachrchtigt handlers/main.yml-restart-apcupsd_restart um den dient neuzustarten, nur wenn hier status "changed" ausgeworfen wird"
+    notify: restart_apcupsd #benachrichtigt handlers/main.yml-restart-apcupsd_restart um den dient neuzustarten, nur wenn hier status "changed" ausgeworfen wird"
