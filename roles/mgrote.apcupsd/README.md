@@ -3,6 +3,7 @@
 ### Beschreibung
 Installiert APCUPSD fuer eine APC UPS mit USB Verbindung.
 Benoetigt mgrote.postfix-gmail.
+https://linux.die.net/man/5/apcupsd.conf
 
 ### Funktioniert auf
 - [x] ProxMox 6.1
@@ -19,3 +20,6 @@ BATTERYLEVEL: 50
 
 ##### apcupsd will shutdown the system during a power failure when the remaining runtime on batteries as internally calculated by the UPS falls below the specified minutes.
 MINUTES: 10
+
+##### Specifies when apcupsd should create the nologon file to prevent users from logging on to the system.
+NOLOGON: always

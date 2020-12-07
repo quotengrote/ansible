@@ -30,6 +30,7 @@
   ONBATTERYDELAY: 10
   BATTERYLEVEL: 50
   MINUTES: 10
+  NOLOGON: disable
   ### mgrote.zfs_tools
   zfs_arc_max: "12884901888"
   zfs_pool:
