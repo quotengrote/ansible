@@ -47,7 +47,7 @@
       - ceph
       - k8s
   ### geerlingguy.dotfiles
-  dotfiles_repo: "https://github.com/quotengrote/dotfiles.git"
+  dotfiles_repo: "https://git.mgrote.net/mg/dotfiles"
   dotfiles_repo_local_destination: "/home/mg/dotfiles-repo"
   dotfiles_home:  "/home/mg"
   dotfiles_user: "mg"
