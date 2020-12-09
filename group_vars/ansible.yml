@@ -2,7 +2,6 @@
   ### geerlingguy.pip
   pip_package: python3-pip
   pip_install_packages:
-    # Specify names and versions.
     - name: pykeepass
     - name: Jinja2
     - name: markupsafe

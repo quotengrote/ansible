@@ -66,13 +66,12 @@
   ### python3
   # https://docs.ansible.com/ansible/latest/reference_appendices/python_3_support.html
   ansible_python_interpreter: "/usr/bin/python3"
-  ansible_ssh_private_key_file: /home/mg/ansible/id_rsa_ansible_user
 
   # Ansible Plugin Variablen
   ### Keepass
   # https://github.com/viczem/ansible-keepass
-  # liegt unter /home/mg/ansible/.ansible/plugins/keepass.py
-  keepass_dbx: "/home/mg/ansible/keepass_db.kdbx"
+  # liegt unter ./plugins/lookup/keepass.py
+  keepass_dbx: "./keepass_db.kdbx"
   keepass_psw: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           62383737623066396239383336646164616537646630653964313532383130343533346561633039
