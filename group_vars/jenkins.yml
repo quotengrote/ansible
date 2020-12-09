@@ -28,3 +28,5 @@
     - rule: allow
       to_port: 8080
       comment: 'jenkins'
+  ### mgrote.restic
+  restic_folders_to_backup: /usr/local /etc /root /home /var/lib/jenkins
