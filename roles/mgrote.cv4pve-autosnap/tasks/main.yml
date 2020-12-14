@@ -11,7 +11,7 @@
   - name: download archives
     become: yes
     ansible.builtin.get_url: ## hier variable für version
-      url: https://github.com/Corsinvest/cv4pve-autosnap/releases/download/{{ cv4pve_version }}/cv4pve-autosnap-linux-x64.zip
+      url: "{{ cv4pve_dl_link }}"
       dest: /tmp/cv4pve/cv4pve-autosnap-linux-x64.zip
       mode: '0775'
 
