@@ -1,5 +1,5 @@
-relayhost = [smtp.gmail.com]:587
-smtp_use_tls = yes
+relayhost = [{{ gmail_smtp_server }}]:{{ gmail_smtp_server_port }}
+smtp_use_tls = {{ gmail_smtp_use_tls }}
 smtp_sasl_auth_enable = yes
 smtp_sasl_security_options =
 smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
@@ -8,6 +8,6 @@ smtp_tls_session_cache_timeout = 3600s
 inet_protocols = ipv4
 append_dot_mydomain = no
 
-mynetworks = {{ postfix_gmail_erlaubte_netzwerke }}
+mynetworks = {{ gmail_postfix_erlaubte_netzwerke }}
 
 smtpd_relay_restrictions = permit_mynetworks

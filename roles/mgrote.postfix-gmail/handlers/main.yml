@@ -8,6 +8,7 @@
       name: postfix
       enabled: yes
       state: restarted
+    notify: postfix_testmail
 
   - name: postfix_testmail
     shell: echo "postfix ist eingerichtet" | mail -s "{{ ansible_hostname }} - postfix" {{ empfaenger_mail }}

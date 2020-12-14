@@ -30,7 +30,7 @@
 
   - name: Mail Cronjob - Anlegen
     become: yes
-    when: mail_nach_cronjob # ohne parameter wird auf true geprueft  https://www.buildahomelab.com/2018/11/12/using-ansible-when-statements/
+    when: gmail_mail_nach_cronjob # ohne parameter wird auf true geprueft  https://www.buildahomelab.com/2018/11/12/using-ansible-when-statements/
     ansible.builtin.cron:
       name: MAILTO
       env: yes
@@ -40,7 +40,7 @@
 
   - name: Mail Cronjob - Entfernen
     become: yes
-    when: not mail_nach_cronjob
+    when: not gmail_mail_nach_cronjob
     ansible.builtin.cron:
       name: MAILTO
       env: yes

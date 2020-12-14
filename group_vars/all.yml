@@ -1,10 +1,13 @@
 ---
   ### mgrote.postfix-gmail
   empfaenger_mail: michael.grote@posteo.de
-  nutzer_gmail: michael.grote@gmail.com
-  passwort_gmail: "{{ lookup('keepass', 'passwort_gmail', 'password') }}"
-  postfix_gmail_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24"
-  mail_nach_cronjob: false
+  gmail_nutzer_gmail: michael.grote@gmail.com
+  gmail_nutzer_passwort: "{{ lookup('keepass', 'gmail_nutzer_passwort', 'password') }}"
+  gmail_postfix_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24"
+  gmail_mail_nach_cronjob: false
+  gmail_smtp_server: smtp.gmail.com
+  gmail_smtp_server_port: 587
+  gmail_smtp_use_tls: yes
   ### mgrote.set_apt_sources
   acng_server: acng.grote.lan
   acng_server_port: 9999
