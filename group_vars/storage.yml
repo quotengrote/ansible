@@ -35,3 +35,16 @@
     - rule: allow
       to_port: 139
       comment: 'smb'
+    - rule: allow
+      to_port: 9000:9010
+      protocol: tcp
+      comment: 'minio'
+  ### atosatto.minio
+  minio_user: minio
+  minio_group: minio
+  minio_server_addr: ":9000"
+  minio_server_datadirs:
+    - /shares/minio
+  minio_server_make_datadirs: true
+  minio_access_key: "{{ lookup('keepass', 'minio_access_key', 'password') }}"
+  minio_secret_key: "{{ lookup('keepass', 'minio_secret_key', 'password') }}"
