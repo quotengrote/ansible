@@ -21,6 +21,7 @@
     - ntpdate
     - acl
     - python3
+    - vim
   programs_only_physical:
     - hddtemp
     - ipmitool
