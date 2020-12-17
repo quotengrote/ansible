@@ -46,9 +46,6 @@
       - production
       - staging
       - test
-      - virt
-      - ceph
-      - k8s
   ### geerlingguy.dotfiles
   dotfiles_repo: "https://git.mgrote.net/mg/dotfiles"
   dotfiles_repo_local_destination: "/home/mg/dotfiles-repo"
@@ -59,7 +56,6 @@
     - .bash_aliases
     - .tmux.conf
     - .gitconfig
-
 
   # Ansible Variablen
   ### User
