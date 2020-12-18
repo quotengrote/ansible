@@ -19,12 +19,18 @@ function unlock() {
 # Damit prueft ob das Script ob es schon laeuft
 exlock
 (
- echo "--------------------------------------------------"
+echo "--------------------------------------------------"
 echo $(date)
 
 mount -t cifs -o credentials="/etc/restic/smb_password.txt",vers=3.0 {{ restic_repository }} {{ restic_mount }}
 
 restic -r {{ restic_mount }} --password-file /etc/restic/password.txt backup --exclude-file /etc/restic/exclude.txt {{ restic_folders_to_backup }}
+# Mail wenn Restix Exit != 0 #https://stackoverflow.com/a/45817972
+retVal=$?
+if [ $retVal -ne 0 ]; then
+    echo "ERROR - Restic - $HOSTNAME" | mail -s "ERROR - Restic - $HOSTNAME" {{ empfaenger_mail }}
+fi
+
 
 umount {{ restic_mount }}
  echo "--------------------------------------------------"

@@ -7,7 +7,7 @@
   gmail_mail_nach_cronjob: false
   gmail_smtp_server: smtp.gmail.com
   gmail_smtp_server_port: 587
-  gmail_smtp_use_tls: yes
+  gmail_smtp_use_tls: "yes"
   ### mgrote.set_apt_sources
   acng_server: acng.grote.lan
   acng_server_port: 9999
