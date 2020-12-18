@@ -4,6 +4,7 @@ desktop.ini
 **/**cache***/**
 **/**Cache***/**
 **/**AppData***/**
-/var/lib/docker/volumes/airsonic_musik_smb
+/var/lib/docker/volumes/***Musik***
+/var/lib/docker/volumes/***musik***
 # https://github.com/restic/restic/issues/1005
 # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
