@@ -15,3 +15,5 @@ cron_month_zfs_trim: "4,8,12"
 cron_day_zfs_trim: "2"
 
 pfad_zu_zpool: "/usr/sbin/zpool"
+
+zfs_tool_max_cap: "80"

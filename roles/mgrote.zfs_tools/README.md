@@ -14,8 +14,6 @@ Deaktiviert das mitinstallierte scrub-Script in /etc/cron.d/zfsutils-linux.
 ### Variablen + Defaults
 ##### Wer soll die Mails bekommen
 empfaenger_mail: michael.grote@posteo.de
-##### name des zu ueberwachenden Pools -
-- [ ] pruefen ob auch mehrere Pools gehen
 zfs_pool: zfs_vm_mirror
 ##### Maximale Groesse ARC in Bytes
 Beim aendern wird die Zeile einmal mit dem alten Wert und dem neuen Wert in die Zeile eingefuegt!
@@ -34,3 +32,5 @@ Trim: Minute, Stunde, Monat, Tag des Monats
 Scrub: Wochentag, Minute, Stunde
 ##### Pfad zu zpool-binary
 pfad_zu_zpool: "/usr/sbin/zpool"
+##### Füllstand für Warnmail
+zfs_tool_max_cap: "80"
