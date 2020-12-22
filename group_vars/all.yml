@@ -25,11 +25,6 @@
         **/**cache***/**
         **/**Cache***/**
         **/**AppData***/**
-        /var/lib/docker/volumes/***Musik***
-        /var/lib/docker/volumes/***musik***
-        # https://github.com/restic/restic/issues/1005
-        # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
-
   ### mgrote.tmux
   tmux_conf_destination: "/home/mg/.tmux.conf"
   tmux_bashrc_destination: "/home/mg/.bashrc"

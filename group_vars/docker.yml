@@ -35,3 +35,15 @@
   ### mgrote.restic
   restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker
   restic_cron_hours: "*"
+  restic_exclude: |
+        ._*
+        desktop.ini
+        .Trash-*
+        **/**cache***/**
+        **/**Cache***/**
+        **/**AppData***/**
+        /var/lib/docker/volumes/***Musik***
+        /var/lib/docker/volumes/***musik***
+        # https://github.com/restic/restic/issues/1005
+        # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
+        
