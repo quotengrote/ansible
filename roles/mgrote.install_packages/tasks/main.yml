@@ -10,6 +10,13 @@
       name: "{{ programs_common }}"
       state: present
 
+  - name: install extra-packages
+    become: yes
+    ansible.builtin.apt:
+      name: "{{ programs_extra }}"
+      state: present
+    when:  programs_extra is defined
+
   - name: install vm-packages
     become: yes
     ansible.builtin.apt:

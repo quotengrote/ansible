@@ -4,6 +4,7 @@
       name:
         - restic
         - logrotate
+        - cifs-utils
       state: present
 
   - name: create /etc/restic
