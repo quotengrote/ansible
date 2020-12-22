@@ -43,7 +43,7 @@ all:
     testeinzeln:
       hosts:
         vm-test.grote.lan:
-        lxc-test.grote.lan:
+        lxc-test2.grote.lan:
     virt:
       hosts:
         pve-staging.grote.lan:
