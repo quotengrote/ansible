@@ -93,6 +93,6 @@ all:
         ansible-test.grote.lan:
         docker-test.grote.lan:
         vm-test.grote.lan:
-        lxc-test.grote.lan:
+        lxc-test2.grote.lan:
         pve-test.grote.lan:
         jenkins-test.grote.lan:
