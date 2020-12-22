@@ -37,11 +37,13 @@
       dest: "/usr/local/bin/restic_backup.sh"
       mode: a+x
 
-  - name: copy exclude.txt
+  - name: create exclude.txt
     become: yes
-    ansible.builtin.template:
-      src: "exclude.txt"
-      dest: "/etc/restic/exclude.txt"
+    ansible.builtin.blockinfile:
+      path: "/etc/restic/exclude.txt"
+      create: yes
+      block: "{{ restic_exclude }}"
+      mode: 0644
 
   - name: copy password.txt
     become: yes

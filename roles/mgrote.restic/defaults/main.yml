@@ -1,2 +1,9 @@
 ---
   restic_folders_to_backup: "/usr/local /etc /root /var/www /home"
+  restic_exclude: |
+        ._*
+        desktop.ini
+        .Trash-*
+        **/**cache***/**
+        **/**Cache***/**
+        **/**AppData***/**
