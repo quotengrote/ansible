@@ -1,15 +1,28 @@
 ---
   ### oefenweb.ufw
   ufw_rules:
-#    - rule: allow
-#      to_port: 22
-#      protocol: tcp
-#      comment: 'ssh'
-#    - rule: allow
-#      to_port: 3000
-#      comment: 'rssbridge'
     - rule: allow
-      comment: 'alles erlauben'
+      to_port: 22
+      protocol: tcp
+      from_ip: 192.168.2.0/24
+      comment: 'ssh'
+    - rule: allow
+      to_port: 80
+      comment: 'docker-traefik'
+    - rule: allow
+      to_port: 443
+      comment: 'docker-traefik'
+    - rule: allow
+      to_port: 8080
+      comment: 'docker-traefik'
+    - rule: allow
+      to_port: 333
+      comment: 'docker-homer'
+    - rule: allow
+      to_port: 3001
+      comment: 'docker-rssbridge'
+#    - rule: allow
+#      comment: 'alles erlauben'
   ### geerlingguy.docker
   docker_users:
     - mg
@@ -46,4 +59,3 @@
         /var/lib/docker/volumes/***musik***
         # https://github.com/restic/restic/issues/1005
         # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
-        
