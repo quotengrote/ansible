@@ -6,5 +6,5 @@
       regexp: '#PasswordAuthentication yes'
       line: 'PasswordAuthentication no'
       state: present
-#      backrefs: yes
+      validate: "/usr/sbin/sshd -T"
     notify: restart_sshd
