@@ -1,7 +1,7 @@
-## mgrote.postfix-gmail
+## mgrote.postfix
 
 ### Beschreibung
-Installiert und konfiguriert postfix fuer den GMail.
+Installiert und konfiguriert postfix.
 
 ### Funktioniert auf
 - [x] Ubuntu (>=18.04)
@@ -11,11 +11,11 @@ Installiert und konfiguriert postfix fuer den GMail.
 ### Variablen + Defaults
 ##### Wer soll die Mails bekommen.
 empfaenger_mail: michael.grote@posteo.de
-##### Nutzer fuer GMail
-gmail_nutzer_gmail: michael.grote@gmail.com
-##### Passwort fuer GMail
-gmail_nutzer_passwort: FKXaOXXXXXX5kHC
+##### Nutzer
+postfix_absender_mailadresse: info@mgrote.net
+##### Passwort
+postfix_absender_passwort: FKXaOXXXXXX5kHC
 ##### Soll nach Aufuehrung eines cronjobs eine Mail versendet werden?
-gmail_mail_nach_cronjob: false
+postfix_mail_nach_cronjob: false
 ##### Netzwerke aus denen postfix Mails annimmt
-gmail_postfix_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24"
+postfix_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24"

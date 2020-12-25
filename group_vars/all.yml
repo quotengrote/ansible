@@ -1,13 +1,13 @@
 ---
-  ### mgrote.postfix-gmail
   empfaenger_mail: michael.grote@posteo.de
-  gmail_nutzer_gmail: michael.grote@gmail.com
-  gmail_nutzer_passwort: "{{ lookup('keepass', 'gmail_nutzer_passwort', 'password') }}"
-  gmail_postfix_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24"
-  gmail_mail_nach_cronjob: false
-  gmail_smtp_server: smtp.gmail.com
-  gmail_smtp_server_port: 587
-  gmail_smtp_use_tls: "yes"
+  ### mgrote.postfix
+  postfix_absender_mailadresse: info@mgrote.net
+  postfix_absender_passwort: "{{ lookup('keepass', 'postfix_absender_passwort', 'password') }}"
+  postfix_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24"
+  postfix_mail_nach_cronjob: false
+  postfix_smtp_server: smtp.strato.de
+  postfix_smtp_server_port: 587
+  postfix_smtp_use_tls: "yes"
   ### mgrote.set_apt_sources
   acng_server: acng.grote.lan
   acng_server_port: 9999
@@ -33,6 +33,8 @@
   f2b_bantime: 300
   f2b_findtime: 300
   f2b_maxretry: 5
+  f2b_destemail: "{{ empfaenger_mail }}"
+  f2b_sender: "{{ postfix_absender_mailadresse }}"
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow

@@ -1,0 +1,13 @@
+relayhost = [{{ postfix_smtp_server }}]:{{ postfix_smtp_server_port }}
+smtp_use_tls = {{ postfix_smtp_use_tls }}
+smtp_sasl_auth_enable = {{ postfix_smtp_sasl_auth_enable }}
+smtp_sasl_security_options =
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_tls_session_cache_database = btree:/var/lib/postfix/smtp_tls_session_cache
+smtp_tls_session_cache_timeout = {{ postfix_smtp_tls_session_cache_timeout }}
+inet_protocols = {{ postfix_inet_protocols }}
+append_dot_mydomain = {{ postfix_append_dot_mydomain }}
+mynetworks = {{ postfix_erlaubte_netzwerke }}
+smtpd_relay_restrictions = permit_mynetworks
+sender_canonical_classes = envelope_sender, header_sender
+sender_canonical_maps =  regexp:/etc/postfix/sender_canonical

@@ -2,6 +2,7 @@
   - hosts: all
     roles:
       - { role: mgrote.fail2ban, tags: "f2b" }
+      - { role: mgrote.postfix, tags: "postfix" }
       - { role: mgrote.deactivate_ssh_password_login, tags: "ssh" }
       - { role: oefenweb.ufw, # Regeln werden in den Group/Host-Vars gesetzt
           tags: "ufw",

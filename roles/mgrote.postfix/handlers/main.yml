@@ -1,6 +1,10 @@
-  - name: create_db_passwordfile
+  - name: hash_sasl_passwd
     become: yes
     command: /usr/sbin/postmap hash:/etc/postfix/sasl_passwd
+
+  - name: hash_sender_canonical
+    become: yes
+    command: /usr/sbin/postmap hash:/etc/postfix/sender_canonical
 
   - name: postfix_reload
     become: yes

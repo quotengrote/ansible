@@ -2,7 +2,7 @@
 
 ### Beschreibung
 Installiert APCUPSD fuer eine APC UPS mit USB Verbindung.
-Benoetigt mgrote.postfix-gmail.
+Benoetigt mgrote.postfix.
 https://linux.die.net/man/5/apcupsd.conf
 
 ### Funktioniert auf
