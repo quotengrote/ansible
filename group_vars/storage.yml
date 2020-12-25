@@ -28,15 +28,12 @@
     - rule: allow
       to_port: 22
       protocol: tcp
-      from_ip: 192.168.2.0/24
       comment: 'ssh'
     - rule: allow
       to_port: 445
-      from_ip: 192.168.2.0/24
       comment: 'smb'
     - rule: allow
       to_port: 139
-      from_ip: 192.168.2.0/24
       comment: 'smb'
     - rule: allow
       to_port: 9000:9010
