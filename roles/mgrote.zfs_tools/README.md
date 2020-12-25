@@ -3,7 +3,7 @@
 ### Beschreibung
 Aktiviert die Mail Funktion von ZED (ZFS Event Daemon).
 Setzt die maximale ARC-Groesse.
-Benoetigt "mgrote.postfix-gmail".
+Benoetigt "mgrote.postfix".
 Richtet regelmaessige Scrubs(jeden Sonntag) und Trim(alle 4 Monate) ein.
 Richtet "zfs_health.sh", ein ZFS-Checkscript das auch Mails versendet bei Fehlern.
 Deaktiviert das mitinstallierte scrub-Script in /etc/cron.d/zfsutils-linux.

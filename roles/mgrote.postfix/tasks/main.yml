@@ -16,7 +16,17 @@
       dest: /etc/postfix/sasl_passwd
       force: yes
     notify:
-      - create_db_passwordfile
+      - hash_sasl_passwd
+      - postfix_testmail
+
+  - name: kopiere sender_canonical
+    become: yes
+    ansible.builtin.template:
+      src: sender_canonical
+      dest: /etc/postfix/sender_canonical
+    notify:
+      - hash_sender_canonical
+      - postfix_reload
       - postfix_testmail
 
   - name: kopiere postfix_main.cf
@@ -30,7 +40,7 @@
 
   - name: Mail Cronjob - Anlegen
     become: yes
-    when: gmail_mail_nach_cronjob # ohne parameter wird auf true geprueft  https://www.buildahomelab.com/2018/11/12/using-ansible-when-statements/
+    when: postfix_mail_nach_cronjob # ohne parameter wird auf true geprueft  https://www.buildahomelab.com/2018/11/12/using-ansible-when-statements/
     ansible.builtin.cron:
       name: MAILTO
       env: yes
@@ -40,7 +50,7 @@
 
   - name: Mail Cronjob - Entfernen
     become: yes
-    when: not gmail_mail_nach_cronjob
+    when: not postfix_mail_nach_cronjob
     ansible.builtin.cron:
       name: MAILTO
       env: yes

@@ -1,6 +1,0 @@
----
-  gmail_mail_nach_cronjob: false
-  gmail_postfix_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24"
-  gmail_smtp_server: smtp.gmail.com
-  gmail_smtp_server_port: 587
-  gmail_smtp_use_tls: yes

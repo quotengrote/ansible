@@ -5,7 +5,7 @@
     - { role: mgrote.apcupsd, tags: "apcupsd" }
     - { role: mgrote.smart, tags: "smart" }
     - { role: mgrote.zfs_tools, tags: "zfs_tools" }
-    - { role: mgrote.postfix-gmail, tags: "postfix-gmail" }
+    - { role: mgrote.postfix, tags: "postfix" }
     - { role: mgrote.sanoid, tags: "sanoid" }
     - { role: mgrote.ecc-rasdaemon,
         tags: "ecc",

@@ -6,8 +6,8 @@ findtime  = {{ f2b_findtime }}
 maxretry = {{ f2b_maxretry }}
 
 # Mail Reporting
-destemail = michael.grote@posteo.de
-sender = michael.grote@gmail.com
+destemail = {{ f2b_destemail }}
+sender = {{ f2b_sender }}
 
 # to ban & send an e-mail with whois report to the destemail.
 #action = %(action_mw)s
