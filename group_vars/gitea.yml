@@ -63,5 +63,5 @@
   gitea_protocol: http
 
   gitea_show_registration_button: false
-  gitea_require_signin: true
+  gitea_require_signin: false
   gitea_disable_registration: true
