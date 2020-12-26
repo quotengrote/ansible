@@ -12,6 +12,7 @@
   acng_server: acng.grote.lan
   acng_server_port: 9999
   ### mgrote.restic
+  restic_folders_to_backup: "/usr/local /etc /root /var/www /home"
   restic_cron_hours: "19"
   restic_repository: "//fileserver2.grote.lan/backup/restic"
   restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"

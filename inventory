@@ -49,6 +49,11 @@ all:
         pve-staging.grote.lan:
         pve-test.grote.lan:
         pve2.grote.lan:
+    gitea:
+      hosts:
+        gitea-staging.grote.lan:
+        gitea-test.grote.lan:
+        gitea.grote.lan:
 #    wsl:
 #      hosts:
 #        irantu.grote.lan:
@@ -72,6 +77,7 @@ all:
         docker.grote.lan:
         pve2.grote.lan:
         jenkins.grote.lan:
+        gitea.grote.lan:
     staging:
       hosts:
         wireguard-staging.grote.lan:
@@ -83,6 +89,7 @@ all:
         docker-staging.grote.lan:
         pve-staging.grote.lan:
         jenkins-staging.grote.lan:
+        gitea-staging.grote.lan:
     test:
       hosts:
         wireguard-test.grote.lan:
@@ -96,3 +103,4 @@ all:
         lxc-test2.grote.lan:
         pve-test.grote.lan:
         jenkins-test.grote.lan:
+        gitea-test.grote.lan:
