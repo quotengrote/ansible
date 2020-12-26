@@ -1,7 +1,6 @@
 ---
   ### mgrote.restic
-  restic_folders_to_backup: "/usr/local /etc /root /var/lib/gitea /var/lib/postgres /home"
-
+  restic_folders_to_backup: "/usr/local /etc /root /var/lib /home"
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow
