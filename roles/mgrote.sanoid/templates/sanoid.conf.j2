@@ -1,18 +1,40 @@
 ## ZFS Section ##
-[{{ sanoid_zfs_dataset }}]
-  use_template = production
-  recursive    = {{ sanoid_zfs_recursive }}
+{% for item in sanoid_datasets %}
+[{{ item.path }}]
+  use_template = {{ item.template }}
+  recursive    = {{ item.recursive }}
+## ----------- ##
+{% endfor %}
+
+
 
 ## Template Section ##
-[template_production]
+[template_fiveminutes]
   ## Keep-Rules
-  hourly       = {{ sanoid_snapshot_keep_hourly }}
-  daily        = {{ sanoid_snapshot_keep_daily }}
-  monthly      = {{ sanoid_snapshot_keep_monthly }}
-  yearly       = {{ sanoid_snapshot_keep_yearly }}
-  ## Underhour - Snapshots
-  frequent_period = {{ sanoid_snapshot_interval_underhour }}
-  frequently   = {{ sanoid_snapshot_keep_underhour }}
+  hourly                      = {{ sanoid_template_fiveminutes_snapshot_keep_hourly }}
+  daily                       = {{ sanoid_template_fiveminutes_snapshot_keep_daily }}
+  monthly                     = {{ sanoid_template_fiveminutes_snapshot_keep_monthly }}
+  yearly                      = {{ sanoid_template_fiveminutes_snapshot_keep_yearly }}
+  frequently                  = {{ sanoid_template_fiveminutes_snapshot_keep_underhour }}
+  ## Underhour intervall
+  frequent_period             = {{ sanoid_template_fiveminutes_snapshot_interval_underhour }}
   ## Other Options
-  autosnap     = {{ sanoid_auto_snap }}
-  autoprune    = {{ sanoid_auto_prune }}
+  autosnap                    = {{ sanoid_template_fiveminutes_auto_snap }}
+  autoprune                   = {{ sanoid_template_fiveminutes_prune }}
+[template_hourly]
+  ## Keep-Rules
+  hourly                      = {{ sanoid_template_hourly_snapshot_keep_hourly }}
+  daily                       = {{ sanoid_template_hourly_snapshot_keep_daily }}
+  monthly                     = {{ sanoid_template_hourly_snapshot_keep_monthly }}
+  yearly                      = {{ sanoid_template_hourly_snapshot_keep_yearly }}
+  ## Other Options
+  autosnap                    = {{ sanoid_template_hourly_auto_snap }}
+  autoprune                   = {{ sanoid_template_hourly_prune }}
+[template_daily]
+  ## Keep-Rules
+  daily                       = {{ sanoid_template_daily_snapshot_keep_daily }}
+  monthly                     = {{ sanoid_template_daily_snapshot_keep_monthly }}
+  yearly                      = {{ sanoid_template_daily_snapshot_keep_yearly }}
+  ## Other Options
+  autosnap                    = {{ sanoid_template_daily_auto_snap }}
+  autoprune                   = {{ sanoid_template_daily_prune }}
