@@ -3,7 +3,7 @@
 ### Beschreibung
 - Diese Rolle ersetzt die `/etc/apt/sources.list` mit einer Datei in der ein Apt-Cacher-NG gesetzt ist.
 
-Rolle prüft mit `when: ansible_os_family == 'Ubuntu'` ob das Ziel auch Ubuntu ist.
+Rolle prüft mit `when: ansible_distribution == 'Ubuntu'` ob das Ziel auch Ubuntu ist.
 
 - [x] Ubuntu (>=18.04)
 

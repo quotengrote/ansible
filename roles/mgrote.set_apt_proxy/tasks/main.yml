@@ -5,7 +5,7 @@
       dest: "/etc/apt/sources.list"
       backup: yes
     register: copy_src
-    when: ansible_os_family == 'Ubuntu'
+    when: ansible_distribution == 'Ubuntu'
 
   - name: apt_update # noqa 503 503
     become: yes
