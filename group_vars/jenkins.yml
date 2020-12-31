@@ -22,9 +22,11 @@
       to_port: 22
       protocol: tcp
       comment: 'ssh'
+      from_ip: 192.168.2.0/24
     - rule: allow
       to_port: 8080
       comment: 'jenkins'
+      from_ip: 192.168.2.0/24
   ### mgrote.restic
   restic_folders_to_backup: /usr/local /etc /root /home /var/lib/jenkins
   ### mgrote.install_packages
