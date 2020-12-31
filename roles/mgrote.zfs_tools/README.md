@@ -14,7 +14,7 @@ Deaktiviert das mitinstallierte scrub-Script in /etc/cron.d/zfsutils-linux.
 ### Variablen + Defaults
 ##### Wer soll die Mails bekommen
 empfaenger_mail: michael.grote@posteo.de
-zfs_pool: zfs_vm_mirror
+zfs_pools: zfs_vm_mirror
 ##### Maximale Groesse ARC in Bytes
 Beim aendern wird die Zeile einmal mit dem alten Wert und dem neuen Wert in die Zeile eingefuegt!
 zfs_arc_max: "8589934592"

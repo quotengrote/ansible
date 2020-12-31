@@ -52,7 +52,7 @@
       weekday: "{{ item.cron_weekday_zfs_scrub }}"
       minute: "{{ item.cron_minutes_zfs_scrub }}"
       hour: "{{ item.cron_hour_zfs_scrub }}"
-    with_items: "{{ zfs_pool }}"
+    with_items: "{{ zfs_pools }}"
 
   - name: lege cronjob fuer "zfs-trim" an
     become: yes
@@ -66,7 +66,7 @@
       day: "{{ item.cron_day_zfs_trim }}"
 #      disabled: yes
     when: item.type == 'ssd'
-    with_items: "{{ zfs_pool }}"
+    with_items: "{{ zfs_pools }}"
 
   - name: kopiere zed.rc
     become: yes

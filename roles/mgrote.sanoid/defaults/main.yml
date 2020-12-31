@@ -1,34 +1,43 @@
 ---
-  # Wann soll das sanoid-script mit cron ausgeführt werden? (Stunden)
+  # Wann soll das sanoid-script mit cron ausgeführt werden?
   sanoid_cron_hours: '*'
-  # Wann soll das sanoid-script mit cron ausgeführt werden? (Minuten)
   sanoid_cron_minutes: '*'
-
-  ### Definition der Variablen für die sanoid-templates-
-  # template_fiveminutes
-  sanoid_template_fiveminutes_snapshot_keep_hourly: '24'                        # Aufheben (Stunde)
-  sanoid_template_fiveminutes_snapshot_keep_daily: '31'                         # Aufheben (Tage)
-  sanoid_template_fiveminutes_snapshot_keep_monthly: '6'                        # Aufheben (Monate)
-  sanoid_template_fiveminutes_snapshot_keep_yearly: '0'                         # Aufheben (Jahre)
-  sanoid_template_fiveminutes_snapshot_interval_underhour: '5'                  # Intervall (alle 5 Minuten)
-  sanoid_template_fiveminutes_snapshot_keep_underhour: '36'                     # Aufheben (Minuten)
-  sanoid_template_fiveminutes_auto_snap: 'yes'                                  # Automatisches erstellen von Snapshots
-  sanoid_template_fiveminutes_prune: 'yes'                                      # Automatisches Löschen/Prunen alter Snapshots
-  # template_hourly
-  sanoid_template_hourly_snapshot_keep_hourly: '24'
-  sanoid_template_hourly_snapshot_keep_daily: '31'
-  sanoid_template_hourly_snapshot_keep_monthly: '6'
-  sanoid_template_hourly_snapshot_keep_yearly: '1'
-  sanoid_template_hourly_auto_snap: 'yes'
-  sanoid_template_hourly_prune: 'yes'
-  # template_daily
-  sanoid_template_daily_snapshot_keep_daily: '31'
-  sanoid_template_daily_snapshot_keep_monthly: '6'
-  sanoid_template_daily_snapshot_keep_yearly: '1'
-  sanoid_template_daily_auto_snap: 'yes'
-  sanoid_template_daily_prune: 'yes'
 
   ### "Default" Datasets
   sanoid_datasets:
-    - { path: 'hdd_data_raidz/data', template: 'fiveminutes', recursive: ' no' }
-    - { path: 'hdd_data_raidz/videos', template: 'hourly', recursive: ' yes' }
+    - path: 'hdd_data_raidz/data'
+      template: 'fiveminutes'
+      recursive: ' no'
+    - path: 'hdd_data_raidz/videos'
+      template: 'hourly'
+      recursive: ' yes'
+
+  ### Templates
+  sanoid_templates:
+    - name: 'fiveminutes'
+      keep_hourly: '24'                        # Aufheben (Stunde)
+      keep_daily: '31'                         # Aufheben (Tage)
+      keep_monthly: '6'                        # Aufheben (Monate)
+      keep_yearly: '0'                         # Aufheben (Jahre)
+      frequently: '36'                         # Aufheben (Minuten)
+      frequent_period: '5'                     # Intervall (alle 5 Minuten)
+      autosnap: 'yes'                          # Automatisches erstellen von Snapshots
+      autoprune: 'yes'
+    - name: 'hourly'
+      keep_hourly: '24'
+      keep_daily: '31'
+      keep_monthly: '6'
+      keep_yearly: '1'
+      frequently: '0'
+      frequent_period: '0'
+      autosnap: 'yes'
+      autoprune: 'yes'
+    - name: 'daily'
+      keep_hourly: '0'
+      keep_daily: '31'
+      keep_monthly: '6'
+      keep_yearly: '1'
+      frequently: '0'
+      frequent_period: '0'
+      autosnap: 'yes'
+      autoprune: 'yes'
