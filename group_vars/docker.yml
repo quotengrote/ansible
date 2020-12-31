@@ -6,26 +6,7 @@
       protocol: tcp
       comment: 'ssh'
       from_ip: 192.168.2.0/24
-    - rule: allow
-      to_port: 80
-      comment: 'docker-traefik'
-      from_ip: 192.168.2.0/24
-    - rule: allow
-      to_port: 443
-      comment: 'docker-traefik'
-      from_ip: 192.168.2.0/24
-    - rule: allow
-      to_port: 8080
-      comment: 'docker-traefik'
-      from_ip: 192.168.2.0/24
-    - rule: allow
-      to_port: 333
-      comment: 'docker-homer'
-      from_ip: 192.168.2.0/24
-    - rule: allow
-      to_port: 3001
-      comment: 'docker-rssbridge'
-      from_ip: 192.168.2.0/24
+    # Weitere Regeln sind nicht notwendig da Docker iptables selber verwaltet.
 #    - rule: allow
 #      comment: 'alles erlauben'
   ### geerlingguy.docker
