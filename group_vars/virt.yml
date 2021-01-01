@@ -13,7 +13,7 @@
   ### mgrote.sanoid
   sanoid_datasets:
     - path: 'hdd_data_raidz/data'
-      template: 'fiveminutes'                  # muss in Templates angelegt sein
+      template: 'evmin'                        # muss in Templates angelegt sein
       recursive: ' no'
     - path: 'hdd_data_raidz/videos'
       template: 'hourly'
@@ -35,6 +35,15 @@
       keep_yearly: '1'
       frequently: '0'
       frequent_period: '0'
+      autosnap: 'yes'
+      autoprune: 'yes'
+    - name: 'evmin'
+      keep_hourly: '24'
+      keep_daily: '31'
+      keep_monthly: '6'
+      keep_yearly: '0'
+      frequently: '90'
+      frequent_period: '2'
       autosnap: 'yes'
       autoprune: 'yes'
   ### mgrote.smart
