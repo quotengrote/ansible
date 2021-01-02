@@ -1,7 +1,7 @@
 ---
   - name: Install Required Packages
     become: true
-    ansible.builtin.apt:
+    ansible.builtin.package:
       name:
         - ca-certificates
         - apt-transport-https

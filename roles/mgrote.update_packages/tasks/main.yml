@@ -6,5 +6,5 @@
 
   - name: updated installed packages
     become: yes
-    ansible.builtin.apt:
+    ansible.builtin.package:
       upgrade: dist
