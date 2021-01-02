@@ -1,6 +1,6 @@
   - name: zfs-tools installieren
     become: yes
-    ansible.builtin.apt:
+    ansible.builtin.package:
       name:
         - zfsutils
         - zfs-initramfs

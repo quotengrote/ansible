@@ -5,7 +5,7 @@
   tasks:
     - name: remove Packages
       become: yes
-      ansible.builtin.apt:
+      ansible.builtin.package:
         name:
           - hddtemp
           - ipmitool

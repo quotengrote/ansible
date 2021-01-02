@@ -1,5 +1,5 @@
   - name: apcupsd installieren
-    ansible.builtin.apt:
+    ansible.builtin.package:
       name:
         - apcupsd
         - apcupsd-cgi

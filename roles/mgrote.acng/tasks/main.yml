@@ -1,10 +1,10 @@
-  - name: apt-cacher-ng installieren
+  - name: install apt-cacher-ng packages
     become: yes
-    ansible.builtin.apt:
+    ansible.builtin.package:
       name: apt-cacher-ng
       state: present
 
-  - name: acng.conf kopieren
+  - name: templating acng.conf
     become: yes
     ansible.builtin.template:
       src: "acng.conf"

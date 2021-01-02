@@ -1,6 +1,6 @@
   - name: install packages
     become: yes
-    ansible.builtin.apt:
+    ansible.builtin.package:
       name:
         - php
         - php-mbstring
