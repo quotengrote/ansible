@@ -59,10 +59,6 @@
       ordnerpfad: '/shares/bilder'
       lese_nutzer: ''
       schreibe_nutzer: 'annemariedroessler michaelgrote'
-    - freigabename: 'docker'
-      ordnerpfad: '/shares/docker'
-      lese_nutzer: ''
-      schreibe_nutzer: 'docker'
 
   smb_workgroup: WORKGROUP
   smb_nutzer_loeschen:

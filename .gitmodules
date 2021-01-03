@@ -10,9 +10,6 @@
 [submodule "roles/geerlingguy.pip"]
 	path = roles/geerlingguy.pip
 	url = https://github.com/geerlingguy/ansible-role-pip
-[submodule "roles/hedii.youtube-dl"]
-	path = roles/hedii.youtube-dl
-	url = https://github.com/hedii/ansible-role-youtube-dl
 [submodule "roles/ironicbadger.proxmox-nag-removal"]
 	path = roles/ironicbadger.proxmox-nag-removal
 	url = https://github.com/IronicBadger/ansible-role-proxmox-nag-removal
