@@ -41,7 +41,7 @@
     - freigabename: 'backup'
       ordnerpfad: '/shares/Backup'
       lese_nutzer: ''
-      schreibe_nutzer: 'pve annemariedroessler restic win10 michaelgrote'
+      schreibe_nutzer: 'annemariedroessler restic win10 michaelgrote'
     - freigabename: 'hm'
       ordnerpfad: '/shares/hm'
       lese_nutzer: ''
@@ -62,6 +62,10 @@
       ordnerpfad: '/shares/bilder'
       lese_nutzer: ''
       schreibe_nutzer: 'annemariedroessler michaelgrote'
+    - freigabename: 'proxmox'
+      ordnerpfad: '/shares/bilder'
+      lese_nutzer: 'michaelgrote'
+      schreibe_nutzer: 'pve'
 
   smb_workgroup: WORKGROUP
   smb_nutzer_loeschen:
