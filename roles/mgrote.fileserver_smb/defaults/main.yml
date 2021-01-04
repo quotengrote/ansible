@@ -1,0 +1,53 @@
+---
+# Options: SMB2: Re-implementation of the SMB protocol. Used by Windows Vista and later versions of Windows. SMB2 has sub protocols available:
+# SMB2_02: The earliest SMB2 version.
+# SMB2_10: Windows 7 SMB2 version. (By default SMB2 selects the SMB2_10 variant.)
+# SMB2_22: Early Windows 8 SMB2 version.
+# SMB2_24: Windows 8 beta SMB2 version.
+# SMB3: The same as SMB2. Used by Windows 8. SMB3 has sub protocols available. SMB3 has sub protocols available:
+# SMB3_00: Windows 8 SMB3 version. (mostly the same as SMB2_24)
+# SMB3_02: Windows 8.1 SMB3 version.
+# SMB3_10: early Windows 10 technical preview SMB3 version.
+# SMB3_11: Windows 10 technical preview SMB3 version (maybe final). By default SMB3 selects the SMB3_11 variant.
+
+  # Global SMB options
+  smb_min_protocol: "SMB3_00"
+  smb_client_min_protocol: "SMB3_00"
+  smb_client_max_protocol: "SMB3_00"
+  smb_log_level: "1"
+  smb_server_string: "%h_server"
+  smb_log_file: "/var/log/samba/log"
+  smb_max_log_size: "1000"
+  smb_logging: "syslog"
+  smb_panic_action: "/usr/share/samba/panic-action_%d"
+  smb_passdb_backend: "tdbsam"
+  smb_obey_pam_restrictions: "no"
+  smb_unix_password_sync: "no"
+  smb_passwd_program: "/usr/bin/passwd_%u"
+  smb_passwd_chat: '*Enter\snew\s*\spassword:*_%n\n_*Retype\snew\s*\spassword:*_%n\n_*password\supdated\ssuccessfully*_.'
+  smb_pam_password_change: "yes"
+  smb_guest_account: "nobody"
+  smb_load_printers: "no"
+  smb_unix_extensions: "yes"
+  smb_wide_links: "no"
+  smb_create_mask: "0777"
+  smb_directory_mask: "0777"
+  smb_map_to_guest: "Bad User"
+  smb_use_sendfile: "yes"
+  smb_aio_read_size: "16384"
+  smb_aio_write_size: "16384"
+  smb_local_master: "yes"
+  smb_time_server: "no"
+  smb_wins_support: "no"
+  smb_acl_allow_execute_always: "yes"
+  smb_allocation_roundup_size: "4096"
+  smb_force_user: "root"
+  smb_force_group: "users"
+  # Global shadow_copy2 options
+  smb_vfs_objects: "shadow_copy2"
+  smb_shadow_snapdir: ".zfs/snapshot"
+  smb_shadow_sort: "desc"
+  smb_shadow_format: "_%Y-%m-%d_%H:%M:%S"
+  smb_shadow_snapprefix: "^autosnap"
+  smb_shadow_delimiter: "_"
+  smb_shadow_localtime: "yes"

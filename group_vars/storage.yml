@@ -63,7 +63,7 @@
       lese_nutzer: ''
       schreibe_nutzer: 'annemariedroessler michaelgrote'
     - freigabename: 'proxmox'
-      ordnerpfad: '/shares/proxmox'
+      ordnerpfad: '/shares_pve_backup'
       lese_nutzer: 'michaelgrote'
       schreibe_nutzer: 'pve'
 
