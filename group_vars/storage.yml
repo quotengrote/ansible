@@ -63,7 +63,7 @@
       lese_nutzer: ''
       schreibe_nutzer: 'annemariedroessler michaelgrote'
     - freigabename: 'proxmox'
-      ordnerpfad: '/shares/bilder'
+      ordnerpfad: '/shares/proxmox'
       lese_nutzer: 'michaelgrote'
       schreibe_nutzer: 'pve'
 
