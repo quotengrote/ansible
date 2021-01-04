@@ -22,6 +22,9 @@
     - name: 'docker'
       groups: 'users'
       password: "{{ lookup('keepass', 'fileserver_smb_user_docker', 'password') }}"
+    - name: 'pve'
+      groups: 'users'
+      password: "{{ lookup('keepass', 'fileserver_smb_user_docker', 'password') }}"
   smb_freigaben:
     - freigabename: 'videos'
       ordnerpfad: '/shares_videos'
@@ -38,7 +41,7 @@
     - freigabename: 'backup'
       ordnerpfad: '/shares/Backup'
       lese_nutzer: ''
-      schreibe_nutzer: 'annemariedroessler restic win10 michaelgrote'
+      schreibe_nutzer: 'pve annemariedroessler restic win10 michaelgrote'
     - freigabename: 'hm'
       ordnerpfad: '/shares/hm'
       lese_nutzer: ''
