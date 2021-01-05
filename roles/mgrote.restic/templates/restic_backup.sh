@@ -41,7 +41,7 @@ do
     {  # ist keine Subshell sondern Grouping; https://askubuntu.com/questions/662190/write-the-output-of-multiple-sequential-commands-to-a-text-file
     echo "--------------------------------------------------" # Trenner logfile
     echo $(date) # Datum für logfile
-    restic -r {{ restic_mount }} --password-file /etc/restic/password.txt backup --exclude-file /etc/restic/exclude.txt /home/mg/rt # execute Backup
+    restic -r {{ restic_mount }} --password-file /etc/restic/password.txt backup --exclude-file /etc/restic/exclude.txt {{ restic_folders_to_backup }} # execute Backup
     restic_return_value=$? # schreib Exit Code in Variable
     if ( [[ "$restic_return_value" -eq 0 ]] ); # Prüfung ob restic erfolgreich war(setze Abbruchbedingung), wenn nicht warte 1min und zähle die Abbruchbedingung hoch
     then
