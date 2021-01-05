@@ -52,4 +52,3 @@
     with_items:
       - "{{ smb_freigaben }}"
     notify: smbd neustarten
-    no_log: True
