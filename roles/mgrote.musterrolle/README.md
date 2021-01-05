@@ -5,13 +5,10 @@
 ### Funktioniert auf
 - [ ] Ubuntu (>=18.04)
 - [ ] Debian
-
 - [ ] ProxMox 6.1
 
 ### Variablen + Defaults
-##### Erklaerung
-befehl...
-
+see [defaults](./defaults/main.yml)
 
 
 ## Checkliste fuer Rolle

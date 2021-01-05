@@ -12,7 +12,7 @@
 
   # Global SMB options
   smb_min_protocol: "SMB3_00"
-  smb_client_min_protocol: "SMB3_00"
+  smb_client_min_protocol: "SMB2_00"
   smb_client_max_protocol: "SMB3_00"
   smb_log_level: "1"
   smb_server_string: "%h_server"
