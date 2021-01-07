@@ -1,8 +1,7 @@
 # ansible_heimserver
 
 ## example-cli
-ansible-playbook playbooks/base/0_master.yml  -i inventory --limit jenkins-test.grote.lan --key-file id_rsa_ansible_user --vault-pass-file vault-pass.yml
-
+`ansible-playbook playbooks/base/0_master.yml  -i inventory --limit jenkins-test.grote.lan --key-file id_rsa_ansible_user --vault-pass-file vault-pass.yml`
 
 ## install necessary collections
 `ansible-galaxy collection install -r requirements.yml`
@@ -38,8 +37,6 @@ Das vault-secret für die GroupVars wird mit `ansible-vault encrypt_string <pass
 2. ansible-vault entschlüsselt hiermit die Variable `keepass_psw`
 3. der Inhalt der Variable wird dann an das KeePass-Lookup-Plugin übergeben was damit die KeePass-Datei öffnet
 
-
-
 ### Abfrage der Secrets in tasks/playbooks
 `restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"`
 
@@ -68,6 +65,7 @@ password                            <-- Feldbzeichner in KeepassDB
       cron_hour_zfs_scrub: "23"
 ```
 ist das gleiche wie:
+
 ```bash
   zfs_pool:
     - { name: "ssd_vm_mirror", type: "ssd", cron_minute_zfs_trim: "5", cron_hour_zfs_trim: "22", cron_month_zfs_trim: "4,8,12", cron_day_zfs_trim: "2", cron_weekday_zfs_scrub: "6", cron_minutes_zfs_scrub: "0", cron_hour_zfs_scrub: "23"}
@@ -77,8 +75,7 @@ ist das gleiche wie:
 `Use when: var rather than when: var == True (or conversely when: not var)`
 `when: dokuwiki_update # entspricht when: dokuwiki_update == true`
 
-##Loop + Join
-
+## Loop + Join
 ### Vars
 ```
     mountpoint: "/shares"
@@ -107,3 +104,58 @@ ist das gleiche wie:
       fstype: fuse.mergerfs
       state: mounted
 ```
+
+## prüfen ob eine Datei existiert
+
+```
+  - name: check if migration file exists
+    stat:
+      path: /etc/miniflux.d/.migration_successful
+    register: migration_successful_existiert
+
+  - name: dbug
+    debug:
+      msg: "{{ migration_successful_existiert }}"
+    #output:
+    # *
+    #ok: [miniflux-test.grote.lan] => {
+    #    "msg": {
+    #      "changed": false,
+    #      "failed": false,
+    #      "stat": {
+    #          "exists": false
+
+
+
+#  - name: admin anlagen
+#    shell:
+#      cmd: miniflux -c /etc/miniflux.d/miniflux.conf -migrate
+#    when: migration_successful_existiert.stat.exists == False
+
+  - name: migration tocuh
+    file:
+      path: /etc/miniflux.d/.migration_successful
+      state: touch
+    when: migration_successful_existiert.stat.exists == False
+
+
+  - name: check if update should be applied
+    become: yes
+    stat:
+      path: "/root/pve-nag-buster/is_installed"
+    register: "is_installed"
+
+  - name: dbug
+    debug:
+      msg: "{{ is_installed }}"
+
+  - name: Ordner "/root/pve-nag-buster" erstellen
+    become: yes
+    file:
+      path: /root/pve-nag-buster
+      state: directory
+    when: not is_installed.stat.exists
+```
+
+### Siehe auch
+  * https://stackoverflow.com/questions/35654286/how-to-check-if-a-file-exists-in-ansible
