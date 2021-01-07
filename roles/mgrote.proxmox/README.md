@@ -15,7 +15,7 @@ see [defaults](./defaults/main.yml)
 `./pools.sh Test start`
 `Test = $1`
 `start = $2`
-möglich: Poolnamen(case-sensitiv) & start/stop
+möglich: Poolnamen(case-sensitiv) & start/stop/shutdown
 
 #### RegEx
 `sudo pvesh get /pools/$1 |`  gibt alle VM/ct-Daten als JSON(?)-Objekt mit Formatierung aus
