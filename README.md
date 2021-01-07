@@ -28,12 +28,14 @@ Diese Datei enthält das Passwort mit dem die KeePassDb verschlüsselt ist.
 Das vault-secret für die GroupVars wird mit `ansible-vault encrypt_string <password>` erstellt.
 
 ### Erklärung
+```
   keepass_dbx: "./keepass_db.kdbx"
   keepass_psw: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           62383737XXXXXX531
+```
 1. mit vault-pass.yml wird das Kennwort an ansible-vault übergeben
-2. ansible-vault entschlüsselt hiermit die variable "keepass_psw"
+2. ansible-vault entschlüsselt hiermit die Variable `keepass_psw`
 3. der Inhalt der Variable wird dann an das KeePass-Lookup-Plugin übergeben was damit die KeePass-Datei öffnet
 
 
@@ -47,4 +49,61 @@ restic_repository_password:         <-- Ansible Variablen Name
 lookup('keepass'                    <-- Aufruf Keepass-Lookup-Plugin
 restic_repository_password          <-- Titel Eintrag mit Secret
 password                            <-- Feldbzeichner in KeepassDB
+```
+
+## Inventory anzeigen
+`ansible-inventory -i inventory --graph`
+
+## Alternatives Dictionary Format:
+```bash
+  zfs_pool:
+    - name: "ssd_vm_mirror"
+      type: "ssd"
+      cron_minute_zfs_trim: "5"
+      cron_hour_zfs_trim: "22"
+      cron_month_zfs_trim: "4,8,12"
+      cron_day_zfs_trim: "2"
+      cron_weekday_zfs_scrub: "6"
+      cron_minutes_zfs_scrub: "0"
+      cron_hour_zfs_scrub: "23"
+```
+ist das gleiche wie:
+```bash
+  zfs_pool:
+    - { name: "ssd_vm_mirror", type: "ssd", cron_minute_zfs_trim: "5", cron_hour_zfs_trim: "22", cron_month_zfs_trim: "4,8,12", cron_day_zfs_trim: "2", cron_weekday_zfs_scrub: "6", cron_minutes_zfs_scrub: "0", cron_hour_zfs_scrub: "23"}
+```
+
+## when: true
+`Use when: var rather than when: var == True (or conversely when: not var)`
+`when: dokuwiki_update # entspricht when: dokuwiki_update == true`
+
+##Loop + Join
+
+### Vars
+```
+    mountpoint: "/shares"
+    sources:
+      - "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1"
+      - "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2"
+    opts: defaults,allow_other,direct_io,use_ino,moveonenospc=true,category.create=mfs,minfreespace=100G
+```
+
+### Tasks
+
+```
+  - name: "Join/Combine sources"
+    set_fact:
+      src: "{{sources |  join (':')}}"
+    loop: "{{ sources }}"
+
+  - debug:
+      msg: "{{src}}"
+
+  - name: "Mount mergerFS"
+    mount:
+      path: "{{ mountpoint }}"
+      src: "{{ src }}"
+      opts: "{{ opts }}"
+      fstype: fuse.mergerfs
+      state: mounted
 ```
