@@ -1,5 +1,8 @@
 # ansible_heimserver
 
+## playbook-grapher
+`ansible-playbook-grapher --include-role-tasks  tests/fixtures/with_roles.yml`
+
 ## example-cli
 `ansible-playbook playbooks/base/0_master.yml  -i inventory --limit jenkins-test.grote.lan --key-file id_rsa_ansible_user --vault-pass-file vault-pass.yml`
 

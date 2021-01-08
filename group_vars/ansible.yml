@@ -5,8 +5,12 @@
     - name: pykeepass
     - name: Jinja2
     - name: markupsafe
+    - name: ansible-playbook-grapher
   ### geerlingguy.ansible
   ansible_install_method: pip
   ansible_install_version_pip: '2.10'
   ### mgrote.restic
   restic_folders_to_backup: "/usr/local /etc /root /home"
+  ### mgrote.install_packages
+  programs_extra:
+    - graphviz # für ansible-playbook-grapher
