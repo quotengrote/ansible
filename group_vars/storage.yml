@@ -25,11 +25,18 @@
     - name: 'pve'
       groups: 'users'
       password: "{{ lookup('keepass', 'fileserver_smb_user_docker', 'password') }}"
+    - name: 'brother_ads2700w'
+      groups: 'users'
+      password: "{{ lookup('keepass', 'fileserver_smb_user_brother_ads2700w', 'password') }}"
   smb_freigaben:
     - freigabename: 'videos'
       ordnerpfad: '/shares_videos'
       lese_nutzer: ' kodi'
       schreibe_nutzer: 'annemariedroessler michaelgrote'
+    - freigabename: 'scans'
+      ordnerpfad: '/shares/scans'
+      lese_nutzer: 'annemariedroessler '
+      schreibe_nutzer: 'michaelgrote brother_ads2700w'
     - freigabename: 'ag'
       ordnerpfad: '/shares/ag'
       lese_nutzer: ''
