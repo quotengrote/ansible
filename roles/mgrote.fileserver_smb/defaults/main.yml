@@ -50,4 +50,4 @@
   smb_shadow_format: "_%Y-%m-%d_%H:%M:%S"
   smb_shadow_snapprefix: "^autosnap"
   smb_shadow_delimiter: "_"
-  smb_shadow_localtime: "yes"
+  smb_shadow_localtime: "no"
