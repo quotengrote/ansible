@@ -23,12 +23,11 @@ exlock
 
 (
   echo "--------------------------------------------------"
-  echo $(date) sanoid start
+  echo $(date +%d.%m.%Y-%T) sanoid start
   echo ""
   /usr/local/bin/sanoid --cron --verbose
   echo ""
-  echo $(date) sanoid end
-  echo "--------------------------------------------------"
+  echo $(date +%d.%m.%Y-%T) sanoid end
 ) >> /var/log/sanoid-cron.log 2>&1 &
 
 

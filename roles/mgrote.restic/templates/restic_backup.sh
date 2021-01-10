@@ -21,7 +21,7 @@ mount_return_value=$? # schreib Exit Code in Variable
 if ( [ "$mount_return_value" -ne 0 ] ); then
     {
     echo "--------------------------------------------------" # Trenner logfile
-    echo $(date) # Datum für logfile
+    echo $(date +%d.%m.%Y-%T) # Datum für logfile
     echo "mount error"
     } >> /var/log/restic.log 2>&1;
     tail --lines=5 "/var/log/restic.log" | mail -s "Backup-Error - restic - $HOSTNAME" {{ empfaenger_mail }}
@@ -29,7 +29,7 @@ if ( [ "$mount_return_value" -ne 0 ] ); then
 else
     {
     echo "--------------------------------------------------" # Trenner logfile
-    echo $(date) # Datum für logfile
+    echo $(date +%d.%m.%Y-%T) # Datum für logfile
     echo "mount successful"
     } >> /var/log/restic.log 2>&1;
 fi
@@ -40,7 +40,7 @@ while [[ "$abbruch_restic" -le {{ restic_anzahl_versuche_backup }} ]] # Schleife
 do
     {  # ist keine Subshell sondern Grouping; https://askubuntu.com/questions/662190/write-the-output-of-multiple-sequential-commands-to-a-text-file
     echo "--------------------------------------------------" # Trenner logfile
-    echo $(date) # Datum für logfile
+    echo $(date +%d.%m.%Y-%T) # Datum für logfile
     restic -r {{ restic_mount }} --password-file /etc/restic/password.txt backup --exclude-file /etc/restic/exclude.txt {{ restic_folders_to_backup }} # execute Backup
     restic_return_value=$? # schreib Exit Code in Variable
     if ( [[ "$restic_return_value" -eq 0 ]] ); # Prüfung ob restic erfolgreich war(setze Abbruchbedingung), wenn nicht warte 1min und zähle die Abbruchbedingung hoch
