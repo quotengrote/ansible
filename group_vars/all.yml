@@ -1,6 +1,6 @@
 ---
   empfaenger_mail: michael.grote@posteo.de
-  ### mgrote.postfix
+  ### mgrote.postfix / werden auch bei gitlab verwendet
   postfix_absender_mailadresse: info@mgrote.net
   postfix_absender_passwort: "{{ lookup('keepass', 'postfix_absender_passwort', 'password') }}"
   postfix_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24"

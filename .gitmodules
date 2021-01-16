@@ -37,3 +37,6 @@
 [submodule "roles/tmaurice.gitea"]
 	path = roles/tmaurice.gitea
 	url = https://github.com/thomas-maurice/ansible-role-gitea
+[submodule "roles/geerlingguy.gitlab"]
+	path = roles/geerlingguy.gitlab
+	url = https://github.com/geerlingguy/ansible-role-gitlab
