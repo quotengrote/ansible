@@ -1,0 +1,43 @@
+---
+  ### geerlingguy.gitlab
+  # nicht alle gitlab Einstellungen lassen sich als Variable festlegen!
+  gitlab_domain: gitlab.grote.lan
+  gitlab_external_url: "http://git.mgrote.net"
+  gitlab_edition: "gitlab-ce"
+  gitlab_nginx_listen_https: "false"
+  gitlab_redirect_http_to_https: "false"
+  gitlab_create_self_signed_cert: "false"
+  gitlab_smtp_enable: "true"
+  gitlab_smtp_address: "smtp.strato.de"
+  gitlab_smtp_port: "465"
+  gitlab_smtp_user_name: "info@mgrote.net"
+  gitlab_smtp_password: "{{ lookup('keepass', 'postfix_absender_passwort', 'password') }}"
+  gitlab_smtp_domain: "mgrote.net"
+  gitlab_smtp_authentication: "login"
+  gitlab_smtp_enable_starttls_auto: "false"
+  gitlab_smtp_tls: "true"
+  gitlab_email_enabled: "true"
+  gitlab_email_from: "noreply@mgrote.net"
+  gitlab_email_display_name: "Gitlab"
+  gitlab_email_reply_to: "noreply@mgrote.net"
+#  gitlab_extra_settings:
+#    - gitlab_rails:
+#        - key: "trusted_proxies"
+#          value: "['foo']"
+
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+      from_ip: 192.168.2.0/24
+    - rule: allow
+      to_port: 80
+      protocol: tcp
+      comment: 'gitlab'
+      from_ip: 192.168.2.0/24
+
+  ### mgrote.restic
+  restic_folders_to_backup: "/usr/local /etc /root /var/lib /home /var/opt/gitlab"
+  restic_cron_hours: "*/2"

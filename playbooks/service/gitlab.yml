@@ -1,0 +1,4 @@
+---
+- hosts: gitlab
+  roles:
+    - { role: geerlingguy.gitlab, tags: "gitlab", become: true }
