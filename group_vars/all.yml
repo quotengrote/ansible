@@ -47,18 +47,18 @@
   ufw_default_outgoing_policy: allow
   ### ryandaniels.create_users
   users:
-  - username: mg
-    password: "{{ lookup('keepass', 'linux_mg_user_password_hash', 'password') }}"
-    update_password: on_create
-    ssh_key: "{{ lookup('keepass', 'ssh_pubkey_mg', 'password') }}"
-    use_sudo: yes
-    use_sudo_nopass: yes
-    user_state: present
-    groups: ssh, sudo
-    servers:
-      - production
-      - staging
-      - test
+    - username: mg
+      password: "{{ lookup('keepass', 'linux_mg_user_password_hash', 'password') }}"
+      update_password: on_create
+      ssh_key: "{{ lookup('keepass', 'ssh_pubkey_mg', 'password') }}"
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh, sudo
+      servers:
+        - production
+        - staging
+        - test
   ### geerlingguy.dotfiles
   dotfiles_repo: "https://git.mgrote.net/mg/dotfiles"
   dotfiles_repo_local_destination: "/home/mg/dotfiles-repo"

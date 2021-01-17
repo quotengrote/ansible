@@ -1,0 +1,6 @@
+---
+  - name: Install deb package
+    apt:
+      deb: "{{ gitlab_runner_dl_link }}"
+      state: present
+    notify: register_runner
