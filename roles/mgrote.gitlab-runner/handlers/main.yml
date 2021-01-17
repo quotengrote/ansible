@@ -1,0 +1,13 @@
+---
+  - name: "register_runner"
+    community.general.gitlab_runner:
+      api_url: "{{ item.api_url }}"
+      registration_token: "{{ item.registration_token }}"
+      api_token: "{{ item.api_token }}"
+      description: "{{ item.description|default('GitLab-Runner') }}"
+      state: "{{ item.state|default('present') }}"
+      active: "{{ item.active|default('True') }}"
+      run_untagged: True
+      locked: "{{ item.locked|default('False') }}"
+    loop: "{{ gitlab_runner }}"
+    no_log: true

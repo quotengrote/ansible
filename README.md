@@ -1,5 +1,26 @@
 # ansible_heimserver
 
+## collections als Dependency
+- in meta
+```
+collections:
+  - community.general
+```
+
+## defaults in Dictionary
+```bash
+- name: "register_runner"
+  community.general.gitlab_runner:
+    description: "{{ description|default('GitLab-Runner') }}"
+```
+
+```
+description: <-- Original-Variable
+"{{ item.description| <-- Original-Inhalt
+default('GitLab-Runner') }}" <-- wenn Inhalt leer, dann default...
+```
+
+
 ## playbook-grapher
 `ansible-playbook-grapher --include-role-tasks  tests/fixtures/with_roles.yml`
 

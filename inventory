@@ -54,12 +54,16 @@ all:
         gitea-staging.grote.lan:
         gitea-test.grote.lan:
         gitea.grote.lan:
-    gitlab:  # immer auch unten in den 2 Gruppen eintragen, sonst schlägt in Bootstrap das verteilen der ssh-keys fehl
+    gitlab:
       hosts:
         gitlab-staging.grote.lan:
         gitlab-test.grote.lan:
         gitlab.grote.lan:
-
+    gitlabrunner:  # immer auch unten in den 2 Gruppen eintragen, sonst schlägt in Bootstrap das verteilen der ssh-keys fehl
+      hosts:
+        gitlab-runner-staging.grote.lan:
+        gitlab-runner-test.grote.lan:
+        gitlab-runner.grote.lan:
 #    wsl:
 #      hosts:
 #        irantu.grote.lan:
@@ -85,6 +89,7 @@ all:
         jenkins.grote.lan:
         gitea.grote.lan:
         gitlab.grote.lan:
+        gitlab-runner.grote.lan:
     staging:
       hosts:
         wireguard-staging.grote.lan:
@@ -98,6 +103,7 @@ all:
         jenkins-staging.grote.lan:
         gitea-staging.grote.lan:
         gitlab-staging.grote.lan:
+        gitlab-runner-staging.grote.lan:
     test:
       hosts:
         wireguard-test.grote.lan:
@@ -113,3 +119,4 @@ all:
         jenkins-test.grote.lan:
         gitea-test.grote.lan:
         gitlab-test.grote.lan:
+        gitlab-runner-test.grote.lan:

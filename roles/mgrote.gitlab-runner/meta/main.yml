@@ -1,0 +1,3 @@
+---
+  collections: # Damit wird die Collection, wenn nicht vorhanden, als Abhängigkeit heruntergeladen.
+    - community.general
