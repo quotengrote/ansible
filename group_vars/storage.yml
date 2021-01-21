@@ -28,6 +28,9 @@
     - name: 'brother_ads2700w'
       groups: 'users'
       password: "{{ lookup('keepass', 'fileserver_smb_user_brother_ads2700w', 'password') }}"
+    - name: 'ocrmypdf'
+      groups: 'users'
+      password: "{{ lookup('keepass', 'fileserver_smb_user_ocrmypdf', 'password') }}"
   smb_freigaben:
     - freigabename: 'videos'
       ordnerpfad: '/shares_videos'
@@ -36,7 +39,7 @@
     - freigabename: 'scans'
       ordnerpfad: '/shares/scans'
       lese_nutzer: 'annemariedroessler michaelgrote'
-      schreibe_nutzer: 'brother_ads2700w'
+      schreibe_nutzer: 'brother_ads2700w ocrmypdf'
     - freigabename: 'ag'
       ordnerpfad: '/shares/ag'
       lese_nutzer: ''
