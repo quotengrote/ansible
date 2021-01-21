@@ -15,11 +15,6 @@ all:
         fileserver2.grote.lan:
         fileserver-staging.grote.lan:
         fileserver-test.grote.lan:
-    jenkins:
-      hosts:
-        jenkins.grote.lan:
-        jenkins-staging.grote.lan:
-        jenkins-test.grote.lan:
     dns:
       hosts:
         pi.hole:
@@ -49,11 +44,6 @@ all:
         pve-staging.grote.lan:
         pve-test.grote.lan:
         pve2.grote.lan:
-    gitea:
-      hosts:
-        gitea-staging.grote.lan:
-        gitea-test.grote.lan:
-        gitea.grote.lan:
     gitlab:
       hosts:
         gitlab-staging.grote.lan:
@@ -86,8 +76,6 @@ all:
         ansible.grote.lan:
         docker.grote.lan:
         pve2.grote.lan:
-        jenkins.grote.lan:
-        gitea.grote.lan:
         gitlab.grote.lan:
         gitlab-runner.grote.lan:
     staging:
@@ -100,8 +88,6 @@ all:
         ansible-staging.grote.lan:
         docker-staging.grote.lan:
         pve-staging.grote.lan:
-        jenkins-staging.grote.lan:
-        gitea-staging.grote.lan:
         gitlab-staging.grote.lan:
         gitlab-runner-staging.grote.lan:
     test:
@@ -116,7 +102,5 @@ all:
         vm-test.grote.lan:
         lxc-test2.grote.lan:
         pve-test.grote.lan:
-        jenkins-test.grote.lan:
-        gitea-test.grote.lan:
         gitlab-test.grote.lan:
         gitlab-runner-test.grote.lan:
