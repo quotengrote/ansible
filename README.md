@@ -20,14 +20,14 @@ collections:
     description: "{{ description|default('GitLab-Runner') }}"
 ```
 
-```
+```yaml
 description: <-- Original-Variable
 "{{ item.description| <-- Original-Inhalt
 default('GitLab-Runner') }}" <-- wenn Inhalt leer, dann default...
 ```
 
 
-## playbook-grapher
+## [playbook-grapher](https://github.com/haidaraM/ansible-playbook-grapher)
 `ansible-playbook-grapher --include-role-tasks  tests/fixtures/with_roles.yml`
 
 ## example-cli
@@ -57,7 +57,7 @@ Diese Datei enthält das Passwort mit dem die KeePassDb verschlüsselt ist.
 Das vault-secret für die GroupVars wird mit `ansible-vault encrypt_string <password>` erstellt.
 
 ### Erklärung
-```
+```yaml
   keepass_dbx: "./keepass_db.kdbx"
   keepass_psw: !vault |
           $ANSIBLE_VAULT;1.1;AES256
@@ -71,7 +71,7 @@ Das vault-secret für die GroupVars wird mit `ansible-vault encrypt_string <pass
 `restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"`
 
 #### Erklärung
-```
+```yaml
 restic_repository_password:         <-- Ansible Variablen Name
 lookup('keepass'                    <-- Aufruf Keepass-Lookup-Plugin
 restic_repository_password          <-- Titel Eintrag mit Secret
@@ -96,7 +96,7 @@ password                            <-- Feldbzeichner in KeepassDB
 ```
 ist das gleiche wie:
 
-```bash
+```yaml
   zfs_pool:
     - { name: "ssd_vm_mirror", type: "ssd", cron_minute_zfs_trim: "5", cron_hour_zfs_trim: "22", cron_month_zfs_trim: "4,8,12", cron_day_zfs_trim: "2", cron_weekday_zfs_scrub: "6", cron_minutes_zfs_scrub: "0", cron_hour_zfs_scrub: "23"}
 ```
@@ -107,7 +107,7 @@ ist das gleiche wie:
 
 ## Loop + Join
 ### Vars
-```
+```yaml
     mountpoint: "/shares"
     sources:
       - "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1"
@@ -117,7 +117,7 @@ ist das gleiche wie:
 
 ### Tasks
 
-```
+```yaml
   - name: "Join/Combine sources"
     set_fact:
       src: "{{sources |  join (':')}}"
@@ -137,7 +137,7 @@ ist das gleiche wie:
 
 ## prüfen ob eine Datei existiert
 
-```
+```yaml
   - name: check if migration file exists
     stat:
       path: /etc/miniflux.d/.migration_successful
