@@ -9,10 +9,3 @@
   pip_package: python3-pip
   pip_install_packages:
     - name: python-gitlab
-  ### mgrote.gitlab-runner
-  gitlab_runner:
-    - api_url: https://git.mgrote.net
-      registration_token: "{{ lookup('keepass', 'gitlab_runner_registration_token', 'password') }}"
-      api_token: "{{ lookup('keepass', 'gitlab_runner_api_token', 'password') }}" #Token: ansible-gitlab-runner
-      api_username: root
-      description: "{{ ansible_hostname }}"
