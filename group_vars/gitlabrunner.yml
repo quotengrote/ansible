@@ -9,3 +9,12 @@
   pip_package: python3-pip
   pip_install_packages:
     - name: python-gitlab
+  ### riemers.gitlab-runner
+  gitlab_runner_coordinator_url: https://git.mgrote.net
+  gitlab_runner_registration_token: "{{ lookup('keepass', 'gitlab_runner_registration_token', 'password') }}"
+  gitlab_runner_runners:
+    - name: "{{ ansible_hostname }}-docker"
+      executor: docker
+      docker_image: 'alpine'
+      docker_volumes:
+        - "/var/run/docker.sock:/var/run/docker.sock"

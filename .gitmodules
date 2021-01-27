@@ -37,3 +37,6 @@
 [submodule "roles/geerlingguy.gitlab"]
 	path = roles/geerlingguy.gitlab
 	url = https://github.com/geerlingguy/ansible-role-gitlab
+[submodule "roles/riemers.gitlab-runner"]
+	path = roles/riemers.gitlab-runner
+	url = https://github.com/riemers/ansible-gitlab-runner
