@@ -1,5 +1,11 @@
 # ansible_heimserver
 
+## Ansible KeePass Lookup Plugin aktualisieren
+```bash
+pip install 'pykeepass>3.2.0' --user
+mkdir -p ~/.ansible/plugins/lookup && cd "$_"
+curl https://raw.githubusercontent.com/viczem/ansible-keepass/master/keepass.py -o ./keepass.py
+```
 ## collections als Dependency
 - in meta
 ```
