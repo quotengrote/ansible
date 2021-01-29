@@ -1,5 +1,8 @@
 # ansible_heimserver
 
+[![pipeline status](http://git.mgrote.net/mg/ansible/badges/master/pipeline.svg)](http://git.mgrote.net/mg/ansible/-/commits/master)
+
+
 ## Ansible KeePass Lookup Plugin aktualisieren
 ```bash
 pip install 'pykeepass>3.2.0' --user
@@ -31,7 +34,7 @@ default('GitLab-Runner') }}" <-- wenn Inhalt leer, dann default...
 `ansible-playbook-grapher --include-role-tasks  tests/fixtures/with_roles.yml`
 
 ## example-cli
-`ansible-playbook playbooks/base/0_master.yml  -i inventory --limit jenkins-test.grote.lan --key-file id_rsa_ansible_user --vault-pass-file vault-pass.yml`
+`ansible-playbook playbooks/base/0_master.yml  -i inventory --key-file id_rsa_ansible_user  --limit jenkins-test.grote.lan`
 
 ## install necessary collections
 `ansible-galaxy collection install -r requirements.yml`

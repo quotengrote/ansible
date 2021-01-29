@@ -1,13 +1,62 @@
-image: python:3-slim
-
-before_script:
-  - pip install ansible-lint
-  - ansible-lint --version
-
 stages:
-  - ansible-lint
+  - lint
+  - deploy-dry
+  - deploy
 
 ansible-lint:
-  stage: ansible-lint
+  image: willhallonline/ansible:2.9-ubuntu-20.04
+  stage: lint
+  before_script:
+    - chmod 0755 /builds/mg/ansible
   script:
     - ansible-lint .
+  interruptible: true
+  allow_failure: true
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+
+markdown-lint:
+  stage: lint
+  image: pipelinecomponents/markdownlint:latest
+  script:
+    - mdl --style all --warnings .
+  interruptible: true
+  allow_failure: true
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+
+ansible-deploy-dry:
+  image: willhallonline/ansible:2.9-ubuntu-20.04
+  stage: deploy-dry
+  interruptible: false
+  before_script:
+    - chmod 0755 /builds/mg/ansible
+    - echo "$id_rsa_ansible_user" > /builds/mg/ansible/id_rsa_ansible_user
+    - chmod 0400 /builds/mg/ansible/id_rsa_ansible_user
+  script:
+    - ansible-playbook playbooks/base/0_master.yml playbooks/service/* -i inventory --check --limit production --vault-password-file $ansible_vault_pass
+  after_script:
+    - rm /builds/mg/ansible/id_rsa_ansible_user
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+  allow_failure: true
+
+ansible-deploy:
+  image: willhallonline/ansible:2.9-ubuntu-20.04
+  stage: deploy
+  interruptible: false
+  before_script:
+    - chmod 0755 /builds/mg/ansible
+    - echo "$id_rsa_ansible_user" > /builds/mg/ansible/id_rsa_ansible_user
+    - chmod 0400 /builds/mg/ansible/id_rsa_ansible_user
+  script:
+    - ansible-playbook playbooks/base/0_master.yml playbooks/service/* -i inventory --check --limit test --vault-password-file $ansible_vault_pass
+  after_script:
+    - rm /builds/mg/ansible/id_rsa_ansible_user
+  rules:
+    - if: $CI_COMMIT_BRANCH == 'master'
+  allow_failure: true
+
+# GitLab-CI-Vars
+# $ansible_vault_pass - Type: File
+# $id_rsa_ansible_user - Type: Variable
