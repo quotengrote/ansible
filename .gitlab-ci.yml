@@ -3,6 +3,9 @@ stages:
   - deploy-dry
   - deploy
 
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
 ansible-lint:
   image: willhallonline/ansible:2.9-ubuntu-20.04
   stage: lint
@@ -34,7 +37,7 @@ ansible-deploy-dry:
     - echo "$id_rsa_ansible_user" > /builds/mg/ansible/id_rsa_ansible_user
     - chmod 0400 /builds/mg/ansible/id_rsa_ansible_user
   script:
-    - ansible-playbook playbooks/base/0_master.yml playbooks/service/* -i inventory --check --limit production --vault-password-file $ansible_vault_pass
+    - ansible-playbook playbooks/base/0_master.yml playbooks/service/* -i inventory --check --limit test --vault-password-file $ansible_vault_pass
   after_script:
     - rm /builds/mg/ansible/id_rsa_ansible_user
   rules:
