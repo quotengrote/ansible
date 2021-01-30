@@ -26,7 +26,6 @@
     groups: ssh, sudo, docker
     servers:
       - production
-      - staging
       - test
   ### mgrote.restic
   restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker
@@ -45,4 +44,3 @@
         /var/lib/docker/volumes/ocrmypdf-auto_scan_output/*
         # https://github.com/restic/restic/issues/1005
         # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
- 

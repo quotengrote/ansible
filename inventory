@@ -3,37 +3,30 @@ all:
     wireguard:
       hosts:
         wireguard.grote.lan:
-        wireguard-staging.grote.lan:
         wireguard-test.grote.lan:
     dokuwiki:
       hosts:
         dokuwiki2.grote.lan:
-        dokuwiki-staging.grote.lan:
         dokuwiki-test.grote.lan:
     storage:
       hosts:
         fileserver2.grote.lan:
-        fileserver-staging.grote.lan:
         fileserver-test.grote.lan:
     dns:
       hosts:
         pi.hole:
-        pihole-staging.grote.lan:
         pihole-test.grote.lan:
     acng:
       hosts:
         acng.grote.lan:
-        acng-staging.grote.lan:
         acng-test.grote.lan:
     ansible:
       hosts:
         ansible.grote.lan:
-        ansible-staging.grote.lan:
         ansible-test.grote.lan:
     docker:
       hosts:
         docker.grote.lan:
-        docker-staging.grote.lan:
         docker-test.grote.lan:
     testeinzeln:
       hosts:
@@ -41,17 +34,14 @@ all:
         lxc-test2.grote.lan:
     virt:
       hosts:
-        pve-staging.grote.lan:
         pve-test.grote.lan:
         pve2.grote.lan:
     gitlab:
       hosts:
-        gitlab-staging.grote.lan:
         gitlab-test.grote.lan:
         gitlab.grote.lan:
     gitlabrunner:  # immer auch unten in den 2 Gruppen eintragen, sonst schlägt in Bootstrap das verteilen der ssh-keys fehl
       hosts:
-        gitlab-runner-staging.grote.lan:
         gitlab-runner-test.grote.lan:
         gitlab-runner.grote.lan:
 #    wsl:
@@ -78,18 +68,6 @@ all:
         pve2.grote.lan:
         gitlab.grote.lan:
         gitlab-runner.grote.lan:
-    staging:
-      hosts:
-        wireguard-staging.grote.lan:
-        dokuwiki-staging.grote.lan:
-        fileserver-staging.grote.lan:
-        pihole-staging.grote.lan:
-        acng-staging.grote.lan:
-        ansible-staging.grote.lan:
-        docker-staging.grote.lan:
-        pve-staging.grote.lan:
-        gitlab-staging.grote.lan:
-        gitlab-runner-staging.grote.lan:
     test:
       hosts:
         wireguard-test.grote.lan:

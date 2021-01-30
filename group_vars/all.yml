@@ -57,7 +57,6 @@
       groups: ssh, sudo
       servers:
         - production
-        - staging
         - test
   ### geerlingguy.dotfiles
   dotfiles_repo: "https://git.mgrote.net/mg/dotfiles"
