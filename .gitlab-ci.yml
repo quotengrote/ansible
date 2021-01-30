@@ -1,7 +1,7 @@
 stages:
   - lint
-  - deploy-dry
-  - deploy
+  - deploy-test
+  - deploy-prod
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
@@ -28,32 +28,33 @@ markdown-lint:
   rules:
     - if: $CI_MERGE_REQUEST_ID
 
-ansible-deploy-dry:
+ansible-deploy-test:
   image: willhallonline/ansible:2.9-ubuntu-20.04
-  stage: deploy-dry
+  stage: deploy-test
   interruptible: false
   before_script:
     - chmod 0755 /builds/mg/ansible
     - echo "$id_rsa_ansible_user" > /builds/mg/ansible/id_rsa_ansible_user
     - chmod 0400 /builds/mg/ansible/id_rsa_ansible_user
+    - pip install 'pykeepass>3.2.0' --user
   script:
-    - ansible-playbook playbooks/base/0_master.yml playbooks/service/* -i inventory --check --limit test --vault-password-file $ansible_vault_pass
+    - ansible-playbook playbooks/base/0_master.yml playbooks/service/* -i inventory --limit test --vault-password-file $ansible_vault_pass
   after_script:
     - rm /builds/mg/ansible/id_rsa_ansible_user
   rules:
     - if: $CI_MERGE_REQUEST_ID
-  allow_failure: true
 
-ansible-deploy:
+ansible-deploy-prod:
   image: willhallonline/ansible:2.9-ubuntu-20.04
-  stage: deploy
+  stage: deploy-prod
   interruptible: false
   before_script:
     - chmod 0755 /builds/mg/ansible
     - echo "$id_rsa_ansible_user" > /builds/mg/ansible/id_rsa_ansible_user
     - chmod 0400 /builds/mg/ansible/id_rsa_ansible_user
+    - pip install 'pykeepass>3.2.0' --user
   script:
-    - ansible-playbook playbooks/base/0_master.yml playbooks/service/* -i inventory --check --limit test --vault-password-file $ansible_vault_pass
+    - ansible-playbook playbooks/base/0_master.yml playbooks/service/* -i inventory --limit production --vault-password-file $ansible_vault_pass
   after_script:
     - rm /builds/mg/ansible/id_rsa_ansible_user
   rules:

@@ -27,7 +27,7 @@
 	url = https://github.com/ryandaniels/ansible-role-create-users
 [submodule "roles/geerlingguy.dotfiles"]
 	path = roles/geerlingguy.dotfiles
-	url = https://git.mgrote.net/mg/geerlingguy.dotfiles
+	url = https://git.mgrote.net/mg/geerlingguy-dotfiles
 [submodule "roles/geerlingguy.jenkins"]
 	path = roles/geerlingguy.jenkins
 	url = https://github.com/geerlingguy/ansible-role-jenkins
