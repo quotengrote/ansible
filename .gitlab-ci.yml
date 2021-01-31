@@ -59,7 +59,6 @@ ansible-deploy-prod:
     - rm /builds/mg/ansible/id_rsa_ansible_user
   rules:
     - if: $CI_COMMIT_BRANCH == 'master'
-  allow_failure: true
 
 # GitLab-CI-Vars
 # $ansible_vault_pass - Type: File

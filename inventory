@@ -67,7 +67,7 @@ all:
         docker.grote.lan:
         pve2.grote.lan:
         gitlab.grote.lan:
-        gitlab-runner.grote.lan:
+#        gitlab-runner.grote.lan:
     test:
       hosts:
         wireguard-test.grote.lan:
@@ -81,4 +81,4 @@ all:
         lxc-test2.grote.lan:
         pve-test.grote.lan:
         gitlab-test.grote.lan:
-        gitlab-runner-test.grote.lan:
+#        gitlab-runner-test.grote.lan:
