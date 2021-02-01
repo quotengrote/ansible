@@ -1,8 +1,11 @@
 ---
   - hosts: all
-    serial: 3
-    max_fail_percentage: 20%
     roles:
-      - { role: mgrote.set_apt_proxy, tags: "apt_sources" }
-      - { role: mgrote.update_packages, tags: "updates" }
-      - { role: mgrote.install_packages, tags: "install" }
+      - { role: mgrote.set_apt_proxy,
+        tags: "apt_sources" }
+      - { role: mgrote.update_packages,
+        tags: "updates",
+        serial: 3 }
+      - { role: mgrote.install_packages,
+        tags: "install",
+        serial: 3 }

@@ -20,6 +20,7 @@
       path: '/etc/update-motd.d/{{ item }}'
       state: absent
     with_items:
+      - 00-header
       - 10-help-text
       - 10-uname
       - 50-motd-news
