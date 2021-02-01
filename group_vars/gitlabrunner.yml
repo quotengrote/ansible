@@ -24,3 +24,10 @@
       tags:
         - docker-build
 # Wenn Änderungen nicht übernommen werden, Runner löschen und neu anlegen.
+
+  ### oefenweb.ufw
+  ufw_rules: #from: ... ist nicht vorhanden da aus dem Docker-Netzwerk darauf zugegriffen werden soll
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
