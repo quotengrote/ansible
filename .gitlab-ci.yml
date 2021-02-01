@@ -7,7 +7,7 @@ variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
 ansible-lint:
-  image: willhallonline/ansible:2.9-ubuntu-20.04
+  image: quotengrote/gitlab-ci-ansible:latest
   stage: lint
   before_script:
     - chmod 0755 /builds/mg/ansible
@@ -17,6 +17,8 @@ ansible-lint:
   allow_failure: true
   rules:
     - if: $CI_MERGE_REQUEST_ID
+  tags:
+    - ansible
 
 markdown-lint:
   stage: lint
@@ -27,38 +29,42 @@ markdown-lint:
   allow_failure: true
   rules:
     - if: $CI_MERGE_REQUEST_ID
+  tags:
+    - ansible
 
 ansible-deploy-test:
-  image: willhallonline/ansible:2.9-ubuntu-20.04
+  image: quotengrote/gitlab-ci-ansible:latest
   stage: deploy-test
   interruptible: false
   before_script:
     - chmod 0755 /builds/mg/ansible
     - echo "$id_rsa_ansible_user" > /builds/mg/ansible/id_rsa_ansible_user
     - chmod 0400 /builds/mg/ansible/id_rsa_ansible_user
-    - pip install 'pykeepass>3.2.0' --user
   script:
     - ansible-playbook playbooks/base/0_master.yml playbooks/service/* -i inventory --limit test --vault-password-file $ansible_vault_pass
   after_script:
     - rm /builds/mg/ansible/id_rsa_ansible_user
   rules:
     - if: $CI_MERGE_REQUEST_ID
+  tags:
+    - ansible
 
 ansible-deploy-prod:
-  image: willhallonline/ansible:2.9-ubuntu-20.04
+  image: quotengrote/gitlab-ci-ansible:latest
   stage: deploy-prod
   interruptible: false
   before_script:
     - chmod 0755 /builds/mg/ansible
     - echo "$id_rsa_ansible_user" > /builds/mg/ansible/id_rsa_ansible_user
     - chmod 0400 /builds/mg/ansible/id_rsa_ansible_user
-    - pip install 'pykeepass>3.2.0' --user
   script:
     - ansible-playbook playbooks/base/0_master.yml playbooks/service/* -i inventory --limit production --vault-password-file $ansible_vault_pass
   after_script:
     - rm /builds/mg/ansible/id_rsa_ansible_user
   rules:
     - if: $CI_COMMIT_BRANCH == 'master'
+  tags:
+    - ansible
 
 # GitLab-CI-Vars
 # $ansible_vault_pass - Type: File

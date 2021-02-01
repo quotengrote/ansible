@@ -5,6 +5,7 @@
     - root
     - ansible-user
     - git
+    - gitlab-runner
   ### geerlingguy.pip
   pip_package: python3-pip
   pip_install_packages:
@@ -15,7 +16,11 @@
   gitlab_runner_runners:
     - name: "{{ ansible_hostname }}-docker"
       executor: docker
-#      docker_image: 'alpine'
-#      docker_volumes:
-#        - "/var/run/docker.sock:/var/run/docker.sock"
- 
+      tags:
+        - ansible
+        - hadolint
+    - name: "{{ ansible_hostname }}-shell"
+      executor: shell
+      tags:
+        - docker-build
+# Wenn Änderungen nicht übernommen werden, Runner löschen und neu anlegen.
