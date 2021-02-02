@@ -19,7 +19,7 @@ fi
 # SSD then 80% is reasonable. If you have a 60TB raid-z2 array then you can
 # probably set the warning closer to 95%.
 
-maxCapacity= {{ zfs_tool_max_cap }}
+maxCapacity={{ zfs_tool_max_cap }}
 
 if [ ${problems} -eq 0 ]; then
   capacity=$(/sbin/zpool list -H -o capacity)
