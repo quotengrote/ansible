@@ -1,6 +1,8 @@
 stages:
   - lint
+  - ping-test
   - deploy-test
+  - ping-prod
   - deploy-prod
 
 variables:
@@ -24,13 +26,32 @@ markdown-lint:
   stage: lint
   image: pipelinecomponents/markdownlint:latest
   script:
-    - mdl --style all --warnings .
+    - mdl --style all --warnings --rules ~MD022,~MD013 .
   interruptible: true
   allow_failure: true
   rules:
     - if: $CI_MERGE_REQUEST_ID
   tags:
     - ansible
+
+ping-test:
+  image: quotengrote/gitlab-ci-ansible:latest
+  stage: ping-test
+  interruptible: true
+  before_script:
+    - chmod 0755 /builds/mg/ansible
+    - echo "$id_rsa_ansible_user" > /builds/mg/ansible/id_rsa_ansible_user
+    - chmod 0400 /builds/mg/ansible/id_rsa_ansible_user
+  script:
+    - ansible -i inventory --limit test --vault-password-file $ansible_vault_pass all -m ping
+  after_script:
+    - rm /builds/mg/ansible/id_rsa_ansible_user
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+  tags:
+    - ansible
+
+
 
 ansible-deploy-test:
   image: quotengrote/gitlab-ci-ansible:latest
@@ -46,6 +67,23 @@ ansible-deploy-test:
     - rm /builds/mg/ansible/id_rsa_ansible_user
   rules:
     - if: $CI_MERGE_REQUEST_ID
+  tags:
+    - ansible
+
+ping-prod:
+  image: quotengrote/gitlab-ci-ansible:latest
+  stage: ping-prod
+  interruptible: true
+  before_script:
+    - chmod 0755 /builds/mg/ansible
+    - echo "$id_rsa_ansible_user" > /builds/mg/ansible/id_rsa_ansible_user
+    - chmod 0400 /builds/mg/ansible/id_rsa_ansible_user
+  script:
+    - ansible -i inventory --limit production --vault-password-file $ansible_vault_pass all -m ping
+  after_script:
+    - rm /builds/mg/ansible/id_rsa_ansible_user
+  rules:
+    - if: $CI_COMMIT_BRANCH == 'master'
   tags:
     - ansible
 

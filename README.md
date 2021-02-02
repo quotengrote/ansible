@@ -2,21 +2,25 @@
 
 [![pipeline status](http://git.mgrote.net/mg/ansible/badges/master/pipeline.svg)](http://git.mgrote.net/mg/ansible/-/commits/master)
 
-
 ## Ansible KeePass Lookup Plugin aktualisieren
+
 ```bash
 pip install 'pykeepass>3.2.0' --user
 mkdir -p ~/.ansible/plugins/lookup && cd "$_"
 curl https://raw.githubusercontent.com/viczem/ansible-keepass/master/keepass.py -o ./keepass.py
 ```
+
 ## collections als Dependency
+
 - in meta
-```
+
+```yaml
 collections:
   - community.general
 ```
 
 ## defaults in Dictionary
+
 ```bash
 - name: "register_runner"
   community.general.gitlab_runner:
@@ -28,7 +32,6 @@ description: <-- Original-Variable
 "{{ item.description| <-- Original-Inhalt
 default('GitLab-Runner') }}" <-- wenn Inhalt leer, dann default...
 ```
-
 
 ## [playbook-grapher](https://github.com/haidaraM/ansible-playbook-grapher)
 `ansible-playbook-grapher --include-role-tasks  tests/fixtures/with_roles.yml`
@@ -43,7 +46,8 @@ default('GitLab-Runner') }}" <-- wenn Inhalt leer, dann default...
 `ansible-galaxy collection list -vvv`
 
 ## fix ansible vault-permissions
-```
+
+```bash
 sudo chmod 400 id_rsa_ansible_user
 sudo chmod 400 vault-pass.yml
 ```
@@ -60,12 +64,14 @@ Diese Datei enthält das Passwort mit dem die KeePassDb verschlüsselt ist.
 Das vault-secret für die GroupVars wird mit `ansible-vault encrypt_string <password>` erstellt.
 
 ### Erklärung
+
 ```yaml
   keepass_dbx: "./keepass_db.kdbx"
   keepass_psw: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           62383737XXXXXX531
 ```
+
 1. mit vault-pass.yml wird das Kennwort an ansible-vault übergeben
 2. ansible-vault entschlüsselt hiermit die Variable `keepass_psw`
 3. der Inhalt der Variable wird dann an das KeePass-Lookup-Plugin übergeben was damit die KeePass-Datei öffnet
@@ -74,6 +80,7 @@ Das vault-secret für die GroupVars wird mit `ansible-vault encrypt_string <pass
 `restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"`
 
 #### Erklärung
+
 ```yaml
 restic_repository_password:         <-- Ansible Variablen Name
 lookup('keepass'                    <-- Aufruf Keepass-Lookup-Plugin
@@ -84,7 +91,8 @@ password                            <-- Feldbzeichner in KeepassDB
 ## Inventory anzeigen
 `ansible-inventory -i inventory --graph`
 
-## Alternatives Dictionary Format:
+## Alternatives Dictionary Format
+
 ```bash
   zfs_pool:
     - name: "ssd_vm_mirror"
@@ -97,6 +105,7 @@ password                            <-- Feldbzeichner in KeepassDB
       cron_minutes_zfs_scrub: "0"
       cron_hour_zfs_scrub: "23"
 ```
+
 ist das gleiche wie:
 
 ```yaml
@@ -110,6 +119,7 @@ ist das gleiche wie:
 
 ## Loop + Join
 ### Vars
+
 ```yaml
     mountpoint: "/shares"
     sources:
@@ -139,6 +149,8 @@ ist das gleiche wie:
 ```
 
 ## prüfen ob eine Datei existiert
+
+* https://stackoverflow.com/questions/35654286/how-to-check-if-a-file-exists-in-ansible
 
 ```yaml
   - name: check if migration file exists
@@ -189,6 +201,3 @@ ist das gleiche wie:
       state: directory
     when: not is_installed.stat.exists
 ```
-
-### Siehe auch
-  * https://stackoverflow.com/questions/35654286/how-to-check-if-a-file-exists-in-ansible
