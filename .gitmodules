@@ -28,12 +28,6 @@
 [submodule "roles/geerlingguy.dotfiles"]
 	path = roles/geerlingguy.dotfiles
 	url = https://git.mgrote.net/mg/geerlingguy-dotfiles
-[submodule "roles/geerlingguy.jenkins"]
-	path = roles/geerlingguy.jenkins
-	url = https://github.com/geerlingguy/ansible-role-jenkins
-[submodule "roles/geerlingguy.java"]
-	path = roles/geerlingguy.java
-	url = https://github.com/geerlingguy/ansible-role-java
 [submodule "roles/geerlingguy.gitlab"]
 	path = roles/geerlingguy.gitlab
 	url = https://github.com/geerlingguy/ansible-role-gitlab
