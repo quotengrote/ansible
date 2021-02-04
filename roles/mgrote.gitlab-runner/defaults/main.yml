@@ -1,3 +1,0 @@
----
-  gitlab_runner_arch: amd64 #https://gitlab-runner-downloads.s3.amazonaws.com/latest/index.html
-  gitlab_runner_dl_link: "https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_{{ gitlab_runner_arch }}.deb"
