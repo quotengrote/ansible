@@ -150,54 +150,15 @@ ist das gleiche wie:
 
 ## prüfen ob eine Datei existiert
 
-* https://stackoverflow.com/questions/35654286/how-to-check-if-a-file-exists-in-ansible
-
 ```yaml
   - name: check if migration file exists
     stat:
       path: /etc/miniflux.d/.migration_successful
     register: migration_successful_existiert
 
-  - name: dbug
-    debug:
-      msg: "{{ migration_successful_existiert }}"
-    #output:
-    # *
-    #ok: [miniflux-test.grote.lan] => {
-    #    "msg": {
-    #      "changed": false,
-    #      "failed": false,
-    #      "stat": {
-    #          "exists": false
-
-
-
-#  - name: admin anlagen
-#    shell:
-#      cmd: miniflux -c /etc/miniflux.d/miniflux.conf -migrate
-#    when: migration_successful_existiert.stat.exists == False
-
   - name: migration tocuh
     file:
       path: /etc/miniflux.d/.migration_successful
       state: touch
     when: migration_successful_existiert.stat.exists == False
-
-
-  - name: check if update should be applied
-    become: yes
-    stat:
-      path: "/root/pve-nag-buster/is_installed"
-    register: "is_installed"
-
-  - name: dbug
-    debug:
-      msg: "{{ is_installed }}"
-
-  - name: Ordner "/root/pve-nag-buster" erstellen
-    become: yes
-    file:
-      path: /root/pve-nag-buster
-      state: directory
-    when: not is_installed.stat.exists
 ```
