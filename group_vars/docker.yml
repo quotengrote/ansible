@@ -18,9 +18,20 @@
   ### ryandaniels.create_users
   users:
   - username: mg
-    password: "{{ lookup('keepass', 'linux_mg_user_password_hash', 'password') }}"
+    password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
     update_password: on_create
-    ssh_key: "{{ lookup('keepass', 'ssh_pubkey_mg', 'password') }}"
+    ssh_key: "{{ lookup('keepass', 'mg_ssh_pubkey', 'password') }}"
+    use_sudo: yes
+    use_sudo_nopass: yes
+    user_state: present
+    groups: ssh, sudo, docker
+    servers:
+      - production
+      - test
+  - username: gitlab-user
+    password: "{{ lookup('keepass', 'gitlab_user_linux_password_hash', 'password') }}"
+    update_password: on_create
+    ssh_key: "{{ lookup('keepass', 'gitlab_user_ssh_pubkey', 'password') }}"
     use_sudo: yes
     use_sudo_nopass: yes
     user_state: present

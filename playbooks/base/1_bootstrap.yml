@@ -28,6 +28,6 @@
         user:
           name: mg
           update_password: always
-          password: "{{ lookup('keepass', 'linux_mg_user_password_hash', 'password') }}"
+          password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
 
 # Nach dem ersten durchlaufen ist keine Anmeldung mehr per Passwort & ssh möglich. Damit scheitert auch der Versuch das Playbook ein zweites mal durchlaufen zu lassen.
