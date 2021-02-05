@@ -1,4 +1,4 @@
-## mgrote.set_apt_proxy
+## mgrote.manage_sources_apt
 
 ### Beschreibung
 - Diese Rolle ersetzt die `/etc/apt/sources.list` mit einer Datei in der ein Apt-Cacher-NG gesetzt ist.

@@ -8,7 +8,7 @@
   postfix_smtp_server: smtp.strato.de
   postfix_smtp_server_port: 587
   postfix_smtp_use_tls: "yes"
-  ### mgrote.set_apt_proxy
+  ### mgrote.manage_sources_apt
   manage_sources_apt_proxy_url: "acng.grote.lan:9999"
   ### mgrote.restic
   restic_folders_to_backup: "/usr/local /etc /root /var/www /home"

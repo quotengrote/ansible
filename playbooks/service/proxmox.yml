@@ -1,7 +1,7 @@
 ---
 - hosts: proxmox
   roles:
-    - { role: mgrote.set_apt_proxy, tags: "apt_sources" }
+    - { role: mgrote.manage_sources_apt, tags: "apt_sources" }
     - { role: mgrote.apcupsd, tags: "apcupsd" }
     - { role: mgrote.smart, tags: "smart" }
     - { role: mgrote.zfs_tools, tags: "zfs_tools" }
