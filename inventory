@@ -32,7 +32,7 @@ all:
       hosts:
         vm-test.grote.lan:
         lxc-test2.grote.lan:
-    virt:
+    proxmox:
       hosts:
         pve-test.grote.lan:
         pve2.grote.lan:

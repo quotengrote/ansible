@@ -4,6 +4,7 @@ exclude_paths:
   - roles/igor_mukhin.bash_aliases/
   - roles/nickjj.ansible-user/
   - roles/azavea.ansible-pip/
+  - roles/riemers.gitlab-runner/
 
 parseable: true
 quiet: true

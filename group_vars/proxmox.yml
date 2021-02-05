@@ -1,5 +1,4 @@
 ---
-
   ### geerlingguy.dotfiles
   dotfiles_repo: "https://github.com/quotengrote/dotfiles.git"
   dotfiles_repo_local_destination: "/home/mg/dotfiles-repo"

@@ -7,4 +7,4 @@
       - { role: oefenweb.ufw, # Regeln werden in den Group/Host-Vars gesetzt
           tags: "ufw",
           become: true,
-          when: "not 'virt' in group_names" }
+          when: "not 'proxmox' in group_names" }

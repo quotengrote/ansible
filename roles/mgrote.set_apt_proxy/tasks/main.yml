@@ -1,13 +1,13 @@
-  - name: sources.list kopieren
-    become: yes
-    ansible.builtin.template:
-      src: "sources.list"
-      dest: "/etc/apt/sources.list"
-      backup: yes
-    register: copy_src
+---
+  - name: include ubuntu tasks (determined by "ansible_distribution")
+    include_tasks: ubuntu.yml
     when: ansible_distribution == 'Ubuntu'
 
-  - name: apt_update # noqa 503 503
+  - name: include proxmox tasks (determined by group)
+    include_tasks: proxmox.yml
+    when: "'proxmox' in group_names"
+
+  - name: update package lists # noqa 503 503
     become: yes
     ansible.builtin.apt:
       update_cache: yes
