@@ -2,6 +2,11 @@
 
 [![pipeline status](http://git.mgrote.net/mg/ansible/badges/master/pipeline.svg)](http://git.mgrote.net/mg/ansible/-/commits/master)
 
+## Dateirechte
+```bash
+chmod 0400 vault-pass.yml id_rsa_ansible_user
+```
+
 ## Ansible KeePass Lookup Plugin aktualisieren
 
 ```bash

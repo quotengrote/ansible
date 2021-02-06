@@ -1,9 +1,5 @@
 
 exclude_paths:
-  - roles/stefangweichinger.rclone/
-  - roles/igor_mukhin.bash_aliases/
-  - roles/nickjj.ansible-user/
-  - roles/azavea.ansible-pip/
   - roles/riemers.gitlab-runner/
 
 parseable: true

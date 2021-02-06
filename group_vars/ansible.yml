@@ -14,3 +14,4 @@
   ### mgrote.install_packages
   programs_extra:
     - graphviz # für ansible-playbook-grapher
+    - sshpass

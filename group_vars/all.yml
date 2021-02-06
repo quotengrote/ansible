@@ -82,6 +82,7 @@
   ### mgrote.install_packages
   programs_common:
     - locales
+    - python
     - build-essential
     - ntp
     - htop
@@ -122,7 +123,6 @@
   # Ansible Plugin Variablen
   ### Keepass
   # https://github.com/viczem/ansible-keepass
-  # liegt unter ./plugins/lookup/keepass.py
   keepass_dbx: "./keepass_db.kdbx"
   keepass_psw: !vault |
           $ANSIBLE_VAULT;1.1;AES256

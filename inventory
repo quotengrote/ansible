@@ -22,7 +22,7 @@ all:
         acng-test.grote.lan:
     ansible:
       hosts:
-        ansible.grote.lan:
+        ansible2.grote.lan:
         ansible-test.grote.lan:
     docker:
       hosts:
@@ -44,17 +44,6 @@ all:
       hosts:
         gitlab-runner-test.grote.lan:
         gitlab-runner.grote.lan:
-#    wsl:
-#      hosts:
-#        irantu.grote.lan:
-#    baseimage:
-#      hosts:
-#        vorlagebaseimage.grote.lan:
-#    qmk:
-#      hosts:
-#        qmk.grote.lan:
-
-
 
     production:
       hosts:
@@ -63,7 +52,7 @@ all:
         fileserver2.grote.lan:
         pi.hole:
         acng.grote.lan:
-        ansible.grote.lan:
+        ansible2.grote.lan:
         docker.grote.lan:
         pve2.grote.lan:
         gitlab.grote.lan:

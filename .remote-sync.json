@@ -2,7 +2,7 @@
   "uploadOnSave": true,
   "useAtomicWrites": true,
   "deleteLocal": false,
-  "hostname": "ansible.grote.lan",
+  "hostname": "ansible2.grote.lan",
   "port": "22",
   "target": "/home/mg/ansible",
   "ignore": [
