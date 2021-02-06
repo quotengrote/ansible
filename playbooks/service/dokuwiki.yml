@@ -4,3 +4,9 @@
     - { role: mgrote.dokuwiki, tags: "dokuwiki" }
   vars:
     dokuwiki_update: false # Muss für den ersten Lauf aktiviert sein!
+
+# Aus Backup wiederherstellen
+# chmod 777 /var/www/dokuwiki
+# Daten reinkopieren
+# chmod 755 /var/www/dokuwiki
+# chown www-data:www-data /var/www/dokuwiki
