@@ -45,11 +45,6 @@
   tmux_conf_destination: "/root/.tmux.conf"
   tmux_bashrc_destination: "/root/.bashrc"
   tmux_standardsession_name: "default"
-  ### mgrote.apcupsd
-  ONBATTERYDELAY: 10
-  BATTERYLEVEL: 50
-  MINUTES: 10
-  NOLOGON: disable
   ### mgrote.zfs_tools_cron
   zfs_arc_max: "12884901888"
   zfs_pools:

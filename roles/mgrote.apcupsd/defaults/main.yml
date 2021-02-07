@@ -1,5 +1,16 @@
 ---
-  ONBATTERYDELAY: 10
-  BATTERYLEVEL: 50
-  MINUTES: 10
-  NOLOGON: always
+  apcupsd_master_onbatterydelay: 10
+  apcupsd_master_batterylevel_for_shutdown: 50
+  apcupsd_master_minutes_for_shutdown: 10
+  apcupsd_master_nologon_when_active: always
+
+  apcupsd_slave_onbatterydelay: 10
+  apcupsd_slave_batterylevel_for_shutdown: 60
+  apcupsd_slave_minutes_for_shutdown: 11
+  apcupsd_slave_nologon_when_active: always
+
+  apcupsd_nis_master: on
+  apcupsd_nis_master_hostname: pve2.grote.lan
+  apcupsd_nis_master_listen_ip: 0.0.0.0
+  apcupsd_nis_master_listen_port: 3551
+  apcupsd_ups_name: APC-BX950U-GR

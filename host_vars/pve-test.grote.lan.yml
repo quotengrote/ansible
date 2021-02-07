@@ -29,4 +29,4 @@
       snapdir: hidden
   ### mgrote.apcupsd
   apcupsd_nis_master: true
-  apcupsd_nis_master_hostname: pve2.grote.lan
+  apcupsd_nis_master_hostname: pve-test.grote.lan
