@@ -3,3 +3,4 @@
     roles:
       - { role: mgrote.set_timezone, tags: "timezone" }
       - { role: mgrote.restic, tags: "restic" }
+      - { role: ryandaniels.create_users, tags: "user", become: yes }

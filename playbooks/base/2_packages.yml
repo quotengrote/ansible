@@ -1,11 +1,6 @@
 ---
   - hosts: all
     roles:
-      - { role: mgrote.apt_manage_sources,
-        tags: "apt_sources" }
-      - { role: mgrote.apt_update_packages,
-        tags: "updates",
-        serial: 3 }
-      - { role: mgrote.apt_install_packages,
-        tags: "install",
-        serial: 3 }
+      - { role: mgrote.apt_manage_sources, tags: "apt_sources" }
+      - { role: mgrote.apt_update_packages, tags: "updates", serial: 3 }
+      - { role: mgrote.apt_install_packages, tags: "install", serial: 3 }

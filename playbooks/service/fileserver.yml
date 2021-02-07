@@ -12,7 +12,7 @@
 ###############################################################################
 
 ---
-- hosts: storage
+- hosts: fileserver
   roles:
     - { role: mgrote.postfix, tags: "postfix" }
     - { role: mgrote.fileserver_smb, tags: "fileserver_smb" }

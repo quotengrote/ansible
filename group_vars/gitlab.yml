@@ -1,6 +1,16 @@
 ---
   ### geerlingguy.gitlab
-  # nicht alle gitlab Einstellungen lassen sich als Variable festlegen!
+  # nicht alle gitlab Einstellungen lassen sich als Variable festlegen! siehe unten:
+  # Einstellungen
+  ### General
+  # * sign up disabled
+  # * Require all users to set up Two-factor authentication
+  # * Gravatar enabled --> off
+  ### Network
+  # * Enable unauthenticated request rate limit
+  # * Default to Auto DevOps pipeline for all projects
+
+
   gitlab_domain: gitlab.grote.lan
   gitlab_external_url: "http://git.mgrote.net"
   gitlab_edition: "gitlab-ce"

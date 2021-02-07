@@ -8,7 +8,7 @@ all:
       hosts:
         dokuwiki2.grote.lan:
         dokuwiki-test.grote.lan:
-    storage:
+    fileserver:
       hosts:
         fileserver2.grote.lan:
         fileserver-test.grote.lan:

@@ -39,6 +39,18 @@
     servers:
       - production
       - test
+  - username: ansible-user
+    password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
+    update_password: on_create
+    ssh_key: "{{ lookup('keepass', 'ansible_user_ssh_pubkey', 'password') }}"
+    use_sudo: yes
+    use_sudo_nopass: yes
+    user_state: present
+    groups: ssh, sudo
+    servers:
+      - production
+      - test
+
   ### mgrote.restic
   restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker
   restic_cron_hours: "*"
@@ -56,10 +68,3 @@
         /var/lib/docker/volumes/ocrmypdf-auto_scan_output/*
         # https://github.com/restic/restic/issues/1005
         # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
-
-  ### riemers.gitlab-runner
-  gitlab_runner_coordinator_url: https://git.mgrote.net
-  gitlab_runner_registration_token: "{{ lookup('keepass', 'gitlab_runner_registration_token', 'password') }}"
-  gitlab_runner_runners:
-    - name: "{{ ansible_hostname }}-docker"
-      executor: docker
