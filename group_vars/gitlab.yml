@@ -8,8 +8,6 @@
   # * Gravatar enabled --> off
   ### Network
   # * Enable unauthenticated request rate limit
-  # * Default to Auto DevOps pipeline for all projects
-
 
   gitlab_domain: gitlab.grote.lan
   gitlab_external_url: "http://git.mgrote.net"

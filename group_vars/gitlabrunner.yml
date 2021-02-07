@@ -12,7 +12,7 @@
     - name: python-gitlab
   ### riemers.gitlab-runner
   gitlab_runner_coordinator_url: https://git.mgrote.net
-  gitlab_runner_registration_token: "{{ lookup('keepass', 'gitlab_runner_registration_token', 'password') }}"
+  gitlab_runner_registration_token: "{{ lookup('keepass', 'gitlab_runner_production_registration_token', 'password') }}"
   gitlab_runner_runners:
     - name: "{{ ansible_hostname }}-docker"
       executor: docker
