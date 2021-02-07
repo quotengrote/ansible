@@ -1,5 +1,4 @@
-## mgrote.install_packages
-
+## mgrote.tmux
 ### Beschreibung
 Installiert tmux und erstellt .tmux.conf.
 Setzt tmux als "Standard-Shell".

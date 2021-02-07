@@ -1,12 +1,13 @@
 ---
 - hosts: proxmox
   roles:
-    - { role: mgrote.manage_sources_apt, tags: "apt_sources" }
+    - { role: mgrote.zfs_manage_datasets, tags: "datasets" }
+    - { role: mgrote.apt_manage_sources, tags: "apt_sources" }
     - { role: mgrote.apcupsd, tags: "apcupsd" }
     - { role: mgrote.smart, tags: "smart" }
-    - { role: mgrote.zfs_tools, tags: "zfs_tools" }
+    - { role: mgrote.zfs_tools_cron, tags: "zfs_tools" }
     - { role: mgrote.postfix, tags: "postfix" }
-    - { role: mgrote.sanoid, tags: "sanoid" }
+    - { role: mgrote.zfs_sanoid, tags: "sanoid" }
     - { role: mgrote.ecc-rasdaemon,
         tags: "ecc",
         when: "'pve2.grote.lan' in inventory_hostname" }

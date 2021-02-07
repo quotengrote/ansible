@@ -1,4 +1,4 @@
-## mgrote.zfs_tools
+## mgrote.zfs_tools_cron
 
 ### Beschreibung
 Aktiviert die Mail Funktion von ZED (ZFS Event Daemon).

@@ -9,7 +9,7 @@
     - .bash_aliases
     - .tmux.conf
     - .gitconfig
-  ### mgrote.sanoid
+  ### mgrote.zfs_sanoid
   sanoid_datasets:
     - path: 'hdd_data_raidz/videos'
       template: 'hourly'                        # muss in Templates angelegt sein
@@ -50,7 +50,7 @@
   BATTERYLEVEL: 50
   MINUTES: 10
   NOLOGON: disable
-  ### mgrote.zfs_tools
+  ### mgrote.zfs_tools_cron
   zfs_arc_max: "12884901888"
   zfs_pools:
     - name: "ssd_vm_mirror"

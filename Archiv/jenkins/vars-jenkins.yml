@@ -29,6 +29,6 @@
       from_ip: 192.168.2.0/24
   ### mgrote.restic
   restic_folders_to_backup: /usr/local /etc /root /home /var/lib/jenkins
-  ### mgrote.install_packages
+  ### mgrote.apt_install_packages
   programs_extra:
     - sshpass

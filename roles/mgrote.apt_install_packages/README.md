@@ -1,4 +1,4 @@
-## mgrote.install_packages
+## mgrote.apt_install_packages
 
 ### Beschreibung
 Fuehrt:

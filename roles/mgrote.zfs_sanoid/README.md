@@ -1,4 +1,4 @@
-## mgrote.sanoid
+## mgrote.zfs_sanoid
 
 ### Beschreibung
 Installiert und konfiguriert sanoid.
