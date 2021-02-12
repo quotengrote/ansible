@@ -5,4 +5,4 @@
   cv4pve_api_token: "XXXXXXXXXXXXXXXXXXXXXX"
   cv4pve_api_user: "root@pam!test2"
   cv4pve_vmid: all
-  cv4pve_keed_snapshots: 3
+  cv4pve_keep_snapshots: 3

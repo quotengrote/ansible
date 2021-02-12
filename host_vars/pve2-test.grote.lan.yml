@@ -5,13 +5,13 @@
   # zfs create hdd_data_raidz/videos
   # Pools müssen vorher erstellt sein!
   # SSD_VM_MIRROR
-  # zpool create -f -o ashift=12 ssd_vm_mirror mirror /dev/disk/by-id/ata-ADATA_SU650_2J4420001210 /dev/disk/by-id/ata-ADATA_SU650_2J4420001241
+  #  zpool create -f -o ashift=12 rpool mirror /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi8 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi7
   # HDD_VM_MIRROR
-  # zpool create -f -o ashift=12 hdd_vm_mirror mirror /dev/disk/by-id/ata-WDC_WD20EACS-11BHUB0_WD-WCAZA3124223 /dev/disk/by-id/ata-WDC_WD20EZRX-00D8PB0_WD-WMC4M1682516 mirror /dev/disk/by-id/ata-WDC_WD30EZRX-00DC0B0_WD-WMC1T3979908 /dev/disk/by-id/ata-TOSHIBA_DT01ACA300_83M2DRAKS
+  # zpool create -f -o ashift=12 hdd_vm_mirror mirror /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1 mirror /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi6 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi5
   # HDD_DATA_RAIDZ
-  # zpool create -f -o ashift=12 hdd_data_raidz raidz /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SG991TJ /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SGA23EJ /dev/disk/by-id/ata-ST8000DM004-2CX188_ZCT1AK0F
+  # zpool create -f -o ashift=12 hdd_data_raidz raidz /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi9 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi3 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi4
   zfs_datasets:
-    - dataset: ssd_vm_mirror/vm
+    - dataset: rpool/vm/dir
       state: present
       compression: lz4
       sync: disabled
@@ -19,7 +19,7 @@
       dnodesize: auto
       atime: on
       snapdir: hidden
-    - dataset: hdd_vm_mirror/vm
+    - dataset: rpool/vm/zvol
       state: present
       compression: lz4
       sync: disabled
@@ -27,6 +27,15 @@
       dnodesize: auto
       atime: on
       snapdir: hidden
+    - dataset: rpool/vm/qcow
+      state: present
+      compression: lz4
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
+
   ### mgrote.apcupsd
   apcupsd_nis_master: true
   apcupsd_nis_master_hostname: pve2-test.grote.lan

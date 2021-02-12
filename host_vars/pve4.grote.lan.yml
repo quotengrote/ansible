@@ -2,7 +2,23 @@
   ### mgrote.zfs_manage_datasets
   # rppol wird von pve bei installation erstellt
   zfs_datasets:
-    - dataset: rpool/vm
+    - dataset: rpool/vm/dir
+      state: present
+      compression: lz4
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
+    - dataset: rpool/vm/zvol
+      state: present
+      compression: lz4
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
+    - dataset: rpool/vm/qcow
       state: present
       compression: lz4
       sync: disabled

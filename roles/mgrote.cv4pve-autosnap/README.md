@@ -21,4 +21,4 @@ Legt einen cronjob und das logfile an.
 ##### VMs
   cv4pve_vmid: all
 ##### Anzahl Snpshots zum aufheben
-  cv4pve_keed_snapshots: 3
+  cv4pve_keep_snapshots: 3

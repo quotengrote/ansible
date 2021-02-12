@@ -31,7 +31,6 @@ all:
     testeinzeln:
       hosts:
         vm-test.grote.lan:
-        lxc-test2.grote.lan:
     proxmox:
       hosts:
         pve2-test.grote.lan:
@@ -85,7 +84,6 @@ all:
         ansible-test.grote.lan:
         docker-test.grote.lan:
         vm-test.grote.lan:
-        lxc-test2.grote.lan:
         pve2-test.grote.lan:
         pve3-test.grote.lan:
         pve4-test.grote.lan:
