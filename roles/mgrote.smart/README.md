@@ -20,4 +20,4 @@ smart_smartctlmail_cron_hours
 ##### Wann sollen die SMART-Werte verschickt werden.(Wochentag)
 smart_smartctlmail_cron_weekday
 ##### Pfad zu smartctl
-telegraf_smart_pfad_zu_smartctl: "/usr/sbin/smartctl"
+smart_smartctl_mail_pfad_smartctl: "/usr/sbin/smartctl"

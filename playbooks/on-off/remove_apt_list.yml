@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: remove Packages
+      become: yes
+      ansible.builtin.file:
+        path: /etc/apt/sources.list.d/debian.list.list
+        state: absent

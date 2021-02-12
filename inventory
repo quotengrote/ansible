@@ -34,8 +34,22 @@ all:
         lxc-test2.grote.lan:
     proxmox:
       hosts:
-        pve-test.grote.lan:
+        pve2-test.grote.lan:
+        pve3-test.grote.lan:
+        pve4-test.grote.lan:
         pve2.grote.lan:
+        pve3.grote.lan:
+        pve4.grote.lan:
+    proxmoxprod:
+      hosts:
+        pve2.grote.lan:
+        pve3.grote.lan:
+        pve4.grote.lan:
+    proxmoxtest:
+      hosts:
+        pve2-test.grote.lan:
+        pve3-test.grote.lan:
+        pve4-test.grote.lan:
     gitlab:
       hosts:
         gitlab-test.grote.lan:
@@ -59,6 +73,8 @@ all:
         gitlab.grote.lan:
         gitlab-runner.grote.lan:
         gitlab-runner2.grote.lan:
+        pve3.grote.lan:
+        pve4.grote.lan:
     test:
       hosts:
         wireguard-test.grote.lan:
@@ -70,6 +86,8 @@ all:
         docker-test.grote.lan:
         vm-test.grote.lan:
         lxc-test2.grote.lan:
-        pve-test.grote.lan:
+        pve2-test.grote.lan:
+        pve3-test.grote.lan:
+        pve4-test.grote.lan:
         gitlab-test.grote.lan:
         gitlab-runner-test.grote.lan:

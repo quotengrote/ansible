@@ -48,4 +48,4 @@ manage_sources_proxmox_base_repos: # welche debian standard repos sollen gesetzt
 
 ##### Proxmox: Pfad lokal für Basis-Repositories
 ```yaml
-manage_sources_debian_repo_path: /etc/apt/sources.list.d/debian.list # , wo sollen die standard-repos gespeichert werden; nicht auf /etc/apt/sources setzen, diese datei wird gelöscht```
+manage_sources_debian_repo_path: /etc/apt/sources.list.d/debian # , wo sollen die standard-repos gespeichert werden; nicht auf /etc/apt/sources setzen, diese datei wird gelöscht```

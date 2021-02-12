@@ -8,4 +8,4 @@
     - repo_url: deb http://ftp.de.debian.org/debian buster main contrib
     - repo_url: deb http://ftp.de.debian.org/debian buster-updates main contrib
     - repo_url: deb http://security.debian.org buster/updates main contrib
-  manage_sources_debian_repo_path: /etc/apt/sources.list.d/debian.list # , wol sollen die standard-repos gespeichert werden; nicht auf /etc/apt/sources setzen, diese datei wird gelöscht
+  manage_sources_debian_repo_path: /etc/apt/sources.list.d/debian # , wol sollen die standard-repos gespeichert werden; nicht auf /etc/apt/sources setzen, diese datei wird gelöscht
