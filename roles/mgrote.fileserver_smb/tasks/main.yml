@@ -16,6 +16,7 @@
       state: present
     loop: "{{ smb_nutzer }}"
     no_log: True
+    notify: set_samba_passwords
 
   - name: Erstelle Linux-Nutzer #kommt aus vars im playbook
     become: yes
@@ -34,6 +35,7 @@
       name: "{{ item.name }}"
       state: absent
     loop: "{{ smb_nutzer_loeschen }}"
+    notify: set_samba_passwords
 
   - name: Erstelle Freigabeordner
     become: yes
@@ -42,6 +44,7 @@
       state: directory
       mode: 0777
     loop: "{{ smb_freigaben }}"
+    notify: set_samba_passwords
 
   - name: "Konfiguriere Freigaben"
     become: yes
@@ -51,4 +54,6 @@
       validate: 'testparm -s %s'
     with_items:
       - "{{ smb_freigaben }}"
-    notify: smbd neustarten
+    notify:
+      - smbd neustarten
+      - set_samba_passwords

@@ -1,0 +1,39 @@
+---
+  - name: install cifs-utils
+    become: yes
+    ansible.builtin.package:
+      name: cifs-utils
+      state: present
+
+  - name: create mount directory
+    become: yes
+    ansible.builtin.file:
+      path: "{{ item.dest }}"
+      state: directory
+      mode: 0777
+    loop: "{{ cifs_mounts }}"
+
+  - name: create credential-file
+    become: yes
+    ansible.builtin.template:
+      src: smb_passwords
+      dest: /root/.smb_passwords_{{ item.name }}
+      owner: root
+      group: root
+      mode: '0400'
+    loop: "{{ cifs_mounts }}"
+    no_log: true
+
+  - name: mount cifs volumes
+    become: yes
+    ansible.posix.mount:
+      src: "{{ item.src }}"
+      path: "{{ item.dest }}"
+      opts: credentials=/root/.smb_passwords_{{ item.name }},domain={{ item.domain }},uid={{ item.uid | default('1000') }}",gid={{ item.gid | default('1000') }}"
+      state: "{{ item.state }}"
+      fstype: "{{ item.type }}"
+      backup: yes
+      dump: "0"
+      passno: "0"
+    loop: "{{ cifs_mounts }}"
+    no_log: true

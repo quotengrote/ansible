@@ -24,7 +24,7 @@
       password: "{{ lookup('keepass', 'fileserver_smb_user_docker', 'password') }}"
     - name: 'pve'
       groups: 'users'
-      password: "{{ lookup('keepass', 'fileserver_smb_user_docker', 'password') }}"
+      password: "{{ lookup('keepass', 'fileserver_smb_user_pve', 'password') }}"
     - name: 'brother_ads2700w'
       groups: 'users'
       password: "{{ lookup('keepass', 'fileserver_smb_user_brother_ads2700w', 'password') }}"
@@ -73,13 +73,16 @@
       lese_nutzer: ''
       schreibe_nutzer: 'annemariedroessler michaelgrote'
     - freigabename: 'proxmox'
-      ordnerpfad: '/shares_pve_backup'
+      ordnerpfad: '/shares/proxmox'
       lese_nutzer: 'michaelgrote'
       schreibe_nutzer: 'pve'
   smb_workgroup: WORKGROUP
   smb_nutzer_loeschen:
     - { name: '' }
-    
+  smb_min_protocol: "SMB2"
+  smb_client_min_protocol: "SMB2"
+  smb_client_max_protocol: "SMB3_11"
+
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow
