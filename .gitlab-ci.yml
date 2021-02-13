@@ -5,9 +5,6 @@ stages:
   - ping-prod
   - deploy-prod
 
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
-
 ansible-lint:
   image: quotengrote/gitlab-ci-ansible:latest
   stage: lint
