@@ -1,0 +1,16 @@
+---
+  - name: copy "zfs-health.sh"
+    become: yes
+    ansible.builtin.template:
+      src: zfs-health.sh
+      dest: /usr/local/bin/zfs-health.sh
+      mode: "+x"
+
+  - name: add cronjob "zfs-health.sh"
+    become: yes
+    ansible.builtin.cron:
+      name: zfs-health
+      state: present
+      job: "/usr/local/bin/zfs-health.sh"
+      minute: "{{ zfs_extra_cron_minutes_zfs_health }}"
+      hour: "{{ zfs_extra_cron_hours_zfs_health }}"

@@ -17,6 +17,9 @@
   tmux_conf_destination: "/root/.tmux.conf"
   tmux_bashrc_destination: "/root/.bashrc"
   tmux_standardsession_name: "default"
+  ### mgrote.zfs_extra # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
+  zfs_extra_max_usage_health: "80"
+
 
 
   # Ansible Variablen

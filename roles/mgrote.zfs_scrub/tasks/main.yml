@@ -1,0 +1,18 @@
+---
+  - name: remove system scrub job #https://forum.proxmox.com/threads/script-sequential-zfs-scrub-for-cron.25124/
+    become: true
+    ansible.builtin.lineinfile:
+      path: /etc/cron.d/zfsutils-linux
+      state: absent
+      line: '24 0 8-14 * * root [ $(date +\%w) -eq 0 ] && [ -x /usr/lib/zfs-linux/scrub ] && /usr/lib/zfs-linux/scrub'
+
+  - name: add cronjob "zfs-scrub"
+    become: yes
+    ansible.builtin.cron:
+      name: zfs-scrub - "{{ item.name }}"
+      state: present
+      job: "{{ zfs_extra_path_zpool }} scrub {{ item.name }}"
+      weekday: "{{ item.cron_weekday_zfs_scrub }}"
+      minute: "{{ item.cron_minutes_zfs_scrub }}"
+      hour: "{{ item.cron_hour_zfs_scrub }}"
+    with_items: "{{ zfs_extra_zfs_pools }}"

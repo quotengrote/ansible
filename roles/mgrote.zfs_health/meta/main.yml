@@ -1,0 +1,4 @@
+---
+  dependencies:
+    - role: mgrote.postfix
+    - role: mgrote.zfs_packages

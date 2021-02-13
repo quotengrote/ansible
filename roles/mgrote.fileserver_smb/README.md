@@ -35,7 +35,7 @@ Es sind keine "defaults" gesetzt!
 
 ## Alternatives Dictionary Format:
 ```bash
-  zfs_pools:
+  zfs_extra_zfs_pools:
     - name: "ssd_vm_mirror"
       type: "ssd"
       cron_minute_zfs_trim: "5"
@@ -48,6 +48,6 @@ Es sind keine "defaults" gesetzt!
 ```
 ist das gleiche wie:
 ```bash
-  zfs_pools:
+  zfs_extra_zfs_pools:
     - { name: "ssd_vm_mirror", type: "ssd", cron_minute_zfs_trim: "5", cron_hour_zfs_trim: "22", cron_month_zfs_trim: "4,8,12", cron_day_zfs_trim: "2", cron_weekday_zfs_scrub: "6", cron_minutes_zfs_scrub: "0", cron_hour_zfs_scrub: "23"}
 ```

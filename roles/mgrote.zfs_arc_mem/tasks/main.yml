@@ -1,0 +1,7 @@
+---
+  - name: Limit ZFS Memory Usage
+    become: yes
+    ansible.builtin.lineinfile:
+      path: /etc/modprobe.d/zfs.conf
+      line: options zfs zfs_arc_max={{ zfs_extra_arc_max_size }}
+      create: yes
