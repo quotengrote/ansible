@@ -57,6 +57,8 @@ all:
       hosts:
         gitlab-runner-test.grote.lan:
         gitlab-runner.grote.lan:
+        gitlab-runner2.grote.lan:
+        gitlab-runner3.grote.lan:
 
     production:
       hosts:
@@ -72,6 +74,8 @@ all:
         gitlab-runner.grote.lan:
         pve3.grote.lan:
         pve4.grote.lan:
+        gitlab-runner2.grote.lan:
+        gitlab-runner3.grote.lan:
     test:
       hosts:
         wireguard-test.grote.lan:
