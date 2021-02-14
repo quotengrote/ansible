@@ -1,0 +1,52 @@
+---
+- hosts: proxmox
+  become: yes
+
+  tasks:
+    - name: smartmontools kopieren
+      become: yes
+      ansible.builtin.file:
+        path: "/etc/default/smartmontools"
+        state: absent
+
+    - name: smartd.conf kopieren
+      become: yes
+      ansible.builtin.file:
+        path: "/etc/smartd.conf"
+        state: absent
+
+    - name: smartctl_mail.sh kopieren
+      become: yes
+      ansible.builtin.file:
+        path: "/usr/local/bin/smartctl_mail.sh"
+        state: absent
+
+
+    - name: smart_status.sh kopieren
+      become: yes
+      ansible.builtin.file:
+        path: "/usr/local/bin/smart_status.sh"
+        state: absent
+
+  # smartctl output als mail
+    - name: cronjob fuer smartctl-mail
+      become: yes
+      ansible.builtin.cron:
+        name: smart-mail
+        state: absent
+        job: "/usr/local/bin/smartctl_mail.sh"
+        minute: "{{ smart_smartctlmail_cron_minutes }}"
+        hour: "{{ smart_smartctlmail_cron_hours }}"
+        weekday: "{{ smart_smartctlmail_cron_weekday }}"
+
+    - name: smartctl_mail.sh kopieren
+      become: yes
+      ansible.builtin.file:
+        path: "/root/smart/smartctl_mail.sh"
+        state: absent
+
+    - name: smartctl_mail.sh kopieren
+      become: yes
+      ansible.builtin.file:
+        path: "/root/smart/"
+        state: absent

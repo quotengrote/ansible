@@ -19,17 +19,11 @@
       dest: "/etc/smartd.conf"
     notify: smartmontools_starten_aktivieren
 
-  - name: Ordner "smart" erstellen
-    become: yes
-    ansible.builtin.file:
-      path: "/root/smart"
-      state: directory
-
   - name: smartctl_mail.sh kopieren
     become: yes
     ansible.builtin.template:
       src: "smartctl_mail.sh"
-      dest: "/root/smart/smartctl_mail.sh"
+      dest: "/usr/local/bin/smartctl_mail.sh"
       mode: a+x
 
   - name: smart_status.sh kopieren
@@ -45,7 +39,7 @@
     ansible.builtin.cron:
       name: smart-mail
       state: present
-      job: "/root/smart/smartctl_mail.sh"
+      job: "/usr/local/bin/smartctl_mail.sh"
       minute: "{{ smart_smartctlmail_cron_minutes }}"
       hour: "{{ smart_smartctlmail_cron_hours }}"
       weekday: "{{ smart_smartctlmail_cron_weekday }}"
