@@ -15,8 +15,8 @@
   smart_smartctlmail_cron_weekday: "3"
   ### mgrote.zfs_extra # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
   zfs_extra_max_usage_health: "80"
-
-
+  ### mgrote.apcupsd
+  apcupsd_slave_polltime: 10 #in Sekunden
 
   # Ansible Variablen
   ### sudo

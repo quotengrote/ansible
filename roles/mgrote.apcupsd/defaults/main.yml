@@ -8,6 +8,7 @@
   apcupsd_slave_batterylevel_for_shutdown: 60
   apcupsd_slave_minutes_for_shutdown: 11
   apcupsd_slave_nologon_when_active: always
+  apcupsd_slave_polltime: 10 #in Sekunden
 
   apcupsd_nis_master: on
   apcupsd_nis_master_hostname: pve2.grote.lan
