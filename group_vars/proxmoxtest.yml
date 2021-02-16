@@ -1,0 +1,5 @@
+---
+  ### mgrote.apt_install_packages
+  programs_extra:
+    - qemu-guest-agent
+    - open-vm-tools
