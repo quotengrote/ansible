@@ -10,7 +10,15 @@
   # zpool create -f -o ashift=12 hdd_vm_mirror mirror /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1 mirror /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi6 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi5
   # HDD_DATA_RAIDZ
   # zpool create -f -o ashift=12 hdd_data_raidz raidz /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi9 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi3 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi4
-  zfs_datasets:
+  zfs_datasets: # DatenPools werden hier nicht verwaltet
+    - dataset: rpool/vm
+      state: present
+      compression: lz4
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
     - dataset: rpool/vm/dir
       state: present
       compression: lz4

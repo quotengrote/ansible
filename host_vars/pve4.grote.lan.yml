@@ -1,7 +1,15 @@
 ---
   ### mgrote.zfs_manage_datasets
   # rpool wird von pve bei installation erstellt wenn die installation mit zfs durchgeführt wird
-  zfs_datasets:
+  zfs_datasets: # DatenPools werden hier nicht verwaltet
+    - dataset: rpool/vm
+      state: present
+      compression: lz4
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
     - dataset: rpool/vm/dir
       state: present
       compression: lz4
