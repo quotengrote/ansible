@@ -10,7 +10,7 @@
   # zpool create -f -o ashift=12 hdd_vm_mirror mirror /dev/disk/by-id/ata-WDC_WD20EACS-11BHUB0_WD-WCAZA3124223 /dev/disk/by-id/ata-WDC_WD20EZRX-00D8PB0_WD-WMC4M1682516 mirror /dev/disk/by-id/ata-WDC_WD30EZRX-00DC0B0_WD-WMC1T3979908 /dev/disk/by-id/ata-TOSHIBA_DT01ACA300_83M2DRAKS
   # HDD_DATA_RAIDZ
   # zpool create -f -o ashift=12 hdd_data_raidz raidz /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SG991TJ /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SGA23EJ /dev/disk/by-id/ata-ST8000DM004-2CX188_ZCT1AK0F
-  zfs_datasets:
+  zfs_datasets: # DatenPools werden hier nicht verwaltet
     - dataset: rpool/vm/dir
       state: present
       compression: lz4
@@ -40,7 +40,7 @@
   apcupsd_nis_master_hostname: pve2.grote.lan
   ### mgrote.zfs_extra # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
   zfs_extra_arc_max_size: "17179869184" # 16GB in Bytes
-  zfs_extra_max_usage_health: "90"
+  zfs_extra_max_usage_health: "65"
   zfs_extra_zfs_pools:
     - name: "ssd_vm_mirror"
       type: "ssd"
