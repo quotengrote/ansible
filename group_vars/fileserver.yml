@@ -28,9 +28,6 @@
     - name: 'brother_ads2700w'
       groups: 'users'
       password: "{{ lookup('keepass', 'fileserver_smb_user_brother_ads2700w', 'password') }}"
-    - name: 'ocrmypdf'
-      groups: 'users'
-      password: "{{ lookup('keepass', 'fileserver_smb_user_ocrmypdf', 'password') }}"
   smb_freigaben:
     - freigabename: 'videos'
       ordnerpfad: '/shares_videos'
@@ -78,7 +75,7 @@
       schreibe_nutzer: 'pve'
   smb_workgroup: WORKGROUP
   smb_nutzer_loeschen:
-    - { name: '' }
+    - { name: 'ocrmypdf' }
   smb_min_protocol: "SMB2"
   smb_client_min_protocol: "SMB2"
   smb_client_max_protocol: "SMB3_11"
