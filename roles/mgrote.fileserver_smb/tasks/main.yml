@@ -1,59 +1,9 @@
-  - name: SAMBA installieren
-    become: yes
-    ansible.builtin.package:
-      name:
-        - samba
-        - cifs-utils
-        - samba-common
-        - samba-common-bin
-        - samba-vfs-modules
-      state: present
-
-  - name: Erstelle Linux-Gruppen # vat /etc/group  #kommt aus vars im playbook
-    become: yes
-    ansible.builtin.group:
-      name: "{{ item.groups }}"
-      state: present
-    loop: "{{ smb_nutzer }}"
-    no_log: True
-    notify: set_samba_passwords
-
-  - name: Erstelle Linux-Nutzer #kommt aus vars im playbook
-    become: yes
-    ansible.builtin.user:
-      name: "{{ item.name }}"
-      group: "{{ item.groups }}"
-      state: present
-      create_home: no
-    loop: "{{ smb_nutzer }}"
-    no_log: True
-    notify: set_samba_passwords
-
-  - name: Loesche alte Linux-Nutzer #kommt aus vars im playbook
-    become: yes
-    ansible.builtin.user:
-      name: "{{ item.name }}"
-      state: absent
-    loop: "{{ smb_nutzer_loeschen }}"
-    notify: set_samba_passwords
-
-  - name: Erstelle Freigabeordner
-    become: yes
-    ansible.builtin.file:
-      path: "{{ item.ordnerpfad }}"
-      state: directory
-      mode: 0777
-    loop: "{{ smb_freigaben }}"
-    notify: set_samba_passwords
-
-  - name: "Konfiguriere Freigaben"
-    become: yes
-    ansible.builtin.template:
-      src: smb.conf.j2
-      dest: /etc/samba/smb.conf
-      validate: 'testparm -s %s'
-    with_items:
-      - "{{ smb_freigaben }}"
-    notify:
-      - smbd neustarten
-      - set_samba_passwords
+---
+  - name: include install tasks
+    include_tasks: packages.yml
+  - name: include user tasks
+    include_tasks: users.yml
+    when: smb_users is defined
+  - name: include share tasks
+    include_tasks: shares.yml
+    when: smb_shares is defined

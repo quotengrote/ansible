@@ -1,15 +1,4 @@
 ---
-# Options: SMB2: Re-implementation of the SMB protocol. Used by Windows Vista and later versions of Windows. SMB2 has sub protocols available:
-# SMB2_02: The earliest SMB2 version.
-# SMB2_10: Windows 7 SMB2 version. (By default SMB2 selects the SMB2_10 variant.)
-# SMB2_22: Early Windows 8 SMB2 version.
-# SMB2_24: Windows 8 beta SMB2 version.
-# SMB3: The same as SMB2. Used by Windows 8. SMB3 has sub protocols available. SMB3 has sub protocols available:
-# SMB3_00: Windows 8 SMB3 version. (mostly the same as SMB2_24)
-# SMB3_02: Windows 8.1 SMB3 version.
-# SMB3_10: early Windows 10 technical preview SMB3 version.
-# SMB3_11: Windows 10 technical preview SMB3 version (maybe final). By default SMB3 selects the SMB3_11 variant.
-
   # Global SMB options
   smb_min_protocol: "SMB2_02"
   smb_client_min_protocol: "SMB2_02"
@@ -43,6 +32,7 @@
   smb_allocation_roundup_size: "4096"
   smb_force_user: "root"
   smb_force_group: "users"
+  smb_workgroup: WORKGROUP
   # Global shadow_copy2 options
   smb_vfs_objects: "shadow_copy2"
   smb_shadow_snapdir: ".zfs/snapshot"
@@ -51,3 +41,10 @@
   smb_shadow_snapprefix: "^autosnap"
   smb_shadow_delimiter: "_"
   smb_shadow_localtime: "no"
+  # packages
+  smb_packages:
+    - samba
+    - cifs-utils
+    - samba-common
+    - samba-common-bin
+    - samba-vfs-modules

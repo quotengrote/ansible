@@ -45,10 +45,10 @@ shadow: delimiter = {{ smb_shadow_delimiter }}
 shadow: localtime = {{ smb_shadow_localtime }}
 
 #======================= Share Definitions =======================
-{% for item in smb_freigaben %}
+{% for item in smb_shares %}
 
-[{{ item.freigabename }}]
-      path = {{ item.ordnerpfad }}
+[{{ item.name }}]
+      path = {{ item.path }}
       guest ok = no
       read only = no
       browseable = yes
@@ -64,9 +64,9 @@ shadow: localtime = {{ smb_shadow_localtime }}
       hide special files = yes
       follow symlinks = yes
       hide dot files = no
-      valid users = {{ item.lese_nutzer}} {{ item.schreibe_nutzer}}
+      valid users = {{ item.users_ro }} {{ item.users_rw }}
       invalid users =
-      read list ={{ item.lese_nutzer}}
-      write list = {{ item.schreibe_nutzer}}
+      read list = {{ item.users_ro }}
+      write list = {{ item.users_rw }}
 
 {% endfor %}

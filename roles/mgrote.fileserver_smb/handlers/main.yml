@@ -1,4 +1,4 @@
-  - name: "smbd neustarten"
+  - name: restart_smbd
     become: yes
     systemd:
       name: smbd
@@ -9,5 +9,5 @@
     become: yes
     shell: "printf '{{ item.password }}\n{{ item.password }}\n' | smbpasswd -a {{ item.name }}" # noqa 306 301 #pipefail: https://blog.christophersmart.com/2019/09/28/using-pipefail-with-shell-module-in-ansible/
     with_items:
-    - "{{ smb_nutzer }}"
+    - "{{ smb_users }}"
     no_log: True
