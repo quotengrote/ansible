@@ -42,6 +42,12 @@
       backrefs: yes
     notify: restart_sshd
 
+  - name: delete "no warranty" - Message
+    become: yes
+    ansible.builtin.file:
+      path: /etc/motd
+      state: absent
+
   - name: setup new motd
     become: yes
     ansible.builtin.template:
