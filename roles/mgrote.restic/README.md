@@ -1,4 +1,4 @@
-## mgrote.sicherung_cloud
+## mgrote.restic
 
 ### Beschreibung
 Installiert und konfiguriert restic.

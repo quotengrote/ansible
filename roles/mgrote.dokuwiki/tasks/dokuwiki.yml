@@ -1,0 +1,72 @@
+---
+  - name: create dokuwiki install path
+    become: yes
+    ansible.builtin.file:
+      path: "{{ dokuwiki_install_path }}"
+      state: directory
+      owner: "{{ dokuwiki_user }}"
+      group: "{{ dokuwiki_group }}"
+
+  - name: check if dokuwiki is installed
+    become: yes
+    stat:
+      path: /var/www/dokuwiki/VERSION
+    register: dokuwiki_install_status
+
+  - name: check if desired version is installed
+    become: yes
+    ignore_errors: yes
+    lineinfile:
+      path: /var/www/dokuwiki/VERSION
+      line: "{{ dokuwiki_version_name }}"
+      state: present
+    check_mode: yes
+    register: dokuwiki_desired_version
+    when:
+      - dokuwiki_install_status.stat.exists == true
+    # falls Dokuwiki schon installiert ist existiert var/www/dokuwiki/VERSION mit
+    # dem Inhalt der Version: z.B. 2020-07-29 "Hogfather"
+    # when die Version die selbe wie in der Variable ist
+    # ist der status ok, ist die Version unterschiedlich ist der status changed, die Datei
+    # selber wird aber nicht geändert weil check_mode gleich yes ist
+    # das Ergebnis wird in der Variable dokuwiki_desired_version gespeichert
+    # https://raymii.org/s/tutorials/Ansible_-_Only-do-something-if-another-action-changed.html
+
+  - name: download latest dokuwiki archive & unarchive to {{ dokuwiki_install_path }}
+    become: yes
+    ansible.builtin.unarchive:
+      src: "{{ dokuwiki_download_url }}"
+      dest: "{{ dokuwiki_install_path }}"
+      remote_src: yes
+      extra_opts: [--strip-components=1] # entfernt die erste Ebene des Archives
+      owner: "{{ dokuwiki_user }}"
+      mode: 0744
+    when:
+      - (dokuwiki_desired_version.changed) or
+        (dokuwiki_install_status.stat.exists == false)
+    # Dise Variable wird hier abgefragt, so wird das Paket nur heruntergeladen wenn die
+    # Version Unterschiedlich ist
+
+  - name: Remove default plugins
+    become: yes
+    ansible.builtin.file:
+      path: '{{ dokuwiki_install_path }}/lib/plugins/{{ item }}'
+      state: absent
+    with_items:
+      - authpdo
+      - authmysql
+      - authpgsql
+      - authad
+
+  - name: Change file ownership, group and permissions
+    become: yes
+    ansible.builtin.file:
+      path: "{{ dokuwiki_install_path }}"
+      owner: "{{ dokuwiki_user }}"
+      group: "{{ dokuwiki_group }}"
+      mode: 0744
+
+  - name: remove installer
+    file:
+      path: "{{ dokuwiki_install_path }}/install.php"
+      state: absent

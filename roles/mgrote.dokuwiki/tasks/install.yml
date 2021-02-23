@@ -1,0 +1,13 @@
+---
+  - name: install packages
+    become: yes
+    ansible.builtin.package:
+      name:
+        - php
+        - php-mbstring
+        - php-xml
+        - apache2
+        - libapache2-mod-php
+        - php-xml
+        - php-gd
+      state: present

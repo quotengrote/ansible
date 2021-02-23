@@ -36,7 +36,7 @@ fi
 
 
 
-while [[ "$abbruch_restic" -le {{ restic_anzahl_versuche_backup }} ]] # Schleife für Abbruchbedingung; um die eckikgen Klammern(Befehl "test") muss immer ein leerzeichen sein
+while [[ "$abbruch_restic" -le {{ restic_anzahl_versuche_backup }} ]] # Schleife für Abbruchbedingung; um die eckigen Klammern(Befehl "test") muss immer ein leerzeichen sein
 do
     {  # ist keine Subshell sondern Grouping; https://askubuntu.com/questions/662190/write-the-output-of-multiple-sequential-commands-to-a-text-file
     echo "--------------------------------------------------" # Trenner logfile

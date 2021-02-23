@@ -2,35 +2,28 @@
 
 ### Beschreibung
 Installiert Dokuwiki (mit apache2 und php-fpm).
-Es werden keine Einstellungen gesetzt
+Es werden keine Einstellungen gesetzt.
+
 ### Funktioniert auf
 - [x] Ubuntu (>=18.04)
 
 ### Variablen + Defaults
-##### Pfad zu Dokuwiki
-  dokuwiki_install_path: /var/www/dokuwiki
-##### Soll IMMER ein Update/Neuer Download durchgeführt werden
-- Muss für den ersten Lauf aktiviert sein!
-  dokuwiki_update: true
-##### install.php behalten (für Ersteinrichtung)
-  dokuwiki_install: false
-### Beispiel Playbook
-```yaml
----
-- hosts: dokuwiki
-  roles:
-    - { role: mgrote.dokuwiki, tags: "dokuwiki" }
-```
+see [defaults](./defaults/main.yml)
 
+### Daten...
+#### Backup einspielen
+1. aus Restic wiederherstellen
+2. in Archiv packen
+3. Inhalt nach /var/www/dokuwiki entpacken
+4. Rechte anpassen: chmod 755 /var/www/dokuwiki
+5. Besitzer anpassen: chown www-data:www-data /var/www/dokuwiki
 
-### Einrichtung danach...
-#### entweder mit dem Assistenten einrichten
---> http://dokuwiki-test.grote.lan/install.php
-#### oder die alten Dateien verwenden
-Nach dem ausführen des Playbooks
-alles in `/var/www/dokuwiki` löschen
-`rm -rf * /var/www/dokuwiki/`
-die alten Dateien nach "/var/www/dokuwiki" kopieren
-`mv /home/mg/dokuwiki /var/www/`
-die Dateirechte richtig setzen
-`chown -R www-data /var/www/dokuwiki/`
+#### Wechsel OS/Maschine
+##### auf altem PC
+1. tar -czf dw_backup.tar.gz /var/www/dokuwiki
+##### auf neuem PC
+1. Archiv in /home/mg/backup_<data>.tar.gz abspeichern
+2. Archiv in  /var/www verschieben: mv /home/mg/backup_<data>.tar.gz /var/www
+3. entpacken: tar -xzf backup_<data>.tar.gz
+4. Rechte anpassen: chmod 755 /var/www/dokuwiki
+5. Besitzer anpassen: chown www-data:www-data /var/www/dokuwiki
