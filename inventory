@@ -15,7 +15,8 @@ all:
     dns:
       hosts:
         pi.hole:
-        pihole-test.grote.lan:
+        pihole2-test.grote.lan:
+        pihole2.grote.lan:
     acng:
       hosts:
         acng.grote.lan:
@@ -49,14 +50,6 @@ all:
         pve2-test.grote.lan:
         pve3-test.grote.lan:
         pve4-test.grote.lan:
-    gitlab:
-      hosts:
-        gitlab-test.grote.lan:
-        gitlab.grote.lan:
-    gitlabrunner:  # immer auch unten in den 2 Gruppen eintragen, sonst schlägt in Bootstrap das verteilen der ssh-keys fehl
-      hosts:
-        gitlab-runner-test.grote.lan:
-        gitlab-runner.grote.lan:
     gitea:
       hosts:
         gitea-test.grote.lan:
@@ -72,11 +65,11 @@ all:
         ansible2.grote.lan:
         docker.grote.lan:
         pve2.grote.lan:
-        gitlab.grote.lan:
-        gitlab-runner.grote.lan:
         pve3.grote.lan:
         pve4.grote.lan:
         gitea.grote.lan:
+        pihole2.grote.lan:
+
     test:
       hosts:
         wireguard-test.grote.lan:
@@ -90,6 +83,5 @@ all:
         pve2-test.grote.lan:
         pve3-test.grote.lan:
         pve4-test.grote.lan:
-        gitlab-test.grote.lan:
-        gitlab-runner-test.grote.lan:
         gitea-test.grote.lan:
+        pihole2-test.grote.lan:
