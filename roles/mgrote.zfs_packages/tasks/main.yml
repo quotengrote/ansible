@@ -7,3 +7,11 @@
         - zfs-initramfs
         - zfs-zed
       state: present
+
+  - name: copy zfs-free.sh
+    become: yes
+    ansible.builtin.template:
+      mode: 0555
+      src: zfs-free.sh
+      dest: /usr/local/bin/zfs-free.sh
+    when: "'proxmox' in group_names"

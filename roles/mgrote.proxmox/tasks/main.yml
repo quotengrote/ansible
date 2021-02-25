@@ -1,7 +1,0 @@
----
-  - name: copy start_pools.sh
-    become: yes
-    ansible.builtin.template:
-      src: "start_pools.sh"
-      dest: "/usr/local/bin/start_pools.sh"
-      mode: a+x
