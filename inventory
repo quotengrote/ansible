@@ -14,7 +14,6 @@ all:
         fileserver-test.grote.lan:
     dns:
       hosts:
-        pi.hole:
         pihole2-test.grote.lan:
         pihole2.grote.lan:
     acng:
@@ -75,7 +74,6 @@ all:
         wireguard-test.grote.lan:
         dokuwiki-test.grote.lan:
         fileserver-test.grote.lan:
-        pihole-test.grote.lan:
         acng-test.grote.lan:
         ansible-test.grote.lan:
         docker-test.grote.lan:
