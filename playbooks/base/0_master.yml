@@ -3,3 +3,4 @@
   - import_playbook: 3_base.yml
   - import_playbook: 5_personalisierung.yml
   - import_playbook: 6_haertung.yml
+  - import_playbook: 7_monitoring.yml

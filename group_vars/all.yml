@@ -1,7 +1,20 @@
 ---
   ### wird in vielen Rollen verwendet
   empfaenger_mail: michael.grote@posteo.de
-  ### mgrote.postfix / werden auch bei gitlab verwendet
+  ### geerlingguy.munin-node
+  munin_node_bind_host: "*"
+  munin_node_bind_port: "4949"
+  munin_node_allowed_cidrs: [192.168.2.0/24]
+  munin_node_plugins:
+    - name: apc_nis
+    - name: hddtemp_smartctl
+  munin_node_config: {
+  "apc_nis": {
+    "env.host": "pve2.grote.lan",
+    "env.port": "3551"
+    }
+  }
+  ### mgrote.postfix
   postfix_absender_mailadresse: info@mgrote.net
   postfix_absender_passwort: "{{ lookup('keepass', 'postfix_absender_passwort', 'password') }}"
   postfix_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24"
@@ -42,6 +55,11 @@
       to_port: 22
       protocol: tcp
       comment: 'ssh'
+      from_ip: 192.168.2.0/24
+    - rule: allow
+      to_port: 4949
+      protocol: tcp
+      comment: 'munin-node'
       from_ip: 192.168.2.0/24
   ufw_default_incoming_policy: deny
   ufw_default_outgoing_policy: allow
@@ -106,8 +124,9 @@
   programs_only_physical:
     - hddtemp
     - ipmitool
-    - powertop
     - s-tui
+    - smartmontools
+    - lm-sensors
   programs_only_vms:
     - qemu-guest-agent
     - open-vm-tools
