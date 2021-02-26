@@ -17,6 +17,33 @@
   zfs_extra_max_usage_health: "80"
   ### mgrote.apcupsd
   apcupsd_slave_polltime: 10 #in Sekunden
+  ### geerlingguy.munin-node
+  munin_node_bind_host: "*"
+  munin_node_bind_port: "4949"
+  munin_node_allowed_cidrs: [192.168.2.0/24]
+  munin_node_plugins:
+    - name: apc_nis
+    - name: hddtemp_smartctl
+    - name: zpool_iostat
+    - name: zfsonlinux_stats_
+    - name: zfsarcstats-counters
+    - name: zfs_usage_
+    - name: zfs_arcstats
+    - name: zfs_list
+  munin_node_config: {
+  "apc_nis": {
+    "env.host": "pve2.grote.lan",
+    "env.port": "3551"
+    }
+  }
+  munin_node_install_plugins:
+    - remote_src: https://raw.githubusercontent.com/munin-monitoring/contrib/master/plugins/zfs/zfs_arcstats
+    - remote_src: https://raw.githubusercontent.com/munin-monitoring/contrib/master/plugins/zfs/zfs_usage_
+    - remote_src: https://raw.githubusercontent.com/munin-monitoring/contrib/master/plugins/zfs/zfsarcstats-counters
+    - remote_src: https://raw.githubusercontent.com/munin-monitoring/contrib/master/plugins/zfs/zfsonlinux_stats_
+    - remote_src: https://raw.githubusercontent.com/munin-monitoring/contrib/master/plugins/zfs/zpool_iostat
+    - remote_src: https://raw.githubusercontent.com/munin-monitoring/contrib/master/plugins/zfs/zfs_list
+
 
   # Ansible Variablen
   ### sudo

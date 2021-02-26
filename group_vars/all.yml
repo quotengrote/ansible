@@ -1,19 +1,6 @@
 ---
   ### wird in vielen Rollen verwendet
   empfaenger_mail: michael.grote@posteo.de
-  ### geerlingguy.munin-node
-  munin_node_bind_host: "*"
-  munin_node_bind_port: "4949"
-  munin_node_allowed_cidrs: [192.168.2.0/24]
-  munin_node_plugins:
-    - name: apc_nis
-    - name: hddtemp_smartctl
-  munin_node_config: {
-  "apc_nis": {
-    "env.host": "pve2.grote.lan",
-    "env.port": "3551"
-    }
-  }
   ### mgrote.postfix
   postfix_absender_mailadresse: info@mgrote.net
   postfix_absender_passwort: "{{ lookup('keepass', 'postfix_absender_passwort', 'password') }}"

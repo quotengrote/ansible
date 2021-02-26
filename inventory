@@ -58,10 +58,6 @@ all:
       hosts:
         gitea-test.grote.lan:
         gitea.grote.lan:
-    munin:
-      hosts:
-        munin-test.grote.lan:
-        munin.grote.lan:
 
     production:
       hosts:
@@ -77,7 +73,6 @@ all:
         pve4.grote.lan:
         gitea.grote.lan:
         pihole2.grote.lan:
-        munin.grote.lan:
     test:
       hosts:
         wireguard-test.grote.lan:
@@ -92,4 +87,3 @@ all:
         pve4-test.grote.lan:
         gitea-test.grote.lan:
         pihole2-test.grote.lan:
-        munin-test.grote.lan:

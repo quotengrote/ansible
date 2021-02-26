@@ -28,17 +28,6 @@
     servers:
       - production
       - test
-  - username: gitlab-user
-    password: "{{ lookup('keepass', 'gitlab_user_linux_password_hash', 'password') }}"
-    update_password: on_create
-    ssh_key: "{{ lookup('keepass', 'gitlab_user_ssh_pubkey', 'password') }}"
-    use_sudo: yes
-    use_sudo_nopass: yes
-    user_state: present
-    groups: ssh, sudo, docker
-    servers:
-      - production
-      - test
   - username: ansible-user
     password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
     update_password: on_create
