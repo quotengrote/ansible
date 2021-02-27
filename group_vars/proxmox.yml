@@ -26,25 +26,32 @@
     - name: hddtemp_smartctl
     - name: zpool_iostat
     - name: zfsonlinux_stats_
-    - name: zfsarcstats-counters
-    - name: zfs_usage_
     - name: zfs_arcstats
     - name: zfs_list
+    - name: zpool_capacity
   munin_node_config: {
   "apc_nis": {
     "env.host": "pve2.grote.lan",
     "env.port": "3551"
     }
   }
-  munin_node_install_plugins:
-    - remote_src: https://raw.githubusercontent.com/munin-monitoring/contrib/master/plugins/zfs/zfs_arcstats
-    - remote_src: https://raw.githubusercontent.com/munin-monitoring/contrib/master/plugins/zfs/zfs_usage_
-    - remote_src: https://raw.githubusercontent.com/munin-monitoring/contrib/master/plugins/zfs/zfsarcstats-counters
-    - remote_src: https://raw.githubusercontent.com/munin-monitoring/contrib/master/plugins/zfs/zfsonlinux_stats_
-    - remote_src: https://raw.githubusercontent.com/munin-monitoring/contrib/master/plugins/zfs/zpool_iostat
-    - remote_src: https://raw.githubusercontent.com/munin-monitoring/contrib/master/plugins/zfs/zfs_list
-
-
+  munin_node_install_plugins: # in eigenes Repo gesichert
+    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfs_arcstats
+    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfsonlinux_stats_
+    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zpool_iostat
+    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfs_list
+    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zpool_capacity
+  munin_node_remove_plugins:
+    - name: meminfo # zhohe last
+    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
+    - name: squid_cache
+    - name: squid_objectsize
+    - name: squid_requests
+    - name: squid_traffic
+    - name: nfsd
+    - name: nfsd4
+    - name: hddtempd # ersetzt durch hddtemp_smartctl
+    - name: ipmi_power # für pve2, leeres diagramm
   # Ansible Variablen
   ### sudo
   sudo: false

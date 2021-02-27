@@ -38,3 +38,10 @@ munin_node_config: {
 #   "env.name": "bash"
 # }
 }
+
+
+munin_node_remove_plugins:
+  - name: meminfo
+
+munin_node_log: /var/log/munin/munin-node.log
+munin_node_pid: /var/run/munin/munin-node.pid

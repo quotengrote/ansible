@@ -7,4 +7,5 @@
         when: "'physical' in group_names" }
 
   ### Die Host müssen auch beim Docker-Container: "munin-master eingetragen" werden.
-  ### wird nur auf physichen Rechnern ausgeführt.
+  ### wird nur auf physischen Rechnern ausgeführt.
+  ### Wenn ein Plugin nicht geht: munin-node-configure --shell --families=contrib,auto | sh -x
