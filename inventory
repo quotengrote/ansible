@@ -64,7 +64,6 @@ all:
         wireguard.grote.lan:
         dokuwiki2.grote.lan:
         fileserver2.grote.lan:
-        pi.hole:
         acng.grote.lan:
         ansible2.grote.lan:
         docker.grote.lan:
