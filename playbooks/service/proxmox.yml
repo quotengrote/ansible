@@ -1,7 +1,6 @@
 ---
 - hosts: proxmox
   roles:
-    - { role: mgrote.apt_manage_sources, tags: "apt_sources" }
     - { role: mgrote.zfs_packages, tags: "zfs_packages" }
     - { role: mgrote.zfs_arc_mem, tags: "zfs_arc_mem" }
     - { role: mgrote.zfs_manage_datasets, tags: "datasets" }
