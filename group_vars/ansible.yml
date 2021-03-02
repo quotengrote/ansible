@@ -2,7 +2,7 @@
   ### geerlingguy.pip
   pip_package: python3-pip
   pip_install_packages:
-    - name: pykeepass
+    - name: pykeepass==3.2.1
     - name: Jinja2
     - name: markupsafe
     - name: ansible-playbook-grapher
