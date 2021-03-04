@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: remove Packages
+      become: yes
+      ansible.builtin.apt:
+        autoremove: yes
+        autoclean: yes
+        purge: yes
+        name:
+          - munin-node
+        state: absent

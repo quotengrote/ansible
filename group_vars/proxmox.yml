@@ -29,6 +29,7 @@
     - name: zfs_arcstats
     - name: zfs_list
     - name: zpool_capacity
+    - name: fail2ban_
   munin_node_config: {
   "apc_nis": {
     "env.host": "pve2.grote.lan",
@@ -41,8 +42,9 @@
     - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zpool_iostat
     - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfs_list
     - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zpool_capacity
+    - src: templates/fail2ban_
   munin_node_remove_plugins:
-    - name: meminfo # zhohe last
+    - name: meminfo # zu hohe last
     - name: hddtemp2 # ersetzt durch hddtemp_smartctl
     - name: squid_cache
     - name: squid_objectsize
@@ -50,6 +52,7 @@
     - name: squid_traffic
     - name: nfsd
     - name: nfsd4
+    - name: cronjobs
     - name: hddtempd # ersetzt durch hddtemp_smartctl
     - name: ipmi_power # für pve2, leeres diagramm
   # Ansible Variablen
