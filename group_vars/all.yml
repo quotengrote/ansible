@@ -55,7 +55,7 @@
     - username: mg
       password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
       update_password: on_create
-      ssh_key: "{{ lookup('keepass', 'mg_ssh_pubkey', 'password') }}"  #generieren: ssh-keygen -o; für putty  andern https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/ggcs/Change_private_key_format_for_Putty/Change_private_key_format_for_Putty.html#section2
+      ssh_key: "{{ lookup('keepass', 'mg_ssh_pubkey', 'password') }}"  #generieren: ssh-keygen -o; für putty ändern https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/ggcs/Change_private_key_format_for_Putty/Change_private_key_format_for_Putty.html#section2
       use_sudo: yes
       use_sudo_nopass: yes
       user_state: present

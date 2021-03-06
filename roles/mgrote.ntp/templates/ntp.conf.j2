@@ -1,0 +1,7 @@
+# Servers
+{% for item in ntp_servers %}
+server {{ item.address }} {{ item.options |default() }}
+{% endfor %}
+
+# Drift file
+driftfile {{ ntp_driftfile_directory }}/drift
