@@ -52,6 +52,7 @@
     - name: squid_traffic
     - name: nfsd
     - name: nfsd4
+    - name: ntp # verursacht zu viele dns ptr request
     - name: cronjobs
     - name: hddtempd # ersetzt durch hddtemp_smartctl
     - name: ipmi_power # für pve2, leeres diagramm
