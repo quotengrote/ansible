@@ -1,4 +1,12 @@
 ---
+  - name: restart ntpd
+    become: yes
+    systemd:
+      name: systemd-timesyncd
+      enabled: no
+      state: stopped
+      masked: yes
+
   - name: install ntp packages
     become: yes
     ansible.builtin.package:
