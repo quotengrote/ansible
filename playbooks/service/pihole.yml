@@ -1,5 +1,5 @@
 ---
-  - hosts: dns
+  - hosts: pihole
     become: yes
 
     tasks:
