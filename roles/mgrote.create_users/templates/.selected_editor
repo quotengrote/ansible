@@ -1,2 +1,0 @@
-{{ file_header | default () }}
-SELECTED_EDITOR="/usr/bin/vim"
