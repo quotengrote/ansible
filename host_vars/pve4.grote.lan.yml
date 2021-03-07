@@ -48,3 +48,4 @@
       cron_hour_zfs_scrub: "23"
   ### mgrote.apcupsd
   apcupsd_nis_master: false
+  apcupsd_nis_master_hostname: pve2.grote.lan
