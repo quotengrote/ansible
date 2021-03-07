@@ -1,4 +1,5 @@
 #!/bin/bash
+{{ file_header | default () }}
 #####################
 ## https://www.tothenew.com/blog/foolproof-your-bash-script-some-best-practices/
 set -o nounset

@@ -1,9 +1,9 @@
-
+{{ file_header | default () }}
 ##
 # zed.rc
 #
 # This file should be owned by root and permissioned 0600.
-## 
+##
 
 ##
 # Absolute path to the debug output file.

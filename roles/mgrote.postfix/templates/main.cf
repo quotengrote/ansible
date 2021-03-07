@@ -1,3 +1,4 @@
+{{ file_header | default () }}
 relayhost = [{{ postfix_smtp_server }}]:{{ postfix_smtp_server_port }}
 smtp_use_tls = {{ postfix_smtp_use_tls }}
 smtp_sasl_auth_enable = {{ postfix_smtp_sasl_auth_enable }}

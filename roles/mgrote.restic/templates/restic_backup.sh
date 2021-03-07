@@ -1,4 +1,5 @@
 #!/bin/bash
+{{ file_header | default () }}
 LOCKDIR=${HOME}/.cache # set lockdir
 function exlock() { # define Function for setting lock; stops the script i a lock exists
     exec {lock_fd}>${LOCKDIR}/$(basename $0).lock

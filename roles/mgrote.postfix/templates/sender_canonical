@@ -1,1 +1,2 @@
+{{ file_header | default () }}
 /.+/    {{ postfix_absender_mailadresse }}

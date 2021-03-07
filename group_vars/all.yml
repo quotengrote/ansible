@@ -1,6 +1,10 @@
 ---
   ### wird in vielen Rollen verwendet
   empfaenger_mail: michael.grote@posteo.de
+  file_header: |
+    #------------------------------------------------------------------
+    #-              This file is managed with ansible!                -
+    #------------------------------------------------------------------
   ### mgrote.postfix
   postfix_absender_mailadresse: info@mgrote.net
   postfix_absender_passwort: "{{ lookup('keepass', 'postfix_absender_passwort', 'password') }}"
@@ -88,7 +92,7 @@
   ### mgrote.apt_install_packages
   programs_common:
     - locales
-    - python
+    - python3
     - build-essential
     - ntp
     - htop

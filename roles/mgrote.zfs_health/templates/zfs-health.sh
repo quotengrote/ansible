@@ -1,4 +1,5 @@
 #! /bin/bash
+{{ file_header | default () }}
 
 problems=0
 emailSubject="`hostname` - ZFS pool - HEALTH check"

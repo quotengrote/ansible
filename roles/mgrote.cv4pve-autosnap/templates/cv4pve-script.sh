@@ -1,4 +1,5 @@
 #!/bin/bash
+{{ file_header | default () }}
 LOCKDIR=${HOME}/.cache
 function exlock() {
     exec {lock_fd}>${LOCKDIR}/$(basename $0).lock
