@@ -32,8 +32,8 @@ Es gibt folgende Konfigurationsmoeglichkeiten:
 
 ### Variablen + Defaults
 ##### Ort fuer Wetterangabe
-motd_wetter_ort: "Magdeburg"
+`motd_wetter_ort: "Magdeburg"`
 ##### Wetter anzeigen?
-motd_wetter_aktiv: false
+`motd_wetter_aktiv: false`
 ##### "fortune" anzeigen
-motd_fortune_aktiv: true
+`motd_fortune_aktiv: true`

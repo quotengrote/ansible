@@ -8,7 +8,6 @@
         - software-properties-common
         - curl
         - wget
-        - rsync
         - logrotate
         - libcapture-tiny-perl
       state: present

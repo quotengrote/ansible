@@ -1,5 +1,5 @@
 ---
-  ntp_timezone: "Europe/Berlin" #Zeitzone in der sich der Cpmputer befindet
+  ntp_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
   ntp_driftfile_directory: "/var/lib/ntp" # Ordner für das driftfile
   ntp_servers: # welche Server sollen befragt werden
     - address: ptbtime1.ptb.de

@@ -1,5 +1,5 @@
 ---
-  # Wann soll das sanoid-script mit cron ausgeführt werden?
+  ### Wann soll das sanoid-script mit cron ausgeführt werden?
   sanoid_cron_hours: '*'
   sanoid_cron_minutes: '*'
 
