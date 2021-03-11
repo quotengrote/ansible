@@ -12,4 +12,4 @@
       comment: 'acng'
   ### mgrote.acng
   acng_server_port: 9999
-  apt_cacher_ng_exthreshold: "60" #hebt Pakete 60 Tage auf
+  acng_server_exthreshold: "60" #hebt Pakete 60 Tage auf
