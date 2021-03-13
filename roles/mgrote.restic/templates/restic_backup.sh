@@ -51,6 +51,7 @@ do
         sleep {{ restic_wartezeit }}
         abbruch_restic=$(("$abbruch_restic" + 1))
     fi
+    echo $(date +%d.%m.%Y-%T) # Datum für logfile
   } >> /var/log/restic.log 2>&1; # leite die komplette Ausgabe in logfile um
 done
 
