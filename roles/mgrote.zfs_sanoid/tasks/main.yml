@@ -10,6 +10,7 @@
         - wget
         - logrotate
         - libcapture-tiny-perl
+        - libconfig-inifiles-perl
       state: present
 
   - name: Create Sanoid Directory
@@ -23,17 +24,6 @@
     with_items:
       - /usr/local/bin
       - /etc/sanoid
-
-  - name: Install Sanoid Dependencies Packages
-    become: true
-    ansible.builtin.apt:
-      name:
-        - libconfig-inifiles-perl
-      force_apt_get: yes
-      update_cache: yes
-      autoremove: yes
-      autoclean: yes
-      state: present
 
   - name: Install Sanoid Binary
     become: true
