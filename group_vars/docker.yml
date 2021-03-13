@@ -15,31 +15,6 @@
     - root
     - ansible-user
     - git
-  ### ryandaniels.create_users
-  users:
-  - username: mg
-    password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
-    update_password: on_create
-    ssh_key: "{{ lookup('keepass', 'mg_ssh_pubkey', 'password') }}"
-    use_sudo: yes
-    use_sudo_nopass: yes
-    user_state: present
-    groups: ssh, sudo, docker
-    servers:
-      - production
-      - test
-  - username: ansible-user
-    password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
-    update_password: on_create
-    ssh_key: "{{ lookup('keepass', 'ansible_user_ssh_pubkey', 'password') }}"
-    use_sudo: yes
-    use_sudo_nopass: yes
-    user_state: present
-    groups: ssh, sudo
-    servers:
-      - production
-      - test
-
   ### mgrote.restic
   restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker
   restic_cron_hours: "*"
