@@ -100,7 +100,6 @@
     - locales
     - python3
     - build-essential
-    - ntp
     - htop
     - git
     - dnsutils

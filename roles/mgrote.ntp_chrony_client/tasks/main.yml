@@ -25,7 +25,9 @@
     ansible.builtin.template:
       src: chrony.conf.j2
       dest: /etc/chrony/chrony.conf
+      mode: 0755
     notify: restart_chrony
+
 
   - name: copy logrotate config
     become: yes
@@ -38,7 +40,7 @@
     file:
       state: directory
       path: "{{ ntp_chrony_driftfile_directory }}"
-      mode: 0644
+      mode: 0755
       owner: "{{ ntp_chrony_user }}"
       group: "{{ ntp_chrony_group }}"
 

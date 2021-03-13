@@ -42,7 +42,7 @@
     - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zpool_iostat
     - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfs_list
     - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zpool_capacity
-    - src: templates/fail2ban_
+    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/fail2ban_
   munin_node_remove_plugins:
     - name: meminfo # zu hohe last
     - name: hddtemp2 # ersetzt durch hddtemp_smartctl
