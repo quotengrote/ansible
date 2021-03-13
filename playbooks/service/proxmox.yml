@@ -5,7 +5,6 @@
     - { role: mgrote.zfs_arc_mem, tags: "zfs_arc_mem" }
     - { role: mgrote.zfs_manage_datasets, tags: "datasets" }
     - { role: mgrote.zfs_scrub, tags: "zfs_scrub" }
-    - { role: mgrote.zfs_trim, tags: "zfs_trim" }
     - { role: mgrote.zfs_zed, tags: "zfs_zed" }
     - { role: mgrote.zfs_health, tags: "zfs_health" }
     - { role: mgrote.zfs_sanoid,
