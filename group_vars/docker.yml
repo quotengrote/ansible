@@ -27,8 +27,5 @@
         **/**AppData***/**
         /var/lib/docker/volumes/***Musik***
         /var/lib/docker/volumes/***musik***
-        /var/lib/docker/volumes/***musik***
-        /var/lib/docker/volumes/ocrmypdf-auto_scan_input/*
-        /var/lib/docker/volumes/ocrmypdf-auto_scan_output/*
         # https://github.com/restic/restic/issues/1005
         # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
