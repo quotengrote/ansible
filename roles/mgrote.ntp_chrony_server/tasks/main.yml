@@ -19,6 +19,7 @@
       name:
         - chrony
       state: present
+    notify: restart_chrony
 
   - name: copy chrony config
     become: yes
@@ -43,6 +44,7 @@
       mode: 0755
       owner: "{{ ntp_chrony_user }}"
       group: "{{ ntp_chrony_group }}"
+    notify: restart_chrony
 
   - name: set timezone to {{ ntp_chrony_timezone }}
     become: yes
