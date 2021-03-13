@@ -1,3 +1,4 @@
+---
   - name: Install rasdaemon
     become: true
     ansible.builtin.package:
@@ -27,27 +28,14 @@
       access_time: preserve
       modification_time: preserve
 
-  - name: Add rasdaemon Log to be Rotated
-    become: true
-    ansible.builtin.blockinfile:
-      path: /etc/logrotate.d/rasdaemon
-      state: present
-      create: yes
+  - name: copy logrotate config
+    become: yes
+    ansible.builtin.template:
+      src: logrotate_rasdaemon
+      dest: /etc/logrotate.d/rasdaemon
       owner: root
       group: root
       mode: 0644
-      block: |
-        /var/log/rasdaemon.log {
-          su root root
-          create 0640 root root
-          rotate 4
-          weekly
-          compress
-          missingok
-          notifempty
-          dateext
-          dateyesterday
-        }
 
   - name: rasdaemon-cron kopieren
     become: yes

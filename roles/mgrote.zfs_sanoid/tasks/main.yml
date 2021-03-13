@@ -63,27 +63,14 @@
       access_time: preserve
       modification_time: preserve
 
-  - name: Add Sanoid Log to be Rotated
-    become: true
-    ansible.builtin.blockinfile:
-      path: /etc/logrotate.d/sanoid
-      state: present
-      create: yes
+  - name: copy logrotate config
+    become: yes
+    ansible.builtin.template:
+      src: logrotate_sanoid
+      dest: /etc/logrotate.d/sanoid
       owner: root
       group: root
       mode: 0644
-      block: |
-        /var/log/sanoid-cron.log {
-          su root root
-          create 0640 root root
-          rotate 4
-          weekly
-          compress
-          missingok
-          notifempty
-          dateext
-          dateyesterday
-        }
 
   - name: Generate Sanoid Cron Scripts
     become: true

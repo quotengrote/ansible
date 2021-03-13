@@ -50,24 +50,11 @@
       access_time: preserve
       modification_time: preserve
 
-  - name: Add Log to be Rotated
-    become: true
-    ansible.builtin.blockinfile:
-      path: /etc/logrotate.d/cv4pve-autosnap
-      state: present
-      create: yes
+  - name: copy logrotate config
+    become: yes
+    ansible.builtin.template:
+      src: logrotate_cv4pve
+      dest: /etc/logrotate.d/cv4pve-autosnap
       owner: root
       group: root
       mode: 0644
-      block: |
-        /var/log/cv4pve-autosnap.log {
-          su root root
-          create 0640 root root
-          rotate 4
-          weekly
-          compress
-          missingok
-          notifempty
-          dateext
-          dateyesterday
-        }

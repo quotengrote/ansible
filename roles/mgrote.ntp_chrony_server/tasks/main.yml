@@ -29,13 +29,14 @@
       mode: 0755
     notify: restart_chrony
 
-
   - name: copy logrotate config
     become: yes
     ansible.builtin.template:
       src: logrotate_chrony
       dest: /etc/logrotate.d/chrony
-
+      owner: root
+      group: root
+      mode: 0644
   - name: Create chrony driftfile folder
     become: yes
     file:
