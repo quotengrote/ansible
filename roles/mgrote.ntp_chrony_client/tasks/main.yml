@@ -1,4 +1,18 @@
 ---
+  - name: mask systemd-timesyncd service
+    become: yes
+    systemd:
+      name: systemd-timesyncd
+      state: stopped
+      masked: yes
+
+  - name: mask ntp service
+    become: yes
+    systemd:
+      name: ntp
+      state: stopped
+      masked: yes
+
   - name: install chrony packages
     become: yes
     ansible.builtin.package:
