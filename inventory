@@ -16,6 +16,10 @@ all:
       hosts:
         pihole2-test.grote.lan:
         pihole2.grote.lan:
+    ntpserver:
+      hosts:
+        ntp-server-test.grote.lan:
+        ntp-server.grote.lan:
     acng:
       hosts:
         acng.grote.lan:
@@ -70,6 +74,7 @@ all:
         pve4.grote.lan:
         gitea.grote.lan:
         pihole2.grote.lan:
+        ntp-server.grote.lan:
     test:
       hosts:
         wireguard-test.grote.lan:
@@ -84,3 +89,4 @@ all:
         pve4-test.grote.lan:
         gitea-test.grote.lan:
         pihole2-test.grote.lan:
+        ntp-server-test.grote.lan:

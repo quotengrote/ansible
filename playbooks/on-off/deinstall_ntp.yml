@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+    - name: ntp deinstallieren
+      become: yes
+      ansible.builtin.package:
+        name: ntp
+        state: absent
+    - name: config file
+      become: yes
+      file:
+        path: /etc/ntp.conf
+        state: absent
+    - name: config folder
+      become: yes
+      file:
+        path: /var/lib/ntp
+        state: absent

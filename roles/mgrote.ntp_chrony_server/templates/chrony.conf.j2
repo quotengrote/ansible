@@ -1,0 +1,32 @@
+{{ file_header | default () }}
+# servers
+{% for item in ntp_chrony_servers %}
+server {{ item.address }} {{ item.options |default() }}
+{% endfor %}
+
+# keys
+keyfile /etc/chrony/chrony.keys
+
+# driftfile
+driftfile {{ ntp_chrony_driftfile_directory }}/chrony.drift
+
+
+{% if ntp_chrony_logging is sameas true %}
+# Logging
+log tracking measurements statistics
+logdir /var/log/chrony
+{% endif %}
+
+# Stop bad estimates upsetting machine clock.
+maxupdateskew 100.0
+
+# This directive enables kernel synchronisation (every 11 minutes) of the
+# real-time clock. Note that it can’t be used along with the 'rtcfile' directive.
+rtcsync
+
+# Step the system clock instead of slewing it if the adjustment is larger than
+# one second, but only in the first three clock updates.
+makestep 1 3
+
+# chrony as ntp server
+allow {{ ntp_chrony_subnet_allow }}

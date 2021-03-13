@@ -1,0 +1,6 @@
+  - name: restart_chrony
+    become: yes
+    systemd:
+      name: chrony
+      enabled: yes
+      state: restarted

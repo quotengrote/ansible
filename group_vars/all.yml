@@ -5,6 +5,12 @@
     #------------------------------------------------------------------
     #-              This file is managed with ansible!                -
     #------------------------------------------------------------------
+  ### mgrote.ntp_chrony_server
+  ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
+  ntp_chrony_servers: # welche Server sollen befragt werden
+    - address: ntp-server.grote.lan
+      options: iburst #optionaler parameter
+  ntp_chrony_logging: false # logging an/aus
   ### mgrote.postfix
   postfix_absender_mailadresse: info@mgrote.net
   postfix_absender_passwort: "{{ lookup('keepass', 'postfix_absender_passwort', 'password') }}"
