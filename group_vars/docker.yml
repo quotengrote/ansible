@@ -6,15 +6,13 @@
       protocol: tcp
       comment: 'ssh'
       from_ip: 192.168.2.0/24
-    # Weitere Regeln sind nicht notwendig da Docker iptables selber verwaltet.
-#    - rule: allow
-#      comment: 'alles erlauben'
+    - rule: allow # hier fehlt das netz, da der munin master in einem docker container auf diesem host läüft der eine andere ip hat
+      to_port: 4949
+      protocol: tcp
+      comment: 'munin-node'
   ### geerlingguy.docker
   docker_users:
     - mg
-    - root
-    - ansible-user
-    - git
   ### mgrote.restic
   restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker
   restic_cron_hours: "*"
@@ -29,3 +27,6 @@
         /var/lib/docker/volumes/***musik***
         # https://github.com/restic/restic/issues/1005
         # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
+  ### geerlingguy.munin-node
+  munin_node_remove_plugins:
+    - name: sensors

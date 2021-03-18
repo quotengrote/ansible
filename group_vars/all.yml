@@ -1,4 +1,8 @@
 ---
+  ### geerlingguy.munin-node
+  munin_node_bind_host: "0.0.0.0"
+  munin_node_bind_port: "4949"
+  munin_node_allowed_cidrs: [192.168.2.0/24]
   ### wird in vielen Rollen verwendet
   empfaenger_mail: michael.grote@posteo.de
   file_header: |
@@ -69,7 +73,7 @@
       use_sudo: yes
       use_sudo_nopass: yes
       user_state: present
-      groups: ssh, sudo
+      groups: ssh, sudo, docker
       servers:
         - production
         - test

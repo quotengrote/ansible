@@ -1,4 +1,7 @@
 ---
+  ### geerlingguy.munin-node
+  munin_node_remove_plugins:
+    - name: sensors
   ### mgrote.smb_fileserver
   smb_users:
     - name: 'annemariedroessler'
@@ -83,4 +86,9 @@
     - rule: allow
       to_port: 139
       comment: 'smb'
+      from_ip: 192.168.2.0/24
+    - rule: allow
+      to_port: 4949
+      protocol: tcp
+      comment: 'munin-node'
       from_ip: 192.168.2.0/24

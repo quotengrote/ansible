@@ -10,6 +10,11 @@
       to_port: 123
       comment: 'ntp'
       from_ip: 192.168.2.0/24
+    - rule: allow
+      to_port: 4949
+      protocol: tcp
+      comment: 'munin-node'
+      from_ip: 192.168.2.0/24
   ### mgrote.ntp_chrony_server
   ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
   ntp_chrony_driftfile_directory: "/var/lib/chrony" # Ordner für das driftfile

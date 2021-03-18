@@ -19,3 +19,8 @@
     - rule: allow
       to_port: 68
       comment: 'pihole-dhcp'
+    - rule: allow
+      to_port: 4949
+      protocol: tcp
+      comment: 'munin-node'
+      from_ip: 192.168.2.0/24
