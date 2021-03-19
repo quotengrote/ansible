@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: all,!proxmox
   become: yes
 
   tasks:
@@ -11,4 +11,9 @@
         purge: yes
         name:
           - munin-node
+        state: absent
+    - name: remove folder
+      become: yes
+      ansible.builtin.file:
+        path: /etc/munin
         state: absent

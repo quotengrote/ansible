@@ -18,6 +18,10 @@
   ### mgrote.apcupsd
   apcupsd_slave_polltime: 10 #in Sekunden
   ### geerlingguy.munin-node
+  ### geerlingguy.munin-node
+  munin_node_bind_host: "0.0.0.0"
+  munin_node_bind_port: "4949"
+  munin_node_allowed_cidrs: [192.168.2.0/24]
   munin_node_plugins:
     - name: apc_nis
     - name: hddtemp_smartctl
