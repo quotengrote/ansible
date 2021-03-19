@@ -6,10 +6,6 @@
       protocol: tcp
       comment: 'ssh'
       from_ip: 192.168.2.0/24
-    - rule: allow # hier fehlt das netz, da der munin master in einem docker container auf diesem host läüft der eine andere ip hat
-      to_port: 4949
-      protocol: tcp
-      comment: 'munin-node'
   ### geerlingguy.docker
   docker_users:
     - mg

@@ -53,11 +53,6 @@
       protocol: tcp
       comment: 'ssh'
       from_ip: 192.168.2.0/24
-    - rule: allow
-      to_port: 4949
-      protocol: tcp
-      comment: 'munin-node'
-      from_ip: 192.168.2.0/24
   ufw_default_incoming_policy: deny
   ufw_default_outgoing_policy: allow
   ### ryandaniels.create_users
