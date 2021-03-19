@@ -7,10 +7,14 @@
   sanoid_datasets:
     - path: 'hdd_data_raidz/data'
       template: 'fiveminutes'
-      recursive: ' no'
+      recursive: 'no'
+      snapshots: true
     - path: 'hdd_data_raidz/videos'
       template: 'hourly'
-      recursive: ' yes'
+      recursive: 'yes'
+      snapshots: true
+    - path: 'hdd_data_raidz/test'
+      snapshots: false # deaktiviert sanoid für das dataset
 
   ### Templates
   sanoid_templates:

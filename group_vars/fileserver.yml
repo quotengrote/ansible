@@ -64,7 +64,7 @@
       users_ro: 'win10'
       users_rw: 'annemariedroessler michaelgrote'
     - name: 'proxmox'
-      path: '/shares/proxmox'
+      path: '/shares_pve_backup'
       users_ro: 'win10 michaelgrote'
       users_rw: 'pve'
   smb_workgroup: WORKGROUP

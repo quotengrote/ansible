@@ -1,10 +1,12 @@
 {{ file_header | default () }}
 ## ZFS Section -------------------------------- ##
-{% for item in sanoid_datasets %}
+{% for item in sanoid_datasets if item.snapshots is sameas true %}
+{% if item.snapshots is sameas true %}
 [{{ item.path }}]
   use_template = {{ item.template }}
   recursive    = {{ item.recursive }}
 ## -------------------------------------------- ##
+{% endif %}
 {% endfor %}
 
 
