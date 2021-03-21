@@ -1,4 +1,7 @@
 ---
+  ### mgrote.apt_install_packages
+  programs_extra:
+    - ifupdown2
   ### geerlingguy.dotfiles
   dotfiles_repo: "https://github.com/quotengrote/dotfiles.git"
   dotfiles_repo_local_destination: "/home/mg/dotfiles-repo"
