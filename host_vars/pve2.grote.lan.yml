@@ -40,14 +40,6 @@
       dnodesize: auto
       atime: on
       snapdir: hidden
-    - dataset: hdd_data_raidz/pve_backup
-      state: present
-      compression: lz4
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
   ### mgrote.apcupsd
   apcupsd_nis_master: true
   apcupsd_nis_master_hostname: pve2.grote.lan
@@ -81,6 +73,10 @@
       template: 'hourly'
       recursive: 'yes'
       snapshots: true
+    - path: 'hdd_data_raidz/papa_backup'
+      template: 'papa'
+      recursive: 'yes'
+      snapshots: true
     - path: 'hdd_data_raidz/pve_backup'
       snapshots: false # deaktiviert sanoid für das dataset
   sanoid_templates:
@@ -98,6 +94,15 @@
       keep_daily: '31'
       keep_monthly: '6'
       keep_yearly: '1'
+      frequently: '0'
+      frequent_period: '0'
+      autosnap: 'yes'
+      autoprune: 'yes'
+    - name: 'papa'
+      keep_hourly: '0'
+      keep_daily: '14'
+      keep_monthly: '3'
+      keep_yearly: '0'
       frequently: '0'
       frequent_period: '0'
       autosnap: 'yes'
