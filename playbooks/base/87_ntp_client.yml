@@ -1,0 +1,5 @@
+---
+  - hosts: all:!ntpserver
+    roles:
+      - { role: mgrote.ntp_chrony_client,
+          tags: "ntp"}

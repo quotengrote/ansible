@@ -1,0 +1,4 @@
+---
+  - hosts: all:!proxmox
+    roles:
+      - { role: mgrote.tmux, tags: "tmux"}

@@ -2,9 +2,16 @@
   ### wird in vielen Rollen verwendet
   empfaenger_mail: michael.grote@posteo.de
   file_header: |
-    #------------------------------------------------------------------
-    #-              This file is managed with ansible!                -
-    #------------------------------------------------------------------
+    #----------------------------------------------------------------#
+    #              This file is managed with ansible!                #
+    #----------------------------------------------------------------#
+  ### jnv.unattended_upgrades
+  unattended_mail: "{{ empfaenger_mail }}"
+  unattended_mail_only_on_error: true
+  unattended_syslog_enable: true
+  unattended_origins_patterns:
+    - 'origin=Ubuntu,archive=${distro_codename}-security'
+    - 'o=Ubuntu,a=${distro_codename}-updates'
   ### mgrote.ntp_chrony_server
   ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
   ntp_chrony_servers: # welche Server sollen befragt werden

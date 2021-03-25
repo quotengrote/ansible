@@ -2,7 +2,7 @@
     become: yes
     ansible.builtin.package:
       update_cache: yes
-      cache_valid_time: 300
+      cache_valid_time: 3000
 
   - name: install common-packages
     become: yes

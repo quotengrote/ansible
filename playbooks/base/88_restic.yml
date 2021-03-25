@@ -1,0 +1,4 @@
+---
+  - hosts: all
+    roles:
+      - { role: mgrote.restic, tags: "restic" }

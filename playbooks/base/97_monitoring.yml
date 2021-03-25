@@ -1,10 +1,9 @@
 ---
-  - hosts: all
+  - hosts: proxmoxprod
     roles:
       - { role: geerlingguy.munin-node,
         become: true,
-        tags: "munin",
-      when: "not 'test' in group_names" }
+        tags: "munin"}
   ### Die Host müssen auch beim Docker-Container: "munin-master eingetragen" werden.
   ### wird nur auf physischen Rechnern ausgeführt.
   ### Wenn ein Plugin nicht geht: munin-node-configure --shell --families=contrib,auto | sh -x

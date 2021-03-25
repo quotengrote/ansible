@@ -1,0 +1,5 @@
+---
+  - hosts: all:!proxmox
+    roles:
+      - { role: mgrote.deactivate_ssh_password_login,
+          tags: "ssh"}
