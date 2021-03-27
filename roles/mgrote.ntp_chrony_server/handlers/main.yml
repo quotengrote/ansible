@@ -4,3 +4,9 @@
       name: chrony
       enabled: yes
       state: restarted
+
+  - name: mask ntp service
+    become: yes
+    systemd:
+      name: ntp
+      masked: yes
