@@ -40,6 +40,42 @@
       dnodesize: auto
       atime: on
       snapdir: hidden
+    - dataset: hdd_data_raidz/papa_backup
+      state: present
+      compression: zstd
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
+    - dataset: hdd_data_raidz/pve_backup
+      state: present
+      compression: zstd
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
+    - dataset: hdd_data_raidz/videos
+      state: present
+      compression: lz4
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
+    - dataset: hdd_data_raidz/data_crypt
+      state: present
+      compression: lz4
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: visible
+
+
+
+
   ### mgrote.apcupsd
   apcupsd_nis_master: true
   apcupsd_nis_master_hostname: pve2.grote.lan
