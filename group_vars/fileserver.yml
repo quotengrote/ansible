@@ -42,8 +42,8 @@
       users_rw: 'win10 michaelgrote'
     - name: 'amd'
       path: '/shares/amd'
-      users_ro: 'win10 navidrome michaelgrote'
-      users_rw: 'annemariedroessler'
+      users_ro: 'navidrome michaelgrote'
+      users_rw: 'annemariedroessler win10'
     - name: 'backup'
       path: '/shares/Backup'
       users_ro: ''
@@ -70,8 +70,8 @@
       users_rw: 'annemariedroessler michaelgrote'
     - name: 'proxmox'
       path: '/shares_pve_backup'
-      users_ro: 'win10 michaelgrote'
-      users_rw: 'pve'
+      users_ro: 'michaelgrote'
+      users_rw: 'pve win10'
   smb_workgroup: WORKGROUP
   smb_min_protocol: "SMB2"
   smb_client_min_protocol: "SMB2"
