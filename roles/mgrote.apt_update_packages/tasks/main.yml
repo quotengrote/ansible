@@ -1,3 +1,4 @@
+---
   - name: update apt cache
     become: yes
     ansible.builtin.apt:

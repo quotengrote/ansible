@@ -2,9 +2,7 @@
 
 ### Beschreibung
 Fuehrt:
-1. `apt update`
-3. ` apt install {{ programme }}`
-2. `apt upgrade`
+` apt install {{ programme }}`
 aus.
 
 Es wird unterschieden ob das Ziel eine VM ist oder nicht.
