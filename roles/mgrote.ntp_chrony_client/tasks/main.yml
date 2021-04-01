@@ -6,12 +6,18 @@
       state: stopped
       masked: yes
 
-  - name: stop ntp service
+  - name: gather package facts
+    become: yes
+    ansible.builtin.package_facts:
+      manager: auto
+
+  - name: stop and mask ntp service
     become: yes
     systemd:
       name: ntp
+      masked: yes
       state: stopped
-    notify: mask ntp service
+    when: "'ntp' in ansible_facts.packages"
 
   - name: install chrony packages
     become: yes
