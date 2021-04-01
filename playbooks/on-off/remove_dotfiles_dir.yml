@@ -12,6 +12,11 @@
       ansible.builtin.file:
         path: /home/mg/.bash_aliases
         state: absent
+    - name: delete /home/mg/.vimrc
+      become: yes
+      ansible.builtin.file:
+        path: /home/mg/.vimrc
+        state: absent
     - name: delete /home/mg/.tmux.conf
       become: yes
       ansible.builtin.file:
@@ -21,4 +26,29 @@
       become: yes
       ansible.builtin.file:
         path: /home/mg/.gitconfig
+        state: absent
+    - name: delete /root/dotfiles-repo
+      become: yes
+      ansible.builtin.file:
+        path: /root/dotfiles-repo
+        state: absent
+    - name: delete /root/.bash_aliases
+      become: yes
+      ansible.builtin.file:
+        path: /root/.bash_aliases
+        state: absent
+    - name: delete /root/.tmux.conf
+      become: yes
+      ansible.builtin.file:
+        path: /root/.tmux.conf
+        state: absent
+    - name: delete /root/.gitconfig
+      become: yes
+      ansible.builtin.file:
+        path: /root/.gitconfig
+        state: absent
+    - name: delete /root/.vimrc
+      become: yes
+      ansible.builtin.file:
+        path: /root/.vimrc
         state: absent

@@ -2,16 +2,6 @@
   ### mgrote.apt_install_packages
   programs_extra:
     - ifupdown2
-  ### geerlingguy.dotfiles
-  dotfiles_repo: "https://github.com/quotengrote/dotfiles.git"
-  dotfiles_repo_local_destination: "/home/mg/dotfiles-repo"
-  dotfiles_home:  "/home/mg"
-  dotfiles_user: "mg"
-  dotfiles_repo_accept_hostkey: true
-  dotfiles_files:
-    - .bash_aliases
-    - .tmux.conf
-    - .gitconfig
   ### mgrote.smart
   smart_smartctlmail_cron_minutes: "15"
   smart_smartctlmail_cron_hours: "6"
@@ -20,7 +10,6 @@
   zfs_extra_max_usage_health: "80"
   ### mgrote.apcupsd
   apcupsd_slave_polltime: 10 #in Sekunden
-  ### geerlingguy.munin-node
   ### geerlingguy.munin-node
   munin_node_bind_host: "0.0.0.0"
   munin_node_bind_port: "4949"
@@ -60,6 +49,7 @@
     - name: cronjobs
     - name: hddtempd # ersetzt durch hddtemp_smartctl
     - name: ipmi_power # für pve2, leeres diagramm
+    
   # Ansible Variablen
   ### sudo
   sudo: false
