@@ -88,7 +88,7 @@
       cron_hour_zfs_trim: "22"
       cron_month_zfs_trim: "4,8,12"
       cron_day_zfs_trim: "2"
-      cron_weekday_zfs_scrub: "6"
+      cron_weekday_zfs_scrub: "*/21"
       cron_minutes_zfs_scrub: "0"
       cron_hour_zfs_scrub: "23"
     - name: "hdd_data_raidz"
@@ -96,7 +96,7 @@
       cron_hour_zfs_trim: "24"
       cron_month_zfs_trim: "4,8,12"
       cron_day_zfs_trim: "2"
-      cron_weekday_zfs_scrub: "6"
+      cron_weekday_zfs_scrub: "*/21"
       cron_minutes_zfs_scrub: "0"
       cron_hour_zfs_scrub: "23"
   ### mgrote.zfs_sanoid
