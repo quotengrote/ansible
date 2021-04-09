@@ -19,7 +19,7 @@
       comment: 'gitea'
       from_ip: 192.168.2.0/24
   ### tmaurice.gitea
-  gitea_version: "1.13.4"
+  gitea_version: "1.13.7"
   gitea_app_name: "Gitea"
   gitea_user: "gitea"
   gitea_home: "/var/lib/gitea"
