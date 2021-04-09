@@ -6,6 +6,6 @@ deb http://{{ manage_sources_apt_proxy_url }}de.archive.ubuntu.com/ubuntu/ {{ans
 deb http://{{ manage_sources_apt_proxy_url }}de.archive.ubuntu.com/ubuntu/ {{ansible_distribution_release}} multiverse
 deb http://{{ manage_sources_apt_proxy_url }}de.archive.ubuntu.com/ubuntu/ {{ansible_distribution_release}}-updates multiverse
 deb http://{{ manage_sources_apt_proxy_url }}de.archive.ubuntu.com/ubuntu/ {{ansible_distribution_release}}-backports main restricted universe multiverse
-deb http://{{ manage_sources_apt_proxy_url }}/security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security main restricted
-deb http://{{ manage_sources_apt_proxy_url }}/security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security universe
-deb http://{{ manage_sources_apt_proxy_url }}/security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security multiverse
+deb http://{{ manage_sources_apt_proxy_url }}security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security main restricted
+deb http://{{ manage_sources_apt_proxy_url }}security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security universe
+deb http://{{ manage_sources_apt_proxy_url }}security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security multiverse
