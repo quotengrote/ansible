@@ -1,5 +1,5 @@
-### postfix fuer gmail; http://dokuwiki2.grote.lan/artikel/technik/postfix_mit_gmail_fuer_benachrichtigungen_einrichten
-
+---
+  ### postfix fuer gmail; http://dokuwiki2.grote.lan/artikel/technik/postfix_mit_gmail_fuer_benachrichtigungen_einrichten
   - name: postfix + Hilfsprogramme installieren
     become: yes
     ansible.builtin.package:

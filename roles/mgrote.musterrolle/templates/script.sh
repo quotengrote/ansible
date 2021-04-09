@@ -37,6 +37,8 @@ function unlock() {
 exlock
 #####################
 HIER BEFEHLE EINSETZEN!
+
+echo x   | ts '%Y-%m-%d - %H-%M-%S'
 #####################
 #Hiermit wird die Lockdatei geloescht
 unlock

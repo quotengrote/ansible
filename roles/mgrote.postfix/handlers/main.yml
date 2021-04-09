@@ -1,3 +1,4 @@
+---
   - name: hash_sasl_passwd
     become: yes
     command: /usr/sbin/postmap hash:/etc/postfix/sasl_passwd

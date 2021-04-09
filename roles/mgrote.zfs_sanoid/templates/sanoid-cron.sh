@@ -22,16 +22,7 @@ function unlock() {
 # Damit prueft ob das Script ob es schon laeuft
 exlock
 
-(
-  echo "--------------------------------------------------"
-  echo $(date +%d.%m.%Y-%T) sanoid start
-  echo ""
-  /usr/local/bin/sanoid --cron --verbose
-  echo ""
-  echo $(date +%d.%m.%Y-%T) sanoid end
-) >> /var/log/sanoid-cron.log 2>&1 &
-
-
+/usr/local/bin/sanoid --cron --verbose  | ts '%Y-%m-%d - %H-%M-%S' >> /var/log/sanoid-cron.log 2>&1 &
 
 #Hiermit wird die Lockdatei geloescht
 unlock

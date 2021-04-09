@@ -1,4 +1,5 @@
-#Blockdevice/Festplatten muessen haendisch in "templates" eingetragen werden
+---
+  #Blockdevice/Festplatten muessen haendisch in "templates" eingetragen werden
   - name: smartmontools installieren
     become: yes
     ansible.builtin.package:

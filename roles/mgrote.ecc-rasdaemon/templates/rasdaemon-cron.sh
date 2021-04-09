@@ -7,8 +7,6 @@ set -o errexit
 # trap ctrl-c and call ctrl_c()
 trap ctrl_c INT
 (
-echo "--------------------------------------------------"
-echo $(date)
-/usr/sbin/ras-mc-ctl --status
-/usr/sbin/ras-mc-ctl --errors
+/usr/sbin/ras-mc-ctl --status | ts '%Y-%m-%d - %H-%M-%S'
+/usr/sbin/ras-mc-ctl --errors | ts '%Y-%m-%d - %H-%M-%S'
 ) >> /var/log/rasdaemon.log 2>&1

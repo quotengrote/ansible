@@ -1,4 +1,4 @@
 ---
-zfs_extra_cron_minutes_zfs_health: "0,15,30,45"
-zfs_extra_cron_hours_zfs_health: "*"
-zfs_extra_max_usage_health: "80"
+  zfs_extra_cron_minutes_zfs_health: "0,15,30,45"
+  zfs_extra_cron_hours_zfs_health: "*"
+  zfs_extra_max_usage_health: "80"

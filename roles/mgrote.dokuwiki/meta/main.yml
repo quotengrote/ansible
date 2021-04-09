@@ -1,3 +1,3 @@
 ---
-dependencies:
-  - role: mgrote.postfix
+  dependencies:
+    - role: mgrote.postfix

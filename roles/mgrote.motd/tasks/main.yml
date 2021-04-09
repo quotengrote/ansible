@@ -1,3 +1,4 @@
+---
   - name: install fortune
     become: yes
     ansible.builtin.package:
@@ -13,7 +14,7 @@
         - update-motd
       state: present
     when: ansible_facts['os_family'] == "Ubuntu"
-##################
+
   - name: 'remove unwanted motd messages'
     become: yes
     ansible.builtin.file:
@@ -32,7 +33,7 @@
       - 20-facts
       - 90-updates
       - 91-reboot
-##################
+
   - name: delete "Last Login" - Message
     become: yes
     ansible.builtin.lineinfile:

@@ -1,3 +1,3 @@
 ---
-dependencies:
-  - role: mgrote.zfs_packages
+  dependencies:
+    - role: mgrote.zfs_packages

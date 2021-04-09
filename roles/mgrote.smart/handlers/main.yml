@@ -1,3 +1,4 @@
+---
   - name: smartmontools_starten_aktivieren
     become: yes
     systemd:

@@ -27,7 +27,7 @@
   postfix_smtp_server_port: 587
   postfix_smtp_use_tls: "yes"
   ### mgrote.apt_manage_sources
-  manage_sources_apt_proxy_url: "acng.grote.lan:9999"
+  manage_sources_apt_proxy_url: "acng.grote.lan:9999/"
   ### mgrote.restic
   restic_folders_to_backup: "/usr/local /etc /root /home"
   restic_cron_hours: "19"
@@ -117,6 +117,7 @@
     - net-tools
     - apt-transport-https
     - neofetch
+    - moreutils
     - ntpdate
     - acl
     - vim
