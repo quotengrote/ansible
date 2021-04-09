@@ -2,6 +2,7 @@
   ### mgrote.apt_install_packages
   programs_extra:
     - ifupdown2
+    - bmon
   ### mgrote.smart
   smart_smartctlmail_cron_minutes: "15"
   smart_smartctlmail_cron_hours: "6"
@@ -49,7 +50,7 @@
     - name: cronjobs
     - name: hddtempd # ersetzt durch hddtemp_smartctl
     - name: ipmi_power # für pve2, leeres diagramm
-    
+
   # Ansible Variablen
   ### sudo
   sudo: false
