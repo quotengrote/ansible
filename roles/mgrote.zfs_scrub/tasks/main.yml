@@ -12,7 +12,9 @@
       name: zfs-scrub - "{{ item.name }}"
       state: present
       job: "{{ zfs_extra_path_zpool }} scrub {{ item.name }}"
-      weekday: "{{ item.cron_weekday_zfs_scrub }}"
-      minute: "{{ item.cron_minutes_zfs_scrub }}"
-      hour: "{{ item.cron_hour_zfs_scrub }}"
+      month: "{{ item.cron_month_zfs_scrub | default('*') }}"
+      weekday: "{{ item.cron_day_of_week_zfs_scrub | default('7') }}"
+      day: "{{ item.cron_day_of_month_zfs_scrub | default('*/21') }}"
+      hour: "{{ item.cron_hour_zfs_scrub | default('23') }}"
+      minute: "{{ item.cron_minutes_zfs_scrub | default('30') }}"
     with_items: "{{ zfs_extra_zfs_pools }}"
