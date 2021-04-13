@@ -30,8 +30,8 @@
   smb_shares:
     - name: 'videos'
       path: '/shares_videos'
-      users_ro: ' win10 kodi'
-      users_rw: 'annemariedroessler michaelgrote'
+      users_ro: 'kodi'
+      users_rw: 'annemariedroessler michaelgrote win10'
     - name: 'scans'
       path: '/shares/scans'
       users_ro: 'annemariedroessler michaelgrote'
