@@ -1,4 +1,6 @@
 ---
+  - hosts: all
+    gather_facts: false
   - import_playbook: 84_apt_sources.yml
   - import_playbook: 85_install_packages.yml
   - import_playbook: 86_unattended_upgrades.yml

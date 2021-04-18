@@ -27,6 +27,8 @@
       password: "{{ lookup('keepass', 'fileserver_smb_user_pve', 'password') }}"
     - name: 'brother_ads2700w'
       password: "{{ lookup('keepass', 'fileserver_smb_user_brother_ads2700w', 'password') }}"
+    - name: 'photoprism'
+      password: "{{ lookup('keepass', 'fileserver_smb_user_photoprism', 'password') }}"
   smb_shares:
     - name: 'videos'
       path: '/shares_videos'
@@ -66,7 +68,7 @@
       users_rw: 'kodi annemariedroessler restic win10 michaelgrote'
     - name: 'bilder'
       path: '/shares/bilder'
-      users_ro: ''
+      users_ro: 'photoprism'
       users_rw: 'annemariedroessler michaelgrote win10'
     - name: 'proxmox'
       path: '/shares_pve_backup'
