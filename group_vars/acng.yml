@@ -13,3 +13,5 @@
   ### mgrote.acng
   acng_server_port: 9999
   acng_server_exthreshold: "60" #hebt Pakete 60 Tage auf
+  acng_server_auth_user: acngadmin
+  acng_server_auth_pass: "{{ lookup('keepass', 'acng_webinterface', 'password' }}"
