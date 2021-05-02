@@ -73,7 +73,7 @@
       state: touch
       owner: root
       group: root
-      mode: 0644
+      mode: 0640
       access_time: preserve
       modification_time: preserve
 
