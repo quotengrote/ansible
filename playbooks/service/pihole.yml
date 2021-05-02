@@ -10,7 +10,13 @@
           create: yes
           backrefs: false
           mode: 0664
-
+      - name: Setze DNS-Resolver fuer pihole-*
+        ansible.builtin.blockinfile:
+          path: /etc/lighttpd/external.conf
+          block: |
+            setenv.add-environment = (
+            "VIRTUAL_HOST" => "{{ pihole_homer_fqdn }}
+            )
 # Wenn die VM beim Start mit "systemd-networkd-wait-online." hängt
 # Deaktiviere DHCP in:
 # sudo nano /etc/netplan/01-netcfg.yaml
