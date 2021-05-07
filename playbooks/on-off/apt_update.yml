@@ -1,5 +1,5 @@
 ---
-- hosts: ovpn
+- hosts: all
   become: yes
   serial: 5
 
