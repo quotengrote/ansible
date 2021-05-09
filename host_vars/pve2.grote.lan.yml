@@ -80,6 +80,46 @@
       dnodesize: auto
       atime: on
       snapdir: visible
+    - dataset: rpool/vm/dir/vm-158/data
+      state: present
+      compression: lz4
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: visible
+    - dataset: rpool/vm/dir/vm-158/papa
+      state: present
+      compression: lz4
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: visible
+    - dataset: rpool/vm/dir/vm-158/proxmox
+      state: present
+      compression: lz4
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: visible
+    - dataset: rpool/vm/dir/vm-158/videos
+      state: present
+      compression: lz4
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: visible
+    - dataset: rpool/vm/dir/vm-158/music
+      state: present
+      compression: lz4
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: visible
 
   ### mgrote.apcupsd
   apcupsd_nis_master: true

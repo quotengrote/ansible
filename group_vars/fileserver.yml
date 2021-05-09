@@ -1,9 +1,16 @@
 ---
-  # Bind Mounts
+  # Bind Mounts - fileserver
   # pct set 109 -mp0 /hdd_data_raidz/videos,mp=/shares_videos
   # pct set 109 -mp1 /hdd_data_raidz/data_crypt,mp=/shares
-  # pct set 109 -mp2 /hdd_data_raidz/pve_backup,mp=/shares_pve_backup
+  # pct set 109 -mp2 /hdd_data_raidz/vm_backup,mp=/shares_pve_backup
   # pct set 109 -mp3 /hdd_data_raidz/papa_backup,mp=/shares_papa_backup
+  # pct set 109 -mp4 /hdd_data_raidz/music,mp=/shares_music
+  # Bind Mounts - fileserver-test
+  # pct set 158 -mp0 /rpool/vm/dir/vm-158/videos,mp=/shares_videos
+  # pct set 158 -mp1 /rpool/vm/dir/vm-158/data,mp=/shares
+  # pct set 158 -mp2 /rpool/vm/dir/vm-158/proxmox,mp=/shares_pve_backup
+  # pct set 158 -mp3 /rpool/vm/dir/vm-158/papa,mp=/shares_papa_backup
+  # pct set 158 -mp4 /rpool/vm/dir/vm-158/music,mp=/shares_music
   ### geerlingguy.munin-node
   munin_node_remove_plugins:
     - name: sensors
