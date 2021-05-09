@@ -59,7 +59,7 @@
       users_ro: ''
       users_rw: 'win10 michaelgrote'
     - name: 'musik'
-      path: '/shares/Musik'
+      path: '/shares_music'
       users_ro: 'navidrome kodi annemariedroessler '
       users_rw: 'win10 michaelgrote'
     - name: 'tmp'
