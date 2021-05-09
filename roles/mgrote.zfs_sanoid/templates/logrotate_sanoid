@@ -1,6 +1,6 @@
 /var/log/sanoid-cron.log {
   su root root
-  create 0640 root root
+  create 0644 root root
   rotate 4
   weekly
   compress
