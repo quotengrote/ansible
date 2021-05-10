@@ -15,3 +15,5 @@
       - all
     galaxy_tags:
       - system
+  collections:
+    - community.general

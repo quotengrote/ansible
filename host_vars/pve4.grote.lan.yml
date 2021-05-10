@@ -46,3 +46,5 @@
   ### mgrote.apcupsd
   apcupsd_nis_master: false
   apcupsd_nis_master_hostname: pve2.grote.lan
+  ### mgrote.r8152_kernel_module
+  r8152_module_needed: true
