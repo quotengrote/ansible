@@ -129,6 +129,7 @@
     - s-tui
     - smartmontools
     - lm-sensors
+    - ethtool
   programs_only_vms:
     - qemu-guest-agent
     - open-vm-tools
