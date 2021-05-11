@@ -15,7 +15,7 @@
           path: /etc/lighttpd/external.conf
           block: |
             setenv.add-environment = (
-            "VIRTUAL_HOST" => "{{ pihole_homer_fqdn }}
+            "VIRTUAL_HOST" => "{{ pihole_homer_fqdn }}"
             )
 # Wenn die VM beim Start mit "systemd-networkd-wait-online." hängt
 # Deaktiviere DHCP in:
