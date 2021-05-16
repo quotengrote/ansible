@@ -12,10 +12,6 @@ all:
       hosts:
         pihole2-test.grote.lan:
         pihole2.grote.lan:
-    jenkins:
-      hosts:
-        jenkins-test.grote.lan:
-        jenkins.grote.lan:
     ntpserver:
       hosts:
         ntp-server-test.grote.lan:
@@ -74,7 +70,6 @@ all:
         gitea.grote.lan:
         pihole2.grote.lan:
         ntp-server.grote.lan:
-        jenkins.grote.lan:
     test:
       hosts:
         dokuwiki-test.grote.lan:
@@ -89,4 +84,3 @@ all:
         gitea-test.grote.lan:
         pihole2-test.grote.lan:
         ntp-server-test.grote.lan:
-        jenkins-test.grote.lan:
