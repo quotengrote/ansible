@@ -4,7 +4,7 @@
     ansible.builtin.apt:
       update_cache: yes
 
-  - name: updated installed packages
+  - name: update installed packages
     become: yes
     ansible.builtin.package:
       upgrade: dist
