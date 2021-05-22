@@ -21,3 +21,11 @@
       comment: 'pihole-dhcp'
   ## playbook
   pihole_homer_fqdn: docker.grote.lan # unter welchem host ist docker erreichbar? notwendig für die pihole stats in homer; fur die cors abfrage
+  ### mgrote.restic
+  restic_repository: "//192.168.2.36/backup/restic" # weil pihole den fqdn nicht auflösen kann
+  ### mgrote.ntp_chrony_server
+  ntp_chrony_servers: # weil pihole den fqdn nicht auflösen kann
+    - address: pool.ntp.org
+      options: iburst #optionaler parameter
+  ### mgrote.apt_manage_sources
+  manage_sources_apt_proxy_url: "192.168.2.46:9999/" # weil pihole den fqdn nicht auflösen kann
