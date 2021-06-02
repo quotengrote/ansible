@@ -5,15 +5,14 @@
   # pct set 109 -mp2 /hdd_data_raidz/vm_backup,mp=/shares_pve_backup
   # pct set 109 -mp3 /hdd_data_raidz/papa_backup,mp=/shares_papa_backup
   # pct set 109 -mp4 /hdd_data_raidz/music,mp=/shares_music
+  # pct set 109 -mp5 /hdd_data_raidz/tmp,mp=/shares_tmp
   # Bind Mounts - fileserver-test
   # pct set 158 -mp0 /rpool/vm/dir/vm-158/videos,mp=/shares_videos
   # pct set 158 -mp1 /rpool/vm/dir/vm-158/data,mp=/shares
   # pct set 158 -mp2 /rpool/vm/dir/vm-158/proxmox,mp=/shares_pve_backup
   # pct set 158 -mp3 /rpool/vm/dir/vm-158/papa,mp=/shares_papa_backup
   # pct set 158 -mp4 /rpool/vm/dir/vm-158/music,mp=/shares_music
-  ### geerlingguy.munin-node
-  munin_node_remove_plugins:
-    - name: sensors
+  # pct set 158 -mp5 /rpool/vm/dir/vm-158/tmp,mp=/shares_tmp
   ### mgrote.smb_fileserver
   smb_users:
     - name: 'annemariedroessler'
@@ -70,7 +69,7 @@
       users_ro: 'navidrome kodi annemariedroessler '
       users_rw: 'win10 michaelgrote'
     - name: 'tmp'
-      path: '/shares/tmp'
+      path: '/shares_tmp'
       users_ro: 'win10'
       users_rw: 'kodi annemariedroessler restic win10 michaelgrote'
     - name: 'bilder'

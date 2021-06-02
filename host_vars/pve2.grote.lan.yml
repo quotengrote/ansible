@@ -79,7 +79,15 @@
       xattr: sa
       dnodesize: auto
       atime: on
-      snapdir: visible
+      snapdir: hidden
+    - dataset: hdd_data_raidz/tmp
+      state: present
+      compression: zstd
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
     - dataset: rpool/vm/dir/vm-158/data
       state: present
       compression: lz4
@@ -87,7 +95,7 @@
       xattr: sa
       dnodesize: auto
       atime: on
-      snapdir: visible
+      snapdir: hidden
     - dataset: rpool/vm/dir/vm-158/papa
       state: present
       compression: lz4
@@ -95,7 +103,7 @@
       xattr: sa
       dnodesize: auto
       atime: on
-      snapdir: visible
+      snapdir: hidden
     - dataset: rpool/vm/dir/vm-158/proxmox
       state: present
       compression: lz4
@@ -103,7 +111,7 @@
       xattr: sa
       dnodesize: auto
       atime: on
-      snapdir: visible
+      snapdir: hidden
     - dataset: rpool/vm/dir/vm-158/videos
       state: present
       compression: lz4
@@ -111,7 +119,7 @@
       xattr: sa
       dnodesize: auto
       atime: on
-      snapdir: visible
+      snapdir: hidden
     - dataset: rpool/vm/dir/vm-158/music
       state: present
       compression: lz4
@@ -119,7 +127,15 @@
       xattr: sa
       dnodesize: auto
       atime: on
-      snapdir: visible
+      snapdir: hidden
+    - dataset: rpool/vm/dir/vm-158/tmp
+      state: present
+      compression: lz4
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
 
   ### mgrote.apcupsd
   apcupsd_nis_master: true
@@ -160,6 +176,10 @@
       template: '14tage'
       recursive: 'yes'
       snapshots: true
+    - path: 'hdd_data_raidz/tmp'
+      template: '3tage'
+      recursive: 'yes'
+      snapshots: true
     - path: 'hdd_data_raidz/pve_backup'
       snapshots: false # deaktiviert sanoid für das dataset
   sanoid_templates:
@@ -175,6 +195,15 @@
     - name: '14tage'
       keep_hourly: '0'
       keep_daily: '14'
+      keep_monthly: '0'
+      keep_yearly: '0'
+      frequently: '0'
+      frequent_period: '0'
+      autosnap: 'yes'
+      autoprune: 'yes'
+    - name: '3tage'
+      keep_hourly: '0'
+      keep_daily: '3'
       keep_monthly: '0'
       keep_yearly: '0'
       frequently: '0'
