@@ -6,6 +6,11 @@
       - { role: robertdebock.bootstrap, tags: "bootstrap", become: yes}
       - { role: ryandaniels.create_users, tags: "user", become: yes}
       - { role: mgrote.r8152_kernel_module }
+    post_tasks:
+      - name: reboot für qemu-guest-agent (dauert bis zu 2min!)
+        become: true
+        reboot:
+          reboot_timeout: 120      
     vars:
       ### reobertdebock.bootstrap
       bootstrap_user: mg
