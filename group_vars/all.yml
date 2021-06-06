@@ -5,6 +5,22 @@
     #----------------------------------------------------------------#
     #              This file is managed with ansible!                #
     #----------------------------------------------------------------#
+  ### mgrote.dotfiles
+  dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles
+  dotfiles_repo_path: /home/mg/dotfiles
+  dotfiles_files:
+    - repo_path: "{{ dotfiles_repo_path}}/.vimrc"
+      local_path: "/home/mg/.vimrc"
+    - repo_path: "{{ dotfiles_repo_path}}/.tmux.conf"
+      local_path: "/home/mg/.tmux.conf"
+    - repo_path: "{{ dotfiles_repo_path}}/.gitconfig"
+      local_path: "/home/mg/.gitconfig"
+    - repo_path: "{{ dotfiles_repo_path}}/.bash_aliases"
+      local_path: "/home/mg/.bash_aliases"
+  dotfiles_dirs:
+    - path: /home/mg/.config/i3
+    - path: /home/mg/.config/polybar
+  dotfiles_owner: mg
   ### jnv.unattended_upgrades
   unattended_mail: "{{ empfaenger_mail }}"
   unattended_mail_only_on_error: true
@@ -96,17 +112,6 @@
       servers:
         - production
         - test
-  ### geerlingguy.dotfiles
-  dotfiles_repo: "https://git.mgrote.net/mg/dotfiles"
-  dotfiles_repo_local_destination: "/home/mg/dotfiles-repo"
-  dotfiles_home:  "/home/mg"
-  dotfiles_user: "mg"
-  dotfiles_repo_accept_hostkey: true
-  dotfiles_files:
-    - .bash_aliases
-    - .tmux.conf
-    - .gitconfig
-    - .vimrc
   ### mgrote.apt_install_packages
   programs_common:
     - locales

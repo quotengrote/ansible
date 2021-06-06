@@ -1,0 +1,19 @@
+---
+  ### mgrote.dotfiles
+  dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles
+  dotfiles_repo_path: /home/mg/dotfiles
+  dotfiles_files:
+    - repo_path: "{{ dotfiles_repo_path}}/.vimrc"
+      local_path: "/home/mg/.vimrc"
+    - repo_path: "{{ dotfiles_repo_path}}/.tmux.conf"
+      local_path: "/home/mg/.tmux.conf"
+    - repo_path: "{{ dotfiles_repo_path}}/.gitconfig"
+      local_path: "/home/mg/.gitconfig"
+    - repo_path: "{{ dotfiles_repo_path}}/i3/config"
+      local_path: "/home/mg/.config/i3/config"
+    - repo_path: "{{ dotfiles_repo_path}}/.bash_aliases"
+      local_path: "/home/mg/.bash_aliases"
+  dotfiles_dirs:
+    - path: /home/mg/.config/i3
+    - path: /home/mg/.config/polybar
+  dotfiles_owner: mg

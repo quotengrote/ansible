@@ -1,0 +1,41 @@
+---
+  - name: install acl package
+    become: yes
+    ansible.builtin.package:
+      name: acl
+      state: present
+
+  - name: Ensure dotfiles repository is cloned locally.
+    git:
+      repo: "{{ dotfiles_repo_url }}"
+      dest: "{{ dotfiles_repo_path }}"
+      depth: 1
+    become_user: "{{ dotfiles_owner }}"
+
+  - name: set owner recursive for repo
+    file:
+      path: "{{ dotfiles_repo_path }}"
+      owner: "{{ dotfiles_owner }}"
+      group: "{{ dotfiles_owner }}"
+      recurse: yes
+
+  - name: Ensure needed dirs exist.
+    file:
+      path: "{{ item.path }}"
+      state: directory
+    with_items: "{{ dotfiles_dirs }}"
+
+  - name: Link dotfiles into home folder.
+    file:
+      src: "{{ item.repo_path }}"
+      dest: "{{ item.local_path }}"
+      state: link
+      force: yes
+      owner: "{{ dotfiles_owner }}"
+      group: "{{ dotfiles_owner }}"
+    with_items: "{{ dotfiles_files }}"
+
+
+#    recurse: yes
+#    owner: foo
+#    group: foo

@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+    - name: rm folder
+      become: yes
+      file:
+        path: /home/mg/dotfiles-repo
+        state: absent
