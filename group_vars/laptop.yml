@@ -19,7 +19,6 @@
   dotfiles_owner: mg
   ### mgrote.apt_install_packages
   programs_extra:
-    - ifupdown2
     - bmon
     - hddtemp
     - s-tui

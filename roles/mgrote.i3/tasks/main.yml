@@ -5,6 +5,6 @@
       name:
         - i3
         - i3lock
-        - xrandr
+        - x11-xserver-utils
         - arandr
       state: present
