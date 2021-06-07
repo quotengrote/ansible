@@ -8,8 +8,8 @@
 
   - name: checkout siji font
     ansible.builtin.git:
-      repo: https://github.com/stark/siji
-      dest: /home/mg/siji
+      repo: "{{ polybar_siji_repo }}"
+      dest: "{{ polybar_siji_local }}"
     register: gitcheckout
 
   - name: install siji-font

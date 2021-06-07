@@ -10,18 +10,18 @@
   - name: check if vundle is installed - folder
     become: yes
     stat:
-      path: "/home/mg/.vim/bundle/Vundle.vim"
+      path: "{{ vim_vundle_path }}"
     register: folder_exists
 
   - name: Ensure  repository is cloned locally.
     git:
-      repo: https://github.com/VundleVim/Vundle.vim.git
-      dest: /home/mg/.vim/bundle/Vundle.vim
+      repo: "{{ vim_vundle_repo_url }}"
+      dest: "{{ vim_vundle_path }}"
       depth: 1
 
   - name: set owner recursive for repo
     file:
-      path: /home/mg/.vim
+      path: "{{ vim_homedir }}"
       owner: mg
       group: mg
       recurse: yes
@@ -31,4 +31,4 @@
     args:
       chdir: /home/mg
     become_user: mg
-  #  when: (folder_exists.stat.exists == False)
+    when: (folder_exists.stat.exists == False)

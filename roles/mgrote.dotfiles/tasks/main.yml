@@ -10,7 +10,7 @@
       repo: "{{ dotfiles_repo_url }}"
       dest: "{{ dotfiles_repo_path }}"
       depth: 1
-    become_user: "{{ dotfiles_owner }}"
+    register: git_clone
 
   - name: set owner recursive for repo
     file:
@@ -18,6 +18,7 @@
       owner: "{{ dotfiles_owner }}"
       group: "{{ dotfiles_owner }}"
       recurse: yes
+    when: (git_clone.changed == true)
 
   - name: Ensure needed dirs exist.
     file:
@@ -34,8 +35,3 @@
       owner: "{{ dotfiles_owner }}"
       group: "{{ dotfiles_owner }}"
     with_items: "{{ dotfiles_files }}"
-
-
-#    recurse: yes
-#    owner: foo
-#    group: foo
