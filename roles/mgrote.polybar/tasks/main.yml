@@ -1,0 +1,41 @@
+---
+  - name: install packages
+    become: yes
+    ansible.builtin.package:
+      name:
+        - polybar
+      state: present
+
+  - name: checkout siji font
+    ansible.builtin.git:
+      repo: https://github.com/stark/siji
+      dest: /home/mg/siji
+    register: gitcheckout
+
+  - name: install siji-font
+    ansible.builtin.shell: /home/mg/siji/install.sh -d /home/mg/.fonts
+    args:
+      creates: /home/mg/.fonts
+    when: gitcheckout.changed
+
+  - name: remove bitmap-file
+    ansible.builtin.file:
+      path: /etc/fonts/conf.d/70-no-bitmaps.conf
+      state: absent
+    when: gitcheckout.changed
+    register: rmbitmap
+
+  - name: update fc-cache
+    ansible.builtin.shell: fc-cache
+    when: gitcheckout.rmbitmap
+
+  - name: add user polybar to group video
+    # https://github.com/polybar/polybar/wiki/Module:-backlight
+    ansible.builtin.user:
+      name: polybar
+      group: video
+
+  - name: change permission for /sys/class/backlight/
+    ansible.builtin.file:
+      path: /sys/class/backlight/
+      mode: '0666'

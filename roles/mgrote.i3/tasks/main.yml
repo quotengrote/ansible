@@ -1,0 +1,10 @@
+---
+  - name: install packages
+    become: yes
+    ansible.builtin.package:
+      name:
+        - i3
+        - i3lock
+        - xrandr
+        - arandr
+      state: present

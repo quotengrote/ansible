@@ -10,6 +10,7 @@
   - import_playbook: 90_tmux.yml
   - import_playbook: 91_motd.yml
   - import_playbook: 92_dotfiles.yml
+  - import_playbook: 83_vim.yml
   - import_playbook: 93_postfix.yml
   - import_playbook: 94_ufw.yml
   - import_playbook: 95_ssh_pass_login.yml

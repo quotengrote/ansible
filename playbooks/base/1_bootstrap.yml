@@ -10,7 +10,14 @@
       - name: reboot für qemu-guest-agent (dauert bis zu 2min!)
         become: true
         reboot:
-          reboot_timeout: 120      
+          reboot_timeout: 120
+      - name: Change user password
+        become: true
+        user:
+          name: mg
+          update_password: always
+          password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
+          
     vars:
       ### reobertdebock.bootstrap
       bootstrap_user: mg
@@ -22,12 +29,6 @@
       ansible_become_password: hallowelt
       ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
 
-    tasks:
-      - name: Change user password
-        become: true
-        user:
-          name: mg
-          update_password: always
-          password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
+
 
 # Nach dem ersten durchlaufen ist keine Anmeldung mehr per Passwort & ssh möglich. Damit scheitert auch der Versuch das Playbook ein zweites mal durchlaufen zu lassen.

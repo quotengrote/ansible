@@ -4,6 +4,9 @@ all:
       hosts:
         dokuwiki2.grote.lan:
         dokuwiki-test.grote.lan:
+    laptop:
+      hosts:
+        irantu.grote.lan:
     fileserver:
       hosts:
         fileserver2.grote.lan:
@@ -77,7 +80,7 @@ all:
         acng-test.grote.lan:
         ansible-test.grote.lan:
         docker-test.grote.lan:
-        vm-test.grote.lan:
+        vm-test2.grote.lan:
         pve2-test.grote.lan:
         pve3-test.grote.lan:
         pve4-test.grote.lan:
