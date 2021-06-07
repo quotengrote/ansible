@@ -1,6 +1,0 @@
----
-  - hosts: all
-    gather_facts: false
-  - import_playbook: 1_bootstrap.yml
-  - import_playbook: 0_master.yml
-  - import_playbook: 98_update_packages.yml

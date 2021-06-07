@@ -1,0 +1,16 @@
+---
+  - import_playbook: base/apt_sources.yml
+  - import_playbook: base/install_packages.yml
+  - import_playbook: base/unattended_upgrades.yml
+  - import_playbook: base/ntp_client.yml
+  - import_playbook: base/restic.yml
+  - import_playbook: base/users.yml
+  - import_playbook: base/tmux.yml
+  - import_playbook: base/motd.yml
+  - import_playbook: base/dotfiles.yml
+  - import_playbook: base/vim.yml
+  - import_playbook: base/postfix.yml
+  - import_playbook: base/ufw.yml
+  - import_playbook: base/ssh_pass_login.yml
+  - import_playbook: base/f2b.yml
+  - import_playbook: base/monitoring.yml

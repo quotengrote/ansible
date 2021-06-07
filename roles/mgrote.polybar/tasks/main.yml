@@ -4,6 +4,7 @@
     ansible.builtin.package:
       name:
         - polybar
+        - lm-sensors
       state: present
 
   - name: checkout siji font

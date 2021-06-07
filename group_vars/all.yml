@@ -91,6 +91,7 @@
       servers:
         - production
         - test
+        - laptop
     - username: root
       password: "{{ lookup('keepass', 'root_linux_password_hash_proxmox', 'password') }}"
       update_password: on_create
@@ -112,6 +113,7 @@
       servers:
         - production
         - test
+        - laptop
   ### mgrote.apt_install_packages
   programs_common:
     - locales

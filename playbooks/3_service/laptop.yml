@@ -1,0 +1,5 @@
+---
+- hosts: laptop
+  roles:
+      - { role: mgrote.i3, tags: "i3", become: true }
+      - { role: mgrote.polybar, tags: "polybar", become: true }
