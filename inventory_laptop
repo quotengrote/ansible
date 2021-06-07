@@ -1,0 +1,5 @@
+all:
+  children:
+    laptop:
+      hosts:
+        irantu.grote.lan:

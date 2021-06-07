@@ -4,9 +4,6 @@ all:
       hosts:
         dokuwiki2.grote.lan:
         dokuwiki-test.grote.lan:
-    laptop:
-      hosts:
-        irantu.grote.lan:
     fileserver:
       hosts:
         fileserver2.grote.lan:
