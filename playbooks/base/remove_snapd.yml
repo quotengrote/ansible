@@ -1,0 +1,4 @@
+---
+  - hosts: all
+    roles:
+      - { role: mgrote.remove_snapd, become: true, tags: "snapd" }

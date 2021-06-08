@@ -14,3 +14,4 @@
   - import_playbook: base/ssh_pass_login.yml
   - import_playbook: base/f2b.yml
   - import_playbook: base/monitoring.yml
+  - import_playbook: base/remove_snapd.yml

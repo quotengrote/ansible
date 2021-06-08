@@ -32,5 +32,7 @@
     ansible.builtin.shell: yes | vim -c PluginInstall -c qall
     args:
       chdir: /home/mg
+    when:
+      - (folder_exists.stat.exists == False) and ("ansible_facts['distribution'] == 'Ubuntu'")
+    become: yes
     become_user: mg
-    when: (folder_exists.stat.exists == False)
