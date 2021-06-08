@@ -1,0 +1,8 @@
+---
+  - name: install packages
+    become: yes
+    ansible.builtin.package:
+      name:
+        - x11-xkb-utils
+      state: present
+    notify: deactivate caps

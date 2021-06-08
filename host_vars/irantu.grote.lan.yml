@@ -25,3 +25,6 @@
     - smartmontools
     - lm-sensors
     - ethtool
+    - nextcloud-desktop
+    - gnome-tweaks
+    - powertop
