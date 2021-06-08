@@ -6,18 +6,15 @@
       - { role: robertdebock.bootstrap, tags: "bootstrap", become: yes}
       - { role: ryandaniels.create_users, tags: "user", become: yes}
       - { role: mgrote.r8152_kernel_module }
+      - { role: mgrote.qemu_guest_agent }
     post_tasks:
-      - name: reboot für qemu-guest-agent (dauert bis zu 2min!)
-        become: true
-        reboot:
-          reboot_timeout: 120
       - name: Change user password
         become: true
         user:
           name: mg
           update_password: always
           password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
-          
+
     vars:
       ### reobertdebock.bootstrap
       bootstrap_user: mg
