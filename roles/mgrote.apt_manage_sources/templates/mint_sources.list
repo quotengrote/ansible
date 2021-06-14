@@ -1,0 +1,9 @@
+{{ file_header | default () }}
+deb http://{{ manage_sources_apt_proxy_url }}packages.linuxmint.com ulyssa main upstream import backport
+
+deb http://{{ manage_sources_apt_proxy_url }}archive.ubuntu.com/ubuntu focal main restricted universe multiverse
+deb http://{{ manage_sources_apt_proxy_url }}archive.ubuntu.com/ubuntu focal-updates main restricted universe multiverse
+deb http://{{ manage_sources_apt_proxy_url }}archive.ubuntu.com/ubuntu focal-backports main restricted universe multiverse
+
+deb http://{{ manage_sources_apt_proxy_url }}security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+deb http://{{ manage_sources_apt_proxy_url }}archive.canonical.com/ubuntu/ focal partner

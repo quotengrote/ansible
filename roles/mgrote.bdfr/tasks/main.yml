@@ -1,0 +1,40 @@
+---
+  - name: install python3.9
+    become: yes
+    ansible.builtin.package:
+      name:
+        - python3.9
+        - python3-pip
+      state: present
+
+  - name: Install bdfr
+    become: yes
+    shell: python3.9 -m pip install bdfr --upgrade
+    changed_when: False
+
+  - name: copy bdfr_download.sh
+    become: yes
+    ansible.builtin.template:
+      src: "bdfr_download.sh"
+      dest: "/usr/local/bin/bdfr_download.sh"
+      mode: 0755
+      owner: mg
+      group: mg
+
+  - name: create cronjob
+    become: true
+    ansible.builtin.cron:
+      name: bdfr
+      minute: "41"
+      hour: "2"
+      job: "/usr/local/bin/bdfr_download.sh >> {{ bdfr_log_file }}"
+      state: present
+
+  - name: copy logrotate config
+    become: yes
+    ansible.builtin.template:
+      src: logrotate_config
+      dest: /etc/logrotate.d/bdfr
+      owner: root
+      group: root
+      mode: 0644

@@ -13,7 +13,7 @@
       path: "{{ vim_vundle_path }}"
     register: folder_exists
 
-  - name: Ensure  repository is cloned locally.
+  - name: Ensure repository is cloned locally.
     git:
       repo: "{{ vim_vundle_repo_url }}"
       dest: "{{ vim_vundle_path }}"

@@ -1,0 +1,5 @@
+---
+- hosts: bdfr
+  roles:
+      - { role: mgrote.mount_cifs, tags: "cifs" }
+      - { role: mgrote.bdfr, tags: "cifs" }

@@ -6,6 +6,7 @@
   # pct set 109 -mp3 /hdd_data_raidz/papa_backup,mp=/shares_papa_backup
   # pct set 109 -mp4 /hdd_data_raidz/music,mp=/shares_music
   # pct set 109 -mp5 /hdd_data_raidz/tmp,mp=/shares_tmp
+  # pct set 109 -mp6 /hdd_data_raidz/archiv,mp=/shares_archiv
   # Bind Mounts - fileserver-test
   # pct set 158 -mp0 /rpool/vm/dir/vm-158/videos,mp=/shares_videos
   # pct set 158 -mp1 /rpool/vm/dir/vm-158/data,mp=/shares
@@ -13,6 +14,8 @@
   # pct set 158 -mp3 /rpool/vm/dir/vm-158/papa,mp=/shares_papa_backup
   # pct set 158 -mp4 /rpool/vm/dir/vm-158/music,mp=/shares_music
   # pct set 158 -mp5 /rpool/vm/dir/vm-158/tmp,mp=/shares_tmp
+  # pct set 158 -mp6 /rpool/vm/dir/vm-158/archiv,mp=/shares_archiv
+
   ### mgrote.smb_fileserver
   smb_users:
     - name: 'annemariedroessler'
@@ -35,6 +38,9 @@
       password: "{{ lookup('keepass', 'fileserver_smb_user_brother_ads2700w', 'password') }}"
     - name: 'photoprism'
       password: "{{ lookup('keepass', 'fileserver_smb_user_photoprism', 'password') }}"
+    - name: 'bdfr'
+      password: "{{ lookup('keepass', 'fileserver_smb_user_bdfr', 'password') }}"
+
   smb_shares:
     - name: 'videos'
       path: '/shares_videos'
@@ -56,6 +62,10 @@
       path: '/shares/Backup'
       users_ro: ''
       users_rw: 'annemariedroessler restic win10 michaelgrote'
+    - name: 'archiv'
+      path: '/shares_archiv'
+      users_ro: ''
+      users_rw: 'bdfr michaelgrote'
     - name: 'hm'
       path: '/shares/hm'
       users_ro: 'win10'

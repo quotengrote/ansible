@@ -1,0 +1,13 @@
+{{ bdfr_log_file }} {
+    missingok
+    nocreate
+    rotate 4
+    weekly
+    compress
+    missingok
+    notifempty
+    dateext
+    dateyesterday
+    sharedscripts
+    endscript
+}

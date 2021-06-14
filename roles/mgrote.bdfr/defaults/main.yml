@@ -1,0 +1,4 @@
+---
+  bdfr_data_path: /mnt/bdfr/reddit
+  bdfr_data_mount: /mnt/bdfr
+  bdfr_log_file: /var/log/bdfr.log
