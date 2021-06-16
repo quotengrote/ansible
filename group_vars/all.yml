@@ -5,6 +5,45 @@
     #----------------------------------------------------------------#
     #              This file is managed with ansible!                #
     #----------------------------------------------------------------#
+  ### geerlingguy.munin-node
+  munin_node_bind_host: "0.0.0.0"
+  munin_node_bind_port: "4949"
+  munin_node_allowed_cidrs: [192.168.2.0/24]
+  munin_node_remove_plugins:
+    - name: meminfo # zu hohe last
+    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
+    - name: squid_cache
+    - name: squid_objectsize
+    - name: squid_requests
+    - name: squid_traffic
+    - name: nfsd
+    - name: samba
+    - name: nfsd4
+    - name: ntp # verursacht zu viele dns ptr request
+    - name: cronjobs
+    - name: hddtempd # ersetzt durch hddtemp_smartctl
+    - name: ipmi_power # für pve2, leeres diagramm
+    - name: fail2ban
+    - name: fail2ban_
+    - name: apcupsd_pct
+    - name: kvm_io
+    - name: kvm_cpu
+    - name: docker_mem
+    - name: docker_cpu
+  munin_node_plugins:
+    - name: chrony
+    - name: systemd_status
+    - name: lvm_
+  munin_node_install_plugins: # in eigenes Repo gesichert
+    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
+    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/lvm_
+    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
+  munin_node_config: {
+  "lvm_": {
+    "user munin"
+    }
+  }
+
   ### mgrote.dotfiles
   dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles
   dotfiles_repo_path: /home/mg/dotfiles
@@ -76,6 +115,11 @@
       protocol: tcp
       comment: 'ssh'
       from_ip: 192.168.2.0/24
+    - rule: allow
+      to_port: 4949
+      protocol: tcp
+      comment: 'munin'
+      from_ip: 192.168.2.144/24
   ufw_default_incoming_policy: deny
   ufw_default_outgoing_policy: allow
   ### ryandaniels.create_users
@@ -87,11 +131,20 @@
       use_sudo: yes
       use_sudo_nopass: yes
       user_state: present
-      groups: ssh, sudo
+      groups: ssh, sudo, docker
       servers:
         - production
         - test
         - laptop
+    - username: munin
+      password: "{{ lookup('keepass', 'munin_linux_password_hash', 'password') }}"
+      update_password: always
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: root, docker
+      servers:
+        - production
     - username: root
       password: "{{ lookup('keepass', 'root_linux_password_hash_proxmox', 'password') }}"
       update_password: on_create

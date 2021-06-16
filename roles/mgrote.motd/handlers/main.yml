@@ -9,3 +9,7 @@
     systemd:
       name: sshd
       state: restarted
+
+  - name: systemctl_reset_failed
+    become: yes
+    ansible.builtin.shell: systemctl reset-failed

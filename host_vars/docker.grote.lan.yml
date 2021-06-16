@@ -1,0 +1,19 @@
+---
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+      from_ip: 192.168.2.0/24
+    - rule: allow
+      to_port: 4949
+      protocol: tcp
+      comment: 'munin'
+      from_ip: 192.168.0.0/16
+    - rule: allow
+      to_port: 5000
+      protocol: tcp
+      comment: 'rss-feed-changedetection'
+  ### geerlingguy.munin-node
+  munin_node_allowed_cidrs: [192.168.0.0/16] # weil der munin-server aus einem anderen subnet zugreift

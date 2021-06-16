@@ -12,3 +12,8 @@
       to_port: 80
       comment: 'dokuwiki-webserver'
       from_ip: 192.168.2.0/24
+    - rule: allow
+      to_port: 4949
+      protocol: tcp
+      comment: 'munin'
+      from_ip: 192.168.2.144/24

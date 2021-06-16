@@ -99,3 +99,6 @@
       path: '/etc/update-motd.d/10-wetter-mgrote'
       state: absent
     when: not motd_wetter_aktiv
+
+  - name: include systemctl tasks
+    include_tasks: systemctl.yml
