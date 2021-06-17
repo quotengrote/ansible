@@ -65,7 +65,7 @@
     - name: 'archiv'
       path: '/shares_archiv'
       users_ro: ''
-      users_rw: 'bdfr michaelgrote'
+      users_rw: 'bdfr michaelgrote win10'
     - name: 'hm'
       path: '/shares/hm'
       users_ro: 'win10'
