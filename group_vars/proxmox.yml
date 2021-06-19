@@ -25,7 +25,6 @@
     - name: zpool_capacity
     - name: kvm_mem
     - name: kvm_net
-    - name: apcupsd_pwr
   munin_node_config: {
   "apc_nis": {
     "env.host": "pve2.grote.lan",
@@ -43,7 +42,6 @@
     - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zpool_capacity
     - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/kvm_mem
     - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/kvm_net
-    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/apcupsd_pwr
 
   # Ansible Variablen
   ### sudo
