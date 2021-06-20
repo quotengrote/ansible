@@ -1,11 +1,12 @@
 ---
-  r8152_filename: r8152.53.56-2.15.0
+  r8152_module_needed: false # standardmäßig falsch
   r8152_packages:
     - pve-headers
     - build-essential
     - make
-  r8152_reboot_timeout: 90
-  r8152_pre_reboot_delay: 120
-  r8152_post_reboot_delay: 60
-  r8152_module_needed: false
-  r8152_safekeeping_reboot_delay: 12
+    - dkms
+  r8152_safekeeping_reboot_delay: 12 # nach wieviel minuten wird der pc neugestartet, tasks wird am ende gelöscht wenn alles erfolgreich war
+  # damit ist sichergestellt das der pc wieder hochfährt falls etwas passiert
+  r8152_src_dir: /usr/src/r8125-9.004.01 # wo wird das entpackte archiv abgelegt
+  r8152_filename: r8125-dkms_9.004.01.tar.gz # wie ist der dateiname auf dem ansible controller
+  r8152_version: 9.004.01 # wie lautet die versuin
