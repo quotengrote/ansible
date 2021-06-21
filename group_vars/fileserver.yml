@@ -120,12 +120,33 @@
   munin_node_plugins:
     - name: chrony
     - name: systemd_status
-    - name: lvm_
     - name: samba_locked
     - name: samba_users
   munin_node_install_plugins: # in eigenes Repo gesichert
     - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
-    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/lvm_
     - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
     - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/samba_locked
     - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/samba_users
+  munin_node_remove_plugins:
+    - name: meminfo # zu hohe last
+    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
+    - name: squid_cache
+    - name: squid_objectsize
+    - name: squid_requests
+    - name: squid_traffic
+    - name: nfsd
+    - name: samba
+    - name: nfsd4
+    - name: ntp # verursacht zu viele dns ptr request
+    - name: cronjobs
+    - name: hddtempd # ersetzt durch hddtemp_smartctl
+    - name: ipmi_power # für pve2, leeres diagramm
+    - name: fail2ban
+    - name: fail2ban_
+    - name: apcupsd_pct
+    - name: kvm_io
+    - name: kvm_cpu
+    - name: docker_mem
+    - name: cpuspeed
+    - name: acpi
+    - name: lvm_
