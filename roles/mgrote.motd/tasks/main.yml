@@ -15,6 +15,14 @@
       state: present
     when: ansible_facts['os_family'] == "Ubuntu"
 
+  - name: remove default packages
+    become: yes
+    ansible.builtin.package:
+      name:
+        - motd-news-config
+      state: absent
+    when: ansible_facts['os_family'] == "Ubuntu"
+
   - name: 'remove unwanted motd messages'
     become: yes
     ansible.builtin.file:
