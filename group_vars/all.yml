@@ -9,7 +9,7 @@
   munin_node_bind_host: "0.0.0.0"
   munin_node_bind_port: "4949"
   munin_node_allowed_cidrs: [192.168.2.0/24]
-  munin_node_remove_plugins:
+  munin_node_disabled_plugins:
     - name: meminfo # zu hohe last
     - name: hddtemp2 # ersetzt durch hddtemp_smartctl
     - name: squid_cache
@@ -30,14 +30,13 @@
     - name: kvm_cpu
     - name: docker_mem
     - name: docker_cpu
-  munin_node_plugins:
+  munin_node_additional_plugins:
     - name: chrony
-    - name: systemd_status
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
     - name: lvm_
-  munin_node_install_plugins: # in eigenes Repo gesichert
-    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
-    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/lvm_
-    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/lvm_
+    - name: systemd_status
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
   munin_node_config: {
   "lvm_": {
     "user munin"

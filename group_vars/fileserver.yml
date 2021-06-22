@@ -117,17 +117,16 @@
       from_ip: 192.168.2.144/24
 
   ### geerlingguy.munin-node
-  munin_node_plugins:
+  munin_node_additional_plugins:
     - name: chrony
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
     - name: systemd_status
-    - name: samba_locked
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
     - name: samba_users
-  munin_node_install_plugins: # in eigenes Repo gesichert
-    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
-    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
-    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/samba_locked
-    - remote_src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/samba_users
-  munin_node_remove_plugins:
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/samba_users
+    - name: samba_locked
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/samba_locked
+  munin_node_disabled_plugins:
     - name: meminfo # zu hohe last
     - name: hddtemp2 # ersetzt durch hddtemp_smartctl
     - name: squid_cache

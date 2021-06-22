@@ -1,5 +1,4 @@
-#
-# Example config-file for munin-node
+{{ file_header | default () }}
 #
 
 log_level 4
@@ -14,11 +13,11 @@ group root
 
 # This is the timeout for the whole transaction.
 # Units are in sec. Default is 15 min
-# global_timeout 900
+global_timeout {{ munin_node_global_timeout }}
 
 # This is the timeout for each plugin.
 # Units are in sec. Default is 1 min
-# timeout 60
+timeout {{ munin_node_plugin_timeout }}
 
 # Regexps for files to ignore
 ignore_file [\#~]$

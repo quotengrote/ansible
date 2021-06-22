@@ -1,7 +1,7 @@
 ---
   - hosts: production
     roles:
-      - { role: geerlingguy.munin-node,
+      - { role: mgrote.munin-node,
         become: true,
         tags: "munin"}
   ### Die Host müssen auch beim Docker-Container: "munin-master eingetragen" werden.
