@@ -53,8 +53,6 @@
       local_path: "/home/mg/.tmux.conf"
     - repo_path: "{{ dotfiles_repo_path}}/.gitconfig"
       local_path: "/home/mg/.gitconfig"
-    - repo_path: "{{ dotfiles_repo_path}}/.bash_aliases"
-      local_path: "/home/mg/.bash_aliases"
   dotfiles_dirs:
     - path: /home/mg/.config/i3
     - path: /home/mg/.config/polybar
@@ -193,6 +191,7 @@
     - vim
     - rsync
     - at
+    - rg
   programs_only_physical:
     - hddtemp
     - ipmitool

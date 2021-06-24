@@ -1,0 +1,23 @@
+---
+  - name: install packages
+    become: yes
+    ansible.builtin.package:
+      name:
+        - timeshift
+      state: present
+    notify: create snapshot
+
+  - name: copy timeshift config
+    become: yes
+    ansible.builtin.template:
+      src: "timeshift.json"
+      dest: "/etc/timeshift/timeshift.json"
+
+  - name: create restic cronjob
+    become: yes
+    ansible.builtin.cron:
+      name: restic
+      state: present
+      job: "/usr/bin/timeshift --scripted --create"
+      minute: "7"
+      hour: "*/4"

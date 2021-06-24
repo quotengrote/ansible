@@ -3,36 +3,14 @@
     become: yes
     ansible.builtin.package:
       name:
-        - vim
-        - ripgrep
+        - timeshift
+        - timeshift-gtk
       state: present
 
-  - name: check if vundle is installed - folder
+  - name: templating timeshift config
     become: yes
-    stat:
-      path: "{{ vim_vundle_path }}"
-    register: folder_exists
+    ansible.builtin.template:
+      src: "timeshift.json"
+      dest: "/etc/timeshift/timeshift.json"
+      mode: 0664
 
-  - name: Ensure repository is cloned locally.
-    git:
-      repo: "{{ vim_vundle_repo_url }}"
-      dest: "{{ vim_vundle_path }}"
-      depth: 1
-    register: repo_cloned
-
-  - name: set owner recursive for repo
-    file:
-      path: "{{ vim_homedir }}"
-      owner: mg
-      group: mg
-      recurse: yes
-    when: repo_cloned.changed == true
-
-  - name: Vundle - PluginInstall
-    ansible.builtin.shell: yes | vim -c PluginInstall -c qall
-    args:
-      chdir: /home/mg
-    when:
-      - (folder_exists.stat.exists == False) and ("ansible_facts['distribution'] == 'Ubuntu'")
-    become: yes
-    become_user: mg

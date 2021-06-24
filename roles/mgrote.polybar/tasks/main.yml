@@ -40,8 +40,3 @@
       name: polybar
       group: video
 
-  - name: change permission for /sys/class/backlight/
-    become: true
-    ansible.builtin.file:
-      path: /sys/class/backlight/
-      mode: '0666'
