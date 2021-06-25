@@ -28,9 +28,6 @@ all:
       hosts:
         docker.grote.lan:
         docker-test.grote.lan:
-    bdfr:
-      hosts:
-        bdfr.grote.lan:
     proxmox:
       hosts:
         pve2-test.grote.lan:
@@ -73,7 +70,6 @@ all:
         gitea.grote.lan:
         pihole2.grote.lan:
         ntp-server.grote.lan:
-        bdfr.grote.lan:
     test:
       hosts:
         dokuwiki-test.grote.lan:
