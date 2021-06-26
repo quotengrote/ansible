@@ -5,3 +5,4 @@
       - { role: mgrote.polybar, tags: "polybar", become: true }
       - { role: mgrote.deactivate_caps, tags: "caps", become: true }
       - { role: mgrote.alacritty, tags: "alacritty", become: true }
+      - { role: mgrote.vivaldi, tags: "vivaldi", become: true }

@@ -1,0 +1,13 @@
+---
+  - name: add repo
+    ansible.builtin.apt_repository:
+      repo: deb https://repo.vivaldi.com/archive/deb/ stable main
+      state: present
+      filename: vivaldi
+
+  - name: install packages
+    become: yes
+    ansible.builtin.package:
+      name:
+        - vivaldi-stable
+      state: present

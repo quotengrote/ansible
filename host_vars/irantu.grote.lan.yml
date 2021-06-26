@@ -31,6 +31,10 @@
     - nextcloud-desktop
     - gnome-tweaks
     - powertop
+    - caja
+    - xrandr
+    - arandr
+    - keepassxc
   ### mgrote.apt_manage_sources
   manage_sources_apt_proxy_url: ""
   ### mgrote.ntp_chrony_server
