@@ -1,0 +1,13 @@
+---
+  - name: add ppa
+    ansible.builtin.apt_repository:
+      repo: ppa:system76/pop
+      state: present
+      filename: alacritty
+
+  - name: install packages
+    become: yes
+    ansible.builtin.package:
+      name:
+        - alacritty
+      state: present

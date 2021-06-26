@@ -13,9 +13,12 @@
       local_path: "/home/mg/.config/i3/config"
     - repo_path: "{{ dotfiles_repo_path}}/.bash_aliases"
       local_path: "/home/mg/.bash_aliases"
+    - repo_path: "{{ dotfiles_repo_path}}/alacritty/alacritty.yml"
+      local_path: "/home/mg/.config/alacritty/alacritty.yml"
   dotfiles_dirs:
     - path: /home/mg/.config/i3
     - path: /home/mg/.config/polybar
+    - path: /home/mg/.config/alacritty
   dotfiles_owner: mg
   ### mgrote.apt_install_packages
   programs_extra:
@@ -28,3 +31,11 @@
     - nextcloud-desktop
     - gnome-tweaks
     - powertop
+  ### mgrote.apt_manage_sources
+  manage_sources_apt_proxy_url: ""
+  ### mgrote.ntp_chrony_server
+  ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
+  ntp_chrony_servers: # welche Server sollen befragt werden
+    - address: pool.ntp.org
+      options: iburst #optionaler parameter
+  ntp_chrony_logging: false # logging an/aus

@@ -3,5 +3,5 @@
   roles:
       - { role: mgrote.i3, tags: "i3", become: true }
       - { role: mgrote.polybar, tags: "polybar", become: true }
-      - { role: mgrote.remove_snapd, become: true, tags: "snapd" }
       - { role: mgrote.deactivate_caps, tags: "caps", become: true }
+      - { role: mgrote.alacritty, tags: "alacritty", become: true }

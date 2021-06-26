@@ -1,18 +1,10 @@
 ---
-  dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles
-  dotfiles_repo_path: /home/mg/dotfiles
-  dotfiles_files:
+  dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles # url zum repo
+  dotfiles_repo_path: /home/mg/dotfiles # wo soll das repo lokal gespeichert werden
+  dotfiles_files: # welche dateien sollen wohin verlinkt werden (ln -s)
     - repo_path: "{{ dotfiles_repo_path}}/.vimrc"
       local_path: "/home/mg/.vimrc"
-    - repo_path: "{{ dotfiles_repo_path}}/.tmux.conf"
-      local_path: "/home/mg/.tmux.conf"
-    - repo_path: "{{ dotfiles_repo_path}}/.gitconfig"
-      local_path: "/home/mg/.gitconfig"
-    - repo_path: "{{ dotfiles_repo_path}}/i3/config"
-      local_path: "/home/mg/.config/i3/config"
-    - repo_path: "{{ dotfiles_repo_path}}/.bash_aliases"
-      local_path: "/home/mg/.bash_aliases"
-  dotfiles_dirs:
+  dotfiles_dirs: # welche ordner sollen erstellt werden
     - path: /home/mg/.config/i3
     - path: /home/mg/.config/polybar
-  dotfiles_owner: mg
+  dotfiles_owner: mg # chown
