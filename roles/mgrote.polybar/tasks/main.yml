@@ -5,6 +5,8 @@
       name:
         - polybar
         - lm-sensors
+        - brightnessctl
+        - inotify-tools
       state: present
 
   - name: checkout siji font
@@ -14,10 +16,18 @@
       dest: "{{ polybar_siji_local }}"
     register: gitcheckout
 
+  - name: create siji dir
+    become: true
+    ansible.builtin.file:
+      path:
+        - "{{ polybar_siji_fonts_dir }}"
+      state: directory
+
   - name: install siji-font
     become: true
-    ansible.builtin.shell: /home/mg/siji/install.sh -d /home/mg/.fonts
+    ansible.builtin.shell: "{{ polybar_siji_local }}/install.sh -d {{ polybar_siji_fonts_dir }}"
     args:
+      chdir: "{{ polybar_siji_local }}"
       creates: /home/mg/.fonts
     when: gitcheckout.changed
 
@@ -39,4 +49,3 @@
     ansible.builtin.user:
       name: polybar
       group: video
-

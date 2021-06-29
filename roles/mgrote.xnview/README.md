@@ -1,6 +1,6 @@
-## mgrote.vivaldi
+## mgrote.xnview
 ### Beschreibung
-Installiert vivaldi.
+Installiert xnview.
 
 
 ### Funktioniert auf

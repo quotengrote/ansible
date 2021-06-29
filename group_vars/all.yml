@@ -191,7 +191,7 @@
     - vim
     - rsync
     - at
-    - rg
+    - ripgrep
   programs_only_physical:
     - hddtemp
     - ipmitool

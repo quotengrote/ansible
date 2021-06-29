@@ -8,6 +8,7 @@
       cache_valid_time: 360
 
   - name: Check if "{{ tmux_bashrc_destination }}" exists
+    become: yes
     stat:
       path: "{{ tmux_bashrc_destination }}"
     register: stat_result

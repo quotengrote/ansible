@@ -32,9 +32,12 @@
     - gnome-tweaks
     - powertop
     - caja
-    - xrandr
+    - x11-xserver-utils # xrandr
     - arandr
     - keepassxc
+    - feh # i3 wallpaper
+    - yad # polybar popup-calendar
+    - xdotool # polybar popup-calendar
   ### mgrote.apt_manage_sources
   manage_sources_apt_proxy_url: ""
   ### mgrote.ntp_chrony_server
@@ -43,3 +46,10 @@
     - address: pool.ntp.org
       options: iburst #optionaler parameter
   ntp_chrony_logging: false # logging an/aus
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+      from_ip: 192.168.2.0/24

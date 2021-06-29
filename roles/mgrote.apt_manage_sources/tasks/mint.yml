@@ -3,6 +3,6 @@
     become: yes
     ansible.builtin.template:
       src: "mint_sources.list"
-      dest: "/etc/apt/sources.list"
+      dest: "/etc/apt/sources.list.d/official-package-repositories.list"
       backup: yes
     register: copy_src

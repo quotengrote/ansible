@@ -6,3 +6,4 @@
       - { role: mgrote.deactivate_caps, tags: "caps", become: true }
       - { role: mgrote.alacritty, tags: "alacritty", become: true }
       - { role: mgrote.vivaldi, tags: "vivaldi", become: true }
+      - { role: mgrote.xnview, tags: "xnview", become: true }
