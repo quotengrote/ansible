@@ -7,4 +7,5 @@
         - i3lock
         - x11-xserver-utils
         - arandr
+        - feh
       state: present
