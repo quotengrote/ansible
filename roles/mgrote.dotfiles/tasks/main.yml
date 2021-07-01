@@ -5,11 +5,18 @@
       name: acl
       state: present
 
+  - name: check if repo exists
+    stat:
+      path: "{{ dotfiles_repo_path }}"
+    register: repo_exists
+
   - name: stash changes
     ansible.builtin.shell: git stash
     args:
       chdir: "{{ dotfiles_repo_path }}"
     changed_when: false
+    when: repo_exists.stat.exists == true
+    register: stashed
 
   - name: Ensure dotfiles repository is cloned locally.
     git:
@@ -23,6 +30,7 @@
     args:
       chdir: "{{ dotfiles_repo_path }}"
     changed_when: false
+    when: stashed.changed
 
   - name: set owner recursive for repo
     file:
