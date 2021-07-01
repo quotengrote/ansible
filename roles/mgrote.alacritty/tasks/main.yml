@@ -1,16 +1,10 @@
 ---
   - name: add ppa
-    become: yes
-    ansible.builtin.shell: add-apt-repository ppa:mmstick76/alacritty -y
-    args:
-      creates: "/etc/apt/sources.list.d/mmstick76-alacritty-focal.list"
-
-#  - name: add ppa
-#    ansible.builtin.apt_repository:
-#      repo: ppa:aslatter/ppa
-#      state: present
-#      filename: alacritty
-#      update_cache: yes
+    ansible.builtin.apt_repository:
+      repo: ppa:mmstick76/alacritty
+      state: present
+      filename: alacritty
+      update_cache: yes
 
   - name: install packages
     become: yes

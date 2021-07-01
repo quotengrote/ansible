@@ -7,6 +7,8 @@
         - lm-sensors
         - brightnessctl
         - inotify-tools
+        - yad # polybar popup-calendar
+        - xdotool # polybar popup-calendar
       state: present
 
   - name: checkout siji font
@@ -42,10 +44,3 @@
     become: true
     ansible.builtin.shell: fc-cache
     when: gitcheckout.changed
-
-  - name: add user polybar to group video
-    # https://github.com/polybar/polybar/wiki/Module:-backlight
-    become: true
-    ansible.builtin.user:
-      name: polybar
-      group: video

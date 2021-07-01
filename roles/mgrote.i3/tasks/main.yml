@@ -5,7 +5,9 @@
       name:
         - i3
         - i3lock
-        - x11-xserver-utils
         - arandr
-        - feh
+        - x11-xserver-utils # xrandr
+        - feh # wallpaper
+        - rofi
+        - xautolock #bildschirmsperre nach x min
       state: present

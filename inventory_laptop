@@ -3,3 +3,4 @@ all:
     laptop:
       hosts:
         irantu.grote.lan:
+        mint.grote.lan:

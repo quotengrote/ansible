@@ -22,4 +22,4 @@
   - name: download and install xnview
     become: true
     apt:
-      deb: https://download.xnview.com/XnViewMP-linux-x64.deb
+      deb: "{{ xnview_deb_url }}"

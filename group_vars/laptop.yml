@@ -15,10 +15,15 @@
       local_path: "/home/mg/.bash_aliases"
     - repo_path: "{{ dotfiles_repo_path}}/alacritty/alacritty.yml"
       local_path: "/home/mg/.config/alacritty/alacritty.yml"
+    - repo_path: "{{ dotfiles_repo_path}}/.ssh/config"
+      local_path: "/home/mg/.ssh/config"
+    - repo_path: "/home/mg/Nextcloud/Rest/ssh-keys/heimserver/private_key" # smylink in .ssh-dir
+      local_path: "/home/mg/.ssh/private_key_heimserver"
   dotfiles_dirs:
     - path: /home/mg/.config/i3
     - path: /home/mg/.config/polybar
     - path: /home/mg/.config/alacritty
+    - path: /home/mg/.config/.ssh
   dotfiles_owner: mg
   ### mgrote.apt_install_packages
   programs_extra:
@@ -32,12 +37,8 @@
     - gnome-tweaks
     - powertop
     - caja
-    - x11-xserver-utils # xrandr
     - arandr
     - keepassxc
-    - feh # i3 wallpaper
-    - yad # polybar popup-calendar
-    - xdotool # polybar popup-calendar
   ### mgrote.apt_manage_sources
   manage_sources_apt_proxy_url: ""
   ### mgrote.ntp_chrony_server

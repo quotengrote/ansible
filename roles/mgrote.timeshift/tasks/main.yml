@@ -13,7 +13,7 @@
       src: "timeshift.json"
       dest: "/etc/timeshift/timeshift.json"
 
-  - name: create restic cronjob
+  - name: create timeshift cronjob
     become: yes
     ansible.builtin.cron:
       name: restic

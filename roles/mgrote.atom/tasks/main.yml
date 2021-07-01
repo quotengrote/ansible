@@ -1,0 +1,5 @@
+---
+  - name: download and install atom
+    become: true
+    apt:
+      deb: "{{ atom_deb_url }}"

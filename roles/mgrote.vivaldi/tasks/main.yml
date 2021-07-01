@@ -1,25 +1,5 @@
 ---
-#  - name: add repo
-#    ansible.builtin.apt_repository:
-#      repo: deb https://repo.vivaldi.com/archive/deb/ stable main
-#      state: present
-#      filename: vivaldi
-
-#  - name: add ppa
-#    become: yes
-#    ansible.builtin.shell: add-apt-repository deb https://repo.vivaldi.com/archive/deb/ stable main -y
-    #args:
-    #  creates: "/etc/apt/sources.list.d/mmstick76-alacritty-focal.list"
-
-#  - name: install packages
-#    become: yes
-#    ansible.builtin.package:
-#      name:
-#        - vivaldi-stable
-#      state: present
-
-
   - name: download and install vivaldi
     become: true
     apt:
-      deb: https://downloads.vivaldi.com/stable/vivaldi-stable_4.0.2312.33-1_amd64.deb
+      deb: "{{ xnview_deb_url }}"
