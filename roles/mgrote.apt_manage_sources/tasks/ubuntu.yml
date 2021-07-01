@@ -1,8 +1,9 @@
 ---
-  - name: Ubuntu - copy sources.list
-    become: yes
+  - name: ensure apt.conf exists
+    become: true
     ansible.builtin.template:
-      src: "ubuntu_sources.list"
-      dest: "/etc/apt/sources.list"
+      src: apt.conf
+      dest: "{{ apt_proxy_apt_conf_path | default ('/etc/apt/apt.conf') }}"
       backup: yes
     register: copy_src
+    when: manage_sources_apt_proxy_server is defined

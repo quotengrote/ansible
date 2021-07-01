@@ -33,4 +33,5 @@
     - address: pool.ntp.org
       options: iburst #optionaler parameter
   ### mgrote.apt_manage_sources
-  manage_sources_apt_proxy_url: "192.168.2.46:9999/" # weil pihole den fqdn nicht auflösen kann
+  manage_sources_apt_proxy_server: ""
+  manage_sources_apt_proxy_port: ""

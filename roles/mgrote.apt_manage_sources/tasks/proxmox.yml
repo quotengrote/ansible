@@ -1,33 +1,12 @@
 ---
-  - name: check if old debian-repositories exists
-    stat:
-      path: /etc/apt/sources.list
-    register: old_debian_repositories
-
-  - name: backup old debian-repositories
-    become: yes
-    ansible.builtin.copy:
-      src: /etc/apt/sources.list
-      dest: /etc/apt/sources.list.disabled
-      remote_src: yes
-    when: old_debian_repositories.stat.exists == true
-
-  - name: remove old debian-repositories
-    become: yes
-    ansible.builtin.file:
-      path: /etc/apt/sources.list
-      state: absent
-    when: old_debian_repositories.stat.exists == true
-
-  - name: add new debian-repositories
-    become: yes
-    ansible.builtin.apt_repository:
-      repo: "{{ item.repo_url }}"
-      state: present
-      filename: "{{ manage_sources_debian_repo_path }}"
-      update_cache: no
+  - name: ensure apt.conf exists
+    become: true
+    ansible.builtin.template:
+      src: apt.conf
+      dest: "{{ apt_proxy_apt_conf_path | default ('/etc/apt/apt.conf') }}"
+      backup: yes
     register: copy_src
-    loop: "{{ manage_sources_proxmox_base_repos }}"
+    when: manage_sources_apt_proxy_server is defined
 
   - name: remove enterprise-Repository
     become: yes

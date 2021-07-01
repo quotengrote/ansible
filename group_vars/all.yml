@@ -53,9 +53,6 @@
       local_path: "/home/mg/.tmux.conf"
     - repo_path: "{{ dotfiles_repo_path}}/.gitconfig"
       local_path: "/home/mg/.gitconfig"
-  dotfiles_dirs:
-    - path: /home/mg/.config/i3
-    - path: /home/mg/.config/polybar
   dotfiles_owner: mg
   ### jnv.unattended_upgrades
   unattended_mail: "{{ empfaenger_mail }}"
@@ -79,7 +76,8 @@
   postfix_smtp_server_port: 587
   postfix_smtp_use_tls: "yes"
   ### mgrote.apt_manage_sources
-  manage_sources_apt_proxy_url: "acng.grote.lan:9999/"
+  manage_sources_apt_proxy_server: acng.grote.lan
+  manage_sources_apt_proxy_port: 9999
   ### mgrote.restic
   restic_folders_to_backup: "/usr/local /etc /root /home"
   restic_cron_hours: "19"
@@ -203,19 +201,6 @@
     - qemu-guest-agent
     - open-vm-tools
 
-  ### mgrote.apcupsd
-  apcupsd_master_onbatterydelay: 10
-  apcupsd_master_batterylevel_for_shutdown: 50
-  apcupsd_master_minutes_for_shutdown: 10
-  apcupsd_master_nologon_when_active: disable
-  apcupsd_slave_onbatterydelay: 10
-  apcupsd_slave_batterylevel_for_shutdown: 50
-  apcupsd_slave_minutes_for_shutdown: 10
-  apcupsd_slave_nologon_when_active: disable
-  apcupsd_nis_master: on
-  apcupsd_nis_master_listen_ip: 0.0.0.0
-  apcupsd_nis_master_listen_port: 3551
-  apcupsd_ups_name: APC-BX950U-GR
 
 
   # Ansible Variablen
