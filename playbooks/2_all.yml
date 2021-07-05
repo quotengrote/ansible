@@ -1,7 +1,6 @@
 ---
   - import_playbook: base/apt_sources.yml
   - import_playbook: base/install_packages.yml
-  - import_playbook: base/unattended_upgrades.yml
   - import_playbook: base/ntp_client.yml
   - import_playbook: base/restic.yml
   - import_playbook: base/users.yml
@@ -15,3 +14,4 @@
   - import_playbook: base/f2b.yml
   - import_playbook: base/monitoring.yml
   - import_playbook: base/remove_snapd.yml
+  - import_playbook: base/unattended_upgrades.yml

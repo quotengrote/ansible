@@ -15,6 +15,8 @@
       local_path: "/home/mg/.bash_aliases"
     - repo_path: "{{ dotfiles_repo_path}}/alacritty/alacritty.yml"
       local_path: "/home/mg/.config/alacritty/alacritty.yml"
+    - repo_path: "{{ dotfiles_repo_path}}/flameshot/flameshot.ini"
+      local_path: "/home/mg/.config/flameshot/flameshot.ini"
     - repo_path: "{{ dotfiles_repo_path}}/.ssh/config"
       local_path: "/home/mg/.ssh/config"
     - repo_path: "/home/mg/Nextcloud/Rest/ssh-keys/heimserver/private_key" # smylink in .ssh-dir
@@ -24,6 +26,8 @@
     - path: /home/mg/.config/polybar
     - path: /home/mg/.config/alacritty
     - path: /home/mg/.config/.ssh
+    - path: /home/mg/.config/flameshot
+
   dotfiles_owner: mg
   ### mgrote.apt_install_packages
   programs_extra:
@@ -39,6 +43,9 @@
     - caja
     - arandr
     - keepassxc
+    - vlc
+    - libreoffice
+    - gnome-calculator
   ### mgrote.apt_manage_sources
   manage_sources_apt_proxy_url: ""
   ### mgrote.ntp_chrony_server

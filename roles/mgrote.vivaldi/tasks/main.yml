@@ -1,5 +1,10 @@
 ---
+  - name: check if vivaldi is already installed
+    ansible.builtin.package_facts:
+      manager: apt
+
   - name: download and install vivaldi
     become: true
     apt:
       deb: "{{ xnview_deb_url }}"
+    when: "'vivaldi' in ansible_facts.packages"

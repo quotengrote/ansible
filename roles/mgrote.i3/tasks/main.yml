@@ -10,4 +10,5 @@
         - feh # wallpaper
         - rofi
         - xautolock #bildschirmsperre nach x min
+        - flameshot #screenshots
       state: present
