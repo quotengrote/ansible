@@ -18,12 +18,6 @@
     - rule: allow
       to_port: 53
       comment: 'pihole-dns'
-    - rule: allow
-      to_port: 67
-      comment: 'pihole-dhcp'
-    - rule: allow
-      to_port: 68
-      comment: 'pihole-dhcp'
   ## playbook
   pihole_homer_fqdn: docker.grote.lan # unter welchem host ist docker erreichbar? notwendig für die pihole stats in homer; fur die cors abfrage
   ### mgrote.restic
