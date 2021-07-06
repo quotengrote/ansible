@@ -15,8 +15,6 @@
   munin_node_additional_plugins:
     - name: chrony
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
-    - name: lvm_
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/lvm_
     - name: systemd_status
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
     - name: zfs_arcstats
@@ -55,7 +53,7 @@
     - name: docker_mem
     - name: apc_nis
     - name: lvm_
-    
+
   ### mgrote.apcupsd
   apcupsd_master_onbatterydelay: 10
   apcupsd_master_batterylevel_for_shutdown: 50
