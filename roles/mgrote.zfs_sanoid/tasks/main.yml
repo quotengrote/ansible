@@ -11,6 +11,7 @@
         - logrotate
         - libcapture-tiny-perl
         - libconfig-inifiles-perl
+        - moreutils
       state: present
 
   - name: Create Sanoid Directory
