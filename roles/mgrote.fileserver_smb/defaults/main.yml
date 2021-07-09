@@ -29,7 +29,6 @@
   smb_time_server: "no"
   smb_wins_support: "no"
   smb_acl_allow_execute_always: "yes"
-  smb_allocation_roundup_size: "4096"
   smb_force_user: "root"
   smb_force_group: "users"
   smb_workgroup: WORKGROUP
