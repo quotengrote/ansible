@@ -1,3 +1,4 @@
+{{ file_header | default () }}
 {
   "backup_device_uuid" : "9b924961-0fd4-423f-b440-f2f3d1fa46d8",
   "parent_device_uuid" : "",

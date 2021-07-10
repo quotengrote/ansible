@@ -1,5 +1,5 @@
 #!/bin/sh
-
+{{ file_header | default () }}
 if [ -x /usr/lib/update-notifier/update-motd-reboot-required ]; then
     exec /usr/lib/update-notifier/update-motd-reboot-required
 fi

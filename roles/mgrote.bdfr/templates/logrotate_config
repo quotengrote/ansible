@@ -1,3 +1,4 @@
+{{ file_header | default () }}
 {{ bdfr_log_file }} {
     missingok
     nocreate

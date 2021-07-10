@@ -1,5 +1,5 @@
 #!/bin/bash
-
+{{ file_header | default () }}
 # NAME: now
 # PATH: $HOME/bin
 # DESC: Display current weather, calendar and time

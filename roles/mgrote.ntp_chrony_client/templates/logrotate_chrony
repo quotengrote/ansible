@@ -1,3 +1,4 @@
+{{ file_header | default () }}
 /var/log/chrony/*.log {
     missingok
     nocreate

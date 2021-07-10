@@ -1,3 +1,4 @@
+{{ file_header | default () }}
 /var/log/restic.log {
   su root root
   create 0640 root root
