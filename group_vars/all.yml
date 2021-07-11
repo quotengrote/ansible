@@ -138,8 +138,14 @@
       user_state: present
       groups: ssh, sudo
       servers:
-        - production
-        - test
+        - dokuwiki
+        - fileserver
+        - pihole
+        - ntpserver
+        - acng
+        - ansible
+        - physical
+        - gitea
         - laptop
     - username: munin
       password: "{{ lookup('keepass', 'munin_linux_password_hash', 'password') }}"
@@ -152,17 +158,17 @@
         - production
     - username: root
       password: "{{ lookup('keepass', 'root_linux_password_hash_proxmox', 'password') }}"
-      update_password: on_create
+      update_password: always
       ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAp7z2WWUS626wY4laQJNGVYs5uOowrSOjd9RLsoPV5GWU46lsD+Q7CblqcBflvkzFiU16bzI0QZcQ9YP5M5LcYreCqCIq2HdeA4/hgIhlBGAzgp4mK8gZsEoCd2rs5888RA8T/oGnAoP0FXBegm2XmXTmt3826ZZUektCanSipMzrT3XUDZDnf1sTY60Fu8GK4hcRIFI7spM0u9upCYXVOrygBmoBQ5GlOyGEPyXs1Am/PERcVZFUPS0mGJ0COVCgEOaVvM8kEn5dK/QpmKqE8OMBsRdQ51pj9BMLNz/0IRnF6OxHDfEyLuqNPZuuBZc+/pULaZefCgjKGL1zXIFFlw==
       use_sudo: yes
       use_sudo_nopass: yes
       user_state: present
-      groups: ssh, sudo
+      groups: ssh, sudo, root
       servers:
         - proxmox
     - username: ansible-user
       password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
-      update_password: on_create
+      update_password: always
       ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyqs0OE5RVqs6tIzyuGQWvq/OVDa/tfdSEqMIwcthFt+pwCCjpqtNc8L8FSXgphSwuNosFakqhMLDFD3pmII+t61NRExsoR3nGTDuCAQnTvTKXTEfhnunN3pwgXWVTI68j9pRzmSy+hMkSFbgN9EGMSXxGcNunY7ewS3ZkVe08SWFpiX9giYq6uiOiMHsZKdcP6s2QRXUhZlTx2cOc/9gJ5lD82EUXQRZzT6ww2xVrceIW9c3CZFmSmYWxvrR7dPcHrke90FPPd5WhU+Anz++6GsT6+OhZTk+uQnBHllFXn9NoFQIEUDO4zV+gFXITaAbTkLAcCwuKB2QcDZ6C2mhf ansible-generated on ansible-v2
       use_sudo: yes
       use_sudo_nopass: yes
