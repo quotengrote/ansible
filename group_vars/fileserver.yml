@@ -2,7 +2,7 @@
   # Bind Mounts - fileserver
   # pct set 109 -mp0 /hdd_data_raidz/videos,mp=/shares_videos
   # pct set 109 -mp1 /hdd_data_raidz/data_crypt,mp=/shares
-  # pct set 109 -mp2 /hdd_data_raidz/vm_backup,mp=/shares_pve_backup
+  # pct set 109 -mp2 /hdd_data_raidz/pve_backup,mp=/shares_pve_backup
   # pct set 109 -mp3 /hdd_data_raidz/papa_backup,mp=/shares_papa_backup
   # pct set 109 -mp4 /hdd_data_raidz/music,mp=/shares_music
   # pct set 109 -mp5 /hdd_data_raidz/tmp,mp=/shares_tmp
