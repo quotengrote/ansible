@@ -28,6 +28,9 @@ all:
       hosts:
         docker.grote.lan:
         docker-test.grote.lan:
+    vmtest:
+      hosts:
+        vm-test2.grote.lan:
     proxmox:
       hosts:
         pve2-test.grote.lan:

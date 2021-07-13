@@ -147,6 +147,7 @@
         - physical
         - gitea
         - laptop
+        - vmtest
     - username: munin
       password: "{{ lookup('keepass', 'munin_linux_password_hash', 'password') }}"
       update_password: always
