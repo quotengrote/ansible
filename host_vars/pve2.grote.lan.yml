@@ -157,7 +157,7 @@
   apcupsd_nis_master: true
   apcupsd_nis_master_hostname: pve2.grote.lan
   ### mgrote.zfs_extra # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
-  zfs_extra_arc_max_size: "17179869184" # 16GB in Bytes
+  zfs_extra_arc_max_size: "8589934592" # 8GB in Bytes
   zfs_extra_max_usage_health: "90"
   zfs_extra_zfs_pools:
     - name: "rpool"
