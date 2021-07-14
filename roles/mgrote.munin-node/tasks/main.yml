@@ -5,6 +5,15 @@
       state: present
     register: install
 
+  - name: create directories
+    file:
+      path: "{{ item }}"
+      state: directory
+    loop:
+      - /etc/munin
+      - /etc/munin/plugin-conf.d
+      - /etc/munin/plugins
+
   - name: Copy munin-node configuration.
     template:
       src: munin-node.conf.j2
