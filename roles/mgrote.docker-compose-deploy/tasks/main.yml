@@ -1,0 +1,8 @@
+---
+  - name: loop docker tasks
+    include_tasks: dockercompose.yml
+    loop: "{{ docker_compose_projects }}"
+    when:
+      - docker_compose_base_dir is defined
+      - docker_compose_projects is defined
+    no_log: true

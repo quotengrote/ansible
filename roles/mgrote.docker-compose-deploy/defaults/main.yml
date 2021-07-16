@@ -1,0 +1,9 @@
+---
+#  docker_compose_base_dir: /home/mg/docker # Directory where all Repos get saved
+
+#  docker_compose_projects: # Dictionary of Repositories
+#    - name: homer # Name
+#      dir_name: docker-homer # DirectoryNAME where the repo is saved
+#      repository_url: git.mgrote.net/mg/docker-homer.git #URL to repository, WITHOUT protocol; only https supported
+#      repository_user: mg # git user
+#      repository_user_password: k1BvXXXXXXXrbg #git user password

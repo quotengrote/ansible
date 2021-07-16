@@ -1,0 +1,9 @@
+---
+  ### mgrote.docker-compose-deploy
+  docker_compose_base_dir: /home/mg/docker
+  docker_compose_projects:
+    - name: homer
+      dir_name: docker-homer
+      repository_url: git.mgrote.net/mg/docker-homer
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"

@@ -1,0 +1,32 @@
+---
+  - name: check if repo exists
+    stat:
+      path: "{{ docker_compose_base_dir }}/{{ item.dir_name }}"
+    register: repo_exists
+
+  - name: stash changes
+    ansible.builtin.shell: git stash
+    args:
+      chdir: "{{ docker_compose_base_dir }}/{{ item.dir_name }}"
+    changed_when: false
+    when: repo_exists.stat.exists == true
+    register: stashed
+
+  - name: clone public repository - "{{ item.name }}"
+    ansible.builtin.git:
+      repo: "https://{{ item.repository_user }}:{{ item.repository_user_password }}@{{ item.repository_url }}"
+      dest: "{{ docker_compose_base_dir }}/{{ item.dir_name }}"
+    register: repo
+
+  - name: pop stashed changes
+    ansible.builtin.shell: git stash pop
+    args:
+      chdir: "{{ docker_compose_base_dir }}/{{ item.dir_name }}"
+    changed_when: false
+    when: stashed.changed
+
+  - name: (re)start container - "{{ item.name }}"
+    ansible.builtin.shell: docker-compose down && docker-compose up -d
+    args:
+      chdir: "{{ docker_compose_base_dir }}/{{ item.dir_name }}"
+    when: repo.changed

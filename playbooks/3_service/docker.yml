@@ -4,3 +4,4 @@
     - { role: geerlingguy.pip, tags: "pip", become: true }
     - { role: geerlingguy.docker, tags: "docker", become: true }
     - { role: gantsign.ctop, tags: "ctop", become: true }
+    - { role: mgrote.docker-compose-deploy, tags: "compose", become: true }
