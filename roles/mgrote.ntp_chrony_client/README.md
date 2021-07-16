@@ -3,7 +3,7 @@
 ### Beschreibung
 Installiert chrony als client.
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 - [ ] Debian
 - [x] ProxMox 6.1

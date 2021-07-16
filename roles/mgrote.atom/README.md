@@ -3,5 +3,5 @@
 Installiert atom.
 
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)

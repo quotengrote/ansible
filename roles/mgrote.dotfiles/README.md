@@ -3,7 +3,7 @@
 ### Beschreibung
 Klont das dotfile-repo und erstellt notwendige Ordner.
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 - [x] Linux Mint
 

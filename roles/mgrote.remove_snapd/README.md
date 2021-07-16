@@ -3,5 +3,5 @@
 ### Beschreibung
 entfernt snapd
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)

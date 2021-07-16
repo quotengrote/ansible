@@ -3,7 +3,7 @@
 ### Beschreibung
 Mounted ein cifs-share.
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 - [x] ProxMox 6.1
 

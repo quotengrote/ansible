@@ -3,7 +3,7 @@
 ### Beschreibung
 Aktiviert die Mail Funktion von ZED (ZFS Event Daemon).
 
-### Funktioniert auf
+### getestet auf
 - [x] ProxMox 6.1
 
 ### Variablen + Defaults

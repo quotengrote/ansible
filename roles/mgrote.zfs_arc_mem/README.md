@@ -3,7 +3,7 @@
 ### Beschreibung
 Setzt die maximale ZFS ARC-Groesse.
 
-### Funktioniert auf
+### getestet auf
 - [x] ProxMox 6.1
 
 ### Variablen + Defaults

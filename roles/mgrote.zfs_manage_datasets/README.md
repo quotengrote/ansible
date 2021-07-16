@@ -11,7 +11,7 @@ ssd_vm_mirror/vm  xattr                 sa                     local
 ```
 Die Attribute werden nicht mehr vererbt sondern als "local" gesetzt
 
-### Funktioniert auf
+### getestet auf
 - [x] ProxMox 6.1
 
 ### Variablen + Defaults

@@ -4,7 +4,7 @@
 Installiert Dokuwiki (mit apache2 und php-fpm).
 Es werden keine Einstellungen gesetzt.
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 
 ### Variablen + Defaults

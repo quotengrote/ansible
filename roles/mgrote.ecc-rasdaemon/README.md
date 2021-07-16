@@ -4,7 +4,7 @@
 Installiert rasdaemon.
 Logt ECC-Errors nach "/var/log/rasdaemon.log"
 
-### Funktioniert auf
+### getestet auf
 - [x] ProxMox 6.1
 
 ### Siehe auch

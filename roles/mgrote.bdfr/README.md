@@ -5,7 +5,7 @@ Erstellt einen Cronjob.
 
 __Benötigt einen Webbrowser!__
 
-### Funktioniert auf
+### getestet auf
 - [ Linux Mint (>20.1)
 
 

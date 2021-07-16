@@ -3,7 +3,7 @@
 ### Beschreibung
 Deaktiviert den SSH LogIn mit Passwort
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 - [x] Debian
 - [x ] ProxMox 6.1

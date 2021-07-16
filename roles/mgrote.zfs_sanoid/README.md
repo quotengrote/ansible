@@ -3,7 +3,7 @@
 ### Beschreibung
 Installiert und konfiguriert sanoid.
 
-### Funktioniert auf
+### getestet auf
 - [x] ProxMox 6.1
 
 ### Variablen + Defaults

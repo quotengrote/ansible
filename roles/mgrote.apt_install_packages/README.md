@@ -19,7 +19,7 @@ aus.
 ```
 Es wird unterschieden ob das Ziel eine VM ist oder nicht.
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 - [x] Debian
 - [x] ProxMox 6.1

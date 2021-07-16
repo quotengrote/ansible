@@ -3,7 +3,7 @@
 ### Beschreibung
 Installiert munin-node + Plugins.
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 - [ ] Debian
 - [x] ProxMox 6.1

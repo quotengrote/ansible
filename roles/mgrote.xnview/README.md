@@ -3,6 +3,6 @@
 Installiert xnview.
 
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 - [x] Linux Mint

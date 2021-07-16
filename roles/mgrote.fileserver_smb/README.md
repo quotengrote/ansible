@@ -13,7 +13,7 @@ Rechte im Dateisystem sind
     - `force group = users`
 Damit werden die Nutzer mit Ihrem Konto auf die SAMBA-Freigabe berechtigt, aber die Lese/Schreiboperationen auf dem Dateisystem als "root" durchgefuehrt.
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 
 ### Samba Version

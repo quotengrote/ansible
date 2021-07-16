@@ -2,7 +2,7 @@
 
 ### Beschreibung
 
-### Funktioniert auf
+### getestet auf
 - [ ] Ubuntu (>=18.04)
 - [ ] Debian
 - [ ] ProxMox 6.1

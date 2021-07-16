@@ -4,7 +4,7 @@
 Installiert das Module r8152 für die 2.5G USB-C Ethernetkarte DN3025 von Digitus.
 Startet den PC neu.
 
-### Funktioniert auf
+### getestet auf
 - [x] ProxMox 6.1
 
 ### Variablen + Defaults

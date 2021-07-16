@@ -25,7 +25,7 @@ Es gibt folgende Konfigurationsmoeglichkeiten:
 - mit/ohne "fortune"
 
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 - [ ] Debian
 - [ ] ProxMox 6.1 <-- funktioniert nicht

@@ -4,6 +4,6 @@
 Installiert den qemu-guest-agent und startet die VM danach neu.
 Wird nur in VMs ausgeführt.
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 - [x] Debian

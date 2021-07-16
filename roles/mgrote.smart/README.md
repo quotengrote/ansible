@@ -4,7 +4,7 @@
 Installiert und konfiguriert smartmontools + Mail-Benachrichtigungen.
 Es laesst sich konfigurieren wann die kompletten SMART-Werte versendet werden.
 
-### Funktioniert auf
+### getestet auf
 - [ ] Ubuntu (>=18.04)
 - [ ] Debian
 

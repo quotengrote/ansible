@@ -6,7 +6,7 @@ Fuehrt:
 2. `apt upgrade`
 aus.
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 - [x] Debian
 - [x] ProxMox 6.1

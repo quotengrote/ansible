@@ -3,7 +3,7 @@
 Installiert Apt-Cacher-NG.
 Die Daten werden auf der Maschine abgelegt.
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 - [ ] Debian
 

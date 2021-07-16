@@ -4,7 +4,7 @@
 Installiert [cv4pve-autosnap](https://github.com/Corsinvest/cv4pve-autosnap).
 Legt einen cronjob und das logfile an.
 
-### Funktioniert auf
+### getestet auf
 - [x] ProxMox 6.1
 
 ### Variablen + Defaults

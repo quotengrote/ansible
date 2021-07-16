@@ -3,7 +3,7 @@
 Installiert tmux und erstellt .tmux.conf.
 Setzt tmux als "Standard-Shell".
 
-### Funktioniert auf
+### getestet auf
 - [x] Ubuntu (>=18.04)
 - [x] ProxMox 6.1
 

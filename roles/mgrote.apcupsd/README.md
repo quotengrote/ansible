@@ -12,7 +12,7 @@
  * https://linux.die.net/man/5/apcupsd.conf
 
 
-### Funktioniert auf
+### getestet auf
 - [x] ProxMox 6.1
 
 ### Variablen + Defaults

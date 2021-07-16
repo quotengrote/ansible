@@ -4,7 +4,7 @@
 Richtet "zfs_health.sh", ein ZFS-Checkscript das auch Mails versendet bei Fehlern.
 
 
-### Funktioniert auf
+### getestet auf
 - [x] ProxMox 6.1
 
 ### Variablen + Defaults
