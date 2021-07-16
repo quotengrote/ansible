@@ -16,7 +16,6 @@
       chdir: "{{ dotfiles_repo_path }}"
     changed_when: false
     when: repo_exists.stat.exists == true
-    register: stashed
 
   - name: Ensure dotfiles repository is cloned locally.
     git:
@@ -24,13 +23,6 @@
       dest: "{{ dotfiles_repo_path }}"
       depth: 1
     register: git_clone
-
-  - name: pop stashed changes
-    ansible.builtin.shell: git stash pop
-    args:
-      chdir: "{{ dotfiles_repo_path }}"
-    changed_when: false
-    when: stashed.changed
 
   - name: set owner recursive for repo
     file:
