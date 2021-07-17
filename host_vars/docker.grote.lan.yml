@@ -12,11 +12,6 @@
       repository_url: git.mgrote.net/mg/docker-miniflux
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
-    - name: munin-master
-      dir_name: docker-munin-master
-      repository_url: git.mgrote.net/mg/docker-munin-master
-      repository_user: mg
-      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
     - name: navidrome-mg
       dir_name: docker-navidrome-mg
       repository_url: git.mgrote.net/mg/docker-navidrome-mg

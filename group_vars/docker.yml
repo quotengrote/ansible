@@ -4,7 +4,7 @@
     - mg
   ### mgrote.restic
   restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker
-  qssrestic_cron_hours: "*/4"
+  restic_cron_hours: "*/4"
   restic_exclude: |
         ._*
         desktop.ini

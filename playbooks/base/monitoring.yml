@@ -1,5 +1,5 @@
 ---
-  - hosts: production
+  - hosts: all
     roles:
       - { role: mgrote.munin-node,
         become: true,
