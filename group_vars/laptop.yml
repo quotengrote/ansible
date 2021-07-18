@@ -46,6 +46,8 @@
     - vlc
     - libreoffice
     - gnome-calculator
+    - supertux
+    - python3-pip
   ### mgrote.apt_manage_sources
   manage_sources_apt_proxy_url: ""
   ### mgrote.ntp_chrony_server
