@@ -28,9 +28,3 @@
       to_port: 4949
       protocol: tcp
       comment: 'munin'
-  ### geerlingguy.munin-node
-  munin_node_allowed_cidrs: [0.0.0.0/0] # weil der munin-server aus einem anderen subnet zugreift
-  munin_node_allowed_ips: # weil der munin-server aus einem anderen subnet zugreift
-    - '^127\.0\.0\.1$'
-    - '^::1$'
-    - ^0\.0\.0\.0$

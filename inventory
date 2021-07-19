@@ -26,8 +26,9 @@ all:
         ansible-test.grote.lan:
     docker:
       hosts:
-        docker.grote.lan:
+        docker3.grote.lan:
         docker2.grote.lan:
+        docker4.grote.lan:
         docker-test.grote.lan:
     vmtest:
       hosts:
@@ -67,7 +68,6 @@ all:
         fileserver2.grote.lan:
         acng.grote.lan:
         ansible2.grote.lan:
-        docker.grote.lan:
         pve2.grote.lan:
         pve3.grote.lan:
         pve4.grote.lan:
@@ -75,6 +75,8 @@ all:
         pihole2.grote.lan:
         ntp-server.grote.lan:
         docker2.grote.lan:
+        docker3.grote.lan:
+        docker4.grote.lan:
     test:
       hosts:
         dokuwiki-test.grote.lan:
