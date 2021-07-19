@@ -41,6 +41,8 @@
       - 20-facts
       - 90-updates
       - 91-reboot
+      - 90-updates-available
+      - 91-release-upgrade
 
   - name: delete "Last Login" - Message
     become: yes
