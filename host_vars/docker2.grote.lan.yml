@@ -28,3 +28,14 @@
     - '^127\.0\.0\.1$'
     - '^::1$'
     - ^0\.0\.0\.0$
+  ### oefenweb.ufw
+  ufw_rules: # ist extra weil bei munin kein subnet angegeben ist
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+      from_ip: 192.168.2.0/24
+    - rule: allow
+      to_port: 4949
+      protocol: tcp
+      comment: 'munin'

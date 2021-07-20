@@ -6,3 +6,9 @@
       dir_name: docker-watchtower
       repository_url: git.mgrote.net/mg/docker-watchtower
       state: present
+    - name: photoprism
+      dir_name: docker-photoprism
+      repository_url: git.mgrote.net/mg/docker-photoprism
+      state: present
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
