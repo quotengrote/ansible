@@ -5,5 +5,4 @@
     - name: watchtower
       dir_name: docker-watchtower
       repository_url: git.mgrote.net/mg/docker-watchtower
-      repository_user: mg
-      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+      state: present

@@ -7,23 +7,27 @@
       repository_url: git.mgrote.net/mg/docker-miniflux
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+      state: present
     - name: navidrome-mg
       dir_name: docker-navidrome-mg
       repository_url: git.mgrote.net/mg/docker-navidrome-mg
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+      state: present
     - name: nightscout
       dir_name: docker-nightscout
       repository_url: git.mgrote.net/mg/docker-nightscout
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+      state: present
     - name: traefik
       dir_name: docker-traefik
       repository_url: git.mgrote.net/mg/docker-traefik
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+      network_name: nw_proxy_traefik
+      state: present
     - name: watchtower
       dir_name: docker-watchtower
       repository_url: git.mgrote.net/mg/docker-watchtower
-      repository_user: mg
-      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+      state: present

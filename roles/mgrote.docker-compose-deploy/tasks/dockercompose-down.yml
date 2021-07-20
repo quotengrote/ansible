@@ -1,0 +1,24 @@
+---
+  - name: set dir - "{{ item.name }}"
+    set_fact:
+      project_dir: "{{ docker_compose_base_dir }}/{{ item.dir_name | default (item.name) }}"
+    when:
+      - docker_compose_base_dir is defined
+      - docker_compose_projects is defined
+
+  - name: check if dir exists
+    stat:
+      path: "{{ project_dir }}"
+    register: dir
+
+  - name: stop container - "{{ item.name }}"
+    ansible.builtin.shell: docker-compose down
+    args:
+      chdir: "{{ project_dir }}"
+    when: dir.stat.exists == true
+
+  - name: remove repository - "{{ item.name }}"
+    ansible.builtin.file:
+      state: absent
+      dest: "{{ project_dir }}"
+    when: dir.stat.exists == true

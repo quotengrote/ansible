@@ -1,8 +1,14 @@
 ---
-  - name: loop docker tasks
-    include_tasks: dockercompose.yml
+  - name: loop docker tasks - up
+    include_tasks: dockercompose-up.yml
     loop: "{{ docker_compose_projects }}"
     when:
-      - docker_compose_base_dir is defined
-      - docker_compose_projects is defined
+      - item.state == "present"
+    no_log: true
+
+  - name: loop docker tasks - down
+    include_tasks: dockercompose-down.yml
+    loop: "{{ docker_compose_projects }}"
+    when:
+      - item.state == "absent"
     no_log: true

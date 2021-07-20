@@ -1,0 +1,45 @@
+---
+  - name: set username and passwort - "{{ item.name }}"
+    set_fact:
+      login: "{{ item.repository_user  }}:{{ item.repository_user_password }}@"
+    when:
+      - item.repository_user is defined
+      - item.repository_user_password is defined
+
+  - name: set dir - "{{ item.name }}"
+    set_fact:
+      project_dir: "{{ docker_compose_base_dir }}/{{ item.dir_name | default (item.name) }}"
+    when:
+      - docker_compose_base_dir is defined
+      - docker_compose_projects is defined
+
+  - name: check if repo exists - "{{ item.name }}"
+    stat:
+      path: "{{ project_dir }}"
+    register: repo_exists
+
+  - name: stash changes - "{{ item.name }}"
+    ansible.builtin.shell: git stash
+    args:
+      chdir: "{{ project_dir }}"
+    changed_when: false
+    when: repo_exists.stat.exists == true
+
+  - name: clone public repository - "{{ item.name }}"
+    ansible.builtin.git:
+      repo: "https://{{ login | default () }}{{ item.repository_url }}"
+      dest: "{{ project_dir }}"
+    register: repo
+
+  - name: create networks - "{{ item.name }}"
+    ansible.builtin.shell: "docker network create {{ item.network_name }}" # erstelle network
+    when: "item.network_name is defined" # wenn network_name definiert ist
+    register: network_result # speichere ergebnis in var
+    changed_when: "network_result.rc == 0" # markiere tasks als changed when exit-code == 0
+    ignore_errors: yes # ignoriere fehler
+
+  - name: (re)start container - "{{ item.name }}"
+    ansible.builtin.shell: docker-compose down && docker-compose up -d
+    args:
+      chdir: "{{ project_dir }}"
+    when: repo.changed
