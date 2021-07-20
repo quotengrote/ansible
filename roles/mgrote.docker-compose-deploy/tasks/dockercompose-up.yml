@@ -29,6 +29,7 @@
     ansible.builtin.git:
       repo: "https://{{ login | default () }}{{ item.repository_url }}"
       dest: "{{ project_dir }}"
+      version: "{{ item.git_branch | default ('master') }}"
     register: repo
 
   - name: create networks - "{{ item.name }}"

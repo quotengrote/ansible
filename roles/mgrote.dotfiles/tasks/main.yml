@@ -22,6 +22,7 @@
       repo: "{{ dotfiles_repo_url }}"
       dest: "{{ dotfiles_repo_path }}"
       depth: 1
+      version: "{{ dotfiles_repo_branch }}"
     register: git_clone
 
   - name: set owner recursive for repo

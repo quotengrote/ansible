@@ -6,6 +6,7 @@
       dir_name: docker-homer
       repository_url: git.mgrote.net/mg/docker-homer
       state: present
+      git_branch: test
     - name: watchtower
       dir_name: docker-watchtower
       repository_url: git.mgrote.net/mg/docker-watchtower

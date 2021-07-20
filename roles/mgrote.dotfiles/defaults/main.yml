@@ -1,6 +1,7 @@
 ---
   dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles # url zum repo
   dotfiles_repo_path: /home/mg/dotfiles # wo soll das repo lokal gespeichert werden
+  dotfiles_repo_branch: master #default branch for checking out
   dotfiles_files: # welche dateien sollen wohin verlinkt werden (ln -s)
     - repo_path: "{{ dotfiles_repo_path}}/.vimrc"
       local_path: "/home/mg/.vimrc"

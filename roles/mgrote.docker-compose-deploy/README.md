@@ -22,6 +22,7 @@ docker_compose_projects:
     repository_user_password: k1BvXXXXXXXrbg            # git user password for login on private Repositories; optional; just dont let it empty, remove it
     network_name: homer-network                         # docker-network to create; optional; just dont let it empty, remove it
     state: present|absent                               # should the project be present or absent?
+    git_branch: master                                  # branch to checkout; optional; just dont let it empty, remove it
 ```
 
 
