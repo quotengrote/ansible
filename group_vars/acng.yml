@@ -24,8 +24,6 @@
   munin_node_additional_plugins:
     - name: chrony
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
-    - name: lvm_
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/lvm_
     - name: systemd_status
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
     - name: acng

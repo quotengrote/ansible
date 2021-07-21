@@ -1,0 +1,11 @@
+---
+- hosts: all:!proxmox
+  become: yes
+  serial: 5
+
+  tasks:
+    - name: wirte logrotate config rsyslog
+      become: yes
+      template:
+        src: rsyslog_template
+        dest: /etc/logrotate.d/rsyslog
