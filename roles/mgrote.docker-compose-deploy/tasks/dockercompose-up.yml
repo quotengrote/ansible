@@ -25,7 +25,7 @@
     changed_when: false
     when: repo_exists.stat.exists == true
 
-  - name: clone public repository - "{{ item.name }}"
+  - name: clone repository - "{{ item.name }}"
     ansible.builtin.git:
       repo: "https://{{ login | default () }}{{ item.repository_url }}"
       dest: "{{ project_dir }}"
