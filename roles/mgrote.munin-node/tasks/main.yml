@@ -32,6 +32,13 @@
       mode: 0644
     notify: restart munin-node
 
+  - name: munin-node-configure --shell
+    ansible.builtin.shell: munin-node-configure --shell
+    register: output_conf
+    changed_when: "output_conf.rc != 0"
+    ignore_errors: yes # ignoriere fehler
+    when: install.changed
+
   - name: Install additional plugins.
     get_url:
       url: "{{ item.src }}"
