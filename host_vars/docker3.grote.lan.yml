@@ -31,7 +31,3 @@
       dir_name: docker-watchtower
       repository_url: git.mgrote.net/mg/docker-watchtower
       state: present
-    - name: lazydocker
-      dir_name: docker-lazydocker
-      repository_url: git.mgrote.net/mg/docker-lazydocker
-      state: present

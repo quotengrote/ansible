@@ -16,10 +16,6 @@
       dir_name: docker-homer
       repository_url: git.mgrote.net/mg/docker-homer
       state: present
-    - name: lazydocker
-      dir_name: docker-lazydocker
-      repository_url: git.mgrote.net/mg/docker-lazydocker
-      state: present
     - name: unifi-controller
       dir_name: docker-unifi-controller
       repository_url: git.mgrote.net/mg/docker-unifi-controller
