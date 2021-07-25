@@ -189,6 +189,7 @@
     - nano
     - mc
     - cifs-utils
+    - haveged #https://www.linux-magazin.de/ausgaben/2011/09/einfuehrung2/
     - ca-certificates
     - netdiscover
     - tree
