@@ -18,6 +18,14 @@
             "VIRTUAL_HOST" => "{{ pihole_homer_fqdn }}"
             )
           state: absent
+      - name: deaktiviere rate limiting
+        ansible.builtin.blockinfile:
+          path: /etc/pihole/pihole-FTL.conf
+          block: |
+            RATE_LIMIT=0/0
+          state: absent
+
+
 # Wenn die VM beim Start mit "systemd-networkd-wait-online." hängt
 # Deaktiviere DHCP in:
 # sudo nano /etc/netplan/01-netcfg.yaml
