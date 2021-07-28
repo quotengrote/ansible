@@ -1,9 +1,9 @@
 ---
-#  - name: check if module is installed - folder
-#    become: yes
-#    stat:
-  #    path: "/lib/modules/r8152/{{ r8152_filename }}"
-#    register: folder_exists
+  - name: check if module is installed - folder
+    become: yes
+    stat:
+      path: "/lib/modules/r8152"
+    register: folder_exists
 
   - name: check if module is installed - lsmod
     become: yes
@@ -13,8 +13,8 @@
 
   - name: include install-tasks (task get skipped if the folder or the module exists or r8152_module_needed == false)
     include_tasks: doing.yml
-    when: (module_in_lsmod.stdout.find('r8152') == -1) and (r8152_module_needed == true)
+    when: (module_in_lsmod.stdout.find('r8152') == -1) and (r8152_module_needed == true) and (folder_exists.stat.exists == false)
 
   - name: include dkms-tasks (task get skipped if the folder or the module exists or r8152_module_needed == false)
     include_tasks: dkms.yml
-    when: (module_in_lsmod.stdout.find('r8152') == -1) and (r8152_module_needed == true)
+    when: (module_in_lsmod.stdout.find('r8152') == -1) and (r8152_module_needed == true) and (folder_exists.stat.exists == false)
