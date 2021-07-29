@@ -1,4 +1,9 @@
 ---
+  - name: update apt cache
+    become: yes
+    ansible.builtin.apt:
+      update_cache: yes
+  
   - name: install packages
     become: yes
     ansible.builtin.package:
