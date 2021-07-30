@@ -1,4 +1,6 @@
 ---
+  ### mgrote.tmux
+  tmux_auto_attach: absent
   ### mgrote.dotfiles
   dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles
   dotfiles_repo_path: /home/mg/dotfiles

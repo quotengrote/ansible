@@ -28,3 +28,4 @@
         if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
         tmux attach -t {{ tmux_standardsession_name }} || tmux new -s {{ tmux_standardsession_name }}
         fi
+      state: "{{ tmux_auto_attach }}"
