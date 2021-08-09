@@ -42,7 +42,7 @@
     - nextcloud-desktop
     - gnome-tweaks
     - powertop
-    - caja
+    - caja # filemanager
     - arandr
     - keepassxc
     - vlc
@@ -50,6 +50,7 @@
     - gnome-calculator
     - supertux
     - python3-pip
+    - gramps # stammbaum
   ### mgrote.apt_manage_sources
   manage_sources_apt_proxy_url: ""
   ### mgrote.ntp_chrony_server
