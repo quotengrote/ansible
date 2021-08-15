@@ -4,8 +4,13 @@
   serial: 5
 
   tasks:
-    - name: wirte logrotate config rsyslog
+    - name: write logrotate config rsyslog
       become: yes
       template:
         src: rsyslog_template
         dest: /etc/logrotate.d/rsyslog
+    - name: remove line
+      ansible.builtin.lineinfile:
+        path: /etc/rsyslog.conf
+        state: absent
+        regexp: '. @@rsyslog.grote.lan:514'
