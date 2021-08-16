@@ -23,6 +23,8 @@
           path: /etc/pihole/pihole-FTL.conf
           block: |
             RATE_LIMIT=0/0
+            MAXNETAGE=3
+            MAXDBDAYS=3
           state: present
 
 
