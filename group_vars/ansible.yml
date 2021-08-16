@@ -6,6 +6,7 @@
       version: 3.2.1
     - name: Jinja2>=2.11.2
     - name: markupsafe
+    - name: ara
   ### geerlingguy.ansible
   ansible_install_method: pip
   ansible_install_version_pip: '2.10'
