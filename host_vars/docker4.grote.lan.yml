@@ -6,6 +6,10 @@
       dir_name: docker-watchtower
       repository_url: git.mgrote.net/mg/docker-watchtower
       state: present
+    - name: ansible-ara
+      dir_name: docker-ansible-ara
+      repository_url: git.mgrote.net/mg/docker-ansible-ara
+      state: present
     - name: photoprism
       dir_name: docker-photoprism
       repository_url: git.mgrote.net/mg/docker-photoprism
