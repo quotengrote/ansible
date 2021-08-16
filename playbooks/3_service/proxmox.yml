@@ -20,8 +20,4 @@
         tags: "cv4pve",
         when: "'pve2.grote.lan' in inventory_hostname" }
     - { role: mgrote.r8152_kernel_module,
-        tags: "r8152",
-        when: "'pve3.grote.lan' in inventory_hostname" }
-    - { role: mgrote.r8152_kernel_module,
-        tags: "r8152",
-        when: "'pve4.grote.lan' in inventory_hostname" }
+        tags: "r8152" }
