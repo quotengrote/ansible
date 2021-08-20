@@ -60,3 +60,9 @@
       path: /home/{{ dotfiles_owner }}/.bashrc
       line: "source {{ dotfiles_repo_path }}/.bash_functions"
       state: present
+
+  - name: add .bash_extra to .bashrc
+    ansible.builtin.lineinfile:
+      path: /home/{{ dotfiles_owner }}/.bashrc
+      line: "source {{ dotfiles_repo_path }}/.bash_extra"
+      state: present
