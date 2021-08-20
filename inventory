@@ -36,27 +36,17 @@ all:
     proxmox:
       hosts:
         pve2-test.grote.lan:
-        pve3-test.grote.lan:
-        pve4-test.grote.lan:
         pve2.grote.lan:
-        pve3.grote.lan:
-        pve4.grote.lan:
       children:
         proxmoxprod:
           hosts:
             pve2.grote.lan:
-            pve3.grote.lan:
-            pve4.grote.lan:
         proxmoxtest:
           hosts:
             pve2-test.grote.lan:
-            pve3-test.grote.lan:
-            pve4-test.grote.lan:
     physical:
       hosts:
         pve2.grote.lan:
-        pve3.grote.lan:
-        pve4.grote.lan:
     gitea:
       hosts:
         gitea-test.grote.lan:
@@ -69,8 +59,6 @@ all:
         acng.grote.lan:
         ansible2.grote.lan:
         pve2.grote.lan:
-        pve3.grote.lan:
-        pve4.grote.lan:
         gitea.grote.lan:
         pihole2.grote.lan:
         ntp-server.grote.lan:
@@ -86,8 +74,6 @@ all:
         docker-test.grote.lan:
         vm-test2.grote.lan:
         pve2-test.grote.lan:
-        pve3-test.grote.lan:
-        pve4-test.grote.lan:
         gitea-test.grote.lan:
         pihole2-test.grote.lan:
         ntp-server-test.grote.lan:

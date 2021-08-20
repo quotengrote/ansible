@@ -21,7 +21,7 @@
       local_path: "/home/mg/.config/flameshot/flameshot.ini"
     - repo_path: "{{ dotfiles_repo_path}}/.ssh/config"
       local_path: "/home/mg/.ssh/config"
-    - repo_path: "/home/mg/Nextcloud/Rest/ssh-keys/heimserver/private_key" # smylink in .ssh-dir
+    - repo_path: "/home/mg/Nextcloud/Rest/ssh-keys/heimserver/private_key" # symlink in .ssh-dir
       local_path: "/home/mg/.ssh/private_key_heimserver"
   dotfiles_dirs:
     - path: /home/mg/.config/i3
