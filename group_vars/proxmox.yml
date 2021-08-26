@@ -9,8 +9,6 @@
   smart_smartctlmail_cron_weekday: "3"
   ### mgrote.zfs_extra # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
   zfs_extra_max_usage_health: "80"
-  ### mgrote.apcupsd
-  apcupsd_slave_polltime: 10 #in Sekunden
   ### geerlingguy.munin-node
   munin_node_additional_plugins:
     - name: chrony
@@ -53,21 +51,6 @@
     - name: docker_mem
     - name: apc_nis
     - name: lvm_
-
-  ### mgrote.apcupsd
-  apcupsd_master_onbatterydelay: 10
-  apcupsd_master_batterylevel_for_shutdown: 50
-  apcupsd_master_minutes_for_shutdown: 10
-  apcupsd_master_nologon_when_active: disable
-  apcupsd_slave_onbatterydelay: 10
-  apcupsd_slave_batterylevel_for_shutdown: 50
-  apcupsd_slave_minutes_for_shutdown: 10
-  apcupsd_slave_nologon_when_active: disable
-  apcupsd_nis_master: on
-  apcupsd_nis_master_listen_ip: 0.0.0.0
-  apcupsd_nis_master_listen_port: 3551
-  apcupsd_ups_name: APC-BX950U-GR
-
 
   # Ansible Variablen
   ### sudo
