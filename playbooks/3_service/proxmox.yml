@@ -10,7 +10,6 @@
     - { role: mgrote.zfs_sanoid,
         tags: "sanoid",
         when: "'pve2.grote.lan' in inventory_hostname" }
-    - { role: mgrote.apcupsd, tags: "apcupsd" }
     - { role: mgrote.smart, tags: "smart" }
     - { role: mgrote.postfix, tags: "postfix" }
     - { role: mgrote.ecc-rasdaemon,
