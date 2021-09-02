@@ -13,7 +13,7 @@
       - docker_compose_base_dir is defined
       - docker_compose_projects is defined
 
-  - name: check if repo exists - "{{ item.name }}"
+  - name: check if repo exists - "{{ item.name }}" (wenn der Task >30s dauert sind die Login-Daten falsch)
     stat:
       path: "{{ project_dir }}"
     register: repo_exists
@@ -44,3 +44,7 @@
     args:
       chdir: "{{ project_dir }}"
     when: repo.changed
+
+  - name: unset username and passwort - "{{ item.name }}"
+    set_fact:
+      login: ""
