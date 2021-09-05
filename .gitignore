@@ -2,4 +2,4 @@
 vault-pass.yml
 id_rsa_ansible_user
 id_rsa_ansible_user_pub
-# https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+plugins/lookup/__pycache__/**
