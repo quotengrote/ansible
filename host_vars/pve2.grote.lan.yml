@@ -170,7 +170,6 @@
       cron_day_of_week_zfs_scrub: "*"
       cron_month_zfs_scrub: "*/2"
 
-
   ### mgrote.zfs_sanoid
   sanoid_datasets:
     - path: 'hdd_data_raidz/data_crypt'
@@ -243,46 +242,3 @@
   cv4pve_vmid: all,-127,-158,-112,-100
   cv4pve_keep_snapshots: 1
   cv4pve_dl_link: "https://github.com/Corsinvest/cv4pve-autosnap/releases/download/v1.10.0/cv4pve-autosnap-linux-x64.zip"
-
-  ### geerlingguy.munin-node
-  munin_node_additional_plugins:
-    - name: chrony
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
-    - name: systemd_status
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
-    - name: zfs_arcstats
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfs_arcstats
-    - name: zfsonlinux_stats_
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfsonlinux_stats_
-    - name: zpool_iostat
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zpool_iostat
-    - name: zfs_list
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfs_list
-    - name: zpool_capacity
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zpool_capacity
-    - name: kvm_mem
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/kvm_mem
-    - name: kvm_net
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/kvm_net
-  munin_node_disabled_plugins:
-    - name: meminfo # zu hohe last
-    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
-    - name: squid_cache
-    - name: squid_objectsize
-    - name: squid_requests
-    - name: squid_traffic
-    - name: nfsd
-    - name: samba
-    - name: nfsd4
-    - name: ntp # verursacht zu viele dns ptr request
-    - name: cronjobs
-    - name: hddtempd # ersetzt durch hddtemp_smartctl
-    - name: ipmi_power # für pve2, leeres diagramm
-    - name: fail2ban
-    - name: fail2ban_
-    - name: apcupsd_pct
-    - name: apc_nis
-    - name: kvm_io
-    - name: kvm_cpu
-    - name: docker_mem
-    - name: lvm_

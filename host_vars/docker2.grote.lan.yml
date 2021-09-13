@@ -1,6 +1,5 @@
 ---
   ### mgrote.docker-compose-deploy
-  docker_compose_base_dir: /home/mg/docker
   docker_compose_projects:
     - name: munin-master
       dir_name: docker-munin-master

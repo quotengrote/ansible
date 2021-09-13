@@ -1,0 +1,16 @@
+---
+  - name: remove unwanted plugins
+    file:
+      path: "{{ munin_plugin_dest_path }}{{ item.name }}"
+      state: absent
+    loop: "{{ munin_node_disabled_plugins }}"
+    notify: restart munin-node
+    when: munin_node_disabled_plugins is defined
+
+  - name: remove additional plugin-config
+    file:
+      state: absent
+      dest: "{{ munin_plugin_conf_dest_path }}{{ item.name }}"
+    notify: restart munin-node
+    loop: "{{ munin_node_disabled_plugins }}"
+    when: munin_node_disabled_plugins is defined

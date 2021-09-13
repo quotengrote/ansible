@@ -1,7 +1,6 @@
 {{ file_header | default () }}
-#
 
-log_level 4
+log_level {{ munin_node_log_level }}
 log_file {{ munin_node_log }}
 pid_file {{ munin_node_pid }}
 

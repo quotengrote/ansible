@@ -1,0 +1,29 @@
+---
+  - name: download additional plugins
+    get_url:
+      url: "{{ item.src }}"
+      dest: "{{ munin_plugin_src_path }}{{ item.name }}"
+      mode: '0755'
+    loop: "{{ munin_node_plugins }}"
+
+  - name: enable additional plugins
+    file:
+      src: "{{ munin_plugin_src_path }}{{ item.name }}"
+      dest: "{{ munin_plugin_dest_path }}{{ item.name }}"
+      state: link
+    notify: restart munin-node
+    loop: "{{ munin_node_plugins }}"
+
+  - name: copy additional plugin-config
+    copy:
+      content: "{{ item.config }}"
+      dest: "{{ munin_plugin_conf_dest_path }}{{ item.name }}"
+    notify: restart munin-node
+    loop: "{{ munin_node_plugins }}"
+    when: item.config is defined
+
+  - name: Ensure munin-node is running.
+    service:
+      name: munin-node
+      state: started
+      enabled: yes

@@ -10,11 +10,27 @@
   ### mgrote.zfs_extra # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
   zfs_extra_max_usage_health: "80"
   ### geerlingguy.munin-node
-  munin_node_additional_plugins:
+  munin_node_disabled_plugins:
+    - name: meminfo # zu hohe last
+    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
+    - name: ntp # verursacht zu viele dns ptr request
+    - name: hddtempd # ersetzt durch hddtemp_smartctl
+    - name: ipmi_power # für pve2, leeres diagramm
+    - name: squid_cache
+    - name: squid_objectsize
+    - name: squid_requests
+    - name: squid_traffic
+    - name: nfsd4
+  munin_node_plugins:
     - name: chrony
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
     - name: systemd_status
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
+    - name: lvm_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/lvm_
+      config: |
+        [lvm_*]
+        user root
     - name: zfs_arcstats
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfs_arcstats
     - name: zfsonlinux_stats_
@@ -29,28 +45,8 @@
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/kvm_mem
     - name: kvm_net
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/kvm_net
-  munin_node_disabled_plugins:
-    - name: meminfo # zu hohe last
-    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
-    - name: squid_cache
-    - name: squid_objectsize
-    - name: squid_requests
-    - name: squid_traffic
-    - name: nfsd
-    - name: samba
-    - name: nfsd4
-    - name: ntp # verursacht zu viele dns ptr request
-    - name: cronjobs
-    - name: hddtempd # ersetzt durch hddtemp_smartctl
-    - name: ipmi_power # für pve2, leeres diagramm
-    - name: fail2ban
-    - name: fail2ban_
-    - name: apcupsd_pct
-    - name: kvm_io
     - name: kvm_cpu
-    - name: docker_mem
-    - name: apc_nis
-    - name: lvm_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/kvm_cpu
 
   # Ansible Variablen
   ### sudo

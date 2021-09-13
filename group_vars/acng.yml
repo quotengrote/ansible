@@ -21,15 +21,17 @@
   acng_server_auth_user: acngadmin
   acng_server_auth_pass: "{{ lookup('keepass', 'acng_webinterface', 'password') }}"
   ### geerlingguy.munin-node
-  munin_node_additional_plugins:
+  munin_node_plugins:
     - name: chrony
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
     - name: systemd_status
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
+    - name: lvm_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/lvm_
+      config: |
+        [lvm_*]
+        user root
     - name: acng
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/acng
-  munin_node_config: {
-  "acng": {
-    "env.logfile /var/log/apt-cacher-ng/apt-cacher.log"
-    }
-  }
+      config: |
+        env.logfile /var/log/apt-cacher-ng/apt-cacher.log

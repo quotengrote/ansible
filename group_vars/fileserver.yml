@@ -115,7 +115,14 @@
       from_ip: 192.168.2.144/24
 
   ### geerlingguy.munin-node
-  munin_node_additional_plugins:
+  munin_node_disabled_plugins:
+    - name: meminfo # zu hohe last
+    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
+    - name: ntp # verursacht zu viele dns ptr request
+    - name: hddtempd # ersetzt durch hddtemp_smartctl
+    - name: ipmi_power # für pve2, leeres diagramm
+    - name: lvm_
+  munin_node_plugins:
     - name: chrony
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
     - name: systemd_status
@@ -124,26 +131,3 @@
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/samba_users
     - name: samba_locked
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/samba_locked
-  munin_node_disabled_plugins:
-    - name: meminfo # zu hohe last
-    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
-    - name: squid_cache
-    - name: squid_objectsize
-    - name: squid_requests
-    - name: squid_traffic
-    - name: nfsd
-    - name: samba
-    - name: nfsd4
-    - name: ntp # verursacht zu viele dns ptr request
-    - name: cronjobs
-    - name: hddtempd # ersetzt durch hddtemp_smartctl
-    - name: ipmi_power # für pve2, leeres diagramm
-    - name: fail2ban
-    - name: fail2ban_
-    - name: apcupsd_pct
-    - name: kvm_io
-    - name: kvm_cpu
-    - name: docker_mem
-    - name: cpuspeed
-    - name: acpi
-    - name: lvm_
