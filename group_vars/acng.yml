@@ -23,15 +23,15 @@
   ### geerlingguy.munin-node
   munin_node_plugins:
     - name: chrony
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/chrony
     - name: systemd_status
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/systemd_status
     - name: lvm_
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/lvm_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/lvm_
       config: |
         [lvm_*]
         user root
     - name: acng
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/acng
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/acng
       config: |
         env.logfile /var/log/apt-cacher-ng/apt-cacher.log

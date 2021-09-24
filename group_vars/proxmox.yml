@@ -21,32 +21,48 @@
     - name: squid_requests
     - name: squid_traffic
     - name: nfsd4
+    - name: nfsd
+    - name: kvm_vm_count
+    - name: proxmox_lxc_count
+    - name: proxmox_vm_count
+    - name: zfs_usage_rpool # liest falsch ein
+    - name: zfs_usage_hdd_data_raidz # liest falsch ein
   munin_node_plugins:
     - name: chrony
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/chrony
     - name: systemd_status
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/systemd_status
     - name: lvm_
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/lvm_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/lvm_
       config: |
         [lvm_*]
         user root
     - name: zfs_arcstats
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfs_arcstats
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/zfs_arcstats
     - name: zfsonlinux_stats_
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfsonlinux_stats_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/zfsonlinux_stats_
     - name: zpool_iostat
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zpool_iostat
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/zpool_iostat
     - name: zfs_list
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfs_list
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/zfs_list
     - name: zpool_capacity
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zpool_capacity
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/zpool_capacity
     - name: kvm_mem
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/kvm_mem
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/kvm_mem
     - name: kvm_net
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/kvm_net
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/kvm_net
     - name: kvm_cpu
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/kvm_cpu
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/kvm_cpu
+    - name: zpool_fragmentation
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zpool_fragmentation
+    - name: proxmox_count
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/proxmox_count
+      config: |
+        [proxmox_count]
+        user root
+        group root
+    - name: zfs_count
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfs_count
 
   # Ansible Variablen
   ### sudo

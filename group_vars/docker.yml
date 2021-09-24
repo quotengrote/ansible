@@ -25,32 +25,28 @@
   ### geerlingguy.munin-node
   munin_node_plugins:
     - name: chrony
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/chrony
     - name: systemd_status
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/systemd_status
     - name: lvm_
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/lvm_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/lvm_
       config: |
         [lvm_*]
         user root
     - name: docker_containers
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/docker_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
       config: |
         [docker_*]
         user root
         env.DOCKER_HOST unix://run/docker.sock
     - name: docker_cpu
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/docker_
-    - name: docker_images
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/docker_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
     - name: docker_memory
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/docker_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
     - name: docker_network
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/docker_
-    - name: docker_status
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/docker_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
     - name: docker_volumes
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/docker_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
 
   ### mgrote.docker-compose-deploy
   docker_compose_base_dir: /home/mg/docker

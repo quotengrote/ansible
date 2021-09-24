@@ -124,10 +124,10 @@
     - name: lvm_
   munin_node_plugins:
     - name: chrony
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/chrony
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/chrony
     - name: systemd_status
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/systemd_status
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/systemd_status
     - name: samba_users
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/samba_users
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/samba_users
     - name: samba_locked
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/samba_locked
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/samba_locked

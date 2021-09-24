@@ -29,3 +29,26 @@
   ### mgrote.apt_manage_sources
   manage_sources_apt_proxy_server: ""
   manage_sources_apt_proxy_port: ""
+  ### geerlingguy.munin-node
+  munin_node_plugins:
+    - name: chrony
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/chrony
+    - name: systemd_status
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/systemd_status
+    - name: lvm_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/lvm_
+      config: |
+        [lvm_*]
+        user root
+    - name: pihole_cache
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/pihole/pihole_cache
+      config: |
+        [pihole_*]
+        user root
+        env.host 127.0.0.1
+        env.port 80
+        env.api /admin/api.php
+    - name: pihole_clients
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/pihole/pihole_clients
+    - name: pihole_queries
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/pihole/pihole_queries

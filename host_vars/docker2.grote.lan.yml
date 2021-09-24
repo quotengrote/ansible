@@ -3,9 +3,7 @@
   docker_compose_projects:
     - name: munin-master
       dir_name: docker-munin-master
-      repository_url: git.mgrote.net/mg/docker-munin-master
-      repository_user: mg
-      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+      repository_url: git.mgrote.net/mg/docker-munin-master_production
       state: present
     - name: watchtower
       dir_name: docker-watchtower
@@ -38,3 +36,110 @@
       to_port: 4949
       protocol: tcp
       comment: 'munin'
+  ### mgrote.apt_install_packages
+  programs_extra:
+    - libwww-curl-perl # für munin-plugin: unifi
+    - libjson-perl # für munin-plugin: unifi
+  ### geerlingguy.munin-node
+  munin_node_plugins:
+    - name: chrony
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/chrony
+    - name: systemd_status
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/systemd_status
+    - name: lvm_
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/lvm_
+      config: |
+        [lvm_*]
+        user root
+    - name: docker_containers
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
+      config: |
+        [docker_*]
+        user root
+        env.DOCKER_HOST unix://run/docker.sock
+    - name: docker_cpu
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
+    - name: docker_memory
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
+    - name: docker_network
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
+    - name: docker_volumes
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
+    - name: mt_system_hex
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/mikrotik/mt_system
+      config: |
+        [mt_system_hex]
+        user root
+        env.ssh_user munin
+        env.ssh_password hallowelt
+        env.ssh_host 192.168.2.1
+    - name: mt_system_crs309
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/mikrotik/mt_system
+      config: |
+        [mt_system_crs309]
+        user root
+        env.ssh_user munin
+        env.ssh_password hallowelt
+        env.ssh_host 192.168.2.223
+    - name: unifi
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/unifi
+      config: |
+        [unifi*]
+        # User name to login to unifi controller API.  Default is "ubnt".  Ideally, this should
+        # point to a read-only account.
+        env.user munin
+        # Password to login to unifi controller API. Default is "ubnt"
+        env.pass hallowelt
+        # URL of the API, with port if needed.  No trailing slash.
+        env.api_url https://docker2.grote.lan:8443
+        # Verify SSL certificate name against host.
+        # Note: if using a default cloudkey certificate, this will fail unless you manually add it
+        # to the local keystore.
+        # Default is "yes"
+        env.ssl_verify_host no
+        # Verify Peer's SSL vertiicate.
+        # Note: if using a default cloudkey certificate, this will fail
+        # Default is "yes"
+        env.ssl_verify_peer no
+        # The human readable name of the unifi site - used for graph titles
+        env.name Unifi
+        # By default, Use standard munin well know categories -
+        env.force_category unifi
+        #---
+        # Show device CPU utilization
+        env.enable_device_cpu yes
+        # Show device memory usage
+        env.enable_device_mem yes
+        # Show device load average (switches and APs only)
+        env.enable_device_load yes
+        # Show device uptime
+        env.enable_device_uptime yes
+        # Show number of clients connected to each device
+        env.enable_clients_device yes
+        # Show detailed graphs for each device (per device graphs)
+        env.enable_detail_clients_device yes
+        # Show number of clients connected to each network type
+        env.enable_clients_type yes
+        # Show detailed graphs for each client type (per type graphs)
+        env.enable_detail_clients_type yes
+        # Show unauthorized / authorized client list
+        # if you are not using the guest portal, this is useless
+        env.show_authorized_clients_type yes
+        # Show transfer statistics on switch ports
+        env.enable_xfer_port yes
+        # Show detailed graphs per switch port
+        env.enable_detail_xfer_port yes
+        # Hide ports that have no link (When set to no, unplugged ports will transfer 0, not be undefined)
+        env.hide_empty_xfer_port no
+        # Show transfer statistics per device
+        env.enable_xfer_device no
+        # Show detailed graphs for each device
+        env.enable_detail_xfer_device yes
+        # Show transfer statistics per named network
+        env.enable_xfer_network no
+        # Show detailed graphs for each named network
+        env.enable_detail_xfer_network no
+        # Show transfer statistics per radio
+        env.enable_xfer_radio no
+        # Show detailed graphs for each radio
+        env.enable_detail_xfer_radio no

@@ -5,6 +5,7 @@
       dest: "{{ munin_plugin_src_path }}{{ item.name }}"
       mode: '0755'
     loop: "{{ munin_node_plugins }}"
+    notify: restart munin-node
 
   - name: enable additional plugins
     file:
