@@ -240,5 +240,5 @@
   cv4pve_api_user: root@pam!cv4pve-autosnap
   cv4pve_api_token: "{{ lookup('keepass', 'cv4pve_api_token', 'password') }}"
   cv4pve_vmid: all,-127,-158,-112,-100
-  cv4pve_keep_snapshots: 1
+  cv4pve_keep_snapshots: 5
   cv4pve_dl_link: "https://github.com/Corsinvest/cv4pve-autosnap/releases/download/v1.10.0/cv4pve-autosnap-linux-x64.zip"
