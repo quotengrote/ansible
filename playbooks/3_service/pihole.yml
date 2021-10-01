@@ -18,13 +18,15 @@
             "VIRTUAL_HOST" => "{{ pihole_homer_fqdn }}"
             )
           state: absent
-      - name: deaktiviere rate limiting
+      - name: setze FTL Einstellungen
         ansible.builtin.blockinfile:
           path: /etc/pihole/pihole-FTL.conf
           block: |
             RATE_LIMIT=0/0
             MAXNETAGE=3
             MAXDBDAYS=3
+            MOZILLA_CANARY=true
+            BLOCK_ICLOUD_PR=true
           state: present
 
 
