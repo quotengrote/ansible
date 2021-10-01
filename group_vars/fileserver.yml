@@ -122,12 +122,18 @@
     - name: hddtempd # ersetzt durch hddtemp_smartctl
     - name: ipmi_power # für pve2, leeres diagramm
     - name: lvm_
+    - name: samba_locked
+    - name: samba_users
   munin_node_plugins:
     - name: chrony
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/chrony
     - name: systemd_status
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/systemd_status
-    - name: samba_users
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/samba_users
-    - name: samba_locked
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/samba_locked
+    - name: samba
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/samba
+      config: |
+        [samba]
+        user root
+        group root
+        env.smbstatus /usr/bin/smbstatus
+        env.ignoreipcshare 1
