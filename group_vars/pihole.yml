@@ -52,3 +52,7 @@
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/pihole/pihole_clients
     - name: pihole_queries
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/pihole/pihole_queries
+    - name: pihole_blocked_domains
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/pihole/pihole_blocked_domains
+    - name: pihole_ads_percentage
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/pihole/pihole_ads_percentage
