@@ -5,11 +5,9 @@
       to_port: 22
       protocol: tcp
       comment: 'ssh'
-      from_ip: 192.168.2.0/24
     - rule: allow
       to_port: 80
       comment: 'pihole-webgui'
-      from_ip: 192.168.2.0/24
     - rule: allow
       to_port: 4949
       protocol: tcp

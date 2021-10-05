@@ -17,6 +17,7 @@
     - name: ipmi_power # für pve2, leeres diagramm
     - name: docker_images
     - name: docker_status
+    - name: mt_system_hex
   munin_node_plugins:
     - name: chrony
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/chrony
@@ -96,7 +97,6 @@
       to_port: 22
       protocol: tcp
       comment: 'ssh'
-      from_ip: 192.168.2.0/24
     - rule: allow
       to_port: 4949
       protocol: tcp
