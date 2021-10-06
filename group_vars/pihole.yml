@@ -5,9 +5,11 @@
       to_port: 22
       protocol: tcp
       comment: 'ssh'
+      from_ip: 0.0.0.0/0
     - rule: allow
       to_port: 80
       comment: 'pihole-webgui'
+      from_ip: 0.0.0.0/0
     - rule: allow
       to_port: 4949
       protocol: tcp
@@ -16,6 +18,7 @@
     - rule: allow
       to_port: 53
       comment: 'pihole-dns'
+      from_ip: 0.0.0.0/0
   ## playbook
   pihole_homer_fqdn: docker.grote.lan # unter welchem host ist docker erreichbar? notwendig für die pihole stats in homer; fur die cors abfrage
   ### mgrote.restic

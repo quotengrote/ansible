@@ -65,3 +65,4 @@
       to_port: 22
       protocol: tcp
       comment: 'ssh'
+      from_ip: 0.0.0.0/0

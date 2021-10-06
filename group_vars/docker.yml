@@ -21,7 +21,6 @@
         /var/lib/docker/volumes/docker-photoprism_pp_smb_bilder***/**
         # https://github.com/restic/restic/issues/1005
         # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
-
   ### geerlingguy.munin-node
   munin_node_plugins:
     - name: chrony
