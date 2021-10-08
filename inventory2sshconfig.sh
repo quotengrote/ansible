@@ -12,7 +12,7 @@ else
 	  var_conf="/home/mg/.ssh/config"
 fi
 # loesche *.grote.lan Hosts und lege ein backup der Datei an
-sed -i.bak -r '/[a-z0-9-]+.grote.lan/ d' $var_inf
+sed -i.bak -r '/[a-z0-9-]+.grote.lan/ d' $var_inv
 # gebe Host aus Inventorie aus, entferne die erste Zeile, schreibe "Host"
 # https://superuser.com/questions/246837/how-do-i-add-text-to-the-beginning-of-a-file-in-bash
-echo "$(ansible all -i $var_inv1 --list-hosts | grep -v hosts | sed -e 's/^/Host /g' | cat - $var_conf)" > $var_conf
+echo "$(ansible all -i $var_inv --list-hosts | grep -v hosts | sed -e 's/^/Host /g' | cat - $var_conf)" > $var_conf
