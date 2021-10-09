@@ -30,3 +30,6 @@
       dir_name: docker-watchtower
       repository_url: git.mgrote.net/mg/docker-watchtower
       state: present
+
+  ### mgrote.restic
+  restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker

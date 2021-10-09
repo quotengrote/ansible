@@ -1,20 +1,6 @@
 ---
   # Bind Mounts - fileserver
-  # pct set 109 -mp0 /hdd_data_raidz/videos,mp=/shares_videos
-  # pct set 109 -mp1 /hdd_data_raidz/data_crypt,mp=/shares
-  # pct set 109 -mp2 /hdd_data_raidz/pve_backup,mp=/shares_pve_backup
-  # pct set 109 -mp3 /hdd_data_raidz/papa_backup,mp=/shares_papa_backup
-  # pct set 109 -mp4 /hdd_data_raidz/music,mp=/shares_music
-  # pct set 109 -mp5 /hdd_data_raidz/tmp,mp=/shares_tmp
-  # pct set 109 -mp6 /hdd_data_raidz/archiv,mp=/shares_archiv
-  # Bind Mounts - fileserver-test
-  # pct set 158 -mp0 /rpool/vm/dir/vm-158/videos,mp=/shares_videos
-  # pct set 158 -mp1 /rpool/vm/dir/vm-158/data,mp=/shares
-  # pct set 158 -mp2 /rpool/vm/dir/vm-158/proxmox,mp=/shares_pve_backup
-  # pct set 158 -mp3 /rpool/vm/dir/vm-158/papa,mp=/shares_papa_backup
-  # pct set 158 -mp4 /rpool/vm/dir/vm-158/music,mp=/shares_music
-  # pct set 158 -mp5 /rpool/vm/dir/vm-158/tmp,mp=/shares_tmp
-  # pct set 158 -mp6 /rpool/vm/dir/vm-158/archiv,mp=/shares_archiv
+  # wird ohne bind-mounts betrieben
 
   ### mgrote.smb_fileserver
   smb_users:
@@ -45,31 +31,31 @@
       users_ro: 'kodi'
       users_rw: 'annemariedroessler2 michaelgrote win10'
     - name: 'scans'
-      path: '/shares/scans'
+      path: '/shares_scans'
       users_ro: 'annemariedroessler2 michaelgrote'
       users_rw: 'brother_ads2700w'
     - name: 'papa_backup'
       path: '/shares_papa_backup'
-      users_ro: ''
-      users_rw: 'win10 michaelgrote'
+      users_ro: 'michaelgrote'
+      users_rw: 'win10'
     - name: 'amd'
-      path: '/shares/amd'
-      users_ro: 'navidrome michaelgrote'
-      users_rw: 'annemariedroessler2 win10'
+      path: '/shares_amd'
+      users_ro: 'michaelgrote win10'
+      users_rw: 'annemariedroessler2'
     - name: 'backup'
-      path: '/shares/Backup'
-      users_ro: ''
-      users_rw: 'annemariedroessler2 restic win10 michaelgrote'
+      path: '/shares_backup'
+      users_ro: 'annemariedroessler2'
+      users_rw: 'win10 michaelgrote'
     - name: 'archiv'
       path: '/shares_archiv'
       users_ro: ''
       users_rw: 'michaelgrote win10'
     - name: 'hm'
-      path: '/shares/hm'
+      path: '/shares_hm'
       users_ro: 'win10'
       users_rw: 'michaelgrote'
     - name: 'mg'
-      path: '/shares/mg'
+      path: '/shares_data_crypt'
       users_ro: ''
       users_rw: 'win10 michaelgrote'
     - name: 'musik'
@@ -79,15 +65,19 @@
     - name: 'tmp'
       path: '/shares_tmp'
       users_ro: 'win10'
-      users_rw: 'kodi annemariedroessler2 restic win10 michaelgrote'
+      users_rw: 'kodi annemariedroessler2 win10 michaelgrote'
     - name: 'bilder'
-      path: '/shares/bilder'
+      path: '/shares_bilder'
       users_ro: 'photoprism'
       users_rw: 'annemariedroessler2 michaelgrote win10'
     - name: 'proxmox'
       path: '/shares_pve_backup'
       users_ro: 'michaelgrote'
       users_rw: 'pve win10'
+    - name: 'restic'
+      path: '/shares_restic'
+      users_ro: ''
+      users_rw: 'annemariedroessler2 restic win10 michaelgrote'
   smb_workgroup: WORKGROUP
   smb_min_protocol: "SMB2"
   smb_client_min_protocol: "SMB2"

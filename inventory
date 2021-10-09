@@ -7,7 +7,7 @@ all:
     fileserver:
       hosts:
         fileserver2.grote.lan:
-        fileserver-test.grote.lan:
+        fileserver2-test.grote.lan:
     pihole:
       hosts:
         pihole2-test.grote.lan:
@@ -68,7 +68,6 @@ all:
     test:
       hosts:
         dokuwiki-test.grote.lan:
-        fileserver-test.grote.lan:
         acng-test.grote.lan:
         ansible-test.grote.lan:
         docker-test.grote.lan:
@@ -77,3 +76,4 @@ all:
         gitea-test.grote.lan:
         pihole2-test.grote.lan:
         ntp-server-test.grote.lan:
+        fileserver2-test.grote.lan:

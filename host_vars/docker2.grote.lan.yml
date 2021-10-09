@@ -144,3 +144,6 @@
         env.enable_xfer_radio no
         # Show detailed graphs for each radio
         env.enable_detail_xfer_radio no
+
+  ### mgrote.restic
+  restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker

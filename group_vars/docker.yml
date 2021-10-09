@@ -7,8 +7,7 @@
   pip_install_packages:
     - name: docker # für munin-plugin docker_
   ### mgrote.restic
-  restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker
-  restic_cron_hours: "*/4"
+  restic_cron_hours: "*/6"
   restic_exclude: |
         ._*
         desktop.ini
@@ -18,7 +17,6 @@
         **/**AppData***/**
         /var/lib/docker/volumes/***Musik***
         /var/lib/docker/volumes/***musik***
-        /var/lib/docker/volumes/docker-photoprism_pp_smb_bilder***/**
         # https://github.com/restic/restic/issues/1005
         # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
   ### geerlingguy.munin-node

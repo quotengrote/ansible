@@ -15,24 +15,6 @@ if [ "${condition}" ]; then
 fi
 
 
-# Capacity - Make sure pool capacities are below 80% for best performance. The
-# percentage really depends on how large your volume is. If you have a 128GB
-# SSD then 80% is reasonable. If you have a 60TB raid-z2 array then you can
-# probably set the warning closer to 95%.
-
-maxCapacity={{ zfs_extra_max_usage_health }}
-
-if [ ${problems} -eq 0 ]; then
-  capacity=$(/sbin/zpool list -H -o capacity)
-  for line in ${capacity//%/}
-  do
-    if [ $line -ge $maxCapacity ]; then
-      emailSubject="$emailSubject - Capacity Exceeded"
-      problems=1
-    fi
-  done
-fi
-
 
 # Errors - Check the columns for READ, WRITE and CKSUM (checksum) drive errors
 # on all volumes and all drives using "zpool status". If any non-zero errors

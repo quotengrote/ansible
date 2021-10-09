@@ -2,8 +2,8 @@
   restic_anzahl_versuche_backup: "3" # wie oft soll restic versuchen ein backup zu starten
   restic_wartezeit: "60" # wartezeit zwischen den versuchen
   restic_folders_to_backup: "/usr/local /etc /root /var/www /home" # welche ordner sollen gesichert werden
-  restic_cron_hours: "19" # zu welcher stunde soll das script gestartet werden(nibute wird aus dem hostnamen generiert)
-  restic_repository: "ANY.SMB.SHARE" # smb-share mit dem repository: z.B. "//fileserver2.grote.lan/backup/restic"
+  restic_cron_hours: "19" # zu welcher stunde soll das script gestartet werden(minute wird aus dem hostnamen generiert)
+  restic_repository: "ANY.SMB.SHARE" # smb-share mit dem repository: z.B. "//fileserver2.grote.lan/restic"
   restic_repository_password: XXXXX # password für das repo
   restic_mount: "/mnt/restic" # wohin soll das repo gemountet werden
   restic_mount_user: restic # nutzer für den share/mount

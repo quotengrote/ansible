@@ -19,5 +19,6 @@
         dnodesize: "{{ item.dnodesize  | default('auto') }}"
         atime: "{{ item.atime   | default('off') }}"
         snapdir: "{{ item.snapdir  | default('hidden') }}"
+        recordsize: "{{ item.recordsize | default('128K') }}"
     loop: "{{ zfs_datasets }}"
     when: zfs_datasets is defined # führe nur aus wenn die Variable gesetzt ist

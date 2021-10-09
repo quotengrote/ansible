@@ -66,7 +66,7 @@
   ### mgrote.restic
   restic_folders_to_backup: "/usr/local /etc /root /home"
   restic_cron_hours: "19"
-  restic_repository: "//fileserver2.grote.lan/backup/restic"
+  restic_repository: "//fileserver2.grote.lan/restic"
   restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
   restic_mount: "/mnt/restic"
   restic_mount_user: restic
@@ -142,6 +142,7 @@
       groups: root, docker
       servers:
         - production
+        - test
     - username: root
       password: "{{ lookup('keepass', 'root_linux_password_hash_proxmox', 'password') }}"
       update_password: always

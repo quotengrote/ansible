@@ -7,6 +7,10 @@
   # zpool create -f -o ashift=12 rpool mirror ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0R105094 /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0R105095
   # HDD_DATA_RAIDZ
   # zpool create -f -o ashift=12 hdd_data_raidz raidz /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SG991TJ /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SGA23EJ /dev/disk/by-id/ata-ST8000DM004-2CX188_ZCT1AK0F
+
+
+  ### mgrote.zfs_extra
+  # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
   zfs_datasets: # DatenPools werden hier nicht verwaltet
     - dataset: rpool/vm
       state: present
@@ -56,6 +60,7 @@
       dnodesize: auto
       atime: on
       snapdir: hidden
+      recordsize: 1M
     - dataset: hdd_data_raidz/videos
       state: present
       compression: lz4
@@ -64,6 +69,7 @@
       dnodesize: auto
       atime: on
       snapdir: hidden
+      recordsize: 1M
     - dataset: hdd_data_raidz/music
       state: present
       compression: lz4
@@ -96,66 +102,55 @@
       dnodesize: auto
       atime: on
       snapdir: hidden
-    - dataset: rpool/vm/dir/vm-158/data
+    - dataset: hdd_data_raidz/amd
       state: present
-      compression: lz4
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
       atime: on
       snapdir: hidden
-    - dataset: rpool/vm/dir/vm-158/papa
+    - dataset: hdd_data_raidz/bilder
       state: present
-      compression: lz4
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
       atime: on
       snapdir: hidden
-    - dataset: rpool/vm/dir/vm-158/proxmox
+    - dataset: hdd_data_raidz/hm
       state: present
-      compression: lz4
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
       atime: on
       snapdir: hidden
-    - dataset: rpool/vm/dir/vm-158/videos
+    - dataset: hdd_data_raidz/scans
       state: present
-      compression: lz4
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
       atime: on
       snapdir: hidden
-    - dataset: rpool/vm/dir/vm-158/music
+    - dataset: hdd_data_raidz/restic
       state: present
-      compression: lz4
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
       atime: on
       snapdir: hidden
-    - dataset: rpool/vm/dir/vm-158/tmp
+    - dataset: hdd_data_raidz/backup
       state: present
-      compression: lz4
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
       atime: on
       snapdir: hidden
-    - dataset: rpool/vm/dir/vm-158/archiv
-      state: present
-      compression: lz4
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
-
-  ### mgrote.zfs_extra # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
   zfs_extra_arc_max_size: "8589934592" # 8GB in Bytes
-  zfs_extra_max_usage_health: "90"
   zfs_extra_zfs_pools:
     - name: "rpool"
       cron_minutes_zfs_scrub: "0"
@@ -195,9 +190,32 @@
     - path: 'hdd_data_raidz/pve_backup'
       snapshots: false # deaktiviert sanoid für das dataset
     - path: 'hdd_data_raidz/archiv'
-      template: '3monate'
+      template: '14tage'
       recursive: 'yes'
       snapshots: true
+    - path: hdd_data_raidz/amd
+      recursive: 'no'
+      snapshots: true
+      template: '31tage'
+    - path: hdd_data_raidz/bilder
+      recursive: 'no'
+      snapshots: true
+      template: '14tage'
+    - path: hdd_data_raidz/hm
+      recursive: 'no'
+      snapshots: true
+      template: '14tage'
+    - path: hdd_data_raidz/scans
+      recursive: 'no'
+      snapshots: true
+      template: '3tage'
+    - path: hdd_data_raidz/backup
+      recursive: 'no'
+      snapshots: true
+      template: '31tage'
+    - path: hdd_data_raidz/restic
+      recursive: 'no'
+      snapshots: false
   sanoid_templates:
     - name: '31tage'
       keep_hourly: '24'                        # Aufheben (Stunde)

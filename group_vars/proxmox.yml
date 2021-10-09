@@ -7,8 +7,6 @@
   smart_smartctlmail_cron_minutes: "15"
   smart_smartctlmail_cron_hours: "6"
   smart_smartctlmail_cron_weekday: "3"
-  ### mgrote.zfs_extra # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
-  zfs_extra_max_usage_health: "80"
   ### geerlingguy.munin-node
   munin_node_disabled_plugins:
     - name: meminfo # zu hohe last
