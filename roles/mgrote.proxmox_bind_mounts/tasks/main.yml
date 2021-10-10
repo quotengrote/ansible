@@ -1,0 +1,7 @@
+---
+  - name: loop tasks
+    include_tasks: bm.yml
+    loop: "{{ pve_bind_mounts }}"
+    when:
+      - pve_bind_mounts is defined
+    # Loope durch jeden bind-mount

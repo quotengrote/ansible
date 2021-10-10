@@ -1,0 +1,13 @@
+---
+  - name: restart lxc
+    become: true
+    command: "pct reboot {{ item.vmid }}"
+    when:
+      - "reboot_{{item.vmid}} is defined"
+      - "reboot_{{item.vmid}} is true"
+    failed_when: false
+    loop: "{{ pve_bind_mounts }}"
+    # rebote den lxc wenn:
+    # - sein variable auf true gesetzt ist
+    # wird bei mehreren moiunts mehrfach pro host aufgerufen
+    # aber nur einmal ausgeführt

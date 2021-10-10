@@ -215,7 +215,8 @@
       template: '31tage'
     - path: hdd_data_raidz/restic
       recursive: 'no'
-      snapshots: false
+      snapshots: true
+      template: '3tage'
   sanoid_templates:
     - name: '31tage'
       keep_hourly: '24'                        # Aufheben (Stunde)
@@ -260,3 +261,62 @@
   cv4pve_vmid: all,-127,-158,-112,-100
   cv4pve_keep_snapshots: 5
   cv4pve_dl_link: "https://github.com/Corsinvest/cv4pve-autosnap/releases/download/v1.10.0/cv4pve-autosnap-linux-x64.zip"
+
+  ### mgrote.proxmox_bind_mounts
+  pve_bind_mounts:
+    - vmid: 105
+      mp_nr: 1
+      mp_path_host: /rpool/vm/dir/fileserver2_test
+      mp_path_guest: /share
+    - vmid: 127
+      mp_nr: 0
+      mp_path_host: /hdd_data_raidz/videos
+      mp_path_guest: /shares_videos
+    - vmid: 127
+      mp_nr: 1
+      mp_path_host: /hdd_data_raidz/data_crypt
+      mp_path_guest: /shares_data_crypt
+    - vmid: 127
+      mp_nr: 2
+      mp_path_host: /hdd_data_raidz/pve_backup
+      mp_path_guest: /shares_pve_backup
+    - vmid: 127
+      mp_nr: 3
+      mp_path_host: /hdd_data_raidz/papa_backup
+      mp_path_guest: /shares_papa_backup
+    - vmid: 127
+      mp_nr: 4
+      mp_path_host: /hdd_data_raidz/music
+      mp_path_guest: /shares_music
+    - vmid: 127
+      mp_nr: 5
+      mp_path_host: /hdd_data_raidz/tmp
+      mp_path_guest: /shares_tmp
+    - vmid: 127
+      mp_nr: 6
+      mp_path_host: /hdd_data_raidz/archiv
+      mp_path_guest: /shares_archiv
+    - vmid: 127
+      mp_nr: 7
+      mp_path_host: /hdd_data_raidz/bilder
+      mp_path_guest: /shares_bilder
+    - vmid: 127
+      mp_nr: 8
+      mp_path_host: /hdd_data_raidz/hm
+      mp_path_guest: /shares_hm
+    - vmid: 127
+      mp_nr: 9
+      mp_path_host: /hdd_data_raidz/scans
+      mp_path_guest: /shares_scans
+    - vmid: 127
+      mp_nr: 10
+      mp_path_host: /hdd_data_raidz/restic
+      mp_path_guest: /shares_restic
+    - vmid: 127
+      mp_nr: 11
+      mp_path_host: /hdd_data_raidz/amd
+      mp_path_guest: /shares_amd
+    - vmid: 127
+      mp_nr: 12
+      mp_path_host: /hdd_data_raidz/backup
+      mp_path_guest: /shares_backup

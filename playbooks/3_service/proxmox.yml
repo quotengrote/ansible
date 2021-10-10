@@ -20,3 +20,5 @@
         when: "'pve2.grote.lan' in inventory_hostname" }
     - { role: mgrote.r8152_kernel_module,
         tags: "r8152" }
+    - { role: mgrote.proxmox_bind_mounts,
+        tags: "bindmounts" }

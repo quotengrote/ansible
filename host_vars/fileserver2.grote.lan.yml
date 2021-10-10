@@ -1,19 +1,4 @@
 ---
-  # Bind Mounts - fileserver
-  # pct set 127 -mp0 /hdd_data_raidz/videos,mp=/shares_videos
-  # pct set 127 -mp1 /hdd_data_raidz/data_crypt,mp=/shares_data_crypt
-  # pct set 127 -mp2 /hdd_data_raidz/pve_backup,mp=/shares_pve_backup
-  # pct set 127 -mp3 /hdd_data_raidz/papa_backup,mp=/shares_papa_backup
-  # pct set 127 -mp4 /hdd_data_raidz/music,mp=/shares_music
-  # pct set 127 -mp5 /hdd_data_raidz/tmp,mp=/shares_tmp
-  # pct set 127 -mp6 /hdd_data_raidz/archiv,mp=/shares_archiv
-  # pct set 127 -mp7 /hdd_data_raidz/bilder,mp=/shares_bilder
-  # pct set 127 -mp8 /hdd_data_raidz/hm,mp=/shares_hm
-  # pct set 127 -mp9 /hdd_data_raidz/scans,mp=/shares_scans
-  # pct set 127 -mp10 /hdd_data_raidz/restic,mp=/shares_restic
-  # pct set 127 -mp11 /hdd_data_raidz/amd,mp=/shares_amd
-  # pct set 127 -mp12 /hdd_data_raidz/backup,mp=/shares_backup
-
   ### mgrote.smb_fileserver
   smb_users:
     - name: 'annemariedroessler2'

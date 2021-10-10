@@ -1,0 +1,29 @@
+---
+  - name: read config
+    become: true
+    shell: "pct config {{ item.vmid }} | grep \"mp{{ item.mp_nr }}: {{ item.mp_path_host }},mp={{ item.mp_path_guest }}\""
+    register: config
+    changed_when: false
+    failed_when: false
+    # prüfe ob bind mount schon vorhanden ist
+    # exit-code wird unten geprüft
+
+#  - name: debug config
+#    ansible.builtin.debug:
+#      msg: "{{ config }}"
+
+  - name: add bind mounts to container
+    become: true
+    command: "pct set {{ item.vmid }} -mp{{ item.mp_nr }} {{ item.mp_path_host }},mp={{ item.mp_path_guest }}"
+    when: not config.rc == 0
+    register: restart
+    notify: restart lxc
+    # füge bind-mount hinzu falls er fehlt, also rc ungleich 0
+    # pro bind-mount
+
+  - name: set reboot var
+    set_fact:
+      "reboot_{{ item.vmid }}": true
+    when: restart.changed
+    # setze reboot variable fur handler
+    # z.B. reboot_105: true
