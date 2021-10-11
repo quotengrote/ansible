@@ -14,7 +14,7 @@
   zfs_datasets: # DatenPools werden hier nicht verwaltet
     - dataset: rpool/vm
       state: present
-      compression: lz4
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
@@ -22,7 +22,15 @@
       snapdir: hidden
     - dataset: rpool/vm/dir/fileserver2_test
       state: present
-      compression: lz4
+      compression: zstd
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
+    - dataset: rpool/ssd_share
+      state: present
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
@@ -30,7 +38,7 @@
       snapdir: hidden
     - dataset: rpool/vm/dir
       state: present
-      compression: lz4
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
@@ -38,7 +46,7 @@
       snapdir: hidden
     - dataset: rpool/vm/zvol
       state: present
-      compression: lz4
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
@@ -46,7 +54,7 @@
       snapdir: hidden
     - dataset: rpool/vm/qcow
       state: present
-      compression: lz4
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
@@ -71,7 +79,7 @@
       recordsize: 1M
     - dataset: hdd_data_raidz/videos
       state: present
-      compression: lz4
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
@@ -80,7 +88,7 @@
       recordsize: 1M
     - dataset: hdd_data_raidz/music
       state: present
-      compression: lz4
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
@@ -88,7 +96,7 @@
       snapdir: hidden
     - dataset: hdd_data_raidz/data_crypt
       state: present
-      compression: lz4
+      compression: zstd
       sync: disabled
       xattr: sa
       dnodesize: auto
@@ -225,6 +233,11 @@
       recursive: 'no'
       snapshots: true
       template: '3tage'
+    - path: rpool/ssd_share
+      recursive: 'no'
+      snapshots: true
+      template: '3tage'
+
   sanoid_templates:
     - name: '31tage'
       keep_hourly: '24'                        # Aufheben (Stunde)
@@ -328,3 +341,7 @@
       mp_nr: 12
       mp_path_host: /hdd_data_raidz/backup
       mp_path_guest: /shares_backup
+    - vmid: 127
+      mp_nr: 13
+      mp_path_host: /rpool/ssd_share
+      mp_path_guest: /shares_vm

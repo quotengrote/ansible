@@ -75,6 +75,12 @@
       path: '/shares_restic'
       users_ro: ''
       users_rw: 'annemariedroessler2 restic win10 michaelgrote'
+    - name: 'vm'
+      path: '/shares_vm'
+      users_ro: ''
+      users_rw: 'michaelgrote'
+
+
   smb_workgroup: WORKGROUP
   smb_min_protocol: "SMB2"
   smb_client_min_protocol: "SMB2"
