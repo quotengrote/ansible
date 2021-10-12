@@ -166,6 +166,22 @@
       dnodesize: auto
       atime: on
       snapdir: hidden
+    - dataset: hdd_data_raidz/buecher
+      state: present
+      compression: zstd
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
+    - dataset: hdd_data_raidz/programme
+      state: present
+      compression: zstd
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
   zfs_extra_arc_max_size: "8589934592" # 8GB in Bytes
   zfs_extra_zfs_pools:
     - name: "rpool"
@@ -183,10 +199,6 @@
 
   ### mgrote.zfs_sanoid
   sanoid_datasets:
-    - path: 'hdd_data_raidz/data_crypt'
-      template: '31tage'
-      recursive: 'no'
-      snapshots: true
     - path: 'hdd_data_raidz/videos'
       template: '14tage'
       recursive: 'yes'
@@ -237,6 +249,14 @@
       recursive: 'no'
       snapshots: true
       template: '3tage'
+    - path: hdd_data_raidz/programme
+      recursive: 'no'
+      snapshots: true
+      template: '14tage'
+    - path: hdd_data_raidz/buecher
+      recursive: 'no'
+      snapshots: true
+      template: '14tage'
 
   sanoid_templates:
     - name: '31tage'
@@ -249,7 +269,7 @@
       autosnap: 'yes'                          # Automatisches erstellen von Snapshots
       autoprune: 'yes'
     - name: '14tage'
-      keep_hourly: '0'
+      keep_hourly: '24'
       keep_daily: '14'
       keep_monthly: '0'
       keep_yearly: '0'
@@ -258,7 +278,7 @@
       autosnap: 'yes'
       autoprune: 'yes'
     - name: '3tage'
-      keep_hourly: '0'
+      keep_hourly: '24'
       keep_daily: '3'
       keep_monthly: '0'
       keep_yearly: '0'
@@ -267,7 +287,7 @@
       autosnap: 'yes'
       autoprune: 'yes'
     - name: '3monate'
-      keep_hourly: '0'
+      keep_hourly: '24'
       keep_daily: '3'
       keep_monthly: '3'
       keep_yearly: '0'
@@ -293,10 +313,6 @@
       mp_nr: 0
       mp_path_host: /hdd_data_raidz/videos
       mp_path_guest: /shares_videos
-    - vmid: 127
-      mp_nr: 1
-      mp_path_host: /hdd_data_raidz/data_crypt
-      mp_path_guest: /shares_data_crypt
     - vmid: 127
       mp_nr: 2
       mp_path_host: /hdd_data_raidz/pve_backup
@@ -345,3 +361,11 @@
       mp_nr: 13
       mp_path_host: /rpool/ssd_share
       mp_path_guest: /shares_vm
+    - vmid: 127
+      mp_nr: 14
+      mp_path_host: /hdd_data_raidz/buecher
+      mp_path_guest: /shares_buecher
+    - vmid: 127
+      mp_nr: 15
+      mp_path_host: /hdd_data_raidz/programme
+      mp_path_guest: /shares_programme
