@@ -49,8 +49,8 @@
       users_rw: 'michaelgrote win10'
     - name: 'hm'
       path: '/shares_hm'
-      users_ro: 'win10'
-      users_rw: 'michaelgrote'
+      users_ro: ''
+      users_rw: 'michaelgrote win10'
     - name: 'musik'
       path: '/shares_music'
       users_ro: 'navidrome kodi annemariedroessler2 '
@@ -77,12 +77,12 @@
       users_rw: 'michaelgrote'
     - name: 'buecher'
       path: '/shares_buecher'
-      users_ro: 'annemariedroessler2 win10'
-      users_rw: 'michaelgrote'
+      users_ro: 'annemariedroessler2'
+      users_rw: 'michaelgrote win10'
     - name: 'programme'
       path: '/shares_programme'
-      users_ro: 'annemariedroessler2 win10'
-      users_rw: 'michaelgrote'
+      users_ro: 'annemariedroessler2'
+      users_rw: 'michaelgrote win10'
 
 
   smb_workgroup: WORKGROUP

@@ -21,9 +21,23 @@
     # füge bind-mount hinzu falls er fehlt, also rc ungleich 0
     # pro bind-mount
 
-  - name: set reboot var
+    # schreibe vm id in die Liste "reboot"
+  - name: set reboot list
     set_fact:
-      "reboot_{{ item.vmid }}": true
+      reboot:
+        - "{{ item.vmid }}"
     when: restart.changed
-    # setze reboot variable fur handler
-    # z.B. reboot_105: true
+
+    # Füge die leere Liste "lists_merged" aus den defaults, mit der Liste "reboot" zusammen. Nur wenn auch etwas geändert wurde, daher "when:..."
+  - name: merge reboot lists
+    set_fact:
+      lists_merged: "{{ lists_merged + reboot }}"
+    when: restart.changed
+    # https://blog.crisp.se/2016/10/20/maxwenzin/how-to-append-to-lists-in-ansible
+
+#  - name: debug config
+#    ansible.builtin.debug:
+#      msg: "{{ lists_merged | unique }}"
+     # unique Filter sorgt dafür das es keine doppelten Elemente gibt
+     # https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html#set-theory-filters
+     # https://www.reddit.com/r/ansible/comments/8cp86c/how_do_i_remove_duplicate_items_from_a_variable/
