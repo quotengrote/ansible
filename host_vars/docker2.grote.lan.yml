@@ -80,7 +80,7 @@
         [mt_system_crs309]
         user root
         env.ssh_user munin
-        env.ssh_password "{{ lookup('keepass', 'crs309_munin_user', 'password') }}"
+        env.ssh_password {{ lookup('keepass', 'crs309_munin_user', 'password') }}
         env.ssh_host 192.168.2.223
     - name: mt_system_rb5009
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/mikrotik/mt_system
@@ -88,7 +88,7 @@
         [mt_system_rb5009]
         user root
         env.ssh_user munin
-        env.ssh_password "{{ lookup('keepass', 'rb5009_munin_user', 'password') }}"
+        env.ssh_password {{ lookup('keepass', 'rb5009_munin_user', 'password') }}
         env.ssh_host 192.168.2.1
     - name: unifi
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/unifi
@@ -98,7 +98,7 @@
         # point to a read-only account.
         env.user munin
         # Password to login to unifi controller API. Default is "ubnt"
-        env.pass "{{ lookup('keepass', 'unifi_munin_user', 'password') }}
+        env.pass {{ lookup('keepass', 'unifi_munin_user', 'password') }}
         # URL of the API, with port if needed.  No trailing slash.
         env.api_url https://docker2.grote.lan:8443
         # Verify SSL certificate name against host.
