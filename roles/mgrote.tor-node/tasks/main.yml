@@ -1,0 +1,14 @@
+---
+  - name: install packages
+    become: yes
+    ansible.builtin.package:
+      name: tor
+      state: present
+    notify: restart tor
+
+  - name: templating torrc
+    become: yes
+    ansible.builtin.template:
+      src: "torrc"
+      dest: "/etc/tor/torrc"
+    notify: restart tor

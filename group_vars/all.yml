@@ -28,6 +28,13 @@
       config: |
         [lvm_*]
         user root
+    - name: fail2ban
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
+      config: |
+        [fail2ban]
+        env.client /usr/bin/fail2ban-client
+        env.config_dir /etc/fail2ban
+        user root
   ### mgrote.dotfiles
   dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles
   dotfiles_repo_path: /home/mg/dotfiles
@@ -130,6 +137,7 @@
         - acng
         - ansible
         - physical
+        - tor
         - gitea
         - laptop
         - vmtest

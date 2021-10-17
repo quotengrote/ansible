@@ -5,3 +5,4 @@
   f2b_maxretry: 5
   f2b_destemail: michael.grote@posteo.de
   f2b_sender: info@mgrote.net
+  f2b_send_email_report: true

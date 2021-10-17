@@ -63,7 +63,7 @@
       config: |
         [nextcloud_mgrote.next-cloud.org]
         env.username munin
-        env.password "{{ lookup('keepass', 'nextcloud_munin_user', 'password') }}"
+        env.password {{ lookup('keepass', 'nextcloud_munin_user', 'password') }}
         env.api_path /ocs/v2.php/apps/serverinfo/api/v1/info
         env.scheme https
     - name: docker_cpu

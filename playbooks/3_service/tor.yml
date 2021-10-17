@@ -1,0 +1,4 @@
+---
+- hosts: tor
+  roles:
+    - { role: mgrote.tor-node, tags: "tor", become: true }

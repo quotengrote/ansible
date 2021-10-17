@@ -1,4 +1,4 @@
 ---
   - hosts: all
     roles:
-      - { role: mgrote.restic, tags: "restic" }
+      - { role: mgrote.restic, tags: "restic", when: "not 'tor' in group_names" }

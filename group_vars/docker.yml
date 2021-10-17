@@ -44,6 +44,12 @@
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
     - name: docker_volumes
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
-
+    - name: fail2ban
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
+      config: |
+        [fail2ban]
+        env.client /usr/bin/fail2ban-client
+        env.config_dir /etc/fail2ban
+        user root
   ### mgrote.docker-compose-deploy
   docker_compose_base_dir: /home/mg/docker

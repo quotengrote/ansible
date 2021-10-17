@@ -1,0 +1,23 @@
+{{ file_header | default () }}
+
+Nickname {{ tor_relay_name }}
+ORPort {{ tor_or_port }}
+ExitRelay 0
+SocksPort {{ tor_socks_port }}
+ControlSocket {{ tor_control_socket }}
+ContactInfo {{ tor_contact_info }}
+ControlPort {{ tor_control_port }}
+CookieAuthentication 1
+ExitPolicy reject *:*
+
+{% if tor_bandwidth_rate is defined %}
+BandwidthRate {{ tor_bandwidth_rate }}
+{% endif %}
+
+{% if tor_bandwidth_burst is defined %}
+BandwidthBurst {{ tor_bandwidth_burst }}
+{% endif %}
+
+{% if tor_my_family is defined %}
+MyFamily {{ tor_my_family }}
+{% endif %}

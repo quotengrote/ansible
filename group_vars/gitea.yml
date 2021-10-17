@@ -9,12 +9,12 @@
       comment: 'ssh'
       from_ip: 0.0.0.0/0
     - rule: allow
-      to_port: 3000
+      to_port: "{{ gitea_http_port }}"
       protocol: tcp
       comment: 'gitea'
       from_ip: 0.0.0.0/0
     - rule: allow
-      to_port: 2222
+      to_port: "{{ gitea_ssh_port }}"
       protocol: tcp
       comment: 'gitea'
       from_ip: 0.0.0.0/0

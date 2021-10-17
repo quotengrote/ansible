@@ -57,3 +57,10 @@
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/pihole/pihole_blocked_domains
     - name: pihole_ads_percentage
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/pihole/pihole_ads_percentage
+    - name: fail2ban
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
+      config: |
+        [fail2ban]
+        env.client /usr/bin/fail2ban-client
+        env.config_dir /etc/fail2ban
+        user root

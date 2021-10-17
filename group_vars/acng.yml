@@ -12,7 +12,7 @@
       comment: 'munin'
       from_ip: 192.168.2.144/24
     - rule: allow
-      to_port: 9999
+      to_port: "{{ acng_server_port }}"
       comment: 'acng'
       from_ip: 0.0.0.0/0
   ### mgrote.acng
@@ -35,3 +35,10 @@
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/acng
       config: |
         env.logfile /var/log/apt-cacher-ng/apt-cacher.log
+    - name: fail2ban
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
+      config: |
+        [fail2ban]
+        env.client /usr/bin/fail2ban-client
+        env.config_dir /etc/fail2ban
+        user root

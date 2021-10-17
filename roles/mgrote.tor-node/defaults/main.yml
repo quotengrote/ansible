@@ -1,0 +1,13 @@
+---
+  # required
+  # [a-zA-Z0-9]
+  tor_relay_name: tor1name
+  tor_or_port: 443
+  tor_socks_port: 0
+  tor_control_socket: 0
+  tor_contact_info: webmaster@domain.local
+  tor_control_port: 9051
+  # optional
+  # tor_my_family: name
+  # tor_bandwidth_rate:
+  # tor_bandwidth_burst:

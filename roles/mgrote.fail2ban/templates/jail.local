@@ -14,7 +14,10 @@ sender = {{ f2b_sender }}
 #action = %(action_mw)s
 
 # same as action_mw but also send relevant log lines
+{% if f2b_send_email_report %}
 action = %(action_mwl)s
+{% endif %}
+
 
 # JAILS
 [sshd]

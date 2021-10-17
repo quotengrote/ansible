@@ -1,0 +1,7 @@
+---
+  - name: restart tor
+    become: yes
+    systemd:
+      name: tor
+      enabled: yes
+      state: restarted
