@@ -86,6 +86,7 @@
     - geoipupdate # für munin-tor_
     - python3-geoip # für munin-tor_
     - nyx # tor-cli-monitoring
+    - open-vm-tools
   ### mgrote.fail2ban
   f2b_bantime: 3600
   f2b_findtime: 600

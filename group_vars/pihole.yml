@@ -10,6 +10,7 @@
       to_port: 80
       comment: 'pihole-webgui'
       from_ip: 0.0.0.0/0
+      protocol: tcp
     - rule: allow
       to_port: 4949
       protocol: tcp
