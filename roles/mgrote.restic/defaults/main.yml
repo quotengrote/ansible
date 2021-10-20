@@ -15,3 +15,4 @@
         **/**cache***/**
         **/**Cache***/**
         **/**AppData***/**
+  restic_enable_role: true

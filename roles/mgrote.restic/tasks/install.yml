@@ -1,0 +1,9 @@
+---
+  - name: install restic-packages
+    become: yes
+    ansible.builtin.package:
+      name:
+        - restic
+        - logrotate
+        - cifs-utils
+      state: present

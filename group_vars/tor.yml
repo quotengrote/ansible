@@ -94,3 +94,5 @@
   f2b_findtime: 600
   f2b_maxretry: 3
   f2b_send_email_report: false
+  ### mgrote.restic
+  restic_enable_role: false

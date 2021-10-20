@@ -70,6 +70,7 @@
   ### mgrote.apt_manage_sources
   manage_sources_apt_proxy: "acng.grote.lan:9999"
   ### mgrote.restic
+  restic_enable_role: true
   restic_folders_to_backup: "/usr/local /etc /root /home"
   restic_cron_hours: "19"
   restic_repository: "//fileserver2.grote.lan/restic"

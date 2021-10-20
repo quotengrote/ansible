@@ -1,0 +1,15 @@
+---
+  - name: create /etc/restic
+    become: yes
+    ansible.builtin.file:
+      path: /etc/restic
+      state: directory
+
+  - name: create restic mount-directory
+    become: yes
+    ansible.builtin.file:
+      path: "{{ restic_mount }}"
+      state: directory
+      owner: root
+      group: root
+      mode: 0777
