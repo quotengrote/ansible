@@ -7,8 +7,7 @@ all:
     tor:
       hosts:
         tor1-test.grote.lan:
-        tor1.internet:
-          ansible_host: 19d8ffe.online-server.cloud
+        tor1.mgrote.net:
     fileserver:
       hosts:
         fileserver2.grote.lan:
@@ -70,7 +69,7 @@ all:
         docker2.grote.lan:
         docker3.grote.lan:
         docker4.grote.lan:
-        tor1.internet:
+        tor1.mgrote.net:
     test:
       hosts:
         dokuwiki-test.grote.lan:
