@@ -1,4 +1,6 @@
 ---
+  ### mgrote.apt_manage_sources
+  manage_sources_apt_proxy: ""
   ### mgrote.tor-node
   tor_relay_name: tor1mgrote
   tor_or_port: 9001

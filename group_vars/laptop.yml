@@ -52,7 +52,7 @@
     - python3-pip
     - gramps # stammbaum
   ### mgrote.apt_manage_sources
-  manage_sources_apt_proxy_url: ""
+  manage_sources_apt_proxy: ""
   ### mgrote.ntp_chrony_server
   ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
   ntp_chrony_servers: # welche Server sollen befragt werden

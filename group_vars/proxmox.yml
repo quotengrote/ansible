@@ -68,6 +68,8 @@
         env.client /usr/bin/fail2ban-client
         env.config_dir /etc/fail2ban
         user root
+  ### mgrote.apt_manage_sources
+  manage_sources_apt_proxy: ""
   # Ansible Variablen
   ### sudo
   sudo: false

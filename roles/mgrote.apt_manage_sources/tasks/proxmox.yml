@@ -5,8 +5,7 @@
       src: apt.conf
       dest: "{{ apt_proxy_apt_conf_path | default ('/etc/apt/apt.conf') }}"
       backup: yes
-    register: copy_src
-    when: manage_sources_apt_proxy_server is defined
+    notify: update package lists
 
   - name: remove enterprise-Repository
     become: yes
@@ -24,7 +23,7 @@
     ansible.builtin.apt_key:
       url: "{{ manage_sources_apt_repo_key_url }}"
       state: present
-    register: copy_src
+    notify: update package lists
     when: pve_no_subscription_repo_keys.stat.exists == false
 
   - name: add pve-no-subscription repo
@@ -34,4 +33,4 @@
       state: present
       filename: pve-no-subscription
       update_cache: no
-    register: copy_src
+    notify: update package lists

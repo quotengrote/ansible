@@ -3,6 +3,3 @@
     roles:
       - role: mgrote.apt_manage_sources
         tags: "apt_sources"
-        when:
-          - "not 'laptop' in group_names"
-          - "not 'tor' in group_names"

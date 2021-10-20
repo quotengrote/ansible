@@ -1,0 +1,5 @@
+---
+  - name: update package lists # noqa 503 503
+    become: yes
+    ansible.builtin.apt:
+      update_cache: yes
