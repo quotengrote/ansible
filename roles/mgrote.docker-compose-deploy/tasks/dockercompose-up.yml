@@ -32,6 +32,14 @@
       version: "{{ item.git_branch | default ('master') }}"
     register: repo
 
+  - name: set owner recursive for repo
+    file:
+      path: "{{ project_dir }}"
+      owner: "{{ item.os_username }}"
+      group: "{{ item.os_username }}"
+      recurse: yes
+    when: repo is changed
+
   - name: create networks - "{{ item.name }}"
     ansible.builtin.shell: "docker network create {{ item.network_name }}" # erstelle network
     when: "item.network_name is defined" # wenn network_name definiert ist

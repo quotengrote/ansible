@@ -22,6 +22,7 @@ docker_compose_projects:
     network_name: homer-network                         # docker-network to create; optional; just dont let it empty, remove it
     state: present|absent                               # should the project be present or absent?
     git_branch: master                                  # branch to checkout; optional; just dont let it empty, remove it
+    os_username: mg                                     # user who should get permissions on the directory
 ```
 
 

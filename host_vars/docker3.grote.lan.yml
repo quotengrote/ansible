@@ -7,18 +7,21 @@
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
       state: present
+      os_username: mg
     - name: navidrome-mg
       dir_name: docker-navidrome-mg
       repository_url: git.mgrote.net/mg/docker-navidrome-mg
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
       state: present
+      os_username: mg
     - name: nightscout
       dir_name: docker-nightscout
       repository_url: git.mgrote.net/mg/docker-nightscout
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
       state: present
+      os_username: mg
     - name: traefik
       dir_name: docker-traefik
       repository_url: git.mgrote.net/mg/docker-traefik
@@ -26,10 +29,12 @@
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
       network_name: nw_proxy_traefik
       state: present
+      os_username: mg
     - name: watchtower
       dir_name: docker-watchtower
       repository_url: git.mgrote.net/mg/docker-watchtower
       state: present
+      os_username: mg
 
   ### mgrote.restic
   restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker

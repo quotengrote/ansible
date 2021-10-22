@@ -6,6 +6,7 @@
       dir_name: docker-homer
       repository_url: git.mgrote.net/mg/docker-homer
       state: present
+      os_username: mg
       git_branch: test
     - name: watchtower
       dir_name: docker-watchtower
@@ -13,14 +14,12 @@
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
       state: present
-    - name: lazydocker
-      dir_name: docker-lazydocker
-      repository_url: git.mgrote.net/mg/docker-lazydocker
-      state: absent # danach löschen
+      os_username: mg
     - name: munin-master-test
       dir_name: docker-munin-master-test
       repository_url: git.mgrote.net/mg/docker-munin-master_test
       state: present
+      os_username: mg
   ### geerlingguy.munin-node
   munin_node_allowed_cidrs: [0.0.0.0/0] # weil der munin-server aus einem anderen subnet zugreift
   munin_node_allowed_ips: # weil der munin-server aus einem anderen subnet zugreift
