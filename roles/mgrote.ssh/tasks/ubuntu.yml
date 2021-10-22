@@ -1,0 +1,15 @@
+---
+  - name: source ubuntu vars
+    include_vars: ubuntu.yml
+
+  - name: template sshd_config
+    become: true
+    ansible.builtin.template:
+      src: ubuntu.j2
+      dest: /etc/ssh/sshd_config
+      owner: root
+      group: root
+      mode: '0644'
+      validate: "/usr/sbin/sshd -T -f %s"
+      backup: true
+    notify: restart sshd

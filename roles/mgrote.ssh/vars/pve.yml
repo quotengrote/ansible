@@ -1,0 +1,5 @@
+---
+  ssh_permit_root_login: "yes"
+  ssh_password_authentication: "yes"
+  ssh_print_motd: "no"
+  ssh_print_lastlog: "no"

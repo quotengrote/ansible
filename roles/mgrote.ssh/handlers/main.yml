@@ -1,5 +1,5 @@
 ---
-  - name: restart_sshd
+  - name: restart sshd
     become: yes
     systemd:
       name: sshd

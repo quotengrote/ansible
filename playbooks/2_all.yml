@@ -10,7 +10,7 @@
   - import_playbook: base/vim.yml
   - import_playbook: base/postfix.yml
   - import_playbook: base/ufw.yml
-  - import_playbook: base/ssh_pass_login.yml
+  - import_playbook: base/ssh.yml
   - import_playbook: base/f2b.yml
   - import_playbook: base/monitoring.yml
   - import_playbook: base/remove_snapd.yml
