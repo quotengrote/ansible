@@ -44,15 +44,6 @@
       - 90-updates-available
       - 91-release-upgrade
 
-  - name: delete "Last Login" - Message
-    become: yes
-    ansible.builtin.lineinfile:
-      path: /etc/ssh/sshd_config
-      regexp: "#PrintLastLog yes"
-      line: "PrintLastLog no"
-      backrefs: yes
-    notify: restart_sshd
-
   - name: delete "no warranty" - Message
     become: yes
     ansible.builtin.file:

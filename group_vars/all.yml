@@ -1,5 +1,6 @@
 ---
   ### wird in vielen Rollen verwendet
+  ssh_public_key_mg: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAp7z2WWUS626wY4laQJNGVYs5uOowrSOjd9RLsoPV5GWU46lsD+Q7CblqcBflvkzFiU16bzI0QZcQ9YP5M5LcYreCqCIq2HdeA4/hgIhlBGAzgp4mK8gZsEoCd2rs5888RA8T/oGnAoP0FXBegm2XmXTmt3826ZZUektCanSipMzrT3XUDZDnf1sTY60Fu8GK4hcRIFI7spM0u9upCYXVOrygBmoBQ5GlOyGEPyXs1Am/PERcVZFUPS0mGJ0COVCgEOaVvM8kEn5dK/QpmKqE8OMBsRdQ51pj9BMLNz/0IRnF6OxHDfEyLuqNPZuuBZc+/pULaZefCgjKGL1zXIFFlw==
   empfaenger_mail: michael.grote@posteo.de
   file_header: |
     #----------------------------------------------------------------#
@@ -114,7 +115,7 @@
     - username: mg
       password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
       update_password: on_create
-      ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAp7z2WWUS626wY4laQJNGVYs5uOowrSOjd9RLsoPV5GWU46lsD+Q7CblqcBflvkzFiU16bzI0QZcQ9YP5M5LcYreCqCIq2HdeA4/hgIhlBGAzgp4mK8gZsEoCd2rs5888RA8T/oGnAoP0FXBegm2XmXTmt3826ZZUektCanSipMzrT3XUDZDnf1sTY60Fu8GK4hcRIFI7spM0u9upCYXVOrygBmoBQ5GlOyGEPyXs1Am/PERcVZFUPS0mGJ0COVCgEOaVvM8kEn5dK/QpmKqE8OMBsRdQ51pj9BMLNz/0IRnF6OxHDfEyLuqNPZuuBZc+/pULaZefCgjKGL1zXIFFlw==  #generieren: ssh-keygen -o; für putty ändern https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/ggcs/Change_private_key_format_for_Putty/Change_private_key_format_for_Putty.html#section2
+      ssh_key: "{{ ssh_public_key_mg }}"
       use_sudo: yes
       use_sudo_nopass: yes
       user_state: present
@@ -124,7 +125,7 @@
     - username: mg
       password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
       update_password: on_create
-      ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAp7z2WWUS626wY4laQJNGVYs5uOowrSOjd9RLsoPV5GWU46lsD+Q7CblqcBflvkzFiU16bzI0QZcQ9YP5M5LcYreCqCIq2HdeA4/hgIhlBGAzgp4mK8gZsEoCd2rs5888RA8T/oGnAoP0FXBegm2XmXTmt3826ZZUektCanSipMzrT3XUDZDnf1sTY60Fu8GK4hcRIFI7spM0u9upCYXVOrygBmoBQ5GlOyGEPyXs1Am/PERcVZFUPS0mGJ0COVCgEOaVvM8kEn5dK/QpmKqE8OMBsRdQ51pj9BMLNz/0IRnF6OxHDfEyLuqNPZuuBZc+/pULaZefCgjKGL1zXIFFlw==
+      ssh_key: "{{ ssh_public_key_mg }}"
       use_sudo: yes
       use_sudo_nopass: yes
       user_state: present
@@ -154,7 +155,6 @@
     - username: root
       password: "{{ lookup('keepass', 'root_linux_password_hash_proxmox', 'password') }}"
       update_password: always
-      ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAp7z2WWUS626wY4laQJNGVYs5uOowrSOjd9RLsoPV5GWU46lsD+Q7CblqcBflvkzFiU16bzI0QZcQ9YP5M5LcYreCqCIq2HdeA4/hgIhlBGAzgp4mK8gZsEoCd2rs5888RA8T/oGnAoP0FXBegm2XmXTmt3826ZZUektCanSipMzrT3XUDZDnf1sTY60Fu8GK4hcRIFI7spM0u9upCYXVOrygBmoBQ5GlOyGEPyXs1Am/PERcVZFUPS0mGJ0COVCgEOaVvM8kEn5dK/QpmKqE8OMBsRdQ51pj9BMLNz/0IRnF6OxHDfEyLuqNPZuuBZc+/pULaZefCgjKGL1zXIFFlw==
       use_sudo: yes
       use_sudo_nopass: yes
       user_state: present
