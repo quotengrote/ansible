@@ -140,6 +140,7 @@
         - physical
         - tor
         - gitea
+        - minio
         - laptop
         - vmtest
     - username: munin

@@ -1,0 +1,47 @@
+---
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+      from_ip: 192.168.2.0/24
+    - rule: allow
+      to_port: 4949
+      protocol: tcp
+      comment: 'munin'
+      from_ip: 192.168.2.144/24
+    - rule: allow
+      to_port: "{{ minio_port }}"
+      protocol: tcp
+      comment: 'minio'
+      from_ip: 192.168.2.0/24
+    - rule: allow
+      to_port: "{{ minio_console_port }}"
+      protocol: tcp
+      comment: 'minio-mgmt'
+      from_ip: 192.168.2.0/24
+
+  ### mgrote.minio
+  minio_download_url: https://dl.min.io/server/minio/release/linux-amd64/minio
+
+  minio_bin_path: /usr/local/bin
+  minio_volumes_base_dir: /bm/s3/
+  minio_config_dir: /etc/minio
+
+  minio_fqdn: "" # leer, damit wird an alle ips gebunden
+  minio_port: 9001 # Port für Request
+  minio_console_port: 34081 # Port für Mgmt
+
+  minio_root_user: mg_minio_root
+  minio_root_password: "{{ lookup('keepass', 'minio_root_password', 'password') }}"
+
+  minio_user: minio-user
+  minio_group: minio-user
+
+  minio_server_url: "" # leer, wie "nicht gesetzt"
+  minio_browser_redirect_url: "" # leer, wie "nicht gesetzt"
+
+  # Aufruf:
+  # intern: minio1.grote.lan:9000
+  # extern: s3.mgrote.net

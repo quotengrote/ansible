@@ -1,0 +1,4 @@
+---
+- hosts: minio
+  roles:
+    - { role: mgrote.minio, tags: "minio", become: true }

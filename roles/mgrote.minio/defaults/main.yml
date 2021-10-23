@@ -1,0 +1,20 @@
+---
+  minio_download_url: https://dl.min.io/server/minio/release/linux-amd64/minio # downloadlink
+
+  minio_bin_path: /usr/local/bin # where to put the binary
+  minio_volumes_base_dir: /usr/local/share/minio/ # where to store the buckets
+  minio_config_dir: /etc/minio # where to store the config
+
+  minio_fqdn: minio-test.grote.lan
+  minio_port: 9000 # s3 port
+  minio_console_port: 34081 # mgmt-gui port
+
+  minio_root_user: minio # default web user
+  minio_root_password: miniostorage # defaut pass
+
+  minio_user: minio-user # linux user
+  minio_group: minio-user # linux group
+
+  minio_server_url: "" # see https://docs.min.io/minio/baremetal/reference/minio-server/minio-server.html
+
+  minio_browser_redirect_url: "" # see https://docs.min.io/minio/baremetal/reference/minio-server/minio-server.html

@@ -1,0 +1,6 @@
+---
+  - name: (re)start service
+    become: yes
+    ansible.builtin.systemd:
+      name: minio
+      state: restarted
