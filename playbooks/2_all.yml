@@ -1,6 +1,6 @@
 ---
   - import_playbook: base/apt_sources.yml
-  - import_playbook: base/install_packages.yml
+  - import_playbook: base/packages.yml
   - import_playbook: base/ntp_client.yml
   - import_playbook: base/restic.yml
   - import_playbook: base/users.yml

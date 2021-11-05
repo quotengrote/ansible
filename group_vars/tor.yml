@@ -80,8 +80,8 @@
   tmux_conf_destination: "/home/mg/.tmux.conf"
   tmux_bashrc_destination: "/home/mg/.bashrc"
   tmux_standardsession_name: "default"
-  ### mgrote.apt_install_packages
-  programs_extra:
+  ### mgrote.apt_manage_packages
+  apt_packages_extra:
     - python3-stem # für munin-tor_
     - geoip-bin # für munin-tor_
     - geoip-database # für munin-tor_

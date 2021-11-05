@@ -1,20 +1,20 @@
-## mgrote.apt_install_packages
+## mgrote.apt_manage_packages
 
 ### Beschreibung
 Fuehrt:
 `apt install {{ programme }}`
 aus.
 ```yaml
-  programs_common:
+  apt_packages_common:
     - locales
     - wird überall installiert
-  programs_only_physical:
+  apt_packages_physical:
     - hddtemp
     - nur auf Hardware-Maschinen
-  programs_only_vms:
+  apt_packages_vm:
     - qemu-guest-agent
     - nur in VMs
-  programs_extra:
+  apt_packages_extra:
     - Extra-Parameter für einzelne Hosts
 ```
 Es wird unterschieden ob das Ziel eine VM ist oder nicht.

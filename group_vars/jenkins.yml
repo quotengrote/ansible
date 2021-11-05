@@ -35,7 +35,7 @@
   ### geerlingguy.ansible
   ansible_install_method: pip
   ansible_install_version_pip: '2.10'
-  ### mgrote.apt_install_packages
-  programs_extra:
+  ### mgrote.apt_manage_packages
+  apt_packages_extra:
     - graphviz # für ansible-playbook-grapher
     - sshpass

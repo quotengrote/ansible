@@ -1,5 +1,5 @@
 ---
-  programs_common:
+  apt_packages_common:
     - locales
     - build-essential
     - ntp
@@ -22,12 +22,13 @@
     - acl
     - python3
     - vim
-  programs_only_physical:
+  apt_packages_physical:
     - hddtemp
     - ipmitool
     - powertop
     - s-tui
-  programs_only_vms:
+  apt_packages_vm:
     - qemu-guest-agent
     - open-vm-tools
-  programs_extra:
+  apt_packages_extra:
+  apt_packages_absent:

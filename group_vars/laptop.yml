@@ -31,8 +31,8 @@
     - path: /home/mg/.config/flameshot
 
   dotfiles_owner: mg
-  ### mgrote.apt_install_packages
-  programs_extra:
+  ### mgrote.apt_manage_packages
+  apt_packages_extra:
     - bmon
     - hddtemp
     - s-tui

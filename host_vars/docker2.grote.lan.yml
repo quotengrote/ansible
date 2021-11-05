@@ -41,8 +41,8 @@
       protocol: tcp
       comment: 'munin'
       from_ip: 0.0.0.0/0
-  ### mgrote.apt_install_packages
-  programs_extra:
+  ### mgrote.apt_manage_packages
+  apt_packages_extra:
     - libwww-curl-perl # für munin-plugin: unifi
     - libjson-perl # für munin-plugin: unifi
   ### mgrote.munin-node

@@ -174,8 +174,8 @@
         - production
         - test
         - laptop
-  ### mgrote.apt_install_packages
-  programs_common:
+  ### mgrote.apt_manage_packages
+  apt_packages_common:
     - locales
     - python3
     - build-essential
@@ -203,16 +203,18 @@
     - rsync
     - at
     - ripgrep
-  programs_only_physical:
+  apt_packages_physical:
     - hddtemp
     - ipmitool
     - s-tui
     - smartmontools
     - lm-sensors
     - ethtool
-  programs_only_vms:
+  apt_packages_vm:
     - qemu-guest-agent
     - open-vm-tools
+  apt_packages_absent:
+    - nano
 
 
 

@@ -1,5 +1,5 @@
 ---
-  ### mgrote.apt_install_packages
-  programs_extra:
+  ### mgrote.apt_manage_packages
+  apt_packages_extra:
     - qemu-guest-agent
     - open-vm-tools
