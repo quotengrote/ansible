@@ -182,7 +182,6 @@
     - htop
     - git
     - dnsutils
-    - nano
     - mc
     - cifs-utils
     - haveged #https://www.linux-magazin.de/ausgaben/2011/09/einfuehrung2/
