@@ -62,7 +62,7 @@
     - name: zfs_count
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfs_count
     - name: ksm_
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/other/ksm_
+      src:  https://git.mgrote.net/mg/munin-plugins/raw/branch/master/kernel_same_page_merging
     - name: fail2ban
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
       config: |
