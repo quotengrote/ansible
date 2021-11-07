@@ -5,4 +5,4 @@ Installiert alacritty.
 
 ### getestet auf
 - [x] Ubuntu (>=18.04)
-- [x]Linux Mint
+- [x] Linux Mint

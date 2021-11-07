@@ -2,7 +2,7 @@
 
 ### Beschreibung
 Installiert rasdaemon.
-Logt ECC-Errors nach "/var/log/rasdaemon.log"
+Logt ECC-Errors nach ``/var/log/rasdaemon.log``
 
 ### getestet auf
 - [x] ProxMox 6.1

@@ -10,4 +10,4 @@ Installiert und konfiguriert sanoid.
 - Siehe "defaults"
 
 ## Sonstiges
-Logfile wird nach "/var/log/sanoid-cron.log" geschrieben.
+Logfile wird nach ``"/var/log/sanoid-cron.log"`` geschrieben.

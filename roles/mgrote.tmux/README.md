@@ -9,8 +9,8 @@ Setzt tmux als "Standard-Shell".
 
 ### Variablen + Defaults
 ##### Pfad zu .tmux.conf
-  tmux_conf_destination: "/home/mg/.tmux.conf"
+  ``tmux_conf_destination: "/home/mg/.tmux.conf"``
 ##### Pfad zu .bashrc
-  tmux_bashrc_destination: "/home/mg/.bashrc"
+  ``tmux_bashrc_destination: "/home/mg/.bashrc"``
 ##### Name für tmux-session
-  tmux_standardsession_name: "default"
+  ``tmux_standardsession_name: "default"``

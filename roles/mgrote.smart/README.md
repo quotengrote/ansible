@@ -7,17 +7,16 @@ Es laesst sich konfigurieren wann die kompletten SMART-Werte versendet werden.
 ### getestet auf
 - [ ] Ubuntu (>=18.04)
 - [ ] Debian
-
-- [ ] ProxMox 6.1
+- [x] ProxMox 6.1
 
 ### Variablen + Defaults
 ##### Wer soll die Mail bekommen
-empfaenger_mail: michael.grote@posteo.de
+``empfaenger_mail: michael.grote@posteo.de``
 ##### Wann sollen die SMART-Werte verschickt werden.(Minuten)
-smart_smartctlmail_cron_minutes
+``smart_smartctlmail_cron_minutes``
 ##### Wann sollen die SMART-Werte verschickt werden.(Stunden)
-smart_smartctlmail_cron_hours
+``smart_smartctlmail_cron_hours``
 ##### Wann sollen die SMART-Werte verschickt werden.(Wochentag)
-smart_smartctlmail_cron_weekday
+``smart_smartctlmail_cron_weekday``
 ##### Pfad zu smartctl
-smart_smartctl_mail_pfad_smartctl: "/usr/sbin/smartctl"
+``smart_smartctl_mail_pfad_smartctl: "/usr/sbin/smartctl"``
