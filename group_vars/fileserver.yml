@@ -1,4 +1,47 @@
 ---
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+      from_ip: 0.0.0.0/0
+    - rule: allow
+      to_port: 445
+      comment: 'smb'
+      from_ip: 0.0.0.0/0
+    - rule: allow
+      to_port: 139
+      comment: 'smb'
+      from_ip: 0.0.0.0/0
+    - rule: allow
+      to_port: 4949
+      protocol: tcp
+      comment: 'munin'
+      from_ip: 192.168.2.144/24
+  ### geerlingguy.munin-node
+  munin_node_disabled_plugins:
+    - name: meminfo # zu hohe last
+    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
+    - name: ntp # verursacht zu viele dns ptr request
+    - name: hddtempd # ersetzt durch hddtemp_smartctl
+    - name: ipmi_power # für pve2, leeres diagramm
+    - name: lvm_
+    - name: samba_locked
+    - name: samba_users
+  munin_node_plugins:
+    - name: chrony
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/chrony/chrony
+    - name: systemd_status
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
+    - name: samba
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/samba
+      config: |
+        [samba]
+        user root
+        group root
+        env.smbstatus /usr/bin/smbstatus
+        env.ignoreipcshare 1
   ### mgrote.smb_fileserver
   smb_users:
     - name: 'annemariedroessler2'
@@ -89,48 +132,3 @@
   smb_min_protocol: "SMB2"
   smb_client_min_protocol: "SMB2"
   smb_client_max_protocol: "SMB3_11"
-
-  ### oefenweb.ufw
-  ufw_rules:
-    - rule: allow
-      to_port: 22
-      protocol: tcp
-      comment: 'ssh'
-      from_ip: 0.0.0.0/0
-    - rule: allow
-      to_port: 445
-      comment: 'smb'
-      from_ip: 0.0.0.0/0
-    - rule: allow
-      to_port: 139
-      comment: 'smb'
-      from_ip: 0.0.0.0/0
-    - rule: allow
-      to_port: 4949
-      protocol: tcp
-      comment: 'munin'
-      from_ip: 192.168.2.144/24
-
-  ### geerlingguy.munin-node
-  munin_node_disabled_plugins:
-    - name: meminfo # zu hohe last
-    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
-    - name: ntp # verursacht zu viele dns ptr request
-    - name: hddtempd # ersetzt durch hddtemp_smartctl
-    - name: ipmi_power # für pve2, leeres diagramm
-    - name: lvm_
-    - name: samba_locked
-    - name: samba_users
-  munin_node_plugins:
-    - name: chrony
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/chrony
-    - name: systemd_status
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/systemd_status
-    - name: samba
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/samba
-      config: |
-        [samba]
-        user root
-        group root
-        env.smbstatus /usr/bin/smbstatus
-        env.ignoreipcshare 1

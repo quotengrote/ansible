@@ -27,30 +27,30 @@
     - name: zfs_usage_hdd_data_raidz # liest falsch ein
   munin_node_plugins:
     - name: chrony
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/chrony
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/chrony/chrony
     - name: systemd_status
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/systemd_status
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
     - name: lvm_
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/lvm_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
       config: |
         [lvm_*]
         user root
     - name: zfs_arcstats
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/zfs_arcstats
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_arcstats
     - name: zfsonlinux_stats_
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/zfsonlinux_stats_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfsonlinux_stats_
     - name: zpool_iostat
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/zpool_iostat
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_iostat
     - name: zfs_list
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/zfs_list
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_list
     - name: zpool_capacity
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/zpool_capacity
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_capacity
     - name: kvm_mem
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/kvm_mem
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_mem
     - name: kvm_net
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/kvm_net
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_net
     - name: kvm_cpu
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/kvm_cpu
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_cpu
     - name: zpool_fragmentation
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zpool_fragmentation
     - name: proxmox_count
@@ -61,6 +61,8 @@
         group root
     - name: zfs_count
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/zfs_count
+    - name: ksm_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/other/ksm_
     - name: fail2ban
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
       config: |

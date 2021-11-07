@@ -48,22 +48,22 @@
   ### mgrote.munin-node
   munin_node_plugins:
     - name: chrony
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/chrony
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/chrony/chrony
     - name: systemd_status
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/systemd_status
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
     - name: lvm_
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/lvm_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
       config: |
         [lvm_*]
         user root
     - name: docker_containers
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
       config: |
         [docker_*]
         user root
         env.DOCKER_HOST unix://run/docker.sock
     - name: nextcloud_mgrote.next-cloud.org
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/nextcloud_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/nextcloud/nextcloud_
       config: |
         [nextcloud_mgrote.next-cloud.org]
         env.username munin
@@ -71,13 +71,13 @@
         env.api_path /ocs/v2.php/apps/serverinfo/api/v1/info
         env.scheme https
     - name: docker_cpu
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
     - name: docker_memory
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
     - name: docker_network
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
     - name: docker_volumes
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/docker_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
     - name: mt_system_crs309
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/mikrotik/mt_system
       config: |

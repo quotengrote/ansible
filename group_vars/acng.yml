@@ -23,16 +23,16 @@
   ### geerlingguy.munin-node
   munin_node_plugins:
     - name: chrony
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/chrony
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/chrony/chrony
     - name: systemd_status
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/systemd_status
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
     - name: lvm_
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/lvm_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
       config: |
         [lvm_*]
         user root
     - name: acng
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/acng
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/apt/acng
       config: |
         env.logfile /var/log/apt-cacher-ng/apt-cacher.log
     - name: fail2ban

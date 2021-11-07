@@ -32,7 +32,7 @@
   munin_node_allowed_cidrs: [0.0.0.0/0]
   munin_node_plugins:
     - name: chrony
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/chrony
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/chrony/chrony
     - name: fail2ban
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
       config: |
@@ -41,14 +41,14 @@
         env.config_dir /etc/fail2ban
         user root
     - name: systemd_status
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/systemd_status
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
     - name: lvm_
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/lvm_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
       config: |
         [lvm_*]
         user root
     - name: tor_traffic
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/tor_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/tor/tor_
       config: |
         [tor_*]
         user root
@@ -60,15 +60,15 @@
         env.torport {{ tor_control_port }}
         env.torsocket /var/run/tor/control
     - name: tor_bandwidth
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/tor_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/tor/tor_
     - name: tor_connections
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/tor_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/tor/tor_
     - name: tor_countries
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/tor_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/tor/tor_
     - name: tor_dormant
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/tor_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/tor/tor_
     - name: tor_routers
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/tor_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/tor/tor_
   ### mgrote.ntp_chrony_server
   ntp_chrony_timezone: "Europe/Berlin"
   ntp_chrony_servers:
