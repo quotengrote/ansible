@@ -94,14 +94,6 @@
       dnodesize: auto
       atime: on
       snapdir: hidden
-    - dataset: hdd_data_raidz/data_crypt
-      state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: hdd_data_raidz/tmp
       state: present
       compression: zstd
