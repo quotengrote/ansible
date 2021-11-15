@@ -41,6 +41,7 @@ all:
     vmtest:
       hosts:
         vm-test2.grote.lan:
+        bastelstube.grote.lan:
     proxmox:
       hosts:
         pve2-test.grote.lan:
@@ -89,3 +90,4 @@ all:
         fileserver2-test.grote.lan:
         tor1-test.grote.lan:
         minio-test.grote.lan:
+        bastelstube.grote.lan:
