@@ -1,7 +1,7 @@
 ## mgrote.ssh
 
 ### Beschreibung
-Konfigutiert sshd.
+Konfiguriert sshd.
 
 ### getestet auf
 - [x] Ubuntu (>=20.04)

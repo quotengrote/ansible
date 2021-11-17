@@ -27,6 +27,7 @@
             MAXDBDAYS=3
             MOZILLA_CANARY=true
             BLOCK_ICLOUD_PR=true
+            PIHOLE_PTR=HOSTNAMEFQDN
           state: present
 
 
