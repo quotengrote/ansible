@@ -4,10 +4,6 @@ all:
       hosts:
         dokuwiki2.grote.lan:
         dokuwiki-test.grote.lan:
-    minio:
-      hosts:
-        minio1.grote.lan:
-        minio-test.grote.lan:
     tor:
       hosts:
         tor1-test.grote.lan:
@@ -75,7 +71,6 @@ all:
         docker3.grote.lan:
         docker4.grote.lan:
         tor1.mgrote.net:
-        minio1.grote.lan:
     test:
       hosts:
         dokuwiki-test.grote.lan:
@@ -89,5 +84,4 @@ all:
         ntp-server-test.grote.lan:
         fileserver2-test.grote.lan:
         tor1-test.grote.lan:
-        minio-test.grote.lan:
         bastelstube.grote.lan:
