@@ -1,0 +1,26 @@
+{{ file_header | default () }}
+
+Nickname                  {{ tor_relay_name }}
+ContactInfo               {{ tor_contact_info }}
+ORPort                    {{ tor_or_port }}
+ExitRelay                 0
+SocksPort                 {{ tor_socks_port }}
+BridgeRelay               1
+ExtORPort                 auto
+Log notice                syslog
+ServerTransportPlugin     obfs4 exec /usr/bin/obfs4proxy
+ServerTransportListenAddr obfs4 0.0.0.0:{{ tor_bridge_port }}
+ExitPolicy                reject *:*
+CookieAuthentication      1
+
+{% if tor_bandwidth_rate is defined %}
+BandwidthRate             {{ tor_bandwidth_rate }}
+{% endif %}
+
+{% if tor_bandwidth_burst is defined %}
+BandwidthBurst            {{ tor_bandwidth_burst }}
+{% endif %}
+
+{% if tor_my_family is defined %}
+MyFamily                  {{ tor_my_family }}
+{% endif %}

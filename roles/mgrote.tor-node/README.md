@@ -1,7 +1,7 @@
 ## mgrote.tor-node
 
 ### Beschreibung
-Setzt ein tor-relay auf.
+Setzt ein tor-relay ODER eine [tor-bridge](https://community.torproject.org/relay/setup/bridge/debian-ubuntu/) auf.
 ORPort muss in Firewall freigeschaltet sein.
 Es muss eine Portfreigabe im Router existieren.
 

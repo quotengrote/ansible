@@ -8,8 +8,8 @@
   tor_control_socket: 0
   tor_contact_info: webmaster(at)mgrote(dot)net
   tor_control_port: 9051
-  tor_bandwidth_rate: 350 MBits
-  tor_bandwidth_burst: 350 MBits
+  tor_mode: bridge
+  tor_bridge_port: 5555
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow
@@ -24,6 +24,11 @@
       from_ip: 0.0.0.0/0
     - rule: allow
       to_port: "{{ tor_or_port }}"
+      protocol: tcp
+      comment: 'tor'
+      from_ip: 0.0.0.0/0
+    - rule: allow
+      to_port: "{{ tor_bridge_port }}"
       protocol: tcp
       comment: 'tor'
       from_ip: 0.0.0.0/0
