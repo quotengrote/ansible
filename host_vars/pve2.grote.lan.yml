@@ -175,7 +175,7 @@
       atime: on
       snapdir: hidden
     - dataset: hdd_data_raidz/s3
-      state: present
+      state: absent
       compression: zstd
       sync: disabled
       xattr: sa
@@ -375,7 +375,3 @@
       mp_nr: 15
       mp_path_host: /hdd_data_raidz/programme
       mp_path_guest: /shares_programme
-    - vmid: 116
-      mp_nr: 1
-      mp_path_host: /hdd_data_raidz/s3
-      mp_path_guest: /bm/s3
