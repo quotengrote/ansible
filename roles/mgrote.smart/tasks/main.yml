@@ -1,46 +1,36 @@
 ---
-  #Blockdevice/Festplatten muessen haendisch in "templates" eingetragen werden
-  - name: smartmontools installieren
+  - name: include user tasks
+    include_tasks: user.yml
+
+  - name: ensure smartmontools are installed
     become: yes
     ansible.builtin.package:
       name: smartmontools
       state: present
 
-  - name: smartmontools kopieren
+  - name: template smartmontools config
     become: yes
     ansible.builtin.template:
       src: "smartmontools"
       dest: "/etc/default/smartmontools"
-    notify: smartmontools_starten_aktivieren
+      owner: "{{ smart_user }}"
+      group: "{{ smart_user_group }}"
+    notify: restart smartmontools
 
-  - name: smartd.conf kopieren
+  - name: template smartd.conf
     become: yes
     ansible.builtin.template:
       src: "smartd.conf"
       dest: "/etc/smartd.conf"
-    notify: smartmontools_starten_aktivieren
+      owner: "{{ smart_user }}"
+      group: "{{ smart_user_group }}"
+    notify: restart smartmontools
 
-  - name: smartctl_mail.sh kopieren
-    become: yes
-    ansible.builtin.template:
-      src: "smartctl_mail.sh"
-      dest: "/usr/local/bin/smartctl_mail.sh"
-      mode: a+x
-
-  - name: smart_status.sh kopieren
+  - name: copy smart_status.sh
     become: yes
     ansible.builtin.template:
       src: "smart_status.sh"
       dest: "/usr/local/bin/smart_status.sh"
-      mode: a+x
-
-# smartctl output als mail
-  - name: cronjob fuer smartctl-mail
-    become: yes
-    ansible.builtin.cron:
-      name: smart-mail
-      state: present
-      job: "/usr/local/bin/smartctl_mail.sh"
-      minute: "{{ smart_smartctlmail_cron_minutes }}"
-      hour: "{{ smart_smartctlmail_cron_hours }}"
-      weekday: "{{ smart_smartctlmail_cron_weekday }}"
+      owner: "{{ smart_user }}"
+      group: "{{ smart_user_group }}"
+      mode: 0744

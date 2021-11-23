@@ -1,22 +1,30 @@
 ## mgrote.smart
 
 ### Beschreibung
-Installiert und konfiguriert smartmontools + Mail-Benachrichtigungen.
-Es laesst sich konfigurieren wann die kompletten SMART-Werte versendet werden.
+Installiert und konfiguriert smartmontools + Mail-Benachrichtigungen.(Mail muss extra konfiguriert werden.)
+
+Stellt `smart_status.sh` bereit.
+Ausgabe:
+```shell
+mg@pve2 ~
+> sudo smart_status.sh
+Device Model:     SAMSUNG MZ7LH960HAJR-00005
+SMART test result: PASSED
+Device Model:     SAMSUNG MZ7LH960HAJR-00005
+SMART test result: PASSED
+Device Model:     WDC WD80EZAZ-11TDBA0
+SMART test result: PASSED
+Device Model:     WDC WD80EZAZ-11TDBA0
+SMART test result: PASSED
+Device Model:     WDC WD80EZAZ-11TDBA0
+SMART test result: PASSED
+Device Model:     MTFDDAK256MBF-1AN15ABHA
+SMART test result: PASSED
+```
 
 ### getestet auf
-- [ ] Ubuntu (>=18.04)
-- [ ] Debian
-- [x] ProxMox 6.1
+- [x] ProxMox 6*
+- [x] ProxMox 7*
 
 ### Variablen + Defaults
-##### Wer soll die Mail bekommen
-``empfaenger_mail: michael.grote@posteo.de``
-##### Wann sollen die SMART-Werte verschickt werden.(Minuten)
-``smart_smartctlmail_cron_minutes``
-##### Wann sollen die SMART-Werte verschickt werden.(Stunden)
-``smart_smartctlmail_cron_hours``
-##### Wann sollen die SMART-Werte verschickt werden.(Wochentag)
-``smart_smartctlmail_cron_weekday``
-##### Pfad zu smartctl
-``smart_smartctl_mail_pfad_smartctl: "/usr/sbin/smartctl"``
+- see [defaults](./defaults/main.yml)

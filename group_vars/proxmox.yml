@@ -3,10 +3,6 @@
   apt_packages_extra:
     - ifupdown2
     - bmon
-  ### mgrote.smart
-  smart_smartctlmail_cron_minutes: "15"
-  smart_smartctlmail_cron_hours: "6"
-  smart_smartctlmail_cron_weekday: "3"
   ### geerlingguy.munin-node
   munin_node_disabled_plugins:
     - name: meminfo # zu hohe last

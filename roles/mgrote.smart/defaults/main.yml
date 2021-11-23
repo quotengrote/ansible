@@ -1,5 +1,6 @@
 ---
-  smart_smartctlmail_cron_minutes: 15
-  smart_smartctlmail_cron_hours: 6
-  smart_smartctlmail_cron_weekday: 3
-  smart_smartctl_mail_pfad_smartctl: "/usr/sbin/smartctl"
+  # path to smartctl
+  smart_smartctl_path: "/usr/sbin/smartctl"
+  # under which user the script is run
+  smart_user_group: "root"
+  smart_user: "smart"

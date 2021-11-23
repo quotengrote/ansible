@@ -1,5 +1,5 @@
 ---
-  - name: smartmontools_starten_aktivieren
+  - name: restart smartmontools
     become: yes
     systemd:
       name: smartmontools
