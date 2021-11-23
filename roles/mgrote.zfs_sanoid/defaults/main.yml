@@ -6,7 +6,7 @@
   ### where to store the logfile
   sanoid_log_file: "/var/log/sanoid-cron.log"
 
-  ###where to download the binary + config
+  ### where to download the binary + config
   sanoid_dl_url: "https://raw.githubusercontent.com/jimsalterjrs/sanoid/master/sanoid"
   sanoid_dl_conf_url: "https://raw.githubusercontent.com/jimsalterjrs/sanoid/master/sanoid.defaults.conf"
 
