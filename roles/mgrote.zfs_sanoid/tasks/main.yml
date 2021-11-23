@@ -1,4 +1,7 @@
 ---
+  - name: include user tasks
+    include_tasks: user.yml
+
   - name: Install Required Packages
     become: true
     ansible.builtin.package:
@@ -19,8 +22,8 @@
     ansible.builtin.file:
       path: "{{ item }}"
       state: directory
-      owner: root
-      group: root
+      owner: "{{ sanoid_user }}"
+      group: "{{ sanoid_user_group }}"
       recurse: true
     with_items:
       - /usr/local/bin
@@ -29,19 +32,19 @@
   - name: Install Sanoid Binary
     become: true
     ansible.builtin.get_url:
-      url: https://raw.githubusercontent.com/jimsalterjrs/sanoid/master/sanoid
+      url: "{{ sanoid_dl_url }}"
       dest: /usr/local/bin/sanoid
-      owner: root
-      group: root
+      owner: "{{ sanoid_user }}"
+      group: "{{ sanoid_user_group }}"
       mode: 0755
 
   - name: Install Sanoid Defaults Configuration
     become: true
     ansible.builtin.get_url:
-      url: https://raw.githubusercontent.com/jimsalterjrs/sanoid/master/sanoid.defaults.conf
+      url: "{{ sanoid_dl_conf_url }}"
       dest: /etc/sanoid/sanoid.defaults.conf
-      owner: root
-      group: root
+      owner: "{{ sanoid_user }}"
+      group: "{{ sanoid_user_group }}"
       mode: 0644
 
   - name: Generate Sanoid Configuration
@@ -49,17 +52,17 @@
     ansible.builtin.template:
       src: sanoid.conf.j2
       dest: /etc/sanoid/sanoid.conf
-      owner: root
-      group: root
+      owner: "{{ sanoid_user }}"
+      group: "{{ sanoid_user_group }}"
       mode: 0644
 
   - name: Create Sanoid Log
     become: true
     ansible.builtin.file:
-      path: /var/log/sanoid-cron.log
+      path: "{{ sanoid_log_file }}"
       state: touch
-      owner: root
-      group: root
+      owner: "{{ sanoid_user }}"
+      group: "{{ sanoid_user_group }}"
       mode: 0644
       access_time: preserve
       modification_time: preserve
@@ -69,8 +72,8 @@
     ansible.builtin.template:
       src: logrotate_sanoid
       dest: /etc/logrotate.d/sanoid
-      owner: root
-      group: root
+      owner: "{{ sanoid_user }}"
+      group: "{{ sanoid_user_group }}"
       mode: 0644
 
   - name: Generate Sanoid Cron Scripts
@@ -78,8 +81,8 @@
     ansible.builtin.template:
       src: sanoid-cron.sh
       dest: /usr/local/bin/sanoid-cron.sh
-      owner: root
-      group: root
+      owner: "{{ sanoid_user }}"
+      group: "{{ sanoid_user_group }}"
       mode: 0755
 
   - name: Configure Sanoid Cron Job
@@ -89,5 +92,5 @@
       job: /usr/local/bin/sanoid-cron.sh
       minute: "{{ sanoid_cron_minutes }}"
       hour: "{{ sanoid_cron_hours }}"
-      user: root
+      user: "{{ sanoid_user }}"
       state: present

@@ -174,14 +174,6 @@
       dnodesize: auto
       atime: on
       snapdir: hidden
-    - dataset: hdd_data_raidz/s3
-      state: absent
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
   zfs_extra_arc_max_size: "8589934592" # 8GB in Bytes
   zfs_extra_zfs_pools:
     - name: "rpool"
@@ -259,10 +251,6 @@
       recursive: 'no'
       snapshots: true
       template: '14tage'
-    - path: hdd_data_raidz/s3
-      recursive: 'no'
-      snapshots: true
-      template: '3tage'
 
   sanoid_templates:
     - name: '31tage'

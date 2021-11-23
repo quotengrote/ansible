@@ -4,10 +4,8 @@
 Installiert und konfiguriert sanoid.
 
 ### getestet auf
-- [x] ProxMox 6.1
+- [x] ProxMox 6*
+- [x] ProxMox 7*
 
 ### Variablen + Defaults
-- Siehe "defaults"
-
-## Sonstiges
-Logfile wird nach ``"/var/log/sanoid-cron.log"`` geschrieben.
+- see [defaults](./defaults/main.yml)

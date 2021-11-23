@@ -1,14 +1,25 @@
 ---
-  ### Wann soll das sanoid-script mit cron ausgeführt werden?
+  ### under which user the script is run
+  sanoid_user_group: "root"
+  sanoid_user: "sanoid"
+
+  ### where to store the logfile
+  sanoid_log_file: "/var/log/sanoid-cron.log"
+
+  ###where to download the binary + config
+  sanoid_dl_url: "https://raw.githubusercontent.com/jimsalterjrs/sanoid/master/sanoid"
+  sanoid_dl_conf_url: "https://raw.githubusercontent.com/jimsalterjrs/sanoid/master/sanoid.defaults.conf"
+
+  ### when should the script be run
   sanoid_cron_hours: '*'
   sanoid_cron_minutes: '*'
 
   ### "Default" Datasets
-  sanoid_datasets:
-    - path: 'hdd_data_raidz/data'
-      template: 'fiveminutes'
-      recursive: 'no'
-      snapshots: true
+  sanoid_datasets: # dictionary
+    - path: 'hdd_data_raidz/data' # path to dataset; without leading /
+      template: 'fiveminutes' # name
+      recursive: 'no' # recursive snapshotting
+      snapshots: true # (de)activate; can be used to disable snapshotting of subdatasets if recursive is set
     - path: 'hdd_data_raidz/videos'
       template: 'hourly'
       recursive: 'yes'

@@ -39,7 +39,7 @@
     - name: Create Sanoid Log
       become: true
       ansible.builtin.file:
-        path: /var/log/sanoid-cron.log
+        path: "{{ sanoid_log_file }}"
         state: absent
 
     - name: Add Sanoid Log to be Rotated

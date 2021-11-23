@@ -1,5 +1,5 @@
 {{ file_header | default () }}
-/var/log/sanoid-cron.log {
+{{ sanoid_log_file }} {
   su root root
   create 0644 root root
   rotate 4
