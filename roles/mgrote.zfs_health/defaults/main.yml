@@ -1,3 +1,7 @@
 ---
+  ### when should the script be run
   zfs_extra_cron_minutes_zfs_health: "0,15,30,45"
   zfs_extra_cron_hours_zfs_health: "*"
+  ### under which user the script is run
+  zfs_health_user_group: "root"
+  zfs_health_user: "zfs-health"
