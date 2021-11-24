@@ -4,7 +4,8 @@
 Installiert zfs-packages.
 
 ### getestet auf
-- [x] ProxMox 6.1
+- [x] ProxMox 6*
+- [x] ProxMox 7*
 
 ### Variablen + Defaults
 - keine
