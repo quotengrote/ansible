@@ -151,6 +151,15 @@
       user_state: present
       groups: root, docker
       servers:
+        - docker
+    - username: munin
+      password: "{{ lookup('keepass', 'munin_linux_password_hash', 'password') }}"
+      update_password: always
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: root
+      servers:
         - production
         - test
     - username: root
