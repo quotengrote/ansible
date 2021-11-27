@@ -205,7 +205,6 @@
     - apt-transport-https
     - neofetch
     - moreutils
-    - ntpdate
     - acl
     - vim
     - rsync
@@ -223,6 +222,8 @@
     - open-vm-tools
   apt_packages_absent:
     - nano
+  apt_packages_internet:
+    - https://git.mgrote.net/mg/bash-helper-scripts-mgrote/raw/branch/master/output/bash-helper-scripts-mgrote-latest.deb
 
 
 

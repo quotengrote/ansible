@@ -26,6 +26,14 @@
       state: present
     when: ansible_virtualization_role != 'guest'
 
+  - name: install packages from the internet
+    become: yes
+    ansible.builtin.apt:
+      deb: "{{ item }}"
+      state: present
+    when:  apt_packages_internet is defined
+    loop: "{{ apt_packages_internet }}"
+
   - name: remove packages
     become: yes
     ansible.builtin.package:

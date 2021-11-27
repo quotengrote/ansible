@@ -32,3 +32,4 @@
     - open-vm-tools
   apt_packages_extra:
   apt_packages_absent:
+  apt_packages_internet:
