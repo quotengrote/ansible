@@ -25,12 +25,3 @@
       owner: "{{ smart_user }}"
       group: "{{ smart_user_group }}"
     notify: restart smartmontools
-
-  - name: copy smart_status.sh
-    become: yes
-    ansible.builtin.template:
-      src: "smart_status.sh"
-      dest: "/usr/local/bin/smart_status.sh"
-      owner: "{{ smart_user }}"
-      group: "{{ smart_user_group }}"
-      mode: 0744
