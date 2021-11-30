@@ -26,7 +26,6 @@
       group: "{{ sanoid_user_group }}"
       recurse: true
     with_items:
-      - /usr/local/bin
       - /etc/sanoid
 
   - name: Install Sanoid Binary
