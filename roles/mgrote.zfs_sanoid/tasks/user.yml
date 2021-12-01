@@ -16,3 +16,16 @@
     when:
       - sanoid_user_group is defined
       - sanoid_user is defined
+
+  - name: add user to sudoers
+    become: true
+    ansible.builtin.blockinfile:
+      path: /etc/sudoers
+      state: present
+      block:  |
+        {{ sanoid_user }} ALL=(ALL) NOPASSWD:ALL
+      validate: '/usr/sbin/visudo -cf %s'
+      backup: yes
+    when:
+      - sanoid_user_group is defined
+      - sanoid_user is defined
