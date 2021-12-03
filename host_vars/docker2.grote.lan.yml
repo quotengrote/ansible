@@ -1,6 +1,11 @@
 ---
   ### mgrote.docker-compose-deploy
   docker_compose_projects:
+    - name: changedetection
+      dir_name: docker-changedetection
+      repository_url: git.mgrote.net/mg/docker-changedetection.io
+      state: present
+      os_username: mg
     - name: munin-master
       dir_name: docker-munin-master
       repository_url: git.mgrote.net/mg/docker-munin-master_production
