@@ -26,11 +26,6 @@
       protocol: tcp
       comment: 'tor'
       from_ip: 0.0.0.0/0
-    - rule: allow
-      to_port: "{{ tor_bridge_port }}"
-      protocol: tcp
-      comment: 'tor'
-      from_ip: 0.0.0.0/0
   ### geerlingguy.munin-node
   munin_node_bind_port: "4949"
   munin_node_allowed_cidrs: [0.0.0.0/0]
@@ -91,7 +86,6 @@
     - geoip-database # für munin-tor_
     - geoipupdate # für munin-tor_
     - python3-geoip # für munin-tor_
-    - nyx # tor-cli-monitoring
     - open-vm-tools
   ### mgrote.fail2ban
   f2b_bantime: 3600
