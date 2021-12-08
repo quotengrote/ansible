@@ -1,4 +1,30 @@
 ---
+  - name: install dependencies
+    become: yes
+    ansible.builtin.package:
+      name: apt-transport-https
+      state: present
+
+  - name: add tor repo key
+    ansible.builtin.apt_key:
+      url: https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc
+      state: present
+
+  - name: add tor repo
+    ansible.builtin.apt_repository:
+      repo: deb https://deb.torproject.org/torproject.org {{ ansible_distribution_release }} main
+      state: present
+      filename: tor
+
+  - name: install tor packages
+    become: yes
+    ansible.builtin.package:
+      name:
+        - tor
+        - deb.torproject.org-keyring
+      state: present
+    notify: restart tor
+
   - name: include bridge tasks
     include_tasks: bridge.yml
     when:
@@ -8,3 +34,6 @@
     include_tasks: relay.yml
     when:
       - tor_mode == 'relay'
+
+  - name: include nyx tasks
+    include_tasks: nyx.yml
