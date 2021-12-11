@@ -129,6 +129,16 @@
       use_sudo: yes
       use_sudo_nopass: yes
       user_state: present
+      groups: ssh, sudo, xrdp
+      servers:
+        - vmtest
+    - username: mg
+      password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
+      update_password: on_create
+      ssh_key: "{{ ssh_public_key_mg }}"
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
       groups: ssh, sudo
       servers:
         - dokuwiki

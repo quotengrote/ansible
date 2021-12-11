@@ -1,0 +1,18 @@
+---
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+      from_ip: 0.0.0.0/0
+    - rule: allow
+      to_port: 3389
+      comment: 'xrdp'
+      from_ip: 192.168.2.0/24
+      protocol: tcp
+    - rule: allow
+      to_port: 4949
+      protocol: tcp
+      comment: 'munin'
+      from_ip: 192.168.2.144/24
