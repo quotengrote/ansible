@@ -2,20 +2,20 @@
   - name: ensure group exists
     become: true
     ansible.builtin.group:
-      name: "{{ sanoid_user_group }}"
+      name: "{{ rasdaemon_user_group }}"
       state: present
     when:
-      - sanoid_user_group is defined
+      - rasdaemon_user_group is defined
 
   - name: ensure user exists
     become: true
     ansible.builtin.user:
-      name: "{{ sanoid_user }}"
-      group: "{{ sanoid_user_group }}"
+      name: "{{ rasdaemon_user }}"
+      group: "{{ rasdaemon_user_group }}"
       shell: /usr/sbin/nologin
     when:
-      - sanoid_user_group is defined
-      - sanoid_user is defined
+      - rasdaemon_user_group is defined
+      - rasdaemon_user is defined
 
   - name: add user to sudoers
     become: true
@@ -23,11 +23,11 @@
       path: /etc/sudoers
       state: present
       block:  |
-        {{ sanoid_user }} ALL=(ALL) NOPASSWD:ALL
+        {{ rasdaemon_user }} ALL=(ALL) NOPASSWD:ALL
       validate: '/usr/sbin/visudo -cf %s'
       backup: yes
-      marker_begin: sanoid-sudoers
-      marker_end: sanoid-sudoers
+      marker_begin: rasdaemon-sudoers
+      marker_end: rasdaemon-sudoers
     when:
-      - sanoid_user_group is defined
-      - sanoid_user is defined
+      - rasdaemon_user_group is defined
+      - rasdaemon_user is defined

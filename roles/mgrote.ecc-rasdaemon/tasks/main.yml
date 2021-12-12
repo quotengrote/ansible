@@ -1,48 +1,55 @@
 ---
-  - name: Install rasdaemon
+  - name: include user tasks
+    include_tasks: user.yml
+
+  - name: install rasdaemon
     become: true
     ansible.builtin.package:
       name:
         - rasdaemon
         - logrotate
       state: present
-    notify: labels
+    notify: guess-labels
 
-  - name: Enable rasdaemon service
+  - name: enable rasdaemon service
     become: true
     ansible.builtin.service:
       name: rasdaemon
       enabled: true
 
-  - name: Start rasdaemon service
+  - name: start rasdaemon service
     become: true
     ansible.builtin.service:
       name: rasdaemon
       state: started
 
-  - name: Create rasdaemon log
+  - name: create rasdaemon log
     become: true
     ansible.builtin.file:
       path: /var/log/rasdaemon.log
       state: touch
       access_time: preserve
       modification_time: preserve
+      owner: "{{ rasdaemon_user }}"
+      group: "{{ rasdaemon_user_group }}"
 
   - name: copy logrotate config
     become: yes
     ansible.builtin.template:
       src: logrotate_rasdaemon
       dest: /etc/logrotate.d/rasdaemon
-      owner: root
-      group: root
+      owner: "{{ rasdaemon_user }}"
+      group: "{{ rasdaemon_user_group }}"
       mode: 0644
 
-  - name: rasdaemon-cron kopieren
+  - name: copy rasdaemon-cron.sh
     become: yes
     ansible.builtin.template:
       src: rasdaemon-cron.sh
       dest: "/usr/local/bin/rasdaemon-cron.sh"
       mode: a+x
+      owner: "{{ rasdaemon_user }}"
+      group: "{{ rasdaemon_user_group }}"
 
   - name: create cronjob
     become: yes
@@ -52,3 +59,4 @@
       job: /usr/local/bin/rasdaemon-cron.sh
       minute: "5"
       hour: "4,8,12,16,20,0"
+      user: "{{ rasdaemon_user }}"
