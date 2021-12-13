@@ -26,8 +26,8 @@
         {{ rasdaemon_user }} ALL=(ALL) NOPASSWD:ALL
       validate: '/usr/sbin/visudo -cf %s'
       backup: yes
-      marker_begin: rasdaemon-sudoers
-      marker_end: rasdaemon-sudoers
+      marker_begin: rasdaemon-sudoers BEGIN
+      marker_end: rasdaemon-sudoers END
     when:
       - rasdaemon_user_group is defined
       - rasdaemon_user is defined

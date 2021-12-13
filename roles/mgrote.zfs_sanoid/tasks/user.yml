@@ -26,8 +26,8 @@
         {{ sanoid_user }} ALL=(ALL) NOPASSWD:ALL
       validate: '/usr/sbin/visudo -cf %s'
       backup: yes
-      marker_begin: sanoid-sudoers
-      marker_end: sanoid-sudoers
+      marker_begin: sanoid-sudoers BEGIN
+      marker_end: sanoid-sudoers END
     when:
       - sanoid_user_group is defined
       - sanoid_user is defined
