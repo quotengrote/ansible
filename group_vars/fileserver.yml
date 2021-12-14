@@ -132,3 +132,4 @@
   smb_min_protocol: "SMB2"
   smb_client_min_protocol: "SMB2"
   smb_client_max_protocol: "SMB3_11"
+  smb_enable_snapshots_dir: true

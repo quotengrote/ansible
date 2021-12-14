@@ -32,14 +32,7 @@
   smb_force_user: "root"
   smb_force_group: "users"
   smb_workgroup: WORKGROUP
-  # Global shadow_copy2 options
-  smb_vfs_objects: "shadow_copy2"
-  smb_shadow_snapdir: ".zfs/snapshot"
-  smb_shadow_sort: "desc"
-  smb_shadow_format: "_%Y-%m-%d_%H:%M:%S"
-  smb_shadow_snapprefix: "^autosnap"
-  smb_shadow_delimiter: "_"
-  smb_shadow_localtime: "no"
+
   # packages
   smb_packages:
     - samba
@@ -47,3 +40,31 @@
     - samba-common
     - samba-common-bin
     - samba-vfs-modules
+
+  # zfs-snapshots einbinden
+  ## als <Pfad>\.zfs\snapshot einbinden
+  ## sorgt dafur das statt "A0KDC9~F" die Ordnernamen als "autosnap_2021-11-04_23÷59÷02_daily" angezeigt werden
+  ## https://www.samba.org/samba/docs/current/man-html/vfs_catia.8.html
+  # aktiv?
+  smb_enable_snapshots_dir: true
+  # welche Character/zeichen-Ersetzungen soll catia ausführen
+  smb_catia_mappings: "0x3a:0xf7" # ersetzt ":" durch "÷"
+
+  # als Windows-Shattenkopien einbinden
+  ## https://www.samba.org/samba/docs/current/man-html/vfs_shadow_copy2.8.html
+  ## BUG: Windows sieht die Schattenkopien, kann die Ausgewählte Datei aber nicht öffnen wenn sie seit dem Snapshot gelöscht wurde, vmtl da Windows nicht den kompletten Snapshot-Pfad verwendet
+  ## Format ist passend fur sanoid-Snapshots
+  # aktiv?
+  smb_enable_snapshots_shadow: false
+  # wo liegen die Snapshots
+  smb_shadow_snapdir: ".zfs/snapshot"
+  # Sortierung
+  smb_shadow_sort: "desc"
+  # Datumsformat der Snapshots
+  smb_shadow_format: "_%Y-%m-%d_%H:%M:%S"
+  # Snapshot-Präfix
+  smb_shadow_snapprefix: "^autosnap"
+  # Snapshot-"Trenner"
+  smb_shadow_delimiter: "_"
+  # zeitformat Snapshots
+  smb_shadow_localtime: "no"

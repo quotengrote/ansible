@@ -1,72 +1,89 @@
 {{ file_header | default () }}
 #======================= Global Settings =======================
 [global]
-min protocol = {{ smb_min_protocol }}
-client min protocol = {{ smb_client_min_protocol }}
-client max protocol = {{ smb_client_max_protocol }}
-workgroup = {{ smb_workgroup }}
-server string = {{ smb_server_string }}
-log level = {{ smb_log_level }}
-log file = {{ smb_log_file }}
-max log size = {{ smb_max_log_size }}
-logging = {{ smb_logging }}
-panic action = {{ smb_panic_action }}
-passdb backend = {{ smb_passdb_backend }}
-obey pam restrictions = {{ smb_obey_pam_restrictions }}
-unix password sync = {{ smb_unix_password_sync }}
-passwd program = {{ smb_passwd_program }}
-passwd chat = {{ smb_passwd_chat }}
-pam password change = {{ smb_pam_password_change }}
-guest account = {{ smb_guest_account }}
-load printers = {{ smb_load_printers }}
-unix extensions = {{ smb_unix_extensions }}
-wide links = {{ smb_wide_links }}
-create mask = {{ smb_create_mask }}
-directory mask = {{ smb_directory_mask }}
-map to guest = {{ smb_map_to_guest }}
-use sendfile = {{ smb_use_sendfile }}
-aio read size = {{ smb_aio_read_size }}
-aio write size = {{ smb_aio_write_size }}
-local master = {{ smb_local_master }}
-time server = {{ smb_time_server }}
-wins support = {{ smb_wins_support }}
-acl allow execute always = {{ smb_acl_allow_execute_always }}
-force user = {{ smb_force_user }}
-force group = {{ smb_force_group }}
+min protocol              = {{ smb_min_protocol }}
+client min protocol       = {{ smb_client_min_protocol }}
+client max protocol       = {{ smb_client_max_protocol }}
+workgroup                 = {{ smb_workgroup }}
+server string             = {{ smb_server_string }}
+log level                 = {{ smb_log_level }}
+log file                  = {{ smb_log_file }}
+max log size              = {{ smb_max_log_size }}
+logging                   = {{ smb_logging }}
+panic action              = {{ smb_panic_action }}
+passdb backend            = {{ smb_passdb_backend }}
+obey pam restrictions     = {{ smb_obey_pam_restrictions }}
+unix password sync        = {{ smb_unix_password_sync }}
+passwd program            = {{ smb_passwd_program }}
+passwd chat               = {{ smb_passwd_chat }}
+pam password change       = {{ smb_pam_password_change }}
+guest account             = {{ smb_guest_account }}
+load printers             = {{ smb_load_printers }}
+unix extensions           = {{ smb_unix_extensions }}
+wide links                = {{ smb_wide_links }}
+create mask               = {{ smb_create_mask }}
+directory mask            = {{ smb_directory_mask }}
+map to guest              = {{ smb_map_to_guest }}
+use sendfile              = {{ smb_use_sendfile }}
+aio read size             = {{ smb_aio_read_size }}
+aio write size            = {{ smb_aio_write_size }}
+local master              = {{ smb_local_master }}
+time server               = {{ smb_time_server }}
+wins support              = {{ smb_wins_support }}
+acl allow execute always  = {{ smb_acl_allow_execute_always }}
+force user                = {{ smb_force_user }}
+force group               = {{ smb_force_group }}
 
+{% if smb_enable_snapshots_dir is sameas true and smb_enable_snapshots_shadow is sameas false %}
+#======================= Snapshots als Ordner =======================
+vfs objects               = catia
+catia: mappings           = {{ smb_catia_mappings }}
+{% elif smb_enable_snapshots_shadow is sameas true and smb_enable_snapshots_dir is sameas false %}
+#======================= Snapshots als Schattenkopien =======================
+vfs objects               = {{ smb_shadow_vfs_objects }}
+shadow: snapdir           = {{ smb_shadow_snapdir }}
+shadow: sort              = {{ smb_shadow_sort }}
+shadow: format            = {{ smb_shadow_format }}
+shadow: snapprefix        = {{ smb_shadow_snapprefix }}
+shadow: delimiter         = {{ smb_shadow_delimiter }}
+shadow: localtime         = {{ smb_shadow_localtime }}
+{% elif smb_enable_snapshots_shadow is sameas true and smb_enable_snapshots_dir is sameas true %}
+#======================= Snapshots =======================
+vfs objects               = shadow_copy2, catia
+#======================= Snapshots als Ordner =======================
+catia: mappings           = {{ smb_catia_mappings }}
+#======================= Snapshots als Schattenkopien =======================
+shadow: snapdir           = {{ smb_shadow_snapdir }}
+shadow: sort              = {{ smb_shadow_sort }}
+shadow: format            = {{ smb_shadow_format }}
+shadow: snapprefix        = {{ smb_shadow_snapprefix }}
+shadow: delimiter         = {{ smb_shadow_delimiter }}
+shadow: localtime         = {{ smb_shadow_localtime }}
+{% endif %}
 
-#======================= ZFS Snapshots =======================
-vfs objects = {{ smb_vfs_objects }}
-shadow: snapdir = {{ smb_shadow_snapdir }}
-shadow: sort = {{ smb_shadow_sort }}
-shadow: format = {{ smb_shadow_format }}
-shadow: snapprefix = {{ smb_shadow_snapprefix }}
-shadow: delimiter = {{ smb_shadow_delimiter }}
-shadow: localtime = {{ smb_shadow_localtime }}
 
 #======================= Share Definitions =======================
 {% for item in smb_shares %}
 
 [{{ item.name }}]
-      path = {{ item.path }}
-      guest ok = no
-      read only = no
-      browseable = yes
-      inherit acls = yes
-      inherit permissions = no
-      ea support = no
-      store dos attributes = no
-      printable = no
-      create mask = 0664
-      force create mode = 0664
-      directory mask = 0775
-      force directory mode = 0775
-      hide special files = yes
-      follow symlinks = yes
-      hide dot files = no
-      valid users = {{ item.users_ro }} {{ item.users_rw }}
-      invalid users =
-      read list = {{ item.users_ro }}
-      write list = {{ item.users_rw }}
-
+  path                    = {{ item.path }}
+  guest ok                = no
+  read only               = no
+  browseable              = yes
+  inherit acls            = yes
+  inherit permissions     = no
+  ea support              = no
+  store dos attributes    = no
+  printable               = no
+  create mask             = 0664
+  force create mode       = 0664
+  directory mask          = 0775
+  force directory mode    = 0775
+  hide special files      = yes
+  follow symlinks         = yes
+  hide dot files          = no
+  valid users             = {{ item.users_ro }} {{ item.users_rw }}
+  invalid users           =
+  read list               = {{ item.users_ro }}
+  write list              = {{ item.users_rw }}
 {% endfor %}

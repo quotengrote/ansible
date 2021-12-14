@@ -1,7 +1,7 @@
 ## mgrote.fileserver_smb
 
 ### Beschreibung
-Installiert und Konfiguriert einen Fileserver mit Samba.
+Installiert und konfiguriert einen Fileserver mit Samba.
 
 #### Rechte
 Rechte im Dateisystem sind
@@ -14,7 +14,7 @@ Rechte im Dateisystem sind
 Damit werden die Nutzer mit Ihrem Konto auf die SAMBA-Freigabe berechtigt, aber die Lese/Schreiboperationen auf dem Dateisystem als "root" durchgefuehrt.
 
 ### getestet auf
-- [x] Ubuntu (>=18.04)
+- [x] Ubuntu (>=20.04)
 
 ### Samba Version
 ```
@@ -44,7 +44,10 @@ SMB3_11: Windows 10 technical preview SMB3 version (maybe final).
 ```
   smb_shares:
     - name: 'videos' # Freigabename
-      path: '/shares_videos' # Pfad aus SMB-Server
+      path: '/shares_videos' # Pfad auf SMB-Server
       users_ro: ' win10 kodi' # Nutzer - Lesezugriff
       users_rw: 'annemariedroessler michaelgrote' # Nutzer - Schreibzugriff
 ```
+
+### weitere Variablen + Defaults
+siehe [defaults](./defaults/main.yml)
