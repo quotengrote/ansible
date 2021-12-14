@@ -1,9 +1,11 @@
 ---
   - name: include install tasks
     include_tasks: packages.yml
+
   - name: include user tasks
     include_tasks: users.yml
     when: smb_users is defined
+
   - name: include share tasks
     include_tasks: shares.yml
     when: smb_shares is defined

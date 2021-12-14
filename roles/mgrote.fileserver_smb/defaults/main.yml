@@ -1,37 +1,74 @@
 ---
   # Global SMB options
-  smb_min_protocol: "SMB2_02"
-  smb_client_min_protocol: "SMB2_02"
-  smb_client_max_protocol: "SMB3_00"
-  smb_log_level: "1"
-  smb_server_string: "%h_server"
-  smb_log_file: "/var/log/samba/log"
-  smb_max_log_size: "1000"
-  smb_logging: "syslog"
-  smb_panic_action: "/usr/share/samba/panic-action_%d"
-  smb_passdb_backend: "tdbsam"
-  smb_obey_pam_restrictions: "no"
-  smb_unix_password_sync: "no"
-  smb_passwd_program: "/usr/bin/passwd_%u"
-  smb_passwd_chat: '*Enter\snew\s*\spassword:*_%n\n_*Retype\snew\s*\spassword:*_%n\n_*password\supdated\ssuccessfully*_.'
-  smb_pam_password_change: "yes"
-  smb_guest_account: "nobody"
-  smb_load_printers: "no"
-  smb_unix_extensions: "yes"
-  smb_wide_links: "no"
-  smb_create_mask: "0777"
-  smb_directory_mask: "0777"
-  smb_map_to_guest: "Bad User"
-  smb_use_sendfile: "yes"
-  smb_aio_read_size: "16384"
-  smb_aio_write_size: "16384"
-  smb_local_master: "yes"
-  smb_time_server: "no"
-  smb_wins_support: "no"
-  smb_acl_allow_execute_always: "yes"
-  smb_force_user: "root"
-  smb_force_group: "users"
-  smb_workgroup: WORKGROUP
+  ## "smb_global_options" = dict
+  ## -option: "smbd option name" <-- value
+  ##  value: "smbd value" <-- value
+  ## neue Optionen konnen einfach angehangen werden bzw. alte entfernt werden
+  smb_global_options:
+    - option: min_protocol
+      value: "SMB2_02"
+    - option: client_min_protocol
+      value: "SMB2_02"
+    - option: client_max_protocol
+      value: "SMB3_00"
+    - option: log_level
+      value: "1"
+    - option: log_file
+      value: "/var/log/samba/log"
+    - option: max_log_size
+      value: "1000"
+    - option: logging
+      value: "syslog"
+    - option: panic_action
+      value: "/usr/share/samba/panic-action_%d"
+    - option: passdb_backend
+      value: "tdbsam"
+    - option: obey_pam_restrictions
+      value: "no"
+    - option: unix_password_sync
+      value: "no"
+    - option: passwd_program
+      value: "/usr/bin/passwd_%u"
+    - option: passwd_chat
+      value: '*Enter\snew\s*\spassword:*_%n\n_*Retype\snew\s*\spassword:*_%n\n_*password\supdated\ssuccessfully*_.'
+    - option: pam_password_change
+      value: "yes"
+    - option: guest_account
+      value: "nobody"
+    - option: load_printers
+      value: "no"
+    - option: unix_extensions
+      value: "yes"
+    - option: wide_links
+      value: "no"
+    - option: create_mask
+      value: "0777"
+    - option: directory_mask
+      value: "0777"
+    - option: map_to_guest
+      value: "Bad User"
+    - option: use_sendfile
+      value: "yes"
+    - option: aio_read_size
+      value: "16384"
+    - option: aio_write_size
+      value: "16384"
+    - option: local_master
+      value: "yes"
+    - option: time_server
+      value: "no"
+    - option: wins_support
+      value: "no"
+    - option: acl_allow_execute_always
+      value: "yes"
+    - option: force_user
+      value: "root"
+    - option: force_group
+      value: "users"
+    - option: workgroup
+      value: WORKGROUP
+    - option: server_string
+      value: "%h_server"
 
   # packages
   smb_packages:

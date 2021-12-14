@@ -47,6 +47,22 @@ SMB3_11: Windows 10 technical preview SMB3 version (maybe final).
       path: '/shares_videos' # Pfad auf SMB-Server
       users_ro: ' win10 kodi' # Nutzer - Lesezugriff
       users_rw: 'annemariedroessler michaelgrote' # Nutzer - Schreibzugriff
+      # Optional(+default-values)
+      item.guest_ok: "no"
+      item.read_only: "no"
+      browseable: "yes"
+      inherit_acls: "yes"
+      inherit_permissions: "no"
+      ea_support: "no"
+      store_dos_attributes: "no"
+      printable: "n"o
+      create_mask: "0664"
+      force_create_mode: "0664"
+      directory_mask: "0775"
+      force_directory_mode: "0775"
+      hide_special_files: "yes"
+      follow_symlinks: "yes"
+      hide_dot_files: "no"
 ```
 
 ### weitere Variablen + Defaults

@@ -1,5 +1,5 @@
 ---
-  - name: install packages
+  - name: ensure packages are installed
     become: yes
     ansible.builtin.package:
       name: "{{ smb_packages }}"

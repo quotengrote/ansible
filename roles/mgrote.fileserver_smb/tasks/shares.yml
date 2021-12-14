@@ -1,14 +1,14 @@
 ---
-  - name: create smb shares directories
+  - name: ensure smb share directories exist
     become: yes
     ansible.builtin.file:
       path: "{{ item.path }}"
       state: directory
       mode: 0777
     loop: "{{ smb_shares }}"
-    notify: set_samba_passwords
+    notify: set samba passwords
 
-  - name: configure shares
+  - name: template share configuration
     become: yes
     ansible.builtin.template:
       src: smb.conf.j2
@@ -17,5 +17,5 @@
     with_items:
       - "{{ smb_shares }}"
     notify:
-      - restart_smbd
-      - set_samba_passwords
+      - restart smbd
+      - set samba passwords

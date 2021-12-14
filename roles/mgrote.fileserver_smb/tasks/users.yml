@@ -1,5 +1,5 @@
 ---
-  - name: create group
+  - name: ensure group exist
     become: yes
     ansible.builtin.group:
       name: smb_users
@@ -15,4 +15,4 @@
       create_home: no
     loop: "{{ smb_users }}"
     no_log: True
-    notify: set_samba_passwords
+    notify: set samba passwords

@@ -1,12 +1,12 @@
 ---
-  - name: restart_smbd
+  - name: restart smbd
     become: yes
     systemd:
       name: smbd
       enabled: yes
       state: restarted
 
-  - name: set_samba_passwords
+  - name: set samba passwords
     become: yes
     shell: "printf '{{ item.password }}\n{{ item.password }}\n' | smbpasswd -a {{ item.name }}" # noqa 306 301 #pipefail: https://blog.christophersmart.com/2019/09/28/using-pipefail-with-shell-module-in-ansible/
     with_items:
