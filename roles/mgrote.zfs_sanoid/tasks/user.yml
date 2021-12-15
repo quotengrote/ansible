@@ -13,6 +13,7 @@
       name: "{{ sanoid_user }}"
       group: "{{ sanoid_user_group }}"
       shell: /usr/sbin/nologin
+      create_home: no
     when:
       - sanoid_user_group is defined
       - sanoid_user is defined

@@ -13,6 +13,7 @@
       name: "{{ rasdaemon_user }}"
       group: "{{ rasdaemon_user_group }}"
       shell: /usr/sbin/nologin
+      create_home: no
     when:
       - rasdaemon_user_group is defined
       - rasdaemon_user is defined

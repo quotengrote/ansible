@@ -13,6 +13,7 @@
       name: "{{ smart_user }}"
       group: "{{ smart_user_group }}"
       shell: /usr/sbin/nologin
+      create_home: no
     when:
       - smart_user_group is defined
       - smart_user is defined

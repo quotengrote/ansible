@@ -10,6 +10,7 @@
       group: "{{ minio_group }}"
       shell: /sbin/nologin
       state: present
+      create_home: no
 
   - name: ensure needed directories are present
     file:

@@ -13,6 +13,7 @@
       name: "{{ cv4pve_user }}"
       group: "{{ cv4pve_user_group }}"
       shell: /usr/sbin/nologin
+      create_home: no
     when:
       - cv4pve_user_group is defined
       - cv4pve_user is defined

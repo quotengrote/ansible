@@ -13,6 +13,7 @@
       name: "{{ zfs_health_user }}"
       group: "{{ zfs_health_user_group }}"
       shell: /usr/sbin/nologin
+      create_home: no
     when:
       - zfs_health_user_group is defined
       - zfs_health_user is defined
