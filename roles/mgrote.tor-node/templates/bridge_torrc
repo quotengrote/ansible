@@ -13,6 +13,12 @@ ServerTransportListenAddr obfs4 0.0.0.0:{{ tor_bridge_port }}
 ExitPolicy                reject *:*
 CookieAuthentication      1
 
+{% if tor_ipv6 is sameas true %}
+ORPort                    [{{hostvars[inventory_hostname]['ansible_default_ipv6']['address']}}]:{{ tor_or_port }}
+ServerTransportListenAddr obfs4 [{{hostvars[inventory_hostname]['ansible_default_ipv6']['address']}}]:{{ tor_bridge_port }}
+{% endif %}
+
+
 {% if tor_bandwidth_rate is defined %}
 BandwidthRate             {{ tor_bandwidth_rate }}
 {% endif %}

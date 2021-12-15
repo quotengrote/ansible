@@ -13,3 +13,6 @@
   # tor_bandwidth_burst:
   tor_mode: relay # OR bridge
   tor_bridge_port: 5555
+
+  # use IPv6
+  tor_ipv6: false

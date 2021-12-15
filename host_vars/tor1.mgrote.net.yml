@@ -1,0 +1,5 @@
+---
+  ### mgrote.tor-node
+  tor_relay_name: tor1mgrote
+  tor_ipv6: false
+  tor_bandwidth_rate: 15 MBytes

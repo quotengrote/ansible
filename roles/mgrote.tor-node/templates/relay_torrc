@@ -10,6 +10,11 @@ ControlPort             {{ tor_control_port }}
 CookieAuthentication    1
 ExitPolicy              reject *:*
 
+{% if tor_ipv6 is sameas true %}
+ORPort                  [{{hostvars[inventory_hostname]['ansible_default_ipv6']['address']}}]:{{ tor_or_port }}
+ExitPolicy              reject6 *:*
+{% endif %}
+
 {% if tor_bandwidth_rate is defined %}
 BandwidthRate           {{ tor_bandwidth_rate }}
 {% endif %}
