@@ -5,69 +5,69 @@
   ##  value: "smbd value" <-- value
   ## neue Optionen konnen einfach angehangen werden bzw. alte entfernt werden
   smb_global_options:
-    - option: min_protocol
+    - option: min protocol
       value: "SMB2_02"
-    - option: client_min_protocol
+    - option: client min protocol
       value: "SMB2_02"
-    - option: client_max_protocol
+    - option: client max protocol
       value: "SMB3_00"
-    - option: log_level
+    - option: log level
       value: "1"
-    - option: log_file
+    - option: log file
       value: "/var/log/samba/log"
-    - option: max_log_size
+    - option: max log size
       value: "1000"
     - option: logging
       value: "syslog"
-    - option: panic_action
+    - option: panic action
       value: "/usr/share/samba/panic-action_%d"
-    - option: passdb_backend
+    - option: passdb backend
       value: "tdbsam"
-    - option: obey_pam_restrictions
+    - option: obey pam restrictions
       value: "no"
-    - option: unix_password_sync
+    - option: unix password sync
       value: "no"
-    - option: passwd_program
+    - option: passwd program
       value: "/usr/bin/passwd_%u"
-    - option: passwd_chat
+    - option: passwd chat
       value: '*Enter\snew\s*\spassword:*_%n\n_*Retype\snew\s*\spassword:*_%n\n_*password\supdated\ssuccessfully*_.'
-    - option: pam_password_change
+    - option: pam password change
       value: "yes"
-    - option: guest_account
+    - option: guest account
       value: "nobody"
-    - option: load_printers
+    - option: load printers
       value: "no"
-    - option: unix_extensions
+    - option: unix extensions
       value: "yes"
-    - option: wide_links
+    - option: wide links
       value: "no"
-    - option: create_mask
+    - option: create mask
       value: "0777"
-    - option: directory_mask
+    - option: directory mask
       value: "0777"
-    - option: map_to_guest
+    - option: map to guest
       value: "Bad User"
-    - option: use_sendfile
+    - option: use sendfile
       value: "yes"
-    - option: aio_read_size
+    - option: aio read size
       value: "16384"
-    - option: aio_write_size
+    - option: aio write size
       value: "16384"
-    - option: local_master
+    - option: local master
       value: "yes"
-    - option: time_server
+    - option: time server
       value: "no"
-    - option: wins_support
+    - option: wins support
       value: "no"
-    - option: acl_allow_execute_always
+    - option: acl allow execute always
       value: "yes"
-    - option: force_user
+    - option: force user
       value: "root"
-    - option: force_group
+    - option: force group
       value: "users"
     - option: workgroup
       value: WORKGROUP
-    - option: server_string
+    - option: server string
       value: "%h_server"
 
   # packages
