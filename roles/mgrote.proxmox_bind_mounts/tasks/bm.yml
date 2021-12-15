@@ -20,6 +20,8 @@
     notify: restart lxc
     # füge bind-mount hinzu falls er fehlt, also rc ungleich 0
     # pro bind-mount
+    when: not ansible_check_mode
+    # überspringe wenn in check-mode
 
     # schreibe vm id in die Liste "reboot"
   - name: set reboot list
