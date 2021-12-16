@@ -1,37 +1,27 @@
 ## mgrote.zfs_manage_datasets
 
-### Beschreibung
-Erstellt Datasets/setzt Optionen pro Dataset.
-Kann Datasets löschen.
-Die Pools müssen vorher existieren.
-Beim ersten ausführen wird es wahrscheinlich zu Status: "changed" kommen, weil:
-```bash
-ssd_vm_mirror/vm  xattr                 sa                     inherited from ssd_vm_mirror
-ssd_vm_mirror/vm  xattr                 sa                     local
-```
-Die Attribute werden nicht mehr vererbt sondern als "local" gesetzt
+### Description
+Creates Datasets, can set options.
+This role does not create the pools.
+Attributes get set `local` per dataset.
 
-### getestet auf
+
+### tested on
 - [x] ProxMox 6.1
+- [x] ProxMox 7*
 
 ### Variablen + Defaults
-#### Standardwerte
-```
-state:        present
-compression:  lz4
-sync:         standard
-xattr:        on
-dnodesize:    auto
-atime:        off
-snapdir:      hidden
-```
-#### Empfohlen für VMs
-```
-state:        present
-compression:  lz4
-sync:         disabled
-xattr:        sa
-dnodesize:    auto
-atime:        off
-snapdir:      hidden
+- see [default-filter](./tasks/main.yml)
+- all Variables from `man 8 zfs` are optional but not the name(dataset)
+
+#### Example
+```yaml
+  zfs_datasets:
+    - dataset: rpool/vm
+      state: present
+      compression: zstd
+    - dataset: tank/vm/dir/fileserver2_test
+      state: present
+      atime: on
+      snapdir: hidden
 ```
