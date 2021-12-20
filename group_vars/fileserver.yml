@@ -42,7 +42,12 @@
         group root
         env.smbstatus /usr/bin/smbstatus
         env.ignoreipcshare 1
-  ### mgrote.smb_fileserver
+  ### mgrote.fileserver_smb
+  smb_workgroup: WORKGROUP
+  smb_min_protocol: "SMB2"
+  smb_client_min_protocol: "SMB2"
+  smb_client_max_protocol: "SMB3_11"
+  smb_enable_snapshots_dir: true
   smb_users:
     - name: 'annemariedroessler2'
       password: "{{ lookup('keepass', 'fileserver_smb_user_amd', 'password') }}"
@@ -64,72 +69,3 @@
       password: "{{ lookup('keepass', 'fileserver_smb_user_brother_ads2700w', 'password') }}"
     - name: 'photoprism'
       password: "{{ lookup('keepass', 'fileserver_smb_user_photoprism', 'password') }}"
-
-  smb_shares:
-    - name: 'videos'
-      path: '/shares_videos'
-      users_ro: 'kodi'
-      users_rw: 'annemariedroessler2 michaelgrote win10'
-    - name: 'scans'
-      path: '/shares_scans'
-      users_ro: 'annemariedroessler2 michaelgrote'
-      users_rw: 'brother_ads2700w'
-    - name: 'papa_backup'
-      path: '/shares_papa_backup'
-      users_ro: 'michaelgrote'
-      users_rw: 'win10'
-    - name: 'amd'
-      path: '/shares_amd'
-      users_ro: 'michaelgrote win10'
-      users_rw: 'annemariedroessler2 win10'
-    - name: 'backup'
-      path: '/shares_backup'
-      users_ro: 'annemariedroessler2'
-      users_rw: 'win10 michaelgrote'
-    - name: 'archiv'
-      path: '/shares_archiv'
-      users_ro: ''
-      users_rw: 'michaelgrote win10'
-    - name: 'hm'
-      path: '/shares_hm'
-      users_ro: ''
-      users_rw: 'michaelgrote win10'
-    - name: 'musik'
-      path: '/shares_music'
-      users_ro: 'navidrome kodi annemariedroessler2 '
-      users_rw: 'win10 michaelgrote'
-    - name: 'tmp'
-      path: '/shares_tmp'
-      users_ro: 'win10'
-      users_rw: 'kodi annemariedroessler2 win10 michaelgrote'
-    - name: 'bilder'
-      path: '/shares_bilder'
-      users_ro: 'photoprism'
-      users_rw: 'annemariedroessler2 michaelgrote win10'
-    - name: 'proxmox'
-      path: '/shares_pve_backup'
-      users_ro: 'michaelgrote'
-      users_rw: 'pve win10'
-    - name: 'restic'
-      path: '/shares_restic'
-      users_ro: ''
-      users_rw: 'annemariedroessler2 restic win10 michaelgrote'
-    - name: 'vm'
-      path: '/shares_vm'
-      users_ro: ''
-      users_rw: 'michaelgrote'
-    - name: 'buecher'
-      path: '/shares_buecher'
-      users_ro: 'annemariedroessler2'
-      users_rw: 'michaelgrote win10'
-    - name: 'programme'
-      path: '/shares_programme'
-      users_ro: 'annemariedroessler2'
-      users_rw: 'michaelgrote win10'
-
-
-  smb_workgroup: WORKGROUP
-  smb_min_protocol: "SMB2"
-  smb_client_min_protocol: "SMB2"
-  smb_client_max_protocol: "SMB3_11"
-  smb_enable_snapshots_dir: true

@@ -15,12 +15,13 @@
   - name: add bind mounts to container
     become: true
     command: "pct set {{ item.vmid }} -mp{{ item.mp_nr }} {{ item.mp_path_host }},mp={{ item.mp_path_guest }}"
-    when: not config.rc == 0
     register: restart
     notify: restart lxc
     # füge bind-mount hinzu falls er fehlt, also rc ungleich 0
     # pro bind-mount
-    when: not ansible_check_mode
+    when: 
+      - not ansible_check_mode
+      - not config.rc == 0
     # überspringe wenn in check-mode
 
     # schreibe vm id in die Liste "reboot"

@@ -1,0 +1,23 @@
+---
+  ### mgrote.smb_fileserver
+  smb_shares:
+    - name: 'videos'
+      path: '/shares_videos'
+      users_ro: 'kodi'
+      users_rw: 'annemariedroessler2 michaelgrote win10'
+    - name: 'bilder'
+      path: '/shares_bilder'
+      users_ro: 'photoprism'
+      users_rw: 'annemariedroessler2 michaelgrote win10'
+    - name: 'proxmox'
+      path: '/shares_pve_backup'
+      users_ro: 'michaelgrote'
+      users_rw: 'pve win10'
+    - name: 'restic'
+      path: '/shares_restic'
+      users_ro: ''
+      users_rw: 'annemariedroessler2 restic win10 michaelgrote'
+    - name: 'vm'
+      path: '/shares_vm'
+      users_ro: ''
+      users_rw: 'michaelgrote'
