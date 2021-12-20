@@ -3,3 +3,4 @@
     serial: 3
     roles:
       - { role: mgrote.apt_manage_packages, tags: "install"}
+      - { role: mgrote.exa, tags: "exa"}
