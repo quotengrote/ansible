@@ -21,6 +21,7 @@
     - name: proxmox_vm_count
     - name: zfs_usage_rpool # liest falsch ein
     - name: zfs_usage_hdd_data_raidz # liest falsch ein
+    - name: zpool_fragmentation # ist in zfs* vorhanden
   munin_node_plugins:
     - name: chrony
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/chrony/chrony
@@ -39,6 +40,9 @@
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_iostat
     - name: zfs_list
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_list
+      config: |
+        [zfs_list]
+        env.ignore_datasets_pattern autodaily
     - name: zpool_capacity
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_capacity
     - name: kvm_mem
@@ -47,8 +51,6 @@
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_net
     - name: kvm_cpu
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_cpu
-    - name: zpool_fragmentation
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_fragmentation
     - name: proxmox_count
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/proxmox/proxmox_vm_count
       config: |
