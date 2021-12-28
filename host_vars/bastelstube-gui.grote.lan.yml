@@ -19,7 +19,7 @@
   ### mgrote.user
   users:
     - username: mg
-      password: "{{ lookup('keepass', 'mg_linux_password_cleartext', 'password') }}"
+      password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
       update_password: on_create
       groups: ssh, sudo, xrdp
       state: present
@@ -27,7 +27,7 @@
       allow_sudo: true
       allow_passwordless_sudo: true
     - username: munin
-      password: "{{ lookup('keepass', 'munin_linux_password_cleartext', 'password') }}"
+      password: "{{ lookup('keepass', 'munin_linux_password_hash', 'password') }}"
       update_password: on_create
       groups: root
       state: present
@@ -35,7 +35,7 @@
       allow_sudo: true
       allow_passwordless_sudo: true
     - username: ansible-user
-      password: "{{ lookup('keepass', 'ansible_user_linux_password_cleartext', 'password') }}"
+      password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
       update_password: on_create
       groups: ssh, sudo
       state: present
