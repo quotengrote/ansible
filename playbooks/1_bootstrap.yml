@@ -4,7 +4,7 @@
     max_fail_percentage: 20%
     roles:
       - { role: robertdebock.bootstrap, tags: "bootstrap", become: yes}
-      - { role: ryandaniels.create_users, tags: "user", become: yes}
+      - { role: mgrote.users, tags: "user", become: yes}
       - { role: mgrote.r8152_kernel_module }
       - { role: mgrote.qemu_guest_agent }
     post_tasks:
