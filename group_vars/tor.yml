@@ -67,6 +67,11 @@
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/tor/tor_
     - name: tor_routers
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/tor/tor_
+    - name: zswap
+      config: |
+        [zswap]
+        user root
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/system/zswap
   ### mgrote.ntp_chrony_server
   ntp_chrony_timezone: "Europe/Berlin"
   ntp_chrony_servers:

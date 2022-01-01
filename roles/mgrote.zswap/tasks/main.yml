@@ -1,0 +1,6 @@
+---
+  - name: add zswap to crontab
+    ansible.builtin.cron:
+      name: "activate zswap"
+      special_time: reboot
+      job: "echo 1 > {{ zswap_path }}"
