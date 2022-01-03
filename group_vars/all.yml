@@ -44,7 +44,6 @@
     - name: ipmi_power # für pve2, leeres diagramm
     - name: docker_images
     - name: docker_status
-    - name: mt_system_hex
   munin_node_plugins:
     - name: chrony
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/chrony/chrony

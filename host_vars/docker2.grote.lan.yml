@@ -90,7 +90,15 @@
         user root
         env.ssh_user munin
         env.ssh_password {{ lookup('keepass', 'crs309_munin_user', 'password') }}
-        env.ssh_host 192.168.2.223
+        env.ssh_host 192.168.2.224
+    - name: mt_system_hex
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/router/mikrotik_system
+      config: |
+        [mt_system_hex]
+        user root
+        env.ssh_user munin
+        env.ssh_password {{ lookup('keepass', 'hex_munin_user', 'password') }}
+        env.ssh_host 192.168.2.225
     - name: mt_system_rb5009
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/router/mikrotik_system
       config: |
