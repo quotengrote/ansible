@@ -1,5 +1,0 @@
----
-  - import_playbook: 1_bootstrap.yml
-  - import_playbook: base/apt_sources.yml
-  - import_playbook: 4_update_packages.yml
-  - import_playbook: 2_all.yml

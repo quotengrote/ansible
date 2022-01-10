@@ -1,6 +1,8 @@
 ---
   - name: include install-tasks
     include_tasks: install.yml
+  - name: include user tasks
+    include_tasks: user.yml
   - name: include plugin-tasks
     include_tasks: additional.yml
     when: munin_node_plugins is defined

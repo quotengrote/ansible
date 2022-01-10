@@ -16,14 +16,6 @@
       public_ssh_key: "{{ ssh_public_key_mg }}"
       allow_sudo: true
       allow_passwordless_sudo: true
-    - username: munin
-      password: "{{ lookup('keepass', 'munin_linux_password_hash', 'password') }}"
-      update_password: on_create
-      groups: root
-      state: present
-      public_ssh_key: "{{ ssh_public_key_mg }}"
-      allow_sudo: true
-      allow_passwordless_sudo: true
     - username: ansible-user
       password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
       update_password: on_create

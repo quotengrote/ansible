@@ -1,4 +1,5 @@
 ---
+  munin_user_group: root # group to which the user belongs
   munin_node_log: /var/log/munin/munin-node.log
   munin_node_pid: /var/run/munin/munin-node.pid
   munin_node_plugin_timeout: 60 # in sec
