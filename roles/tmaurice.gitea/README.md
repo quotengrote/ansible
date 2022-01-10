@@ -58,6 +58,7 @@ The following code has been tested with Debian 8, it should work on Ubuntu as we
 
 * `gitea_version_check`: Check if installed version != `gitea_version` before initiating binary download
 * `gitea_user`: UNIX user used by Gitea
+* `gitea_group`: UNIX group used by Gitea
 * `gitea_home`: Base directory to work
 * `gitea_dl_url`: The URL, the compiled gitea-binary will be downloaded from
 * `gitea_systemd_cap_net_bind_service`: Adds `AmbientCapabilities=CAP_NET_BIND_SERVICE` to systemd service file
@@ -109,7 +110,7 @@ The following code has been tested with Debian 8, it should work on Ubuntu as we
 * `gitea_db_name`: Database name
 * `gitea_db_user`: Database username
 * `gitea_db_password`: Database password
-* `gitea_db_ssl`: Use SSL ? (postgres only!). Can be `required`, `disable`, `verify-full`
+* `gitea_db_ssl`: Use SSL ? (postgres only!). Can be `require`, `disable`, `verify-ca` or `verify-full`
 * `gitea_db_path`: DB path, if you use `sqlite3`. The default is good enough to work though.
 
 ### Mailer configuration
@@ -122,6 +123,10 @@ The following code has been tested with Debian 8, it should work on Ubuntu as we
 * `gitea_mailer_password`: SMTP server password
 * `gitea_mailer_from`: Sender mail address
 * `gitea_enable_notify_mail`:  Whether e-mail should be send to watchers of a repository when something happens. Default: `false`
+* `gitea_mail_default`: Default configuration for email notifications for users (user configurable). Options: enabled, onmention, disable  (Default: `onmention` )
+* `gitea_autowatch_new_repo`: Enable this to let all organisation users watch new repos when they are created (Default: `false`)
+* `gitea_autowatch_on_change`: Enable this to make users watch a repository after their first commit to it (Default: `true`)
+* `gitea_show_mailstones_dashboard`: Enable this to show the milestones dashboard page - a view of all the user’s milestones (Default: `true`)
 
 ### Fail2Ban configuration
 
@@ -138,8 +143,12 @@ As this will only deploy config files, fail2ban already has to be installed or o
 ### Oauth2 provider configuration
 
 * `gitea_oauth2_enabled`: Enable the Oauth2 provider (true/false)
-* `gitea_oauth2_jwt_secret`: JWT secret, cannot be longer than 32 characters
+* `gitea_oauth2_jwt_secret`: Oauth2 JWT secret. Can be generated with ``gitea generate secret JWT_SECRET``
 
+### GIT LFS configuration
+* `gitea_lfs_enabled`: Enable GIT LFS (large filesystem)
+* `gitea_lfs_mode`: should lfs be in offline mode (true/false)
+* `gitea_lfs_secret`: JWT secret for remote LFS usage 
 
 ### Metrics endpoint configuration
 
@@ -153,6 +162,10 @@ As this will only deploy config files, fail2ban already has to be installed or o
 * `gitea_repo_indexer_exclude`: Glob patterns to exclude from the index (comma-separated list). Default: `""` (no files)
 * `gitea_repo_exclude_vendored`: Exclude vendored files from the index. Default: `true`
 * `gitea_repo_indexer_max_file_size`: Maximum size of files to be indexed (in bytes). Default: `1048576` (1 MB)
+
+### backup on upgrade
+* `gitea_backup_on_upgrade`: Optionally a backup can be created with every update of gitea. Default: `false`
+* `gitea_backup_location`: Where to store the gitea backup if one is created with this role. Default: `{{ gitea_home }}/backups/`
 
 ## Contributing
 Don't hesitate to create a pull request, and when in doubt you can reach me on
