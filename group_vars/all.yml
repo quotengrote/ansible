@@ -166,6 +166,7 @@
     - open-vm-tools
   apt_packages_absent:
     - nano
+    - ubuntu-advantage-tools
   apt_packages_internet:
     - https://git.mgrote.net/mg/bash-helper-scripts-mgrote/raw/branch/master/output/bash-helper-scripts-mgrote-latest.deb
 
