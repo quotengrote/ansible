@@ -5,6 +5,7 @@
       name: motd-news
       masked: yes
       state: stopped
+      enabled: no
     notify: systemctl_reset_failed
     register: scsstop
     ignore_errors: true
