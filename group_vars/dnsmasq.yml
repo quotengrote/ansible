@@ -44,12 +44,16 @@
         user root
     - name: dnsmasq
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/dnsmasq
+      config: |
+        [dnsmasq]
+        env.logfile {{ dnsmasq_logfile }}
+        user root
   ### mgrote.dnsmasq
   # Welche DNS-Server soll dnsmasq anfragen?
   dnsmasq_resolver:
     - 9.9.9.9
     - 1.1.1.1
-  dnsmasq_log_queries: true
+  dnsmasq_log_queries: true # has to be true for munin
   dnsmasq_logfile: /var/log/dnsmasq.log
   dnsmasq_blocklists:
     - name: sysctl.org
