@@ -42,7 +42,7 @@
         env.client /usr/bin/fail2ban-client
         env.config_dir /etc/fail2ban
         user root
-    - name: lvm_
+    - name: dnsmasq
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/dnsmasq
   ### mgrote.dnsmasq
   # Welche DNS-Server soll dnsmasq anfragen?
