@@ -3,16 +3,16 @@
     include_tasks: ubuntu.yml
     when:
       - ansible_distribution == 'Ubuntu'
-      - manage_sources_apt_proxy | length > 0
+      - manage_sources_apt_proxy is defined
 
   - name: include Linux Mint tasks (determined by "ansible_distribution")
     include_tasks: mint.yml
     when:
       - ansible_distribution == 'Linux Mint'
-      - manage_sources_apt_proxy | length > 0
+      - manage_sources_apt_proxy is defined
 
   - name: include proxmox tasks (determined by group)
     include_tasks: proxmox.yml
     when:
       - "'proxmox' in group_names"
-      - manage_sources_apt_proxy | length > 0
+      - manage_sources_apt_proxy is defined
