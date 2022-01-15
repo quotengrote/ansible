@@ -43,7 +43,7 @@
         env.config_dir /etc/fail2ban
         user root
     - name: dnsmasq
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/dnsmasq
+      src: https://git.mgrote.net/mg/mirror-dnsmasq-munin/raw/branch/master/dnsmasq
       config: |
         [dnsmasq]
         env.logfile {{ dnsmasq_logfile }}
