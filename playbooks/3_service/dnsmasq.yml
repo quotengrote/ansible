@@ -1,0 +1,4 @@
+---
+  - hosts: dnsmasq
+    roles:
+      - { role: mgrote.dnsmasq_adblocker, tags: "dns", become: true }

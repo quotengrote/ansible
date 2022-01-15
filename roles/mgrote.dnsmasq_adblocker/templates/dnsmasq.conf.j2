@@ -1,0 +1,63 @@
+{{ file_header | default () }}
+# Listen on this specific port instead of the standard DNS port
+# (53). Setting this to zero completely disables DNS function,
+# leaving only DHCP and/or TFTP.
+port={{ dnsmasq_port }}
+
+# If you want dnsmasq to listen for DHCP and DNS requests only on
+# specified interfaces (and the loopback) give the name of the
+# interface (eg eth0) here.
+# Repeat the line for more than one interface.
+interface={{ ansible_default_ipv4.interface }}
+
+# If you want dnsmasq to provide only DNS service on an interface,
+# configure it as shown above, and then use the following line to
+# disable DHCP and TFTP on it.
+no-dhcp-interface={{ ansible_default_ipv4.interface }}
+
+# Set the cachesize here.
+cache-size={{ dnsmasq_cache_size }}
+
+log-facility={{ dnsmasq_logfile }}
+
+# Never forward plain names (without a dot or domain part)
+domain-needed
+
+# Never forward addresses in the non-routed address spaces.
+bogus-priv
+
+# If you don't want dnsmasq to read /etc/hosts, uncomment the
+# following line.
+no-hosts
+
+# Add local-only domains here, queries in these domains are answered
+# from /etc/hosts or DHCP only.
+local=/{{ dnsmasq_never_forward_domain }}/
+
+# RFC 6761: Caching DNS servers SHOULD recognize
+#     test, localhost, invalid
+# names as special and SHOULD NOT attempt to look up NS records for them, or
+# otherwise query authoritative DNS servers in an attempt to resolve these
+# names.
+server=/test/
+server=/localhost/
+server=/invalid/
+
+# OpenWRT furthermore blocks    bind, local, onion    domains
+# see https://git.openwrt.org/?p=openwrt/openwrt.git;a=blob_plain;f=package/network/services/dnsmasq/files/rfc6761.conf;hb=HEAD
+# and https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml
+server=/bind/
+server=/onion/
+
+# If you don't want dnsmasq to read /etc/hosts, uncomment the
+# following line.
+#no-hosts
+# or if you want it to read another file, as well as /etc/hosts, use
+# this.
+addn-hosts=/etc/dnsmasq.d/blocklists
+
+{% if dnsmasq_log_queries is sameas true %}
+# For debugging purposes, log each DNS query as it passes through
+# dnsmasq.
+log-queries
+{% endif %}

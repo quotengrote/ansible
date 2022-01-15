@@ -8,10 +8,10 @@ all:
       hosts:
         fileserver2.grote.lan:
         fileserver2-test.grote.lan:
-    pihole:
+    dnsmasq:
       hosts:
-        pihole2-test.grote.lan:
-        pihole2.grote.lan:
+        dnsmasq-test.grote.lan:
+        dnsmasq.grote.lan:
     ntpserver:
       hosts:
         ntp-server-test.grote.lan:
@@ -61,7 +61,7 @@ all:
         ansible2.grote.lan:
         pve2.grote.lan:
         gitea.grote.lan:
-        pihole2.grote.lan:
+        dnsmasq.grote.lan:
         ntp-server.grote.lan:
         docker2.grote.lan:
         docker3.grote.lan:
@@ -75,7 +75,7 @@ all:
         vm-test2.grote.lan:
         pve2-test.grote.lan:
         gitea-test.grote.lan:
-        pihole2-test.grote.lan:
+        dnsmasq-test.grote.lan:
         ntp-server-test.grote.lan:
         fileserver2-test.grote.lan:
         bastelstube-gui.grote.lan:
