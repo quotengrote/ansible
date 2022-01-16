@@ -50,6 +50,13 @@
   apt_packages_extra:
     - libwww-curl-perl # für munin-plugin: unifi
     - libjson-perl # für munin-plugin: unifi
+  ### geerlingguy.pip
+  pip_package: python3-pip
+  pip_install_packages:
+    - name: docker # für munin-plugin docker_
+    - name: fritzconnection # für munin fritzbox*
+    - name: lxml # für munin fritzbox*
+    - name: requests # für munin fritzbox*
   ### mgrote.munin-node
   munin_node_plugins:
     - name: chrony
@@ -158,17 +165,39 @@
         # Hide ports that have no link (When set to no, unplugged ports will transfer 0, not be undefined)
         env.hide_empty_xfer_port no
         # Show transfer statistics per device
-        env.enable_xfer_device no
+        env.enable_xfer_device yes
         # Show detailed graphs for each device
         env.enable_detail_xfer_device yes
         # Show transfer statistics per named network
-        env.enable_xfer_network no
+        env.enable_xfer_network yes
         # Show detailed graphs for each named network
-        env.enable_detail_xfer_network no
+        env.enable_detail_xfer_network yes
         # Show transfer statistics per radio
-        env.enable_xfer_radio no
+        env.enable_xfer_radio yes
         # Show detailed graphs for each radio
-        env.enable_detail_xfer_radio no
+        env.enable_detail_xfer_radio yes
+    - name: fritzbox_uptime.py
+      src: https://git.mgrote.net/mg/mirror-frododvr-fritzbox-munin/raw/branch/master/fritzbox_uptime.py
+    - name: fritzbox_traffic.py
+      src: https://git.mgrote.net/mg/mirror-frododvr-fritzbox-munin/raw/branch/master/fritzbox_traffic.py
+    - name: fritzbox_power.py
+      src: https://git.mgrote.net/mg/mirror-frododvr-fritzbox-munin/raw/branch/master/fritzbox_power_consumption.py
+    - name: fritzbox_memory.py
+      src: https://git.mgrote.net/mg/mirror-frododvr-fritzbox-munin/raw/branch/master/fritzbox_memory_usage.py
+    - name: fritzbox_helper.py
+      src: https://git.mgrote.net/mg/mirror-frododvr-fritzbox-munin/raw/branch/master/fritzbox_helper.py
+    - name: fritzbox_cpu.py
+      src: https://git.mgrote.net/mg/mirror-frododvr-fritzbox-munin/raw/branch/master/fritzbox_cpu_usage.py
+    - name: fritzbox_temp.py
+      src: https://git.mgrote.net/mg/mirror-frododvr-fritzbox-munin/raw/branch/master/fritzbox_cpu_temperature.py
+    - name: fritzbox_conn_uptime.py
+      src: https://git.mgrote.net/mg/mirror-frododvr-fritzbox-munin/raw/branch/master/fritzbox_connection_uptime.py
+      config: |
+        [fritzbox_*]
+        env.fritzbox_ip 192.168.5.1
+        env.fritzbox_username munin
+        env.fritzbox_password {{ lookup('keepass', 'fritzbox_munin_user', 'password') }}
+        env.traffic_remove_max true # if you do not want the possible max values
 
   ### mgrote.restic
   restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker
