@@ -158,24 +158,24 @@
         # Show unauthorized / authorized client list
         # if you are not using the guest portal, this is useless
         env.show_authorized_clients_type yes
-        # Show transfer statistics on switch ports
-        env.enable_xfer_port yes
-        # Show detailed graphs per switch port
-        env.enable_detail_xfer_port yes
-        # Hide ports that have no link (When set to no, unplugged ports will transfer 0, not be undefined)
+        # Show transfer statistics on switch ports; wirft Fehler wenn aktiv
+        env.enable_xfer_port no
+        # Show detailed graphs per switch port; wirft Fehler wenn aktiv
+        env.enable_detail_xfer_port no
+        # Hide ports that have no link (When set to no, unplugged ports will transfer 0, not be undefined); wirft Fehler wenn aktiv
         env.hide_empty_xfer_port no
-        # Show transfer statistics per device
-        env.enable_xfer_device yes
-        # Show detailed graphs for each device
+        # Show transfer statistics per device; wirft Fehler wenn aktiv
+        env.enable_xfer_device no
+        # Show detailed graphs for each device; wirft Fehler wenn aktiv
         env.enable_detail_xfer_device yes
-        # Show transfer statistics per named network
-        env.enable_xfer_network yes
-        # Show detailed graphs for each named network
-        env.enable_detail_xfer_network yes
-        # Show transfer statistics per radio
-        env.enable_xfer_radio yes
-        # Show detailed graphs for each radio
-        env.enable_detail_xfer_radio yes
+        # Show transfer statistics per named network; wirft Fehler wenn aktiv
+        env.enable_xfer_network no
+        # Show detailed graphs for each named network; wirft Fehler wenn aktiv
+        env.enable_detail_xfer_network no
+        # Show transfer statistics per radio; wirft Fehler wenn aktiv
+        env.enable_xfer_radio no
+        # Show detailed graphs for each radio; wirft Fehler wenn aktiv
+        env.enable_detail_xfer_radio no
     - name: fritzbox_uptime.py
       src: https://git.mgrote.net/mg/mirror-frododvr-fritzbox-munin/raw/branch/master/fritzbox_uptime.py
     - name: fritzbox_traffic.py
