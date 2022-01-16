@@ -58,5 +58,5 @@
     ansible.builtin.template:
       src: logrotate.j2
       dest: /etc/logrotate.d/dnsmasq
-      owner: "{{ dnsmasq_user }}"
-      group: "{{ dnsmasq_user_group }}"
+      owner: root
+      group: root
