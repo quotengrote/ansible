@@ -48,23 +48,13 @@
         [dnsmasq]
         env.logfile {{ dnsmasq_logfile }}
         user root
-    - name: dnsresponse_heise
+    - name: dnsresponse_192.168.2.1
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/network/dns/dnsresponse_
+    - name: dnsresponse_127.0.0.1
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/network/dns/dnsresponse_
       config: |
-        [dnsresponse_heise]
+        [dnsresponse_*]
         env.site www.heise.de
-        env.times 20
-    - name: dnsresponse_mgrote
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/network/dns/dnsresponse_
-      config: |
-        [dnsresponse_mgrote]
-        env.site mgrote.net
-        env.times 20
-    - name: dnsresponse_ondataport
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/network/dns/dnsresponse_
-      config: |
-        [dnsresponse_ondataport]
-        env.site ondataport.de
         env.times 20
   ### mgrote.dnsmasq
   # Welche DNS-Server soll dnsmasq anfragen?
