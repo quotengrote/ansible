@@ -28,6 +28,13 @@
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
       state: present
       os_username: mg
+    - name: oxidized
+      dir_name: docker-oxidized
+      repository_url: git.mgrote.net/mg/docker-oxidized
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+      state: present
+      os_username: mg
   ### geerlingguy.munin-node
   munin_node_allowed_cidrs: [0.0.0.0/0] # weil der munin-server aus einem anderen subnet zugreift
   munin_node_allowed_ips: # weil der munin-server aus einem anderen subnet zugreift
