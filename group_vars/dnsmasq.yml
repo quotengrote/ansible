@@ -48,6 +48,24 @@
         [dnsmasq]
         env.logfile {{ dnsmasq_logfile }}
         user root
+    - name: dnsresponse_heise
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/network/dns/dnsresponse_
+      config: |
+        [dnsresponse_heise]
+        env.site www.heise.de
+        env.times 20
+    - name: dnsresponse_mgrote
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/network/dns/dnsresponse_
+      config: |
+        [dnsresponse_mgrote]
+        env.site mgrote.net
+        env.times 20
+    - name: dnsresponse_ondataport
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/network/dns/dnsresponse_
+      config: |
+        [dnsresponse_ondataport]
+        env.site ondataport.de
+        env.times 20
   ### mgrote.dnsmasq
   # Welche DNS-Server soll dnsmasq anfragen?
   dnsmasq_resolver:
@@ -80,3 +98,6 @@
   dnsmasq_cache_size: 10000
   dnsmasq_port: 53
   dnsmasq_never_forward_domain: grote.lan
+  ### mgrote.apt_manage_packages
+  apt_packages_extra:
+    - libnet-dns-perl # für munin: dnsresponse_*
