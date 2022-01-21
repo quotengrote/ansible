@@ -1,0 +1,49 @@
+---
+  - name: include user tasks
+    include_tasks: user.yml
+
+  - name: install apt-cacher-ng packages
+    become: yes
+    ansible.builtin.package:
+      name: apt-cacher-ng
+      state: present
+
+  - name: templating acng.conf
+    become: yes
+    ansible.builtin.template:
+      src: "acng.conf"
+      dest: "/etc/apt-cacher-ng/acng.conf"
+      mode: 0664
+    notify: acng_starten_aktivieren
+
+  - name: Create restic log
+    become: true
+    ansible.builtin.file:
+      path: /var/log/restic.log
+      state: touch
+      owner: root
+      group: root
+      mode: 0640
+      access_time: preserve
+      modification_time: preserve
+
+  - name: copy logrotate config
+    become: yes
+    ansible.builtin.template:
+      src: logrotate_restic
+      dest: /etc/logrotate.d/restic
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: add bind mounts to container
+    become: true
+    command: "pct set {{ item.vmid }} -mp{{ item.mp_nr }} {{ item.mp_path_host }},mp={{ item.mp_path_guest }}"
+    register: restart
+    notify: restart lxc
+    # füge bind-mount hinzu falls er fehlt, also rc ungleich 0
+    # pro bind-mount
+    when:
+      - not ansible_check_mode
+      - not config.rc == 0
+    # überspringe wenn in check-mode
