@@ -205,6 +205,13 @@
         env.fritzbox_username munin
         env.fritzbox_password {{ lookup('keepass', 'fritzbox_munin_user', 'password') }}
         env.traffic_remove_max true # if you do not want the possible max values
-
+    - name: http_response
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/http/http_response
+      config: |
+        [http_response]
+        env.sites http://docker2.grote.lan:8888/nodes http://docker2.grote.lan:1234 http://docker2.grote.lan:5000 http://docker2.grote.lan:333
+        env.max_time 20
+        env.short_label true
+        env.follow_redirect true
   ### mgrote.restic
   restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker

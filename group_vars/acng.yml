@@ -42,3 +42,11 @@
         env.client /usr/bin/fail2ban-client
         env.config_dir /etc/fail2ban
         user root
+    - name: http_response
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/http/http_response
+      config: |
+        [http_response]
+        env.sites http://acng.grote.lan:9999/acng-report.html
+        env.max_time 20
+        env.short_label true
+        env.follow_redirect true
