@@ -32,8 +32,8 @@
     ansible.builtin.template:
       src: logrotate_restic
       dest: /etc/logrotate.d/restic
-      owner: root
-      group: root
+      owner: root # muss root sein, sonst führt logrotate die datei nicht aus
+      group: root # muss root sein, sonst führt logrotate die datei nicht aus
       mode: 0644
 
   - name: add bind mounts to container
