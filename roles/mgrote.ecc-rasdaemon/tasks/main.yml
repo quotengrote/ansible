@@ -38,7 +38,7 @@
     ansible.builtin.template:
       src: logrotate_rasdaemon
       dest: /etc/logrotate.d/rasdaemon
-      owner: "{{ rasdaemon_user }}"
+      owner: root
       group: "{{ rasdaemon_user_group }}"
       mode: 0644
 

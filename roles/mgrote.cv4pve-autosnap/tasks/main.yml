@@ -65,6 +65,6 @@
     ansible.builtin.template:
       src: logrotate_cv4pve
       dest: /etc/logrotate.d/cv4pve-autosnap
-      owner: "{{ cv4pve_user }}"
+      owner: root
       group: "{{ cv4pve_user_group }}"
       mode: 0644

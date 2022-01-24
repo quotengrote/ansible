@@ -71,7 +71,7 @@
     ansible.builtin.template:
       src: logrotate_sanoid
       dest: /etc/logrotate.d/sanoid
-      owner: "{{ sanoid_user }}"
+      owner: root
       group: "{{ sanoid_user_group }}"
       mode: 0644
 
