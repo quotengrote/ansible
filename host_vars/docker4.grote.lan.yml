@@ -11,7 +11,7 @@
       repository_url: git.mgrote.net/mg/docker-ansible-ara
       state: present
       os_username: mg
-    - name: photoprism # wird der container woanders hin verschoben restic ausnahmen wieder eintrage, oder /var/lib/docker aus restic entfernen
+    - name: photoprism # wird der container woanders hin verschoben restic ausnahmen wieder eintragen, oder /var/lib/docker aus restic entfernen
       dir_name: docker-photoprism
       repository_url: git.mgrote.net/mg/docker-photoprism
       state: present
