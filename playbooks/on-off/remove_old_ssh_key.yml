@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Set authorized key taken from file
+      become: yes
+      ansible.posix.authorized_key:
+        user: mg
+        state: present
+        key: "{{ lookup('file', '/home/mg/ansible/playbooks/on-off/new_ssh_key') }}"
+        exclusive: true #entferne alle keys bis auf diesen

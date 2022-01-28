@@ -9,7 +9,7 @@
     ".git/**"
   ],
   "username": "mg",
-  "keyfile": "C:\\Users\\mg\\Desktop\\NextCloud\\Rest\\ssh-keys\\ssh_key_heimserver_mg.ppk",
+  "keyfile": "C:\\Users\\mg\\Desktop\\NextCloud\\Rest\\ssh-keys\\ssh_key_heimserver_mg2.ppk",
   "transport": "scp",
   "watch": []
 }
