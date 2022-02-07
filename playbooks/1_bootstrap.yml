@@ -6,8 +6,8 @@
       - { role: robertdebock.bootstrap, tags: "bootstrap", become: yes}
       - { role: mgrote.users, tags: "user", become: yes}
       - { role: mgrote.r8152_kernel_module }
-      - { role: mgrote.qemu_guest_agent }
       - { role: mgrote.apt_manage_sources, tags: "apt_sources" }
+      - { role: mgrote.qemu_guest_agent }
       - { role: mgrote.apt_update_packages, tags: "updates"}
     post_tasks:
       - name: Change user password

@@ -36,7 +36,7 @@ all:
         bastelstube-gui.grote.lan:
     proxmox:
       hosts:
-        pve2-test.grote.lan:
+        pve2-test2.grote.lan:
         pve2.grote.lan:
       children:
         proxmoxprod:
@@ -73,7 +73,7 @@ all:
         ansible-test.grote.lan:
         docker-test.grote.lan:
         vm-test2.grote.lan:
-        pve2-test.grote.lan:
+        pve2-test2.grote.lan:
         gitea-test.grote.lan:
         dnsmasq-test.grote.lan:
         ntp-server-test.grote.lan:

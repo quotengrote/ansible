@@ -5,6 +5,8 @@
       name: systemd-timesyncd
       state: stopped
       masked: yes
+    when:
+      - not "'proxmox' in group_names"
 
   - name: gather package facts
     become: yes
