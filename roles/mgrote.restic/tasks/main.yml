@@ -1,10 +1,16 @@
 ---
+  - name: include user tasks
+    include_tasks: user.yml
+    when: restic_enable_role
+
   - name: include install tasks
     include_tasks: install.yml
     when: restic_enable_role
-  - name: include folder tasks
-    include_tasks: folders.yml
+
+  - name: include directories tasks
+    include_tasks: dir.yml
     when: restic_enable_role
+
   - name: include config tasks
     include_tasks: config.yml
     when: restic_enable_role

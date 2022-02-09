@@ -10,6 +10,6 @@
     ansible.builtin.file:
       path: "{{ restic_mount }}"
       state: directory
-      owner: root
-      group: root
-      mode: 0777
+      owner: "{{ restic_user }}"
+      group: "{{ restic_user_group }}"
+      mode: 0755

@@ -6,4 +6,5 @@
         - restic
         - logrotate
         - cifs-utils
+        - sudo
       state: present

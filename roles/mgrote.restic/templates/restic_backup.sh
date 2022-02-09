@@ -1,23 +1,22 @@
 #!/bin/bash
 {{ file_header | default () }}
-LOCKDIR=${HOME}/.cache # set lockdir
-function exlock() { # define Function for setting lock; stops the script i a lock exists
-    exec {lock_fd}>${LOCKDIR}/$(basename $0).lock
-    flock -nx "$lock_fd"
-    if [[ $? == 1 ]]; then
-        exit 1
-    fi
-}
-function unlock() { # define function for removing lock
-    rm "${LOCKDIR}/$(basename $0).lock"
-    [[ -n $1 ]] && exit $1
-    exit
-}
 
-exlock # set lock
+# source functions
+if [[ -f "/usr/local/bin/functions.sh" ]]; then
+  source /usr/local/bin/functions.sh
+else
+	echo "[ERROR] Could not find: /usr/local/bin/functions.sh"
+	exit 3
+fi
+
+# set lock
+## call function
+## lock gets set and released if the script terminates
+set_lock
+
 abbruch_restic=0 # set counter for error
 
-mount -t cifs -o credentials="/etc/restic/smb_password.txt",vers=3.0 {{ restic_repository }} {{ restic_mount }}  # mount share
+sudo mount -t cifs -o credentials="/etc/restic/smb_password.txt",vers=3.0,uid=$UID {{ restic_repository }} {{ restic_mount }}  # mount share
 mount_return_value=$? # schreib Exit Code in Variable
 if ( [ "$mount_return_value" -ne 0 ] ); then
     {
@@ -55,11 +54,9 @@ do
   } >> /var/log/restic.log 2>&1; # leite die komplette Ausgabe in logfile um
 done
 
-umount {{ restic_mount }} >> /var/log/restic.log 2>&1;   # unmount
+sudo umount {{ restic_mount }} >> /var/log/restic.log 2>&1;   # unmount
 
 
 if ( [[ "$restic_return_value" -ne 0 ]] ); then # sende eMail wenn Restic Fehler ungleich 0, also Fehler; #https://stackoverflow.com/a/45817972
     tail --lines=50 "/var/log/restic.log" | mail -s "Backup-Error - restic - $HOSTNAME" {{ empfaenger_mail }} # schreibe die letzten 50 Zeilen aus dem Logfile in den Body der Mail
 fi
-
-unlock # entferne lock

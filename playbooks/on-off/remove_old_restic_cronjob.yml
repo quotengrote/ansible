@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+    - name: remove restic cronjob
+      become: yes
+      ansible.builtin.cron:
+        name: restic
+        state: absent
+        job: "/usr/local/bin/restic_backup.sh"
+        minute: "{{ 59|random(seed=inventory_hostname) }}"
+        hour: "{{ restic_cron_hours }}"
+        # siehe: https://stackoverflow.com/questions/33379378/idempotence-and-random-variables-in-ansible

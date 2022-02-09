@@ -16,3 +16,6 @@
         **/**Cache***/**
         **/**AppData***/**
   restic_enable_role: true
+  ### under which user the script is run
+  restic_user_group: "root"
+  restic_user: "restic"
