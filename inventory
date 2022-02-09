@@ -44,7 +44,7 @@ all:
             pve2.grote.lan:
         proxmoxtest:
           hosts:
-            pve2-test.grote.lan:
+            pve2-test2.grote.lan:
     physical:
       hosts:
         pve2.grote.lan:
