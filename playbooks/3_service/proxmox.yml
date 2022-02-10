@@ -21,3 +21,5 @@
         tags: "r8152" }
     - { role: mgrote.proxmox_bind_mounts,
         tags: "bindmounts" }
+    - { role: mgrote.apcupsd,
+        tags: "apcupsd" }

@@ -1,17 +1,40 @@
 ---
-  apcupsd_master_onbatterydelay: 10
-  apcupsd_master_batterylevel_for_shutdown: 50
-  apcupsd_master_minutes_for_shutdown: 10
-  apcupsd_master_nologon_when_active: always
+  ## Values: http://www.apcupsd.org/manual/manual.html
 
-  apcupsd_slave_onbatterydelay: 10
-  apcupsd_slave_batterylevel_for_shutdown: 60
-  apcupsd_slave_minutes_for_shutdown: 11
-  apcupsd_slave_nologon_when_active: always
+  ## Master
+  # Wenn "true" ist dieser Host master.
+  apcupsd_nis_master: true
+
+  # Interface auf dem der "Master" erreichbar ist.
+  apcupsd_nis_master_listen_ip: 0.0.0.0
+
+  # Post auf dem der "Master" erreichbar ist.
+  apcupsd_nis_master_listen_port: 3551
+
+  # Name der USV
+  apcupsd_ups_name: APC-BX950U-GR
+
+  ## Slave
+  # Zeitspanne zwischen dem pollen
   apcupsd_slave_polltime: 10 #in Sekunden
 
-  apcupsd_nis_master: on
+
+  ## Master & Slave
+  # FQDN oder IP des "master"
   apcupsd_nis_master_hostname: pve2.grote.lan
-  apcupsd_nis_master_listen_ip: 0.0.0.0
-  apcupsd_nis_master_listen_port: 3551
-  apcupsd_ups_name: APC-BX950U-GR
+
+  # Zeitspanne in Sekunden, ab der der Systemdienst einen Stromausfall annimmt. Nuetzlich, um sehr kurze Ausfaelle ignorieren zu koennen.
+  apcupsd_master_onbatterydelay: 10
+  apcupsd_slave_onbatterydelay: 10
+
+  # Durch die USV gemeldete Restkapazitaet in Prozent, ab der der Rechner heruntergefahren wird.
+  apcupsd_master_batterylevel_for_shutdown: 50
+  apcupsd_slave_batterylevel_for_shutdown: 60
+
+  # apcupsd will shutdown the system during a power failure when the remaining runtime on batteries as internally calculated by the UPS falls below the specified minutes. Jeweils Master und Slave.
+  apcupsd_master_minutes_for_shutdown: 10
+  apcupsd_slave_minutes_for_shutdown: 11
+
+  # Specifies when apcupsd should create the NOLOGON file to prevent users from logging on to the system. Jeweils Master und Slave.
+  apcupsd_master_nologon_when_active: always
+  apcupsd_slave_nologon_when_active: always
