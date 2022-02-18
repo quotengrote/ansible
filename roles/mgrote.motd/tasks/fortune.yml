@@ -1,0 +1,17 @@
+---
+  - name: install fortune
+    become: yes
+    ansible.builtin.package:
+      name:
+        - fortune
+      state: present
+
+  - name: setup new motd - fortune
+    become: yes
+    ansible.builtin.template:
+      src: '05-fortune-mgrote'
+      dest: '/etc/update-motd.d/05-fortune-mgrote'
+      owner: root
+      group: root
+      mode: '755'
+    notify: force update

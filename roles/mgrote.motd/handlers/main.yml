@@ -1,15 +1,10 @@
 ---
-  - name: Erzwinge_Aktualisierung
+  - name: force update
     become: yes
     command: update-motd
-    when: ansible_facts['os_family'] == "Ubuntu"
 
   - name: restart_sshd
     become: yes
     systemd:
       name: sshd
       state: restarted
-
-  - name: systemctl_reset_failed
-    become: yes
-    ansible.builtin.shell: systemctl reset-failed

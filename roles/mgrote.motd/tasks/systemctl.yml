@@ -6,28 +6,4 @@
       masked: yes
       state: stopped
       enabled: no
-    notify: systemctl_reset_failed
-    register: scsstop
-    ignore_errors: true
-
-  - name: disable units
-    become: yes
-    ansible.builtin.shell: systemctl disable motd-news
-    when: scsstop.changed
-
-  - name: Remove files
-    become: yes
-    ansible.builtin.file:
-      path:
-        - rm /etc/systemd/system/motd-news
-        - rm /usr/lib/systemd/system/motd-news
-      state: absent
-
-  - name: force systemd to reread configs
-    become: yes
-    ansible.builtin.systemd:
       daemon_reload: yes
-    when: scsstop.changed
-
-
-# https://superuser.com/questions/513159/how-to-remove-systemd-services

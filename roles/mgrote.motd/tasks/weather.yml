@@ -1,0 +1,9 @@
+  - name: setup new motd - wetter
+    become: yes
+    ansible.builtin.template:
+      src: '10-wetter-mgrote'
+      dest: '/etc/update-motd.d/10-wetter-mgrote'
+      owner: root
+      group: root
+      mode: '755'
+    notify: force update
