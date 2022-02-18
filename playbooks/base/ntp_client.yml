@@ -1,5 +1,5 @@
 ---
   - hosts: all:!ntpserver
     roles:
-      - { role: mgrote.ntp_chrony_client,
+      - { role: mgrote.systemd-timesyncd,
           tags: "ntp"}

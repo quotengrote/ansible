@@ -80,8 +80,8 @@
   gitea_fail2ban_jail_bantime: 600
   ### geerlingguy.munin-node
   munin_node_plugins:
-    - name: chrony
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/chrony/chrony
+    - name: timesync
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
     - name: systemd_status
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
     - name: lvm_

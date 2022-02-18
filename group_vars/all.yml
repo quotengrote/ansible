@@ -36,9 +36,10 @@
     - name: ipmi_power # für pve2, leeres diagramm
     - name: docker_images
     - name: docker_status
-  munin_node_plugins:
     - name: chrony
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/chrony/chrony
+  munin_node_plugins:
+    - name: timesync
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
     - name: systemd_status
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
     - name: lvm_
@@ -71,11 +72,10 @@
   unattended_origins_patterns:
     - 'origin=Ubuntu,archive=${distro_codename}-security'
     - 'o=Ubuntu,a=${distro_codename}-updates'
-  ### mgrote.ntp_chrony_server
-  ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
-  ntp_chrony_servers: # welche Server sollen befragt werden
-    - address: ntp-server.grote.lan
-      options: iburst #optionaler parameter
+  ### mgrote.systemd-timesyncd
+  ntp_timesyncd_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
+  ntp_timesyncd_servers: # welche Server sollen befragt werden
+    - ntp-server.grote.lan
   ntp_chrony_logging: false # logging an/aus
   ### mgrote.postfix
   postfix_absender_mailadresse: info@mgrote.net

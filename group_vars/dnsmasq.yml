@@ -17,8 +17,8 @@
       from_ip: 0.0.0.0/0
   ### mgrote.restic
   restic_repository: "//192.168.2.36/restic"
-  ### mgrote.ntp_chrony_server
-  ntp_chrony_servers: # weil pihole den fqdn nicht auflösen kann
+  ### mgrote.systemd-timesyncd
+  ntp_timesyncd_servers: # weil pihole den fqdn nicht auflösen kann
     - address: pool.ntp.org
       options: iburst #optionaler parameter
   ### mgrote.apt_manage_sources
@@ -26,8 +26,8 @@
   manage_sources_apt_proxy: ""
   ### geerlingguy.munin-node
   munin_node_plugins:
-    - name: chrony
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/chrony/chrony
+    - name: timesync
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
     - name: systemd_status
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
     - name: lvm_

@@ -53,12 +53,10 @@
     - gramps # stammbaum
   ### mgrote.apt_manage_sources
   manage_sources_apt_proxy: ""
-  ### mgrote.ntp_chrony_server
-  ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
-  ntp_chrony_servers: # welche Server sollen befragt werden
-    - address: pool.ntp.org
-      options: iburst #optionaler parameter
-  ntp_chrony_logging: false # logging an/aus
+  ### mgrote.systemd-timesyncd
+  ntp_timesyncd_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
+  ntp_timesyncd_servers: # welche Server sollen befragt werden
+    - pool.ntp.org
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow

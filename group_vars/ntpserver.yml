@@ -16,9 +16,9 @@
       comment: 'munin'
       from_ip: 192.168.2.144/24
   ### mgrote.ntp_chrony_server
-  ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
+  ntp_timesyncd_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
   ntp_chrony_driftfile_directory: "/var/lib/chrony" # Ordner für das driftfile
-  ntp_chrony_servers: # welche Server sollen befragt werden
+  ntp_timesyncd_servers: # welche Server sollen befragt werden
     - address: ptbtime1.ptb.de
       options: iburst #optionaler parameter
     - address: ptbtime2.ptb.de

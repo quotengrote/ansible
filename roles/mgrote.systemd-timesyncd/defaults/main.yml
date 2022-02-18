@@ -1,0 +1,4 @@
+---
+  ntp_timesyncd_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
+  ntp_timesyncd_servers: # welche Server sollen befragt werden
+    - ptbtime1.ptb.de
