@@ -1,8 +1,4 @@
 ---
-  - name: force update
-    become: yes
-    command: update-motd
-
   - name: restart_sshd
     become: yes
     systemd:

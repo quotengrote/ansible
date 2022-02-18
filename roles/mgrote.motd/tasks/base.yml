@@ -34,7 +34,6 @@
       - 91-reboot
       - 90-updates-available
       - 91-release-upgrade
-    notify: force update
 
   - name: delete "no warranty" - Message
     become: yes
@@ -55,7 +54,6 @@
       - 20-facts-mgrote
       - 90-updates-mgrote
       - 91-reboot-mgrote
-    notify: force update
 
   - name: delete fortune
     become: yes
@@ -63,7 +61,6 @@
       path: /etc/update-motd.d/05-fortune-mgrote
       state: absent
     when: not motd_fortune_aktiv
-    notify: force update
 
   - name: delete Wetter
     become: yes
@@ -71,4 +68,3 @@
       path: '/etc/update-motd.d/10-wetter-mgrote'
       state: absent
     when: not motd_wetter_aktiv
-    notify: force update
