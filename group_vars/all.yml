@@ -154,6 +154,7 @@
     - rsync
     - at
     - ripgrep
+    - iotop
   apt_packages_physical:
     - hddtemp
     - ipmitool
