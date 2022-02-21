@@ -1,0 +1,9 @@
+{{ file_header | default () }}
+[Unit]
+Description=Mount Unit for restic
+
+[Mount]
+What={{ restic_repository }}
+Where=/media/restic
+Options=vers=3.0,uid={{ restic_user }},credentials={{ restic_conf_dir }}/smb.cred
+Type=cifs

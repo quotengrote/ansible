@@ -1,21 +1,33 @@
 ---
-  restic_anzahl_versuche_backup: "3" # wie oft soll restic versuchen ein backup zu starten
-  restic_wartezeit: "60" # wartezeit zwischen den versuchen
-  restic_folders_to_backup: "/usr/local /etc /root /var/www /home" # welche ordner sollen gesichert werden
-  restic_cron_hours: "19" # zu welcher stunde soll das script gestartet werden(minute wird aus dem hostnamen generiert)
-  restic_repository: "ANY.SMB.SHARE" # smb-share mit dem repository: z.B. "//fileserver2.grote.lan/restic"
-  restic_repository_password: XXXXX # password für das repo
-  restic_mount: "/mnt/restic" # wohin soll das repo gemountet werden
-  restic_mount_user: restic # nutzer für den share/mount
-  restic_mount_password: XXXXX # passwort für den mount
-  restic_exclude: |     # was soll ausgeschlossen werden, siehe: https://github.com/restic/restic/issues/1005; https://forum.restic.net/t/exclude-syntax-confusion/1531/12
+  # restic user
+  restic_user: root
+  # restic group
+  restic_group: restic
+  # restic config directory
+  restic_conf_dir: /etc/restic
+  # was soll ausgeschlossen werden, siehe: https://github.com/restic/restic/issues/1005; https://forum.restic.net/t/exclude-syntax-confusion/1531/12
+  restic_exclude: |
         ._*
         desktop.ini
         .Trash-*
         **/**cache***/**
         **/**Cache***/**
         **/**AppData***/**
-  restic_enable_role: true
-  ### under which user the script is run
-  restic_user_group: "root"
-  restic_user: "restic"
+  # timeout for cifs mount; systemd notation
+  restic_mount_timeout: "10 min"
+  # delay for restartung task; systemd notation
+  restic_failure_delay: "30 s"
+  # when should restic run; systemd notation
+  restic_schedule: "*:0/2"
+  # welche ordner sollen gesichert werden
+  restic_folders_to_backup: "/usr/local /etc /root /var/www /home"
+  # smb-share mit dem repository: z.B. "//fileserver2.grote.lan/restic"
+  restic_repository: "//fileserver.domain/restic"
+  # password für das repo
+  restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
+  # nutzer für den share
+  restic_mount_user: restic
+  # passwort für den mount
+  restic_mount_password: "unsafe_password"
+  # where to send in case of an error
+  restic_fail_mail: x@y.de

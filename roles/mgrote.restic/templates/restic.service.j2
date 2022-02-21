@@ -1,0 +1,14 @@
+{{ file_header | default () }}
+[Unit]
+Description=Backup with restic
+Requires=media-restic.mount
+After=media-restic.mount
+OnFailure=restic_mail.service
+
+[Service]
+Type=simple
+EnvironmentFile={{ restic_conf_dir }}/restic.env
+ExecStart=/usr/bin/restic backup --no-cache --exclude-file {{ restic_conf_dir }}/excludes {{ restic_folders_to_backup }}
+User={{ restic_user }}
+Group={{ restic_group }}
+RestartSec={{ restic_failure_delay }}

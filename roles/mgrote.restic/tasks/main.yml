@@ -1,16 +1,124 @@
 ---
-  - name: include user tasks
-    include_tasks: user.yml
-    when: restic_enable_role
+  - name: ensure group exists
+    become: true
+    ansible.builtin.group:
+      name: "{{ restic_group }}"
+      state: present
 
-  - name: include install tasks
-    include_tasks: install.yml
-    when: restic_enable_role
+  - name: ensure user exists
+    become: true
+    ansible.builtin.user:
+      name: "{{ restic_user }}"
+      group: "{{ restic_group }}"
+      shell: /usr/sbin/nologin
 
-  - name: include directories tasks
-    include_tasks: dir.yml
-    when: restic_enable_role
+  - name: install restic-packages
+    become: yes
+    ansible.builtin.package:
+      name:
+        - restic
+      state: present
 
-  - name: include config tasks
-    include_tasks: config.yml
-    when: restic_enable_role
+  - name: create "{{ restic_conf_dir }}"
+    become: yes
+    ansible.builtin.file:
+      path: "{{ restic_conf_dir }}"
+      state: directory
+      owner: "{{ restic_user }}"
+      group: "{{ restic_group }}"
+      mode: 0755
+
+  - name: template smb.cred
+    become: yes
+    ansible.builtin.template:
+      src: "smb.cred.j2"
+      dest: "{{ restic_conf_dir }}/smb.cred"
+      owner: "{{ restic_user }}"
+      group: "{{ restic_group }}"
+      mode: 0600
+    no_log: true
+
+  - name: templates excludes
+    become: yes
+    ansible.builtin.blockinfile:
+      path: "{{ restic_conf_dir }}/excludes"
+      create: yes
+      block: "{{ restic_exclude }}"
+      mode: 0644
+      owner: "{{ restic_user }}"
+      group: "{{ restic_group }}"
+
+  - name: template restic.env
+    become: yes
+    ansible.builtin.template:
+      src: "restic.env.j2"
+      dest: "{{ restic_conf_dir }}/restic.env"
+      owner: root
+      group: root
+      mode: 0600
+    no_log: true
+
+  - name: template restic.mount
+    become: yes
+    ansible.builtin.template:
+      src: media-restic.mount.j2
+      dest: /etc/systemd/system/media-restic.mount # media-restic == /media/restic
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+      - systemctl enable units
+
+  - name: template restic.automount
+    become: yes
+    ansible.builtin.template:
+      src: media-restic.automount.j2
+      dest: /etc/systemd/system/media-restic.automount
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+      - systemctl enable units
+      - systemctl start units
+
+  - name: template restic.service
+    become: yes
+    ansible.builtin.template:
+      src: restic.service.j2
+      dest: /etc/systemd/system/restic.service
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+
+  - name: template restic.timer
+    become: yes
+    ansible.builtin.template:
+      src: restic.timer.j2
+      dest: /etc/systemd/system/restic.timer
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+
+  - name: template restic_mail.service
+    become: yes
+    ansible.builtin.template:
+      src: "restic_mail.service.j2"
+      dest: /etc/systemd/system/restic_mail.service
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+
+  - name: systemctl start restic.timer
+    become: yes
+    ansible.builtin.systemd:
+      name: restic.timer
+      state: started
+      enabled: yes

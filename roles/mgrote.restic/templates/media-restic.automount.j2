@@ -1,0 +1,11 @@
+{{ file_header | default () }}
+[Unit]
+Description=Automounter for restic
+Requires=network-online.target
+
+[Automount]
+Where=/media/restic
+TimeoutIdleSec={{ restic_mount_timeout }}
+
+[Install]
+WantedBy=multi-user.target

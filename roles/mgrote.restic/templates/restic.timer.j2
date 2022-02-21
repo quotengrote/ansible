@@ -1,0 +1,10 @@
+{{ file_header | default () }}
+[Unit]
+Description=Timer for restic backups.
+
+[Timer]
+OnCalendar={{ restic_schedule }}
+RandomizedDelaySec=30 min
+
+[Install]
+WantedBy=timers.target multi-user.target

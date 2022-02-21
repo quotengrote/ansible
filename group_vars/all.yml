@@ -6,6 +6,26 @@
     #----------------------------------------------------------------#
     #              This file is managed with ansible!                #
     #----------------------------------------------------------------#
+  ### mgrote.restic
+  restic_user: root
+  restic_group: restic
+  restic_conf_dir: /etc/restic
+  restic_exclude: |
+        ._*
+        desktop.ini
+        .Trash-*
+        **/**cache***/**
+        **/**Cache***/**
+        **/**AppData***/**
+  restic_mount_timeout: "10 min"
+  restic_failure_delay: "30 s"
+  restic_schedule: "0/6:*"
+  restic_folders_to_backup: "/usr/local /etc /root /var/www /home"
+  restic_repository: "//fileserver2.grote.lan/restic"
+  restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
+  restic_mount_user: restic
+  restic_mount_password: "{{ lookup('keepass', 'fileserver_smb_user_restic', 'password') }}"
+  restic_fail_mail: "{{ empfaenger_mail }}"
   ### mgrote.user
   users:
     - username: mg
@@ -87,22 +107,6 @@
   postfix_smtp_use_tls: "yes"
   ### mgrote.apt_manage_sources
   manage_sources_apt_proxy: "acng.grote.lan:9999"
-  ### mgrote.restic
-  restic_enable_role: true
-  restic_folders_to_backup: "/usr/local /etc /root /home"
-  restic_cron_hours: "19"
-  restic_repository: "//fileserver2.grote.lan/restic"
-  restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
-  restic_mount: "/mnt/restic"
-  restic_mount_user: restic
-  restic_mount_password: "{{ lookup('keepass', 'fileserver_smb_user_restic', 'password') }}"
-  restic_exclude: |
-        ._*
-        desktop.ini
-        .Trash-*
-        **/**cache***/**
-        **/**Cache***/**
-        **/**AppData***/**
   ### mgrote.tmux
   tmux_conf_destination: "/home/mg/.tmux.conf"
   tmux_bashrc_destination: "/home/mg/.bashrc"
