@@ -19,7 +19,7 @@
         **/**AppData***/**
   restic_mount_timeout: "10 min"
   restic_failure_delay: "30 s"
-  restic_schedule: "0/6:*"
+  restic_schedule: "0/6:00"
   restic_folders_to_backup: "/usr/local /etc /root /var/www /home"
   restic_repository: "//fileserver2.grote.lan/restic"
   restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
