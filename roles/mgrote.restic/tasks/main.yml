@@ -5,13 +5,6 @@
       name: "{{ restic_group }}"
       state: present
 
-  - name: ensure user exists
-    become: true
-    ansible.builtin.user:
-      name: "{{ restic_user }}"
-      group: "{{ restic_group }}"
-      shell: /usr/sbin/nologin
-
   - name: install restic-packages
     become: yes
     ansible.builtin.package:

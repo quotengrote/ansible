@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: set root gid to 0
+      become: true
+      ansible.builtin.user:
+        name: root
+        group: root
