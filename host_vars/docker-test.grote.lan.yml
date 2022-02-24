@@ -38,6 +38,3 @@
       protocol: tcp
       comment: 'munin'
       from_ip: 0.0.0.0/0
-
-  ### mgrote.restic
-  restic_folders_to_backup: /usr/local /etc /root /home

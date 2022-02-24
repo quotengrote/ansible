@@ -17,10 +17,12 @@
         **/**cache***/**
         **/**Cache***/**
         **/**AppData***/**
+        # https://github.com/restic/restic/issues/1005
+        # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
   restic_mount_timeout: "10 min"
   restic_failure_delay: "30 s"
   restic_schedule: "0/6:00"
-  restic_folders_to_backup: "/usr/local /etc /root /var/www /home"
+  restic_folders_to_backup: "/" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eigeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
   restic_repository: "//fileserver2.grote.lan/restic"
   restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
   restic_mount_user: restic

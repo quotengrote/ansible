@@ -1,4 +1,10 @@
 ---
+  ### mgrote.restic
+  restic_folders_to_backup: "/ /etc/pve"
+  ### mgrote.restic
+  #restic_exclude: |
+  #      /hdd_data_raidz/**
+  #      /rpool/**
   ### mgrote.user
   users:
     - username: root

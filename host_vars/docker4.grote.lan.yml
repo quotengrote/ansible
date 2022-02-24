@@ -19,9 +19,6 @@
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
 
-  ### mgrote.restic
-  restic_folders_to_backup: /usr/local /etc /root /home
-
   ### geerlingguy.munin-node
   munin_node_plugins:
     - name: timesync

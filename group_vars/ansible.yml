@@ -10,8 +10,6 @@
   ### geerlingguy.ansible
   ansible_install_method: pip
   ansible_install_version_pip: '2.10'
-  ### mgrote.restic
-  restic_folders_to_backup: "/usr/local /etc /root /home"
   ### mgrote.apt_manage_packages
   apt_packages_extra:
     - sshpass

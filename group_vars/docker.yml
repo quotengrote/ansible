@@ -24,18 +24,5 @@
   pip_package: python3-pip
   pip_install_packages:
     - name: docker # für munin-plugin docker_
-  ### mgrote.restic
-  restic_cron_hours: "*/6"
-  restic_exclude: |
-        ._*
-        desktop.ini
-        .Trash-*
-        **/**cache***/**
-        **/**Cache***/**
-        **/**AppData***/**
-        /var/lib/docker/volumes/***Musik***
-        /var/lib/docker/volumes/***musik***
-        # https://github.com/restic/restic/issues/1005
-        # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
   ### mgrote.docker-compose-deploy
   docker_compose_base_dir: /home/mg/docker

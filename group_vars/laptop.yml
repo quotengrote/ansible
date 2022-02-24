@@ -29,7 +29,6 @@
     - path: /home/mg/.config/alacritty
     - path: /home/mg/.config/.ssh
     - path: /home/mg/.config/flameshot
-
   dotfiles_owner: mg
   ### mgrote.apt_manage_packages
   apt_packages_extra:

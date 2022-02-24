@@ -75,5 +75,3 @@
         env.max_time 20
         env.short_label true
         env.follow_redirect true
-  ### mgrote.restic
-  restic_folders_to_backup: /usr/local /etc /root /home /var/lib/docker
