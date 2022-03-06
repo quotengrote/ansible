@@ -130,7 +130,7 @@
       to_port: 4949
       protocol: tcp
       comment: 'munin'
-      from_ip: 192.168.2.144/24
+      from_ip: 192.168.2.0/24
   ufw_default_incoming_policy: deny
   ufw_default_outgoing_policy: allow
   ### mgrote.apt_manage_packages

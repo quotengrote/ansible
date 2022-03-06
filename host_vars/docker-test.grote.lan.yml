@@ -20,12 +20,6 @@
       repository_url: git.mgrote.net/mg/docker-munin-master_test
       state: present
       os_username: mg
-  ### geerlingguy.munin-node
-  munin_node_allowed_cidrs: [0.0.0.0/0] # weil der munin-server aus einem anderen subnet zugreift
-  munin_node_allowed_ips: # weil der munin-server aus einem anderen subnet zugreift
-    - '^127\.0\.0\.1$'
-    - '^::1$'
-    - ^0\.0\.0\.0$
   ### oefenweb.ufw
   ufw_rules: # ist extra weil bei munin kein subnet angegeben ist
     - rule: allow
@@ -38,3 +32,53 @@
       protocol: tcp
       comment: 'munin'
       from_ip: 0.0.0.0/0
+  ### geerlingguy.munin-node
+  munin_node_allowed_cidrs: [0.0.0.0/0] # weil der munin-server aus einem anderen subnet zugreift
+  munin_node_disabled_plugins:
+    - name: meminfo # zu hohe last
+    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
+    - name: ntp # verursacht zu viele dns ptr request
+    - name: hddtempd # ersetzt durch hddtemp_smartctl
+    - name: ipmi_power # für pve2, leeres diagramm
+    - name: docker_images
+    - name: docker_status
+    - name: chrony
+  munin_node_plugins:
+    - name: timesync
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
+    - name: systemd_status
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
+    - name: lvm_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
+      config: |
+        [lvm_*]
+        user root
+    - name: fail2ban
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
+      config: |
+        [fail2ban]
+        env.client /usr/bin/fail2ban-client
+        env.config_dir /etc/fail2ban
+        user root
+    - name: docker_containers
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
+      config: |
+        [docker_*]
+        user root
+        env.DOCKER_HOST unix://run/docker.sock
+    - name: docker_cpu
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
+    - name: docker_memory
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
+    - name: docker_network
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
+    - name: docker_volumes
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
+    - name: http_response
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/http/http_response
+      config: |
+        [http_response]
+        env.sites http://docker-test.grote.lan:333 http://docker-test.grote.lan:1234
+        env.max_time 20
+        env.short_label true
+        env.follow_redirect true

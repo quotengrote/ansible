@@ -4,6 +4,7 @@
     loop: "{{ docker_compose_projects }}"
     when:
       - item.state == "present"
+      - docker_compose_projects is defined
     no_log: true
 
   - name: loop docker tasks - down
@@ -11,4 +12,5 @@
     loop: "{{ docker_compose_projects }}"
     when:
       - item.state == "absent"
+      - docker_compose_projects is defined
     no_log: true

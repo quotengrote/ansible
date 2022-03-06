@@ -1,53 +1,103 @@
 ---
+  ### mgrote.apt_manage_packages
+  apt_packages_extra:
+    - libwww-curl-perl # für munin-plugin: unifi
+    - libjson-perl # für munin-plugin: unifi
+    - sshpass # fur munin mt_system_*
   ### mgrote.docker-compose-deploy
   docker_compose_projects:
-    - name: changedetection
-      dir_name: docker-changedetection
-      repository_url: git.mgrote.net/mg/docker-changedetection.io
-      state: present
-      os_username: mg
-    - name: munin-master
-      dir_name: docker-munin-master
-      repository_url: git.mgrote.net/mg/docker-munin-master_production
-      state: present
-      os_username: mg
     - name: watchtower
       dir_name: docker-watchtower
       repository_url: git.mgrote.net/mg/docker-watchtower
       state: present
-      os_username: mg
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+    - name: ansible-ara
+      dir_name: docker-ansible-ara
+      repository_url: git.mgrote.net/mg/docker-ansible-ara
+      state: present
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
     - name: homer
       dir_name: docker-homer
       repository_url: git.mgrote.net/mg/docker-homer
       state: present
-      os_username: mg
-    - name: unifi-controller
-      dir_name: docker-unifi-controller
-      repository_url: git.mgrote.net/mg/docker-unifi-controller
+      os_username: docker-user
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+    - name: changedetection
+      dir_name: docker-changedetection
+      repository_url: git.mgrote.net/mg/docker-changedetection.io
       state: present
-      os_username: mg
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+    - name: photoprism
+      dir_name: docker-photoprism
+      repository_url: git.mgrote.net/mg/docker-photoprism
+      state: present
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+    - name: nightscout
+      dir_name: docker-nightscout
+      repository_url: git.mgrote.net/mg/docker-nightscout
+      state: present
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+    - name: miniflux
+      dir_name: docker-miniflux
+      repository_url: git.mgrote.net/mg/docker-miniflux
+      state: present
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+    - name: traefik
+      dir_name: docker-traefik
+      repository_url: git.mgrote.net/mg/docker-traefik
+      state: present
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+      network_name: nw_proxy_traefik
+    - name: munin-master
+      dir_name: docker-munin-master
+      repository_url: git.mgrote.net/mg/docker-munin-master_production
+      state: present
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
     - name: oxidized
       dir_name: docker-oxidized
       repository_url: git.mgrote.net/mg/docker-oxidized
+      state: present
+      os_username: docker-user
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
-      state: present
-      os_username: mg
     - name: librenms
       dir_name: docker-librenms
       repository_url: git.mgrote.net/mg/docker-librenms
+      state: present
+      os_username: docker-user
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+    - name: unifi-controller
+      dir_name: docker-unifi-controller
+      repository_url: git.mgrote.net/mg/docker-unifi-controller
       state: present
-      os_username: mg
-  ### geerlingguy.munin-node
-  munin_node_allowed_cidrs: [0.0.0.0/0] # weil der munin-server aus einem anderen subnet zugreift
-  munin_node_allowed_ips: # weil der munin-server aus einem anderen subnet zugreift
-    - '^127\.0\.0\.1$'
-    - '^::1$'
-    - ^0\.0\.0\.0$
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+    - name: navidrome-mg
+      dir_name: docker-navidrome-mg
+      repository_url: git.mgrote.net/mg/docker-navidrome-mg
+      state: present
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
   ### oefenweb.ufw
   ufw_rules: # ist extra weil bei munin kein subnet angegeben ist
     - rule: allow
@@ -60,10 +110,6 @@
       protocol: tcp
       comment: 'munin'
       from_ip: 0.0.0.0/0
-  ### mgrote.apt_manage_packages
-  apt_packages_extra:
-    - libwww-curl-perl # für munin-plugin: unifi
-    - libjson-perl # für munin-plugin: unifi
   ### geerlingguy.pip
   pip_package: python3-pip
   pip_install_packages:
@@ -71,7 +117,17 @@
     - name: fritzconnection # für munin fritzbox*
     - name: lxml # für munin fritzbox*
     - name: requests # für munin fritzbox*
-  ### mgrote.munin-node
+  ### geerlingguy.munin-node
+  munin_node_allowed_cidrs: [0.0.0.0/0] # weil der munin-server aus einem anderen subnet zugreift
+  munin_node_disabled_plugins:
+    - name: meminfo # zu hohe last
+    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
+    - name: ntp # verursacht zu viele dns ptr request
+    - name: hddtempd # ersetzt durch hddtemp_smartctl
+    - name: ipmi_power # für pve2, leeres diagramm
+    - name: docker_images
+    - name: docker_status
+    - name: chrony
   munin_node_plugins:
     - name: timesync
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
@@ -82,20 +138,19 @@
       config: |
         [lvm_*]
         user root
+    - name: fail2ban
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
+      config: |
+        [fail2ban]
+        env.client /usr/bin/fail2ban-client
+        env.config_dir /etc/fail2ban
+        user root
     - name: docker_containers
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
       config: |
         [docker_*]
         user root
         env.DOCKER_HOST unix://run/docker.sock
-    - name: nextcloud_mgrote.next-cloud.org
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/nextcloud/nextcloud_
-      config: |
-        [nextcloud_mgrote.next-cloud.org]
-        env.username munin
-        env.password {{ lookup('keepass', 'nextcloud_munin_user', 'password') }}
-        env.api_path /ocs/v2.php/apps/serverinfo/api/v1/info
-        env.scheme https
     - name: docker_cpu
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
     - name: docker_memory
@@ -104,6 +159,22 @@
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
     - name: docker_volumes
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
+    - name: http_response
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/http/http_response
+      config: |
+        [http_response]
+        env.sites http://docker7.grote.lan:8888/nodes http://docker7.grote.lan:1234 http://docker7.grote.lan:5000 http://docker7.grote.lan:333 http://docker7.grote.lan:2233 http://docker7.grote.lan:2342 http://docker7.grote.lan:8081/ https://miniflux.mgrote.net/ http://docker7.grote.lan:3001 https://nightscout.mgrote.net https://audio.mgrote.net/mg
+        env.max_time 20
+        env.short_label true
+        env.follow_redirect true
+    - name: nextcloud_mgrote.next-cloud.org
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/nextcloud/nextcloud_
+      config: |
+        [nextcloud_mgrote.next-cloud.org]
+        env.username munin
+        env.password {{ lookup('keepass', 'nextcloud_munin_user', 'password') }}
+        env.api_path /ocs/v2.php/apps/serverinfo/api/v1/info
+        env.scheme https
     - name: mt_system_crs309
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/router/mikrotik_system
       config: |
@@ -138,7 +209,7 @@
         # Password to login to unifi controller API. Default is "ubnt"
         env.pass {{ lookup('keepass', 'unifi_munin_user', 'password') }}
         # URL of the API, with port if needed.  No trailing slash.
-        env.api_url https://docker2.grote.lan:8443
+        env.api_url https://docker7.grote.lan:8443
         # Verify SSL certificate name against host.
         # Note: if using a default cloudkey certificate, this will fail unless you manually add it
         # to the local keystore.
@@ -212,11 +283,3 @@
         env.fritzbox_username munin
         env.fritzbox_password {{ lookup('keepass', 'fritzbox_munin_user', 'password') }}
         env.traffic_remove_max true # if you do not want the possible max values
-    - name: http_response
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/http/http_response
-      config: |
-        [http_response]
-        env.sites http://docker2.grote.lan:8888/nodes http://docker2.grote.lan:1234 http://docker2.grote.lan:5000 http://docker2.grote.lan:333
-        env.max_time 20
-        env.short_label true
-        env.follow_redirect true
