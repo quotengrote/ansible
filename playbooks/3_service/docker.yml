@@ -1,5 +1,5 @@
 ---
-- hosts: docker7.grote.lan
+- hosts: docker
   pre_tasks:
     - name: create pv + vg for docker
       become: true

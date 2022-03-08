@@ -1,25 +1,32 @@
 ---
+  ### mgrote.apt_manage_packages
+  apt_packages_extra:
+    - libwww-curl-perl # für munin-plugin: unifi
+    - libjson-perl # für munin-plugin: unifi
+    - sshpass # fur munin mt_system_*
   ### mgrote.docker-compose-deploy
-  docker_compose_base_dir: /home/mg/docker
   docker_compose_projects:
+    - name: watchtower
+      dir_name: docker-watchtower
+      repository_url: git.mgrote.net/mg/docker-watchtower
+      state: present
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
     - name: homer
       dir_name: docker-homer
       repository_url: git.mgrote.net/mg/docker-homer
       state: present
-      os_username: mg
-      git_branch: test
-    - name: watchtower
-      dir_name: docker-watchtower
-      repository_url: git.mgrote.net/mg/docker-watchtower
+      os_username: docker-user
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
-      state: present
-      os_username: mg
-    - name: munin-master-test
-      dir_name: docker-munin-master-test
+    - name: munin-test
+      dir_name: docker-munin-test
       repository_url: git.mgrote.net/mg/docker-munin-master_test
       state: present
-      os_username: mg
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
   ### oefenweb.ufw
   ufw_rules: # ist extra weil bei munin kein subnet angegeben ist
     - rule: allow
@@ -32,6 +39,13 @@
       protocol: tcp
       comment: 'munin'
       from_ip: 0.0.0.0/0
+  ### geerlingguy.pip
+  pip_package: python3-pip
+  pip_install_packages:
+    - name: docker # für munin-plugin docker_
+    - name: fritzconnection # für munin fritzbox*
+    - name: lxml # für munin fritzbox*
+    - name: requests # für munin fritzbox*
   ### geerlingguy.munin-node
   munin_node_allowed_cidrs: [0.0.0.0/0] # weil der munin-server aus einem anderen subnet zugreift
   munin_node_disabled_plugins:
@@ -74,11 +88,3 @@
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
     - name: docker_volumes
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
-    - name: http_response
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/http/http_response
-      config: |
-        [http_response]
-        env.sites http://docker-test.grote.lan:333 http://docker-test.grote.lan:1234
-        env.max_time 20
-        env.short_label true
-        env.follow_redirect true

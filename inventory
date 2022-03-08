@@ -27,7 +27,7 @@ all:
     docker:
       hosts:
         docker7.grote.lan:
-        docker-test.grote.lan:
+        docker7-test.grote.lan:
     vmtest:
       hosts:
         vm-test2.grote.lan:
@@ -67,7 +67,7 @@ all:
         dokuwiki-test.grote.lan:
         acng-test.grote.lan:
         ansible-test.grote.lan:
-        docker-test.grote.lan:
+        docker7-test.grote.lan:
         vm-test2.grote.lan:
         pve2-test2.grote.lan:
         gitea-test.grote.lan:
