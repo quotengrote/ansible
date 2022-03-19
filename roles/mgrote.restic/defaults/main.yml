@@ -13,11 +13,11 @@
         **/**cache***/**
         **/**Cache***/**
         **/**AppData***/**
-  # timeout for cifs mount; systemd notation
+  # timeout for cifs mount; systemd notation(systemd-analyze calendar "Sun *-0/2-* 23:00")
   restic_mount_timeout: "10 min"
-  # delay for restartung task; systemd notation
+  # delay for restartung task; systemd notation(systemd-analyze calendar "Sun *-0/2-* 23:00")
   restic_failure_delay: "30 s"
-  # when should restic run; systemd notation
+  # when should restic run; systemd notation(systemd-analyze calendar "Sun *-0/2-* 23:00")
   restic_schedule: "*:0/2"
   # welche ordner sollen gesichert werden
   restic_folders_to_backup: "/usr/local /etc /root /var/www /home"

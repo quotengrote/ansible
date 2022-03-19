@@ -1,0 +1,8 @@
+{{ file_header | default () }}
+
+[Unit]
+Description=Send a Mail in case of an error in zpool-scrub@.service.
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c '{{ zfs_extra_path_zpool }} status | mail -s "[ERROR] zpool scrub - %H" {{ empfaenger_mail }}'

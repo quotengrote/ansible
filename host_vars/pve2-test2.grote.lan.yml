@@ -42,14 +42,6 @@
   zfs_extra_arc_max_size: "2147483648" # 2GB in Bytes
   zfs_extra_zfs_pools:
     - name: "rpool"
-      cron_minutes_zfs_scrub: "5"
-      cron_hour_zfs_scrub: "23"
-      cron_day_of_month_zfs_scrub: "14"
-      cron_day_of_week_zfs_scrub: "*"
-      cron_month_zfs_scrub: "*/2"
+      systemd_timer_schedule: "*-01,04,07,10-01 23:00"
     - name: "hdd_vm_mirror"
-      cron_minutes_zfs_scrub: "10"
-      cron_hour_zfs_scrub: "23"
-      cron_day_of_month_zfs_scrub: "14"
-      cron_day_of_week_zfs_scrub: "*"
-      cron_month_zfs_scrub: "*/2"
+      systemd_timer_schedule: "*-01,04,07,10-01 23:00"

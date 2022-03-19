@@ -177,17 +177,9 @@
   zfs_extra_arc_max_size: "8589934592" # 8GB in Bytes
   zfs_extra_zfs_pools:
     - name: "rpool"
-      cron_minutes_zfs_scrub: "0"
-      cron_hour_zfs_scrub: "23"
-      cron_day_of_month_zfs_scrub: "14"
-      cron_day_of_week_zfs_scrub: "*"
-      cron_month_zfs_scrub: "*/2"
+      systemd_timer_schedule: "*-01,04,07,10-01 23:00" # jeden ersten eines jeden Quartals
     - name: "hdd_data_raidz"
-      cron_minutes_zfs_scrub: "0"
-      cron_hour_zfs_scrub: "23"
-      cron_day_of_month_zfs_scrub: "14"
-      cron_day_of_week_zfs_scrub: "*"
-      cron_month_zfs_scrub: "*/2"
+      systemd_timer_schedule: "*-01,04,07,10-01 23:00"
 
   ### mgrote.zfs_sanoid
   sanoid_datasets:
