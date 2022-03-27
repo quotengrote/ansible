@@ -1,0 +1,9 @@
+{{ file_header | default () }}
+[Unit]
+Description=Timer: Sets the fan threshold on Supermicro X9/10/11 Mainboards.
+
+[Timer]
+OnBootSec=1min
+
+[Install]
+WantedBy=timers.target multi-user.target
