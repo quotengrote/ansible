@@ -1,4 +1,0 @@
----
-  ### under which user the script is run
-  rasdaemon_user_group: "root"
-  rasdaemon_user: "rasdaemon"

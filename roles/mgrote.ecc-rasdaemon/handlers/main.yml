@@ -1,4 +1,0 @@
----
-  - name: guess-labels
-    become: yes
-    shell: '/usr/sbin/ras-mc-ctl --guess-labels >> /var/log/rasdaemon.log'

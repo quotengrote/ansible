@@ -12,8 +12,6 @@
         when: "'pve2.grote.lan' in inventory_hostname" }
     - { role: mgrote.smart, tags: "smart" }
     - { role: mgrote.postfix, tags: "postfix" }
-    - { role: mgrote.ecc-rasdaemon,
-        tags: "ecc" }
     - { role: mgrote.cv4pve-autosnap,
         tags: "cv4pve",
         when: "'pve2.grote.lan' in inventory_hostname" }
