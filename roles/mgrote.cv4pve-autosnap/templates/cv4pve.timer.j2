@@ -1,0 +1,11 @@
+{{ file_header | default () }}
+[Unit]
+Description=Timer: Trigger VM-Snapshots in PVE with cv4pve.
+
+[Timer]
+OnCalendar=*-*-* {{ cv4pve_cron_hour }}:{{ cv4pve_cron_minute }}:00
+RandomizedDelaySec=10 min
+
+
+[Install]
+WantedBy=timers.target multi-user.target

@@ -2,10 +2,9 @@
 
 ### Beschreibung
 Installiert [cv4pve-autosnap](https://github.com/Corsinvest/cv4pve-autosnap).
-Legt einen cronjob und das Logfile an.
+Legt einen systemd-timer.
 
 ### getestet auf
-- [x] ProxMox 6*
 - [x] ProxMox 7*
 
 ### Variablen + Defaults

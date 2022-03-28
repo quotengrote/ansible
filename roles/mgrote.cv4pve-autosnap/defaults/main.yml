@@ -12,5 +12,3 @@
   # under which user the script is run
   cv4pve_user_group: cv4pve
   cv4pve_user: cv4pve
-  # logfile path
-  cv4pve_logfile: /var/log/cv4pve-autosnap.log

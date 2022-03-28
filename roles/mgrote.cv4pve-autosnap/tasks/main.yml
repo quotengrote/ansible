@@ -2,6 +2,7 @@
   - name: include user tasks
     include_tasks: user.yml
 
+
   - name: create directories
     become: yes
     ansible.builtin.file:
@@ -30,41 +31,43 @@
       owner: "{{ cv4pve_user }}"
       group: "{{ cv4pve_user_group }}"
 
-  - name: copy bash-script
+  - name: template cv4pve.service
     become: yes
     ansible.builtin.template:
-      src: "cv4pve-script.sh"
-      dest: "/usr/local/bin/cv4pve/cv4pve-script.sh"
-      mode: a+x
-      owner: "{{ cv4pve_user }}"
-      group: "{{ cv4pve_user_group }}"
-
-  - name: create cronjob
-    become: yes
-    ansible.builtin.cron:
-      name: cv4pve-autosnap
-      state: present
-      job: "/usr/local/bin/cv4pve/cv4pve-script.sh"
-      minute: "{{ cv4pve_cron_minute }}"
-      hour: "{{ cv4pve_cron_hour }}"
-      user: "{{ cv4pve_user }}"
-
-  - name: create log
-    become: true
-    ansible.builtin.file:
-      path: /var/log/cv4pve-autosnap.log
-      state: touch
-      owner: "{{ cv4pve_user }}"
-      group: "{{ cv4pve_user_group }}"
-      mode: 0640
-      access_time: preserve
-      modification_time: preserve
-
-  - name: copy logrotate config
-    become: yes
-    ansible.builtin.template:
-      src: logrotate_cv4pve
-      dest: /etc/logrotate.d/cv4pve-autosnap
+      src: cv4pve.service.j2
+      dest: /etc/systemd/system/cv4pve.service
       owner: root
-      group: "{{ cv4pve_user_group }}"
+      group: root
       mode: 0644
+    notify:
+      - systemctl daemon-reload
+
+  - name: template cv4pve_mail.service
+    become: yes
+    ansible.builtin.template:
+      src: cv4pve_mail.service.j2
+      dest: /etc/systemd/system/cv4pve_mail.service
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+
+
+  - name: template cv4pve.timer
+    become: yes
+    ansible.builtin.template:
+      src: cv4pve.timer.j2
+      dest: /etc/systemd/system/cv4pve.timer
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+
+  - name: systemctl start cv4pve.timer
+    become: yes
+    ansible.builtin.systemd:
+      name: cv4pve.timer
+      state: started
+      enabled: yes

@@ -13,8 +13,7 @@
     - { role: mgrote.smart, tags: "smart" }
     - { role: mgrote.postfix, tags: "postfix" }
     - { role: mgrote.cv4pve-autosnap,
-        tags: "cv4pve",
-        when: "'pve2.grote.lan' in inventory_hostname" }
+        tags: "cv4pve" }
     - { role: mgrote.r8152_kernel_module,
         tags: "r8152" }
     - { role: mgrote.proxmox_bind_mounts,
