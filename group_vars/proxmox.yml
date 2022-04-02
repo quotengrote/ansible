@@ -81,7 +81,7 @@
     - name: kvm_net
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_net
     - name: kvm_io
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/kvm_io
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_io
       config: |
         [kvm_io]
         user root
