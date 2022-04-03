@@ -8,6 +8,4 @@ OnFailure=zpool-scrub-mail.service
 
 [Service]
 Type=simple
-ExecStartPre=-{{ zfs_extra_path_zpool }} scrub -s %i
 ExecStart={{ zfs_extra_path_zpool }} scrub -w %i
-ExecStop={{ zfs_extra_path_zpool }} scrub -s %i

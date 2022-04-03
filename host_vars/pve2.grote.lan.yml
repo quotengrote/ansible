@@ -244,44 +244,6 @@
       snapshots: true
       template: '3tage'
 
-  sanoid_templates:
-    - name: '31tage'
-      keep_hourly: '24'                        # Aufheben (Stunde)
-      keep_daily: '31'                         # Aufheben (Tage)
-      keep_monthly: '3'                        # Aufheben (Monate)
-      keep_yearly: '0'                         # Aufheben (Jahre)
-      frequently: '16'                         # Aufheben (Minuten)
-      frequent_period: '15'                    # Intervall (alle 5 Minuten)
-      autosnap: 'yes'                          # Automatisches erstellen von Snapshots
-      autoprune: 'yes'
-    - name: '14tage'
-      keep_hourly: '24'
-      keep_daily: '14'
-      keep_monthly: '0'
-      keep_yearly: '0'
-      frequently: '16'
-      frequent_period: '15'
-      autosnap: 'yes'
-      autoprune: 'yes'
-    - name: '3tage'
-      keep_hourly: '24'
-      keep_daily: '3'
-      keep_monthly: '0'
-      keep_yearly: '0'
-      frequently: '16'
-      frequent_period: '15'
-      autosnap: 'yes'
-      autoprune: 'yes'
-    - name: '3monate'
-      keep_hourly: '24'
-      keep_daily: '3'
-      keep_monthly: '3'
-      keep_yearly: '0'
-      frequently: '16'
-      frequent_period: '15'
-      autosnap: 'yes'
-      autoprune: 'yes'
-
   ### mgrote.cv4pve-autosnap
   cv4pve_api_user: root@pam!cv4pve-autosnap
   cv4pve_api_token: "{{ lookup('keepass', 'cv4pve_api_token_pve2', 'password') }}"

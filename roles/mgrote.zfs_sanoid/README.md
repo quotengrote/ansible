@@ -4,7 +4,6 @@
 Installiert und konfiguriert sanoid.
 
 ### getestet auf
-- [x] ProxMox 6*
 - [x] ProxMox 7*
 
 ### Variablen + Defaults

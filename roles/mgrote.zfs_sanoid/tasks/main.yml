@@ -1,95 +1,62 @@
 ---
-  - name: include user tasks
-    include_tasks: user.yml
-
-  - name: Install Required Packages
+  - name: install packages
     become: true
-    ansible.builtin.package:
+    ansible.builtin.apt:
       name:
-        - ca-certificates
-        - apt-transport-https
-        - software-properties-common
-        - curl
-        - wget
-        - logrotate
-        - libcapture-tiny-perl
-        - libconfig-inifiles-perl
-        - moreutils
+        - sanoid
       state: present
 
   - name: Create Sanoid Directory
     become: true
     ansible.builtin.file:
-      path: "{{ item }}"
+      path: "/etc/sanoid"
       state: directory
-      owner: "{{ sanoid_user }}"
-      group: "{{ sanoid_user_group }}"
+      owner: root
+      group: root
       recurse: true
-    with_items:
-      - /etc/sanoid
-
-  - name: Install Sanoid Binary
-    become: true
-    ansible.builtin.get_url:
-      url: "{{ sanoid_dl_url }}"
-      dest: /usr/local/bin/sanoid
-      owner: "{{ sanoid_user }}"
-      group: "{{ sanoid_user_group }}"
-      mode: 0755
-
-  - name: Install Sanoid Defaults Configuration
-    become: true
-    ansible.builtin.get_url:
-      url: "{{ sanoid_dl_conf_url }}"
-      dest: /etc/sanoid/sanoid.defaults.conf
-      owner: "{{ sanoid_user }}"
-      group: "{{ sanoid_user_group }}"
-      mode: 0644
 
   - name: Generate Sanoid Configuration
     become: true
     ansible.builtin.template:
       src: sanoid.conf.j2
-      dest: /etc/sanoid/sanoid.conf
-      owner: "{{ sanoid_user }}"
-      group: "{{ sanoid_user_group }}"
+      dest: "/etc/sanoid/sanoid.conf"
+      owner: root
+      group: root
       mode: 0644
+    when: sanoid_datasets is defined and sanoid_templates is defined
 
-  - name: Create Sanoid Log
-    become: true
-    ansible.builtin.file:
-      path: "{{ sanoid_log_file }}"
-      state: touch
-      owner: "{{ sanoid_user }}"
-      group: "{{ sanoid_user_group }}"
-      mode: 0644
-      access_time: preserve
-      modification_time: preserve
-
-  - name: copy logrotate config
+  - name: template sanoid_mail.service
     become: yes
     ansible.builtin.template:
-      src: logrotate_sanoid
-      dest: /etc/logrotate.d/sanoid
+      src: "sanoid_mail.service.j2"
+      dest: /etc/systemd/system/sanoid_mail.service
       owner: root
-      group: "{{ sanoid_user_group }}"
+      group: root
       mode: 0644
+    notify:
+      - systemctl daemon-reload
 
-  - name: Generate Sanoid Cron Scripts
+  - name: add sanoid_mail.service to sanoid.service
     become: true
-    ansible.builtin.template:
-      src: sanoid-cron.sh
-      dest: /usr/local/bin/sanoid-cron.sh
-      owner: "{{ sanoid_user }}"
-      group: "{{ sanoid_user_group }}"
-      mode: 0755
-
-  - name: Configure Sanoid Cron Job
-    become: true
-    ansible.builtin.cron:
-      name: sanoid-cron
-      job: /usr/local/bin/sanoid-cron.sh
-      minute: "{{ sanoid_cron_minutes }}"
-      hour: "{{ sanoid_cron_hours }}"
-      user: "{{ sanoid_user }}"
+    community.general.ini_file:
+      path: "/lib/systemd/system/sanoid.service"
+      section: Unit
       state: present
+      no_extra_spaces: no
+      option: OnFailure
+      value: sanoid_mail.service
+    notify:
+      - systemctl daemon-reload
+
+  - name: set timer
+    become: true
+    community.general.ini_file:
+      path: "/lib/systemd/system/sanoid.timer"
+      section:  Timer
+      state: present
+      no_extra_spaces: no
+      option: OnCalendar
+      value: "{{ sanoid_timer }}"
+    notify:
+      - systemctl daemon-reload
+    when: sanoid_timer is defined

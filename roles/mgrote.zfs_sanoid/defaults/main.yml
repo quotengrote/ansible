@@ -1,58 +1,47 @@
 ---
-  ### under which user the script is run
-  sanoid_user_group: "root"
-  sanoid_user: "sanoid"
-
-  ### where to store the logfile
-  sanoid_log_file: "/var/log/sanoid-cron.log"
-
-  ### where to download the binary + config
-  sanoid_dl_url: "https://raw.githubusercontent.com/jimsalterjrs/sanoid/master/sanoid"
-  sanoid_dl_conf_url: "https://raw.githubusercontent.com/jimsalterjrs/sanoid/master/sanoid.defaults.conf"
-
   ### when should the script be run
-  sanoid_cron_hours: '*'
-  sanoid_cron_minutes: '*'
+  sanoid_timer: '*-*-* *:00/5'
 
-  ### "Default" Datasets
-  sanoid_datasets: # dictionary
-    - path: 'hdd_data_raidz/data' # path to dataset; without leading /
-      template: 'fiveminutes' # name
-      recursive: 'no' # recursive snapshotting
-      snapshots: true # (de)activate; can be used to disable snapshotting of subdatasets if recursive is set
-    - path: 'hdd_data_raidz/videos'
-      template: 'hourly'
-      recursive: 'yes'
-      snapshots: true
-    - path: 'hdd_data_raidz/test'
-      snapshots: false # deaktiviert sanoid für das dataset
-
-  ### Templates
-  sanoid_templates:
-    - name: 'fiveminutes'
-      keep_hourly: '24'                        # Aufheben (Stunde)
-      keep_daily: '31'                         # Aufheben (Tage)
-      keep_monthly: '6'                        # Aufheben (Monate)
-      keep_yearly: '0'                         # Aufheben (Jahre)
-      frequently: '36'                         # Aufheben (Minuten)
-      frequent_period: '5'                     # Intervall (alle 5 Minuten)
-      autosnap: 'yes'                          # Automatisches erstellen von Snapshots
-      autoprune: 'yes'
-    - name: 'hourly'
-      keep_hourly: '24'
-      keep_daily: '31'
-      keep_monthly: '6'
-      keep_yearly: '1'
-      frequently: '0'
-      frequent_period: '0'
-      autosnap: 'yes'
-      autoprune: 'yes'
-    - name: 'daily'
-      keep_hourly: '0'
-      keep_daily: '31'
-      keep_monthly: '6'
-      keep_yearly: '1'
-      frequently: '0'
-      frequent_period: '0'
-      autosnap: 'yes'
-      autoprune: 'yes'
+#  ### "Default" Datasets
+#  sanoid_datasets: # dictionary
+#    - path: 'hdd_data_raidz/data' # path to dataset; without leading /
+#      template: 'fiveminutes' # name
+#      recursive: 'no' # recursive snapshotting
+#      snapshots: true # (de)activate; can be used to disable snapshotting of subdatasets if recursive is set
+#    - path: 'hdd_data_raidz/videos'
+#      template: 'hourly'
+#      recursive: 'yes'
+#      snapshots: true
+#    - path: 'hdd_data_raidz/test'
+#      snapshots: false # deaktiviert sanoid für das dataset
+#
+#  ### Templates
+#  sanoid_templates:
+#    - name: 'fiveminutes'
+#      keep_hourly: '24'                        # Aufheben (Stunde)
+#      keep_daily: '31'                         # Aufheben (Tage)
+#      keep_monthly: '6'                        # Aufheben (Monate)
+#      keep_yearly: '0'                         # Aufheben (Jahre)
+#      frequently: '36'                         # Aufheben (Minuten)
+#      frequent_period: '5'                     # Intervall (alle 5 Minuten)
+#      autosnap: 'yes'                          # Automatisches erstellen von Snapshots
+#      autoprune: 'yes'
+#    - name: 'hourly'
+#      keep_hourly: '24'
+#      keep_daily: '31'
+#      keep_monthly: '6'
+#      keep_yearly: '1'
+#      frequently: '0'
+#      frequent_period: '0'
+#      autosnap: 'yes'
+#      autoprune: 'yes'
+#    - name: 'daily'
+#      keep_hourly: '0'
+#      keep_daily: '31'
+#      keep_monthly: '6'
+#      keep_yearly: '1'
+#      frequently: '0'
+#      frequent_period: '0'
+#      autosnap: 'yes'
+#      autoprune: 'yes'
+#
