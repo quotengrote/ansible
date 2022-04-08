@@ -1,0 +1,10 @@
+---
+#  ### mgote.rclone
+#  rclone_jobs:                               # Array of Jobs
+#    - name: nc_od_keepass                    # Jobname
+#      quelle: nextcloud-mg:/Rest/KeepassDB   # Source
+#      ziel: onedrive-encrypt:/Rest/KeepassDB # Destination
+#      timer: "*-*-* 23:15"                   # Timer
+#      state: true                            # treu = present // false = remove
+
+#  rclone_config: "{{ lookup('keepass', 'rclone.conf', 'notes') }}" # rclone Config, use as Block
