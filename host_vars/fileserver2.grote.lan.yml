@@ -6,81 +6,99 @@
       ziel: onedrive-encrypt:/Rest/KeepassDB
       timer: "*-*-* 23:15"
       state: true
-    - name: NC_od_docs
+      bwlimit: 2M
+    - name: nc_od_docs
       quelle: nextcloud-mg:/Dokumente
       ziel: onedrive-encrypt:/Dokumente
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
     - name: nc_sc_mg
       quelle: nextcloud-mg:/
       ziel: scaleway-encrypt-mg:/
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
     - name: nc_sc_amd
       quelle: nextcloud-amd:/
       ziel: scaleway-encrypt-amd:/
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
     - name: smb_amd_glacier
       quelle: "/shares_amd"
       ziel: "scaleway-encrypt-glacier:/amd"
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
     - name: smb_archiv_glacier
       quelle: "/shares_archiv"
       ziel: "scaleway-encrypt-glacier:/archiv"
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
     - name: smb_backup_glacier
       quelle: "/shares_backup"
       ziel: "scaleway-encrypt-glacier:/backup"
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
     - name: smb_bilder_glacier
       quelle: "/shares_bilder"
       ziel: "scaleway-encrypt-glacier:/bilder"
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
     - name: smb_buecher_glacier
       quelle: "/shares_buecher"
       ziel: "scaleway-encrypt-glacier:/buecher"
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
     - name: smb_hm_glacier
       quelle: "/shares_hm"
       ziel: "scaleway-encrypt-glacier:/hm"
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
     - name: smb_musik_glacier
       quelle: "/shares_music"
       ziel: "scaleway-encrypt-glacier:/musik"
       timer: "*-*-* 23:15"
+      loglevel: INFO
       state: true
+      bwlimit: 2M
+      mode: "--size-only"
     - name: smb_programme_glacier
       quelle: "/shares_programme"
       ziel: "scaleway-encrypt-glacier:/programme"
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
     - name: smb_vm_glacier
       quelle: "/shares_vm"
       ziel: "scaleway-encrypt-glacier:/vm"
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
     - name: smb_tmp_glacier
       quelle: "/shares_tmp"
       ziel: "scaleway-encrypt-glacier:/tmp"
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
     - name: smb_scans_glacier
       quelle: "/shares_scans"
       ziel: "scaleway-encrypt-glacier:/scans"
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
     - name: smb_restic_glacier
       quelle: "/shares_restic"
       ziel: "scaleway-encrypt-glacier:/restic"
       timer: "*-*-* 23:15"
       state: true
+      bwlimit: 2M
 
   rclone_config: "{{ lookup('keepass', 'rclone.conf', 'notes') }}"
 

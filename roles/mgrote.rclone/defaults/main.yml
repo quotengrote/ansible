@@ -1,10 +1,17 @@
 ---
-#  ### mgote.rclone
-#  rclone_jobs:                               # Array of Jobs
-#    - name: nc_od_keepass                    # Jobname
-#      quelle: nextcloud-mg:/Rest/KeepassDB   # Source
-#      ziel: onedrive-encrypt:/Rest/KeepassDB # Destination
-#      timer: "*-*-* 23:15"                   # Timer
-#      state: true                            # treu = present // false = remove
 
 #  rclone_config: "{{ lookup('keepass', 'rclone.conf', 'notes') }}" # rclone Config, use as Block
+
+#  ### mgote.rclone
+#  rclone_jobs:                                     # Array of Jobs
+#    - name: smb_musik_glacier                      # Jobname
+#      quelle: "/shares_music"                      # Source
+#      ziel: "scaleway-encrypt-glacier:/musik"      # Destination
+#      timer: "*-*-* 23:15"                         # Timer
+#      loglevel: DEBUG                              # Optional: Loglevel
+#      state: true                                  # true = present // false = remove
+#      bwlimit: 2M                                  # Optional: Bandwidthlimit
+#      mode: "--size-only"                          # Optional: mode (https://rclone.org/s3/)
+#      transfers                                    # Optional: Transfers
+#      checkers                                     # Optional: Checkers
+#      retries                                      # Optional: Retries
