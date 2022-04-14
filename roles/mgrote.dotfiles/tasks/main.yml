@@ -10,6 +10,12 @@
       path: "{{ dotfiles_repo_path }}"
     register: repo_exists
 
+  - name: set safe directory
+    become: true
+    ansible.builtin.shell:
+      cmd: git config --global --add safe.directory "{{ dotfiles_repo_path }}"
+    changed_when: false
+
   - name: stash changes
     ansible.builtin.shell: git stash
     args:
@@ -39,7 +45,7 @@
       state: directory
     with_items: "{{ dotfiles_dirs }}"
 
-  - name: Link dotfiles into home folder.
+  - name: Link dotfiles into home folder
     file:
       src: "{{ item.repo_path }}"
       dest: "{{ item.local_path }}"
