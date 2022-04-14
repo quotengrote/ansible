@@ -18,6 +18,12 @@
       path: "{{ project_dir }}"
     register: repo_exists
 
+  - name: set safe directory
+    become: true
+    ansible.builtin.shell:
+      cmd: git config --global --add safe.directory "{{ project_dir }}"
+    changed_when: false
+
   - name: stash changes - "{{ item.name }}"
     ansible.builtin.shell: git stash
     args:

@@ -13,6 +13,13 @@
       path: "{{ vim_vundle_path }}"
     register: folder_exists
 
+
+  - name: set safe directory
+    become: true
+    ansible.builtin.shell:
+      cmd: git config --global --add safe.directory "{{ vim_vundle_path }}"
+    changed_when: false
+
   - name: Ensure repository is cloned locally.
     git:
       repo: "{{ vim_vundle_repo_url }}"
