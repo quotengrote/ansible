@@ -1,0 +1,51 @@
+---
+  - name: template systemd services
+    become: yes
+    ansible.builtin.template:
+      src: "rclone.service.j2"
+      dest: "/etc/systemd/system/name.service"
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+
+
+  # wenn die unit über einen timer aktiviert wird muss sie nicht selber enabled werden, nur der timer muss enabled werden
+  - name: template rclone timer
+    become: yes
+    ansible.builtin.template:
+      src: "rclone.timer.j2"
+      dest: "/etc/systemd/system/rclone_{{ item.name }}.timer"
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+    with_items:
+      - "{{ rclone_jobs }}"
+
+  # erstelle systemd-template
+  - name: template rclone_mail@.service.j2
+    become: yes
+    ansible.builtin.template:
+      src: "rclone_mail@.service.j2"
+      dest: "/etc/systemd/system/rclone_mail@.service"
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+
+  # enable units, muss hier erfolgen statt als handler da sonst schonmit den units weiter gearbeitet wird obwohl sie noch nciht aktiv sind
+  - name: systemctl enable timer units
+    become: yes
+    ansible.builtin.systemd:
+      name: "rclone_{{ item.name }}.timer"
+      enabled: yes
+      masked: no
+      state: started
+    with_items:
+      - "{{ rclone_jobs }}"
+    notify:
+      - systemctl daemon-reload

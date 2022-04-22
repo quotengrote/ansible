@@ -1,0 +1,17 @@
+---
+
+#  rclone_config: "{{ lookup('keepass', 'rclone.conf', 'notes') }}" # rclone Config, use as Block
+
+#  ### mgote.rclone
+#  rclone_jobs:                                     # Array of Jobs
+#    - name: smb_musik_glacier                      # Jobname
+#      quelle: "/shares_music"                      # Source
+#      ziel: "scaleway-encrypt-glacier:/musik"      # Destination
+#      timer: "*-*-* 23:15"                         # Timer
+#      loglevel: DEBUG                              # Optional: Loglevel
+#      state: true                                  # true = present // false = remove
+#      bwlimit: 2M                                  # Optional: Bandwidthlimit
+#      mode: "--size-only"                          # Optional: mode (https://rclone.org/s3/)
+#      transfers                                    # Optional: Transfers
+#      checkers                                     # Optional: Checkers
+#      retries                                      # Optional: Retries
