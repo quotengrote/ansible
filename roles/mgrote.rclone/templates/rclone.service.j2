@@ -7,4 +7,4 @@ OnFailure=rclone_mail@{{ item.name }}.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/rclone --config "/etc/rclone/rclone.conf" sync --log-level {{ item.loglevel  | default ("INFO") }} --transfers {{ item.transfers  | default ("8") }} --checkers {{ item.checkers  | default ("8") }} --retries {{ item.retries  | default ("5") }} --bwlimit {{ item.bwlimit | default ("0") }} {% if item.mode is defined %}{{ item.mode }}{% endif %} --delete-after "{{ item.quelle }}" "{{item.ziel }}"
+ExecStart=/usr/bin/rclone --config "/etc/rclone/rclone.conf" sync --log-level {{ item.loglevel  | default ("INFO") }} --stats=5m --transfers {{ item.transfers  | default ("8") }} --checkers {{ item.checkers  | default ("8") }} --retries {{ item.retries  | default ("5") }} --bwlimit {{ item.bwlimit | default ("0") }} {% if item.mode is defined %}{{ item.mode }}{% endif %} --delete-after "{{ item.quelle }}" "{{item.ziel }}"
