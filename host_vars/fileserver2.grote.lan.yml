@@ -87,14 +87,6 @@
       bwlimit: 2M
       mode: "--size-only"
       transfers: 4
-    - name: smb_vm_glacier
-      quelle: "/shares_vm"
-      ziel: "scaleway-encrypt-glacier:/vm"
-      timer: "*-*-17 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-      transfers: 2
     - name: smb_tmp_glacier
       quelle: "/shares_tmp"
       ziel: "scaleway-encrypt-glacier:/tmp"
