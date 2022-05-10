@@ -1,4 +1,0 @@
----
-- hosts: ntpserver
-  roles:
-      - { role: mgrote.ntp_chrony_server, tags: "ntp" }

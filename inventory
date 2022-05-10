@@ -12,10 +12,6 @@ all:
       hosts:
         dnsmasq-test.grote.lan:
         dnsmasq.grote.lan:
-    ntpserver:
-      hosts:
-        ntp-server-test.grote.lan:
-        ntp-server.grote.lan:
     acng:
       hosts:
         acng.grote.lan:
@@ -60,7 +56,6 @@ all:
         pve2.grote.lan:
         gitea.grote.lan:
         dnsmasq.grote.lan:
-        ntp-server.grote.lan:
         docker7.grote.lan:
     test:
       hosts:
@@ -72,6 +67,5 @@ all:
         pve2-test2.grote.lan:
         gitea-test.grote.lan:
         dnsmasq-test.grote.lan:
-        ntp-server-test.grote.lan:
         fileserver2-test.grote.lan:
         bastelstube-gui.grote.lan:

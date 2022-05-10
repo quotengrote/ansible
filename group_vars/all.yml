@@ -97,7 +97,7 @@
   ### mgrote.systemd-timesyncd
   ntp_timesyncd_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
   ntp_timesyncd_servers: # welche Server sollen befragt werden
-    - ntp-server.grote.lan
+    - 192.168.2.1
   ntp_chrony_logging: false # logging an/aus
   ### mgrote.postfix
   postfix_absender_mailadresse: info@mgrote.net

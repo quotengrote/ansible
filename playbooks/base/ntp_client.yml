@@ -1,5 +1,4 @@
 ---
-  - hosts: all:!ntpserver
+  - hosts: all
     roles:
-      - { role: mgrote.systemd-timesyncd,
-          tags: "ntp"}
+      - { role: mgrote.systemd-timesyncd, tags: "ntp"}

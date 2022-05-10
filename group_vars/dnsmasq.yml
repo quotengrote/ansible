@@ -17,10 +17,6 @@
       from_ip: 0.0.0.0/0
   ### mgrote.restic
   restic_repository: "//192.168.2.36/restic"
-  ### mgrote.systemd-timesyncd
-  ntp_timesyncd_servers: # weil pihole den fqdn nicht auflösen kann
-    - address: pool.ntp.org
-      options: iburst #optionaler parameter
   ### mgrote.apt_manage_sources
   # wird leer gesetzt da dnsmasq NICHT den Router befragt und daher keine Lokalen Hostnamen abfragen kann
   manage_sources_apt_proxy: ""

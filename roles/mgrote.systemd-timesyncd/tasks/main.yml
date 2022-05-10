@@ -39,6 +39,7 @@
       mode: 0644
       owner: root
       group: root
+    notify: restart systemd-timesyncd.service
 
   - name: activate systemd-timesyncd service (not within containers like lxc)
     become: yes
