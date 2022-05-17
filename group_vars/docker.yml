@@ -1,4 +1,19 @@
 ---
+  ### mrlesmithjr.ansible-manage-lvm
+  lvm_groups:
+   - vgname: vg_docker
+     disks:
+       - /dev/sdb
+     create: true
+     lvnames:
+       - lvname: lv_docker
+         size: 100%FREE
+         create: true
+         filesystem: xfs
+         mount: true
+         mntp: /var/lib/docker
+  manage_lvm: true
+  
   ### mgrote.user
   users:
     - username: mg
