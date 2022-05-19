@@ -1,5 +1,6 @@
 ---
 - hosts: gitea
   roles:
+    - { role: mrlesmithjr.ansible-manage-lvm, tags: "lvm", become: true }
     - { role: mgrote.postfix, tags: "postfix" }
     - { role: tmaurice.gitea, tags: "gitea", become: true }

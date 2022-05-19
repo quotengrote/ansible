@@ -1,4 +1,20 @@
 ---
+  ### mrlesmithjr.ansible-manage-lvm
+  lvm_groups:
+   - vgname: vg_gitea_data
+     disks:
+       - /dev/sdb
+     create: true
+     lvnames:
+       - lvname: lv_gitea_data
+         size: +100%FREE
+         create: true
+         filesystem: xfs
+         mount: true
+         mntp: /var/lib/gitea
+  manage_lvm: true
+  pvresize_to_max: true
+
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow
