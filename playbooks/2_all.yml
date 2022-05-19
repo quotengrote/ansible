@@ -16,3 +16,4 @@
   - import_playbook: base/remove_snapd.yml
   - import_playbook: base/unattended_upgrades.yml
   - import_playbook: base/update_packages.yml
+  - import_playbook: base/lvm.yml

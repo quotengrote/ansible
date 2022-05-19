@@ -13,7 +13,6 @@
          mount: true
          mntp: /var/lib/docker
   manage_lvm: true
-  
   ### mgrote.user
   users:
     - username: mg
