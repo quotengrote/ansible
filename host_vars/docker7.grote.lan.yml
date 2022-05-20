@@ -103,6 +103,11 @@
       protocol: tcp
       comment: 'munin'
       from_ip: 0.0.0.0/0
+    - rule: allow
+      to_port: 443
+      protocol: tcp
+      comment: 'mf-filter' # da mgrote.net auf tarefik umgelietet wird funktioniert sonst mf-filter nicht, daher hier explizit Port 443 freigegeben
+      from_ip: 0.0.0.0/0
   ### geerlingguy.pip
   pip_package: python3-pip
   pip_install_packages:
