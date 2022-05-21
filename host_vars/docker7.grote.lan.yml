@@ -34,13 +34,6 @@
       os_username: docker-user
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
-    - name: nightscout
-      dir_name: docker-nightscout
-      repository_url: git.mgrote.net/mg/docker-nightscout
-      state: present
-      os_username: docker-user
-      repository_user: mg
-      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
     - name: miniflux
       dir_name: docker-miniflux
       repository_url: git.mgrote.net/mg/docker-miniflux
