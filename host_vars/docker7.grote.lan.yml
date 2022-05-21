@@ -158,14 +158,6 @@
         env.max_time 20
         env.short_label true
         env.follow_redirect true
-    - name: nextcloud_mgrote.next-cloud.org
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/nextcloud/nextcloud_
-      config: |
-        [nextcloud_mgrote.next-cloud.org]
-        env.username munin
-        env.password {{ lookup('keepass', 'nextcloud_munin_user', 'password') }}
-        env.api_path /ocs/v2.php/apps/serverinfo/api/v1/info
-        env.scheme https
     - name: mt_system_crs309
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/router/mikrotik_system
       config: |
