@@ -1,34 +1,6 @@
 ---
   ### mgote.rclone
   rclone_jobs:
-    - name: nc_od_keepass
-      quelle: nextcloud-mg:/Rest/KeepassDB
-      ziel: onedrive-encrypt:/Rest/KeepassDB
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-    - name: nc_od_docs
-      quelle: nextcloud-mg:/Dokumente
-      ziel: onedrive-encrypt:/Dokumente
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-    - name: nc_sc_mg
-      quelle: nextcloud-mg:/
-      ziel: scaleway-encrypt-mg:/
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-    - name: nc_sc_amd
-      quelle: nextcloud-amd:/
-      ziel: scaleway-encrypt-amd:/
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
     - name: smb_amd_glacier
       quelle: "/shares_amd"
       ziel: "scaleway-encrypt-glacier:/amd"

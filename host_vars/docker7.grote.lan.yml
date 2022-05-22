@@ -119,6 +119,7 @@
     - name: docker_images
     - name: docker_status
     - name: chrony
+    - name: nextcloud_mgrote.next-cloud.org
   munin_node_plugins:
     - name: timesync
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status

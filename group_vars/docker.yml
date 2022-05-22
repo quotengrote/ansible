@@ -7,12 +7,15 @@
      create: true
      lvnames:
        - lvname: lv_docker
-         size: 100%FREE
+         size: +100%FREE
          create: true
          filesystem: xfs
          mount: true
          mntp: /var/lib/docker
   manage_lvm: true
+  pvresize_to_max: true
+  ### mgrote.restic
+  restic_folders_to_backup: "/ /var/lib/docker" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
   ### mgrote.user
   users:
     - username: mg

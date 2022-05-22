@@ -43,9 +43,6 @@
   pip_package: python3-pip
   pip_install_packages:
     - name: docker # für munin-plugin docker_
-    - name: fritzconnection # für munin fritzbox*
-    - name: lxml # für munin fritzbox*
-    - name: requests # für munin fritzbox*
   ### geerlingguy.munin-node
   munin_node_allowed_cidrs: [0.0.0.0/0] # weil der munin-server aus einem anderen subnet zugreift
   munin_node_disabled_plugins:

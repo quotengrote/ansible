@@ -24,6 +24,7 @@ all:
       hosts:
         docker7.grote.lan:
         docker7-test.grote.lan:
+        docker8.grote.lan:
     vmtest:
       hosts:
         vm-test2.grote.lan:
@@ -57,6 +58,7 @@ all:
         gitea.grote.lan:
         dnsmasq.grote.lan:
         docker7.grote.lan:
+        docker8.grote.lan:
     test:
       hosts:
         dokuwiki-test.grote.lan:

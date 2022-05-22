@@ -7,12 +7,13 @@
      create: true
      lvnames:
        - lvname: lv_acng
-         size: 100%FREE
+         size: +100%FREE
          create: true
          filesystem: xfs
          mount: true
          mntp: /var/cache/apt-cacher-ng
   manage_lvm: true
+  pvresize_to_max: true
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow

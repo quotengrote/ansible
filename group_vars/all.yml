@@ -22,7 +22,7 @@
   restic_mount_timeout: "10 min"
   restic_failure_delay: "30 s"
   restic_schedule: "0/6:00" # alle 6 Stunden
-  restic_folders_to_backup: "/" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eigeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
+  restic_folders_to_backup: "/" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
   restic_repository: "//fileserver2.grote.lan/restic"
   restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
   restic_mount_user: restic
