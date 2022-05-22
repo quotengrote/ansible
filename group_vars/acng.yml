@@ -1,4 +1,18 @@
 ---
+  ### mrlesmithjr.ansible-manage-lvm
+  lvm_groups:
+   - vgname: vg_acng
+     disks:
+       - /dev/sdb
+     create: true
+     lvnames:
+       - lvname: lv_acng
+         size: 100%FREE
+         create: true
+         filesystem: xfs
+         mount: true
+         mntp: /var/cache/apt-cacher-ng
+  manage_lvm: true
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow
