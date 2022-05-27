@@ -49,3 +49,19 @@
       - "{{ rclone_jobs }}"
     notify:
       - systemctl daemon-reload
+
+  # ändere vorhandene unit; override.d statt direkte änderungen
+  - name: set timer
+    become: true
+    ansible.builtin.blockinfile:
+      create: yes
+      mode: 0644
+      owner: root
+      group: root
+      path: /lib/systemd/system/sanoid.timer.d/override.conf
+      block: |
+        [Timer]
+        OnCalendar = {{ sanoid_timer }}
+    when: sanoid_timer is defined
+    notify:
+      - systemctl daemon-reload

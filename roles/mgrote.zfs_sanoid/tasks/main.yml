@@ -38,25 +38,29 @@
 
   - name: add sanoid_mail.service to sanoid.service
     become: true
-    community.general.ini_file:
-      path: "/lib/systemd/system/sanoid.service"
-      section: Unit
-      state: present
-      no_extra_spaces: no
-      option: OnFailure
-      value: sanoid_mail.service
+    ansible.builtin.blockinfile:
+      create: yes
+      mode: 0644
+      owner: root
+      group: root
+      path: /lib/systemd/system/sanoid.service.d/override.conf
+      block: |
+        [Unit]
+        OnFailure = sanoid_mail.service
     notify:
       - systemctl daemon-reload
 
   - name: set timer
     become: true
-    community.general.ini_file:
-      path: "/lib/systemd/system/sanoid.timer"
-      section:  Timer
-      state: present
-      no_extra_spaces: no
-      option: OnCalendar
-      value: "{{ sanoid_timer }}"
+    ansible.builtin.blockinfile:
+      create: yes
+      mode: 0644
+      owner: root
+      group: root
+      path: /lib/systemd/system/sanoid.timer.d/override.conf
+      block: |
+        [Timer]
+        OnCalendar = {{ sanoid_timer }}
+    when: sanoid_timer is defined
     notify:
       - systemctl daemon-reload
-    when: sanoid_timer is defined
