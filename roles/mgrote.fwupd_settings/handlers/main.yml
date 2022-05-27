@@ -1,0 +1,7 @@
+---
+  - name: systemctl daemon-reload
+    become: yes
+    ansible.builtin.systemd:
+      state: restarted
+      daemon_reload: yes
+      name: fwupd-refresh.service

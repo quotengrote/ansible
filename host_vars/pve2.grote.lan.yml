@@ -4,7 +4,7 @@
   # zfs create hdd_data_raidz/videos
   # Pools müssen vorher erstellt sein!
   # rpool
-  # zpool create -f -o ashift=12 rpool mirror ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0R105094 /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0R105095
+  # zpool create -f -o ashift=12 rpool mirror ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0R105094 /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0R105095 mirror /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0T380959 /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0T380961 # ungetestet, wurde nachträglich erweitert
   # HDD_DATA_RAIDZ
   # zpool create -f -o ashift=12 hdd_data_raidz raidz /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SG991TJ /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SGA23EJ /dev/disk/by-id/ata-ST8000DM004-2CX188_ZCT1AK0F
 

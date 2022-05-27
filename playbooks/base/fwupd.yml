@@ -1,0 +1,7 @@
+---
+  - hosts: all:!proxmox
+    roles:
+      - { role: mgrote.fwupd_settings,
+          become: true,
+          tags: fwupd,
+          when: "ansible_facts['distribution'] == 'Ubuntu'"}
