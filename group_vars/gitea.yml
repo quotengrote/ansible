@@ -39,7 +39,7 @@
       comment: 'munin'
       from_ip: 192.168.2.144/24
   ### tmaurice.gitea
-  gitea_version: "1.15.7"
+  gitea_version: "1.16.8"
   gitea_app_name: "Gitea"
   gitea_user: "gitea"
   gitea_home: "/var/lib/gitea"
