@@ -12,6 +12,17 @@
          filesystem: xfs
          mount: true
          mntp: /mnt/nextcloud
+   - vgname: vg_docker
+     disks:
+       - /dev/sdc
+     create: true
+     lvnames:
+       - lvname: lv_docker
+         size: +100%FREE
+         create: true
+         filesystem: xfs
+         mount: true
+         mntp: /var/lib/docker
   manage_lvm: true
   pvresize_to_max: true
   ### mgrote.restic
