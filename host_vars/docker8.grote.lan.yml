@@ -3,7 +3,7 @@
   lvm_groups:
    - vgname: vg_nextcloud
      disks:
-       - /dev/sdb
+       - /dev/sdc
      create: true
      lvnames:
        - lvname: lv_nextcloud
@@ -14,7 +14,7 @@
          mntp: /mnt/nextcloud
    - vgname: vg_docker
      disks:
-       - /dev/sdc
+       - /dev/sdb
      create: true
      lvnames:
        - lvname: lv_docker
