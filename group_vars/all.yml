@@ -161,6 +161,7 @@
     - at
     - ripgrep
     - iotop
+    - pwgen
   apt_packages_physical:
     - hddtemp
     - ipmitool
