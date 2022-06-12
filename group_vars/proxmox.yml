@@ -30,34 +30,28 @@
   apt_packages_extra:
     - ifupdown2
     - bmon
-  ### geerlingguy.munin-node
-  munin_node_disabled_plugins:
-    - name: meminfo # zu hohe last
-    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
-    - name: ntp # verursacht zu viele dns ptr request
-    - name: hddtempd # ersetzt durch hddtemp_smartctl
-    - name: ipmi_power # für pve2, leeres diagramm
-    - name: squid_cache
-    - name: squid_objectsize
-    - name: squid_requests
-    - name: squid_traffic
-    - name: nfsd4
-    - name: nfsd
-    - name: kvm_vm_count
-    - name: proxmox_lxc_count
-    - name: proxmox_vm_count
-    - name: zfs_usage_rpool # liest falsch ein
-    - name: zfs_usage_hdd_data_raidz # liest falsch ein
-    - name: zpool_fragmentation # ist in zfs* vorhanden
+  ### mgrote.munin-node
   munin_node_plugins:
     - name: timesync
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
     - name: systemd_status
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
+    - name: systemd_mem
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_mem
+      config: |
+        [systemd_mem]
+        env.all_services true
     - name: lvm_
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
       config: |
         [lvm_*]
+        user root
+    - name: fail2ban
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
+      config: |
+        [fail2ban]
+        env.client /usr/bin/fail2ban-client
+        env.config_dir /etc/fail2ban
         user root
     - name: zfs_arcstats
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_arcstats
@@ -93,13 +87,6 @@
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_pool_dataset_count
     - name: ksm_
       src:  https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/system/kernel_same_page_merging
-    - name: fail2ban
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
-      config: |
-        [fail2ban]
-        env.client /usr/bin/fail2ban-client
-        env.config_dir /etc/fail2ban
-        user root
     - name: apcupsd_ww
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/power/apcupsd_ww
     - name: apcupsd_pwr

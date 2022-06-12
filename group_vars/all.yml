@@ -46,7 +46,7 @@
       public_ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyqs0OE5RVqs6tIzyuGQWvq/OVDa/tfdSEqMIwcthFt+pwCCjpqtNc8L8FSXgphSwuNosFakqhMLDFD3pmII+t61NRExsoR3nGTDuCAQnTvTKXTEfhnunN3pwgXWVTI68j9pRzmSy+hMkSFbgN9EGMSXxGcNunY7ewS3ZkVe08SWFpiX9giYq6uiOiMHsZKdcP6s2QRXUhZlTx2cOc/9gJ5lD82EUXQRZzT6ww2xVrceIW9c3CZFmSmYWxvrR7dPcHrke90FPPd5WhU+Anz++6GsT6+OhZTk+uQnBHllFXn9NoFQIEUDO4zV+gFXITaAbTkLAcCwuKB2QcDZ6C2mhf ansible-generated on ansible-v2
       allow_sudo: true
       allow_passwordless_sudo: true
-  ### geerlingguy.munin-node
+  ### mgrote.munin-node
   munin_node_bind_host: "0.0.0.0"
   munin_node_bind_port: "4949"
   munin_node_allowed_cidrs: [192.168.2.0/24]
@@ -55,15 +55,16 @@
     - name: hddtemp2 # ersetzt durch hddtemp_smartctl
     - name: ntp # verursacht zu viele dns ptr request
     - name: hddtempd # ersetzt durch hddtemp_smartctl
-    - name: ipmi_power # für pve2, leeres diagramm
-    - name: docker_images
-    - name: docker_status
-    - name: chrony
   munin_node_plugins:
     - name: timesync
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
     - name: systemd_status
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
+    - name: systemd_mem
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_mem
+      config: |
+        [systemd_mem]
+        env.all_services true
     - name: lvm_
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
       config: |

@@ -20,12 +20,17 @@
   ### mgrote.apt_manage_sources
   # wird leer gesetzt da dnsmasq NICHT den Router befragt und daher keine Lokalen Hostnamen abfragen kann
   manage_sources_apt_proxy: ""
-  ### geerlingguy.munin-node
+  ### mgrote.munin-node
   munin_node_plugins:
     - name: timesync
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
     - name: systemd_status
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
+    - name: systemd_mem
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_mem
+      config: |
+        [systemd_mem]
+        env.all_services true
     - name: lvm_
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
       config: |

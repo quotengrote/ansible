@@ -35,21 +35,22 @@
   acng_server_exthreshold: "60" #hebt Pakete 60 Tage auf
   acng_server_auth_user: acngadmin
   acng_server_auth_pass: "{{ lookup('keepass', 'acng_webinterface', 'password') }}"
-  ### geerlingguy.munin-node
+  ### mgrote.munin-node
   munin_node_plugins:
     - name: timesync
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
     - name: systemd_status
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
+    - name: systemd_mem
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_mem
+      config: |
+        [systemd_mem]
+        env.all_services true
     - name: lvm_
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
       config: |
         [lvm_*]
         user root
-    - name: acng
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/apt/acng
-      config: |
-        env.logfile /var/log/apt-cacher-ng/apt-cacher.log
     - name: fail2ban
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
       config: |
@@ -57,6 +58,10 @@
         env.client /usr/bin/fail2ban-client
         env.config_dir /etc/fail2ban
         user root
+    - name: acng
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/apt/acng
+      config: |
+        env.logfile /var/log/apt-cacher-ng/apt-cacher.log
     - name: http_response
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/http/http_response
       config: |
