@@ -6,45 +6,34 @@
   # rpool
   # zpool create -f -o ashift=12 rpool mirror ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0R105094 /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0R105095 mirror /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0T380959 /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0T380961 # ungetestet, wurde nachträglich erweitert
   # HDD_DATA_RAIDZ
-  # zpool create -f -o ashift=12 hdd_data_raidz raidz /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SG991TJ /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SGA23EJ /dev/disk/by-id/ata-ST8000DM004-2CX188_ZCT1AK0F
+  # zpool create -f -o ashift=12 hdd_data_raidz raidz /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SG991TJ /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SGA23EJ /dev/disk/by-id/ata-ST8000DM004-2CX188_ZCT1AK0F (alt)
+  # sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase hdd_data_raidz_neu mirror /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A27KFJDH /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A28LFJDH (neu)
 
 
   ### mgrote.zfs_extra
   # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
   zfs_datasets: # DatenPools werden hier nicht verwaltet
+    # rpool
+    - dataset: rpool
+      state: present
+      compression: zstd
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
     - dataset: rpool/vm
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: rpool/vm/dir/fileserver2_test
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: rpool/vm/dir
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: rpool/vm/zvol
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: rpool/vm/qcow
+      state: present
+    # hdd_data_raidz
+    - dataset: hdd_data_raidz
       state: present
       compression: zstd
       sync: disabled
@@ -54,126 +43,39 @@
       snapdir: hidden
     - dataset: hdd_data_raidz/papa_backup
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: hdd_data_raidz/pve_backup
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
       recordsize: 1M
     - dataset: hdd_data_raidz/videos
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
       recordsize: 1M
     - dataset: hdd_data_raidz/music
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
+      recordsize: 1M
     - dataset: hdd_data_raidz/tmp
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: hdd_data_raidz/archiv
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: hdd_data_raidz/amd
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: hdd_data_raidz/bilder
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
+      recordsize: 1M
     - dataset: hdd_data_raidz/hm
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: hdd_data_raidz/scans
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: hdd_data_raidz/restic
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: hdd_data_raidz/backup
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: hdd_data_raidz/buecher
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: hdd_data_raidz/programme
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
     - dataset: hdd_data_raidz/vm
       state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
+
   zfs_extra_arc_max_size: "8589934592" # 8GB in Bytes
   zfs_extra_zfs_pools:
     - name: "rpool"

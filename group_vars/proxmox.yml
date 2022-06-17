@@ -134,14 +134,6 @@
       autosnap: 'yes'
       autoprune: 'yes'
 
-
-
-  ### mgrote.apt_manage_sources
-  manage_sources_apt_proxy: ""
-  # Ansible Variablen
-  ### sudo
-  sudo: false
-
   ### mgrote.apcupsd
   apcupsd_master_onbatterydelay: 10
   apcupsd_master_batterylevel_for_shutdown: 50
@@ -153,3 +145,10 @@
   apcupsd_nis_master_listen_ip: 0.0.0.0
   apcupsd_nis_master_listen_port: 3551
   apcupsd_ups_name: APC-BX950U-GR
+
+  ### mgrote.apt_manage_sources
+  manage_sources_apt_proxy: ""
+
+  # Ansible Variablen
+  ### sudo
+  sudo: false
