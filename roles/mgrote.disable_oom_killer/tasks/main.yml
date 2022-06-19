@@ -1,0 +1,13 @@
+---
+  - name: disable oom-killer in sysctl.conf (works after a reboot)
+    become: true
+    blockinfile:
+      path: /etc/sysctl.conf
+      block: |
+        vm.oom-kill = 0
+    register: sysctl
+
+  - name: disable oom-killer through /proc
+    become: true
+    ansible.builtin.command: echo 2 > /proc/sys/vm/overcommit_memory
+    when: sysctl.changed
