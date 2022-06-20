@@ -13,6 +13,7 @@
       dnodesize: auto
       atime: on
       snapdir: hidden
+      reservation: 1G
     - dataset: rpool/vm
       state: present
     - dataset: rpool/vm/dir

@@ -22,6 +22,7 @@
       dnodesize: auto
       atime: on
       snapdir: hidden
+      reservation: 1G
     - dataset: rpool/vm
       state: present
     - dataset: rpool/vm/dir/fileserver2_test
@@ -41,6 +42,7 @@
       dnodesize: auto
       atime: on
       snapdir: hidden
+      reservation: 1G
     - dataset: hdd_data_raidz/papa_backup
       state: present
     - dataset: hdd_data_raidz/pve_backup
