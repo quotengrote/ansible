@@ -1,13 +1,9 @@
 ---
-  ### mgrote.zfs_manage_datasets
-  # zfs create -o encryption=aes-256-gcm -o keyformat=passphrase hdd_data_raidz/data_crypt
-  # zfs create hdd_data_raidz/videos
-  # Pools müssen vorher erstellt sein!
-  # rpool
-  # zpool create -f -o ashift=12 rpool mirror ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0R105094 /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0R105095 mirror /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0T380959 /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0T380961 # ungetestet, wurde nachträglich erweitert
-  # HDD_DATA_RAIDZ
-  # zpool create -f -o ashift=12 hdd_data_raidz raidz /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SG991TJ /dev/disk/by-id/ata-WDC_WD80EZAZ-11TDBA0_2SGA23EJ /dev/disk/by-id/ata-ST8000DM004-2CX188_ZCT1AK0F (alt)
-  # sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase hdd_data_raidz_neu mirror /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A27KFJDH /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A28LFJDH (neu)
+  # mgrote.zfs_manage_datasets
+  ## rpool
+  #### sudo zpool create -f -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase rpool  mirror /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0R105094 /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0T380959 mirror /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0R105095 /dev/disk/by-id/ata-SAMSUNG_MZ7LH960HAJR-00005_S45NNC0T380961
+  ## HDD_DATA_RAIDZ
+  ### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase hdd_data_raidz mirror /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A27KFJDH /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A28LFJDH
 
 
   ### mgrote.zfs_extra
@@ -30,8 +26,6 @@
     - dataset: rpool/vm/dir
       state: present
     - dataset: rpool/vm/zvol
-      state: present
-    - dataset: rpool/vm/qcow
       state: present
     # hdd_data_raidz
     - dataset: hdd_data_raidz

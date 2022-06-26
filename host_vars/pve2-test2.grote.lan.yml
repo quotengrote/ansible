@@ -1,9 +1,10 @@
 ---
-  ### mgrote.zfs_manage_datasets
-  # rpool
-  #  zpool create -f -o ashift=12 rpool mirror /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
-  # HDD_DATA_RAIDZ
-  # zpool create -f -o ashift=12 hdd_data_raidz raidz /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi3 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi4 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi5
+  # mgrote.zfs_manage_datasets
+  ## rpool
+  ### sudo zpool create -f -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase rpool mirror /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi3 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi5 mirror /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi4 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi10
+  ## HDD_DATA_RAIDZ
+  ### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase hdd_data_raidz mirror /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi8 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi9
+
   zfs_datasets: # DatenPools werden hier nicht verwaltet
     - dataset: rpool
       state: present
@@ -19,8 +20,6 @@
     - dataset: rpool/vm/dir
       state: present
     - dataset: rpool/vm/zvol
-      state: present
-    - dataset: rpool/vm/qcow
       state: present
     - dataset: hdd_data_raidz/snapshot_test
       state: present
