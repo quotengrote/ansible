@@ -8,5 +8,5 @@
       ansible.posix.authorized_key:
         user: mg
         state: present
-        key: "{{ lookup('file', '/home/mg/ansible/playbooks/on-off/new_ssh_key') }}"
+        key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKL8opSQ0rWVw9uCfbuiqmXq188OP4xh66MBTO3zV5jo heimserver_mg_v3
         exclusive: true #entferne alle keys bis auf diesen
