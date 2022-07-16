@@ -84,6 +84,13 @@
       os_username: docker-user
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+    - name: hastebin
+      dir_name: docker-hastebin
+      repository_url: git.mgrote.net/mg/docker-hastebin
+      state: present
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
   ### oefenweb.ufw
   ufw_rules: # ist extra weil bei munin kein subnet angegeben ist
     - rule: allow
