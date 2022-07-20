@@ -1,0 +1,110 @@
+---
+  ### mrlesmithjr.ansible-manage-lvm
+  lvm_groups:
+   - vgname: vg_drone
+     disks:
+       - /dev/sdb
+     create: true
+     lvnames:
+       - lvname: lv_drone
+         size: +100%FREE
+         create: true
+         filesystem: xfs
+         mount: true
+         mntp: /drone
+  manage_lvm: true
+  pvresize_to_max: true
+  ### mgrote.restic
+  restic_folders_to_backup: "/ /drone /var/lib/docker" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
+  restic_schedule: "0/6:00"
+  restic_exclude: |
+        ._*
+        .Trash-*
+        # https://github.com/restic/restic/issues/1005
+        # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
+  ### mgrote.munin-node
+  munin_node_plugins:
+    - name: timesync
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
+    - name: systemd_status
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
+    - name: systemd_mem
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_mem
+      config: |
+        [systemd_mem]
+        env.all_services true
+    - name: lvm_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
+      config: |
+        [lvm_*]
+        user root
+    - name: fail2ban
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
+      config: |
+        [fail2ban]
+        env.client /usr/bin/fail2ban-client
+        env.config_dir /etc/fail2ban
+        user root
+    - name: http_response
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/http/http_response
+      config: |
+        [http_response]
+        env.sites http://drone.grote.lan
+        env.max_time 20
+        env.short_label true
+        env.follow_redirect true
+    - name: timesync
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
+    - name: systemd_status
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
+    - name: lvm_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
+      config: |
+        [lvm_*]
+        user root
+    - name: fail2ban
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
+      config: |
+        [fail2ban]
+        env.client /usr/bin/fail2ban-client
+        env.config_dir /etc/fail2ban
+        user root
+    - name: docker_containers
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
+      config: |
+        [docker_*]
+        user root
+        env.DOCKER_HOST unix://run/docker.sock
+    - name: docker_cpu
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
+    - name: docker_memory
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
+    - name: docker_network
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
+    - name: docker_volumes
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
+  ### mgrote.docker-compose-deploy
+  docker_compose_projects:
+    - name: watchtower
+      dir_name: docker-watchtower
+      repository_url: git.mgrote.net/mg/docker-watchtower
+      state: present
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+    - name: drone-server
+      dir_name: docker-drone-server
+      repository_url: git.mgrote.net/mg/docker-drone-server
+      state: present
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+      network_name: nw_drone
+    - name: drone-runnner
+      dir_name: docker-drone-runnner
+      repository_url: git.mgrote.net/mg/docker-drone-runner
+      state: present
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+      network_name: nw_drone

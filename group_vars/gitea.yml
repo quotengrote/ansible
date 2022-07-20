@@ -57,7 +57,7 @@
   gitea_only_allow_external_registration: false
   gitea_enable_notify_mail: false
   gitea_force_private: false
-  gitea_oauth2_enabled: false
+  gitea_oauth2_enabled: true
   gitea_repo_indexer_enabled: true
   gitea_extra_config: ""
   gitea_backup_on_upgrade: true
