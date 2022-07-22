@@ -1,15 +1,11 @@
 ---
-  - name: add ppa
-    ansible.builtin.apt_repository:
-      repo: ppa:mmstick76/alacritty
-      state: present
-      filename: alacritty
-      update_cache: yes
+  - name: download binary
+    ansible.builtin.unarchive:
+      src: https://git.mgrote.net/mg/build-alacritty/raw/branch/master/alacritty-latest.tar.gz
+      dest: /usr/local/bin
+      remote_src: yes
 
-  - name: install packages
-    become: yes
-    ansible.builtin.package:
-      name:
-        - alacritty
-        - xclip
-      state: present
+  - name: set permissions
+    ansible.builtin.file:
+      path: /usr/local/bin/alacritty
+      mode: '0755'

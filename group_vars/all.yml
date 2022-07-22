@@ -163,8 +163,8 @@
     - ripgrep
     - iotop
     - pwgen
+    - keychain
   apt_packages_physical:
-    - hddtemp
     - ipmitool
     - s-tui
     - smartmontools

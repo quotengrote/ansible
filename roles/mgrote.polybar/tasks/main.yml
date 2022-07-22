@@ -9,6 +9,7 @@
         - inotify-tools
         - yad # polybar popup-calendar
         - xdotool # polybar popup-calendar
+        - wmctrl # für polybar windows-list # https://github.com/aroma1994/polybar-windows
       state: present
 
   - name: checkout siji font

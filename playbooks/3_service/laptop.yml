@@ -5,6 +5,7 @@
     - { role: mgrote.polybar, tags: "polybar", become: true }
     - { role: mgrote.deactivate_caps, tags: "caps", become: true }
     - { role: mgrote.alacritty, tags: "alacritty", become: true }
-    - { role: mgrote.vivaldi, tags: "vivaldi", become: true }
+    - { role: geerlingguy.pip, tags: "pip", become: true }
+    - { role: geerlingguy.docker, tags: "docker", become: true }
+    - { role: gantsign.ctop, tags: "ctop", become: true }
     - { role: mgrote.xnview, tags: "xnview", become: true }
-    - { role: mgrote.atom, tags: "atom", become: true }

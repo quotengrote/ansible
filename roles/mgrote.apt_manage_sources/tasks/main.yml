@@ -16,3 +16,8 @@
     when:
       - "'proxmox' in group_names"
       - manage_sources_apt_proxy is defined
+
+  - name: include extra repo tasks
+    include_tasks: extra_repos.yml
+    when:
+      - manage_sources_extra_repos is defined

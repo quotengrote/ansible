@@ -11,4 +11,5 @@
         - rofi
         - xautolock #bildschirmsperre nach x min
         - flameshot #screenshots
+        - dunst #notification daemon
       state: present
