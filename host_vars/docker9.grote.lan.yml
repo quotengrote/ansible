@@ -3,7 +3,7 @@
   lvm_groups:
    - vgname: vg_drone
      disks:
-       - /dev/sdb
+       - /dev/sdc
      create: true
      lvnames:
        - lvname: lv_drone
@@ -14,7 +14,7 @@
          mntp: /drone
    - vgname: vg_docker
      disks:
-       - /dev/sdc
+       - /dev/sdb
      create: true
      lvnames:
        - lvname: lv_docker
