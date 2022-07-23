@@ -39,6 +39,7 @@
       comment: 'munin'
       from_ip: 192.168.2.144/24
   ### tmaurice.gitea
+  # config liegt in /etc/gitea/gitea.ini
   gitea_version: "1.16.9"
   gitea_app_name: "Gitea"
   gitea_user: "gitea"
@@ -59,7 +60,6 @@
   gitea_force_private: false
   gitea_oauth2_enabled: true
   gitea_repo_indexer_enabled: true
-  gitea_extra_config: ""
   gitea_backup_on_upgrade: true
 
   gitea_mailer_enabled: true
@@ -93,6 +93,12 @@
   gitea_fail2ban_jail_maxretry: 3
   gitea_fail2ban_jail_findtime: 300
   gitea_fail2ban_jail_bantime: 600
+
+  # wird für drone benötigt, sonst wird der Webhook nicht "gesendet"
+  gitea_extra_config: |
+                    [webhook]
+                    ALLOWED_HOST_LIST = *
+
   ### mgrote.munin-node
   munin_node_plugins:
     - name: timesync

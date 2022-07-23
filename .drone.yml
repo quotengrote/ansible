@@ -1,0 +1,18 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: run gitleaks
+    image: plugins/gitleaks
+    settings:
+      path: .
+
+  - name: lint
+    image: pipelinecomponents/ansible-lint
+    environment:
+      http_proxy: http://acng.grote.lan:9999
+      DEBIAN_FRONTEND: noninteractive
+    commands:
+      - ansible-lint --show-relpath  .

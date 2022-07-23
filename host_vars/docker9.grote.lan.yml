@@ -12,6 +12,17 @@
          filesystem: xfs
          mount: true
          mntp: /drone
+   - vgname: vg_docker
+     disks:
+       - /dev/sdc
+     create: true
+     lvnames:
+       - lvname: lv_docker
+         size: +100%FREE
+         create: true
+         filesystem: xfs
+         mount: true
+         mntp: /var/lib/docker
   manage_lvm: true
   pvresize_to_max: true
   ### mgrote.restic
@@ -49,7 +60,7 @@
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/http/http_response
       config: |
         [http_response]
-        env.sites http://drone.grote.lan
+        env.sites http://docker9.grote.lan
         env.max_time 20
         env.short_label true
         env.follow_redirect true
