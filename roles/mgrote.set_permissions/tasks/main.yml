@@ -1,0 +1,10 @@
+---
+- name: ensure permissions are set
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    owner: "{{ item.owner | default(omit) }}"
+    group: "{{ item.group | default(omit) }}"
+    mode: "{{ item.mode }}"
+  when:
+    - dir_permissions is defined
+  loop: "{{ dir_permissions }}"
