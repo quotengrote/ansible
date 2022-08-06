@@ -9,7 +9,7 @@
   lvm_groups:
    - vgname: vg_docker
      disks:
-       - /dev/sdb
+       - /dev/sdc
      create: true
      lvnames:
        - lvname: lv_docker
@@ -20,7 +20,7 @@
          mntp: /var/lib/docker
    - vgname: vg_docker2
      disks:
-       - /dev/sdc
+       - /dev/sdb
      create: true
      lvnames:
        - lvname: lv_docker2
