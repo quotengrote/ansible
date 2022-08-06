@@ -1,7 +1,7 @@
 ---
   - name: download binary
     ansible.builtin.unarchive:
-      src: https://git.mgrote.net/mg/build-alacritty/raw/branch/master/alacritty-latest.tar.gz
+      src: "{{ alacritty_url }}"
       dest: /usr/local/bin
       remote_src: yes
 
