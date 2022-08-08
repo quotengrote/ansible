@@ -9,7 +9,7 @@
   lvm_groups:
    - vgname: vg_docker
      disks:
-       - /dev/sdc
+       - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1
      create: true
      lvnames:
        - lvname: lv_docker
@@ -20,7 +20,7 @@
          mntp: /var/lib/docker
    - vgname: vg_docker2
      disks:
-       - /dev/sdb
+       - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
      create: true
      lvnames:
        - lvname: lv_docker2

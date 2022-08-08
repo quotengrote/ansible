@@ -3,7 +3,7 @@
   lvm_groups:
    - vgname: vg_drone
      disks:
-       - /dev/sdc
+       - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1
      create: true
      lvnames:
        - lvname: lv_drone
@@ -14,7 +14,7 @@
          mntp: /drone
    - vgname: vg_docker
      disks:
-       - /dev/sdb
+       - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
      create: true
      lvnames:
        - lvname: lv_docker

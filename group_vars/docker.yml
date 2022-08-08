@@ -3,7 +3,7 @@
   lvm_groups:
    - vgname: vg_docker
      disks:
-       - /dev/sdb
+       - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1
      create: true
      lvnames:
        - lvname: lv_docker
