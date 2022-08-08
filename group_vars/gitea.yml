@@ -93,7 +93,6 @@
   gitea_fail2ban_jail_maxretry: 3
   gitea_fail2ban_jail_findtime: 300
   gitea_fail2ban_jail_bantime: 600
-
   # wird für drone benötigt, sonst wird der Webhook nicht "gesendet"
   gitea_extra_config: |
                     [webhook]
