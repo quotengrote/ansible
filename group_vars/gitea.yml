@@ -97,7 +97,9 @@
   # wird für drone benötigt, sonst wird der Webhook nicht "gesendet"
   gitea_extra_config: |
                     [webhook]
-                    ALLOWED_HOST_LIST = *
+                    ALLOWED_HOST_LIST = *.grote.lan
+                    [repository]
+                    DEFAULT_BRANCH = master
 
   ### mgrote.munin-node
   munin_node_plugins:
