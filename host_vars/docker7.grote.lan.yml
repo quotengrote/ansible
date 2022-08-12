@@ -123,6 +123,13 @@
       os_username: docker-user
       repository_user: mg
       repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
+    - name: tor-snowflake
+      dir_name: tor-snowflake
+      repository_url: git.mgrote.net/Docker-Compose/tor-snowflake
+      state: present
+      os_username: docker-user
+      repository_user: mg
+      repository_user_password: "{{ lookup('keepass', 'gitea_mg_https_password', 'password') }}"
     - name: apache-registry # fur diesen container ist das lv: lv_docker2 nach /var/lib/docker2/httpd-registry gemountet; dieser Pfad steht in der docker-compose.yml als Volume drin; dieser Ordner hat die Rechte 0777 damit jeder per SSH reinschrieben kann; ist fur drone.io eingerichtet; siehe $dir_permissions
       dir_name: docker-apache-registry
       repository_url: git.mgrote.net/Docker-Compose/apache-registry
