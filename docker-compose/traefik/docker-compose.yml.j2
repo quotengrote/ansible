@@ -1,0 +1,29 @@
+version: '3'
+services:
+######## traefik ########
+  traefik:
+    container_name: "traefik"
+    image: traefik:latest
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik.yml:/etc/traefik/traefik.yml
+      - ./file-provider.yml:/etc/traefik/file-provider.yml
+      - acme_data:/etc/traefik/acme
+    networks:
+      - traefik
+    ports:
+      - "80:80" # HTTP
+      - "8081:8080" # Web-GUI
+      - "443:443" # HTTPS
+      - "2222:2222" # SSH
+    environment:
+      - TZ=Europe/Berlin
+######## Networks ########
+networks:
+  traefik:
+    external: true
+
+######## Volumes ########
+volumes:
+  acme_data:

@@ -1,0 +1,38 @@
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+    network: traefik
+  file:
+    filename: /etc/traefik/file-provider.yml # Datei für alte/externe Services
+
+entryPoints:
+  entry_http:
+    address: :80
+    http:   #Umleitung http zu https
+      redirections:
+        entryPoint:
+          to: entry_https
+          scheme: https
+          permanent: true
+  entry_https:
+    address: :443
+  entry_ssh:
+    address: :2222 # wenn hier zusätzliche Ports eingetragen werden, müssen diese auch in der docker-compose.yml als Ports gemappt werden
+
+#letsencrypt
+certificatesResolvers:
+  resolver_letsencrypt:
+    acme:
+      email: "michael.grote@posteo.de"
+      storage: "/etc/traefik/acme/acme.json"
+#      caServer: "https://acme-staging-v02.api.letsencrypt.org/directory"
+       # zum Testen, da Staging kein Rate-Limiting einsetzt
+      tlsChallenge: true
+
+log:
+  level: INFO
+
+api:
+  insecure: true
+  dashboard: true #unter Port 8081 erreichbar

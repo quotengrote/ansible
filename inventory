@@ -22,10 +22,8 @@ all:
         ansible-test.grote.lan:
     docker:
       hosts:
-        docker7.grote.lan:
+        docker10.grote.lan:
         docker7-test.grote.lan:
-        docker8.grote.lan:
-        docker9.grote.lan:
     vmtest:
       hosts:
         vm-test2.grote.lan:
@@ -58,9 +56,7 @@ all:
         pve2.grote.lan:
         gitea.grote.lan:
         dnsmasq.grote.lan:
-        docker7.grote.lan:
-        docker8.grote.lan:
-        docker9.grote.lan:
+        docker10.grote.lan:
     test:
       hosts:
         dokuwiki-test.grote.lan:

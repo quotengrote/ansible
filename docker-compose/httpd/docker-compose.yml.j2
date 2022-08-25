@@ -1,0 +1,12 @@
+version: '3'
+services:
+  httpd-registry:
+    container_name: "httpd-registry"
+    image: httpd:bullseye
+    restart: always
+    volumes:
+      # mounte das lokale Verzeichnis in den Container, der Inhalt ist dann per http aufzurufen; reingeschrieben wird in den lokalen Ordner z.B. per scp aus der Pipeline heraus
+      - /mnt/httpd:/usr/local/apache2/htdocs/
+      - "${PWD}/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro"
+    ports:
+      - 3344:80

@@ -1,0 +1,44 @@
+# TCP da SSH keine Hostnamen kennt
+# alle Anfragen an diesen Port werden an Gitea weitergeleitet
+tcp:
+###### router #####
+  routers:
+    router-ssh:
+      entryPoints:
+        - entry_ssh
+      rule: HostSNI(`*`)
+      service: service_gitea_ssh
+###### services #####
+  services:
+    service_gitea_ssh:
+      loadBalancer:
+        servers:
+          - address: gitea.grote.lan:2222
+
+http:
+###### router #####
+  routers:
+    router_dokuwiki:
+      rule: "Host(`dokuwiki.mgrote.net`,`mgrote.net`,`www.mgrote.net`,`wiki.mgrote.net`)"
+      service: "service_dokuwiki"
+      entrypoints:
+        - entry_https
+      tls:
+        certresolver: resolver_letsencrypt
+    router_gitea:
+      rule: "Host(`git.mgrote.net`)"
+      service: "service_gitea"
+      entrypoints:
+        - entry_https
+      tls:
+        certresolver: resolver_letsencrypt
+###### services #####
+  services:
+    service_dokuwiki:
+      loadBalancer:
+        servers:
+        - url: "http://dokuwiki2.grote.lan/"
+    service_gitea:
+      loadBalancer:
+        servers:
+        - url: "http://gitea.grote.lan:3000/"

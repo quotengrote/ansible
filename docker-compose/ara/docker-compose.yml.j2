@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  ara:
+    container_name: ara
+    ports:
+      - '2233:8000'
+    image: 'quay.io/recordsansible/ara-api:latest'
+    volumes:
+      - store:/opt/ara:z
+    environment:
+      - ARA_ALLOWED_HOSTS=['docker10.grote.lan']
+    restart: always
+######## Volumes ########
+volumes:
+  store:

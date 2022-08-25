@@ -1,0 +1,54 @@
+version: '3'
+services:
+######## navidrome-mg ########
+  navidrome-mg:
+    container_name: "navidrome-mg"
+    image: deluan/navidrome:latest
+    restart: always
+    environment:
+      - ND_LOGLEVEL=info
+      - ND_SESSIONTIMEOUT=24h
+      - ND_MUSICFOLDER=/music
+      - ND_DATAFOLDER=/data
+      - ND_SCANSCHEDULE=6 * * * *
+      - ND_TRANSCODINGCACHESIZE=500MB
+      - ND_IMAGECACHESIZE=100MB
+      - ND_AUTOIMPORTPLAYLISTS=false
+      - ND_BASEURL=/mg
+      - ND_ENABLESTARRATING=false
+      - ND_ENABLEGRAVATAR=false
+      - ND_LASTFM_ENABLED=false
+      - ND_ENABLETRANSCODINGCONFIG=true
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - ND_ENABLE_EXTERNAL_SERVICES=false
+    volumes:
+      - musik_smb_mg:/music:ro
+      - data:/data
+    networks:
+      - traefik
+    labels:
+      - traefik.http.routers.navidrome-mg.rule=Host(`audio.mgrote.net`)&&PathPrefix(`/mg`)
+      - traefik.enable=true
+      - traefik.http.routers.navidrome-mg.tls=true
+      - traefik.http.routers.navidrome-mg.tls.certresolver=resolver_letsencrypt
+      - traefik.http.routers.navidrome-mg.entrypoints=entry_https
+      - traefik.http.services.navidrome-mg.loadbalancer.server.port=4533
+    ports:
+      - "4533:4533"
+
+
+######## Volumes ########
+volumes:
+  data:
+  musik_smb_mg: # Verzeichnis in restic aus Backup ausnehmen!
+    driver: local
+    driver_opts:
+      type: "cifs"
+      o: "user=navidrome,password={{ lookup('keepass', 'navidrome_smb_share_password', 'password') }}"
+      device: "//192.168.2.36/musik/Musik"
+######## Networks ########
+networks:
+  traefik:
+    external: true

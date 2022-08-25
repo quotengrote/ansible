@@ -1,0 +1,97 @@
+---
+  - name: ensure basedir exists
+    become: true
+    ansible.builtin.file:
+      path: "{{ compose_dest_basedir }}"
+      state: directory
+      mode: "{{ compose_dir_permissions }}"
+      owner: "{{ compose_owner }}"
+      group: "{{ compose_group }}"
+
+# https://codeutility.org/ansible-can-the-templates-module-handle-multiple-templates-directories-stack-overflow/
+  - name: copy all directories recursively
+    ansible.builtin.file:
+      dest: "{{compose_dest_basedir}}/{{ item|replace(compose_src_basedir+'/', '') }}"
+      state: directory
+      mode: "{{ compose_dir_permissions }}"
+      owner: "{{ compose_owner }}"
+      group: "{{ compose_group }}"
+    with_items: "{{ lookup('pipe', 'find '+ compose_src_basedir +'/ -type d').split('\n') }}"
+
+  - name: copy all files recursively (can take a long time)
+    ansible.builtin.copy:
+      mode: "{{ compose_file_permissions }}"
+      owner: "{{ compose_owner }}"
+      group: "{{ compose_group }}"
+      src: "{{ item }}"
+      dest: "{{compose_dest_basedir}}/{{ item|replace(compose_src_basedir+'/', '') }}"
+    with_items: "{{ lookup('pipe', 'find '+ compose_src_basedir +'/  -type f -not -name *.j2 ').split('\n') }}"
+    no_log: true
+
+  - name: copy templates files recursively
+    ansible.builtin.template:
+      mode: "{{ compose_file_permissions }}"
+      owner: "{{ compose_owner }}"
+      group: "{{ compose_group }}"
+      src: "{{ item }}"
+      dest: "{{compose_dest_basedir}}/{{ item|replace(compose_src_basedir+'/', '')|replace('.j2', '') }}"
+    with_items: "{{ lookup('pipe', 'find '+ compose_src_basedir +'/ -type f -name *.j2').split('\n') }}"
+    register: copy_template
+    no_log: true
+
+#  - name: print $copy_template
+#    ansible.builtin.debug:
+#      var: copy_template
+
+  - name: create networks
+    become: true
+    ansible.builtin.shell: "docker network create {{ item.network }}" # erstelle network
+    register: network_result # speichere ergebnis in var
+    changed_when: "network_result.rc == 0" # markiere tasks als changed when exit-code == 0
+    ignore_errors: yes # ignoriere fehler
+    loop: "{{ compose_files }}"
+    when:
+      - item.state == "present"
+      - item.network is defined
+
+  - name: (re)start container
+    become: true
+    ansible.builtin.shell: docker-compose up -d
+    args:
+      chdir: "{{ compose_dest_basedir }}/{{ item.name }}"
+    register: start_result # speichere ergebnis in var
+    changed_when: "start_result.rc == 0" # markiere tasks als changed when exit-code == 0
+    loop: "{{ compose_files }}"
+    when:
+      - item.state == "present"
+      - copy_template is changed
+
+  - name: stop old container
+    become: true
+    ansible.builtin.shell: docker-compose down
+    args:
+      chdir: "{{ compose_dest_basedir }}/{{ item.name }}"
+    loop: "{{ compose_files }}"
+    when:
+      - item.state == "absent"
+    ignore_errors: yes # ignoriere fehler
+
+  - name: remove old networks
+    become: true
+    ansible.builtin.shell: "docker network remove {{ item.network }}" # erstelle network
+    register: network_result # speichere ergebnis in var
+    changed_when: "network_result.rc == 0" # markiere tasks als changed when exit-code == 0
+    ignore_errors: yes # ignoriere fehler
+    loop: "{{ compose_files }}"
+    when:
+      - item.state == "absent"
+      - item.network is defined
+
+  - name: remove old docker-compose files & directories
+    become: true
+    ansible.builtin.file:
+      path: "{{ compose_dest_basedir }}/{{ item.name }}/"
+      state: absent
+    loop: "{{ compose_files }}"
+    when:
+      - item.state == "absent"

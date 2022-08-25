@@ -23,7 +23,7 @@
   ### mgrote.apt_manage_packages
   # hier mit IP statt Hostnamen da dnsmasq NICHT den Router befragt und daher keine Lokalen Hostnamen abfragen kann
   apt_packages_internet:
-    - http://192.168.2.50:3344/bash-helper-scripts-mgrote/bash-helper-scripts-mgrote-latest.deb
+    - http://192.168.2.43:3344/bash-helper-scripts-mgrote/bash-helper-scripts-mgrote-latest.deb
   ### mgrote.munin-node
   munin_node_plugins:
     - name: timesync

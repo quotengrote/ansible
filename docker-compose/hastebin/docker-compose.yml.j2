@@ -1,0 +1,36 @@
+version: '3'
+services:
+######## hastebin ########
+  hastebin:
+    container_name: "hastebin-frontend"
+    image: quotengrote/hastebin
+    restart: always
+    depends_on:
+      - redis
+    environment:
+      - TZ=Europe/Berlin
+      - STORAGE_TYPE=redis
+      - STORAGE_HOST=redis
+    networks:
+      - int
+    ports:
+      - 7777:7777
+######## redis ########
+  redis:
+    container_name: "hastebin-redis"
+    image: redis
+    restart: always
+    volumes:
+      - redis:/data
+    networks:
+      - int
+    environment:
+      - TZ=Europe/Berlin
+
+######## Volumes ########
+volumes:
+  redis:
+######## Networks ########
+networks:
+  int: # das Prefix "hastebin_" wird automatisch gesetzt; gilt auch für Volumes
+    driver: bridge
