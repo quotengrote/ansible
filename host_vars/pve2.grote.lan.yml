@@ -82,7 +82,7 @@
   ### mgrote.zfs_sanoid
   sanoid_datasets:
     - path: 'hdd_data_raidz/videos'
-      template: '14tage'
+      template: '3tage'
       recursive: 'yes'
       snapshots: true
     - path: 'hdd_data_raidz/music'
@@ -108,7 +108,7 @@
     - path: hdd_data_raidz/amd
       recursive: 'no'
       snapshots: true
-      template: '31tage'
+      template: '3tage'
     - path: hdd_data_raidz/bilder
       recursive: 'no'
       snapshots: true
