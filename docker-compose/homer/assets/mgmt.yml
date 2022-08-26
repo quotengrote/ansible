@@ -109,6 +109,11 @@ services:
         url: "http://docker10.grote.lan:8000"
         target: "_blank"
         subtitle: "network monitoring"
+      - name: "dozzle"
+        logo: "assets/icons/dozzle.png"
+        url: "http://docker10.grote.lan:4455"
+        target: "_blank"
+        subtitle: "container logs"
 
   - name: "Internet-MGMT"
     icon: "fas fa-cloud"
