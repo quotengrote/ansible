@@ -82,6 +82,7 @@ heise.de::WM 2022
 heise.de::zockt
 heise.de::Zugriff auf alle Inhalte von heise+
 instagram.com::Bridge returned error
+mdr.de::Basketball
 mdr.de::Fussball
 mdr.de::Fußball
 mdr.de::Leichtathletik:
@@ -146,6 +147,12 @@ stadt-bremerhaven.de::Immer wieder sonntags KW
 stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::(Werbung)
 stadt-bremerhaven.de::WM 2022
+sueddeutsche.de::European Championships
+sueddeutsche.de::FC Bayern
+sueddeutsche.de::RB Leipzig
+sueddeutsche.de::Leichtathletik
+sueddeutsche.de::Borussia Dortmund
+sueddeutsche.de::Athlet
 sueddeutsche.de::1:1
 sueddeutsche.de::1860 München
 sueddeutsche.de::1. FC Kaiserslautern:
