@@ -11,6 +11,7 @@ computerbase.de::Sonntagsfrage:
 computerbase.de::Wochenrück- und Ausblick:
 facebook.com::Bridge returned error
 golem.de::Anzeige
+golem.de::Podcast
 golem.de::Aus dem Verlag:
 golem.de::Fifa
 golem.de::(g+)
@@ -138,6 +139,7 @@ portuguesegeese.com::portuguesegeese.com
 reddit.com::UEFA
 stackoverflow.blog::Podcast
 stackoverflow.blog::The Overflow
+stadt-bremerhaven.de::Podcats
 stadt-bremerhaven.de::Bundesliga
 stadt-bremerhaven.de::Disney+
 stadt-bremerhaven.de::eFootball
@@ -147,6 +149,7 @@ stadt-bremerhaven.de::Immer wieder sonntags KW
 stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::(Werbung)
 stadt-bremerhaven.de::WM 2022
+sueddeutsche.de::quoted.
 sueddeutsche.de::European Championships
 sueddeutsche.de::FC Bayern
 sueddeutsche.de::RB Leipzig
