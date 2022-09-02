@@ -1,0 +1,25 @@
+{{ file_header | default () }}
+
+--force-ipv4 #erzwinge ipv4
+--ignore-errors #bei fehlern weitermachen
+--limit-rate {{ ytdl_download_limit }} #downloadrate begrenzen
+--sleep-interval 3 #wartezeit zwischen downloads
+--no-check-certificate #kein tls check
+--download-archive "{{ ytdl_video_log_output }}" #lese und schreibe archiv log
+--restrict-filenames #nehme nur gueltige dateinamenszeichen
+--no-overwrites #ueberschreibe keine dateien
+--output "{{ ytdl_video_output }}" #ordner + dateinamen
+--encoding utf-8 # fuer linux
+--embed-subs #schreibe metadaten
+--add-metadata #schreibe metadaten
+--write-info-json #schreibe metadaten
+--write-description #schreibe metadaten
+--write-annotations #schreibe metadaten
+--username "{{ lookup('keepass', 'youtubedl_youtube_login', 'username') }}" #login youtube
+--password "{{ lookup('keepass', 'youtubedl_youtube_login', 'password') }}" #login youtube
+--no-color
+--no-progress
+
+{% for item in ytdl_video_urls %}
+{{ item }}
+{% endfor %}

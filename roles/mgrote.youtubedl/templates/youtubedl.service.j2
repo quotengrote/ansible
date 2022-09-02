@@ -1,0 +1,14 @@
+{{ file_header | default () }}
+
+[Unit]
+Description=Save podcats and videos with youtubedl.
+OnFailure=youtubedl_mail.service
+
+[Service]
+Type=oneshot
+ExecStart=-{{ ytdl_bin_path }} --config-location  "{{ ytdl_conf_dir }}/podcast.txt"
+ExecStart=-{{ ytdl_bin_path }} --config-location  "{{ ytdl_conf_dir }}/youtube.txt"
+Restart=on-failure
+RestartSec=10min
+
+# ExecStart=-/bin/xy : der - sorgt dafür das der Exit-Code ignoriert wird und die Unit nicht failed, wird heir verwendet weil ytdlp bei HTTP404 austeigt; siehe https://github.com/yt-dlp/yt-dlp#usage-and-options + https://serverfault.com/questions/680033/reset-ingnore-non-zero-exit-code-with-fleet-systemd

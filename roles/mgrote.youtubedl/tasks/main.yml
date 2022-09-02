@@ -1,0 +1,83 @@
+---
+  - name: download binary
+    become: yes
+    ansible.builtin.get_url:
+      url: "{{ ytdl_dl_url }}"
+      dest: /usr/local/bin/yt-dlp
+      mode: '0750'
+
+  - name: install packages
+    become: yes
+    ansible.builtin.package:
+      name:
+        - ffmpeg
+        - brotli
+        - python3-mutagen
+      state: present
+
+  - name: ensure dir exists
+    become: yes
+    ansible.builtin.file:
+      path: "{{ ytdl_conf_dir }}"
+      state: directory
+
+  - name: template youtubedl config
+    become: yes
+    ansible.builtin.template:
+      src: "{{ item }}"
+      dest: "{{ ytdl_conf_dir }}/{{ item }}"
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+    loop:
+      - podcast.txt
+      - youtube.txt
+
+  - name: template systemd services
+    become: yes
+    ansible.builtin.template:
+      src: "youtubedl.service.j2"
+      dest: "/etc/systemd/system/youtubedl.service"
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+    when: ytdl_active
+
+  - name: template youtubedl timer
+    become: yes
+    ansible.builtin.template:
+      src: "youtubedl.timer.j2"
+      dest: "/etc/systemd/system/youtubedl.timer"
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+    when: ytdl_active
+
+  - name: template youtube_mail.service.j2
+    become: yes
+    ansible.builtin.template:
+      src: "youtubedl_mail.service.j2"
+      dest: "/etc/systemd/system/youtubedl_mail.service"
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+    when: ytdl_active
+
+  - name: systemctl enable timer units
+    become: yes
+    ansible.builtin.systemd:
+      name: "youtubedl.timer"
+      enabled: yes
+      masked: no
+      state: started
+    notify:
+      - systemctl daemon-reload
+    when: ytdl_active
