@@ -12,3 +12,4 @@ services:
       DOZZLE_USERNAME: d_admin
       DOZZLE_PASSWORD: "{{ lookup('keepass', 'dozzle_admin', 'password') }}"
       DOZZLE_LEVEL: info
+    restart: always

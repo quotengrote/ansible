@@ -81,3 +81,15 @@
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
     - name: docker_volumes
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
+  ### mgrote.docker-compose-inline
+  compose_owner: "docker-user"
+  compose_group: "docker-user"
+  compose_file_permissions: "644"
+  compose_dir_permissions: "755"
+  compose_dest_basedir: "/docker"
+  compose_src_basedir: "{{ inventory_dir }}/docker-compose"
+  compose_files:
+    - name: hastebin
+      state: present
+    - name: ara
+      state: present
