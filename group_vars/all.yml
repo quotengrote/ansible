@@ -63,6 +63,7 @@
     - name: hddtemp2 # ersetzt durch hddtemp_smartctl
     - name: ntp # verursacht zu viele dns ptr request
     - name: hddtempd # ersetzt durch hddtemp_smartctl
+    - name: mt_system_crs309 # switch ausgebaut
   munin_node_plugins:
     - name: timesync
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
