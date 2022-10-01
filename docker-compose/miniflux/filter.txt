@@ -11,7 +11,6 @@ computerbase.de::Sonntagsfrage:
 computerbase.de::Wochenrück- und Ausblick:
 facebook.com::Bridge returned error
 golem.de::Anzeige
-golem.de::Podcast
 golem.de::Aus dem Verlag:
 golem.de::Fifa
 golem.de::(g+)
@@ -19,6 +18,7 @@ golem.de::in aller Kürze
 golem.de::In eigener Sache
 golem.de::kurznews
 golem.de::Marvel
+golem.de::Podcast
 golem.de::Sonst noch was?
 golem.de::Star Trek:
 golem.de::Tech Talks:
@@ -139,23 +139,16 @@ portuguesegeese.com::portuguesegeese.com
 reddit.com::UEFA
 stackoverflow.blog::Podcast
 stackoverflow.blog::The Overflow
-stadt-bremerhaven.de::Podcats
 stadt-bremerhaven.de::Bundesliga
 stadt-bremerhaven.de::Disney+
 stadt-bremerhaven.de::eFootball
 stadt-bremerhaven.de::FIFA
 stadt-bremerhaven.de::Formel 1
 stadt-bremerhaven.de::Immer wieder sonntags KW
+stadt-bremerhaven.de::Podcast
 stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::(Werbung)
 stadt-bremerhaven.de::WM 2022
-sueddeutsche.de::quoted.
-sueddeutsche.de::European Championships
-sueddeutsche.de::FC Bayern
-sueddeutsche.de::RB Leipzig
-sueddeutsche.de::Leichtathletik
-sueddeutsche.de::Borussia Dortmund
-sueddeutsche.de::Athlet
 sueddeutsche.de::1:1
 sueddeutsche.de::1860 München
 sueddeutsche.de::1. FC Kaiserslautern:
@@ -166,6 +159,7 @@ sueddeutsche.de::Afrika-Cup:
 sueddeutsche.de::Alphonso Davies
 sueddeutsche.de::American Football:
 sueddeutsche.de::Arminia Bielefeld:
+sueddeutsche.de::Athlet
 sueddeutsche.de::ATP-
 sueddeutsche.de::ATP Finals
 sueddeutsche.de::Australian Open:
@@ -178,11 +172,13 @@ sueddeutsche.de::Berlinale
 sueddeutsche.de::Biathlon
 sueddeutsche.de::Bobfahr
 sueddeutsche.de::Borussia
+sueddeutsche.de::Borussia Dortmund
 sueddeutsche.de::Borussia Dortmund:
 sueddeutsche.de::Bundesliga
 sueddeutsche.de::BVB
 sueddeutsche.de::Carlos Alcaraz
 sueddeutsche.de::Champions-League
+sueddeutsche.de::Claudio Pizarro:
 sueddeutsche.de::Conference League
 sueddeutsche.de::Conference-League
 sueddeutsche.de::Daniil Medwedew
@@ -214,10 +210,12 @@ sueddeutsche.de::Europa League
 sueddeutsche.de::Europa League:
 sueddeutsche.de::Europameister
 sueddeutsche.de::Europapokal
+sueddeutsche.de::European Championships
 sueddeutsche.de::Eurovision Song Contest
 sueddeutsche.de::Eurovision Song Contest:
 sueddeutsche.de::FC Augsburg
 sueddeutsche.de::FC Barcelona
+sueddeutsche.de::FC Bayern
 sueddeutsche.de::FC Chelsea:
 sueddeutsche.de::FC Sevilla
 sueddeutsche.de::Formel 1
@@ -242,6 +240,7 @@ sueddeutsche.de::Handball-WM
 sueddeutsche.de::Hannover 96:
 sueddeutsche.de::Heldenfußball
 sueddeutsche.de::Hertha
+sueddeutsche.de::Hertha BSC:
 sueddeutsche.de::Hinspiel
 sueddeutsche.de::Hochspring
 sueddeutsche.de::HSV
@@ -259,6 +258,7 @@ sueddeutsche.de::La Boum:
 sueddeutsche.de::La Liga
 sueddeutsche.de::Länderspiel
 sueddeutsche.de::Lazio Rom
+sueddeutsche.de::Leichtathletik
 sueddeutsche.de::Leichtathletik:
 sueddeutsche.de::Leichtathletik-Weltmeisterschaft
 sueddeutsche.de::Leichtathletik-WM
@@ -310,8 +310,10 @@ sueddeutsche.de::Premier
 sueddeutsche.de::Premier League
 sueddeutsche.de::PSV Eindhoven
 sueddeutsche.de::Qualifikationsspiel
+sueddeutsche.de::quoted.
 sueddeutsche.de::Raducanu
 sueddeutsche.de::Rangnick
+sueddeutsche.de::RB Leipzig
 sueddeutsche.de::RB Leipzig:
 sueddeutsche.de::Real Madrid
 sueddeutsche.de::Reiten
@@ -388,6 +390,7 @@ tagesschau.de::Alpine-Super-Kombination:
 tagesschau.de::American Football:
 tagesschau.de::Auslandspodcast
 tagesschau.de::Bahnrad
+tagesschau.de::Basketball
 tagesschau.de::Bayern München
 tagesschau.de::Biathl
 tagesschau.de::Boateng
@@ -456,6 +459,7 @@ tagesschau.de::Tuchel
 tagesschau.de::UEFA
 tagesschau.de::Verstappen
 tagesschau.de::Vierschanzentournee
+tagesschau.de::Volleyball-WM
 tagesschau.de::Wasserspringen:
 tagesschau.de::Weitsprung
 tagesschau.de::Werders
