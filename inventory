@@ -3,27 +3,21 @@ all:
     dokuwiki:
       hosts:
         dokuwiki2.grote.lan:
-        dokuwiki-test.grote.lan:
     fileserver:
       hosts:
         fileserver2.grote.lan:
-        fileserver2-test.grote.lan:
     dnsmasq:
       hosts:
-        dnsmasq-test.grote.lan:
         dnsmasq.grote.lan:
     acng:
       hosts:
         acng.grote.lan:
-        acng-test.grote.lan:
     ansible:
       hosts:
         ansible2.grote.lan:
-        ansible-test.grote.lan:
     docker:
       hosts:
         docker10.grote.lan:
-        docker7-test.grote.lan:
     vmtest:
       hosts:
         vm-test2.grote.lan:
@@ -44,7 +38,6 @@ all:
         pve2.grote.lan:
     gitea:
       hosts:
-        gitea-test.grote.lan:
         gitea.grote.lan:
 
     production:
@@ -59,13 +52,6 @@ all:
         docker10.grote.lan:
     test:
       hosts:
-        dokuwiki-test.grote.lan:
-        acng-test.grote.lan:
-        ansible-test.grote.lan:
-        docker7-test.grote.lan:
         vm-test2.grote.lan:
         pve2-test2.grote.lan:
-        gitea-test.grote.lan:
-        dnsmasq-test.grote.lan:
-        fileserver2-test.grote.lan:
         bastelstube-gui.grote.lan:
