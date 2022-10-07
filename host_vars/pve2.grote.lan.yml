@@ -52,8 +52,6 @@
       state: present
     - dataset: hdd_data_raidz/archiv
       state: present
-    - dataset: hdd_data_raidz/amd
-      state: present
     - dataset: hdd_data_raidz/bilder
       state: present
       recordsize: 1M
@@ -105,10 +103,6 @@
       template: '14tage'
       recursive: 'yes'
       snapshots: true
-    - path: hdd_data_raidz/amd
-      recursive: 'no'
-      snapshots: true
-      template: '3tage'
     - path: hdd_data_raidz/bilder
       recursive: 'no'
       snapshots: true
@@ -195,10 +189,6 @@
       mp_nr: 10
       mp_path_host: /hdd_data_raidz/restic
       mp_path_guest: /shares_restic
-    - vmid: 127
-      mp_nr: 11
-      mp_path_host: /hdd_data_raidz/amd
-      mp_path_guest: /shares_amd
     - vmid: 127
       mp_nr: 12
       mp_path_host: /hdd_data_raidz/backup

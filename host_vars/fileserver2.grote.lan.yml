@@ -39,13 +39,6 @@
 
   ### mgote.rclone
   rclone_jobs:
-    - name: smb_amd_glacier
-      quelle: "/shares_amd"
-      ziel: "scaleway-encrypt-glacier:/amd"
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
     - name: smb_archiv_glacier
       quelle: "/shares_archiv"
       ziel: "scaleway-encrypt-glacier:/archiv"
@@ -126,22 +119,18 @@
     - name: 'videos'
       path: '/shares_videos'
       users_ro: 'kodi'
-      users_rw: 'annemariedroessler2 michaelgrote win10'
+      users_rw: 'michaelgrote win10'
     - name: 'scans'
       path: '/shares_scans'
-      users_ro: 'annemariedroessler2 michaelgrote'
+      users_ro: ' michaelgrote'
       users_rw: 'brother_ads2700w'
     - name: 'papa_backup'
       path: '/shares_papa_backup'
       users_ro: 'michaelgrote'
       users_rw: 'win10'
-    - name: 'amd'
-      path: '/shares_amd'
-      users_ro: 'michaelgrote win10'
-      users_rw: 'annemariedroessler2 win10'
     - name: 'backup'
       path: '/shares_backup'
-      users_ro: 'annemariedroessler2'
+      users_ro: ''
       users_rw: 'win10 michaelgrote'
     - name: 'archiv'
       path: '/shares_archiv'
@@ -153,16 +142,16 @@
       users_rw: 'michaelgrote win10'
     - name: 'musik'
       path: '/shares_music'
-      users_ro: 'navidrome kodi annemariedroessler2 '
+      users_ro: 'navidrome kodi  '
       users_rw: 'win10 michaelgrote'
     - name: 'tmp'
       path: '/shares_tmp'
       users_ro: 'win10'
-      users_rw: 'kodi annemariedroessler2 win10 michaelgrote'
+      users_rw: 'kodi  win10 michaelgrote'
     - name: 'bilder'
       path: '/shares_bilder'
       users_ro: 'photoprism'
-      users_rw: 'annemariedroessler2 michaelgrote win10'
+      users_rw: ' michaelgrote win10'
     - name: 'proxmox'
       path: '/shares_pve_backup'
       users_ro: 'michaelgrote'
@@ -170,14 +159,14 @@
     - name: 'restic'
       path: '/shares_restic'
       users_ro: ''
-      users_rw: 'annemariedroessler2 restic win10 michaelgrote'
+      users_rw: ' restic win10 michaelgrote'
     - name: 'buecher'
       path: '/shares_buecher'
-      users_ro: 'annemariedroessler2'
+      users_ro: ''
       users_rw: 'michaelgrote win10'
     - name: 'programme'
       path: '/shares_programme'
-      users_ro: 'annemariedroessler2'
+      users_ro: ''
       users_rw: 'michaelgrote win10'
     - name: 'vm'
       path: '/shares_vm'

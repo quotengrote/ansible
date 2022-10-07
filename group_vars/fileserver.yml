@@ -52,8 +52,6 @@
   smb_client_max_protocol: "SMB3_11"
   smb_enable_snapshots_dir: true
   smb_users:
-    - name: 'annemariedroessler2'
-      password: "{{ lookup('keepass', 'fileserver_smb_user_amd', 'password') }}"
     - name: 'restic'
       password: "{{ lookup('keepass', 'fileserver_smb_user_restic', 'password') }}"
     - name: 'win10'
