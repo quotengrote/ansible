@@ -1,10 +1,14 @@
 ---
-  - name: install packages
-    become: true
-    ansible.builtin.apt:
-      name:
-        - rclone
-      state: present
+  - name: Check if rclone is installed
+    command: which rclone
+    changed_when: false
+    failed_when: rclone_installed.rc not in [0,1]
+    register: rclone_installed
+
+  - name: Install rclone first!
+    fail:
+      msg: "rclone is not installed, install it first"
+    when: rclone_installed.rc not in [ 0 ]
 
   - name: Create rclone Directory
     become: true
