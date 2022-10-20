@@ -149,6 +149,15 @@ stadt-bremerhaven.de::Podcast
 stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::(Werbung)
 stadt-bremerhaven.de::WM 2022
+sueddeutsche.de::Volleyball-WM:
+sueddeutsche.de::Amos Pieper
+sueddeutsche.de::Claudio Pizarro
+sueddeutsche.de::Markus Weinzierl
+sueddeutsche.de::1. FC Nürnberg
+sueddeutsche.de::Nationalspieler
+sueddeutsche.de::Linda Dallmann
+sueddeutsche.de::Champions League:
+sueddeutsche.de::Tore
 sueddeutsche.de::1:1
 sueddeutsche.de::1860 München
 sueddeutsche.de::1. FC Kaiserslautern:
@@ -387,6 +396,9 @@ sueddeutsche.de::WM-Ticket
 sueddeutsche.de::WM-Titel
 sueddeutsche.de::Zlatan
 tagesschau.de::Alpine-Super-Kombination:
+tagesschau.de::Eurovision Song Contest
+tagesschau.de::Bundesliga:
+tagesschau.de::Schalke
 tagesschau.de::American Football:
 tagesschau.de::Auslandspodcast
 tagesschau.de::Bahnrad
