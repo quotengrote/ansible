@@ -64,6 +64,10 @@
     - name: ntp # verursacht zu viele dns ptr request
     - name: hddtempd # ersetzt durch hddtemp_smartctl
     - name: mt_system_crs309 # switch ausgebaut
+    - name: squid_cache # proxmox
+    - name: squid_objectsize # proxmox
+    - name: squid_requests # proxmox
+    - name: squid_traffic # proxmox
   munin_node_plugins:
     - name: timesync
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status

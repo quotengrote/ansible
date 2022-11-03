@@ -7,3 +7,4 @@
       state: stopped
       enabled: no
       daemon_reload: yes
+    ignore_errors: true

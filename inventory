@@ -18,24 +18,19 @@ all:
     docker:
       hosts:
         docker10.grote.lan:
-    vmtest:
-      hosts:
-        vm-test2.grote.lan:
-        bastelstube-gui.grote.lan:
     proxmox:
       hosts:
-        pve2-test2.grote.lan:
         pve2.grote.lan:
+        pve5.grote.lan:
       children:
         proxmoxprod:
           hosts:
             pve2.grote.lan:
-        proxmoxtest:
-          hosts:
-            pve2-test2.grote.lan:
+            pve5.grote.lan:
     physical:
       hosts:
         pve2.grote.lan:
+        pve5.grote.lan:
     gitea:
       hosts:
         gitea.grote.lan:
@@ -47,11 +42,7 @@ all:
         acng.grote.lan:
         ansible2.grote.lan:
         pve2.grote.lan:
+        pve5.grote.lan:
         gitea.grote.lan:
         dnsmasq.grote.lan:
         docker10.grote.lan:
-    test:
-      hosts:
-        vm-test2.grote.lan:
-        pve2-test2.grote.lan:
-        bastelstube-gui.grote.lan:
