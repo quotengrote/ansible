@@ -141,6 +141,18 @@
     - path: hdd_data_raidz/vm
       recursive: 'no'
       snapshots: true
+      template: 'pve3tage'
+    - path: rpool
+      recursive: 'no'
+      snapshots: true
+      template: 'pve3tage'
+    - path: rpool/ROOT
+      recursive: 'no'
+      snapshots: true
+      template: 'pve3tage'
+    - path: rpool/ROOT/pve-1
+      recursive: 'no'
+      snapshots: true
       template: '3tage'
 
   ### mgrote.cv4pve-autosnap

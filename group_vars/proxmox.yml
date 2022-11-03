@@ -141,7 +141,15 @@
       frequent_period: '15'
       autosnap: 'yes'
       autoprune: 'yes'
-
+    - name: 'pve3tage'
+      keep_hourly: '72'
+      keep_daily: '3'
+      keep_monthly: '0'
+      keep_yearly: '0'
+      frequently: '16'
+      frequent_period: '15'
+      autosnap: 'yes'
+      autoprune: 'yes'
   ### mgrote.apcupsd
   apcupsd_master_onbatterydelay: 10
   apcupsd_master_batterylevel_for_shutdown: 50
