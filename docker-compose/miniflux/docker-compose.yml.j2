@@ -51,7 +51,7 @@ services:
       - TZ=Europe/Berlin
       - MF_AUTH_TOKEN={{ lookup('keepass', 'miniflux_auth_token', 'password') }}
       - MF_API_URL=https://miniflux.mgrote.net/v1
-      - MF_SLEEP=60
+      - MF_SLEEP=600
       #- MF_DEBUG=1
     image: quotengrote/miniflux-filter:latest
     volumes:
