@@ -9,6 +9,8 @@ computerbase.de::Fotowettbewerb:
 computerbase.de::Screenshot-Wettbewerb
 computerbase.de::Sonntagsfrage:
 computerbase.de::Wochenrück- und Ausblick:
+computerbase.de::Twitter
+computerbase.de::Elon Musk
 facebook.com::Bridge returned error
 golem.de::Anzeige
 golem.de::Aus dem Verlag:
@@ -22,9 +24,13 @@ golem.de::Podcast
 golem.de::Sonst noch was?
 golem.de::Star Trek:
 golem.de::Tech Talks:
+golem.de::Twitter
+golem.de::Elon Musk
 golem.de::Wochenrückblick
 hardwareluxx.de::Der Hardwareluxx-Webwatch:
 hardwareluxx.de::Unsere Artikel der letzten Woche
+heise.de::Elon Musk
+heise.de::Twitter
 heise.de::Anzeige
 heise.de::Auslegungssache
 heise.de::Bit-Rauschen
@@ -141,6 +147,8 @@ stackoverflow.blog::Podcast
 stackoverflow.blog::The Overflow
 stadt-bremerhaven.de::Bundesliga
 stadt-bremerhaven.de::Disney+
+stadt-bremerhaven.de::Twitter
+stadt-bremerhaven.de::Elon Musk
 stadt-bremerhaven.de::eFootball
 stadt-bremerhaven.de::FIFA
 stadt-bremerhaven.de::Formel 1

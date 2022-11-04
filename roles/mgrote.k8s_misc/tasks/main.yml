@@ -1,0 +1,7 @@
+---
+  - name: set $KUBECONFIG for root
+    ansible.builtin.blockinfile:
+      path: /root/.bashrc
+      block: |
+        export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+      marker: "# {mark} ANSIBLE MANAGED BLOCK - K3S"

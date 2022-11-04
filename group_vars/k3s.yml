@@ -1,0 +1,95 @@
+---
+  ### mgrote.restic
+  restic_folders_to_backup: "/ /var" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
+
+  ### pandemonium1986.ansible-role-k9s
+  k9s_version: "v0.26.7"
+
+  ### mrlesmithjr.ansible-manage-lvm
+  #lvm_groups:
+  # - vgname: vg_gitea_data
+  #   disks:
+  #     - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1
+  #   create: true
+  #   lvnames:
+  #     - lvname: lv_gitea_data
+  #       size: +100%FREE
+  #       create: true
+  #       filesystem: xfs
+  #       mount: true
+  #       mntp: /var/lib/gitea
+  #manage_lvm: true
+  #pvresize_to_max: true
+
+  ### oefenweb.ufw
+  ufw_rules:
+#     - rule: allow
+#       to_port: 22
+#       protocol: tcp
+#       comment: 'ssh'
+#       from_ip: 0.0.0.0/0
+#     - rule: allow
+#       to_port: 4949
+#       protocol: tcp
+#       comment: 'munin'
+#       from_ip: 192.168.2.0/24
+#     # https://rancher.com/docs/k3s/latest/en/installation/installation-requirements/
+#     - rule: allow
+#       to_port: 6443
+#       protocol: tcp
+#       comment: 'k8s-api-server'
+#       from_ip: 192.168.2.0/24
+#     - rule: allow
+#       to_port: 2379
+#       protocol: tcp
+#       comment: 'k8s-embedded-etcd'
+#       from_ip: 192.168.2.0/24
+#     - rule: allow
+#       to_port: 2380
+#       protocol: tcp
+#       comment: 'k8s-embedded-etcd'
+#       from_ip: 192.168.2.0/24
+#     - rule: allow
+#       to_port: 10250
+#       protocol: tcp
+#       comment: 'k8s-kubelet-metrics'
+#       from_ip: 192.168.2.0/24
+      - rule: allow
+        comment: 'k3s - alles offen'
+        from_ip: 0.0.0.0/0
+  ### xanmanning.k3s
+  k3s_state: installed
+  k3s_airgap: false
+  k3s_config_file: /etc/rancher/k3s/config.yaml
+  k3s_build_cluster: true
+  k3s_install_dir: /usr/local/bin
+  k3s_etcd_datastore: true
+  k3s_become: true
+  k3s_use_experimental: true
+  k3s_server:
+    # siehe https://docs.k3s.io/reference/server-config
+    # cli parameter OHNE -- am anfang
+    write-kubeconfig-mode: '644'
+    cluster-cidr: "10.42.0.0/16"
+    service-cidr: "10.43.0.0/16"
+    disable:
+      - traefik
+      - local-storage # disables local-path-provisioner
+
+  ### mgrote.fluxcd
+  flux_repo_url:
+  flux_repo_host: git.mgrote.net
+  flux_repo_host_port: 2222
+  flux_repo_branch: master
+  flux_repo_url_complete: ssh://gitea@git.mgrote.net:2222/mg/k3s-fluxcd.git
+  flux_install_host: k3s1.grote.lan
+  flux_homedir: /home/flux
+  flux_path_ssh_dir: /home/flux/.ssh
+  flux_user_group: flux
+  flux_user: flux
+  flux_download_url: https://github.com/fluxcd/flux2/releases/download/v0.35.0/flux_0.35.0_linux_amd64.tar.gz
+  flux_path_bin: /usr/local/sbin
+  flux_path_ssh_id_file: id_rsa
+  flux_ssh_key_format: ed25519
+  kubeconfig: /etc/rancher/k3s/k3s.yaml
+  flux_sync_interval: 1m

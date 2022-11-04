@@ -18,6 +18,15 @@ all:
     docker:
       hosts:
         docker10.grote.lan:
+    k3s:
+      hosts:
+        k3s1.grote.lan:
+        k3s2.grote.lan:
+        k3s3.grote.lan:
+    vmtest:
+      hosts:
+        vm-test-2004.grote.lan:
+        vm-test-2204.grote.lan:
     proxmox:
       hosts:
         pve5.grote.lan:
@@ -26,6 +35,10 @@ all:
         proxmoxprod:
           hosts:
             pve5.grote.lan:
+      children:
+        proxmoxtest:
+          hosts:
+            pve5-test.grote.lan:
     physical:
       hosts:
         pve5.grote.lan:
@@ -43,6 +56,9 @@ all:
         gitea.grote.lan:
         dnsmasq.grote.lan:
         docker10.grote.lan:
+        k3s1.grote.lan:
+        k3s2.grote.lan:
+        k3s3.grote.lan:
     test:
       hosts:
         vm-test-2004.grote.lan:

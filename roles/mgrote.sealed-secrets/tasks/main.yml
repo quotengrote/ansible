@@ -1,0 +1,26 @@
+---
+  - name: include user tasks
+    include_tasks: user.yml
+
+  - name: check if kubeseal is installed
+    command: which kubeseal
+    changed_when: false
+    failed_when: kubeseal_installed.rc not in [0,1]
+    register: kubeseal_installed
+
+  - name: download sealed_secrets binary
+    ansible.builtin.unarchive:
+      src: "{{ kubeseal_download_url }}"
+      dest: "{{ kubeseal_path_bin }}"
+      mode: 0755
+      owner: "{{ sealed_secrets_user }}"
+      group: "{{ sealed_secrets_user_group }}"
+      remote_src: yes
+      creates: "{{ kubeseal_path_bin }}/kubeseal"
+    when: kubeseal_installed.rc not in [ 0 ]
+
+  - name: include import tasks
+    include_tasks: import.yml
+    # der ganze block nur auf enem host
+    run_once: true
+    when: ansible_host == flux_install_host

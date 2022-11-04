@@ -158,8 +158,8 @@
 
   ### mgrote.cv4pve-autosnap
   cv4pve_api_user: root@pam!cv4pve-autosnap
-  cv4pve_api_token: "{{ lookup('keepass', 'cv4pve_api_token', 'password') }}"
-  cv4pve_vmid: all,-127
+  cv4pve_api_token: "{{ lookup('keepass', 'cv4pve_api_token_pve2', 'password') }}"
+  cv4pve_vmid: all,-127,-112,-116,-101,-102,-106 # k3s* wieder in snaps aktivieren!
   cv4pve_keep_snapshots: 5
   cv4pve_dl_link: "https://github.com/Corsinvest/cv4pve-autosnap/releases/download/v1.10.0/cv4pve-autosnap-linux-x64.zip"
 

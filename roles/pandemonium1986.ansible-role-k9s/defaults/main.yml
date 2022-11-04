@@ -1,0 +1,4 @@
+---
+k9s_cache_path: "/var/cache/github"
+k9s_installation_path: "/opt/github/k9s"
+k9s_version: "v0.24.15"

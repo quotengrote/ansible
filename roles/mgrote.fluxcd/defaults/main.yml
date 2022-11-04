@@ -1,0 +1,17 @@
+---
+  flux_repo_url:
+  flux_repo_host: git.mgrote.net
+  flux_repo_host_port: 2222
+  flux_repo_branch: master
+  flux_repo_url_complete: ssh://gitea@git.mgrote.net:2222/mg/k3s-fluxcd.git
+  flux_install_host: k3s1.grote.lan
+  flux_homedir: /home/flux
+  flux_path_ssh_dir: /home/flux/.ssh
+  flux_user_group: flux
+  flux_user: flux
+  flux_download_url: https://github.com/fluxcd/flux2/releases/download/v0.35.0/flux_0.35.0_linux_amd64.tar.gz
+  flux_path_bin: /usr/local/sbin
+  flux_path_ssh_id_file: id_rsa
+  flux_ssh_key_format: ed25519
+  kubeconfig: /etc/rancher/k3s/k3s.yaml
+  flux_sync_interval: 1m

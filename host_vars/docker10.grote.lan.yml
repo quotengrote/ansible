@@ -28,8 +28,6 @@
   ### mgrote.restic
   restic_folders_to_backup: "/ /var/lib/docker /mnt/httpd" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben
 
-  # die vars noch in rolle übertragen mit beispiel
-
   ### mgrote.docker-compose-inline
   compose_owner: "docker-user"
   compose_group: "docker-user"
