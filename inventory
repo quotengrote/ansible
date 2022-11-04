@@ -22,6 +22,7 @@ all:
       hosts:
         pve2.grote.lan:
         pve5.grote.lan:
+        pve5-test.grote.lan:
       children:
         proxmoxprod:
           hosts:
@@ -52,3 +53,4 @@ all:
       hosts:
         vm-test-2004.grote.lan:
         vm-test-2204.grote.lan:
+        pve5-test.grote.lan:
