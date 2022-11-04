@@ -31,6 +31,6 @@ services:
     items:
       - name: "ProxMox Virtual Environment"
         logo: "assets/icons/pve.png"
-        url: "https://pve2-test2.grote.lan:8006"
+        url: "https://pve5-test.grote.lan:8006"
         target: "_blank"
         subtitle: "VM"

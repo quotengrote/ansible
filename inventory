@@ -20,17 +20,14 @@ all:
         docker10.grote.lan:
     proxmox:
       hosts:
-        pve2.grote.lan:
         pve5.grote.lan:
         pve5-test.grote.lan:
       children:
         proxmoxprod:
           hosts:
-            pve2.grote.lan:
             pve5.grote.lan:
     physical:
       hosts:
-        pve2.grote.lan:
         pve5.grote.lan:
     gitea:
       hosts:
@@ -42,7 +39,6 @@ all:
         fileserver2.grote.lan:
         acng.grote.lan:
         ansible2.grote.lan:
-        pve2.grote.lan:
         pve5.grote.lan:
         gitea.grote.lan:
         dnsmasq.grote.lan:

@@ -1,4 +1,0 @@
----
-- hosts: bastelstube-gui*
-  roles:
-    - { role: mgrote.xrdp, tags: "xrdp" }

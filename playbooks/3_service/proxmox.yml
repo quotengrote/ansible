@@ -19,6 +19,3 @@
         tags: "bindmounts" }
     - { role: mgrote.apcupsd,
         tags: "apcupsd" }
-    - { role: mgrote.supermicro_fan_control,
-        tags: "fans",
-        when: "'pve2.grote.lan' in inventory_hostname" }

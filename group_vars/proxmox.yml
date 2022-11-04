@@ -38,70 +38,8 @@
   apt_packages_extra:
     - ifupdown2
     - bmon
-  ### mgrote.munin-node
-  munin_node_plugins:
-    - name: timesync
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
-    - name: systemd_status
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
-    - name: systemd_mem
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_mem
-      config: |
-        [systemd_mem]
-        env.all_services true
-    - name: lvm_
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
-      config: |
-        [lvm_*]
-        user root
-    - name: fail2ban
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
-      config: |
-        [fail2ban]
-        env.client /usr/bin/fail2ban-client
-        env.config_dir /etc/fail2ban
-        user root
-    - name: zfs_arcstats
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_arcstats
-    - name: zfsonlinux_stats_
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfsonlinux_stats_
-    - name: zpool_iostat
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_iostat
-    - name: zfs_list
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_list
-      config: |
-        [zfs_list]
-        env.ignore_datasets_pattern autodaily
-    - name: zpool_capacity
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_capacity
-    - name: kvm_mem
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_mem
-    - name: kvm_net
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_net
-    - name: kvm_io
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_io
-      config: |
-        [kvm_io]
-        user root
-    - name: kvm_cpu
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_cpu
-    - name: proxmox_count
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/proxmox/proxmox_vm_count
-      config: |
-        [proxmox_count]
-        user root
-        group root
-    - name: zfs_count
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_pool_dataset_count
-    - name: ksm_
-      src:  https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/system/kernel_same_page_merging
-    - name: apcupsd_ww
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/power/apcupsd_ww
-    - name: apcupsd_pwr
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/apcupsd_pwr
-      config: |
-        [apcupsd_pwr]
-        env.ups_model APC-BX950U-GR
+
+
 
   ### mgrote.zfs_sanoid
   sanoid_templates:
@@ -157,7 +95,7 @@
   apcupsd_master_nologon_when_active: "disable"
 
   apcupsd_nis_master: true
-  apcupsd_nis_master_hostname: pve2.grote.lan
+  apcupsd_nis_master_hostname: pve5.grote.lan
   apcupsd_nis_master_listen_ip: 0.0.0.0
   apcupsd_nis_master_listen_port: 3551
   apcupsd_ups_name: APC-BX950U-GR
