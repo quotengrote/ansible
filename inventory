@@ -46,3 +46,9 @@ all:
         gitea.grote.lan:
         dnsmasq.grote.lan:
         docker10.grote.lan:
+        vm-test-2004.grote.lan:
+        vm-test-2204.grote.lan:
+    test:
+      hosts:
+        vm-test-2004.grote.lan:
+        vm-test-2204.grote.lan:
