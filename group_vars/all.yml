@@ -178,7 +178,6 @@
     - pwgen
     - keychain
   apt_packages_physical:
-    - ipmitool
     - s-tui
     - smartmontools
     - lm-sensors
