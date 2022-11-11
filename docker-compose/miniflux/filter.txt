@@ -2,6 +2,7 @@
 astralcodexten.substack.com::Open Thread
 augengeradeaus.net::Sicherheitshalber der Podcast
 axios.com::Axios on HBO
+axios.com::football
 computerbase.de::Adrenalin 2020 Edition
 computerbase.de::Adrenalin 2021 Edition
 computerbase.de::Community: Fotowettbewerb
@@ -12,6 +13,8 @@ computerbase.de::Wochenrück- und Ausblick:
 computerbase.de::Twitter
 computerbase.de::Elon Musk
 facebook.com::Bridge returned error
+golem.de::Fussball
+golem.de::Fußball
 golem.de::Anzeige
 golem.de::Aus dem Verlag:
 golem.de::Fifa
@@ -29,6 +32,8 @@ golem.de::Elon Musk
 golem.de::Wochenrückblick
 hardwareluxx.de::Der Hardwareluxx-Webwatch:
 hardwareluxx.de::Unsere Artikel der letzten Woche
+heise.de::software-architektur.tv
+heise.de::heise+ |
 heise.de::Elon Musk
 heise.de::Twitter
 heise.de::Anzeige
@@ -157,6 +162,10 @@ stadt-bremerhaven.de::Podcast
 stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::(Werbung)
 stadt-bremerhaven.de::WM 2022
+sueddeutsche.de::Turn-WM
+sueddeutsche.de::Baseball
+sueddeutsche.de::WM-Kader
+sueddeutsche.de::Jugendwort des Jahres
 sueddeutsche.de::Volleyball-WM:
 sueddeutsche.de::Amos Pieper
 sueddeutsche.de::Claudio Pizarro
@@ -403,6 +412,7 @@ sueddeutsche.de::WM-Silber
 sueddeutsche.de::WM-Ticket
 sueddeutsche.de::WM-Titel
 sueddeutsche.de::Zlatan
+tagesschau.de::Skirennen
 tagesschau.de::Alpine-Super-Kombination:
 tagesschau.de::Eurovision Song Contest
 tagesschau.de::Bundesliga:
