@@ -18,6 +18,7 @@ golem.de::Fußball
 golem.de::Anzeige
 golem.de::Aus dem Verlag:
 golem.de::Fifa
+theycantalk.com::Tinyview
 golem.de::(g+)
 golem.de::in aller Kürze
 golem.de::In eigener Sache

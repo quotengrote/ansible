@@ -49,7 +49,7 @@ services:
         subtitle: "Selbstbau"
       - name: "Apt-Cacher-NG"
         logo: "assets/icons/acng.jpg"
-        url: "http://acng.grote.lan:9999/acng-report.html"
+        url: "http://acng2.grote.lan:9999/acng-report.html"
         target: "_blank"
         subtitle: "apt"
       - name: "gitea"

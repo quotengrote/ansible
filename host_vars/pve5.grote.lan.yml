@@ -27,7 +27,11 @@
     - dataset: rpool/ROOT/pve-1
       state: present
       refreservation: 10G
-
+    # rpool - Data
+    - dataset: rpool/data
+      state: present
+    - dataset: rpool/data/acng
+      state: present
     # rpool - VMs
     - dataset: rpool/vm
       state: present
@@ -155,10 +159,14 @@
       recursive: 'no'
       snapshots: true
       template: 'pve3tage'
+    - path: rpool/data/acng
+      recursive: 'no'
+      snapshots: true
+      template: '3tage'
 
   ### mgrote.cv4pve-autosnap
   cv4pve_api_user: root@pam!cv4pve-autosnap
-  cv4pve_api_token: "{{ lookup('keepass', 'cv4pve_api_token_pve2', 'password') }}"
+  cv4pve_api_token: "{{ lookup('keepass', 'cv4pve_api_token', 'password') }}"
   cv4pve_vmid: all,-127,-112,-116,-101,-102,-106 # k3s* wieder in snaps aktivieren!
   cv4pve_keep_snapshots: 5
   cv4pve_dl_link: "https://github.com/Corsinvest/cv4pve-autosnap/releases/download/v1.10.0/cv4pve-autosnap-linux-x64.zip"
@@ -221,6 +229,10 @@
       mp_nr: 16
       mp_path_host: /hdd_data_raidz/vm
       mp_path_guest: /shares_vm
+    - vmid: 106
+      mp_nr: 1
+      mp_path_host: /rpool/data/acng
+      mp_path_guest: /var/cache/apt-cacher-ng
 
   ### mgrote.munin-node
   munin_node_plugins:

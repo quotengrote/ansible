@@ -1,19 +1,10 @@
 ---
-  ### mrlesmithjr.ansible-manage-lvm
-  lvm_groups:
-   - vgname: vg_acng
-     disks:
-       - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1
-     create: true
-     lvnames:
-       - lvname: lv_acng
-         size: +100%FREE
-         create: true
-         filesystem: xfs
-         mount: true
-         mntp: /var/cache/apt-cacher-ng
-  manage_lvm: true
-  pvresize_to_max: true
+  ### PROXMOX
+  # acng2 ist ein LXC-Container; der Container ist "privileged" damit der Bind-Mount die richtigen Rechte bekommt
+
+  ### mgrote.apt_manage_sources
+  manage_sources_apt_proxy: "" # weil der Apt-Cacher-NG sich nicht selbst als Quelle nehmen kann
+
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow
@@ -66,7 +57,7 @@
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/http/http_response
       config: |
         [http_response]
-        env.sites http://acng.grote.lan:9999/acng-report.html
+        env.sites http://acng2.grote.lan:9999/acng-report.html
         env.max_time 20
         env.short_label true
         env.follow_redirect true

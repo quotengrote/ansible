@@ -122,7 +122,7 @@
   postfix_smtp_server_port: 587
   postfix_smtp_use_tls: "yes"
   ### mgrote.apt_manage_sources
-  manage_sources_apt_proxy: "acng.grote.lan:9999"
+  manage_sources_apt_proxy: "acng2.grote.lan:9999"
   ### mgrote.tmux
   tmux_conf_destination: "/home/mg/.tmux.conf"
   tmux_bashrc_destination: "/home/mg/.bashrc"

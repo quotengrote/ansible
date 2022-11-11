@@ -1,9 +1,22 @@
 ---
-  - name: install apt-cacher-ng packages
+  - name: ensure directories exists
     become: yes
-    ansible.builtin.package:
-      name: apt-cacher-ng
-      state: present
+    ansible.builtin.file:
+      path: "{{ item }}"
+      state: directory
+    loop:
+      - /etc/apt-cacher-ng
+      - /var/cache/apt-cacher-ng
+
+  - name: ensure directories have the right permissions
+    become: yes
+    ansible.builtin.file:
+      path: "{{ item }}"
+      state: directory
+      owner: apt-cacher-ng
+      group: apt-cacher-ng
+    loop:
+      - /var/cache/apt-cacher-ng
 
   - name: templating acng.conf
     become: yes
@@ -12,6 +25,12 @@
       dest: "/etc/apt-cacher-ng/acng.conf"
       mode: 0664
     notify: acng_starten_aktivieren
+
+  - name: install apt-cacher-ng packages
+    become: yes
+    ansible.builtin.package:
+      name: apt-cacher-ng
+      state: present
 
   - name: templating security.conf
     become: yes
