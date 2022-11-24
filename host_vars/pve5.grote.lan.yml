@@ -169,7 +169,6 @@
       recursive: 'no'
       snapshots: true
       template: '3tage'
-      template: '3tage'
     - path: rpool/data/k3s
       recursive: 'no'
       snapshots: true
