@@ -1,6 +1,6 @@
 ---
   ### PROXMOX
-  # fileserver2 ist ein LXC-Container; der Container ist "privileged" damit der Bind-Mount die richtigen Rechte bekommt
+  # fileserver3 ist ein LXC-Container; der Container ist "privileged" damit der Bind-Mount die richtigen Rechte bekommt
   
   ### oefenweb.ufw
   ufw_rules:

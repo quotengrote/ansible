@@ -1,10 +1,10 @@
 ---
   cifs_mounts:
-    - name: pve_backup_mount_fileserver2
+    - name: pve_backup_mount_fileserver3
       type: cifs
       state: absent
       dest: /pve_backup_mount
-      src: //fileserver2.grote.lan/proxmox
+      src: //fileserver3.grote.lan/proxmox
       user: pve
       password: XXXXXXXXXXXXXXX
       domain: grote.lan

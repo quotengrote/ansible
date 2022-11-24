@@ -16,7 +16,7 @@
       comment: 'dns'
       from_ip: 0.0.0.0/0
   ### mgrote.restic
-  restic_repository: "//192.168.2.36/restic"
+  restic_repository: "//192.168.2.54/restic"
   ### mgrote.apt_manage_sources
   # wird leer gesetzt da dnsmasq NICHT den Router befragt und daher keine Lokalen Hostnamen abfragen kann
   manage_sources_apt_proxy: ""

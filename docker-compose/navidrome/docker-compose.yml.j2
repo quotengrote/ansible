@@ -47,7 +47,7 @@ volumes:
     driver_opts:
       type: "cifs"
       o: "user=navidrome,password={{ lookup('keepass', 'navidrome_smb_share_password', 'password') }}"
-      device: "//192.168.2.36/musik/Musik"
+      device: "//192.168.2.54/musik/Musik"
 ######## Networks ########
 networks:
   traefik:

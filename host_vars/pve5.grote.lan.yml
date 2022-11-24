@@ -167,65 +167,66 @@
   ### mgrote.cv4pve-autosnap
   cv4pve_api_user: root@pam!cv4pve-autosnap
   cv4pve_api_token: "{{ lookup('keepass', 'cv4pve_api_token', 'password') }}"
-  cv4pve_vmid: all,-127,-112,-116,-101,-102,-106 # k3s* wieder in snaps aktivieren!
+  cv4pve_vmid: all,-106,-112,-115
   cv4pve_keep_snapshots: 5
-  cv4pve_dl_link: "https://github.com/Corsinvest/cv4pve-autosnap/releases/download/v1.10.0/cv4pve-autosnap-linux-x64.zip"
+  cv4pve_dl_link: "https://github.com/Corsinvest/cv4pve-autosnap/releases/download/v1.14.7/cv4pve-autosnap-linux-x64.zip"
 
   ### mgrote.proxmox_bind_mounts
   pve_bind_mounts:
-    - vmid: 127
+    ### fileserver3
+    - vmid: 115
       mp_nr: 0
       mp_path_host: /hdd_data_raidz/videos
       mp_path_guest: /shares_videos
-    - vmid: 127
+    - vmid: 115
       mp_nr: 2
       mp_path_host: /hdd_data_raidz/pve_backup
       mp_path_guest: /shares_pve_backup
-    - vmid: 127
+    - vmid: 115
       mp_nr: 3
       mp_path_host: /hdd_data_raidz/papa_backup
       mp_path_guest: /shares_papa_backup
-    - vmid: 127
+    - vmid: 115
       mp_nr: 4
       mp_path_host: /hdd_data_raidz/music
       mp_path_guest: /shares_music
-    - vmid: 127
+    - vmid: 115
       mp_nr: 5
       mp_path_host: /hdd_data_raidz/tmp
       mp_path_guest: /shares_tmp
-    - vmid: 127
+    - vmid: 115
       mp_nr: 6
       mp_path_host: /hdd_data_raidz/archiv
       mp_path_guest: /shares_archiv
-    - vmid: 127
+    - vmid: 115
       mp_nr: 7
       mp_path_host: /hdd_data_raidz/bilder
       mp_path_guest: /shares_bilder
-    - vmid: 127
+    - vmid: 115
       mp_nr: 8
       mp_path_host: /hdd_data_raidz/hm
       mp_path_guest: /shares_hm
-    - vmid: 127
+    - vmid: 115
       mp_nr: 9
       mp_path_host: /hdd_data_raidz/scans
       mp_path_guest: /shares_scans
-    - vmid: 127
+    - vmid: 115
       mp_nr: 10
       mp_path_host: /hdd_data_raidz/restic
       mp_path_guest: /shares_restic
-    - vmid: 127
+    - vmid: 115
       mp_nr: 12
       mp_path_host: /hdd_data_raidz/backup
       mp_path_guest: /shares_backup
-    - vmid: 127
+    - vmid: 115
       mp_nr: 14
       mp_path_host: /hdd_data_raidz/buecher
       mp_path_guest: /shares_buecher
-    - vmid: 127
+    - vmid: 115
       mp_nr: 15
       mp_path_host: /hdd_data_raidz/programme
       mp_path_guest: /shares_programme
-    - vmid: 127
+    - vmid: 115
       mp_nr: 16
       mp_path_host: /hdd_data_raidz/vm
       mp_path_guest: /shares_vm

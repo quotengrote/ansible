@@ -5,7 +5,7 @@ all:
         dokuwiki2.grote.lan:
     fileserver:
       hosts:
-        fileserver2.grote.lan:
+        fileserver3.grote.lan:
     dnsmasq:
       hosts:
         dnsmasq.grote.lan:
@@ -48,7 +48,7 @@ all:
     production:
       hosts:
         dokuwiki2.grote.lan:
-        fileserver2.grote.lan:
+        fileserver3.grote.lan:
         acng2.grote.lan:
         ansible2.grote.lan:
         pve5.grote.lan:
