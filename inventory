@@ -23,7 +23,7 @@ all:
         k3s1.grote.lan:
         k3s2.grote.lan:
         k3s3.grote.lan:
-    k3snfs:
+    nfs:
       hosts:
         k3s-nfs2.grote.lan:
     vmtest:

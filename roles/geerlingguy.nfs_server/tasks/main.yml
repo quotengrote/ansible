@@ -31,6 +31,14 @@
     mode: 0644
   notify: reload nfs
 
+- name: set port
+# https://serverfault.com/questions/377170/which-ports-do-i-need-to-open-in-the-firewall-to-use-nfs
+  ansible.builtin.lineinfile:
+    path: /etc/default/nfs-kernel-server
+    regexp: 'RPCMOUNTDOPTS=--manage-gids'
+    line: RPCMOUNTDOPTS="--port {{ nfs_port }}"
+  notify: reload nfs
+
 - name: Ensure nfs is running.
   service: "name={{ nfs_server_daemon }} state=started enabled=yes"
   when: nfs_exports|length

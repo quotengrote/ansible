@@ -4,6 +4,8 @@
     - /srv/nfs 192.168.2.40(rw,no_subtree_check,no_root_squash) #k3s3
     - /srv/nfs 192.168.2.41(rw,no_subtree_check,no_root_squash) #k3s2
     - /srv/nfs 192.168.2.42(rw,no_subtree_check,no_root_squash) #k3s1
+  nfs_port: 33333
+
 
   ### mgrote.munin-node
   munin_node_plugins:
@@ -35,3 +37,56 @@
 
   ### mgrote.restic
   restic_folders_to_backup: "/ /srv/nfs" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben
+
+
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+      from_ip: 0.0.0.0/0
+    - rule: allow
+      to_port: 4949
+      protocol: tcp
+      comment: 'munin'
+      from_ip: 192.168.2.144/24
+      # k3s1
+    - rule: allow
+      from_ip: 192.168.2.40
+      comment: 'nfs'
+      to_port: 2049
+    - rule: allow
+      from_ip: 192.168.2.40
+      comment: 'nfs'
+      to_port: 111
+    - rule: allow
+      from_ip: 192.168.2.40
+      comment: 'nfs'
+      to_port: "{{ nfs_port }}"
+      # k3s2
+    - rule: allow
+      from_ip: 192.168.2.41
+      comment: 'nfs'
+      to_port: 2049
+    - rule: allow
+      from_ip: 192.168.2.41
+      comment: 'nfs'
+      to_port: 111
+    - rule: allow
+      from_ip: 192.168.2.41
+      comment: 'nfs'
+      to_port: "{{ nfs_port }}"
+      # k3s3
+    - rule: allow
+      from_ip: 192.168.2.42
+      comment: 'nfs'
+      to_port: 2049
+    - rule: allow
+      from_ip: 192.168.2.42
+      comment: 'nfs'
+      to_port: 111
+    - rule: allow
+      from_ip: 192.168.2.42
+      comment: 'nfs'
+      to_port: "{{ nfs_port }}"
