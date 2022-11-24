@@ -19,3 +19,4 @@
         tags: "bindmounts" }
     - { role: mgrote.apcupsd,
         tags: "apcupsd" }
+    - { role: mgrote.proxmox_lxc_profiles, tags: "lxc-profile" }

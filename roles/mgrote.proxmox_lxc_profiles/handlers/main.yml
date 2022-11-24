@@ -1,0 +1,11 @@
+---
+  - name: restart lxc
+    become: true
+    command: "pct reboot {{ item }}"
+    failed_when: false
+    loop: "{{ lists_merged | unique }}"
+    # reboote den lxc wenn:
+    # - er in der Liste "Lists merged" vorhanden ist
+     # unique Filter sorgt dafür das es keine doppelten Elemente gibt
+     # https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html#set-theory-filters
+     # https://www.reddit.com/r/ansible/comments/8cp86c/how_do_i_remove_duplicate_items_from_a_variable/

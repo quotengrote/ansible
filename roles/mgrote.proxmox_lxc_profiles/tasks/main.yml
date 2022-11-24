@@ -1,0 +1,7 @@
+---
+  - name: loop tasks
+    include_tasks: profile.yml
+    loop: "{{ lxc_apparmor_profiles }}"
+    when:
+      - lxc_apparmor_profiles is defined
+    # Loope durch jeden bind-mount

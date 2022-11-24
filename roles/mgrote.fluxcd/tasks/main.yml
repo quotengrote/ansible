@@ -90,8 +90,6 @@
         ansible.builtin.shell: "{{ flux_homedir }}/bootstrap.sh"
         become_user: "{{ flux_user }}"
         when: bootstrap.changed
-    # der ganze block nur auf enem host
+    # der ganze block nur auf einem host
     run_once: true
     when: ansible_host == flux_install_host
-
-# podeinfo: http://k3s1.grote.lan:30778

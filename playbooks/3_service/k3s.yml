@@ -7,3 +7,4 @@
     - { role: mgrote.fluxcd, tags: "flux", become: true }
     - { role: mgrote.k8s_misc, tags: "misc", become: true }
     - { role: mgrote.sealed-secrets, tags: "sealed-secrets", become: true }
+    - { role: geerlingguy.helm, tags: "helm", become: true }

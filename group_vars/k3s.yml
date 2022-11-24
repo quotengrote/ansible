@@ -57,6 +57,7 @@
       - rule: allow
         comment: 'k3s - alles offen'
         from_ip: 0.0.0.0/0
+
   ### xanmanning.k3s
   k3s_state: installed
   k3s_airgap: false
@@ -93,3 +94,10 @@
   flux_ssh_key_format: ed25519
   kubeconfig: /etc/rancher/k3s/k3s.yaml
   flux_sync_interval: 1m
+
+  ### mgrote.apt_manage_packages
+  apt_packages_extra:
+    - nfs-common # für nfs-subdir-external-provisioner
+
+  ### githubixxansible.cilium
+  cilium_chart_version: "1.12.3"

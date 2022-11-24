@@ -23,6 +23,9 @@ all:
         k3s1.grote.lan:
         k3s2.grote.lan:
         k3s3.grote.lan:
+    k3snfs:
+      hosts:
+        k3s-nfs2.grote.lan:
     vmtest:
       hosts:
         vm-test-2004.grote.lan:
@@ -31,13 +34,6 @@ all:
       hosts:
         pve5.grote.lan:
         pve5-test.grote.lan:
-      children:
-        proxmoxprod:
-          hosts:
-            pve5.grote.lan:
-        proxmoxtest:
-          hosts:
-            pve5-test.grote.lan:
     physical:
       hosts:
         pve5.grote.lan:
@@ -58,6 +54,7 @@ all:
         k3s1.grote.lan:
         k3s2.grote.lan:
         k3s3.grote.lan:
+        k3s-nfs2.grote.lan:
     test:
       hosts:
         vm-test-2004.grote.lan:

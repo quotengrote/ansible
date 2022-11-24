@@ -1,5 +1,4 @@
 ---
-  flux_repo_url:
   flux_repo_host: git.mgrote.net
   flux_repo_host_port: 2222
   flux_repo_branch: master

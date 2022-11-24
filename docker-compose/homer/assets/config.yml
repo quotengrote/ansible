@@ -149,16 +149,6 @@ services:
         url: "http://docker10.grote.lan:5000"
         target: "_blank"
         subtitle: "Website2rss"
-      - name: "Photoprism"
-        logo: "assets/icons/photoprism.svg"
-        url: "http://docker10.grote.lan:2342"
-        target: "_blank"
-        subtitle: "Bildersammlung"
-      - name: "hastebin"
-        logo: "assets/icons/hastebin.png"
-        url: "http://docker10.grote.lan:7777"
-        target: "_blank"
-        subtitle: "pastebin"
 
 
 
