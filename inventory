@@ -29,7 +29,6 @@ all:
     vmtest:
       hosts:
         vm-test-2004.grote.lan:
-        vm-test-2204.grote.lan:
     proxmox:
       hosts:
         pve5.grote.lan:
@@ -57,6 +56,5 @@ all:
         k3s-nfs2.grote.lan:
     test:
       hosts:
-        vm-test-2004.grote.lan:
         vm-test-2204.grote.lan:
         pve5-test.grote.lan:
