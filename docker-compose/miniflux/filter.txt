@@ -3,6 +3,7 @@ astralcodexten.substack.com::Open Thread
 augengeradeaus.net::Sicherheitshalber der Podcast
 axios.com::Axios on HBO
 axios.com::football
+computerbase.de::WM
 computerbase.de::Adrenalin 2020 Edition
 computerbase.de::Adrenalin 2021 Edition
 computerbase.de::Community: Fotowettbewerb
@@ -112,6 +113,7 @@ mdr.de::Schwimmen:
 mf-bridge::Bridge encountered an unexpected situation
 monkeyuser.com::AdLitteram
 netzpolitik.org::KW
+netzpolitik.org::WM
 netzpolitik.org::NPP
 planet3dnow.de::AIDA64 Version
 planet3dnow.de::Blender
@@ -373,6 +375,12 @@ sueddeutsche.de::Super Bowl Sunday:
 sueddeutsche.de::Supercup
 sueddeutsche.de::Supercup live
 sueddeutsche.de::Super League
+sueddeutsche.de::Synchronschwimmen:
+sueddeutsche.de::WM
+sueddeutsche.de::Neymar
+sueddeutsche.de::Stimmen zum Spiel
+sueddeutsche.de::-Spiel
+sueddeutsche.de::Eröffnungsspiel
 sueddeutsche.de::Synchronschwimmen:
 sueddeutsche.de::SZ-Audioreihe
 sueddeutsche.de::SZ-Kolumne "Bester Dinge":
