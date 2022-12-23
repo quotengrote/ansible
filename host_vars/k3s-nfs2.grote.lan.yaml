@@ -64,29 +64,3 @@
       from_ip: 192.168.2.40
       comment: 'nfs'
       to_port: "{{ nfs_port }}"
-      # k3s2
-    - rule: allow
-      from_ip: 192.168.2.41
-      comment: 'nfs'
-      to_port: 2049
-    - rule: allow
-      from_ip: 192.168.2.41
-      comment: 'nfs'
-      to_port: 111
-    - rule: allow
-      from_ip: 192.168.2.41
-      comment: 'nfs'
-      to_port: "{{ nfs_port }}"
-      # k3s3
-    - rule: allow
-      from_ip: 192.168.2.42
-      comment: 'nfs'
-      to_port: 2049
-    - rule: allow
-      from_ip: 192.168.2.42
-      comment: 'nfs'
-      to_port: 111
-    - rule: allow
-      from_ip: 192.168.2.42
-      comment: 'nfs'
-      to_port: "{{ nfs_port }}"
