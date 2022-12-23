@@ -26,7 +26,7 @@ all:
         k3s-nfs2.grote.lan:
     vmtest:
       hosts:
-        vm-test-2004.grote.lan:
+        vm-test-2204.grote.lan:
     proxmox:
       hosts:
         pve5.grote.lan:
