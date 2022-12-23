@@ -49,8 +49,6 @@ all:
         dnsmasq.grote.lan:
         docker10.grote.lan:
         k3s1.grote.lan:
-        k3s2.grote.lan:
-        k3s3.grote.lan:
         k3s-nfs2.grote.lan:
     test:
       hosts:
