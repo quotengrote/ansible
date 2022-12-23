@@ -1,8 +1,6 @@
 ---
   ### geerlingguy.nfs
   nfs_exports:
-    - /srv/nfs 192.168.2.40(rw,no_subtree_check,no_root_squash) #k3s3
-    - /srv/nfs 192.168.2.41(rw,no_subtree_check,no_root_squash) #k3s2
     - /srv/nfs 192.168.2.42(rw,no_subtree_check,no_root_squash) #k3s1
   nfs_port: 33333
 
@@ -53,14 +51,14 @@
       from_ip: 192.168.2.144/24
       # k3s1
     - rule: allow
-      from_ip: 192.168.2.40
+      from_ip: 192.168.2.42
       comment: 'nfs'
       to_port: 2049
     - rule: allow
-      from_ip: 192.168.2.40
+      from_ip: 192.168.2.42
       comment: 'nfs'
       to_port: 111
     - rule: allow
-      from_ip: 192.168.2.40
+      from_ip: 192.168.2.42
       comment: 'nfs'
       to_port: "{{ nfs_port }}"
