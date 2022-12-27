@@ -150,6 +150,7 @@ portuguesegeese.com::portuguesegeese.com
 reddit.com::UEFA
 stackoverflow.blog::Podcast
 stackoverflow.blog::The Overflow
+stadt-bremerhaven.de::Eishockey
 stadt-bremerhaven.de::(Werbung)
 stadt-bremerhaven.de::Bundesliga
 stadt-bremerhaven.de::DAZN
@@ -417,7 +418,16 @@ sueddeutsche.de::Werder
 sueddeutsche.de::Wimbledon
 sueddeutsche.de::Zlatan
 sueddeutsche.de::leute:
+sueddeutsche.de::torwart
+sueddeutsche.de::Wintersport:
+sueddeutsche.de::Deutsche Fußball Liga
+sueddeutsche.de::DFL
+sueddeutsche.de::VfB
+sueddeutsche.de::Premier League
 sueddeutsche.de::quoted.
+tagesschau.de::FIFA WM 2022
+tagesschau.de::Nordische Kombination:
+tagesschau.de::WM-Finale:
 tagesschau.de::Achtelfinale
 tagesschau.de::Alpine-Super-Kombination:
 tagesschau.de::American Football:
