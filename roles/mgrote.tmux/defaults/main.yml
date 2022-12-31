@@ -1,5 +1,0 @@
----
-  tmux_conf_destination: "/home/mg/.tmux.conf"
-  tmux_bashrc_destination: "/home/mg/.bashrc"
-  tmux_standardsession_name: "default"
-  tmux_auto_attach: present # or absent; soll bei jedem shell-start automatisch eine tmux session erstellt oder attached werden

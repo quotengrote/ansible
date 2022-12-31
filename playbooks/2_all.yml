@@ -4,7 +4,6 @@
   - import_playbook: base/ntp_client.yml
   - import_playbook: base/restic.yml
   - import_playbook: base/users.yml
-  - import_playbook: base/tmux.yml
   - import_playbook: base/motd.yml
   - import_playbook: base/dotfiles.yml
   - import_playbook: base/vim.yml
