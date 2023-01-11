@@ -34,7 +34,7 @@ kubectl delete pod -n kube-system -l name=sealed-secrets-controller
     ```
  2. diese Datei mit kubeseal verschlüsseln
     ```
-    cat <datei> | kubeseal --format=yaml
+    cat <datei> | kubeseal --controller-namespace kube-system --format yaml > sealed-secret.yaml
     ```
  3. den Inhalt dann als Secret im Repo ablegen ablegen
 
