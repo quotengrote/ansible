@@ -47,3 +47,9 @@ kubectl delete pod -n kube-system -l name=sealed-secrets-controller
       name: NAME_DES_SECRETS
       key: ICH_BIN_DER VARIABLEN_NAME
 ```
+
+## Auslesen eines Klartext-Secrets  aus dem Cluster
+
+```
+kubectl get secret <secretname> -n <namespace> -o jsonpath="{.data.<key>}" | base64 --decode ; echo""
+```
