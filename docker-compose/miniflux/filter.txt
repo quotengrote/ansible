@@ -93,6 +93,8 @@ heise.de::t zockt
 heise.de::uplink
 heise.de::zockt
 instagram.com::Bridge returned error
+mdr.de::DFB
+mdr.de::Hallescher FC
 mdr.de::#MDRklärt:
 mdr.de::Basketball
 mdr.de::Fussball
@@ -165,6 +167,10 @@ stadt-bremerhaven.de::Twitter
 stadt-bremerhaven.de::WM 2022
 stadt-bremerhaven.de::eFootball
 sueddeutsche.de::"Ich bin ein Star"
+sueddeutsche.de::Kolumne
+sueddeutsche.de::Netzkolumne
+sueddeutsche.de::Torhüter
+sueddeutsche.de::FC Bayern
 sueddeutsche.de::"Tatort"
 sueddeutsche.de::-Spiel
 sueddeutsche.de::1. FC Kaiserslautern:
@@ -425,7 +431,11 @@ sueddeutsche.de::DFL
 sueddeutsche.de::VfB
 sueddeutsche.de::Premier League
 sueddeutsche.de::quoted.
-tagesschau.de::FIFA WM 2022
+tagesschau.de::Langläuf
+tagesschau.de::Langlauf
+tagesschau.de::Weltcup
+tagesschau.de::Podcast
+tagesschau.de::11KM
 tagesschau.de::Nordische Kombination:
 tagesschau.de::WM-Finale:
 tagesschau.de::Achtelfinale
