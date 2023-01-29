@@ -6,6 +6,9 @@ axios.com::PGA
 axios.com::football
 computerbase.de::Adrenalin 2020 Edition
 computerbase.de::Adrenalin 2021 Edition
+computerbase.de::CB-Funk
+computerbase.de::CB-Funk-Podcast
+computerbase.de::Community-Umfrage
 computerbase.de::Community: Fotowettbewerb
 computerbase.de::Elon Musk
 computerbase.de::Fotowettbewerb:
@@ -93,12 +96,12 @@ heise.de::t zockt
 heise.de::uplink
 heise.de::zockt
 instagram.com::Bridge returned error
-mdr.de::DFB
-mdr.de::Hallescher FC
 mdr.de::#MDRklärt:
 mdr.de::Basketball
+mdr.de::DFB
 mdr.de::Fussball
 mdr.de::Fußball
+mdr.de::Hallescher FC
 mdr.de::Leichtathletik:
 mdr.de::Link des Audios
 mdr.de::Link des Videos
@@ -152,25 +155,22 @@ portuguesegeese.com::portuguesegeese.com
 reddit.com::UEFA
 stackoverflow.blog::Podcast
 stackoverflow.blog::The Overflow
-stadt-bremerhaven.de::Eishockey
 stadt-bremerhaven.de::(Werbung)
 stadt-bremerhaven.de::Bundesliga
 stadt-bremerhaven.de::DAZN
 stadt-bremerhaven.de::Disney+
+stadt-bremerhaven.de::Eishockey
 stadt-bremerhaven.de::Elon Musk
 stadt-bremerhaven.de::FIFA
 stadt-bremerhaven.de::Formel 1
 stadt-bremerhaven.de::Immer wieder sonntags KW
 stadt-bremerhaven.de::Podcast
+stadt-bremerhaven.de::Rückblick
 stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::Twitter
 stadt-bremerhaven.de::WM 2022
 stadt-bremerhaven.de::eFootball
 sueddeutsche.de::"Ich bin ein Star"
-sueddeutsche.de::Kolumne
-sueddeutsche.de::Netzkolumne
-sueddeutsche.de::Torhüter
-sueddeutsche.de::FC Bayern
 sueddeutsche.de::"Tatort"
 sueddeutsche.de::-Spiel
 sueddeutsche.de::1. FC Kaiserslautern:
@@ -189,6 +189,7 @@ sueddeutsche.de::American Football:
 sueddeutsche.de::Amos Pieper
 sueddeutsche.de::Arminia Bielefeld:
 sueddeutsche.de::Athlet
+sueddeutsche.de::Australian Open
 sueddeutsche.de::Australian Open:
 sueddeutsche.de::Auswärtstor
 sueddeutsche.de::BVB
@@ -214,12 +215,14 @@ sueddeutsche.de::Conference-League
 sueddeutsche.de::DFB
 sueddeutsche.de::DFB-Elf
 sueddeutsche.de::DFB-Pokal
+sueddeutsche.de::DFL
 sueddeutsche.de::DFL-Supercup
 sueddeutsche.de::Daniil Medwedew
 sueddeutsche.de::Darts
 sueddeutsche.de::Darts-WM:
 sueddeutsche.de::Davis Cup
 sueddeutsche.de::Derby
+sueddeutsche.de::Deutsche Fußball Liga
 sueddeutsche.de::Deutsche Nationalmannschaft
 sueddeutsche.de::Deutsche U21:
 sueddeutsche.de::Djokovic
@@ -230,6 +233,7 @@ sueddeutsche.de::ESC-Finale
 sueddeutsche.de::Eintracht
 sueddeutsche.de::Eisbären Berlin
 sueddeutsche.de::Eishockey-WM:
+sueddeutsche.de::Eishockey:
 sueddeutsche.de::Eiskunstl
 sueddeutsche.de::Eisschnelllauf
 sueddeutsche.de::Elfmeter
@@ -246,7 +250,6 @@ sueddeutsche.de::Eurovision Song Contest
 sueddeutsche.de::Eurovision Song Contest:
 sueddeutsche.de::FC Augsburg
 sueddeutsche.de::FC Barcelona
-sueddeutsche.de::FC Bayern
 sueddeutsche.de::FC Chelsea:
 sueddeutsche.de::FC Sevilla
 sueddeutsche.de::Formel 1
@@ -266,6 +269,7 @@ sueddeutsche.de::Glasgow Rangers
 sueddeutsche.de::Golf:
 sueddeutsche.de::Guardiola
 sueddeutsche.de::HSV
+sueddeutsche.de::Hamburger SV
 sueddeutsche.de::Handball-EM:
 sueddeutsche.de::Handball-WM
 sueddeutsche.de::Hannover 96:
@@ -274,6 +278,7 @@ sueddeutsche.de::Hertha
 sueddeutsche.de::Hertha BSC:
 sueddeutsche.de::Hinspiel
 sueddeutsche.de::Hochspring
+sueddeutsche.de::Hockey-WM
 sueddeutsche.de::Ibrahimović
 sueddeutsche.de::Infantino
 sueddeutsche.de::Inter Mailand
@@ -284,6 +289,7 @@ sueddeutsche.de::Juve
 sueddeutsche.de::Kevin Trapp
 sueddeutsche.de::Klopp
 sueddeutsche.de::Klosterhalfen
+sueddeutsche.de::Kolumne
 sueddeutsche.de::LIV Tour
 sueddeutsche.de::La Boum:
 sueddeutsche.de::La Liga
@@ -317,6 +323,7 @@ sueddeutsche.de::Nadal
 sueddeutsche.de::Nationalmannschaft
 sueddeutsche.de::Nationalspieler
 sueddeutsche.de::Nations League
+sueddeutsche.de::Netzkolumne
 sueddeutsche.de::Neujahrsspringen
 sueddeutsche.de::Neymar
 sueddeutsche.de::Niklas Süle:
@@ -341,7 +348,6 @@ sueddeutsche.de::Pokal-Sieg
 sueddeutsche.de::Polizeiruf 110
 sueddeutsche.de::Prantls Blick:
 sueddeutsche.de::Premier
-sueddeutsche.de::Premier League
 sueddeutsche.de::Qualifikationsspiel
 sueddeutsche.de::RB Leipzig
 sueddeutsche.de::RB Leipzig:
@@ -365,7 +371,6 @@ sueddeutsche.de::SZ-Plus-Abonnenten lesen auch
 sueddeutsche.de::SZ-Podcast
 sueddeutsche.de::SZ-Podcast "Und nun zum Sport":
 sueddeutsche.de::Schach-WM
-sueddeutsche.de::Schalke
 sueddeutsche.de::Schiedsrichter
 sueddeutsche.de::Schwimm-WM
 sueddeutsche.de::Schwimmen:
@@ -397,6 +402,7 @@ sueddeutsche.de::Timo Boll
 sueddeutsche.de::Tischtennis WM:
 sueddeutsche.de::Toni Kroos
 sueddeutsche.de::Tore
+sueddeutsche.de::Torhüter
 sueddeutsche.de::Tottenham
 sueddeutsche.de::Trikots
 sueddeutsche.de::Tuchel
@@ -406,6 +412,7 @@ sueddeutsche.de::US Open
 sueddeutsche.de::Ukrainisches Tagebuch
 sueddeutsche.de::Uli Hoeneß
 sueddeutsche.de::Union Berlin
+sueddeutsche.de::VfB
 sueddeutsche.de::VfB Stuttgart
 sueddeutsche.de::VfL
 sueddeutsche.de::VfL Wolfsburg
@@ -422,22 +429,12 @@ sueddeutsche.de::WM-Titel
 sueddeutsche.de::Weitspr
 sueddeutsche.de::Werder
 sueddeutsche.de::Wimbledon
+sueddeutsche.de::Wintersport:
 sueddeutsche.de::Zlatan
 sueddeutsche.de::leute:
-sueddeutsche.de::torwart
-sueddeutsche.de::Wintersport:
-sueddeutsche.de::Deutsche Fußball Liga
-sueddeutsche.de::DFL
-sueddeutsche.de::VfB
-sueddeutsche.de::Premier League
 sueddeutsche.de::quoted.
-tagesschau.de::Langläuf
-tagesschau.de::Langlauf
-tagesschau.de::Weltcup
-tagesschau.de::Podcast
+sueddeutsche.de::torwart
 tagesschau.de::11KM
-tagesschau.de::Nordische Kombination:
-tagesschau.de::WM-Finale:
 tagesschau.de::Achtelfinale
 tagesschau.de::Alpine-Super-Kombination:
 tagesschau.de::American Football:
@@ -482,6 +479,8 @@ tagesschau.de::Hoffenheim
 tagesschau.de::Klippenspring
 tagesschau.de::Klosterhalfen
 tagesschau.de::Kostic
+tagesschau.de::Langlauf
+tagesschau.de::Langläuf
 tagesschau.de::Leichtathletik-WM:
 tagesschau.de::Liveblog
 tagesschau.de::Livestream
@@ -491,11 +490,14 @@ tagesschau.de::Nationaltrainer
 tagesschau.de::Nepomnjaschtschi
 tagesschau.de::Neujahrsspringen
 tagesschau.de::Neymar
+tagesschau.de::Nordische Kombination:
 tagesschau.de::Olympia-
 tagesschau.de::Olympia:
 tagesschau.de::Olympische Winterspiele:
 tagesschau.de::Olympischen Winterspiele:
 tagesschau.de::Paralympics
+tagesschau.de::Podcast
+tagesschau.de::Podcast 11KM
 tagesschau.de::RKI meldet
 tagesschau.de::Remis
 tagesschau.de::Riesenslalom:
@@ -520,6 +522,7 @@ tagesschau.de::Vierschanzentournee
 tagesschau.de::Viertelfinale
 tagesschau.de::Volleyball-WM
 tagesschau.de::WM-Auftakt
+tagesschau.de::WM-Finale:
 tagesschau.de::WM-Gold
 tagesschau.de::WM-Qualifikation
 tagesschau.de::WM-Viertelfinale
