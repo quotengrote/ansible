@@ -34,10 +34,14 @@ golem.de::Tech Talks:
 golem.de::Twitter
 golem.de::Wochenrückblick
 golem.de::in aller Kürze
+golem.de::PODCAST BESSER WISSEN:
 golem.de::kurznews
+apnic.net::Podcast
 hardwareluxx.de::Der Hardwareluxx-Webwatch:
 hardwareluxx.de::Die Artikel unserer Partner
 hardwareluxx.de::Unsere Artikel der letzten Woche
+heise.de::Die Hupe
+heise.de::Podcast Die Hupe
 heise.de::#TGIQF
 heise.de::#heiseshow
 heise.de::Anzeige
@@ -170,6 +174,16 @@ stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::Twitter
 stadt-bremerhaven.de::WM 2022
 stadt-bremerhaven.de::eFootball
+ipspace.net::Podcast
+ipspace.net::Built.fm
+sueddeutsche.de::Schalke
+sueddeutsche.de::Dschungelcamp
+sueddeutsche.de::Eishockey
+sueddeutsche.de::Bundestrainer
+sueddeutsche.de::Chelsea
+sueddeutsche.de::Transfermarkt
+sueddeutsche.de::Fußball
+sueddeutsche.de::Ski-WM
 sueddeutsche.de::"Ich bin ein Star"
 sueddeutsche.de::"Tatort"
 sueddeutsche.de::-Spiel
@@ -434,6 +448,13 @@ sueddeutsche.de::Zlatan
 sueddeutsche.de::leute:
 sueddeutsche.de::quoted.
 sueddeutsche.de::torwart
+tagesschau.de::Weltcup-Sieg
+tagesschau.de::Hockey
+tagesschau.de::Weltmeister
+tagesschau.de::Viererbob
+tagesschau.de::Profisport
+tagesschau.de::Live:
+tagesschau.de::Ski-WM
 tagesschau.de::11KM
 tagesschau.de::Achtelfinale
 tagesschau.de::Alpine-Super-Kombination:
