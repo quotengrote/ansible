@@ -1,11 +1,42 @@
-// {{ ansible_managed }}
+{{ ansible_managed | comment('c') }}
+
+// Overrides for `20auto-upgrades`. //////////////////////////////////////////
+
+APT::Periodic::Unattended-Upgrade "1";
+
+{% if unattended_update_package_list is defined %}
+APT::Periodic::Update-Package-Lists "{{unattended_update_package_list}}";
+{% endif %}
+
+{% if unattended_download_upgradeable is defined %}
+APT::Periodic::Download-Upgradeable-Packages "{{unattended_download_upgradeable}}";
+{% endif %}
+
+{% if unattended_autoclean_interval is defined %}
+APT::Periodic::AutocleanInterval "{{unattended_autoclean_interval}}";
+{% endif %}
+
+{% if unattended_clean_interval is defined %}
+APT::Periodic::CleanInterval "{{unattended_clean_interval}}";
+{% endif %}
+
+{% if unattended_verbose is defined %}
+APT::Periodic::Verbose "{{unattended_verbose}}";
+{% endif %}
+
+{% if unattended_random_sleep is defined %}
+APT::Periodic::RandomSleep "{{unattended_random_sleep}}";
+{% endif %}
+
+
+// Overrides for `50unattended-upgrades`. ////////////////////////////////////
 
 // Unattended-Upgrade::Origins-Pattern controls which packages are
 // upgraded.
 Unattended-Upgrade::Origins-Pattern {
 {% if unattended_origins_patterns is defined %}
   {% for origin in unattended_origins_patterns %}
-    "{{ origin }}";
+   "{{ origin }}";
   {% endfor %}
 {% else %}
   {% for origin in __unattended_origins_patterns %}
@@ -56,6 +87,14 @@ Unattended-Upgrade::Mail "{{unattended_mail}}";
 Unattended-Upgrade::MailOnlyOnError "true";
 {% endif %}
 
+{% if unattended_mail_report %}
+// Set this value to one of:
+//    "always", "only-on-error" or "on-change"
+// If this is not set, then any legacy MailOnlyOnError (boolean) value
+// is used to chose between "only-on-error" and "on-change"
+Unattended-Upgrade::MailReport "{{ unattended_mail_report }}";
+{% endif %}
+
 {% if unattended_remove_unused_dependencies %}
 // Do automatic removal of all unused dependencies after the upgrade
 // (equivalent to apt-get autoremove)
@@ -65,6 +104,12 @@ Unattended-Upgrade::Remove-Unused-Dependencies "true";
 {% if not unattended_remove_new_unused_dependencies %}
 // Do automatic removal of new unused dependencies after the upgrade
 Unattended-Upgrade::Remove-New-Unused-Dependencies "false";
+{% endif %}
+
+{% if unattended_remove_unused_kernel_packages %}
+// Remove unused automatically installed kernel-related packages
+// (kernel images, kernel headers and kernel version locked tools).
+Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
 {% endif %}
 
 {% if unattended_automatic_reboot %}
@@ -121,3 +166,7 @@ Dpkg::Options {
 // speed to 70kb/sec
 Acquire::http::Dl-Limit "{{ unattended_dl_limit }}";
 {% endif %}
+
+// Download and install upgrades only on AC power
+// (i.e. skip or gracefully stop updates on battery)
+Unattended-Upgrade::OnlyOnACPower "{{ unattended_only_on_ac_power | to_json }}";

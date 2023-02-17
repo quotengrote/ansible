@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+    - name: delete_old_upgrades_config
+      become: yes
+      ansible.builtin.file:
+        name: "{{ item }}"
+        state: absent
+      loop:
+        - /etc/apt/apt.conf.d/20auto-upgrades
+        - /etc/apt/apt.conf.d/50unattended-upgrades

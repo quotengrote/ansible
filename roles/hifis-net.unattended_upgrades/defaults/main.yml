@@ -47,6 +47,13 @@ unattended_mail: false
 # is to always send a mail if Unattended-Upgrade::Mail is set
 unattended_mail_only_on_error: false
 
+#Unattended-Upgrade::MailReport 
+# Set this value to one of:
+#    "always", "only-on-error" or "on-change"
+# If this is not set, then any legacy MailOnlyOnError (boolean) value
+# is used to chose between "only-on-error" and "on-change"
+unattended_mail_report: false
+
 #Unattended-Upgrade::Remove-Unused-Dependencies
 # Do automatic removal of all unused dependencies after the upgrade
 # (equivalent to apt-get autoremove)
@@ -55,6 +62,11 @@ unattended_remove_unused_dependencies: false
 #Unattended-Upgrade::Remove-New-Unused-Dependencies
 # Remove any new unused dependencies after the upgrade
 unattended_remove_new_unused_dependencies: true
+
+#Unattended-Upgrade::Remove-Unused-Kernel-Packages
+# Remove unused automatically installed kernel-related packages
+# (kernel images, kernel headers and kernel version locked tools)
+unattended_remove_unused_kernel_packages: false
 
 #Unattended-Upgrade::Automatic-Reboot
 # Automatically reboot *WITHOUT CONFIRMATION* if a
@@ -135,3 +147,8 @@ unattended_dpkg_options: []
 
 # Use apt bandwidth limit feature, this example limits the download speed to 70kb/sec
 #unattended_dl_limit: 70
+
+# Unattended-Upgrade::OnlyOnACPower
+# Download and install upgrades only on AC power
+# (i.e. skip or gracefully stop updates on battery)
+unattended_only_on_ac_power: false
