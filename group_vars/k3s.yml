@@ -3,7 +3,7 @@
   restic_folders_to_backup: "/ /var" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
 
   ### pandemonium1986.ansible-role-k9s
-  k9s_version: "v0.26.7"
+  k9s_version: "v0.27.3"
 
   ### mrlesmithjr.ansible-manage-lvm
   #lvm_groups:
