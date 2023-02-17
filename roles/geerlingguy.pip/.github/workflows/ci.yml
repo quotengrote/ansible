@@ -29,12 +29,11 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies.
-        run: pip3 install yamllint ansible-lint
+        run: pip3 install yamllint
 
       - name: Lint code.
         run: |
           yamllint .
-          ansible-lint
 
   molecule:
     name: Molecule
@@ -42,9 +41,8 @@ jobs:
     strategy:
       matrix:
         distro:
-          - centos8
-          - centos7
-          - fedora32
+          - rockylinux8
+          - fedora34
           - ubuntu2004
           - ubuntu1804
           - debian10
