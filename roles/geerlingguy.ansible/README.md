@@ -6,7 +6,7 @@ An Ansible Role that installs Ansible on Linux servers.
 
 ## Requirements
 
-If using on a RedHat/CentOS-based host, make sure you've added the EPEL repository (it can easily be installed by including the `geerlingguy.repo-epel` role on Ansible Galaxy).
+If using on a RedHat/CentOS/Rocky Linux-based host, make sure you've added the EPEL repository (it can easily be installed by including the `geerlingguy.repo-epel` role on Ansible Galaxy).
 
 ## Role Variables
 
@@ -19,6 +19,10 @@ Whether to install Ansible via the system `package` manager (`apt`, `yum`, `dnf`
     ansible_install_version_pip: ''
 
 If `ansible_install_method` is set to `pip`, the specific Ansible version to be installed via Pip. If not set, the latest version of Ansible will be installed.
+
+    ansible_install_pip_extra_args: ''
+
+If `ansible_install_method` is set to `pip`, the extra arguments to be given to `pip` are listed here. If not set, no extra arguments are given.
 
 ## Dependencies
 
@@ -38,6 +42,7 @@ Install from pip:
       vars:
         ansible_install_method: pip
         ansible_install_version_pip: "2.7.0"
+        ansible_install_pip_extra_args: "--user"
       roles:
         - role: geerlingguy.pip
         - role: geerlingguy.ansible

@@ -29,12 +29,11 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies.
-        run: pip3 install yamllint ansible-lint
+        run: pip3 install yamllint
 
       - name: Lint code.
         run: |
           yamllint .
-          ansible-lint
 
   molecule:
     name: Molecule
@@ -42,18 +41,17 @@ jobs:
     strategy:
       matrix:
         include:
-          - distro: centos8
+          - distro: rockylinux8
             playbook: converge.yml
-          - distro: fedora32
+          - distro: fedora33
             playbook: converge.yml
-          # See: https://github.com/geerlingguy/ansible-role-ansible/issues/18
-          # - distro: ubuntu2004
-          #   playbook: converge.yml
+          - distro: ubuntu2004
+            playbook: converge.yml
           - distro: ubuntu1804
             playbook: converge.yml
           - distro: debian10
             playbook: converge.yml
-          - distro: centos8
+          - distro: rockylinux8
             playbook: pip.yml
 
     steps:
