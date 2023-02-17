@@ -4,16 +4,24 @@ Prepare your system to be managed by Ansible.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bootstrap/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-bootstrap)|[![quality](https://img.shields.io/ansible/quality/21642)](https://galaxy.ansible.com/robertdebock/bootstrap)|[![downloads](https://img.shields.io/ansible/role/d/21642)](https://galaxy.ansible.com/robertdebock/bootstrap)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-bootstrap.svg)](https://github.com/robertdebock/ansible-role-bootstrap/releases/)|
+|[![github](https://github.com/robertdebock/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bootstrap/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-bootstrap)|[![quality](https://img.shields.io/ansible/quality/21642)](https://galaxy.ansible.com/robertdebock/bootstrap)|[![downloads](https://img.shields.io/ansible/role/d/21642)](https://galaxy.ansible.com/robertdebock/bootstrap)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-bootstrap.svg)](https://github.com/robertdebock/ansible-role-bootstrap/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
-This example is taken from `molecule/resources/converge.yml` and is tested on each push, pull request and release.
+This example is taken from [`molecule/default/converge.yml`](https://github.com/robertdebock/ansible-role-bootstrap/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
+
 ```yaml
 ---
 - name: Converge
   hosts: all
-  become: yes
+  # This role installs packages using the `raw` module and needs to connect as
+  # `root`. (`sudo` is not available before bootstrapping.) All tasks in the
+  # role have `become` set to `no`, so you can use either `no` or `yes` for
+  # `become`, the role will not use become (so `sudo`) for any task.
+  become: yes  # `no` will also work.
+  # This role installs python, gathering facts can't be done before `python` is
+  # installed. This role runs the `setup` module, so facts will be available
+  # after running the role.
   gather_facts: no
 
   roles:
@@ -24,19 +32,20 @@ Also see a [full explanation and example](https://robertdebock.nl/how-to-use-the
 
 ## [Role Variables](#role-variables)
 
-These variables are set in `defaults/main.yml`:
+The default values for the variables are set in [`defaults/main.yml`](https://github.com/robertdebock/ansible-role-bootstrap/blob/master/defaults/main.yml):
+
 ```yaml
 ---
 # defaults file for bootstrap
-
-# The user to use to connect to machines.
-bootstrap_user: root
 
 # Do you want to wait for the host to be available?
 bootstrap_wait_for_host: no
 
 # The number of seconds you want to wait during connection test before failing.
 bootstrap_timeout: 3
+
+# Tell the role to "become" or not.
+bootstrap_become: yes
 ```
 
 ## [Requirements](#requirements)
@@ -57,12 +66,13 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|amazon|Candidate|
-|el|7, 8|
-|debian|all|
-|fedora|all|
-|opensuse|all|
-|ubuntu|focal, bionic|
+|[Alpine](https://hub.docker.com/repository/docker/robertdebock/alpine/general)|all|
+|[Amazon](https://hub.docker.com/repository/docker/robertdebock/amazonlinux/general)|Candidate|
+|[EL](https://hub.docker.com/repository/docker/robertdebock/enterpriselinux/general)|all|
+|[Debian](https://hub.docker.com/repository/docker/robertdebock/debian/general)|all|
+|[Fedora](https://hub.docker.com/repository/docker/robertdebock/fedora/general)|all|
+|[opensuse](https://hub.docker.com/repository/docker/robertdebock/opensuse/general)|all|
+|[Ubuntu](https://hub.docker.com/repository/docker/robertdebock/ubuntu/general)|all|
 
 The minimum version of Ansible required is 2.10, tests have been done to:
 
@@ -70,34 +80,14 @@ The minimum version of Ansible required is 2.10, tests have been done to:
 - The current version.
 - The development version.
 
-## [Exceptions](#exceptions)
-
-Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
-
-| variation                 | reason                 |
-|---------------------------|------------------------|
-| alpine:edge | Failed to create temporary directory. |
-
-
 If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-bootstrap/issues)
 
 ## [License](#license)
 
-Apache-2.0
-
-## [Contributors](#contributors)
-
-I'd like to thank everybody that made contributions to this repository. It motivates me, improves the code and is just fun to collaborate.
-
-- [rembik](https://github.com/rembik)
-- [jellevandehaterd](https://github.com/jellevandehaterd)
-- [fzarifian](https://github.com/fzarifian)
-- [kmonticolo](https://github.com/kmonticolo)
-- [CrystalStiletto](https://github.com/CrystalStiletto)
-- [infothrill](https://github.com/infothrill)
+[Apache-2.0](https://github.com/robertdebock/ansible-role-bootstrap/blob/master/LICENSE).
 
 ## [Author Information](#author-information)
 
-[Robert de Bock](https://robertdebock.nl/)
+[robertdebock](https://robertdebock.nl/)
 
 Please consider [sponsoring me](https://github.com/sponsors/robertdebock).

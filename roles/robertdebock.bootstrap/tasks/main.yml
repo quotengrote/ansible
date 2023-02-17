@@ -1,58 +1,55 @@
 ---
 # tasks file for bootstrap
 
-- name: include assert.yml
-  import_tasks: assert.yml
+- name: Import assert.yml
+  ansible.builtin.import_tasks: assert.yml
   run_once: yes
   delegate_to: localhost
 
-- name: wait for host
-  wait_for:
+- name: Wait for port to be available
+  ansible.builtin.wait_for:
     port: "{{ ansible_port | default('22') }}"
-    host: "{{ (ansible_ssh_host | default(ansible_host) | default(inventory_hostname)) }}"
-  connection: local
+    timeout: "{{ bootstrap_timeout }}"
   become: no
   when:
     - ansible_connection is defined
-    - ansible_connection not in [ "docker", "container" ]
+    - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
     - bootstrap_wait_for_host | bool
 
-- name: prepare system
+- name: Prepare system
+  # At this stage, python and/or sudo are not installed, `become` can't be used.
+  become: no
   block:
-    - name: test connection
-      wait_for_connection:
+    - name: Test connection
+      ansible.builtin.wait_for_connection:
         timeout: "{{ bootstrap_timeout }}"
       register: bootstrap_connect
       changed_when: no
+    - name: Test sudo
+      ansible.builtin.command:
+        cmd: sudo --version
+      changed_when: no
   rescue:
-    - name: gather bootstrap facts
-      include_tasks: "gather_facts.yml"
+    - name: Gather bootstrap facts
+      ansible.builtin.include_tasks:
+        file: gather_facts.yml
 
-    - name: install bootstrap packages
-      raw: "{{ bootstrap_install.raw }}"
+    - name: Install bootstrap packages (raw)
+      ansible.builtin.raw: "{{ bootstrap_install.raw }}"
       register: bootstrap_install_packages
       changed_when:
         - (bootstrap_install.stdout_regex in bootstrap_install_packages.stdout and
            bootstrap_os_family in [ "Alpine", "Archlinux", "Gentoo" ]) or
           (bootstrap_install.stdout_regex not in bootstrap_install_packages.stdout and
-           bootstrap_os_family in [ "Debian", "RedHat", "Suse" ])
-      vars:
-        ansible_user: "{{ bootstrap_user }}"
-  always:
-    - name: set bootstrap_ansible_user
-      set_fact:
-        bootstrap_ansible_user: "{{ ansible_user | default(omit) if bootstrap_connect is succeeded else bootstrap_user }}"
-      changed_when: no
+           bootstrap_os_family in [ "Debian", "RedHat", "Rocky", "Suse" ])
 
-- name: ensure system is prepared
-  block:
-    - name: gather ansible facts
-      setup:
+- name: Gather ansible facts
+  ansible.builtin.setup:
+  become: no
 
-    - name: install bootstrap packages
-      package:
-        name: "{{ item }}"
-        state: present
-      loop: "{{ bootstrap_facts_packages.split() }}"
-  vars:
-    ansible_user: "{{ bootstrap_ansible_user | default(omit) }}"
+- name: Install bootstrap packages (package)
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ bootstrap_facts_packages.split() }}"
+  become: "{{ bootstrap_become }}"

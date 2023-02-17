@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  author: Robert de Bock
+  author: robertdebock
   role_name: bootstrap
   description: Prepare your system to be managed by Ansible.
   license: Apache-2.0
@@ -8,30 +8,27 @@ galaxy_info:
   min_ansible_version: "2.10"
 
   platforms:
-    # Broken: idempotence, gather_facts: Failed to create temporary directory.
-    # - name: Alpine
-    #   versions:
-    #     - all
+    - name: Alpine
+      versions:
+        - all
     - name: Amazon
       versions:
         - Candidate
     - name: EL
       versions:
-        - 7
-        - 8
+        - all
     - name: Debian
       versions:
         - all
     - name: Fedora
       versions:
         - all
-    - name: OpenSUSE
+    - name: opensuse
       versions:
         - all
     - name: Ubuntu
       versions:
-        - focal
-        - bionic
+        - all
 
   galaxy_tags:
     - bootstrap
