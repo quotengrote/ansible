@@ -12,7 +12,7 @@ a glance from your terminal.
 Requirements
 ------------
 
-* Ansible >= 2.8
+* Ansible >= 2.9
 
 * Linux Distribution
 
@@ -20,29 +20,30 @@ Requirements
 
         * Debian
 
-            * Jessie (8)
             * Stretch (9)
+            * Buster (10)
+            * Bullseye (11)
 
         * Ubuntu
 
-            * Xenial (16.04)
             * Bionic (18.04)
+            * Focal (20.04)
 
     * RedHat Family
 
-        * CentOS
+        * Rocky Linux
 
-            * 7
+            * 8
 
         * Fedora
 
-            * 31
+            * 35
 
     * SUSE Family
 
         * openSUSE
 
-            * 15.1
+            * 15.3
 
     * Note: other versions are likely to work but have not been tested.
 
@@ -56,10 +57,10 @@ are shown below):
 
 ```yaml
 # ctop version number
-ctop_version: '0.7.6'
+ctop_version: '0.7.7'
 
 # SHA256 sum for the ctop redistributable
-ctop_redis_sha256sum: 'c5f8da250ec733084fb3891f2f8d04a49ffd25e81af59079216f2e6bb35fd983'
+ctop_redis_sha256sum: 'b78374734ebe3d14b6edee3d5512c911c250d7fa7f3f964cb00acd3bc5a02a09'
 
 # Directory to store files downloaded for ctop
 ctop_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansible/tmp/downloads') }}"

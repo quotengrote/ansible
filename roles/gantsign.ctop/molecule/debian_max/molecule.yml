@@ -13,8 +13,7 @@ lint: |
 
 platforms:
   - name: ansible_role_ctop_debian_max
-    image: debian:9
-    dockerfile: ../default/Dockerfile.j2
+    image: debian:11
 
 provisioner:
   name: ansible

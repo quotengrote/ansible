@@ -13,8 +13,7 @@ lint: |
 
 platforms:
   - name: ansible_role_ctop_ubuntu_max
-    image: ubuntu:18.04
-    dockerfile: ../default/Dockerfile.j2
+    image: ubuntu:20.04
 
 provisioner:
   name: ansible
