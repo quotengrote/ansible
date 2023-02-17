@@ -1,7 +1,7 @@
 ---
 - hosts: k3s
   roles:
-    - { role: xanmanning.k3s, tags: "k3s" }
+    - { role: PyratLabs.k3s, tags: "k3s" }
     - { role: mgrote.k8s_autocompletion, tags: "autocomp" }
     - { role: pandemonium1986.ansible-role-k9s, tags: "k9s", become: true }
     - { role: mgrote.fluxcd, tags: "flux", become: true }
