@@ -234,3 +234,12 @@ services:
         url: "https://webmail.ondataport.de"
         target: "_blank"
         subtitle: "Webmail"
+
+  - name: "Solar"
+    icon: "fas fa-cloud"
+    items:
+      - name: "DEYE SUN600G3-EU"
+        logo: "assets/icons/ara.png"
+        url: "http://192.168.10.180/index_cn.html"
+        target: "_blank"
+        subtitle: "Wechselrichter"
