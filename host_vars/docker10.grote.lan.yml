@@ -274,3 +274,10 @@
         env.password {{ lookup('keepass', 'munin_user_nextcloud', 'password') }}
         env.api_path /ocs/v2.php/apps/serverinfo/api/v1/info
         env.scheme https
+    - name: deye
+      src: https://raw.githubusercontent.com/quotengrote/contrib/deye/plugins/deye/deye
+      config: |
+        [deye]
+        env.user deyeadmin600
+        env.password {{ lookup('keepass', 'munin_deye_admin_pass', 'password') }}
+        env.ip 192.168.10.180

@@ -1,0 +1,4 @@
+---
+  ### mgrote.munin-node
+  munin_node_disabled_plugins:
+    - name: lvm_

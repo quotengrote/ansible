@@ -16,11 +16,6 @@
       config: |
         [systemd_mem]
         env.all_services true
-    - name: lvm_
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
-      config: |
-        [lvm_*]
-        user root
     - name: fail2ban
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
       config: |
@@ -32,7 +27,8 @@
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/nsfd4
     - name: nfsd
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/nfsd
-
+  munin_node_disabled_plugins:
+    - name: lvm_
   ### mgrote.restic
   restic_folders_to_backup: "/ /srv/nfs" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben
 

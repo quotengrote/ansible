@@ -327,3 +327,5 @@
         env.max_time 20
         env.short_label true
         env.follow_redirect true
+  munin_node_disabled_plugins:
+    - name: lvm_
