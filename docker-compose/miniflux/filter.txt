@@ -1,4 +1,5 @@
 9to5linux.com::9to5Linux Weekly Roundup:
+apnic.net::Podcast
 astralcodexten.substack.com::Open Thread
 augengeradeaus.net::Sicherheitshalber der Podcast
 axios.com::Axios on HBO
@@ -27,6 +28,7 @@ golem.de::Fussball
 golem.de::Fußball
 golem.de::In eigener Sache
 golem.de::Marvel
+golem.de::PODCAST BESSER WISSEN:
 golem.de::Podcast
 golem.de::Sonst noch was?
 golem.de::Star Trek:
@@ -34,14 +36,10 @@ golem.de::Tech Talks:
 golem.de::Twitter
 golem.de::Wochenrückblick
 golem.de::in aller Kürze
-golem.de::PODCAST BESSER WISSEN:
 golem.de::kurznews
-apnic.net::Podcast
 hardwareluxx.de::Der Hardwareluxx-Webwatch:
 hardwareluxx.de::Die Artikel unserer Partner
 hardwareluxx.de::Unsere Artikel der letzten Woche
-heise.de::Die Hupe
-heise.de::Podcast Die Hupe
 heise.de::#TGIQF
 heise.de::#heiseshow
 heise.de::Anzeige
@@ -52,7 +50,6 @@ heise.de::Desinfec
 heise.de::Die Bilder der Woche
 heise.de::Die Bilder der Woche (KW
 heise.de::Die Highlights bei
-heise.de::Die Hupe
 heise.de::Die Produktwerker
 heise.de::Dienstag
 heise.de::Dienstag:
@@ -71,7 +68,6 @@ heise.de::Montag
 heise.de::Podcast
 heise.de::Podcast "Die Hupe"
 heise.de::Podcast "Die Produktwerker"
-heise.de::Podcast Die Hupe
 heise.de::SoftwareArchitekTOUR
 heise.de::Sonderheft
 heise.de::TGIQF
@@ -84,6 +80,7 @@ heise.de::Was war. Was wird.
 heise.de::Zugriff auf alle Inhalte von heise+
 heise.de::c't <webdev>
 heise.de::c’t-Webinar:
+heise.de::heise Jobs IT Tag
 heise.de::heise meets
 heise.de::heise meets…
 heise.de::heise+
@@ -100,6 +97,8 @@ heise.de::t zockt
 heise.de::uplink
 heise.de::zockt
 instagram.com::Bridge returned error
+ipspace.net::Built.fm
+ipspace.net::Podcast
 mdr.de::#MDRklärt:
 mdr.de::Basketball
 mdr.de::DFB
@@ -117,6 +116,7 @@ mdr.de::Podcast:
 mdr.de::Podcastserie
 mdr.de::Schwimmen:
 mf-bridge::Bridge encountered an unexpected situation
+mf-bridge::Bridge returned error 401
 monkeyuser.com::AdLitteram
 netzpolitik.org::KW
 netzpolitik.org::NPP
@@ -174,16 +174,6 @@ stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::Twitter
 stadt-bremerhaven.de::WM 2022
 stadt-bremerhaven.de::eFootball
-ipspace.net::Podcast
-ipspace.net::Built.fm
-sueddeutsche.de::Schalke
-sueddeutsche.de::Dschungelcamp
-sueddeutsche.de::Eishockey
-sueddeutsche.de::Bundestrainer
-sueddeutsche.de::Chelsea
-sueddeutsche.de::Transfermarkt
-sueddeutsche.de::Fußball
-sueddeutsche.de::Ski-WM
 sueddeutsche.de::"Ich bin ein Star"
 sueddeutsche.de::"Tatort"
 sueddeutsche.de::-Spiel
@@ -198,6 +188,7 @@ sueddeutsche.de::ATP Finals
 sueddeutsche.de::ATP-
 sueddeutsche.de::Achtelfinale
 sueddeutsche.de::Afrika-Cup:
+sueddeutsche.de::Alonso:
 sueddeutsche.de::Alphonso Davies
 sueddeutsche.de::American Football:
 sueddeutsche.de::Amos Pieper
@@ -219,9 +210,11 @@ sueddeutsche.de::Borussia
 sueddeutsche.de::Borussia Dortmund
 sueddeutsche.de::Borussia Dortmund:
 sueddeutsche.de::Bundesliga
+sueddeutsche.de::Bundestrainer
 sueddeutsche.de::Carlos Alcaraz
 sueddeutsche.de::Champions League:
 sueddeutsche.de::Champions-League
+sueddeutsche.de::Chelsea
 sueddeutsche.de::Claudio Pizarro
 sueddeutsche.de::Claudio Pizarro:
 sueddeutsche.de::Conference League
@@ -242,10 +235,13 @@ sueddeutsche.de::Deutsche U21:
 sueddeutsche.de::Djokovic
 sueddeutsche.de::Dressur-Weltmeister
 sueddeutsche.de::Drittliga
+sueddeutsche.de::Dschungelcamp
 sueddeutsche.de::EM:
 sueddeutsche.de::ESC-Finale
+sueddeutsche.de::ESC-Vorentscheid
 sueddeutsche.de::Eintracht
 sueddeutsche.de::Eisbären Berlin
+sueddeutsche.de::Eishockey
 sueddeutsche.de::Eishockey-WM:
 sueddeutsche.de::Eishockey:
 sueddeutsche.de::Eiskunstl
@@ -256,7 +252,6 @@ sueddeutsche.de::Englisches Nationalteam:
 sueddeutsche.de::Eröffnungsspiel
 sueddeutsche.de::Euroleague
 sueddeutsche.de::Europa League
-sueddeutsche.de::Europa League:
 sueddeutsche.de::Europameister
 sueddeutsche.de::Europapokal
 sueddeutsche.de::European Championships
@@ -266,11 +261,11 @@ sueddeutsche.de::FC Augsburg
 sueddeutsche.de::FC Barcelona
 sueddeutsche.de::FC Chelsea:
 sueddeutsche.de::FC Sevilla
+sueddeutsche.de::Fifa:
 sueddeutsche.de::Formel 1
 sueddeutsche.de::Frankfurt
 sueddeutsche.de::French Open
 sueddeutsche.de::Fussball
-sueddeutsche.de::Fußball
 sueddeutsche.de::Fußball in England:
 sueddeutsche.de::Fußball-EM
 sueddeutsche.de::Fußball-WM
@@ -294,7 +289,6 @@ sueddeutsche.de::Hinspiel
 sueddeutsche.de::Hochspring
 sueddeutsche.de::Hockey-WM
 sueddeutsche.de::Ibrahimović
-sueddeutsche.de::Infantino
 sueddeutsche.de::Inter Mailand
 sueddeutsche.de::Joachim Löw
 sueddeutsche.de::Jugendwort des Jahres
@@ -336,6 +330,7 @@ sueddeutsche.de::NFL
 sueddeutsche.de::Nadal
 sueddeutsche.de::Nationalmannschaft
 sueddeutsche.de::Nationalspieler
+sueddeutsche.de::Nationalteam
 sueddeutsche.de::Nations League
 sueddeutsche.de::Netzkolumne
 sueddeutsche.de::Neujahrsspringen
@@ -385,13 +380,17 @@ sueddeutsche.de::SZ-Plus-Abonnenten lesen auch
 sueddeutsche.de::SZ-Podcast
 sueddeutsche.de::SZ-Podcast "Und nun zum Sport":
 sueddeutsche.de::Schach-WM
+sueddeutsche.de::Schalke
 sueddeutsche.de::Schiedsrichter
 sueddeutsche.de::Schwimm-WM
 sueddeutsche.de::Schwimmen:
 sueddeutsche.de::Serien des Monats
 sueddeutsche.de::Ski alpin
 sueddeutsche.de::Ski alpin:
+sueddeutsche.de::Ski-WM
 sueddeutsche.de::Ski-Weltcup
+sueddeutsche.de::Ski-Weltverband
+sueddeutsche.de::Ski-nordisch-WM:
 sueddeutsche.de::Skilanglauf
 sueddeutsche.de::Skirenn
 sueddeutsche.de::Skispringen
@@ -418,6 +417,7 @@ sueddeutsche.de::Toni Kroos
 sueddeutsche.de::Tore
 sueddeutsche.de::Torhüter
 sueddeutsche.de::Tottenham
+sueddeutsche.de::Transfermarkt
 sueddeutsche.de::Trikots
 sueddeutsche.de::Tuchel
 sueddeutsche.de::Turn-WM
@@ -448,13 +448,6 @@ sueddeutsche.de::Zlatan
 sueddeutsche.de::leute:
 sueddeutsche.de::quoted.
 sueddeutsche.de::torwart
-tagesschau.de::Weltcup-Sieg
-tagesschau.de::Hockey
-tagesschau.de::Weltmeister
-tagesschau.de::Viererbob
-tagesschau.de::Profisport
-tagesschau.de::Live:
-tagesschau.de::Ski-WM
 tagesschau.de::11KM
 tagesschau.de::Achtelfinale
 tagesschau.de::Alpine-Super-Kombination:
@@ -496,6 +489,7 @@ tagesschau.de::Halbfinale
 tagesschau.de::Handball-EM:
 tagesschau.de::Handball:
 tagesschau.de::Hertha BSC
+tagesschau.de::Hockey
 tagesschau.de::Hoffenheim
 tagesschau.de::Klippenspring
 tagesschau.de::Klosterhalfen
@@ -503,6 +497,7 @@ tagesschau.de::Kostic
 tagesschau.de::Langlauf
 tagesschau.de::Langläuf
 tagesschau.de::Leichtathletik-WM:
+tagesschau.de::Live:
 tagesschau.de::Liveblog
 tagesschau.de::Livestream
 tagesschau.de::Mehrkamp
@@ -519,6 +514,7 @@ tagesschau.de::Olympischen Winterspiele:
 tagesschau.de::Paralympics
 tagesschau.de::Podcast
 tagesschau.de::Podcast 11KM
+tagesschau.de::Profisport
 tagesschau.de::RKI meldet
 tagesschau.de::Remis
 tagesschau.de::Riesenslalom:
@@ -528,6 +524,7 @@ tagesschau.de::Schalke
 tagesschau.de::Schwimm-EM
 tagesschau.de::Schwimm-WM:
 tagesschau.de::Ski Alpin:
+tagesschau.de::Ski-WM
 tagesschau.de::Skispring
 tagesschau.de::Sondersendung:
 tagesschau.de::Springreiter
@@ -539,6 +536,7 @@ tagesschau.de::Trainerwechsel
 tagesschau.de::Tuchel
 tagesschau.de::UEFA
 tagesschau.de::Verstappen
+tagesschau.de::Viererbob
 tagesschau.de::Vierschanzentournee
 tagesschau.de::Viertelfinale
 tagesschau.de::Volleyball-WM
@@ -549,6 +547,8 @@ tagesschau.de::WM-Qualifikation
 tagesschau.de::WM-Viertelfinale
 tagesschau.de::Wasserspringen:
 tagesschau.de::Weitsprung
+tagesschau.de::Weltcup-Sieg
+tagesschau.de::Weltmeister
 tagesschau.de::Werders
 tagesschau.de::Zukunftspodcast
 tagesschau.de::Zweierbob:
