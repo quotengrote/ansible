@@ -281,6 +281,7 @@
         env.user deyeadmin600
         env.password {{ lookup('keepass', 'munin_deye_admin_pass', 'password') }}
         env.ip 192.168.10.180
+        env.serial_number {{ lookup('keepass', 'SLRM_DEVICE_SN', 'password') }}
     - name: solarman_api_inverter
       src: https://raw.githubusercontent.com/quotengrote/contrib/deye2/plugins/solar/solarman_api_inverter # später austauschen nach merge
       config: |
