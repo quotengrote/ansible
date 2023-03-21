@@ -42,7 +42,7 @@
     - dataset: rpool/data
       state: present
     - dataset: rpool/data/k3s
-      state: present
+      state: absent #  noch löschen
     # hdd_data_raidz
     - dataset: hdd_data_raidz
       state: present
@@ -169,15 +169,11 @@
       recursive: 'no'
       snapshots: true
       template: '3tage'
-    - path: rpool/data/k3s
-      recursive: 'no'
-      snapshots: true
-      template: '14tage'
 
   ### mgrote.cv4pve-autosnap
   cv4pve_api_user: root@pam!cv4pve-autosnap
   cv4pve_api_token: "{{ lookup('keepass', 'cv4pve_api_token', 'password') }}"
-  cv4pve_vmid: all,-106,-112,-115
+  cv4pve_vmid: all,-106,-115
   cv4pve_keep_snapshots: 5
   cv4pve_dl_link: "https://github.com/Corsinvest/cv4pve-autosnap/releases/download/v1.14.7/cv4pve-autosnap-linux-x64.zip"
 
@@ -249,11 +245,6 @@
       mp_nr: 1
       mp_path_host: /rpool/data/acng
       mp_path_guest: /var/cache/apt-cacher-ng
-      ### k3s-nfs2
-    - vmid: 112
-      mp_nr: 1
-      mp_path_host: /rpool/data/k3s
-      mp_path_guest: /srv/nfs
 
   ### mgrote.munin-node
   munin_node_plugins:

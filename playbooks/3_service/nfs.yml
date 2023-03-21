@@ -1,4 +1,0 @@
----
-- hosts: nfs
-  roles:
-    - { role: geerlingguy.nfs_server, tags: "nfs", become: true }
