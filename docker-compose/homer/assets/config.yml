@@ -1,41 +1,21 @@
 ---
 # https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md
 title: "Homer"
-logo: "assets/icons/homer.png"
 
 header: false
 footer: false
 
 columns: "4"
 
+# Set the default layout and color scheme
+defaults:
+  layout: columns # Either 'columns', or 'list'
+  colorTheme: dark # One of 'auto', 'light', or 'dark'
+
+stylesheet:
+  - 'assets/catppuccin-frappe.css'
 
 
-theme: default
-colors:
-  light:
-    highlight-primary: "#3367d6"
-    highlight-secondary: "#4285f4"
-    highlight-hover: "#5a95f5"
-    background: "#f5f5f5"
-    card-background: "#ffffff"
-    text: "#363636"
-    text-header: "#ffffff"
-    text-title: "#303030"
-    text-subtitle: "#424242"
-    card-shadow: rgba(0, 0, 0, 0.1)
-    link-hover: "#363636"
-  dark:
-    highlight-primary: "#3367d6"
-    highlight-secondary: "#4285f4"
-    highlight-hover: "#5a95f5"
-    background: "#131313"
-    card-background: "#2b2b2b"
-    text: "#eaeaea"
-    text-header: "#ffffff"
-    text-title: "#fafafa"
-    text-subtitle: "#f5f5f5"
-    card-shadow: rgba(0, 0, 0, 0.4)
-    link-hover: "#ffdd57"
 
 
 
@@ -47,69 +27,28 @@ links:
   - name: "Management"
     icon: "fas fa-code-branch"
     url: "#mgmt"
-  - name: "Extern"
-    icon: "fas fa-file-alt"
-    url: "#papa"
-  - name: "Test"
-    icon: "fas fa-globe"
-    url: "#test"
 
 # wetter
 
 # https://github.com/bastienwirtz/homer/pull/181
 services:
-  - name: "Wetter"
-    icon: "fas fa-cloud"
-    items:
-      - name: "Weather"
-        location: "Burg" # your location.
-        locationId: "2941501" # OpenWeatherMap city ID.
-        apiKey: "c1ec4c040abfa80b991c72d48b49d4a0" # insert your own API key here. Request one from https://openweathermap.org/api.
-        units: "metric" # units to display temperature. Can be one of: metric, imperial, kelvin. Defaults to kelvin.
-        background: "none" # choose which type of background you want behind the image. Can be one of: square, cicle, none. Defaults to none.
-        type: "OpenWeather"
-      - name: "Weather"
-        location: "Magdeburg"
-        locationId: "2874545"
-        apiKey: "c1ec4c040abfa80b991c72d48b49d4a0"
-        units: "metric"
-        background: "none"
-        type: "OpenWeather"
-
-
-  - name: "Help"
-    icon: "fas fa-cloud"
-    items:
-      - name: "Crontab Guru"
-        logo: "assets/icons/healthchecks.png"
-        url: "https://crontab.guru"
-        target: "_blank"
-      - name: "Epoch Converter"
-        logo: "assets/icons/epochconverter.png"
-        url: "https://www.epochconverter.com"
-        target: "_blank"
-      - name: "fstab Generator"
-        logo: "assets/icons/sabnzbd.png"
-        url: "https://epistel.no/fstab/"
-        target: "_blank"
-      - name: "chmod Calculator"
-        logo: "assets/icons/redis.png"
-        url: "https://chmod-calculator.com"
-        target: "_blank"
-      - name: "composerizer"
-        logo: "assets/icons/docker.png"
-        url: "https://www.composerize.com"
-        target: "_blank"
-        subtitle: "docker-run to docker-compose"
-      - name: "Umrechner Bytes"
-        logo: "assets/icons/bytes.png"
-        url: "https://www.fischerclan.de/byte_umrechner.html"
-        target: "_blank"
-      - name: "git revert..."
-        logo: "assets/icons/netatmo.png"
-        url: "https://sethrobertson.github.io/GitFixUm/fixup.html"
-        target: "_blank"
-
+#  - name: "Wetter"
+#    icon: "fas fa-cloud"
+#    items:
+#      - name: "Weather"
+#        location: "Burg" # your location.
+#        locationId: "2941501" # OpenWeatherMap city ID.
+#        apiKey: "c1ec4c040abfa80b991c72d48b49d4a0" # insert your own API key here. Request one from https://o#penweathermap.org/api. # key deactiviert
+#        units: "metric" # units to display temperature. Can be one of: metric, imperial, kelvin. Defaults to kelvin.
+#        background: "none" # choose which type of background you want behind the image. Can be one of: square, cicle, none. Defaults to none.
+#        type: "OpenWeather"
+#      - name: "Weather"
+#        location: "Magdeburg"
+#        locationId: "2874545"
+#        apiKey: "c1ec4c040abfa80b991c72d48b49d4a0"
+#        units: "metric"
+#        background: "none"
+#        type: "OpenWeather"
 
   - name: "Dienste"
     icon: "fas fa-cloud"
@@ -139,7 +78,7 @@ services:
         url: "http://docker10.grote.lan:3001"
         target: "_blank"
         subtitle: "Facebook/Instagram-to-rss"
-      - name: "Navidrome - mg"
+      - name: "Navidrome"
         logo: "assets/icons/navidrome.png"
         url: "https://audio.mgrote.net/mg"
         target: "_blank"
@@ -149,8 +88,6 @@ services:
         url: "http://docker10.grote.lan:5000"
         target: "_blank"
         subtitle: "Website2rss"
-
-
 
   - name: "Web"
     icon: "fas fa-cloud"
@@ -184,14 +121,30 @@ services:
         url: "https://hub.docker.com/r/quotengrote"
         target: "_blank"
 
+  - name: "Help"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Crontab Guru"
+        logo: "assets/icons/healthchecks.png"
+        url: "https://crontab.guru"
+        target: "_blank"
+      - name: "chmod Calculator"
+        logo: "assets/icons/redis.png"
+        url: "https://chmod-calculator.com"
+        target: "_blank"
+      - name: "composerizer"
+        logo: "assets/icons/docker.png"
+        url: "https://www.composerize.com"
+        target: "_blank"
+        subtitle: "docker-run to docker-compose"
+      - name: "git revert..."
+        logo: "assets/icons/netatmo.png"
+        url: "https://sethrobertson.github.io/GitFixUm/fixup.html"
+        target: "_blank"
 
   - name: "Diabetes"
     icon: "fas fa-cloud"
     items:
-      - name: "LibreView"
-        logo: "assets/icons/freestyle.png"
-        url: "https://www.libreview.com/glucosereports"
-        target: "_blank"
       - name: "DexCom Clarity"
         logo: "assets/icons/dexcom.png"
         url: "https://clarity.dexcom.eu/#/overview"
@@ -200,18 +153,6 @@ services:
         logo: "assets/icons/glooko.png"
         url: "https://de-fr.my.glooko.com"
         target: "_blank"
-
-
-
-  - name: "Spiele"
-    icon: "fas fa-cloud"
-    items:
-      - name: "Gravity Simulator"
-        logo: "assets/icons/freshrss.png"
-        url: "https://testtubegames.com/gravity.html"
-        target: "_blank"
-
-
 
   - name: "Finanzen"
     icon: "fas fa-cloud"
@@ -224,16 +165,6 @@ services:
         logo: "assets/icons/leaseplan.webp"
         url: "https://sparen.leaseplanbank.de"
         target: "_blank"
-
-
-  - name: "Dataport"
-    icon: "fas fa-cloud"
-    items:
-      - name: "Outlook"
-        logo: "assets/icons/dataport.png"
-        url: "https://webmail.ondataport.de"
-        target: "_blank"
-        subtitle: "Webmail"
 
   - name: "Solar"
     icon: "fas fa-cloud"
