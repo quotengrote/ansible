@@ -3,14 +3,14 @@ services:
   oxidized:
     restart: always
     container_name: "oxidized"
-    image: oxidized/oxidized:latest
+    image: oxidized/oxidized:cool # ist auf lokal gebautes Image gesetzt, nach https://github.com/ytti/oxidized/pull/2726 kann es wieder auf latest gesetzt werden
     ports:
       - 8888:8888/tcp
     environment:
       CONFIG_RELOAD_INTERVAL: 600
     volumes:
-      - ./router.db:/var/lib/oxidized/router.db
-      - ./config:/root/.config/oxidized/config
+      - ./router.db:/home/oxidized/.config/oxidized/router.db
+      - ./config:/home/oxidized/.config/oxidized/config
       - ./ssh:/ssh/
       - oxidized:/var/lib/oxidized
     labels:
