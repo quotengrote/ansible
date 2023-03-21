@@ -37,11 +37,6 @@
       config: |
         [systemd_mem]
         env.all_services true
-    - name: lvm_
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
-      config: |
-        [lvm_*]
-        user root
     - name: fail2ban
       src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
       config: |
