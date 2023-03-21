@@ -283,7 +283,7 @@
         env.ip 192.168.10.180
         env.serial_number {{ lookup('keepass', 'SLRM_DEVICE_SN', 'password') }}
     - name: solarman_api_inverter
-      src: https://raw.githubusercontent.com/quotengrote/contrib/deye2/plugins/solar/solarman_api_inverter # später austauschen nach merge
+      src: https://git.mgrote.net/Mirror/munin-contrib/raw/branch/master/plugins/solar/solarman_api_inverter
       config: |
         [solarman_api_inverter]
         env.SLRM_APPID {{ lookup('keepass', 'SLRM_APPID', 'password') }}
