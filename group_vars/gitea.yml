@@ -40,7 +40,7 @@
       from_ip: 192.168.2.144/24
   ### tmaurice.gitea
   # config liegt in /etc/gitea/gitea.ini
-  gitea_version: "1.18.0"
+  gitea_version: "1.19.0"
   gitea_app_name: "Gitea"
   gitea_user: "gitea"
   gitea_home: "/var/lib/gitea"
