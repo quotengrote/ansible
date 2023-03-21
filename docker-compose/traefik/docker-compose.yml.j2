@@ -19,6 +19,8 @@ services:
       - "2222:2222" # SSH
     environment:
       - TZ=Europe/Berlin
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
 ######## Networks ########
 networks:
   traefik:

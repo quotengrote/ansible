@@ -28,6 +28,9 @@ services:
       - traefik.http.routers.miniflux.tls.certresolver=resolver_letsencrypt
       - traefik.http.routers.miniflux.entrypoints=entry_https
       - traefik.http.services.miniflux.loadbalancer.server.port=8080
+      - com.centurylinklabs.watchtower.enable=true
+      - com.centurylinklabs.watchtower.depends-on=mf-db
+
 ######## PostGreSQL ########
   db:
     container_name: "mf-db"
@@ -42,7 +45,9 @@ services:
     networks:
       - intern
     labels:
-      - com.centurylinklabs.watchtower.enable="false"
+      - com.centurylinklabs.watchtower.enable=false
+      - com.centurylinklabs.watchtower.monitor-only=true
+
 ######## Miniflux-Filter ########
   mf-filter:
     container_name: mf-filter
@@ -58,6 +63,10 @@ services:
       - ./filter.txt:/data/filter.txt
     networks:
       - intern
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+      - com.centurylinklabs.watchtower.depends-on=mf-frontend
+
 ######## RSS-Bridge ########
   rssbridge:
     container_name: "mf-bridge"
@@ -71,6 +80,9 @@ services:
       - intern
     ports: #um neue Feeds einzufügen
       - 3001:80
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
 ######## changedetection ########
   changedetection.io:
     image: ghcr.io/dgtlmoon/changedetection.io
@@ -86,6 +98,8 @@ services:
     restart: always
     networks:
       - intern
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
 
 ######## Volumes ########
 volumes:

@@ -14,3 +14,5 @@ services:
       - ./assets/:/www/assets
     ports:
       - 333:8080
+    labels:
+      - com.centurylinklabs.watchtower.enable=true

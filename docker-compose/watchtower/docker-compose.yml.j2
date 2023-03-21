@@ -1,0 +1,34 @@
+version: "3"
+services:
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - TZ=Europe/Berlin
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_INCLUDE_RESTARTING=true
+      - WATCHTOWER_INCLUDE_STOPPED=true
+      - WATCHTOWER_REVIVE_STOPPED=false
+      - WATCHTOWER_POLL_INTERVAL=86400 # (24 hours)
+      - WATCHTOWER_LABEL_ENABLE=true
+      - WATCHTOWER_NOTIFICATIONS=email
+      - WATCHTOWER_NOTIFICATION_EMAIL_FROM=info@mgrote.net
+      - WATCHTOWER_NOTIFICATION_EMAIL_TO=michael.grote@posteo.de
+      - WATCHTOWER_NOTIFICATION_EMAIL_SERVER=smtp.strato.de
+      - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT=587
+      - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER=info@mgrote.net
+      - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD={{ lookup('keepass', 'postfix_absender_passwort', 'password') }}
+      - WATCHTOWER_NOTIFICATION_EMAIL_DELAY=2
+      - WATCHTOWER_NO_STARTUP_MESSAGE=true
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+# monitore diesen Container nur
+#   labels:
+#     - com.centurylinklabs.watchtower.monitor-only=true
+# dieser container hängt von x ab
+#     - com.centurylinklabs.watchtower.depends-on=mf-db
+# aktualisiere container
+#     - com.centurylinklabs.watchtower.enable=true

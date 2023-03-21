@@ -21,7 +21,8 @@ services:
         image: 'drone/drone:latest'
         networks:
           - intern
-
+        labels:
+          - com.centurylinklabs.watchtower.enable=true
 
 # runner
     drone-runner-docker:
@@ -41,6 +42,8 @@ services:
         image: 'drone/drone-runner-docker:latest'
         networks:
           - intern
+        labels:
+          - com.centurylinklabs.watchtower.enable=true
 
 ######## Volumes ########
 volumes:

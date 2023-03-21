@@ -36,6 +36,8 @@ services:
       - cache:/var/cache/munin
     ports:
       - 1234:80
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
 
 volumes:
   db:

@@ -73,6 +73,8 @@
       state: absent
     - name: librenms
       state: absent
+    - name: watchtower
+      state: present
 
   #### mgrote.set_permissions
   dir_permissions:

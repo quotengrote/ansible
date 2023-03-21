@@ -10,3 +10,5 @@ services:
       - "${PWD}/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro"
     ports:
       - 3344:80
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
