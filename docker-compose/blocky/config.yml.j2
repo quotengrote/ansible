@@ -21,6 +21,10 @@ conditional:
   mapping:
     grote.lan: 192.168.2.1
 
+filtering:
+  queryTypes:
+    - AAAA # disable IPv6/AAAA Queries
+
 blocking:
   startStrategy: failOnError # like blocking but blocky will shut down if any download fails
   blockType: nxDomain
