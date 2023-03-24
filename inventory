@@ -6,9 +6,6 @@ all:
     fileserver:
       hosts:
         fileserver3.grote.lan:
-    dnsmasq:
-      hosts:
-        dnsmasq.grote.lan:
     acng:
       hosts:
         acng2.grote.lan:
@@ -40,7 +37,6 @@ all:
         ansible2.grote.lan:
         pve5.grote.lan:
         gitea.grote.lan:
-        dnsmasq.grote.lan:
         docker10.grote.lan:
     test:
       hosts:

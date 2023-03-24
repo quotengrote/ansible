@@ -1,0 +1,48 @@
+# https://0xerr0r.github.io/blocky/v0.20/configuration/#basic-configuration
+upstream:
+  default:
+    - 9.9.9.9
+    - 8.8.8.8
+upstreamTimeout: 2s
+
+port: 53
+httpPort: 4000
+
+connectIPVersion: v4
+
+queryLog:
+  type: console
+
+customDNS:
+  mapping:
+    mgrote.net: 192.168.2.43 # nötig damit z.B. oxidized pushen kann
+
+conditional:
+  mapping:
+    grote.lan: 192.168.2.1
+
+blocking:
+  startStrategy: failOnError # like blocking but blocky will shut down if any download fails
+  blockType: nxDomain
+  blockTTL: 360s
+  refreshPeriod: 60m
+  blackLists:
+    ads:
+      - http://sysctl.org/cameleon/hosts
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Spam/hosts
+      - https://adaway.org/hosts.txt
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+      - https://www.github.developerdan.com/hosts/lists/ads-and-tracking-extended.txt
+      - https://www.github.developerdan.com/hosts/lists/amp-hosts-extended.txt
+#      - |
+#        # inline definition with YAML literal block scalar style
+#        someadsdomain.com
+#        anotheradsdomain.com
+#        # this is a regex
+#        /^banners?[_.-]/
+#  whiteLists:
+#    ads:
+#      - |
+#        # inline definition with YAML literal block scalar style
+#        whitelistdomain.com

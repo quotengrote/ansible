@@ -75,6 +75,8 @@
       state: absent
     - name: watchtower
       state: present
+    - name: blocky
+      state: present
 
   #### mgrote.set_permissions
   dir_permissions:
@@ -110,6 +112,7 @@
 
   ### mgrote.apt_manage_packages
   apt_packages_extra:
+    - libnet-dns-perl # für munin: dnsresponse_*
     - libwww-curl-perl # für munin-plugin: unifi
     - libjson-perl # für munin-plugin: unifi
     - sshpass # fur munin mt_system_*
@@ -293,3 +296,13 @@
         env.SLRM_MAIL {{ lookup('keepass', 'SLRM_MAIL', 'password') }}
         env.SLRM_PASSWORD {{ lookup('keepass', 'SLRM_PASSWORD', 'password') }}
         env.SLRM_APPSECRET {{ lookup('keepass', 'SLRM_APPSECRET', 'password') }}
+    - name: dnsresponse_192.168.2.1
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/network/dns/dnsresponse_
+    - name: dnsresponse_192.168.2.43
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/network/dns/dnsresponse_
+    - name: dnsresponse_127.0.0.1
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/network/dns/dnsresponse_
+      config: |
+        [dnsresponse_*]
+        env.site www.heise.de
+        env.times 20
