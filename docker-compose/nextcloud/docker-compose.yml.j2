@@ -2,7 +2,7 @@ version: '3.3'
 services:
 ######## Datenbank ########
   nextcloud-db:
-    image: mariadb
+    image: mariadb:10
     container_name: nextcloud-db
     command: --transaction-isolation=READ-COMMITTED --log-bin=ROW --innodb_read_only_compressed=OFF
     restart: unless-stopped
@@ -23,7 +23,7 @@ services:
 
 ######## Redis ########
   nextcloud-redis:
-    image: redis:alpine
+    image: redis:7-alpine
     container_name: nextcloud-redis
     hostname: nextcloud-redis
     networks:
@@ -36,7 +36,7 @@ services:
 ######## cron ########
   cron:
     container_name: nextcloud-cron
-    image: rcdailey/nextcloud-cronjob
+    image: rcdailey/nextcloud-cronjob:latest
     restart: unless-stopped
     network_mode: none
     depends_on:
