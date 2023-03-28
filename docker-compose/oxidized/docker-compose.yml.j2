@@ -3,7 +3,7 @@ services:
   oxidized:
     restart: always
     container_name: "oxidized"
-    image: oxidized/oxidized:cool # ist auf lokal gebautes Image gesetzt, nach https://github.com/ytti/oxidized/pull/2726 kann es wieder auf latest gesetzt werden
+    image: oxidized/oxidized:latest # ist auf lokal gebautes Image gesetzt, nach https://github.com/ytti/oxidized/pull/2726 kann es wieder auf latest gesetzt werden
     ports:
       - 8888:8888/tcp
     environment:
