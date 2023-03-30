@@ -38,8 +38,8 @@
   compose_files:
     - name: oxidized
       state: present
-    - name: homer
-      state: present
+  #  - name: homer # wieder einkommentieren
+  #    state: present
     - name: munin
       state: present
     - name: drone
