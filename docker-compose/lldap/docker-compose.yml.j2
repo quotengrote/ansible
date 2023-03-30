@@ -35,6 +35,7 @@ services:
       - LLDAP_SMTP_OPTIONS__REPLY_TO="Do not reply <info@mgrote.net>"
       #- LLDAP_KEY_FILE={{ lookup('keepass', 'LLDAP_KEY_FILE', 'password') }}
       #- LLDAP_VERBOSE=true
+      - LLDAP_HTTP_URL="http://docker10.grote.lan:17170" # The public URL of the server, for password reset links.
     labels:
       - com.centurylinklabs.watchtower.enable=true
       - com.centurylinklabs.watchtower.depends-on=lldap-db
