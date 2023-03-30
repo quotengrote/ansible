@@ -1,0 +1,58 @@
+version: "3"
+services:
+######## App ########
+  lldap:
+    image: nitnelave/lldap:stable
+    container_name: lldap-app
+    restart: always
+    ports:
+      # For LDAP
+      - "3890:3890"
+      # For the web front-end
+      - "17170:17170"
+    networks:
+      - intern
+      - traefik
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - "lldap_data:/data"
+    environment:
+      - UID=1000
+      - GID=1000
+      - LLDAP_JWT_SECRET={{ lookup('keepass', 'LLDAP_JWT_SECRET', 'password') }}
+      - LLDAP_LDAP_USER_PASS={{ lookup('keepass', 'LLDAP_LDAP_USER_PASS', 'password') }}
+      - LLDAP_LDAP_BASE_DN=dc=grote,dc=lan
+      - LLDAP_DATABASE_URL=mysql://lldap-db-user:{{ lookup('keepass', 'LLDAP_MYSQL_PASSWORD', 'password') }}@lldap-db/lldap
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+      - com.centurylinklabs.watchtower.depends-on=lldap-db
+######## DB ########
+  nextcloud-db:
+    image: mariadb:10
+    container_name: lldap-db
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD={{ lookup('keepass', 'LLDAP_MYSQL_ROOT_PASSWORD', 'password') }}
+      - MYSQL_PASSWORD={{ lookup('keepass', 'LLDAP_MYSQL_PASSWORD', 'password') }}
+      - MYSQL_DATABASE=lldap
+      - MYSQL_USER=lldap-db-user
+      - MYSQL_INITDB_SKIP_TZINFO=1
+    networks:
+      - intern
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+######## Volumes ########
+volumes:
+  lldap_data:
+  db:
+######## Networks ########
+networks:
+  intern:
+  traefik:
+    external: true

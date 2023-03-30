@@ -77,6 +77,8 @@
       state: present
     - name: blocky
       state: present
+    - name: lldap
+      state: present
 
   #### mgrote.set_permissions
   dir_permissions:
