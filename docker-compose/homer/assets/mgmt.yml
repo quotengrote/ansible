@@ -33,7 +33,7 @@ services:
         target: "_blank"
         subtitle: "Modem"
 
-  - name: "Infra"
+  - name: "Infra - Apps"
     icon: "fas fa-cloud"
     items:
       - name: "Apt-Cacher-NG"
@@ -67,7 +67,7 @@ services:
         target: "_blank"
         subtitle: "Package-Registry"
 
-  - name: "Infra"
+  - name: "Infra - OS"
     icon: "fas fa-cloud"
     items:
       - name: "ProxMox Virtual Environment - Production"
@@ -94,6 +94,15 @@ services:
         url: "http://docker10.grote.lan:8888"
         target: "_blank"
         subtitle: "network device configuration backup tool"
+
+  - name: "AAA"
+    icon: "fas fa-cloud"
+    items:
+      - name: "lldap"
+        logo: "assets/icons/lldap.png"
+        url: "http://docker10.grote.lan:17170"
+        target: "_blank"
+        subtitle: "LDAP"
 
   - name: "Internet-MGMT"
     icon: "fas fa-cloud"
