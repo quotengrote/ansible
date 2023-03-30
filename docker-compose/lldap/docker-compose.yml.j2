@@ -17,6 +17,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
       - "lldap_data:/data"
+      - "./ldap_config.toml:/data/lldap_config.toml"
     environment:
       - UID=1000
       - GID=1000
