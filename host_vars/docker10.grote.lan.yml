@@ -79,6 +79,7 @@
       state: present
     - name: lldap
       state: present
+      network: traefik
 
   #### mgrote.set_permissions
   dir_permissions:
