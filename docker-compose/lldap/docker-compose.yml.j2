@@ -22,7 +22,7 @@ services:
       - GID=1000
       - LLDAP_JWT_SECRET={{ lookup('keepass', 'LLDAP_JWT_SECRET', 'password') }}
       - LLDAP_LDAP_USER_PASS={{ lookup('keepass', 'LLDAP_LDAP_ADMIN_PASS', 'password') }}
-      - LLDAP_USER_DN="LLDAP-ADMIN"
+      #- LLDAP_USER_DN="LLDAP-ADMIN"
       - LLDAP_LDAP_BASE_DN=dc=grote,dc=lan
       - LLDAP_DATABASE_URL=mysql://lldap-db-user:{{ lookup('keepass', 'LLDAP_MYSQL_PASSWORD', 'password') }}@lldap-db/lldap
       - LLDAP_SMTP_OPTIONS__ENABLE_PASSWORD_reset=true
@@ -33,8 +33,8 @@ services:
       - LLDAP_SMTP_OPTIONS__PASSWORD={{ lookup('keepass', 'postfix_absender_passwort', 'password') }}
       - LLDAP_SMTP_OPTIONS__FROM="LLDAP Admin <info@mgrote.net>"
       - LLDAP_SMTP_OPTIONS__REPLY_TO="Do not reply <info@mgrote.net>"
-      - LLDAP_KEY_FILE={{ lookup('keepass', 'LLDAP_KEY_FILE', 'password') }}
-      - LLDAP_VERBOSE=true
+      #- LLDAP_KEY_FILE={{ lookup('keepass', 'LLDAP_KEY_FILE', 'password') }}
+      #- LLDAP_VERBOSE=true
     labels:
       - com.centurylinklabs.watchtower.enable=true
       - com.centurylinklabs.watchtower.depends-on=lldap-db
