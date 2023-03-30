@@ -28,7 +28,7 @@ services:
       - LLDAP_SMTP_OPTIONS__ENABLE_PASSWORD_reset=true
       - LLDAP_SMTP_OPTIONS__SERVER=smtp.strato.de
       - LLDAP_SMTP_OPTIONS__PORT=587
-      - LLDAP_SMTP_OPTIONS__SMTP_ENCRYPTION=TLS
+      - LLDAP_SMTP_OPTIONS__SMTP_ENCRYPTION=STARTTLS
       - LLDAP_SMTP_OPTIONS__USER=info@mgrote.net
       - LLDAP_SMTP_OPTIONS__PASSWORD={{ lookup('keepass', 'postfix_absender_passwort', 'password') }}
       - LLDAP_SMTP_OPTIONS__FROM="LLDAP Admin <info@mgrote.net>"
