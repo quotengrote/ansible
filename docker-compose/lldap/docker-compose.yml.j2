@@ -17,7 +17,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
       - "lldap_data:/data"
-      - "./ldap_config.toml:/data/lldap_config.toml"
     environment:
       - UID=1000
       - GID=1000
@@ -25,6 +24,16 @@ services:
       - LLDAP_LDAP_USER_PASS={{ lookup('keepass', 'LLDAP_LDAP_USER_PASS', 'password') }}
       - LLDAP_LDAP_BASE_DN=dc=grote,dc=lan
       - LLDAP_DATABASE_URL=mysql://lldap-db-user:{{ lookup('keepass', 'LLDAP_MYSQL_PASSWORD', 'password') }}@lldap-db/lldap
+      - LLDAP_SMTP_OPTIONS__ENABLE_PASSWORD_reset=true
+      - LLDAP_SMTP_OPTIONS__SERVER=smtp.strato.de
+      - LLDAP_SMTP_OPTIONS__PORT=587
+      - LLDAP_SMTP_OPTIONS__SMTP_ENCRYPTION=TLS
+      - LLDAP_SMTP_OPTIONS__USER=info@mgrote.net
+      - LLDAP_SMTP_OPTIONS__PASSWORD={{ lookup('keepass', 'postfix_absender_passwort', 'password') }}
+      - LLDAP_SMTP_OPTIONS__FROM="LLDAP Admin <info@mgrote.net>"
+      - LLDAP_SMTP_OPTIONS__REPLY_TO="Do not reply <info@mgrote.net>"
+      - LLDAP_KEY_FILE={{ lookup('keepass', 'LLDAP_KEY_FILE', 'password') }}
+      - LLDAP_VERBOSE=true
     labels:
       - com.centurylinklabs.watchtower.enable=true
       - com.centurylinklabs.watchtower.depends-on=lldap-db
@@ -57,3 +66,7 @@ networks:
   intern:
   traefik:
     external: true
+
+
+## (example with "password"): - LLDAP_SMTP_OPTIONS__PASSWORD
+## Whether to enabled password reset via email, from LLDAP.
