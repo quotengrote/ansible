@@ -16,7 +16,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-      - "lldap_data:/data"
+      - "lldap:/data"
     environment:
       - UID=1000
       - GID=1000
@@ -59,7 +59,7 @@ services:
 
 ######## Volumes ########
 volumes:
-  lldap_data:
+  lldap:
   db:
 ######## Networks ########
 networks:
