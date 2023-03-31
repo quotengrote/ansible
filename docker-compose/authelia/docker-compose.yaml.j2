@@ -16,11 +16,24 @@ services:
     environment:
       TZ: Europe/Berlin
       AUTHELIA_STORAGE_ENCRYPTION_KEY: {{ lookup('keepass', 'AUTHELIA_STORAGE_ENCRYPTION_KEY', 'password') }}
+    volumes:
+      - ./config:/config
     labels:
       - com.centurylinklabs.watchtower.enable=true
       - com.centurylinklabs.watchtower.depends-on=authelia-postgres,authelia-redis
-    volumes:
-      - ./config:/config
+
+      - traefik.http.middlewares.authelia.forwardauth.address=http://authelia-app:9091/api/authz/forward-auth?authelia-url=http://authelia.grote.lan
+      - traefik.http.middlewares.authelia.forwardauth.trustForwardHeader=true
+      - traefik.http.middlewares.authelia.forwardauth.authResponseHeaders=Remote-User,Remote-Groups,Remote-Name,Remote-Email
+
+      - traefik.enable=true
+      - traefik.http.routers.authelia.rule=Host(`authelia.grote.lan`)
+      - traefik.http.routers.authelia.tls=true
+      - traefik.http.routers.authelia.tls.certresolver=resolver_letsencrypt
+      - traefik.http.routers.authelia.entrypoints=entry_https
+      - traefik.http.services.authelia.loadbalancer.server.port=9091
+
+
 ######## PostGreSQL ########
   db:
     container_name: "authelia-postgres"
