@@ -1,6 +1,8 @@
 ---
 default_redirection_url: https://mgrote.net
 
+jwt_secret: {{ lookup('keepass', 'AUTHELIA_JWT_SECRET', 'password') }}
+
 server:
   host: 0.0.0.0
   port: 9091
@@ -17,8 +19,8 @@ access_control:
     # Rules applied to everyone
     - domain: audio.mgrote.net
       policy: bypass
-#    - domain: traefik.example.com
-#      policy: one_factor
+    - domain: munin.grote.lan
+      policy: one_factor
 #    - domain: secure.example.com
 #      policy: two_factor
 
@@ -34,14 +36,13 @@ regulation:
   find_time: 120
   ban_time: 300
 
-#notifier:
-#  smtp:
-#    username: test
-#    # This secret can also be set using the env variables AUTHELIA_NOTIFIER_SMTP_PASSWORD_FILE
-#    password: password
-#    host: mail.example.com
-#    port: 25
-#    sender: admin@example.com
+notifier:
+  smtp:
+    username: info@mgrote.net
+    password: {{ lookup('keepass', 'postfix_absender_passwort', 'password') }}
+    host: smtp.strato.de
+    port: 587
+    sender: info@mgrote.net
 
 
 # This is just the LDAP part of the Authelia configuration!
@@ -86,3 +87,15 @@ authentication_backend:
     user: uid=admin,ou=people,dc=grote,dc=lan
     # Password can also be set using a secret: https://www.authelia.com/docs/configuration/secrets.html
     password: {{ lookup('keepass', 'LLDAP_LDAP_USER_PASS', 'password') }}
+
+
+storage:
+  postgres:
+    host: authelia-postgres
+    database: authelia
+    username: authelia
+
+session:
+  redis:
+    host: authelia-redis
+    post: 6379
