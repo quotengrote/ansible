@@ -11,6 +11,8 @@ services:
       - intern
     expose:
       - 9091
+    ports:
+      - "9091:9091"
     environment:
       TZ: Europe/Berlin
       AUTHELIA_STORAGE_ENCRYPTION_KEY: {{ lookup('keepass', 'AUTHELIA_STORAGE_ENCRYPTION_KEY', 'password') }}
