@@ -1,0 +1,69 @@
+---
+version: "3.8"
+services:
+######## App ########
+  authelia:
+    container_name: authelia-app
+    image: docker.io/authelia/authelia:4
+    restart: always
+    networks:
+      - aaa
+      - intern
+    expose:
+      - 9091
+    environment:
+      TZ: Europe/Berlin
+      AUTHELIA_JWT_SECRET: {{ lookup('keepass', 'AUTHELIA_JWT_SECRET', 'password') }}
+      AUTHELIA_SESSION_SECRET: {{ lookup('keepass', 'AUTHELIA_SESSION_SECRET', 'password') }}
+      AUTHELIA_STORAGE_POSTGRES_PASSWORD: {{ lookup('keepass', 'AUTHELIA_STORAGE_POSTGRES_PASSWORD', 'password') }}
+      AUTHELIA_STORAGE_ENCRYPTION_KEY: {{ lookup('keepass', 'AUTHELIA_STORAGE_ENCRYPTION_KEY', 'password') }}
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+      - com.centurylinklabs.watchtower.depends-on=authelia-postgres,authelia-redis
+    volumes:
+      - ./config:/config
+######## PostGreSQL ########
+  db:
+    container_name: "authelia-postgres"
+    image: postgres:13
+    restart: always
+    environment:
+      - POSTGRES_USER=authelia
+      - POSTGRES_PASSWORD={{ lookup('keepass', 'AUTHELIA_STORAGE_POSTGRES_PASSWORD', 'password') }}
+      - TZ=Europe/Berlin
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - intern
+    labels:
+      - com.centurylinklabs.watchtower.enable=false
+      - com.centurylinklabs.watchtower.monitor-only=true
+######## Redis ########
+  redis:
+    image: redis:alpine
+    container_name: authelia-redis
+    volumes:
+      - redis:/data
+    networks:
+      - net
+    expose:
+      - 6379
+    restart: always
+    environment:
+      - TZ=Europe/Berlin
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+
+networks:
+  nw_aaa:
+    external: true
+  intern:
+
+volumes:
+  postgres:
+  redis:
+
+
+
+# redis

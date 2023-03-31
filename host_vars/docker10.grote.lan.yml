@@ -80,7 +80,9 @@
     - name: lldap
       state: present
       network: traefik
-
+    - name: authelia
+      state: present
+      network: nw_aaa
   #### mgrote.set_permissions
   dir_permissions:
     - path: /mnt/httpd
