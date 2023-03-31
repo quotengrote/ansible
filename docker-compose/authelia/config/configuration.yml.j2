@@ -16,6 +16,8 @@ access_control:
     - domain: munin.grote.lan
       policy: one_factor
 session:
+  domain: mgrote.net
+  secret: "{{ lookup('keepass', 'AUTHELIA_SESSION_SECRET', 'password') }}"
   cookies:
     - name: authelia_session
       domain: mgrote.net
@@ -23,7 +25,7 @@ session:
       inactivity: 300
   redis:
     host: authelia-redis
-    post: 6379
+    port: 6379
 regulation:
   max_retries: 3
   find_time: 120

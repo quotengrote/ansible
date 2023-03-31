@@ -13,8 +13,6 @@ services:
       - 9091
     environment:
       TZ: Europe/Berlin
-      AUTHELIA_SESSION_SECRET: {{ lookup('keepass', 'AUTHELIA_SESSION_SECRET', 'password') }}
-      AUTHELIA_STORAGE_POSTGRES_PASSWORD: {{ lookup('keepass', 'AUTHELIA_STORAGE_POSTGRES_PASSWORD', 'password') }}
       AUTHELIA_STORAGE_ENCRYPTION_KEY: {{ lookup('keepass', 'AUTHELIA_STORAGE_ENCRYPTION_KEY', 'password') }}
     labels:
       - com.centurylinklabs.watchtower.enable=true
