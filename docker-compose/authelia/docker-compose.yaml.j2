@@ -9,6 +9,7 @@ services:
     networks:
       - nw_aaa
       - intern
+      - traefik
     expose:
       - 9091
     ports:
@@ -71,6 +72,8 @@ networks:
   nw_aaa:
     external: true
   intern:
+  traefik:
+    external: true
 
 volumes:
   postgres:
