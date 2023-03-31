@@ -20,6 +20,7 @@ services:
       AUTHELIA_STORAGE_POSTGRES_DATABASE: authelia
       AUTHELIA_STORAGE_POSTGRES_USERNAME: authelia
       AUTHELIA_STORAGE_ENCRYPTION_KEY: {{ lookup('keepass', 'AUTHELIA_STORAGE_ENCRYPTION_KEY', 'password') }}
+      AUTHELIA_SESSION_REDIS_HOST: authelia-redis
     labels:
       - com.centurylinklabs.watchtower.enable=true
       - com.centurylinklabs.watchtower.depends-on=authelia-postgres,authelia-redis
