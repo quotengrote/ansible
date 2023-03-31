@@ -22,12 +22,12 @@ services:
       - com.centurylinklabs.watchtower.enable=true
       - com.centurylinklabs.watchtower.depends-on=authelia-postgres,authelia-redis
 
-      - traefik.http.middlewares.authelia.forwardauth.address=http://authelia-app:9091/api/authz/forward-auth?authelia-url=http://authelia.grote.lan
+      - traefik.http.middlewares.authelia.forwardauth.address=http://authelia-app:9091/api/authz/forward-auth?authelia-url=http://auth.mgrote.net
       - traefik.http.middlewares.authelia.forwardauth.trustForwardHeader=true
       - traefik.http.middlewares.authelia.forwardauth.authResponseHeaders=Remote-User,Remote-Groups,Remote-Name,Remote-Email
 
       - traefik.enable=true
-      - traefik.http.routers.authelia.rule=Host(`authelia.grote.lan`)
+      - traefik.http.routers.authelia.rule=Host(`auth.mgrote.net`)
       - traefik.http.routers.authelia.tls=true
       - traefik.http.routers.authelia.tls.certresolver=resolver_letsencrypt
       - traefik.http.routers.authelia.entrypoints=entry_https
