@@ -81,4 +81,4 @@
     ansible.builtin.lineinfile:
       path: /etc/cron.d/zfsutils-linux
       state: absent
-      line: '24 0 8-14 * * root [ $(date +\%w) -eq 0 ] && [ -x /usr/lib/zfs-linux/scrub ] && /usr/lib/zfs-linux/scrub'
+      line: '24 0 8-14 * * root if [ $(date +\%w) -eq 0 ] && [ -x /usr/lib/zfs-linux/scrub ]; then /usr/lib/zfs-linux/scrub; fi'
