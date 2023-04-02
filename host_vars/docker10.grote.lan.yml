@@ -78,10 +78,10 @@
     - name: blocky
       state: present
     - name: lldap
-      state: present
+      state: absent
       network: traefik
     - name: authelia
-      state: present
+      state: absent
       network: nw_aaa
   #### mgrote.set_permissions
   dir_permissions:

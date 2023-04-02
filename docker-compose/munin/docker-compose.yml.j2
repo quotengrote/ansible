@@ -36,6 +36,18 @@ services:
     labels:
       - com.centurylinklabs.watchtower.enable=true
 
+      - traefik.http.middlewares.authelia.forwardauth.address=http://authelia-app:9091/api/authz/forward-auth?authelia-url=http://auth.mgrote.net
+      - traefik.http.middlewares.authelia.forwardauth.trustForwardHeader=true
+      - traefik.http.middlewares.authelia.forwardauth.authResponseHeaders=Remote-User,Remote-Groups,Remote-Name,Remote-Email
+
+      - traefik.enable=true
+      - traefik.http.routers.authelia.rule=Host(`auth.mgrote.net`)
+      - traefik.http.routers.authelia.tls=true
+      - traefik.http.routers.authelia.tls.certresolver=resolver_letsencrypt
+      - traefik.http.routers.authelia.entrypoints=entry_https
+      - traefik.http.services.authelia.loadbalancer.server.port=9091
+
+
 volumes:
   db:
   logs:
