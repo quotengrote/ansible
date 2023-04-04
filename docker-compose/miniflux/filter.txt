@@ -5,6 +5,7 @@ augengeradeaus.net::Sicherheitshalber der Podcast
 axios.com::Axios on HBO
 axios.com::PGA
 axios.com::football
+computerbase.de::wettbewerb
 computerbase.de::Adrenalin 2020 Edition
 computerbase.de::Adrenalin 2021 Edition
 computerbase.de::CB-Funk
@@ -19,6 +20,7 @@ computerbase.de::Twitter
 computerbase.de::WM
 computerbase.de::Wochenrück- und Ausblick:
 facebook.com::Bridge returned error
+golem.de::Golem Karrierewelt
 golem.de::(g+)
 golem.de::Anzeige
 golem.de::Aus dem Verlag:
@@ -159,6 +161,7 @@ portuguesegeese.com::portuguesegeese.com
 reddit.com::UEFA
 stackoverflow.blog::Podcast
 stackoverflow.blog::The Overflow
+stadt-bremerhaven.de::DFB-
 stadt-bremerhaven.de::(Werbung)
 stadt-bremerhaven.de::Bundesliga
 stadt-bremerhaven.de::DAZN
@@ -174,6 +177,10 @@ stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::Twitter
 stadt-bremerhaven.de::WM 2022
 stadt-bremerhaven.de::eFootball
+sueddeutsche.de::Fußball-Weltmeisterschaft
+sueddeutsche.de::Fifa
+sueddeutsche.de::Infantino
+sueddeutsche.de::Eintracht Frankfurt
 sueddeutsche.de::"Ich bin ein Star"
 sueddeutsche.de::"Tatort"
 sueddeutsche.de::-Spiel
@@ -448,6 +455,7 @@ sueddeutsche.de::Zlatan
 sueddeutsche.de::leute:
 sueddeutsche.de::quoted.
 sueddeutsche.de::torwart
+tagesschau.de::Weltcup
 tagesschau.de::11KM
 tagesschau.de::Achtelfinale
 tagesschau.de::Alpine-Super-Kombination:
