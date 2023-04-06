@@ -8,16 +8,16 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgres://miniflux:{{ lookup('keepass', 'miniflux_postgres_password', 'password') }}@mf-db/miniflux?sslmode=disable
-      - RUN_MIGRATIONS=1
-#      - CREATE_ADMIN=1
-#      - ADMIN_USERNAME=adminmf
-#      - ADMIN_PASSWORD={{ lookup('keepass', 'miniflux_admin_password', 'password') }}
-      - WORKER_POOL_SIZE=10
-      - POLLING_FREQUENCY=10
-      - CLEANUP_ARCHIVE_UNREAD_DAYS=-1
-      - CLEANUP_ARCHIVE_READ_DAYS=90
-      - TZ=Europe/Berlin
+      DATABASE_URL: postgres://miniflux:{{ lookup('keepass', 'miniflux_postgres_password', 'password') }}@mf-db/miniflux?sslmode=disable
+      RUN_MIGRATIONS: 1
+#      CREATE_ADMIN: 1
+#      ADMIN_USERNAME: adminmf
+#      ADMIN_PASSWORD: {{ lookup('keepass', 'miniflux_admin_password', 'password') }}
+      WORKER_POOL_SIZE: 10
+      POLLING_FREQUENCY: 10
+      CLEANUP_ARCHIVE_UNREAD_DAYS: -1
+      CLEANUP_ARCHIVE_READ_DAYS: 90
+      TZ: Europe/Berlin
     networks:
       - intern
       - traefik
@@ -37,9 +37,9 @@ services:
     image: postgres:13
     restart: always
     environment:
-      - POSTGRES_USER=miniflux
-      - POSTGRES_PASSWORD={{ lookup('keepass', 'miniflux_postgres_password', 'password') }}
-      - TZ=Europe/Berlin
+      POSTGRES_USER: miniflux
+      POSTGRES_PASSWORD: {{ lookup('keepass', 'miniflux_postgres_password', 'password') }}
+      TZ: Europe/Berlin
     volumes:
       - db:/var/lib/postgresql/data
     networks:
@@ -53,11 +53,11 @@ services:
     container_name: mf-filter
     restart: always
     environment:
-      - TZ=Europe/Berlin
-      - MF_AUTH_TOKEN={{ lookup('keepass', 'miniflux_auth_token', 'password') }}
-      - MF_API_URL=https://miniflux.mgrote.net/v1
-      - MF_SLEEP=600
-      #- MF_DEBUG=1
+      TZ: Europe/Berlin
+      MF_AUTH_TOKEN: {{ lookup('keepass', 'miniflux_auth_token', 'password') }}
+      MF_API_URL: https://miniflux.mgrote.net/v1
+      MF_SLEEP: 600
+      #MF_DEBUG: 1
     image: quotengrote/miniflux-filter:latest
     volumes:
       - ./filter.txt:/data/filter.txt
@@ -73,7 +73,7 @@ services:
     image: rssbridge/rss-bridge:latest
     restart: always
     environment:
-      - TZ=Europe/Berlin
+      TZ: Europe/Berlin
     volumes:
       - ./whitelist.txt:/app/whitelist.txt
     networks:
@@ -91,8 +91,8 @@ services:
     volumes:
       - changedetection-data:/datastore
     environment:
-      - PORT=5000
-      - BASE_URL=http://docker10.grote.lan:5000
+      PORT: 5000
+      BASE_URL: http://docker10.grote.lan:5000
     ports:
       - 5000:5000
     restart: always

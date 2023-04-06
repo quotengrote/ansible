@@ -5,14 +5,14 @@ services:
         volumes:
             - 'data:/data'
         environment:
-            - 'DRONE_GITEA_SERVER=https://git.mgrote.net'
-            - DRONE_GITEA_CLIENT_ID=f8f0db2a-0089-4e23-9f5a-a5e52f20d765
-            - DRONE_GITEA_CLIENT_SECRET={{ lookup('keepass', 'drone_gitea_client_secret', 'password') }}
-            - DRONE_RPC_SECRET={{ lookup('keepass', 'drone_rpc_secret', 'password') }}
-            - DRONE_SERVER_HOST=docker10.grote.lan:81
-            - DRONE_SERVER_PROTO=http
-            - DRONE_USER_CREATE=username:mg,admin:true # Gitea-Nutzer "mg" als Admin
-            #- DRONE_LOGS_DEBUG=true
+            DRONE_GITEA_SERVER: https://git.mgrote.net
+            DRONE_GITEA_CLIENT_ID: f8f0db2a-0089-4e23-9f5a-a5e52f20d765
+            DRONE_GITEA_CLIENT_SECRET: {{ lookup('keepass', 'drone_gitea_client_secret', 'password') }}
+            DRONE_RPC_SECRET: {{ lookup('keepass', 'drone_rpc_secret', 'password') }}
+            DRONE_SERVER_HOST: docker10.grote.lan:81
+            DRONE_SERVER_PROTO: http
+            DRONE_USER_CREATE: username:mg,admin:true # Gitea-Nutzer "mg" als Admin
+            #DRONE_LOGS_DEBUG: true
         ports:
             - '81:80'
             - '444:443'
@@ -29,12 +29,12 @@ services:
         volumes:
             - '/var/run/docker.sock:/var/run/docker.sock'
         environment:
-            - DRONE_RPC_PROTO=http
+            DRONE_RPC_PROTO: http
             # container-name des servers
-            - DRONE_RPC_HOST=drone-server
-            - DRONE_RPC_SECRET={{ lookup('keepass', 'drone_rpc_secret', 'password') }}
-            - DRONE_RUNNER_CAPACITY=4
-            - DRONE_RUNNER_NAME=drone-runner
+            DRONE_RPC_HOST: drone-server
+            DRONE_RPC_SECRET: {{ lookup('keepass', 'drone_rpc_secret', 'password') }}
+            DRONE_RUNNER_CAPACITY: 4
+            DRONE_RUNNER_NAME: drone-runner
         ports:
             - '3000:3000'
         restart: always

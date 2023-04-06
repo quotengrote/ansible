@@ -6,10 +6,10 @@ services:
     container_name: homer-dashboard
     restart: always
     environment:
-      - TZ=Europe/Berlin
-      - UID=1000
-      - GID=1000
-      - INIT_ASSETS=0
+      TZ: Europe/Berlin
+      UID: 1000
+      GID: 1000
+      INIT_ASSETS: 0
     volumes:
       - ./assets/:/www/assets
     ports:

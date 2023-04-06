@@ -5,25 +5,25 @@ services:
     image: quotengrote/munin-server
     restart: always
     environment:
-      - MAILCONTACT=michael.grote@posteo.de
-      - MAILSERVER=smtp.strato.de
-      - MAILPORT=587
-      - MAILUSER=info@mgrote.net
-      - MAILPASSWORD={{ lookup('keepass', 'postfix_absender_passwort', 'password') }}
-      - MAILFROM=info@mgrote.net
-      - MAILNAME=Munin-Prod
-      - MAILDOMAIN=mgrote.net
-      - TZ=Europe/Berlin
-      - DISABLELOCALNODE=yes
-      - CRONDELAY=5
-      - 'NODES=
-      fileserver3.grote.lan:fileserver3.grote.lan
-      acng2.grote.lan:acng2.grote.lan
-      ansible2.grote.lan:ansible2.grote.lan
-      pve5.grote.lan:pve5.grote.lan
-      dokuwiki2.grote.lan:dokuwiki2.grote.lan
-      gitea.grote.lan:gitea.grote.lan
-      docker10.grote.lan:docker10.grote.lan'
+      MAILCONTACT: michael.grote@posteo.de
+      MAILSERVER: smtp.strato.de
+      MAILPORT: 587
+      MAILUSER: info@mgrote.net
+      MAILPASSWORD: {{ lookup('keepass', 'postfix_absender_passwort', 'password') }}
+      MAILFROM: info@mgrote.net
+      MAILNAME: Munin-Prod
+      MAILDOMAIN: mgrote.net
+      TZ: Europe/Berlin
+      DISABLELOCALNODE: yes
+      CRONDELAY: 5
+      NODES: |
+        fileserver3.grote.lan:fileserver3.grote.lan
+        acng2.grote.lan:acng2.grote.lan
+        ansible2.grote.lan:ansible2.grote.lan
+        pve5.grote.lan:pve5.grote.lan
+        dokuwiki2.grote.lan:dokuwiki2.grote.lan
+        gitea.grote.lan:gitea.grote.lan
+        docker10.grote.lan:docker10.grote.lan
       # z.B.
       # computer-test.grote.lan.test:192.68.2.4
       # computer.grote.lan:computer.grote.lan

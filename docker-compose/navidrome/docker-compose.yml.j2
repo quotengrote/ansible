@@ -6,23 +6,23 @@ services:
     image: deluan/navidrome:latest
     restart: always
     environment:
-      - ND_LOGLEVEL=info
-      - ND_SESSIONTIMEOUT=24h
-      - ND_MUSICFOLDER=/music
-      - ND_DATAFOLDER=/data
-      - ND_SCANSCHEDULE=6 * * * *
-      - ND_TRANSCODINGCACHESIZE=500MB
-      - ND_IMAGECACHESIZE=100MB
-      - ND_AUTOIMPORTPLAYLISTS=false
-      - ND_BASEURL=/mg
-      - ND_ENABLESTARRATING=false
-      - ND_ENABLEGRAVATAR=false
-      - ND_LASTFM_ENABLED=false
-      - ND_ENABLETRANSCODINGCONFIG=true
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Berlin
-      - ND_ENABLE_EXTERNAL_SERVICES=false
+      ND_LOGLEVEL: info
+      ND_SESSIONTIMEOUT: 24h
+      ND_MUSICFOLDER: /music
+      ND_DATAFOLDER: /data
+      ND_SCANSCHEDULE: 6 * * * *
+      ND_TRANSCODINGCACHESIZE: 500MB
+      ND_IMAGECACHESIZE: 100MB
+      ND_AUTOIMPORTPLAYLISTS: false
+      ND_BASEURL: /mg
+      ND_ENABLESTARRATING: false
+      ND_ENABLEGRAVATAR: false
+      ND_LASTFM_ENABLED: false
+      ND_ENABLETRANSCODINGCONFIG: true
+      PUID: 1000
+      PGID: 1000
+      TZ: Europe/Berlin
+      ND_ENABLE_EXTERNAL_SERVICES: false
     volumes:
       - musik_smb_mg:/music:ro
       - data:/data
@@ -35,7 +35,7 @@ services:
       - traefik.http.routers.navidrome-mg.tls.certresolver=resolver_letsencrypt
       - traefik.http.routers.navidrome-mg.entrypoints=entry_https
       - traefik.http.services.navidrome-mg.loadbalancer.server.port=4533
-      
+
       - com.centurylinklabs.watchtower.enable=true
     ports:
       - "4533:4533"
