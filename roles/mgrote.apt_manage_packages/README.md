@@ -15,7 +15,7 @@ aus.
     - Extra-Parameter für einzelne Hosts
   apt_packages_internet:
     - für URLs
-    - https://git.mgrote.net/mg/bash-helper-scripts-mgrote/raw/branch/master/output/bash-helper-scripts-mgrote-latest.deb
+    - http://docker10.grote.lan:3344/bash-helper-scripts-mgrote-latest.deb
 
 
 ```

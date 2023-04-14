@@ -5,10 +5,29 @@ services:
     image: httpd:bullseye
     restart: always
     volumes:
-      # mounte das lokale Verzeichnis in den Container, der Inhalt ist dann per http aufzurufen; reingeschrieben wird in den lokalen Ordner z.B. per scp aus der Pipeline heraus
-      - /mnt/httpd:/usr/local/apache2/htdocs/
+      - uploads:/usr/local/apache2/htdocs/
       - "${PWD}/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro"
     ports:
       - 3344:80
     labels:
       - com.centurylinklabs.watchtower.enable=true
+
+  python-api-server:
+    container_name: httpd-api
+    image: quotengrote/python-api-server:latest
+    restart: always
+    ports:
+      - "5040:5000"
+    volumes:
+      - uploads:/uploads
+    environment:
+      # FLASK_DEBUG: 1 # for debugging
+      # FLASK_APP: app # for debugging
+      MAX_CONTENT_LENGTH: 50
+      UPLOAD_DIRECTORY: /uploads
+      AUTH_TOKEN: {{ lookup('keepass', 'httpd-api-server-token', 'password') }}
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+volumes:
+  uploads:

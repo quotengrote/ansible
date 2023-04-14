@@ -12,21 +12,10 @@
          filesystem: xfs
          mount: true
          mntp: /var/lib/docker
-   - vgname: vg_docker2
-     disks:
-       - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
-     create: true
-     lvnames:
-       - lvname: httpd
-         size: 1G
-         create: true
-         filesystem: xfs
-         mount: true
-         mntp: /mnt/httpd
   manage_lvm: true
   pvresize_to_max: true
   ### mgrote.restic
-  restic_folders_to_backup: "/ /var/lib/docker /mnt/httpd" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben
+  restic_folders_to_backup: "/ /var/lib/docker" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben
 
   ### mgrote.docker-compose-inline
   compose_owner: "docker-user"
@@ -47,7 +36,7 @@
     - name: nextcloud
       state: present
       network: traefik
-    - name: httpd # das Volume hat die Rechte 0777 damit jeder per SSH reinschreiben kann; ist fur drone.io eingerichtet; siehe $dir_permissions
+    - name: httpd
       state: present
     - name: unifi-controller
       state: present
@@ -78,10 +67,6 @@
     - name: blocky
       state: present
 
-  #### mgrote.set_permissions
-  dir_permissions:
-    - path: /mnt/httpd
-      mode: '0777'
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow
@@ -159,7 +144,7 @@
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/http/http_response
       config: |
         [http_response]
-        env.sites http://docker10.grote.lan:333 http://docker10.grote.lan:8888/nodes http://docker10.grote.lan:1234 https://nextcloud.mgrote.net  http://docker10.grote.lan:2342 http://docker10.grote.lan:8000/login  http://docker10.grote.lan:3344  http://docker10.grote.lan:5000 https://miniflux.mgrote.net/ http://docker10.grote.lan:3001 http://docker10.grote.lan:8081
+        env.sites http://docker10.grote.lan:333 http://docker10.grote.lan:8888/nodes http://docker10.grote.lan:1234 https://nextcloud.mgrote.net  http://docker10.grote.lan:2342 http://docker10.grote.lan:8000/login  http://docker10.grote.lan:3344  http://docker10.grote.lan:5000 https://miniflux.mgrote.net/ http://docker10.grote.lan:3001 http://docker10.grote.lan:8081 http://docker10.grote.lan:5040
         env.max_time 20
         env.short_label true
         env.follow_redirect true
