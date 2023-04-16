@@ -2,7 +2,7 @@ version: '3'
 services:
   munin:
     container_name: "munin-master-prod"
-    image: ghcr.io/ethersys/munin
+    image: quotengrote/munin-server:master
     restart: always
     environment:
       MAILCONTACT: michael.grote@posteo.de
@@ -14,7 +14,6 @@ services:
       MAILNAME: Munin-Prod
       MAILDOMAIN: mgrote.net
       TZ: Europe/Berlin
-      DISABLELOCALNODE: yes
       CRONDELAY: 5
       NODES: |
         fileserver3.grote.lan:fileserver3.grote.lan
