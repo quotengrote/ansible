@@ -49,19 +49,6 @@
     - name: navidrome
       state: present
       network: traefik
-      ## del # am ende loschen, also die eiträge
-    - name: hastebin
-      state: absent
-    - name: photoprism
-      state: absent
-    - name: tor-snowflake
-      state: absent
-    - name: dozzle
-      state: absent
-    - name: ara
-      state: absent
-    - name: librenms
-      state: absent
     - name: watchtower
       state: present
     - name: blocky
