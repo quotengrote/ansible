@@ -288,6 +288,6 @@
         env.repo oxidized-configs
         env.user mg
         env.git_ref HEAD
-        env.warn 720
+        env.warning 720
         env.critical 2880
         env.token {{ lookup('keepass', 'gitea_commit_time_diff_oxidized_token', 'password') }}
