@@ -280,7 +280,7 @@
         env.times 20
 
     - name: gitea_commit_time_diff
-      src: https://raw.githubusercontent.com/munin-monitoring/contrib/f230e4d93f4c067b0a44d672a8f278aaa175710e/plugins/git/gitea_commit_time_diff # url nach mergen anpassen
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/git/gitea_commit_time_diff
       config: |
         [gitea_commit_time_diff]
         env.url git.mgrote.net

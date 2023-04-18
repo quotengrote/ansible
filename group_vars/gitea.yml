@@ -132,7 +132,7 @@
         env.short_label true
         env.follow_redirect true
     - name: drone
-      src: https://raw.githubusercontent.com/quotengrote/contrib/drone/plugins/cicd/drone # url nach mergen anpassen
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/cicd/drone
       config: |
         [drone]
         env.url http://docker10.grote.lan:81/api/user/repos?latest=true
