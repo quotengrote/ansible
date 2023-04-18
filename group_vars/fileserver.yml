@@ -54,7 +54,6 @@
     - https://github.com/rclone/rclone/releases/download/v1.59.2/rclone-v1.59.2-linux-amd64.deb
     - http://docker10.grote.lan:3344/bash-helper-scripts-mgrote-latest.deb
 
----
   ### mgrote.youtubedl
   ytdl_dl_url: "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp"
   ytdl_timer: "Tue,Sat 03:00"

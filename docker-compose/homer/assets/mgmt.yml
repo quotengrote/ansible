@@ -38,7 +38,7 @@ services:
     items:
       - name: "Apt-Cacher-NG"
         logo: "assets/icons/acng.jpg"
-        url: "http://acng2.grote.lan:9999/acng-report.html"
+        url: "http://docker10.grote.lan:9999/acng-report.html"
         target: "_blank"
         subtitle: "apt"
       - name: "gitea"

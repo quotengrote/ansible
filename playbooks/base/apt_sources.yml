@@ -3,4 +3,3 @@
     roles:
       - role: mgrote.apt_manage_sources
         tags: "apt_sources"
-        when: "not 'acng2.grote.lan' in inventory_hostname"

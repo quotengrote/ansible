@@ -6,9 +6,6 @@ all:
     fileserver:
       hosts:
         fileserver3.grote.lan:
-    acng:
-      hosts:
-        acng2.grote.lan:
     ansible:
       hosts:
         ansible2.grote.lan:
@@ -33,7 +30,6 @@ all:
       hosts:
         dokuwiki2.grote.lan:
         fileserver3.grote.lan:
-        acng2.grote.lan:
         ansible2.grote.lan:
         pve5.grote.lan:
         gitea.grote.lan:
