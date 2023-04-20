@@ -34,7 +34,7 @@ services:
       com.centurylinklabs.watchtower.enable: true
 
 ######## cron ########
-  cron:
+  nextcloud-cron:
     container_name: nextcloud-cron
     image: rcdailey/nextcloud-cronjob:latest
     restart: unless-stopped

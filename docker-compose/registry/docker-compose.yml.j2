@@ -10,6 +10,9 @@ services:
     networks:
       - traefik
       - intern
+    depends_on:
+      - oci-registry-ui
+      - oci-registry-redis
     environment:
       TZ: Europe/Berlin
       REGISTRY_AUTH: none

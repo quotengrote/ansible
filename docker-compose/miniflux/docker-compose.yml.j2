@@ -28,7 +28,7 @@ services:
       traefik.http.routers.miniflux.tls.certresolver: resolver_letsencrypt
       traefik.http.routers.miniflux.entrypoints: entry_https
       traefik.http.services.miniflux.loadbalancer.server.port: 8080
-      
+
       traefik.http.routers.miniflux.middlewares: error-pages-middleware
 
       com.centurylinklabs.watchtower.enable: true
@@ -55,6 +55,8 @@ services:
 ######## Miniflux-Filter ########
   mf-filter:
     container_name: mf-filter
+    depends_on:
+      - miniflux
     restart: always
     environment:
       TZ: Europe/Berlin
