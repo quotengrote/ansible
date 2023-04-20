@@ -28,7 +28,7 @@ services:
       traefik.http.services.registry.loadbalancer.server.port: 5000
 
       traefik.http.routers.registry.middlewares: registry-ipwhitelist
-      traefik.http.middlewares.registry-ipwhitelist.ipwhitelist.sourcerange: 192.168.0.0/17
+      traefik.http.middlewares.registry-ipwhitelist.ipwhitelist.sourcerange: 192.168.0.0/16
 
       traefik.http.routers.registry.middlewares: error-pages-middleware
 
