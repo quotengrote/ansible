@@ -14,7 +14,7 @@ services:
       VERBOSE: 1 # 0/1
       THRESHOLD: 60 # package housekeeping threshold
     labels:
-      - com.centurylinklabs.watchtower.enable=true
+      com.centurylinklabs.watchtower.enable: true
 
 volumes:
   cache:

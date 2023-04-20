@@ -29,14 +29,14 @@ services:
     networks:
       - traefik
     labels:
-      - traefik.http.routers.navidrome-mg.rule=Host(`audio.mgrote.net`)&&PathPrefix(`/mg`)
-      - traefik.enable=true
-      - traefik.http.routers.navidrome-mg.tls=true
-      - traefik.http.routers.navidrome-mg.tls.certresolver=resolver_letsencrypt
-      - traefik.http.routers.navidrome-mg.entrypoints=entry_https
-      - traefik.http.services.navidrome-mg.loadbalancer.server.port=4533
+      traefik.http.routers.navidrome-mg.rule: Host(`audio.mgrote.net`)&&PathPrefix(`/mg`)
+      traefik.enable: true
+      traefik.http.routers.navidrome-mg.tls: true
+      traefik.http.routers.navidrome-mg.tls.certresolver: resolver_letsencrypt
+      traefik.http.routers.navidrome-mg.entrypoints: entry_https
+      traefik.http.services.navidrome-mg.loadbalancer.server.port: 4533
 
-      - com.centurylinklabs.watchtower.enable=true
+      com.centurylinklabs.watchtower.enable: true
     ports:
       - "4533:4533"
 

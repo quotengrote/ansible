@@ -22,7 +22,7 @@ services:
         networks:
           - intern
         labels:
-          - com.centurylinklabs.watchtower.enable=true
+          com.centurylinklabs.watchtower.enable: true
 
 # runner
     drone-runner-docker:
@@ -45,7 +45,7 @@ services:
         labels:
           com.centurylinklabs.watchtower.enable: true
           com.centurylinklabs.watchtower.depends-on: drone-server
-          
+
 ######## Volumes ########
 volumes:
   data:

@@ -22,14 +22,14 @@ services:
       - intern
       - traefik
     labels:
-      - traefik.http.routers.miniflux.rule=Host(`miniflux.mgrote.net`)
-      - traefik.enable=true
-      - traefik.http.routers.miniflux.tls=true
-      - traefik.http.routers.miniflux.tls.certresolver=resolver_letsencrypt
-      - traefik.http.routers.miniflux.entrypoints=entry_https
-      - traefik.http.services.miniflux.loadbalancer.server.port=8080
-      - com.centurylinklabs.watchtower.enable=true
-      - com.centurylinklabs.watchtower.depends-on=mf-db
+      traefik.http.routers.miniflux.rule: Host(`miniflux.mgrote.net`)
+      traefik.enable: true
+      traefik.http.routers.miniflux.tls: true
+      traefik.http.routers.miniflux.tls.certresolver: resolver_letsencrypt
+      traefik.http.routers.miniflux.entrypoints: entry_https
+      traefik.http.services.miniflux.loadbalancer.server.port: 8080
+      com.centurylinklabs.watchtower.enable: true
+      com.centurylinklabs.watchtower.depends-on: mf-db
 
 ######## PostGreSQL ########
   db:
@@ -45,8 +45,8 @@ services:
     networks:
       - intern
     labels:
-      - com.centurylinklabs.watchtower.enable=false
-      - com.centurylinklabs.watchtower.monitor-only=true
+      com.centurylinklabs.watchtower.enable: false
+      com.centurylinklabs.watchtower.monitor-only: true
 
 ######## Miniflux-Filter ########
   mf-filter:
@@ -64,8 +64,8 @@ services:
     networks:
       - intern
     labels:
-      - com.centurylinklabs.watchtower.enable=true
-      - com.centurylinklabs.watchtower.depends-on=mf-frontend
+      com.centurylinklabs.watchtower.enable: true
+      com.centurylinklabs.watchtower.depends-on: mf-frontend
 
 ######## RSS-Bridge ########
   rssbridge:
@@ -81,7 +81,7 @@ services:
     ports: #um neue Feeds einzufügen
       - 3001:80
     labels:
-      - com.centurylinklabs.watchtower.enable=true
+      com.centurylinklabs.watchtower.enable: true
 
 ######## changedetection ########
   changedetection.io:
@@ -99,7 +99,7 @@ services:
     networks:
       - intern
     labels:
-      - com.centurylinklabs.watchtower.enable=true
+      com.centurylinklabs.watchtower.enable: true
 
 ######## Volumes ########
 volumes:

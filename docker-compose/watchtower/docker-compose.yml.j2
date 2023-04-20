@@ -24,12 +24,12 @@ services:
       WATCHTOWER_NOTIFICATION_EMAIL_DELAY: 2
       WATCHTOWER_NO_STARTUP_MESSAGE: true
     labels:
-      - com.centurylinklabs.watchtower.enable=true
+      com.centurylinklabs.watchtower.enable: true
 
 # monitore diesen Container nur
 #   labels:
-#     - com.centurylinklabs.watchtower.monitor-only=true
+#     com.centurylinklabs.watchtower.monitor-only: true
 # dieser container hängt von x ab
-#     - com.centurylinklabs.watchtower.depends-on=mf-db
+#     com.centurylinklabs.watchtower.depends-on: mf-db
 # aktualisiere container
-#     - com.centurylinklabs.watchtower.enable=true
+#     com.centurylinklabs.watchtower.enable: true

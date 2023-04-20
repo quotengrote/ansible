@@ -10,7 +10,7 @@ services:
     ports:
       - 3344:80
     labels:
-      - com.centurylinklabs.watchtower.enable=true
+      com.centurylinklabs.watchtower.enable: true
 
   python-api-server:
     container_name: httpd-api
@@ -27,7 +27,7 @@ services:
       UPLOAD_DIRECTORY: /uploads
       AUTH_TOKEN: {{ lookup('keepass', 'httpd-api-server-token', 'password') }}
     labels:
-      - com.centurylinklabs.watchtower.enable=true
+      com.centurylinklabs.watchtower.enable: true
 
 volumes:
   uploads:
