@@ -106,7 +106,7 @@ services:
       traefik.http.middlewares.nextcloud-hsts.headers.stsseconds: 15552001
       traefik.http.middlewares.nextcloud-hsts.headers.isdevelopment: false
 
-      traefik.http.routers.nextcloud.middlewares: nextcloud-hsts@docker,nextcloud-webdav@docker
+      traefik.http.routers.nextcloud.middlewares: nextcloud-hsts,nextcloud-webdav,error-pages-middleware
 
 ######## Networks ########
 networks:

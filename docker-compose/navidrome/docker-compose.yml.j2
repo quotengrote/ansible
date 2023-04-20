@@ -36,6 +36,8 @@ services:
       traefik.http.routers.navidrome-mg.entrypoints: entry_https
       traefik.http.services.navidrome-mg.loadbalancer.server.port: 4533
 
+      traefik.http.routers.navidrome-mg.middlewares: error-pages-middleware
+
       com.centurylinklabs.watchtower.enable: true
     ports:
       - "4533:4533"

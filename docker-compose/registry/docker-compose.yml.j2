@@ -27,6 +27,8 @@ services:
       traefik.http.routers.registry.middlewares: registry-ipwhitelist
       traefik.http.middlewares.registry-ipwhitelist.ipwhitelist.sourcerange: 192.168.0.0/17
 
+      traefik.http.routers.registry.middlewares: error-pages-middleware
+
       com.centurylinklabs.watchtower.depends-on: oci-registry-redis
       com.centurylinklabs.watchtower.enable: true
 
@@ -63,7 +65,7 @@ services:
       - intern
     labels:
       traefik.http.routers.registry-ui.rule: Host(`registry.mgrote.net`)&&PathPrefix(`/ui`) # mache unter /ui erreichbar, damit wird demPfad dieser Prefix hinzugefügt, die Anwendung "hört" dort abrer nicht
-      traefik.http.routers.registry-ui.middlewares: registry-ui-strip-prefix,registry-ui-auth  # also entferne den Prefix danach wieder
+      traefik.http.routers.registry-ui.middlewares: registry-ui-strip-prefix,registry-ui-auth,error-pages-middleware  # also entferne den Prefix danach wieder
       traefik.http.middlewares.registry-ui-strip-prefix.stripprefix.prefixes: /ui # hier ist die Middleware definiert
       traefik.enable: true
       traefik.http.routers.registry-ui.tls: true

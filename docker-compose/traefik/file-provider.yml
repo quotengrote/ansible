@@ -25,6 +25,8 @@ http:
         - entry_https
       tls:
         certresolver: resolver_letsencrypt
+      middlewares:
+        - error-pages-middleware@docker
     router_gitea:
       rule: "Host(`git.mgrote.net`)"
       service: "service_gitea"

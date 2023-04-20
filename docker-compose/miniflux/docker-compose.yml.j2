@@ -28,8 +28,12 @@ services:
       traefik.http.routers.miniflux.tls.certresolver: resolver_letsencrypt
       traefik.http.routers.miniflux.entrypoints: entry_https
       traefik.http.services.miniflux.loadbalancer.server.port: 8080
+      
+      traefik.http.routers.miniflux.middlewares: error-pages-middleware
+
       com.centurylinklabs.watchtower.enable: true
       com.centurylinklabs.watchtower.depends-on: mf-db
+
 
 ######## PostGreSQL ########
   db:
