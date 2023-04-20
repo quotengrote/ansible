@@ -1,0 +1,83 @@
+version: '3.3'
+services:
+  oci-registry:
+    restart: always
+    container_name: oci-registry
+    image: registry:2
+    volumes:
+      - /mnt/oci-registry:/var/lib/registry
+      - ./htpasswd:/auth/htpasswd
+    networks:
+      - traefik
+      - intern
+    environment:
+      TZ: Europe/Berlin
+      REGISTRY_AUTH: none
+      REGISTRY_REDIS_ADDR: oci-registry-redis:6379
+      REGISTRY_REDIS_PASSWORD: {{ lookup('keepass', 'oci-registry-redis-pw', 'password') }}
+      REGISTRY_STORAGE_DELETE_ENABLED: true
+    labels:
+      traefik.http.routers.registry.rule: Host(`registry.mgrote.net`)
+      traefik.enable: true
+      traefik.http.routers.registry.tls: true
+      traefik.http.routers.registry.tls.certresolver: resolver_letsencrypt
+      traefik.http.routers.registry.entrypoints: entry_https
+      traefik.http.services.registry.loadbalancer.server.port: 5000
+
+      traefik.http.routers.registry.middlewares: registry-ipwhitelist
+      traefik.http.middlewares.registry-ipwhitelist.ipwhitelist.sourcerange: 192.168.0.0/17
+
+      com.centurylinklabs.watchtower.depends-on: oci-registry-redis
+      com.centurylinklabs.watchtower.enable: true
+
+    # testen mit:
+    # docker pull ubuntu
+    # docker image tag ubuntu registry.mgrote.net/myfirstimage
+    # docker login --username regadmin --password <password> registry.mgrote.net
+    # docker push registry.mgrote.net/myfirstimage
+    # docker pull registry.mgrote.net/myfirstimage
+
+  oci-registry-redis:
+    image: redis:7
+    container_name: oci-registry-redis
+    networks:
+      - intern
+    restart: always
+    environment:
+      REDIS_PASSWORD: {{ lookup('keepass', 'oci-registry-redis-pw', 'password') }}
+      MAXMEMORY POLICY: allkeys-lru
+    labels:
+      com.centurylinklabs.watchtower.enable: true
+
+  oci-registry-ui:
+    restart: always
+    # url: registry.mgrote.net/ui/index.html
+    image: joxit/docker-registry-ui:latest
+    container_name: oci-registry-ui
+    environment:
+      DELETE_IMAGES: true
+      SINGLE_REGISTRY: true
+      NGINX_PROXY_PASS_URL: http://oci-registry:5000
+    networks:
+      - traefik
+      - intern
+    labels:
+      traefik.http.routers.registry-ui.rule: Host(`registry.mgrote.net`)&&PathPrefix(`/ui`) # mache unter /ui erreichbar, damit wird demPfad dieser Prefix hinzugefügt, die Anwendung "hört" dort abrer nicht
+      traefik.http.routers.registry-ui.middlewares: registry-ui-strip-prefix,registry-ui-auth  # also entferne den Prefix danach wieder
+      traefik.http.middlewares.registry-ui-strip-prefix.stripprefix.prefixes: /ui # hier ist die Middleware definiert
+      traefik.enable: true
+      traefik.http.routers.registry-ui.tls: true
+      traefik.http.routers.registry-ui.tls.certresolver: resolver_letsencrypt
+      traefik.http.routers.registry-ui.entrypoints: entry_https
+      traefik.http.services.registry-ui.loadbalancer.server.port: 80
+
+      com.centurylinklabs.watchtower.depends-on: oci-registry-redis,oci-registry
+      com.centurylinklabs.watchtower.enable: true
+
+      traefik.http.middlewares.registry-ui-auth.basicauth.users: ui-user:$$2y$$05$$6NLaW1ewe/t4M/qnaPHCx.bmsIKR5MOukwJFrvhyFUcqueRcm9i8K # echo $(htpasswd -nB ui-user password) | sed -e s/\\$/\\$\\$/g
+
+######## Networks ########
+networks:
+  traefik:
+    external: true
+  intern:

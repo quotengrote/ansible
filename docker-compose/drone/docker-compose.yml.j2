@@ -18,7 +18,7 @@ services:
             - '444:443'
         restart: always
         container_name: drone-server
-        image: 'drone/drone:latest'
+        image: 'drone/drone:2'
         networks:
           - intern
         labels:
@@ -43,8 +43,9 @@ services:
         networks:
           - intern
         labels:
-          - com.centurylinklabs.watchtower.enable=true
-
+          com.centurylinklabs.watchtower.enable: true
+          com.centurylinklabs.watchtower.depends-on: drone-server
+          
 ######## Volumes ########
 volumes:
   data:

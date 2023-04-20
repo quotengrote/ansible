@@ -3,7 +3,7 @@ services:
   apt-cacher-ng:
     container_name: apt-cacher-ng
     restart: always
-    image: quotengrote/apt-cacher-ng:master
+    image: registry.mgrote.net/apt-cacher-ng:master
     ports:
       - "9999:9999"
     volumes:

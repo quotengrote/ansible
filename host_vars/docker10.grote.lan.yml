@@ -12,10 +12,21 @@
          filesystem: xfs
          mount: true
          mntp: /var/lib/docker
+   - vgname: vg_docker_volumes
+     disks:
+       - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
+     create: true
+     lvnames:
+       - lvname: ociregistry
+         size: +100%FREE
+         create: true
+         filesystem: xfs
+         mount: true
+         mntp: /mnt/oci-registry
   manage_lvm: true
   pvresize_to_max: true
   ### mgrote.restic
-  restic_folders_to_backup: "/ /var/lib/docker" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben
+  restic_folders_to_backup: "/ /var/lib/docker /mnt/oci-registry" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben
 
   ### mgrote.docker-compose-inline
   compose_owner: "docker-user"
@@ -55,6 +66,9 @@
       state: present
     - name: acng
       state: present
+    - name: registry
+      state: present
+      network: traefik
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow

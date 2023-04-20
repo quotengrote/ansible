@@ -9,7 +9,7 @@ providers:
 entryPoints:
   entry_http:
     address: :80
-    http:   #Umleitung http zu https
+    http: # Umleitung http zu https
       redirections:
         entryPoint:
           to: entry_https
@@ -20,7 +20,7 @@ entryPoints:
   entry_ssh:
     address: :2222 # wenn hier zusätzliche Ports eingetragen werden, müssen diese auch in der docker-compose.yml als Ports gemappt werden
 
-#letsencrypt
+# letsencrypt
 certificatesResolvers:
   resolver_letsencrypt:
     acme:
@@ -35,4 +35,4 @@ log:
 
 api:
   insecure: true
-  dashboard: true #unter Port 8081 erreichbar
+  dashboard: true # unter Port 8081 erreichbar
