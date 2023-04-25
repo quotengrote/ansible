@@ -38,7 +38,7 @@
       protocol: tcp
       comment: 'munin'
       from_ip: 192.168.2.144/24
-  ### tmaurice.gitea
+  ### l3d.gitea
   # config liegt in /etc/gitea/gitea.ini
   gitea_version: "1.19.1"
   gitea_app_name: "Gitea"
@@ -60,7 +60,6 @@
   gitea_force_private: false
   gitea_oauth2_enabled: true
   gitea_repo_indexer_enabled: true
-  gitea_backup_on_upgrade: true
 
   gitea_mailer_enabled: true
   gitea_mailer_skip_verify: false
@@ -70,6 +69,8 @@
   gitea_mailer_user: "info@mgrote.net"
   gitea_mailer_password: "{{ lookup('keepass', 'postfix_absender_passwort', 'password') }}"
   gitea_mailer_type: smtp
+
+  gitea_default_branch: 'master'
 
   gitea_db_type: sqlite3
   gitea_db_path: "{{ gitea_home }}/data/gitea.db" # for sqlite3
@@ -95,10 +96,11 @@
   gitea_fail2ban_jail_bantime: 600
   # wird für drone benötigt, sonst wird der Webhook nicht "gesendet"
   gitea_extra_config: |
-                    [webhook]
-                    ALLOWED_HOST_LIST = *.grote.lan
-                    [repository]
-                    DEFAULT_BRANCH = master
+    [webhook]
+    ALLOWED_HOST_LIST = *.grote.lan
+
+  gitea_backup_on_upgrade: false
+  gitea_backup_location: "{{ gitea_home }}/backups/"
 
   ### mgrote.munin-node
   munin_node_plugins:
