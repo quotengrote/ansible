@@ -177,6 +177,10 @@ stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::Twitter
 stadt-bremerhaven.de::WM 2022
 stadt-bremerhaven.de::eFootball
+sueddeutsche.de::Hertha
+sueddeutsche.de::DFB-Frauen:
+sueddeutsche.de::Dritte Liga:
+sueddeutsche.de::Fußball:
 sueddeutsche.de::Fußball-Weltmeisterschaft
 sueddeutsche.de::Fifa
 sueddeutsche.de::Infantino
