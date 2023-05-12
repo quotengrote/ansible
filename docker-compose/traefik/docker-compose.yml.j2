@@ -38,6 +38,7 @@ services:
   error-pages:
     container_name: "traefik-error-pages"
     image: tarampampam/error-pages:2
+    restart: always
     environment:
       TEMPLATE_NAME: ghost
     labels:
@@ -67,6 +68,7 @@ services:
   nforwardauth:
     container_name: "traefik-nforwardauth"
     image: nosduco/nforwardauth:v1
+    restart: always
     depends_on:
       - traefik
     networks:
