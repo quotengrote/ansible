@@ -31,7 +31,7 @@ certificatesResolvers:
       tlsChallenge: true
 
 log:
-  level: INFO
+  level: DEBUG
 
 api:
   insecure: true

@@ -19,7 +19,7 @@ http:
 ###### router #####
   routers:
     router_dokuwiki:
-      rule: "Host(`dokuwiki.mgrote.net`,`mgrote.net`,`www.mgrote.net`,`wiki.mgrote.net`)"
+      rule: "Host(`dokuwiki.mgrote.net`,`wiki.mgrote.net`)"
       service: "service_dokuwiki"
       entrypoints:
         - entry_https

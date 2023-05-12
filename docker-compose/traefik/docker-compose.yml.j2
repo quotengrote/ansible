@@ -3,7 +3,7 @@ services:
 ######## traefik ########
   traefik:
     container_name: "traefik"
-    image: traefik:latest
+    image: traefik:2.9
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -21,7 +21,19 @@ services:
       TZ: Europe/Berlin
     labels:
       com.centurylinklabs.watchtower.enable: true
-######## traefik ########
+      # hier sind gemeinsame middlewares defniert und zu einer chain zusammengefasst
+      # CAVE: die Reihenfolge innerhalb von Chains/von Middlewares ist wichtig
+      # Aufbau: traefik.http.middlewares.<NAME>.chain.middlewares: middleware1,middleware2,middleware3
+      # diese kann dann direkt eingebunden werden:
+      # Beispiel: XXXXX
+      # beim Einsatz von nforwardauth:
+      # Beispiel: YYYYY
+
+      # Middleware default
+      # enthält Rate-Limiting, Error-Pages und ZZZ?
+
+
+######## error-pages ########
 # https://github.com/tarampampam/error-pages/wiki/Traefik-(docker-compose)
   error-pages:
     container_name: "traefik-error-pages"
@@ -29,6 +41,7 @@ services:
     environment:
       TEMPLATE_NAME: ghost
     labels:
+      com.centurylinklabs.watchtower.depends-on: traefik
       com.centurylinklabs.watchtower.enable: true
 
       traefik.enable: true
@@ -48,6 +61,39 @@ services:
       - traefik
     networks:
       - traefik
+
+######## nforwardauth ########
+# https://github.com/NOSDuco/nforwardauth
+  nforwardauth:
+    container_name: "traefik-nforwardauth"
+    image: nosduco/nforwardauth:v1
+    depends_on:
+      - traefik
+    networks:
+      - traefik
+    volumes:
+      - ./passwd:/passwd:ro # Mount local passwd file at /passwd as ready only
+    environment:
+      TOKEN_SECRET: {{ lookup('keepass', 'traefik-nforwardauth-token-secret', 'password') }} # Secret to use when signing auth token
+      AUTH_HOST: auth.mgrote.net
+      #COOKIE_DOMAIN: mgrote.net # Set domain for the cookies. This value will allow cookie and auth on *.yourdomain.com (including base domain)
+      PORT: 3000 # Set specific port to listen on
+    labels:
+      com.centurylinklabs.watchtower.depends-on: traefik
+      com.centurylinklabs.watchtower.enable: true
+
+      traefik.enable: true
+      traefik.http.routers.nforwardauth.rule: Host(`auth.mgrote.net`)
+
+      traefik.http.middlewares.nforwardauth.forwardauth.address: http://nforwardauth:3000
+
+      traefik.http.services.nforwardauth.loadbalancer.server.port: 3000
+      traefik.http.routers.nforwardauth.tls: true
+      traefik.http.routers.nforwardauth.tls.certresolver: resolver_letsencrypt
+      traefik.http.routers.nforwardauth.entrypoints: entry_https
+
+    #  traefik.http.routers.nforwardauth.middlewares: error-pages-middleware
+
 
 ######## Networks ########
 networks:

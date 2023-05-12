@@ -27,18 +27,19 @@ services:
       traefik.http.routers.registry.entrypoints: entry_https
       traefik.http.services.registry.loadbalancer.server.port: 5000
 
-      traefik.http.routers.registry.middlewares: registry-ipwhitelist
-      traefik.http.middlewares.registry-ipwhitelist.ipwhitelist.sourcerange: 192.168.0.0/16
+      traefik.http.routers.registry.middlewares: error-pages-middleware,registry-ipwhitelist
 
-      traefik.http.routers.registry.middlewares: error-pages-middleware
+      traefik.http.middlewares.registry-ipwhitelist.ipwhitelist.sourcerange: 192.168.2.0/24,10.25.25.0/24,192.168.48.0/24 # .48. ist Docker
+      traefik.http.middlewares.registry-ipwhitelist.ipwhitelist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipwhitelist/#ipstrategydepth
 
       com.centurylinklabs.watchtower.depends-on: oci-registry-redis
       com.centurylinklabs.watchtower.enable: true
 
+    # registry aufräumen: docker exec -it oci-registry /bin/registry garbage-collect [--dry-run] --delete-untagged=true /etc/docker/registry/config.yml
+
     # testen mit:
     # docker pull ubuntu
     # docker image tag ubuntu registry.mgrote.net/myfirstimage
-    # docker login --username regadmin --password <password> registry.mgrote.net
     # docker push registry.mgrote.net/myfirstimage
     # docker pull registry.mgrote.net/myfirstimage
 
@@ -63,12 +64,13 @@ services:
       DELETE_IMAGES: true
       SINGLE_REGISTRY: true
       NGINX_PROXY_PASS_URL: http://oci-registry:5000
+      SHOW_CONTENT_DIGEST: true # https://github.com/Joxit/docker-registry-ui/issues/297
     networks:
       - traefik
       - intern
     labels:
       traefik.http.routers.registry-ui.rule: Host(`registry.mgrote.net`)&&PathPrefix(`/ui`) # mache unter /ui erreichbar, damit wird demPfad dieser Prefix hinzugefügt, die Anwendung "hört" dort abrer nicht
-      traefik.http.routers.registry-ui.middlewares: registry-ui-strip-prefix,registry-ui-auth,error-pages-middleware  # also entferne den Prefix danach wieder
+      traefik.http.routers.registry-ui.middlewares: registry-ui-strip-prefix,error-pages-middleware,nforwardauth # also entferne den Prefix danach wieder
       traefik.http.middlewares.registry-ui-strip-prefix.stripprefix.prefixes: /ui # hier ist die Middleware definiert
       traefik.enable: true
       traefik.http.routers.registry-ui.tls: true
@@ -79,7 +81,6 @@ services:
       com.centurylinklabs.watchtower.depends-on: oci-registry-redis,oci-registry
       com.centurylinklabs.watchtower.enable: true
 
-      traefik.http.middlewares.registry-ui-auth.basicauth.users: ui-user:$$2y$$05$$6NLaW1ewe/t4M/qnaPHCx.bmsIKR5MOukwJFrvhyFUcqueRcm9i8K # echo $(htpasswd -nB ui-user password) | sed -e s/\\$/\\$\\$/g
 
 ######## Networks ########
 networks:

@@ -114,7 +114,7 @@
   postfix_smtp_server_port: 587
   postfix_smtp_use_tls: "yes"
   ### mgrote.apt_manage_sources
-  manage_sources_apt_proxy: "docker10.grote.lan:9999"
+  manage_sources_apt_proxy: "192.168.2.43:9999" # als IP da apt warum auch immer >10s braucht den Namen aufzulösen
   ### mgrote.tmux
   tmux_conf_destination: "/home/mg/.tmux.conf"
   tmux_bashrc_destination: "/home/mg/.bashrc"

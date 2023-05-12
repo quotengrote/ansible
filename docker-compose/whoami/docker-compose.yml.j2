@@ -1,0 +1,21 @@
+version: '3'
+services:
+  # here it works as expected
+  whoami:
+    image: traefik/whoami
+    container_name: whoami
+    restart: always
+    networks:
+      - traefik
+    labels:
+      traefik.http.routers.whoami.rule: Host(`whoami.mgrote.net`)
+      traefik.http.routers.whoami.middlewares: nforwardauth
+      traefik.enable: true
+      traefik.http.routers.whoami.tls: true
+      traefik.http.routers.whoami.tls.certresolver: resolver_letsencrypt
+      traefik.http.routers.whoami.entrypoints: entry_https
+      traefik.http.services.whoami.loadbalancer.server.port: 80
+
+networks:
+  traefik:
+    external: true

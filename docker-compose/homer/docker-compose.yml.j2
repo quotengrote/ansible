@@ -14,5 +14,21 @@ services:
       - ./assets/:/www/assets
     ports:
       - 333:8080
+    networks:
+      - traefik
     labels:
       com.centurylinklabs.watchtower.enable: true
+
+      traefik.http.routers.homer.rule: Host(`www.mgrote.net`,`mgrote.net`)
+      traefik.enable: true
+      traefik.http.routers.homer.tls: true
+      traefik.http.routers.homer.tls.certresolver: resolver_letsencrypt
+      traefik.http.routers.homer.entrypoints: entry_https
+      traefik.http.services.homer.loadbalancer.server.port: 8080
+
+      traefik.http.routers.homer.middlewares: nforwardauth
+      
+######## Networks ########
+networks:
+  traefik:
+    external: true

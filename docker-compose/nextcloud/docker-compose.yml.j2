@@ -76,7 +76,7 @@ services:
         PHP_MEMORY_LIMIT: 1024M
         PHP_UPLOAD_LIMIT: 10G
         APACHE_DISABLE_REWRITE_IP: 1
-        TRUSTED_PROXIES: "192.168.2.43" # docker10.grote.lan/traefik
+        TRUSTED_PROXIES: "192.168.48.0/24" # Subnetz in dem sich traefik befindet
     volumes:
       - app:/var/www/html
       - data:/var/www/html/data

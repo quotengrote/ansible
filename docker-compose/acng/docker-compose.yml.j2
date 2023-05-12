@@ -7,7 +7,7 @@ services:
     ports:
       - "9999:9999"
     volumes:
-      - cache:/var/cache/apt-cacher-ng
+      - /mnt/acng_cache:/var/cache/apt-cacher-ng
     environment:
       USER: acng-admin
       PASS: {{ lookup('keepass', 'acng_webinterface', 'password') }}
@@ -15,6 +15,3 @@ services:
       THRESHOLD: 60 # package housekeeping threshold
     labels:
       com.centurylinklabs.watchtower.enable: true
-
-volumes:
-  cache:

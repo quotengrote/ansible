@@ -298,5 +298,11 @@
         env.max_time 20
         env.short_label true
         env.follow_redirect true
+    - name: lxc_guests
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/lxc/lxc_guests
+      config: |
+        [lxc_guests]
+        user root
+        group root
   munin_node_disabled_plugins:
     - name: lvm_
