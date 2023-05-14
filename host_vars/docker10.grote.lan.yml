@@ -47,7 +47,7 @@
     - name: homer
       state: present
     - name: munin
-      state: absent # vorerst deaktiviert
+      state: present
     - name: drone
       state: present
     - name: nextcloud
