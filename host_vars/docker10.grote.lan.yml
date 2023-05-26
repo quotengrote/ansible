@@ -275,23 +275,6 @@
         env.password {{ lookup('keepass', 'munin_user_nextcloud', 'password') }}
         env.api_path /ocs/v2.php/apps/serverinfo/api/v1/info
         env.scheme https
-    - name: deye
-      src: https://git.mgrote.net/Mirror/munin-contrib/raw/branch/master/plugins/solar/deye
-      config: |
-        [deye]
-        env.user deyeadmin600
-        env.password {{ lookup('keepass', 'munin_deye_admin_pass', 'password') }}
-        env.ip 192.168.10.180
-        env.serial_number {{ lookup('keepass', 'SLRM_DEVICE_SN', 'password') }}
-    - name: solarman_api_inverter
-      src: https://git.mgrote.net/Mirror/munin-contrib/raw/branch/master/plugins/solar/solarman_api_inverter
-      config: |
-        [solarman_api_inverter]
-        env.SLRM_APPID {{ lookup('keepass', 'SLRM_APPID', 'password') }}
-        env.SLRM_DEVICE_SN {{ lookup('keepass', 'SLRM_DEVICE_SN', 'password') }}
-        env.SLRM_MAIL {{ lookup('keepass', 'SLRM_MAIL', 'password') }}
-        env.SLRM_PASSWORD {{ lookup('keepass', 'SLRM_PASSWORD', 'password') }}
-        env.SLRM_APPSECRET {{ lookup('keepass', 'SLRM_APPSECRET', 'password') }}
     - name: dnsresponse_192.168.2.1
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/network/dns/dnsresponse_
     - name: dnsresponse_192.168.2.43

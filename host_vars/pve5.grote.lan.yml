@@ -283,13 +283,6 @@
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_pool_dataset_count
     - name: ksm_
       src:  https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/system/kernel_same_page_merging
-    - name: apcupsd_ww
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/power/apcupsd_ww
-    - name: apcupsd_pwr
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/apcupsd_pwr
-      config: |
-        [apcupsd_pwr]
-        env.ups_model APC-BX950U-GR
     - name: http_response
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/http/http_response
       config: |
@@ -306,3 +299,5 @@
         group root
   munin_node_disabled_plugins:
     - name: lvm_
+    - name: apcupsd_ww
+    - name: apcupsd_pwr

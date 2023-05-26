@@ -60,6 +60,8 @@
     - name: squid_objectsize # proxmox
     - name: squid_requests # proxmox
     - name: squid_traffic # proxmox
+    - name: solarman_api_inverter
+    - name: deye
   munin_node_plugins:
     - name: timesync
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
