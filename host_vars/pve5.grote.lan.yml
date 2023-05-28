@@ -298,6 +298,18 @@
         user root
         group root
   munin_node_disabled_plugins:
+    - name: meminfo # zu hohe last
+    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
+    - name: ntp # verursacht zu viele dns ptr request
+    - name: hddtempd # ersetzt durch hddtemp_smartctl
+    - name: mt_system_crs309 # switch ausgebaut
+    - name: squid_cache # proxmox
+    - name: squid_objectsize # proxmox
+    - name: squid_requests # proxmox
+    - name: squid_traffic # proxmox
+    - name: solarman_api_inverter
+    - name: deye
     - name: lvm_
     - name: apcupsd_ww
+    - name: slab
     - name: apcupsd_pwr
