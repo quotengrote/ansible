@@ -19,6 +19,7 @@ services:
       REGISTRY_REDIS_ADDR: oci-registry-redis:6379
       REGISTRY_REDIS_PASSWORD: {{ lookup('keepass', 'oci-registry-redis-pw', 'password') }}
       REGISTRY_STORAGE_DELETE_ENABLED: true
+      REGISTRY_CATALOG_MAXENTRIES: 100000 # https://github.com/Joxit/docker-registry-ui/issues/306
     labels:
       traefik.http.routers.registry.rule: Host(`registry.mgrote.net`)
       traefik.enable: true
@@ -65,18 +66,23 @@ services:
       SINGLE_REGISTRY: true
       NGINX_PROXY_PASS_URL: http://oci-registry:5000
       SHOW_CONTENT_DIGEST: true # https://github.com/Joxit/docker-registry-ui/issues/297
+      SHOW_CATALOG_NB_TAGS: true
     networks:
       - traefik
       - intern
     labels:
       traefik.http.routers.registry-ui.rule: Host(`registry.mgrote.net`)&&PathPrefix(`/ui`) # mache unter /ui erreichbar, damit wird demPfad dieser Prefix hinzugefügt, die Anwendung "hört" dort abrer nicht
-      traefik.http.routers.registry-ui.middlewares: registry-ui-strip-prefix,error-pages-middleware,nforwardauth # also entferne den Prefix danach wieder
+      traefik.http.routers.registry-ui.middlewares: registry-ui-strip-prefix,registry-ui-ipwhitelist # also entferne den Prefix danach wieder
       traefik.http.middlewares.registry-ui-strip-prefix.stripprefix.prefixes: /ui # hier ist die Middleware definiert
       traefik.enable: true
       traefik.http.routers.registry-ui.tls: true
       traefik.http.routers.registry-ui.tls.certresolver: resolver_letsencrypt
       traefik.http.routers.registry-ui.entrypoints: entry_https
       traefik.http.services.registry-ui.loadbalancer.server.port: 80
+
+      traefik.http.middlewares.registry-ui-ipwhitelist.ipwhitelist.sourcerange: 192.168.2.0/24,10.25.25.0/24,192.168.48.0/24 # .48. ist Docker
+      traefik.http.middlewares.registry-ui-ipwhitelist.ipwhitelist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipwhitelist/#ipstrategydepth
+
 
       com.centurylinklabs.watchtower.depends-on: oci-registry-redis,oci-registry
       com.centurylinklabs.watchtower.enable: true
