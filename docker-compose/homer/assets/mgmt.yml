@@ -36,11 +36,6 @@ services:
   - name: "Infra"
     icon: "fas fa-cloud"
     items:
-      - name: "Apt-Cacher-NG"
-        logo: "assets/icons/acng.jpg"
-        url: "http://docker10.grote.lan:9999/acng-report.html"
-        target: "_blank"
-        subtitle: "apt"
       - name: "gitea"
         logo: "assets/icons/gitea.png"
         url: "https://git.mgrote.net"
