@@ -23,12 +23,6 @@
          filesystem: xfs
          mount: true
          mntp: /mnt/oci-registry
-       - lvname: acng_cache
-         size: 10G
-         create: true
-         filesystem: xfs
-         mount: true
-         mntp: /mnt/acng_cache
   manage_lvm: true
   pvresize_to_max: true
   ### mgrote.restic
@@ -69,8 +63,6 @@
     - name: watchtower
       state: present
     - name: blocky
-      state: present
-    - name: acng
       state: present
     - name: registry
       state: present

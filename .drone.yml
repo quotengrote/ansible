@@ -4,15 +4,22 @@ type: docker
 name: default
 
 steps:
-  - name: run gitleaks
+  - name: gitleaks
     image: plugins/gitleaks
     settings:
       path: .
+    when:
+      event:
+        exclude:
+          - tag
 
   - name: lint
     image: pipelinecomponents/ansible-lint
     environment:
-      http_proxy: http://docker10.grote.lan:9999
       DEBIAN_FRONTEND: noninteractive
     commands:
-      - ansible-lint --show-relpath  .
+      - ansible-lint --show-relpath -v --offline .
+    when:
+      event:
+        exclude:
+          - tag
