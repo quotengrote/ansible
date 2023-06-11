@@ -33,7 +33,7 @@ services:
             # container-name des servers
             DRONE_RPC_HOST: drone-server
             DRONE_RPC_SECRET: {{ lookup('keepass', 'drone_rpc_secret', 'password') }}
-            DRONE_RUNNER_CAPACITY: 4
+            DRONE_RUNNER_CAPACITY: 8
             DRONE_RUNNER_NAME: drone-runner
         ports:
             - '3000:3000'
