@@ -1,7 +1,7 @@
 ---
 kind: pipeline
 type: docker
-name: default
+name: gitleaks
 
 steps:
   - name: gitleaks
@@ -13,13 +13,34 @@ steps:
         exclude:
           - tag
 
-  - name: lint
-    image: pipelinecomponents/ansible-lint
-    environment:
-      DEBIAN_FRONTEND: noninteractive
+---
+kind: pipeline
+type: docker
+name: ansible-lint
+steps:
+  - name: ansible-lint
+    image: cytopia/ansible-lint
     commands:
-      - ansible-lint --show-relpath -v --offline .
+      - /usr/bin/ansible-lint *.*
     when:
       event:
         exclude:
           - tag
+depends_on:
+  - gitleaks
+
+---
+kind: pipeline
+type: docker
+name: yaml-lint
+steps:
+  - name: yamllint
+    image: cytopia/yamllint:1
+    commands:
+      - /usr/bin/yamllint -f colored .
+    when:
+      event:
+        exclude:
+          - tag
+depends_on:
+  - gitleaks

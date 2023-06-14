@@ -1,0 +1,3 @@
+ignore:
+  - ./roles/pandemonium1986.ansible-role-k9s
+  - ./roles/robertdebock.bootstrap
