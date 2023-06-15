@@ -5,7 +5,7 @@ services:
     container_name: oci-registry
     image: registry:2
     volumes:
-      - /mnt/oci-registry:/var/lib/registry
+      - oci:/var/lib/registry
       - ./htpasswd:/auth/htpasswd
     networks:
       - traefik
@@ -93,3 +93,8 @@ networks:
   traefik:
     external: true
   intern:
+
+
+######## Volumes ########
+volumes:
+  oci:

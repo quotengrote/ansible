@@ -12,17 +12,6 @@
          filesystem: xfs
          mount: true
          mntp: /var/lib/docker
-   - vgname: vg_docker_volumes
-     disks:
-       - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
-     create: true
-     lvnames:
-       - lvname: ociregistry
-         size: 10G
-         create: true
-         filesystem: xfs
-         mount: true
-         mntp: /mnt/oci-registry
   manage_lvm: true
   pvresize_to_max: true
   ### mgrote.restic
