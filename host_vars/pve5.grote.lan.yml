@@ -2,7 +2,7 @@
   # rpool ist unverschlüsselt als Boot-Medium
   # der Speicherort fur die VMs ist verschlüsselt
   # zfs create -o encryption=aes-256-gcm -o keyformat=passphrase rpool/vm
-  # entschlüsseln nach Boot mit: sudo zfs mount -a  -l
+  # entschlüsseln nach Boot mit: sudo zpool import -d /dev/disk/by-id/ -a && sudo zfs mount -a  -l
   ## HDD_DATA_RAIDZ
   ### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase hdd_data_raidz mirror /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A27KFJDH /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A28LFJDH
 
@@ -30,8 +30,6 @@
     # rpool - Data
     - dataset: rpool/data
       state: present
-    - dataset: rpool/data/acng
-      state: absent
     # rpool - VMs
     - dataset: rpool/vm
       state: present
@@ -230,86 +228,3 @@
       mp_nr: 16
       mp_path_host: /hdd_data_raidz/vm
       mp_path_guest: /shares_vm
-
-  ### mgrote.munin-node
-  munin_node_plugins:
-    - name: timesync
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
-    - name: systemd_status
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
-    - name: systemd_mem
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_mem
-      config: |
-        [systemd_mem]
-        env.all_services true
-    - name: fail2ban
-      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
-      config: |
-        [fail2ban]
-        env.client /usr/bin/fail2ban-client
-        env.config_dir /etc/fail2ban
-        user root
-    - name: zfs_arcstats
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_arcstats
-    - name: zfsonlinux_stats_
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfsonlinux_stats_
-    - name: zpool_iostat
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_iostat
-    - name: zfs_list
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_list
-      config: |
-        [zfs_list]
-        env.ignore_datasets_pattern autodaily
-    - name: zpool_capacity
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_capacity
-    - name: kvm_mem
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_mem
-    - name: kvm_net
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_net
-    - name: kvm_io
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_io
-      config: |
-        [kvm_io]
-        user root
-    - name: kvm_cpu
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_cpu
-    - name: proxmox_count
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/proxmox/proxmox_vm_count
-      config: |
-        [proxmox_count]
-        user root
-        group root
-    - name: zfs_count
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_pool_dataset_count
-    - name: ksm_
-      src:  https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/system/kernel_same_page_merging
-    - name: http_response
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/http/http_response
-      config: |
-        [http_response]
-        env.sites https://pve5.grote.lan:8006
-        env.max_time 20
-        env.short_label true
-        env.follow_redirect true
-    - name: lxc_guests
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/lxc/lxc_guests
-      config: |
-        [lxc_guests]
-        user root
-        group root
-  munin_node_disabled_plugins:
-    - name: meminfo # zu hohe last
-    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
-    - name: ntp # verursacht zu viele dns ptr request
-    - name: hddtempd # ersetzt durch hddtemp_smartctl
-    - name: mt_system_crs309 # switch ausgebaut
-    - name: squid_cache # proxmox
-    - name: squid_objectsize # proxmox
-    - name: squid_requests # proxmox
-    - name: squid_traffic # proxmox
-    - name: solarman_api_inverter
-    - name: deye
-    - name: lvm_
-    - name: apcupsd_ww
-    - name: slab
-    - name: apcupsd_pwr

@@ -1,0 +1,90 @@
+---
+  # pbs_*
+  pbs_datastores:
+    - name: zfs_backup
+      path: /backup/pbs_data
+      gc_schedule: "sat 19:00"
+
+  pbs_prune_jobs:
+    - name: standard
+      schedule: "sat 18:15"
+      store: zfs_backup
+      keep_last: 3
+      keep_hourly: 24
+      keep_daily: 7
+      keep_weekly: 2
+
+  pbs_permissions:
+    - user: user_pve5@pbs
+      datastore: zfs_backup
+      role: DatastoreBackup
+
+  pbs_users:
+    - name: user_pve5
+      password: hallowelt
+      realm: pbs
+
+  # rpool ist unverschlüsselt als Boot-Medium
+  # entschlüsseln nach Boot mit: sudo zpool import -d /dev/disk/by-id/ -a && sudo zfs mount -a  -l
+
+  ## backup
+  ### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase backup /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A28LFJDH
+
+  # mgrote.zfs_manage_datasets
+  ### mgrote.zfs_extra
+  # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
+  zfs_datasets: # DatenPools werden hier nicht verwaltet
+    # rpool - System-Datasets
+    - dataset: rpool
+      state: present
+      compression: zstd
+      sync: disabled
+      xattr: sa
+      dnodesize: auto
+      atime: on
+      snapdir: hidden
+      reservation: 1G
+      refreservation: 10G
+    - dataset: rpool/ROOT
+      state: present
+      refreservation: 10G
+    - dataset: rpool/ROOT/pbs-1
+      state: present
+      refreservation: 10G
+    # backup-pool
+    - dataset: backup/pbs_data
+      state: present
+      quota: 1TB
+
+  # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
+  zfs_extra_arc_max_size: "429496729" # 4GB in Bytes
+  zfs_extra_zfs_pools:
+    - name: "rpool"
+      systemd_timer_schedule: "*-01,04,07,10-01 23:00" # jeden ersten eines jeden Quartals
+    - name: "backup"
+      systemd_timer_schedule: "*-01,04,07,10-01 23:00"
+
+  ### mgrote.zfs_sanoid
+  sanoid_datasets:
+    ### rpool
+    - path: rpool
+      recursive: 'no'
+      snapshots: true
+      template: 'pve3tage'
+    - path: rpool/ROOT
+      recursive: 'no'
+      snapshots: true
+      template: 'pve3tage'
+    - path: rpool/ROOT/pbs-1
+      recursive: 'no'
+      snapshots: true
+      template: 'pve3tage'
+    ### backup
+    - path: backup
+      recursive: 'no'
+      snapshots: true
+      template: '14tage'
+    - path: backup/pbs_data
+      recursive: 'no'
+      snapshots: true
+      template: '14tage'

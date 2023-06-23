@@ -1,0 +1,126 @@
+---
+  ### mgrote.restic
+  restic_folders_to_backup: "/ /etc/pve"
+  ### mgrote.user
+  users:
+    - username: root
+      password: "{{ lookup('keepass', 'root_linux_password_hash_proxmox', 'password') }}"
+      update_password: always
+      groups: ssh, sudo, root
+      state: present
+      allow_sudo: true
+      allow_passwordless_sudo: true
+    - username: mg
+      password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
+      update_password: on_create
+      groups: ssh, sudo
+      state: present
+      public_ssh_key: "{{ ssh_public_key_mg }}"
+      allow_sudo: true
+      allow_passwordless_sudo: true
+    - username: ansible-user
+      password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
+      update_password: on_create
+      groups: ssh, sudo
+      state: present
+      public_ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyqs0OE5RVqs6tIzyuGQWvq/OVDa/tfdSEqMIwcthFt+pwCCjpqtNc8L8FSXgphSwuNosFakqhMLDFD3pmII+t61NRExsoR3nGTDuCAQnTvTKXTEfhnunN3pwgXWVTI68j9pRzmSy+hMkSFbgN9EGMSXxGcNunY7ewS3ZkVe08SWFpiX9giYq6uiOiMHsZKdcP6s2QRXUhZlTx2cOc/9gJ5lD82EUXQRZzT6ww2xVrceIW9c3CZFmSmYWxvrR7dPcHrke90FPPd5WhU+Anz++6GsT6+OhZTk+uQnBHllFXn9NoFQIEUDO4zV+gFXITaAbTkLAcCwuKB2QcDZ6C2mhf ansible-generated on ansible-v2
+      allow_sudo: true
+      allow_passwordless_sudo: true
+    - username: drone
+      password: "{{ lookup('keepass', 'drone_linux_password_hash', 'password') }}"
+      update_password: on_create
+      groups: ssh, sudo
+      state: present
+      public_ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBvdN2vrhe57wMfJXELr1QycQo3H5yQIMl6BIBx1yl81 drone.io-User
+      allow_sudo: true
+      allow_passwordless_sudo: true
+  ### mgrote.apt_manage_packages
+  apt_packages_extra:
+    - ifupdown2
+    - bmon
+    - qemu-guest-agent
+    - open-vm-tools
+
+  ### mgrote.munin-node
+  munin_node_plugins:
+    - name: timesync
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
+    - name: systemd_status
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
+    - name: systemd_mem
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_mem
+      config: |
+        [systemd_mem]
+        env.all_services true
+    - name: fail2ban
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
+      config: |
+        [fail2ban]
+        env.client /usr/bin/fail2ban-client
+        env.config_dir /etc/fail2ban
+        user root
+    - name: zfs_arcstats
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_arcstats
+    - name: zfsonlinux_stats_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfsonlinux_stats_
+    - name: zpool_iostat
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_iostat
+    - name: zfs_list
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_list
+      config: |
+        [zfs_list]
+        env.ignore_datasets_pattern autodaily
+    - name: zpool_capacity
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_capacity
+    - name: kvm_mem
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_mem
+    - name: kvm_net
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_net
+    - name: kvm_io
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_io
+      config: |
+        [kvm_io]
+        user root
+    - name: kvm_cpu
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/libvirt/kvm_cpu
+    - name: proxmox_count
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/proxmox/proxmox_vm_count
+      config: |
+        [proxmox_count]
+        user root
+        group root
+    - name: zfs_count
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_pool_dataset_count
+    - name: ksm_
+      src:  https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/system/kernel_same_page_merging
+    - name: lxc_guests
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/lxc/lxc_guests
+      config: |
+        [lxc_guests]
+        user root
+        group root
+  munin_node_disabled_plugins:
+    - name: meminfo # zu hohe last
+    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
+    - name: ntp # verursacht zu viele dns ptr request
+    - name: hddtempd # ersetzt durch hddtemp_smartctl
+    - name: mt_system_crs309 # switch ausgebaut
+    - name: squid_cache # proxmox
+    - name: squid_objectsize # proxmox
+    - name: squid_requests # proxmox
+    - name: squid_traffic # proxmox
+    - name: solarman_api_inverter
+    - name: deye
+    - name: lvm_
+    - name: apcupsd_ww
+    - name: slab
+    - name: apcupsd_pwr
+    - name: timesync
+    - name: http_response
+    
+  ### mgrote.apt_manage_sources
+  manage_sources_apt_proxy: ""
+
+  # Ansible Variablen
+  ### sudo
+  sudo: false

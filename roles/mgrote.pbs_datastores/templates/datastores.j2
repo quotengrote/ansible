@@ -1,0 +1,8 @@
+{% if pbs_datastores is defined %}
+{% for item in pbs_datastores %}
+
+datastore: {{ item.name }}
+        gc-schedule {{ item.gc_schedule }}
+        path {{ item.path }}
+{% endfor %}
+{% endif %}

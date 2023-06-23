@@ -17,4 +17,3 @@
   - import_playbook: base/update_packages.yml
   - import_playbook: base/lvm.yml
   - import_playbook: base/fwupd.yml
-  - import_playbook: base/oom.yml

@@ -1,0 +1,7 @@
+{% if pbs_permissions is defined %}
+{% for item in pbs_permissions %}
+
+acl:1:/datastore/{{ item.datastore }}:{{ item.user }}:{{ item.role }}
+
+{% endfor %}
+{% endif %}

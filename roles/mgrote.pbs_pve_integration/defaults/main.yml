@@ -1,0 +1,8 @@
+---
+pve_pbs_datastore:
+  - name: pbs
+    server: 192.168.2.239
+    datastore: zfs_backup
+    username: user_pve5@pbs
+    password: hallowelt
+    fingerprint: "7F:AC:54:75:1C:33:55:84:1E:1E:3A:15:5A:5E:AF:79:33:C9:D4:E1:C0:A0:1C:0D:9E:6A:EA:82:F9:27:57:79"

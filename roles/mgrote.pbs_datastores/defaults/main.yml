@@ -1,0 +1,19 @@
+---
+pbs_datastores:
+  - name: zfs_backup
+    path: /backup/pbs_data
+    gc_schedule: "sat 19:00"
+
+pbs_prune_jobs:
+  - name: standard
+    schedule: "sat 18:15"
+    store: zfs_backup
+    keep_last: 3
+    keep_hourly: 24
+    keep_daily: 7
+    keep_weekly: 2
+
+pbs_permissions:
+  - user: user_pve5@pbs
+    datastore: zfs_backup
+    role: DatastoreBackup

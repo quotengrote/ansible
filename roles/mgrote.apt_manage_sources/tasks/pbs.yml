@@ -10,27 +10,27 @@
   - name: remove enterprise-Repository
     become: yes
     ansible.builtin.file:
-      path: "{{ manage_sources_enterprise_repo_path }}"
+      path: "{{ manage_sources_pbs_enterprise_repo_path }}"
       state: absent
 
-  - name: check if pve-no-subscription repo keys exists
+  - name: check if pbs-no-subscription repo keys exists
     stat:
-      path: "{{ manage_sources_apt_repo_key_path }}"
-    register: pve_no_subscription_repo_keys
+      path: "{{ manage_sources_pbs_apt_repo_key_path }}"
+    register: pbs_no_subscription_repo_keys
 
-  - name: add pve-no-subscription repo keys
+  - name: add pbs-no-subscription repo keys
     become: yes
     ansible.builtin.apt_key:
-      url: "{{ manage_sources_apt_repo_key_url }}"
+      url: "{{ manage_sources_pbs_apt_repo_key_url }}"
       state: present
     notify: update package lists
-    when: pve_no_subscription_repo_keys.stat.exists == false
+    when: pbs_no_subscription_repo_keys.stat.exists == false
 
-  - name: add pve-no-subscription repo
+  - name: add pbs-no-subscription repo
     become: yes
     ansible.builtin.apt_repository:
-      repo: "{{ manage_sources_apt_repo_no_subscription }}"
+      repo: "{{ manage_sources_pbs_apt_repo_no_subscription }}"
       state: present
-      filename: pve-no-subscription
+      filename: pbs-no-subscription
       update_cache: no
     notify: update package lists

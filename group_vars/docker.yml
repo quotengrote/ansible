@@ -100,6 +100,8 @@
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
     - name: docker_volumes
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
+    - name: docker_volumesize
+      src: https://git.mgrote.net/Mirror/munin-contrib/raw/branch/master/plugins/docker/docker_volumesize
   ### mgrote.apt_manage_packages
   apt_packages_extra:
     - bc # für munin plugins

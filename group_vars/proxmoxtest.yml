@@ -1,7 +1,0 @@
----
-  ### mgrote.apt_manage_packages
-  apt_packages_extra:
-    - qemu-guest-agent
-    - open-vm-tools
-    - ifupdown2
-    - bmon

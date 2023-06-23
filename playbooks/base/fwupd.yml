@@ -1,5 +1,5 @@
 ---
-  - hosts: all:!proxmox
+  - hosts: all
     roles:
       - { role: mgrote.fwupd_settings,
           become: true,

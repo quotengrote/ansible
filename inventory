@@ -6,6 +6,9 @@ all:
     fileserver:
       hosts:
         fileserver3.grote.lan:
+    lxc:
+      hosts:
+        fileserver3.grote.lan:
     ansible:
       hosts:
         ansible2.grote.lan:
@@ -15,13 +18,21 @@ all:
     vmtest:
       hosts:
         vm-test-2204.grote.lan:
-    proxmox:
+        #pbs-test.grote.lan:
+        pve5-test.grote.lan:
+    pve:
       hosts:
         pve5.grote.lan:
         pve5-test.grote.lan:
+    pbs:
+      hosts:
+        pbs.grote.lan:
+        #pbs-test.grote.lan:
     physical:
       hosts:
         pve5.grote.lan:
+        pbs.grote.lan:
+          ansible_host: 192.168.2.239
     gitea:
       hosts:
         gitea.grote.lan:
@@ -34,7 +45,9 @@ all:
         pve5.grote.lan:
         gitea.grote.lan:
         docker10.grote.lan:
+        pbs.grote.lan:
     test:
       hosts:
         vm-test-2204.grote.lan:
         pve5-test.grote.lan:
+        #pbs-test.grote.lan:

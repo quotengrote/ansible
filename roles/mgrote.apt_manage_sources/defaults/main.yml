@@ -1,8 +1,11 @@
 ---
-  manage_sources_enterprise_repo_path: /etc/apt/sources.list.d/pve-enterprise.list # wo ist das enterprise-repo
-  manage_sources_apt_repo_key_url: http://download.proxmox.com/debian/proxmox-ve-release-6.x.gpg # url zum key für no-subscription-repo
-  manage_sources_apt_repo_key_path: /etc/apt/trusted.gpg.d/proxmox-ve-release-6.x.gpg # pfad lokal zum key für no-subscription-repo
-  manage_sources_apt_repo_no_subscription: deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription # url zum für no-subscription-repo, manage_sources_apt_proxy_url wird aus der variable entnommen
+# pve
+  manage_sources_proxmox_enterprise_repo_path: /etc/apt/sources.list.d/pve-enterprise.list # wo ist das enterprise-repo
+  manage_sources_proxmox_apt_repo_key_url: http://download.proxmox.com/debian/proxmox-ve-release-6.x.gpg # url zum key für no-subscription-repo
+  manage_sources_proxmox_apt_repo_key_path: /etc/apt/trusted.gpg.d/proxmox-ve-release-6.x.gpg # pfad lokal zum key für no-subscription-repo
+  manage_sources_proxmox_apt_repo_no_subscription: deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription # url zum für no-subscription-repo, manage_sources_apt_proxy_url wird aus der variable entnommen
+
+
   manage_sources_apt_proxy: docker10.grote.lan:9999 # url+Port vom proxy
 #  manage_sources_extra_repos: # Extra Repositories
 #    - name: vivaldi # optional
@@ -10,3 +13,10 @@
 #      state: present # default: present
 #    - name: xnview
 #      url: deb https://repo.vivaldi.com/archive/deb/ stable main
+
+
+  # pbs
+  manage_sources_pbs_enterprise_repo_path: /etc/apt/sources.list.d/pbs-enterprise.list
+  manage_sources_pbs_apt_repo_key_path: /etc/apt/trusted.gpg.d/proxmox-ve-release-6.x.gpg
+  manage_sources_pbs_apt_repo_key_url: http://download.proxmox.com/debian/proxmox-ve-release-6.x.gpg
+  manage_sources_pbs_apt_repo_no_subscription: deb http://download.proxmox.com/debian/pbs bullseye pbs-no-subscription

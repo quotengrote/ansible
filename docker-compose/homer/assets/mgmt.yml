@@ -109,17 +109,13 @@ services:
         target: "_blank"
         subtitle: "Domainverwaltung"
 
-  - name: "Extern - NAS"
+  - name: "Extern - Südring"
     icon: "fas fa-cloud"
     items:
       - name: "QNAP TS-251+"
         logo: "assets/icons/qnap.png"
         url: "http://192.168.3.108:8080"
         target: "_blank"
-
-  - name: "Extern - Network"
-    icon: "fas fa-cloud"
-    items:
       - name: "Speedport Smart 3"
         logo: "assets/icons/speedport.png"
         url: "http://192.168.3.1"
@@ -127,4 +123,8 @@ services:
       - name: "Netgear GS308E"
         logo: "assets/icons/switch.png"
         url: "http://192.168.3.147"
+        target: "_blank"
+      - name: "Proxmox Backup Server"
+        logo: "assets/icons/pve.png"
+        url: "https://192.168.2.239.8007"
         target: "_blank"

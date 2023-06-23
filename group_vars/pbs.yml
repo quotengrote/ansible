@@ -1,0 +1,84 @@
+---
+  ### mgrote.restic
+  restic_folders_to_backup: "/ /etc/proxmox-backup"
+
+  ### mgrote.user
+  users:
+    - username: root
+      password: "{{ lookup('keepass', 'root_linux_password_hash_proxmox', 'password') }}"
+      update_password: always
+      groups: ssh, sudo, root
+      state: present
+      allow_sudo: true
+      allow_passwordless_sudo: true
+    - username: mg
+      password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
+      update_password: on_create
+      groups: ssh, sudo
+      state: present
+      public_ssh_key: "{{ ssh_public_key_mg }}"
+      allow_sudo: true
+      allow_passwordless_sudo: true
+    - username: ansible-user
+      password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
+      update_password: on_create
+      groups: ssh, sudo
+      state: present
+      public_ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyqs0OE5RVqs6tIzyuGQWvq/OVDa/tfdSEqMIwcthFt+pwCCjpqtNc8L8FSXgphSwuNosFakqhMLDFD3pmII+t61NRExsoR3nGTDuCAQnTvTKXTEfhnunN3pwgXWVTI68j9pRzmSy+hMkSFbgN9EGMSXxGcNunY7ewS3ZkVe08SWFpiX9giYq6uiOiMHsZKdcP6s2QRXUhZlTx2cOc/9gJ5lD82EUXQRZzT6ww2xVrceIW9c3CZFmSmYWxvrR7dPcHrke90FPPd5WhU+Anz++6GsT6+OhZTk+uQnBHllFXn9NoFQIEUDO4zV+gFXITaAbTkLAcCwuKB2QcDZ6C2mhf ansible-generated on ansible-v2
+      allow_sudo: true
+      allow_passwordless_sudo: true
+
+  ### mgrote.munin-node
+  munin_node_plugins:
+    - name: timesync
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
+    - name: systemd_status
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
+    - name: systemd_mem
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_mem
+      config: |
+        [systemd_mem]
+        env.all_services true
+    - name: lvm_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/disk/lvm_
+      config: |
+        [lvm_*]
+        user root
+    - name: fail2ban
+      src: https://git.mgrote.net/mg/munin-plugins/raw/branch/master/extern/fail2ban
+      config: |
+        [fail2ban]
+        env.client /usr/bin/fail2ban-client
+        env.config_dir /etc/fail2ban
+        user root
+    - name: zfs_arcstats
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_arcstats
+    - name: zfsonlinux_stats_
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfsonlinux_stats_
+    - name: zpool_iostat
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_iostat
+    - name: zfs_list
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_list
+      config: |
+        [zfs_list]
+        env.ignore_datasets_pattern autodaily
+    - name: zfs_count
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zfs_pool_dataset_count
+    - name: zpool_iostat
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_iostat
+    - name: zpool_capacity
+      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/zfs/zpool_capacity
+  munin_node_disabled_plugins:
+    - name: meminfo # zu hohe last
+    - name: hddtemp2 # ersetzt durch hddtemp_smartctl
+    - name: ntp # verursacht zu viele dns ptr request
+    - name: hddtempd # ersetzt durch hddtemp_smartctl
+    - name: mt_system_crs309 # switch ausgebaut
+    - name: squid_cache # proxmox
+    - name: squid_objectsize # proxmox
+    - name: squid_requests # proxmox
+    - name: squid_traffic # proxmox
+    - name: solarman_api_inverter
+    - name: deye
+    - name: lvm_
+    - name: timesync

@@ -1,0 +1,42 @@
+---
+  - name: check if datastores exist
+    become: yes
+    ansible.builtin.command: "proxmox-backup-manager datastore list --output-format json"
+    register: datastores
+    changed_when: false
+
+  - name: ensure datastores exist
+    become: yes
+    ansible.builtin.command: "proxmox-backup-manager datastore create {{ item.name }} {{ item.path }}"
+    loop: "{{ pbs_datastores }}"
+    when: "item.name not in datastores.stdout"
+
+  - name: ensure datastores are configured
+    become: yes
+    ansible.builtin.template:
+      src: datastores.j2
+      dest: /etc/proxmox-backup/datastore.cfg
+      owner: root
+      group: backup
+      mode: "640"
+      backup: yes
+
+  - name: ensure prune-jobs are configured
+    become: yes
+    ansible.builtin.template:
+      src: prune-jobs.j2
+      dest: /etc/proxmox-backup/prune.cfg
+      owner: root
+      group: backup
+      mode: "640"
+      backup: yes
+
+  - name: ensure permissions are configured
+    become: yes
+    ansible.builtin.template:
+      src: permissions.j2
+      dest: /etc/proxmox-backup/acl.cfg
+      owner: root
+      group: backup
+      mode: "640"
+      backup: yes

@@ -1,4 +1,0 @@
----
-  - hosts: fileserver
-    roles:
-      - { role: mgrote.disable_oom_killer, tags: "oom" }

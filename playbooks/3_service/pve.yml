@@ -1,5 +1,5 @@
 ---
-- hosts: proxmox
+- hosts: pve
   roles:
     - { role: mgrote.zfs_packages, tags: "zfs_packages" }
     - { role: mgrote.zfs_arc_mem, tags: "zfs_arc_mem" }
@@ -18,3 +18,4 @@
     - { role: mgrote.proxmox_bind_mounts,
         tags: "bindmounts" }
     - { role: mgrote.proxmox_lxc_profiles, tags: "lxc-profile" }
+    - { role: mgrote.pbs_pve_integration, tags: "pbs" }

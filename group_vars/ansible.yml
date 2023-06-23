@@ -7,9 +7,10 @@
     - name: Jinja2>=2.11.2
     - name: markupsafe
     - name: ara
+    - name: jmespath
   ### geerlingguy.ansible
   ansible_install_method: pip
-  ansible_install_version_pip: '2.10'
+  ansible_install_version_pip: '8.0.0'
   ### mgrote.apt_manage_packages
   apt_packages_extra:
     - sshpass

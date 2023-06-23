@@ -1,0 +1,15 @@
+---
+- hosts: pbs
+  roles:
+    - { role: mgrote.zfs_packages, tags: "zfs_packages" }
+    - { role: mgrote.zfs_arc_mem, tags: "zfs_arc_mem" }
+    - { role: mgrote.zfs_manage_datasets, tags: "datasets" }
+    - { role: mgrote.zfs_scrub, tags: "zfs_scrub" }
+    - { role: mgrote.zfs_zed, tags: "zfs_zed" }
+    - { role: mgrote.zfs_health, tags: "zfs_health" }
+    - { role: mgrote.zfs_sanoid,
+        tags: "sanoid" }
+    - { role: mgrote.smart, tags: "smart" }
+    - { role: mgrote.postfix, tags: "postfix" }
+    - { role: mgrote.pbs_users, tags: "pbs_users" }
+    - { role: mgrote.pbs_datastores, tags: "pbs_datastores" }
