@@ -26,14 +26,6 @@
       public_ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyqs0OE5RVqs6tIzyuGQWvq/OVDa/tfdSEqMIwcthFt+pwCCjpqtNc8L8FSXgphSwuNosFakqhMLDFD3pmII+t61NRExsoR3nGTDuCAQnTvTKXTEfhnunN3pwgXWVTI68j9pRzmSy+hMkSFbgN9EGMSXxGcNunY7ewS3ZkVe08SWFpiX9giYq6uiOiMHsZKdcP6s2QRXUhZlTx2cOc/9gJ5lD82EUXQRZzT6ww2xVrceIW9c3CZFmSmYWxvrR7dPcHrke90FPPd5WhU+Anz++6GsT6+OhZTk+uQnBHllFXn9NoFQIEUDO4zV+gFXITaAbTkLAcCwuKB2QcDZ6C2mhf ansible-generated on ansible-v2
       allow_sudo: true
       allow_passwordless_sudo: true
-    - username: drone
-      password: "{{ lookup('keepass', 'drone_linux_password_hash', 'password') }}"
-      update_password: on_create
-      groups: ssh, sudo
-      state: present
-      public_ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBvdN2vrhe57wMfJXELr1QycQo3H5yQIMl6BIBx1yl81 drone.io-User
-      allow_sudo: true
-      allow_passwordless_sudo: true
   ### mgrote.apt_manage_packages
   apt_packages_extra:
     - ifupdown2
@@ -117,7 +109,7 @@
     - name: apcupsd_pwr
     - name: timesync
     - name: http_response
-    
+
   ### mgrote.apt_manage_sources
   manage_sources_apt_proxy: ""
 
