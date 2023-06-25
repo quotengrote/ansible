@@ -57,7 +57,7 @@
       quota: 1TB
 
   # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
-  zfs_extra_arc_max_size: "429496729" # 4GB in Bytes
+  zfs_extra_arc_max_size: "4294967296" # 4GB in Bytes
   zfs_extra_zfs_pools:
     - name: "rpool"
       systemd_timer_schedule: "*-01,04,07,10-01 23:00" # jeden ersten eines jeden Quartals
