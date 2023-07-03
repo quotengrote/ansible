@@ -6,7 +6,7 @@
     - name: Set authorized key taken from file
       become: yes
       ansible.posix.authorized_key:
-        user: mg
+        user: ansible-user
         state: present
-        key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKL8opSQ0rWVw9uCfbuiqmXq188OP4xh66MBTO3zV5jo heimserver_mg_v3
+        key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcBwOjanQV6sFWaTetqpl20SVe3aRzGjKbsp7hKkDCE mg@irantu
         exclusive: true #entferne alle keys bis auf diesen

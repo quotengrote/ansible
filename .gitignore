@@ -2,6 +2,9 @@
 vault-pass.yml
 id_rsa_ansible_user
 id_rsa_ansible_user_pub
+id_rsa_ansible_user.pub
 plugins/lookup/__pycache__/**
 plugins/callback/__pycache__/
 trace/**json
+id_ed25519
+id_ed25519.pub
