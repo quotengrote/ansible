@@ -9,7 +9,10 @@ OnFailure=syncoid_mail.service
 Type=oneshot
 # check if dest-dataset is mounted (sed: entferne 1. Zeile; awk: zeige nur yes/no; grep: RC1 when != yes)
 {% for item in sanoid_syncoid_datasets_sync %}
-ExecStart=/bin/sh -c '/usr/sbin/zfs get mounted {{ item.destination_mount_check }} | sed 1d | awk "{print $3}" | grep yes'
+# check if target dataset is mounted
+ExecStart=/bin/sh -c '/usr/sbin/zfs get mounted {{ item.destination_mount_check }} | sed 1d | awk "{print $3}" | grep yes  > /dev/null'
+# check if source host is reachable
+ExecStart=/bin/sh -c 'ping -c1 -W1 {{ item.source_host }}  > /dev/null || {{ item.source_host }} not reachable!'
 # syncoid
 ExecStart=/usr/bin/syncoid --sshoption=StrictHostKeyChecking=no --delete-target-snapshots --use-hold --preserve-recordsize --sshkey "/etc/sanoid/.ssh/id_sanoid" --source-bwlimit {{ sanoid_syncoid_bwlimit }} {{ sanoid_user }}@{{ item.source_host }}:{{ item.source_dataset }} {{ item.destination_dataset }}
 {% endfor %}
