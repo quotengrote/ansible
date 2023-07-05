@@ -229,4 +229,4 @@
       datastore: zfs_backup
       username: user_pve5-test@pbs
       password: "{{ lookup('keepass', 'pbs_pve_user-test', 'password') }}"
-      fingerprint: "7F:AC:54:75:1C:33:55:84:1E:1E:3A:15:5A:5E:AF:79:33:C9:D4:E1:C0:A0:1C:0D:9E:6A:EA:82:F9:27:57:79"
+      fingerprint: "38:53:f6:1e:99:99:76:78:c4:00:dd:90:1a:89:47:56:97:4e:f3:62:01:d2:2c:76:ba:f8:55:be:f8:05:d1:7a"

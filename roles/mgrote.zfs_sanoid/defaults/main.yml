@@ -4,7 +4,7 @@
   ### when should syncoid be run
   sanoid_syncoid_timer: '*-*-* *:00:00'
   ### where to download the package
-  sanoid_deb_url: http://docker10.grote.lan:3344/sanoid_2.1.0.deb
+  sanoid_deb_url: http://docker10.grote.lan:3344/sanoid_3.0.0.deb
 
 #  ### "Default" Datasets
 #  sanoid_datasets: # dictionary

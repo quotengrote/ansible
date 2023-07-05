@@ -28,9 +28,7 @@
 
   - name: add pve-no-subscription repo
     become: yes
-    ansible.builtin.apt_repository:
-      repo: "{{ manage_sources_proxmox_apt_repo_no_subscription }}"
-      state: present
-      filename: pve-no-subscription
-      update_cache: no
+    ansible.builtin.template:
+      src: pve-no-subscription.j2
+      dest: pve-no-subscription.list
     notify: update package lists

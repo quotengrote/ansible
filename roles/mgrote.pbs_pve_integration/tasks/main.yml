@@ -17,7 +17,3 @@
     loop: "{{ pve_pbs_datastore }}"
     when: "item.name in storages.stdout"
     changed_when: false
-
-
-
-# alle pbs variablen beschscireben und kennworter in keeprss
