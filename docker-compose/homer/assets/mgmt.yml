@@ -128,3 +128,7 @@ services:
         logo: "assets/icons/pve.png"
         url: "https://192.168.2.239:8007"
         target: "_blank"
+      - name: "Proxmox Backup Server - Test"
+        logo: "assets/icons/pve.png"
+        url: "https://192.168.2.18:8007"
+        target: "_blank"

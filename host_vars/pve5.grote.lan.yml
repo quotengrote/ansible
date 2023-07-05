@@ -90,6 +90,10 @@
       systemd_timer_schedule: "*-01,04,07,10-01 23:00"
 
   ### mgrote.zfs_sanoid
+  sanoid_snaps_enable: true
+  ## enable sending snaps
+  sanoid_syncoid_source_host: true
+  sanoid_syncoid_ssh_pubkey: "{{ lookup('keepass', 'sanoid_syncoid_public_key', 'notes') }}"
   sanoid_datasets:
     ### hdd_data_raidz
     - path: 'hdd_data_raidz/videos'
@@ -228,3 +232,12 @@
       mp_nr: 16
       mp_path_host: /hdd_data_raidz/vm
       mp_path_guest: /shares_vm
+
+  # mgrote.pbs_pve_integration
+  pve_pbs_datastore:
+    - name: pbs
+      server: 192.168.2.239
+      datastore: zfs_backup
+      username: user_pve5@pbs
+      password: "{{ lookup('keepass', 'pbs_pve_user', 'password') }}"
+      fingerprint: "7F:AC:54:75:1C:33:55:84:1E:1E:3A:15:5A:5E:AF:79:33:C9:D4:E1:C0:A0:1C:0D:9E:6A:EA:82:F9:27:57:79"

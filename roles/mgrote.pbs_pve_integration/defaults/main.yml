@@ -1,4 +1,5 @@
 ---
+# add this datastore to pve
 pve_pbs_datastore:
   - name: pbs
     server: 192.168.2.239

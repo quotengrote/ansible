@@ -1,0 +1,23 @@
+---
+  - name: template ssh public key
+    become: true
+    ansible.posix.authorized_key:
+      user: "{{ sanoid_user }}"
+      key: "{{ sanoid_syncoid_ssh_pubkey }}"
+      state: present
+    when:
+      - sanoid_syncoid_source_host
+
+  - name: add user to sudoers
+    become: true
+    ansible.builtin.blockinfile:
+      path: /etc/sudoers
+      state: present
+      block:  |
+        {{ sanoid_user }} ALL=(ALL) NOPASSWD:ALL
+      validate: '/usr/sbin/visudo -cf %s'
+      backup: yes
+      marker_begin: sanoid-sudoers BEGIN
+      marker_end: sanoid-sudoers END
+    when:
+      - sanoid_syncoid_source_host

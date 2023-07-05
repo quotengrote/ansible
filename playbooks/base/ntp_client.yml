@@ -1,4 +1,4 @@
 ---
-  - hosts: all,!pbs
+  - hosts: all
     roles:
-      - { role: mgrote.systemd-timesyncd, tags: "ntp"}
+      - { role: mgrote.ntp_chrony_client, tags: "ntp"}

@@ -62,6 +62,7 @@
     - name: squid_traffic # proxmox
     - name: solarman_api_inverter
     - name: deye
+    - name: timesync
   munin_node_plugins:
     - name: timesync
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
@@ -84,6 +85,9 @@
         env.client /usr/bin/fail2ban-client
         env.config_dir /etc/fail2ban
         user root
+    - name: chrony
+      src: https://git.mgrote.net/Mirror/munin-contrib/raw/branch/master/plugins/chrony/chrony
+
   ### mgrote.dotfiles
   dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles
   dotfiles_repo_path: /home/mg/dotfiles
@@ -233,6 +237,8 @@
       autosnap: 'yes'
       autoprune: 'yes'
 
+  ### mgrote.zfs_sanoid
+  sanoid_deb_url: http://docker10.grote.lan:3344/sanoid_2.1.0.deb
 
   # Ansible Variablen
   ### User

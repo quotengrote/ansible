@@ -4,4 +4,5 @@
     systemd:
       name: chrony
       enabled: yes
+      masked: false
       state: restarted

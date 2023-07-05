@@ -1,9 +1,11 @@
 ---
+# datatsores to create
 pbs_datastores:
   - name: zfs_backup
     path: /backup/pbs_data
     gc_schedule: "sat 19:00"
 
+# prune jobs to create
 pbs_prune_jobs:
   - name: standard
     schedule: "sat 18:15"
@@ -13,6 +15,8 @@ pbs_prune_jobs:
     keep_daily: 7
     keep_weekly: 2
 
+# user permissions per datastore
+# for user creation see mgrote.pbs_users
 pbs_permissions:
   - user: user_pve5@pbs
     datastore: zfs_backup

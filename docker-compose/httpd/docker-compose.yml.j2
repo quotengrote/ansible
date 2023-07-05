@@ -23,7 +23,7 @@ services:
     environment:
       # FLASK_DEBUG: 1 # for debugging
       # FLASK_APP: app # for debugging
-      MAX_CONTENT_LENGTH: 50
+      MAX_CONTENT_LENGTH: 500
       UPLOAD_DIRECTORY: /uploads
       AUTH_TOKEN: {{ lookup('keepass', 'httpd-api-server-token', 'password') }}
       ENABLE_WEBSERVER: false

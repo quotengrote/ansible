@@ -26,7 +26,7 @@
       public_ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcBwOjanQV6sFWaTetqpl20SVe3aRzGjKbsp7hKkDCE mg@irantu
       allow_sudo: true
       allow_passwordless_sudo: true
-      
+
   ### mgrote.apt_manage_packages
   apt_packages_extra:
     - ifupdown2
@@ -36,8 +36,8 @@
 
   ### mgrote.munin-node
   munin_node_plugins:
-    - name: timesync
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
+    - name: chrony
+      src: https://git.mgrote.net/Mirror/munin-contrib/raw/branch/master/plugins/chrony/chrony
     - name: systemd_status
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
     - name: systemd_mem
@@ -110,6 +110,7 @@
     - name: apcupsd_pwr
     - name: timesync
     - name: http_response
+    - name: timesync
 
   ### mgrote.apt_manage_sources
   manage_sources_apt_proxy: ""

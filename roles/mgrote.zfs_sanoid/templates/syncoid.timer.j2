@@ -1,0 +1,9 @@
+{{ file_header | default () }}
+[Unit]
+Description=Timer for syncoid.
+
+[Timer]
+OnCalendar={{ sanoid_syncoid_timer }}
+
+[Install]
+WantedBy=timers.target multi-user.target zfs.target

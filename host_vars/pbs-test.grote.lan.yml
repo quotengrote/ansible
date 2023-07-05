@@ -10,12 +10,12 @@
       schedule: "sat 18:15"
       store: zfs_backup
       keep_last: 3
-      keep_hourly: 12
+      keep_hourly: 24
       keep_daily: 7
-      keep_weekly: 1
+      keep_weekly: 2
 
   pbs_permissions:
-    - user: user_pve5@pbs
+    - user: user_pve5-test@pbs
       datastore: zfs_backup
       role: DatastoreBackup
 
@@ -23,11 +23,14 @@
     - name: user_pve5
       password: "{{ lookup('keepass', 'pbs_pve_user', 'password') }}"
       realm: pbs
+    - name: user_pve5-test
+      password: "{{ lookup('keepass', 'pbs_pve_user-test', 'password') }}"
+      realm: pbs
   # rpool ist unverschlüsselt als Boot-Medium
   # entschlüsseln nach Boot mit: sudo zpool import -d /dev/disk/by-id/ -a && sudo zfs mount -a  -l
 
   ## backup
-  ### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase backup /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A28LFJDH
+  ### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase backup /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1
 
   # mgrote.zfs_manage_datasets
   ### mgrote.zfs_extra
@@ -43,22 +46,22 @@
       atime: on
       snapdir: hidden
       reservation: 1G
-      refreservation: 10G
+      refreservation: 1G
     - dataset: rpool/ROOT
       state: present
-      refreservation: 10G
+      refreservation: 1G
     - dataset: rpool/ROOT/pbs-1
       state: present
-      refreservation: 10G
+      refreservation: 1G
     # backup-pool
     - dataset: backup/pbs_data
       state: present
-      quota: 1TB
+      quota: 10GB
     - dataset: backup/pve5
       state: present
       canmount: off
   # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
-  zfs_extra_arc_max_size: "4294967296" # 4GB in Bytes
+  zfs_extra_arc_max_size: "1073741824" # 1GB in Bytes
   zfs_extra_zfs_pools:
     - name: "rpool"
       systemd_timer_schedule: "*-01,04,07,10-01 23:00" # jeden ersten eines jeden Quartals
@@ -68,10 +71,10 @@
   ### mgrote.zfs_sanoid
   sanoid_snaps_enable: true
   ## syncoid
-  sanoid_syncoid_destination_host: true
+  sanoid_syncoid_destination_host: false
   sanoid_syncoid_ssh_privkey: "{{ lookup('keepass', 'sanoid_syncoid_private_key', 'notes') }}"
   sanoid_syncoid_timer: '*-*-* *:00:00' # jede Stunde
-  sanoid_syncoid_bwlimit: 50M # 30MB/s
+  sanoid_syncoid_bwlimit: 30m # 30MB/s
   sanoid_syncoid_datasets_sync:
     - source_host: pve5.grote.lan
       destination_mount_check: backup
@@ -155,7 +158,11 @@
       snapshots: true
       template: 'pve3tage'
     ### backup
+    - path: backup
+      recursive: 'no'
+      snapshots: true
+      template: '14tage'
     - path: backup/pbs_data
       recursive: 'no'
       snapshots: true
-      template: '3tage'
+      template: '14tage'

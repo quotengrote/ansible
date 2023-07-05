@@ -1,0 +1,77 @@
+---
+  - name: template ssh private key
+    become: true
+    ansible.builtin.copy:
+      content: "{{ sanoid_syncoid_ssh_privkey }}"
+      dest: "/etc/sanoid/.ssh/id_sanoid"
+      owner: "{{ sanoid_user }}"
+      group: "{{ sanoid_user_group }}"
+      mode: 0400
+    no_log: true
+    when:
+      - sanoid_syncoid_destination_host
+
+  - name: add user to sudoers
+    become: true
+    ansible.builtin.blockinfile:
+      path: /etc/sudoers
+      state: present
+      block:  |
+        {{ sanoid_user }} ALL=(ALL) NOPASSWD:ALL
+      validate: '/usr/sbin/visudo -cf %s'
+      backup: yes
+      marker_begin: sanoid-sudoers BEGIN
+      marker_end: sanoid-sudoers END
+    when:
+      - sanoid_syncoid_destination_host
+
+  - name: template syncoid.service
+    become: yes
+    ansible.builtin.template:
+      src: "syncoid.service.j2"
+      dest: /etc/systemd/system/syncoid.service
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+    when:
+      - sanoid_syncoid_destination_host
+
+  - name: template syncoid_mail.service
+    become: yes
+    ansible.builtin.template:
+      src: "syncoid_mail.service.j2"
+      dest: /etc/systemd/system/syncoid_mail.service
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+    when:
+      - sanoid_syncoid_destination_host
+
+  - name: template syncoid.timer
+    become: yes
+    ansible.builtin.template:
+      src: "syncoid.timer.j2"
+      dest: "/etc/systemd/system/syncoid.timer"
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - systemctl daemon-reload
+    when:
+      - sanoid_syncoid_destination_host
+
+  - name: enable syncoid.timer
+    become: yes
+    ansible.builtin.systemd:
+      name: "syncoid.timer"
+      enabled: yes
+      masked: no
+      state: started
+    notify:
+      - systemctl daemon-reload
+    when:
+      - sanoid_syncoid_destination_host

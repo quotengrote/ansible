@@ -1,6 +1,10 @@
 ---
-  ### when should the script be run
+  ### when should sanoid be run (every 5 minutes)
   sanoid_timer: '*-*-* *:00/5'
+  ### when should syncoid be run
+  sanoid_syncoid_timer: '*-*-* *:00:00'
+  ### where to download the package
+  sanoid_deb_url: http://docker10.grote.lan:3344/sanoid_2.1.0.deb
 
 #  ### "Default" Datasets
 #  sanoid_datasets: # dictionary
@@ -8,10 +12,6 @@
 #      template: 'fiveminutes' # name
 #      recursive: 'no' # recursive snapshotting
 #      snapshots: true # (de)activate; can be used to disable snapshotting of subdatasets if recursive is set
-#    - path: 'hdd_data_raidz/videos'
-#      template: 'hourly'
-#      recursive: 'yes'
-#      snapshots: true
 #    - path: 'hdd_data_raidz/test'
 #      snapshots: false # deaktiviert sanoid für das dataset
 #
@@ -26,22 +26,27 @@
 #      frequent_period: '5'                     # Intervall (alle 5 Minuten)
 #      autosnap: 'yes'                          # Automatisches erstellen von Snapshots
 #      autoprune: 'yes'
-#    - name: 'hourly'
-#      keep_hourly: '24'
-#      keep_daily: '31'
-#      keep_monthly: '6'
-#      keep_yearly: '1'
-#      frequently: '0'
-#      frequent_period: '0'
-#      autosnap: 'yes'
-#      autoprune: 'yes'
-#    - name: 'daily'
-#      keep_hourly: '0'
-#      keep_daily: '31'
-#      keep_monthly: '6'
-#      keep_yearly: '1'
-#      frequently: '0'
-#      frequent_period: '0'
-#      autosnap: 'yes'
-#      autoprune: 'yes'
-#
+
+  ### user and group for sanoid
+  sanoid_user: sanoid
+  sanoid_user_group: sanoid
+
+
+  ### enable/disable features
+  ## enable snapshotting
+  # sanoid_snaps_enable: true
+  ## enable sending snaps
+  # sanoid_syncoid_source_host: true
+  ## enable receiving snaps
+  # sanoid_syncoid_destination_host: true
+
+  # syncoid
+  #sanoid_syncoid_ssh_privkey: "{{ lookup('keepass', 'sanoid_syncoid_private_key', 'notes') }}"
+  #sanoid_syncoid_ssh_pubkey: "{{ lookup('keepass', 'sanoid_syncoid_public_key', 'notes') }}"
+
+  ### mgrote.sanoid
+  #sanoid_syncoid_datasets_sync:
+  #  - source_host: pve5.grote.lan
+  #    source_dataset: hdd_data_raidz/tmp
+  #    destination_mount_check: hdd_data_raidz/tmp  # zielpool
+  #    destination_dataset: backup/pve5/tmp

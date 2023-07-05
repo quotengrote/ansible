@@ -1,0 +1,15 @@
+{{ file_header | default () }}
+
+[Unit]
+Description=Send zfs snapshots with sanoid/syncoid.
+OnFailure=syncoid_mail.service
+
+
+[Service]
+Type=oneshot
+# check if dest-dataset is mounted (sed: entferne 1. Zeile; awk: zeige nur yes/no; grep: RC1 when != yes)
+{% for item in sanoid_syncoid_datasets_sync %}
+ExecStart=/bin/sh -c '/usr/sbin/zfs get mounted {{ item.destination_mount_check }} | sed 1d | awk "{print $3}" | grep yes'
+# syncoid
+ExecStart=/usr/bin/syncoid --sshoption=StrictHostKeyChecking=no --delete-target-snapshots --use-hold --preserve-recordsize --sshkey "/etc/sanoid/.ssh/id_sanoid" --source-bwlimit {{ sanoid_syncoid_bwlimit }} {{ sanoid_user }}@{{ item.source_host }}:{{ item.source_dataset }} {{ item.destination_dataset }}
+{% endfor %}

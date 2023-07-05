@@ -57,8 +57,6 @@
   munin_node_bind_port: "4949"
   munin_node_allowed_cidrs: [192.168.2.0/24]
   munin_node_plugins:
-    - name: timesync
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
     - name: systemd_status
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
     - name: systemd_mem
@@ -94,6 +92,8 @@
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_
     - name: docker_volumesize
       src: https://git.mgrote.net/Mirror/munin-contrib/raw/branch/master/plugins/docker/docker_volumesize
+    - name: chrony
+      src: https://git.mgrote.net/Mirror/munin-contrib/raw/branch/master/plugins/chrony/chrony
   ### mgrote.apt_manage_packages
   apt_packages_extra:
     - bc # für munin plugins

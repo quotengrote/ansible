@@ -1,12 +1,17 @@
 ---
-  - name: mask systemd-timesyncd service
-    become: yes
-    systemd:
+  - name: Check systemd-timesyncd status
+    become: true
+    shell: systemctl is-active --quiet systemd-timesyncd && echo "Active" || echo "Inactive"
+    register: timesyncd_status
+    changed_when: false
+
+  - name: Disable systemd-timesyncd
+    become: true
+    ansible.builtin.systemd:
       name: systemd-timesyncd
-      state: stopped
       masked: yes
-    when:
-      - not "'proxmox' in group_names"
+      state: stopped
+    when: timesyncd_status.stdout == "Active"
 
   - name: gather package facts
     become: yes
