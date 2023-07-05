@@ -14,5 +14,5 @@ ExecStart=/bin/sh -c '/usr/sbin/zfs get mounted {{ item.destination_mount_check 
 # check if source host is reachable
 ExecStart=/bin/sh -c 'ping -c1 -W1 {{ item.source_host }}  > /dev/null || {{ item.source_host }} not reachable!'
 # syncoid
-ExecStart=/usr/bin/syncoid --sshoption=StrictHostKeyChecking=no --delete-target-snapshots --use-hold --preserve-recordsize --sshkey "/etc/sanoid/.ssh/id_sanoid" --source-bwlimit {{ sanoid_syncoid_bwlimit }} {{ sanoid_user }}@{{ item.source_host }}:{{ item.source_dataset }} {{ item.destination_dataset }}
+ExecStart=/bin/sh -c 'export HOME=/root ; /usr/bin/syncoid --sshoption=StrictHostKeyChecking=no --delete-target-snapshots --use-hold --preserve-recordsize --sshkey "/etc/sanoid/.ssh/id_sanoid" --source-bwlimit {{ sanoid_syncoid_bwlimit }} {{ sanoid_user }}@{{ item.source_host }}:{{ item.source_dataset }} {{ item.destination_dataset }}'
 {% endfor %}
