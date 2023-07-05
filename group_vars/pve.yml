@@ -112,9 +112,6 @@
     - name: http_response
     - name: timesync
 
-  ### mgrote.apt_manage_sources
-  manage_sources_apt_proxy: ""
-
   # Ansible Variablen
   ### sudo
   sudo: false

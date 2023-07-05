@@ -1,0 +1,15 @@
+{{ file_header | default () }}
+{% if repos_override is defined %}
+{% for item in repos_override %}
+{{ item }}
+{% endfor %}
+{% else %}
+{% for item in repos %}
+{{ item }}
+{% endfor %}{% endif %}
+
+{% if extra_repos is defined %}
+{% for item in extra_repos %}
+{{ item }}
+{% endfor %}
+{% endif %}

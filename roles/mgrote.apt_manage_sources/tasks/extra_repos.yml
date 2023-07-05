@@ -1,9 +1,0 @@
----
-  - name: add extra repositories
-    become: true
-    ansible.builtin.apt_repository:
-      repo: "{{ item.url }}"
-      filename: "{{ item.name | default(omit) }}"
-      state: "{{ item.state  | default('present')}}"
-    with_items: "{{ manage_sources_extra_repos }}"
-    when: manage_sources_extra_repos is defined

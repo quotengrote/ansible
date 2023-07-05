@@ -1,36 +1,14 @@
 ---
-  - name: ensure apt.conf exists
-    become: true
-    ansible.builtin.template:
-      src: apt.conf
-      dest: "{{ apt_proxy_apt_conf_path | default ('/etc/apt/apt.conf') }}"
-      backup: yes
-    notify: update package lists
+- name: check if pbs-no-subscription repo keys exists
+  become: true
+  stat:
+    path: "{{ manage_sources_pbs_apt_repo_key_path }}"
+  register: pbs_no_subscription_repo_keys
 
-  - name: remove enterprise-Repository
-    become: yes
-    ansible.builtin.file:
-      path: "{{ manage_sources_pbs_enterprise_repo_path }}"
-      state: absent
-
-  - name: check if pbs-no-subscription repo keys exists
-    stat:
-      path: "{{ manage_sources_pbs_apt_repo_key_path }}"
-    register: pbs_no_subscription_repo_keys
-
-  - name: add pbs-no-subscription repo keys
-    become: yes
-    ansible.builtin.apt_key:
-      url: "{{ manage_sources_pbs_apt_repo_key_url }}"
-      state: present
-    notify: update package lists
-    when: pbs_no_subscription_repo_keys.stat.exists == false
-
-  - name: add pbs-no-subscription repo
-    become: yes
-    ansible.builtin.apt_repository:
-      repo: "{{ manage_sources_pbs_apt_repo_no_subscription }}"
-      state: present
-      filename: pbs-no-subscription
-      update_cache: no
-    notify: update package lists
+- name: add pbs-no-subscription repo keys
+  become: true
+  ansible.builtin.apt_key:
+    url: "{{ manage_sources_pbs_apt_repo_key_url }}"
+    state: present
+  notify: update package lists
+  when: pbs_no_subscription_repo_keys.stat.exists == false

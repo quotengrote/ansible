@@ -106,11 +106,16 @@
   unattended_origins_patterns:
     - 'origin=Ubuntu,archive=${distro_codename}-security'
     - 'o=Ubuntu,a=${distro_codename}-updates'
-  ### mgrote.systemd-timesyncd
-  ntp_timesyncd_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
-  ntp_timesyncd_servers: # welche Server sollen befragt werden
-    - 192.168.2.1
-  ntp_chrony_logging: false # logging an/aus
+  ### mgrote.ntp_chrony_client
+  ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
+  ntp_chrony_driftfile_directory: "/var/lib/chrony" # Ordner für das driftfile
+  ntp_chrony_servers: # welche Server sollen befragt werden
+    - address: ptbtime1.ptb.de
+      options: iburst #optionaler parameter
+  ntp_chrony_user: _chrony # Nutzer + Gruppe für den Dienst
+  ntp_chrony_group: _chrony # Nutzer + Gruppe für den Dienst
+  ntp_chrony_logging: false
+
   ### mgrote.postfix
   postfix_absender_mailadresse: info@mgrote.net
   postfix_absender_passwort: "{{ lookup('keepass', 'postfix_absender_passwort', 'password') }}"
@@ -119,8 +124,6 @@
   postfix_smtp_server: smtp.strato.de
   postfix_smtp_server_port: 587
   postfix_smtp_use_tls: "yes"
-  ### mgrote.apt_manage_sources
-  manage_sources_apt_proxy: ""
   ### mgrote.tmux
   tmux_conf_destination: "/home/mg/.tmux.conf"
   tmux_bashrc_destination: "/home/mg/.bashrc"

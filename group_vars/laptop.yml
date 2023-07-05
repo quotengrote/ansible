@@ -53,14 +53,9 @@
     - lolcat
     - fortune-mod
   ### mgrote.apt_manage_sources
-  manage_sources_apt_proxy: ""
-  manage_sources_extra_repos: # Extra Repositories
-    - name: vivaldi
-      url: "deb [arch=amd64] https://repo.vivaldi.com/stable/deb/ stable main"
-  ### mgrote.systemd-timesyncd
-  ntp_timesyncd_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
-  ntp_timesyncd_servers: # welche Server sollen befragt werden
-    - pool.ntp.org
+  # Extra-Repositories, sollte pro Host gesetzt werden
+  extra_repos:
+    - "deb [arch=amd64] https://repo.vivaldi.com/stable/deb/ stable main"
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow

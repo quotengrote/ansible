@@ -1,34 +1,14 @@
 ---
-  - name: ensure apt.conf exists
-    become: true
-    ansible.builtin.template:
-      src: apt.conf
-      dest: "{{ apt_proxy_apt_conf_path | default ('/etc/apt/apt.conf') }}"
-      backup: yes
-    notify: update package lists
+- name: check if pve-no-subscription repo keys exists
+  become: true
+  stat:
+    path: "{{ manage_sources_proxmox_apt_repo_key_path }}"
+  register: pve_no_subscription_repo_keys
 
-  - name: remove enterprise-Repository
-    become: yes
-    ansible.builtin.file:
-      path: "{{ manage_sources_proxmox_enterprise_repo_path }}"
-      state: absent
-
-  - name: check if pve-no-subscription repo keys exists
-    stat:
-      path: "{{ manage_sources_proxmox_apt_repo_key_path }}"
-    register: pve_no_subscription_repo_keys
-
-  - name: add pve-no-subscription repo keys
-    become: yes
-    ansible.builtin.apt_key:
-      url: "{{ manage_sources_proxmox_apt_repo_key_url }}"
-      state: present
-    notify: update package lists
-    when: pve_no_subscription_repo_keys.stat.exists == false
-
-  - name: add pve-no-subscription repo
-    become: yes
-    ansible.builtin.template:
-      src: pve-no-subscription.j2
-      dest: pve-no-subscription.list
-    notify: update package lists
+- name: add pve-no-subscription repo keys
+  become: yes
+  ansible.builtin.apt_key:
+    url: "{{ manage_sources_proxmox_apt_repo_key_url }}"
+    state: present
+  notify: update package lists
+  when: pve_no_subscription_repo_keys.stat.exists == false

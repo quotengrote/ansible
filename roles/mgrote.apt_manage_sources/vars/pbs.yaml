@@ -1,0 +1,7 @@
+---
+# Repositories
+repos:
+  - "deb http://ftp.de.debian.org/debian {{ ansible_distribution_release }} main contrib"
+  - "deb http://ftp.de.debian.org/debian {{ ansible_distribution_release }}-updates main contrib"
+  - "deb http://security.debian.org {{ ansible_distribution_release }}-security main contrib"
+  - "deb http://download.proxmox.com/debian/pbs {{ ansible_distribution_release }} pbs-no-subscription"
