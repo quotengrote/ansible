@@ -11,8 +11,8 @@
       store: zfs_backup
       keep_last: 3
       keep_hourly: 12
-      keep_daily: 7
-      keep_weekly: 1
+      keep_daily: 3
+
 
   pbs_permissions:
     - user: user_pve5@pbs

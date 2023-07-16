@@ -203,7 +203,7 @@
     - name: 'tmp'
       path: '/shares_tmp'
       users_ro: 'win10'
-      users_rw: 'kodi  win10 michaelgrote'
+      users_rw: 'kodi win10 michaelgrote'
     - name: 'bilder'
       path: '/shares_bilder'
       users_ro: 'photoprism'
