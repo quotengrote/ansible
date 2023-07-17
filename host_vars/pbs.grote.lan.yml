@@ -166,3 +166,6 @@
 
   ### mgrote.zfs_sanoid
   sanoid_deb_url: http://192.168.2.43:3344/sanoid_3.0.0.deb # weil pbs den fqdn nicht auflösen kann
+
+  ### mgrote.munin-node
+  munin_node_allowed_cidrs: [192.168.3.0/24]
