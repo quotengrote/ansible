@@ -236,7 +236,7 @@
   # mgrote.pbs_pve_integration
   pve_pbs_datastore:
     - name: pbs
-      server: 192.168.2.239
+      server: pbs.grote.lan
       datastore: zfs_backup
       username: user_pve5@pbs
       password: "{{ lookup('keepass', 'pbs_pve_user', 'password') }}"

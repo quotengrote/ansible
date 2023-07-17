@@ -32,7 +32,6 @@ all:
       hosts:
         pve5.grote.lan:
         pbs.grote.lan:
-          ansible_host: 192.168.2.239
     gitea:
       hosts:
         gitea.grote.lan:
