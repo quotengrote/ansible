@@ -8,6 +8,8 @@
       name:
         - mbuffer
         - lzop
+        - libcapture-tiny-perl
+        - pv
       state: present
 
   - name: install packages from self-build
