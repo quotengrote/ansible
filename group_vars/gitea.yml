@@ -40,7 +40,7 @@
       from_ip: 192.168.2.144/24
   ### l3d.gitea
   # config liegt in /etc/gitea/gitea.ini
-  gitea_version: "1.19.3"
+  gitea_version: "1.20.0"
   gitea_app_name: "Gitea"
   gitea_user: "gitea"
   gitea_home: "/var/lib/gitea"
