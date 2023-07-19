@@ -169,3 +169,6 @@
 
   ### mgrote.munin-node
   munin_node_allowed_cidrs: [192.168.3.0/24]
+
+  ### mgrote.restic
+  restic_repository: "//192.168.2.54/restic"  # weil pbs den fqdn nicht auflösen kann
