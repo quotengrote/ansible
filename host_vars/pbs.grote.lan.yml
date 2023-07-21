@@ -9,8 +9,8 @@
     - name: standard
       schedule: "sat 18:15"
       store: zfs_backup
-      keep_last: 3
-      keep_hourly: 12
+      keep_last: 1
+      keep_hourly: 3
       keep_daily: 3
 
 

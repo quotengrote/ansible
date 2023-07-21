@@ -64,8 +64,6 @@
     - name: deye
     - name: timesync
   munin_node_plugins:
-    - name: timesync
-      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/timesync_status
     - name: systemd_status
       src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/systemd/systemd_status
     - name: systemd_mem

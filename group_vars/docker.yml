@@ -98,3 +98,17 @@
   apt_packages_extra:
     - bc # für munin plugins
     - jq # für munin plugins
+
+  ### mgrote.apt_manage_sources
+  repos_override: # mit docker-repos
+    - deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
+    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} main restricted"
+    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates main restricted"
+    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} universe"
+    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates universe"
+    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} multiverse"
+    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates multiverse"
+    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-backports main restricted universe multiverse"
+    - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release }}-security main restricted"
+    - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release }}-security universe"
+    - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release }}-security multiverse"
