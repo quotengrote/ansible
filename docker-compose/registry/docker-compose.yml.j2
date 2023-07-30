@@ -28,7 +28,7 @@ services:
       traefik.http.routers.registry.entrypoints: entry_https
       traefik.http.services.registry.loadbalancer.server.port: 5000
 
-      traefik.http.routers.registry.middlewares: error-pages-middleware,registry-ipwhitelist
+      traefik.http.routers.registry.middlewares: registry-ipwhitelist
 
       traefik.http.middlewares.registry-ipwhitelist.ipwhitelist.sourcerange: 192.168.2.0/24,10.25.25.0/24,192.168.48.0/24 # .48. ist Docker
       traefik.http.middlewares.registry-ipwhitelist.ipwhitelist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipwhitelist/#ipstrategydepth

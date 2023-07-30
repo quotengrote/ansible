@@ -9,7 +9,11 @@ services:
       - traefik
     labels:
       traefik.http.routers.whoami.rule: Host(`whoami.mgrote.net`)
-      traefik.http.routers.whoami.middlewares: nforwardauth
+      traefik.http.routers.whoami.middlewares: whoami-ipwhitelist
+
+      traefik.http.middlewares.whoami-ipwhitelist.ipwhitelist.sourcerange: 192.168.2.0/24,10.25.25.0/24,192.168.48.0/24 # .48. ist Docker
+
+      traefik.http.middlewares.whoami-ipwhitelist.ipwhitelist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipwhitelist/#ipstrategydepth
       traefik.enable: true
       traefik.http.routers.whoami.tls: true
       traefik.http.routers.whoami.tls.certresolver: resolver_letsencrypt
