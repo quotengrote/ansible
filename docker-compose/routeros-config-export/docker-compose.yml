@@ -1,0 +1,23 @@
+version: "3"
+services:
+  routeros-config-export:
+    container_name: routeros-config-export
+    restart: always
+    image: registry.mgrote.net/oxidized-selfmade:master
+    volumes:
+      - ./key_rb5009:/key_rb5009:ro
+      - ./key_hex:/key_hex:ro
+      - ./key_crs305:/key_crs305:ro
+      - ./deploy_token:/deploy_token:ro
+    environment:
+      DEVICES: |-
+              rb5009.grote.lan,routeros-config-backup,/key_rb5009
+              hex.grote.lan,routeros-config-backup,/key_hex
+              crs305.grote.lan,routeros-config-backup,/key_crs305
+      GIT_REPO_BRANCH: "master"
+      GIT_REPO_URL: "ssh://gitea@git.mgrote.net:2222/mg/routeros-configs.git"
+      GIT_REPO_DEPLOY_KEY: "/deploy_token"
+      GIT_USERNAME: oxidized-selfmade
+      GIT_USER_MAIL: michael.grote@posteo.de
+      GIT_REPO_REMOTE_NAME: origin
+      INTERVAL: 600 # in sekunden

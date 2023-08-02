@@ -89,11 +89,6 @@ services:
         url: "http://docker10.grote.lan:1234"
         target: "_blank"
         subtitle: "Monitoring"
-      - name: "Oxidized"
-        logo: "assets/icons/oxidized.svg"
-        url: "http://docker10.grote.lan:8888"
-        target: "_blank"
-        subtitle: "network device configuration backup tool"
 
   - name: "Internet-MGMT"
     icon: "fas fa-cloud"
