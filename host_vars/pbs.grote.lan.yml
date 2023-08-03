@@ -13,7 +13,6 @@
       keep_hourly: 3
       keep_daily: 3
 
-
   pbs_permissions:
     - user: user_pve5@pbs
       datastore: zfs_backup
@@ -138,7 +137,6 @@
       destination_dataset: backup/pve5/vm
       source_dataset: hdd_data_raidz/vm
 
-
   # sanoid
   sanoid_datasets:
     ### rpool
@@ -160,15 +158,5 @@
       snapshots: true
       template: '3tage'
 
-  ### mgrote.apt_manage_packages
-  apt_packages_internet:
-    - http://192.168.2.43:3344/bash-helper-scripts-mgrote-latest.deb # weil pbs den fqdn nicht auflösen kann
-
-  ### mgrote.zfs_sanoid
-  sanoid_deb_url: http://192.168.2.43:3344/sanoid_3.0.4.deb # weil pbs den fqdn nicht auflösen kann
-
   ### mgrote.munin-node
   munin_node_allowed_cidrs: [192.168.3.0/24]
-
-  ### mgrote.restic
-  restic_repository: "//192.168.2.54/restic"  # weil pbs den fqdn nicht auflösen kann

@@ -141,7 +141,6 @@
       destination_dataset: backup/pve5/vm
       source_dataset: hdd_data_raidz/vm
 
-
   # sanoid
   sanoid_datasets:
     ### rpool
