@@ -38,6 +38,19 @@
       - sanoid_snaps_enable is defined
       - sanoid_snaps_enable
 
+  - name: ensure service are started
+    become: true
+    ansible.builtin.systemd:
+      state: started
+      name: "{{ item }}"
+      daemon_reload: true
+      masked: false
+      enabled: yes
+    loop:
+      - sanoid.service
+      - sanoid-prune.service
+      - sanoid.timer
+
   - name: include source-host tasks
     include_tasks: source.yml
     when:
