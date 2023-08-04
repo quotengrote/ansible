@@ -51,7 +51,6 @@
 
   ### mgrote.apt_manage_packages
   apt_packages_internet:
-    - https://github.com/rclone/rclone/releases/download/v1.59.2/rclone-v1.59.2-linux-amd64.deb
     - http://docker10.grote.lan:3344/bash-helper-scripts-mgrote-latest.deb
 
   ### mgrote.youtubedl
@@ -92,83 +91,6 @@
   ytdl_youtube_password: "{{ lookup('keepass', 'youtubedl_youtube_login', 'password') }}"
   ytdl_conf_dir: "/etc/youtubedl" #ohne / am ende
   ytdl_download_limit: "10000K"
-
-  ### mgote.rclone
-  rclone_jobs:
-    - name: smb_archiv_glacier
-      quelle: "/shares_archiv"
-      ziel: "scaleway-encrypt-glacier:/archiv"
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-    - name: smb_backup_glacier
-      quelle: "/shares_backup"
-      ziel: "scaleway-encrypt-glacier:/backup"
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-    - name: smb_bilder_glacier
-      quelle: "/shares_bilder"
-      ziel: "scaleway-encrypt-glacier:/bilder"
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-    - name: smb_buecher_glacier
-      quelle: "/shares_buecher"
-      ziel: "scaleway-encrypt-glacier:/buecher"
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-    - name: smb_hm_glacier
-      quelle: "/shares_hm"
-      ziel: "scaleway-encrypt-glacier:/hm"
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-    - name: smb_musik_glacier
-      quelle: "/shares_music"
-      ziel: "scaleway-encrypt-glacier:/musik"
-      timer: "*-*-* 23:15"
-      loglevel: INFO
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-    - name: smb_programme_glacier
-      quelle: "/shares_programme"
-      ziel: "scaleway-encrypt-glacier:/programme"
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-      transfers: 4
-    - name: smb_tmp_glacier
-      quelle: "/shares_tmp"
-      ziel: "scaleway-encrypt-glacier:/tmp"
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-    - name: smb_scans_glacier
-      quelle: "/shares_scans"
-      ziel: "scaleway-encrypt-glacier:/scans"
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-    - name: smb_restic_glacier
-      quelle: "/shares_restic"
-      ziel: "scaleway-encrypt-glacier:/restic"
-      timer: "*-*-* 23:15"
-      state: true
-      bwlimit: 2M
-      mode: "--size-only"
-
-  rclone_config: "{{ lookup('keepass', 'rclone.conf', 'notes') }}"
 
   ### mgrote.smb_fileserver
   smb_shares:

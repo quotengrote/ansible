@@ -93,11 +93,6 @@ services:
   - name: "Internet-MGMT"
     icon: "fas fa-cloud"
     items:
-      - name: "Scaleway"
-        logo: "assets/icons/scaleway.png"
-        url: "https://console.scaleway.com/object-storage/buckets"
-        target: "_blank"
-        subtitle: "Scaleway S3"
       - name: "Strato - DNS"
         logo: "assets/icons/strato.jpg"
         url: "https://www.strato.de/apps/CustomerService#/skl"

@@ -7,6 +7,5 @@
 - hosts: fileserver
   roles:
     - { role: mgrote.fileserver_smb, tags: "fileserver_smb" }
-    - { role: mgrote.rclone, tags: "rclone" }
     - { role: mgrote.youtubedl, tags: "youtubedl" }
     - { role: mgrote.disable_oom_killer, tags: "oom" }
