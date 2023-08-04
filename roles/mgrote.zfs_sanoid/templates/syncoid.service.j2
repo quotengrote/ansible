@@ -3,7 +3,7 @@
 [Unit]
 Description=Send zfs snapshots with sanoid/syncoid.
 OnFailure=syncoid_mail.service
-
+OnSuccess=syncoid_mail.service
 
 [Service]
 Type=oneshot
