@@ -5,7 +5,6 @@ augengeradeaus.net::Sicherheitshalber der Podcast
 axios.com::Axios on HBO
 axios.com::PGA
 axios.com::football
-computerbase.de::wettbewerb
 computerbase.de::Adrenalin 2020 Edition
 computerbase.de::Adrenalin 2021 Edition
 computerbase.de::CB-Funk
@@ -19,8 +18,8 @@ computerbase.de::Sonntagsfrage:
 computerbase.de::Twitter
 computerbase.de::WM
 computerbase.de::Wochenrück- und Ausblick:
+computerbase.de::wettbewerb
 facebook.com::Bridge returned error
-golem.de::Golem Karrierewelt
 golem.de::(g+)
 golem.de::Anzeige
 golem.de::Aus dem Verlag:
@@ -28,6 +27,7 @@ golem.de::Elon Musk
 golem.de::Fifa
 golem.de::Fussball
 golem.de::Fußball
+golem.de::Golem Karrierewelt
 golem.de::In eigener Sache
 golem.de::Marvel
 golem.de::PODCAST BESSER WISSEN:
@@ -161,30 +161,24 @@ portuguesegeese.com::portuguesegeese.com
 reddit.com::UEFA
 stackoverflow.blog::Podcast
 stackoverflow.blog::The Overflow
-stadt-bremerhaven.de::DFB-
 stadt-bremerhaven.de::(Werbung)
+stadt-bremerhaven.de::Basketball-WM
 stadt-bremerhaven.de::Bundesliga
 stadt-bremerhaven.de::DAZN
 stadt-bremerhaven.de::Disney+
 stadt-bremerhaven.de::Eishockey
 stadt-bremerhaven.de::Elon Musk
 stadt-bremerhaven.de::FIFA
+stadt-bremerhaven.de::FUSSBALL
 stadt-bremerhaven.de::Formel 1
 stadt-bremerhaven.de::Immer wieder sonntags KW
+stadt-bremerhaven.de::MagentaSport
 stadt-bremerhaven.de::Podcast
 stadt-bremerhaven.de::Rückblick
 stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::Twitter
 stadt-bremerhaven.de::WM 2022
 stadt-bremerhaven.de::eFootball
-sueddeutsche.de::Hertha
-sueddeutsche.de::DFB-Frauen:
-sueddeutsche.de::Dritte Liga:
-sueddeutsche.de::Fußball:
-sueddeutsche.de::Fußball-Weltmeisterschaft
-sueddeutsche.de::Fifa
-sueddeutsche.de::Infantino
-sueddeutsche.de::Eintracht Frankfurt
 sueddeutsche.de::"Ich bin ein Star"
 sueddeutsche.de::"Tatort"
 sueddeutsche.de::-Spiel
@@ -224,7 +218,6 @@ sueddeutsche.de::Bundesliga
 sueddeutsche.de::Bundestrainer
 sueddeutsche.de::Carlos Alcaraz
 sueddeutsche.de::Champions League:
-sueddeutsche.de::Champions-League
 sueddeutsche.de::Chelsea
 sueddeutsche.de::Claudio Pizarro
 sueddeutsche.de::Claudio Pizarro:
@@ -232,6 +225,7 @@ sueddeutsche.de::Conference League
 sueddeutsche.de::Conference-League
 sueddeutsche.de::DFB
 sueddeutsche.de::DFB-Elf
+sueddeutsche.de::DFB-Frauen:
 sueddeutsche.de::DFB-Pokal
 sueddeutsche.de::DFL
 sueddeutsche.de::DFL-Supercup
@@ -245,12 +239,14 @@ sueddeutsche.de::Deutsche Nationalmannschaft
 sueddeutsche.de::Deutsche U21:
 sueddeutsche.de::Djokovic
 sueddeutsche.de::Dressur-Weltmeister
+sueddeutsche.de::Dritte Liga:
 sueddeutsche.de::Drittliga
 sueddeutsche.de::Dschungelcamp
 sueddeutsche.de::EM:
 sueddeutsche.de::ESC-Finale
 sueddeutsche.de::ESC-Vorentscheid
 sueddeutsche.de::Eintracht
+sueddeutsche.de::Eintracht Frankfurt
 sueddeutsche.de::Eisbären Berlin
 sueddeutsche.de::Eishockey
 sueddeutsche.de::Eishockey-WM:
@@ -263,6 +259,7 @@ sueddeutsche.de::Englisches Nationalteam:
 sueddeutsche.de::Eröffnungsspiel
 sueddeutsche.de::Euroleague
 sueddeutsche.de::Europa League
+sueddeutsche.de::Europa-League
 sueddeutsche.de::Europameister
 sueddeutsche.de::Europapokal
 sueddeutsche.de::European Championships
@@ -272,6 +269,7 @@ sueddeutsche.de::FC Augsburg
 sueddeutsche.de::FC Barcelona
 sueddeutsche.de::FC Chelsea:
 sueddeutsche.de::FC Sevilla
+sueddeutsche.de::Fifa
 sueddeutsche.de::Fifa:
 sueddeutsche.de::Formel 1
 sueddeutsche.de::Frankfurt
@@ -280,6 +278,8 @@ sueddeutsche.de::Fussball
 sueddeutsche.de::Fußball in England:
 sueddeutsche.de::Fußball-EM
 sueddeutsche.de::Fußball-WM
+sueddeutsche.de::Fußball-Weltmeisterschaft
+sueddeutsche.de::Fußball:
 sueddeutsche.de::Fußballern
 sueddeutsche.de::Fußballtorwart
 sueddeutsche.de::Galopp
@@ -288,18 +288,18 @@ sueddeutsche.de::Gladbach
 sueddeutsche.de::Glasgow Rangers
 sueddeutsche.de::Golf:
 sueddeutsche.de::Guardiola
-sueddeutsche.de::HSV
 sueddeutsche.de::Hamburger SV
 sueddeutsche.de::Handball-EM:
 sueddeutsche.de::Handball-WM
 sueddeutsche.de::Hannover 96:
 sueddeutsche.de::Heldenfußball
-sueddeutsche.de::Hertha
+sueddeutsche.de::Hertha BSC
 sueddeutsche.de::Hertha BSC:
 sueddeutsche.de::Hinspiel
 sueddeutsche.de::Hochspring
 sueddeutsche.de::Hockey-WM
 sueddeutsche.de::Ibrahimović
+sueddeutsche.de::Infantino
 sueddeutsche.de::Inter Mailand
 sueddeutsche.de::Joachim Löw
 sueddeutsche.de::Jugendwort des Jahres
@@ -433,6 +433,7 @@ sueddeutsche.de::Trikots
 sueddeutsche.de::Tuchel
 sueddeutsche.de::Turn-WM
 sueddeutsche.de::Türkgücü München
+sueddeutsche.de::U21-Europameisterschaft
 sueddeutsche.de::US Open
 sueddeutsche.de::Ukrainisches Tagebuch
 sueddeutsche.de::Uli Hoeneß
@@ -451,6 +452,7 @@ sueddeutsche.de::WM-Qualifikation
 sueddeutsche.de::WM-Silber
 sueddeutsche.de::WM-Ticket
 sueddeutsche.de::WM-Titel
+sueddeutsche.de::WM:
 sueddeutsche.de::Weitspr
 sueddeutsche.de::Werder
 sueddeutsche.de::Wimbledon
@@ -459,7 +461,6 @@ sueddeutsche.de::Zlatan
 sueddeutsche.de::leute:
 sueddeutsche.de::quoted.
 sueddeutsche.de::torwart
-tagesschau.de::Weltcup
 tagesschau.de::11KM
 tagesschau.de::Achtelfinale
 tagesschau.de::Alpine-Super-Kombination:
@@ -559,6 +560,7 @@ tagesschau.de::WM-Qualifikation
 tagesschau.de::WM-Viertelfinale
 tagesschau.de::Wasserspringen:
 tagesschau.de::Weitsprung
+tagesschau.de::Weltcup
 tagesschau.de::Weltcup-Sieg
 tagesschau.de::Weltmeister
 tagesschau.de::Werders
