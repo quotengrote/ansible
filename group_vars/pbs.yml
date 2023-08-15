@@ -1,4 +1,7 @@
 ---
+  ### mgrote.postfix
+  postfix_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24 192.168.3.0/24"
+
   ### mgrote.restic
   restic_folders_to_backup: "/ /etc/proxmox-backup"
 
