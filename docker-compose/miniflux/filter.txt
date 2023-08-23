@@ -101,6 +101,8 @@ heise.de::zockt
 instagram.com::Bridge returned error
 ipspace.net::Built.fm
 ipspace.net::Podcast
+mdr.de::DFB-Pokal
+mdr.de::Para-WM
 mdr.de::#MDRklärt:
 mdr.de::Basketball
 mdr.de::DFB
@@ -179,6 +181,19 @@ stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::Twitter
 stadt-bremerhaven.de::WM 2022
 stadt-bremerhaven.de::eFootball
+sueddeutsche.de::Champions-League
+sueddeutsche.de::HSV-Verteidiger
+sueddeutsche.de::Vuskovic
+sueddeutsche.de::zweiten Liga
+sueddeutsche.de::zweite Liga
+sueddeutsche.de::Boateng
+sueddeutsche.de::Pokalspiel
+sueddeutsche.de::Mancini
+sueddeutsche.de::Wiegman
+sueddeutsche.de::Team-WM
+sueddeutsche.de::Hockey-EM
+sueddeutsche.de::ückenkemper
+sueddeutsche.de::Fußball-Weltmeister
 sueddeutsche.de::"Ich bin ein Star"
 sueddeutsche.de::"Tatort"
 sueddeutsche.de::-Spiel
