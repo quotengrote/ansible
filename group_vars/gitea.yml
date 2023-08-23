@@ -40,7 +40,7 @@
       from_ip: 192.168.2.144/24
   ### l3d.gitea
   # config liegt in /etc/gitea/gitea.ini
-  gitea_version: "1.20.0"
+  gitea_version: "1.20.3"
   gitea_app_name: "Gitea"
   gitea_user: "gitea"
   gitea_home: "/var/lib/gitea"
@@ -76,7 +76,7 @@
   gitea_db_path: "{{ gitea_home }}/data/gitea.db" # for sqlite3
 
   gitea_ssh_listen: 0.0.0.0
-  gitea_ssh_domain: git.mgrote.net
+  gitea_ssh_domain: gitea.grote.lan
   gitea_ssh_port: 2222
   gitea_start_ssh: true
 

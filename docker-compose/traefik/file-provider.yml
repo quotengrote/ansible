@@ -1,20 +1,4 @@
 # TCP da SSH keine Hostnamen kennt
-# alle Anfragen an diesen Port werden an Gitea weitergeleitet
-tcp:
-###### router #####
-  routers:
-    router-ssh:
-      entryPoints:
-        - entry_ssh
-      rule: HostSNI(`*`)
-      service: service_gitea_ssh
-###### services #####
-  services:
-    service_gitea_ssh:
-      loadBalancer:
-        servers:
-          - address: gitea.grote.lan:2222
-
 http:
 ###### router #####
   routers:

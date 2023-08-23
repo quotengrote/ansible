@@ -1,6 +1,6 @@
 ---
   - name: check if private key exists
-    ansible.builtin.command: kubectl get secrets sealed-secrets-key9mpfq -n kube-system
+    ansible.builtin.command: kubectl get secrets sealed-secrets-keytsq4k -n kube-system
     register: key
     ignore_errors: yes
     changed_when: false
@@ -13,7 +13,7 @@
       group: root
       mode: '0400'
     when: key.rc not in [ 0 ]
-    no_log: True
+    #no_log: True
 
   - name: apply private key
     ansible.builtin.command: kubectl apply -f /root/private.key

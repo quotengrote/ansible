@@ -15,7 +15,7 @@ services:
               hex.grote.lan,routeros-config-backup,/key_hex
               crs305.grote.lan,routeros-config-backup,/key_crs305
       GIT_REPO_BRANCH: "master"
-      GIT_REPO_URL: "ssh://gitea@git.mgrote.net:2222/mg/routeros-configs.git"
+      GIT_REPO_URL: "ssh://gitea@gitea.grote.lan:2222/mg/routeros-configs.git"
       GIT_REPO_DEPLOY_KEY: "/deploy_token"
       GIT_USERNAME: oxidized-selfmade
       GIT_USER_MAIL: michael.grote@posteo.de
