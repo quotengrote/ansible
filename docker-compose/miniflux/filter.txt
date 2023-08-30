@@ -18,6 +18,8 @@ computerbase.de::Sonntagsfrage:
 computerbase.de::Twitter
 computerbase.de::WM
 computerbase.de::Wochenrück- und Ausblick:
+computerbase.de::Fußball
+computerbase.de::Fussball
 computerbase.de::wettbewerb
 facebook.com::Bridge returned error
 golem.de::(g+)
@@ -181,6 +183,13 @@ stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::Twitter
 stadt-bremerhaven.de::WM 2022
 stadt-bremerhaven.de::eFootball
+sueddeutsche.de::Fußball-Weltmeister
+sueddeutsche.de::Fußballerinnen
+sueddeutsche.de::Leichtathletik
+sueddeutsche.de::Fußball-Verband
+sueddeutsche.de::Fußballverband
+sueddeutsche.de::EM-Aus
+sueddeutsche.de::Hockey
 sueddeutsche.de::Champions-League
 sueddeutsche.de::HSV-Verteidiger
 sueddeutsche.de::Vuskovic
