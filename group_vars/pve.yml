@@ -33,7 +33,6 @@
     - bmon
     - qemu-guest-agent
     - open-vm-tools
-    - lxc_guests
 
   ### mgrote.munin-node
   munin_node_plugins:
