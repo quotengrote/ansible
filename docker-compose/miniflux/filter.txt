@@ -13,13 +13,13 @@ computerbase.de::Community-Umfrage
 computerbase.de::Community: Fotowettbewerb
 computerbase.de::Elon Musk
 computerbase.de::Fotowettbewerb:
+computerbase.de::Fussball
+computerbase.de::Fußball
 computerbase.de::Screenshot-Wettbewerb
 computerbase.de::Sonntagsfrage:
 computerbase.de::Twitter
 computerbase.de::WM
 computerbase.de::Wochenrück- und Ausblick:
-computerbase.de::Fußball
-computerbase.de::Fussball
 computerbase.de::wettbewerb
 facebook.com::Bridge returned error
 golem.de::(g+)
@@ -103,11 +103,10 @@ heise.de::zockt
 instagram.com::Bridge returned error
 ipspace.net::Built.fm
 ipspace.net::Podcast
-mdr.de::DFB-Pokal
-mdr.de::Para-WM
 mdr.de::#MDRklärt:
 mdr.de::Basketball
 mdr.de::DFB
+mdr.de::DFB-Pokal
 mdr.de::Fussball
 mdr.de::Fußball
 mdr.de::Hallescher FC
@@ -115,6 +114,7 @@ mdr.de::Leichtathletik:
 mdr.de::Link des Audios
 mdr.de::Link des Videos
 mdr.de::Livestream
+mdr.de::Para-WM
 mdr.de::Pferdesport:
 mdr.de::Podcast "digital Leben"
 mdr.de::Podcast "digital Leben":
@@ -168,6 +168,7 @@ stackoverflow.blog::The Overflow
 stadt-bremerhaven.de::(Werbung)
 stadt-bremerhaven.de::Basketball-WM
 stadt-bremerhaven.de::Bundesliga
+stadt-bremerhaven.de::Cloud-Gaming-Rückblick
 stadt-bremerhaven.de::DAZN
 stadt-bremerhaven.de::Disney+
 stadt-bremerhaven.de::Eishockey
@@ -183,26 +184,6 @@ stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::Twitter
 stadt-bremerhaven.de::WM 2022
 stadt-bremerhaven.de::eFootball
-sueddeutsche.de::Fußball-Weltmeister
-sueddeutsche.de::Fußballerinnen
-sueddeutsche.de::Leichtathletik
-sueddeutsche.de::Fußball-Verband
-sueddeutsche.de::Fußballverband
-sueddeutsche.de::EM-Aus
-sueddeutsche.de::Hockey
-sueddeutsche.de::Champions-League
-sueddeutsche.de::HSV-Verteidiger
-sueddeutsche.de::Vuskovic
-sueddeutsche.de::zweiten Liga
-sueddeutsche.de::zweite Liga
-sueddeutsche.de::Boateng
-sueddeutsche.de::Pokalspiel
-sueddeutsche.de::Mancini
-sueddeutsche.de::Wiegman
-sueddeutsche.de::Team-WM
-sueddeutsche.de::Hockey-EM
-sueddeutsche.de::ückenkemper
-sueddeutsche.de::Fußball-Weltmeister
 sueddeutsche.de::"Ich bin ein Star"
 sueddeutsche.de::"Tatort"
 sueddeutsche.de::-Spiel
@@ -212,6 +193,7 @@ sueddeutsche.de::1. FC Nürnberg
 sueddeutsche.de::1. FC Union
 sueddeutsche.de::1860 München
 sueddeutsche.de::1:1
+sueddeutsche.de::2. Liga
 sueddeutsche.de::3. Liga
 sueddeutsche.de::ATP Finals
 sueddeutsche.de::ATP-
@@ -230,10 +212,12 @@ sueddeutsche.de::BVB
 sueddeutsche.de::Barça
 sueddeutsche.de::Baseball
 sueddeutsche.de::Basketball
+sueddeutsche.de::Basketball-WM
 sueddeutsche.de::Bayern
 sueddeutsche.de::Belenenses
 sueddeutsche.de::Berlinale
 sueddeutsche.de::Biathlon
+sueddeutsche.de::Boateng
 sueddeutsche.de::Bobfahr
 sueddeutsche.de::Borussia
 sueddeutsche.de::Borussia Dortmund
@@ -242,6 +226,7 @@ sueddeutsche.de::Bundesliga
 sueddeutsche.de::Bundestrainer
 sueddeutsche.de::Carlos Alcaraz
 sueddeutsche.de::Champions League:
+sueddeutsche.de::Champions-League
 sueddeutsche.de::Chelsea
 sueddeutsche.de::Claudio Pizarro
 sueddeutsche.de::Claudio Pizarro:
@@ -251,6 +236,7 @@ sueddeutsche.de::DFB
 sueddeutsche.de::DFB-Elf
 sueddeutsche.de::DFB-Frauen:
 sueddeutsche.de::DFB-Pokal
+sueddeutsche.de::DFB:
 sueddeutsche.de::DFL
 sueddeutsche.de::DFL-Supercup
 sueddeutsche.de::Daniil Medwedew
@@ -266,6 +252,7 @@ sueddeutsche.de::Dressur-Weltmeister
 sueddeutsche.de::Dritte Liga:
 sueddeutsche.de::Drittliga
 sueddeutsche.de::Dschungelcamp
+sueddeutsche.de::EM-Aus
 sueddeutsche.de::EM:
 sueddeutsche.de::ESC-Finale
 sueddeutsche.de::ESC-Vorentscheid
@@ -301,17 +288,23 @@ sueddeutsche.de::French Open
 sueddeutsche.de::Fussball
 sueddeutsche.de::Fußball in England:
 sueddeutsche.de::Fußball-EM
+sueddeutsche.de::Fußball-Verband
 sueddeutsche.de::Fußball-WM
+sueddeutsche.de::Fußball-Weltmeister
+sueddeutsche.de::Fußball-Weltmeister
 sueddeutsche.de::Fußball-Weltmeisterschaft
 sueddeutsche.de::Fußball:
+sueddeutsche.de::Fußballerinnen
 sueddeutsche.de::Fußballern
 sueddeutsche.de::Fußballtorwart
+sueddeutsche.de::Fußballverband
 sueddeutsche.de::Galopp
 sueddeutsche.de::Gerard López
 sueddeutsche.de::Gladbach
 sueddeutsche.de::Glasgow Rangers
 sueddeutsche.de::Golf:
 sueddeutsche.de::Guardiola
+sueddeutsche.de::HSV-Verteidiger
 sueddeutsche.de::Hamburger SV
 sueddeutsche.de::Handball-EM:
 sueddeutsche.de::Handball-WM
@@ -321,6 +314,8 @@ sueddeutsche.de::Hertha BSC
 sueddeutsche.de::Hertha BSC:
 sueddeutsche.de::Hinspiel
 sueddeutsche.de::Hochspring
+sueddeutsche.de::Hockey
+sueddeutsche.de::Hockey-EM
 sueddeutsche.de::Hockey-WM
 sueddeutsche.de::Ibrahimović
 sueddeutsche.de::Infantino
@@ -333,10 +328,12 @@ sueddeutsche.de::Kevin Trapp
 sueddeutsche.de::Klopp
 sueddeutsche.de::Klosterhalfen
 sueddeutsche.de::Kolumne
+sueddeutsche.de::Kroos
 sueddeutsche.de::LIV Tour
 sueddeutsche.de::La Boum:
 sueddeutsche.de::La Liga
 sueddeutsche.de::Lazio Rom
+sueddeutsche.de::Leichtathletik
 sueddeutsche.de::Leichtathletik
 sueddeutsche.de::Leichtathletik-WM
 sueddeutsche.de::Leichtathletik-WM:
@@ -353,6 +350,7 @@ sueddeutsche.de::ManCity
 sueddeutsche.de::ManUnited
 sueddeutsche.de::Manchester City
 sueddeutsche.de::Manchester United
+sueddeutsche.de::Mancini
 sueddeutsche.de::Markus Weinzierl
 sueddeutsche.de::Mbappé
 sueddeutsche.de::Messi
@@ -389,6 +387,7 @@ sueddeutsche.de::Playoffs
 sueddeutsche.de::Podcast-Tipps
 sueddeutsche.de::Podcasts-Tipps im
 sueddeutsche.de::Pokal-Sieg
+sueddeutsche.de::Pokalspiel
 sueddeutsche.de::Polizeiruf 110
 sueddeutsche.de::Prantls Blick:
 sueddeutsche.de::Premier
@@ -401,6 +400,7 @@ sueddeutsche.de::Real Madrid
 sueddeutsche.de::Reit-WM
 sueddeutsche.de::Reiten
 sueddeutsche.de::Relegation
+sueddeutsche.de::Rennrodl
 sueddeutsche.de::Robin Gosens
 sueddeutsche.de::Rodel-
 sueddeutsche.de::Rodeln:
@@ -442,9 +442,11 @@ sueddeutsche.de::TSG Hoffenheim
 sueddeutsche.de::Tabellenspitze
 sueddeutsche.de::Tatort München:
 sueddeutsche.de::Tatort aus
+sueddeutsche.de::Team-WM
 sueddeutsche.de::Teamspringen
 sueddeutsche.de::Tennis
 sueddeutsche.de::Tennis:
+sueddeutsche.de::Thomas Müller
 sueddeutsche.de::Three Lions:
 sueddeutsche.de::Timo Boll
 sueddeutsche.de::Tischtennis WM:
@@ -462,6 +464,7 @@ sueddeutsche.de::US Open
 sueddeutsche.de::Ukrainisches Tagebuch
 sueddeutsche.de::Uli Hoeneß
 sueddeutsche.de::Union Berlin
+sueddeutsche.de::Urs Fischer
 sueddeutsche.de::VfB
 sueddeutsche.de::VfB Stuttgart
 sueddeutsche.de::VfL
@@ -470,6 +473,7 @@ sueddeutsche.de::Vierschanzentournee
 sueddeutsche.de::Viertelfinal
 sueddeutsche.de::Viertelfinale
 sueddeutsche.de::Volleyball-WM:
+sueddeutsche.de::Vuskovic
 sueddeutsche.de::WM-
 sueddeutsche.de::WM-Kader
 sueddeutsche.de::WM-Qualifikation
@@ -479,12 +483,16 @@ sueddeutsche.de::WM-Titel
 sueddeutsche.de::WM:
 sueddeutsche.de::Weitspr
 sueddeutsche.de::Werder
+sueddeutsche.de::Wiegman
 sueddeutsche.de::Wimbledon
 sueddeutsche.de::Wintersport:
 sueddeutsche.de::Zlatan
 sueddeutsche.de::leute:
 sueddeutsche.de::quoted.
 sueddeutsche.de::torwart
+sueddeutsche.de::zweite Liga
+sueddeutsche.de::zweiten Liga
+sueddeutsche.de::ückenkemper
 tagesschau.de::11KM
 tagesschau.de::Achtelfinale
 tagesschau.de::Alpine-Super-Kombination:
