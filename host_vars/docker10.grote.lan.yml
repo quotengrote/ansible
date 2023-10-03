@@ -49,8 +49,6 @@
       network: traefik
     - name: watchtower
       state: present
-    - name: blocky
-      state: present
     - name: routeros-config-export
       state: present
     - name: registry
