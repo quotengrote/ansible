@@ -28,7 +28,7 @@
     - name: homer
       state: present
     - name: munin
-      state: present
+      state: absent
     - name: drone
       state: present
     - name: nextcloud
@@ -55,7 +55,7 @@
       state: present
       network: traefik
     - name: whoami
-      state: present
+      state: absent
       network: traefik
   ### oefenweb.ufw
   ufw_rules:
