@@ -81,15 +81,6 @@ services:
         target: "_blank"
         subtitle: "Test"
 
-  - name: "Monitoring"
-    icon: "fas fa-cloud"
-    items:
-      - name: "Munin - Production"
-        logo: "assets/icons/munin.png"
-        url: "http://docker10.grote.lan:1234"
-        target: "_blank"
-        subtitle: "Monitoring"
-
   - name: "Internet-MGMT"
     icon: "fas fa-cloud"
     items:
