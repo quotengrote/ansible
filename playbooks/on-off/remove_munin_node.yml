@@ -12,8 +12,16 @@
         name:
           - munin-node
         state: absent
+
     - name: remove folder
       become: yes
       ansible.builtin.file:
         path: /etc/munin
         state: absent
+
+    - name: ensure user is absent
+      become: true
+      ansible.builtin.user:
+        name: munin
+        state: absent
+        remove: true

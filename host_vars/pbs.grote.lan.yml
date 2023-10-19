@@ -157,6 +157,3 @@
       recursive: 'no'
       snapshots: true
       template: '3tage'
-
-  ### mgrote.munin-node
-  munin_node_allowed_cidrs: [192.168.3.0/24]
