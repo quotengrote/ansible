@@ -33,6 +33,7 @@
     - bmon
     - qemu-guest-agent
     - open-vm-tools
+    - systemd-boot
 
   ### mgrote.munin-node
   munin_node_plugins:
