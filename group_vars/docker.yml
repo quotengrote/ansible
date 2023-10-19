@@ -20,7 +20,7 @@
   users:
     - username: mg
       password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
-      update_password: on_create
+      update_password: always
       groups: ssh, sudo, docker
       state: present
       public_ssh_key: "{{ ssh_public_key_mg }}"
@@ -28,7 +28,7 @@
       allow_passwordless_sudo: true
     - username: docker-user
       password: "{{ lookup('keepass', 'docker-user_linux_password_hash', 'password') }}"
-      update_password: on_create
+      update_password: always
       groups: ssh, sudo, docker
       state: present
       allow_sudo: true
@@ -36,7 +36,7 @@
       uid: "5000"
     - username: ansible-user
       password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
-      update_password: on_create
+      update_password: always
       groups: ssh, sudo
       state: present
       public_ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcBwOjanQV6sFWaTetqpl20SVe3aRzGjKbsp7hKkDCE mg@irantu
