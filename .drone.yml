@@ -19,15 +19,18 @@ type: docker
 name: ansible-lint
 steps:
   - name: ansible-lint
-    image: cytopia/ansible-lint
+    image: quay.io/ansible/creator-ee
     commands:
-      - /usr/bin/ansible-lint *.*
+      - ansible-lint --version
+      - echo $ANSIBLE_VAULT_PASSWORD > ./vault-pass.yml
+      - ansible-lint
     when:
       event:
         exclude:
           - tag
-depends_on:
-  - gitleaks
+    environment:
+      ANSIBLE_VAULT_PASSWORD:
+        from_secret: vault-pass
 
 ---
 kind: pipeline
@@ -42,5 +45,3 @@ steps:
       event:
         exclude:
           - tag
-depends_on:
-  - gitleaks

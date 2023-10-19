@@ -1,5 +1,0 @@
----
-- hosts: docker
-  become: yes
-  roles:
-    - { role: mgrote.create_users }

@@ -53,5 +53,5 @@
 
   - name: set timezone to {{ ntp_timesyncd_timezone }}
     become: yes
-    ansible.builtin.timezone:
+    community.general.timezone:
       name: "{{ ntp_timesyncd_timezone }}"

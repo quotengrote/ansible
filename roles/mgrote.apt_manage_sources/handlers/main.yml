@@ -1,5 +1,5 @@
 ---
-  - name: update package lists # noqa 503 503
+  - name: update package lists # noqa no-handler
     become: yes
     ansible.builtin.apt:
       update_cache: yes

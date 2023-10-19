@@ -1,0 +1,24 @@
+---
+skip_list:
+  - yaml[line-length]
+  - name[casing]
+  - yaml[comments]
+quiet: true
+exclude_paths:
+  - .cache/ # implicit unless exclude_paths is defined in config
+  - collections/
+  - roles/PyratLabs.k3s
+  - roles/gantsign.ctop
+  - roles/geerlingguy.ansible
+  - roles/geerlingguy.docker
+  - roles/geerlingguy.helm
+  - roles/geerlingguy.nfs_server
+  - roles/geerlingguy.pip
+  - roles/hifis-net.unattended_upgrades
+  - roles/l3d.gitea
+  - roles/mrlesmithjr.ansible-manage-lvm
+  - roles/oefenweb.ufw
+  - roles/pandemonium1986.ansible-role-k9s
+  - roles/robertdebock.bootstrap
+  - roles/PyratLabs.k3s
+  - .gitlab-ci.yml
