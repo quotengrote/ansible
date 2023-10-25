@@ -1,8 +1,0 @@
----
-extends: default
-
-rules:
-  # 190 chars should be enough, but don't fail if a line is longer
-  line-length:
-    max: 190
-    level: warning

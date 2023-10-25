@@ -1,7 +1,7 @@
 ---
 - hosts: all
   roles:
-    - { role: mrlesmithjr.ansible-manage-lvm,
+    - { role: mrlesmithjr-ansible-manage-lvm,
         tags: "lvm",
         become: true,
         when: manage_lvm == true and manage_lvm is defined }

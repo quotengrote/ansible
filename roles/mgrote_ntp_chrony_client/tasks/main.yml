@@ -63,7 +63,7 @@
     group: "{{ ntp_chrony_group }}"
   notify: restart_chrony
 
-- name: set timezone to {{ ntp_chrony_timezone }}
+- name: set timezone to ntp_chrony_timezone
   become: true
   community.general.timezone:
     name: "{{ ntp_chrony_timezone }}"

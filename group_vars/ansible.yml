@@ -1,16 +1,13 @@
 ---
 ### geerlingguy.pip
-pip_package: python3-pip
 pip_install_packages:
-  - name: pykeepass
-    version: 3.2.1
+  - name: pykeepass>=3.2.1
   - name: Jinja2>=2.11.2
   - name: markupsafe
   - name: ara
   - name: jmespath
-### geerlingguy.ansible
-ansible_install_method: pip
-ansible_install_version_pip: '8.0.0'
+  - name: ansible
+
 ### mgrote.apt_manage_packages
 apt_packages_extra:
   - sshpass

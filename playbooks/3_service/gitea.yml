@@ -1,4 +1,4 @@
 ---
 - hosts: gitea
   roles:
-    - { role: l3d.gitea, tags: "gitea", become: true }
+    - { role: pyratlabs-ansible-role-gitea, tags: "gitea", become: true }

@@ -1,4 +1,29 @@
 collections:
-  - name: community.general
-  - name: community.crypto
-  - name: ansible.posix
+  - git+https://git.mgrote.net/ansible-collections-mirrors/community.general
+  - git+https://git.mgrote.net/ansible-collections-mirrors/community.crypto
+  - git+https://git.mgrote.net/ansible-collections-mirrors/ansible.posix
+roles:
+  - src: https://git.mgrote.net/ansible-roles-mirrors/pyratlabs-ansible-role-k3s
+    scm: git
+  - src: https://git.mgrote.net/ansible-roles-mirrors/robertdebock-ansible-role-bootstrap
+    scm: git
+  - src: https://git.mgrote.net/ansible-roles-mirrors/pandemonium1986-ansible-role-k9s
+    scm: git
+  - src: https://git.mgrote.net/ansible-roles-mirrors/oefenweb-ansible-ufw
+    scm: git
+  - src: https://git.mgrote.net/ansible-roles-mirrors/mrlesmithjr-ansible-manage-lvm
+    scm: git
+  - src: https://git.mgrote.net/ansible-roles-mirrors/hifis-net-ansible-role-unattended-upgrades
+    scm: git
+  - src: https://git.mgrote.net/ansible-roles-mirrors/geerlingguy-ansible-role-pip
+    scm: git
+  - src: https://git.mgrote.net/ansible-roles-mirrors/geerlingguy-ansible-role-nfs
+    scm: git
+  - src: https://git.mgrote.net/ansible-roles-mirrors/geerlingguy-ansible-role-helm
+    scm: git
+  - src: https://git.mgrote.net/ansible-roles-mirrors/geerlingguy-ansible-role-docker
+    scm: git
+  - src: https://git.mgrote.net/ansible-roles-mirrors/gantsign-ansible-role-ctop
+    scm: git
+  - src: https://git.mgrote.net/ansible-roles-mirrors/pyratlabs-ansible-role-gitea
+    scm: git

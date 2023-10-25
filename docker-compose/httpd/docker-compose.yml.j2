@@ -6,7 +6,7 @@ services:
     restart: always
     volumes:
       - uploads:/usr/local/apache2/htdocs/
-      - "/docker/httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro"
+      - "{{ compose_dest_basedir }}/httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro"
     ports:
       - 3344:80
     labels:

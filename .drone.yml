@@ -23,6 +23,7 @@ steps:
     commands:
       - ansible-lint --version
       - echo $ANSIBLE_VAULT_PASSWORD > ./vault-pass.yml
+      - ansible-galaxy install -r requirements.yml
       - ansible-lint --force-color --format pep8
     when:
       event:

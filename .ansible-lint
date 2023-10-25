@@ -9,20 +9,18 @@ quiet: true
 exclude_paths:
   - .cache/ # implicit unless exclude_paths is defined in config
   - collections/
-  - roles/PyratLabs.k3s
-  - roles/gantsign.ctop
-  - roles/geerlingguy.ansible
-  - roles/geerlingguy.docker
-  - roles/geerlingguy.helm
-  - roles/geerlingguy.nfs_server
-  - roles/geerlingguy.pip
-  - roles/hifis-net.unattended_upgrades
-  - roles/l3d.gitea
-  - roles/mrlesmithjr.ansible-manage-lvm
-  - roles/oefenweb.ufw
-  - roles/pandemonium1986.ansible-role-k9s
-  - roles/robertdebock.bootstrap
-  - roles/PyratLabs.k3s
   - .gitlab-ci.yml
   - friedhof/
   - playbooks/on-off
+  - roles/geerlingguy-ansible-role-pip
+  - roles/pyratlabs-ansible-role-k3s
+  - roles/robertdebock-ansible-role-bootstrap
+  - roles/gantsign-ansible-role-ctop
+  - roles/geerlingguy-ansible-role-docker
+  - roles/geerlingguy-ansible-role-helm
+  - roles/geerlingguy-ansible-role-nfs
+  - roles/hifis-net-ansible-role-unattended-upgrades
+  - roles/mrlesmithjr-ansible-manage-lvm
+  - roles/oefenweb-ansible-ufw
+  - roles/pandemonium1986-ansible-role-k9s
+  - roles/pyratlabs-ansible-role-gitea
