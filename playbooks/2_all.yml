@@ -1,18 +1,17 @@
 ---
-  - import_playbook: base/apt_sources.yml
-  - import_playbook: base/packages.yml
-  - import_playbook: base/ntp_client.yml
-  - import_playbook: base/restic.yml
-  - import_playbook: base/users.yml
-  - import_playbook: base/motd.yml
-  - import_playbook: base/dotfiles.yml
-  - import_playbook: base/vim.yml
-  - import_playbook: base/postfix.yml
-  - import_playbook: base/ufw.yml
-  - import_playbook: base/ssh.yml
-  - import_playbook: base/f2b.yml
-  - import_playbook: base/remove_snapd.yml
-  - import_playbook: base/unattended_upgrades.yml
-  - import_playbook: base/update_packages.yml
-  - import_playbook: base/lvm.yml
-  - import_playbook: base/fwupd.yml
+- ansible.builtin.import_playbook: base/apt_sources.yml
+- ansible.builtin.import_playbook: base/packages.yml
+- ansible.builtin.import_playbook: base/ntp_client.yml
+- ansible.builtin.import_playbook: base/restic.yml
+- ansible.builtin.import_playbook: base/users.yml
+- ansible.builtin.import_playbook: base/dotfiles.yml
+- ansible.builtin.import_playbook: base/vim.yml
+- ansible.builtin.import_playbook: base/postfix.yml
+- ansible.builtin.import_playbook: base/ufw.yml
+- ansible.builtin.import_playbook: base/ssh.yml
+- ansible.builtin.import_playbook: base/f2b.yml
+- ansible.builtin.import_playbook: base/remove_snapd.yml
+- ansible.builtin.import_playbook: base/unattended_upgrades.yml
+- ansible.builtin.import_playbook: base/update_packages.yml
+- ansible.builtin.import_playbook: base/lvm.yml
+- ansible.builtin.import_playbook: base/fwupd.yml

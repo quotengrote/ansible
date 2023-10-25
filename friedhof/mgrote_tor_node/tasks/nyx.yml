@@ -1,0 +1,8 @@
+---
+- name: install nyx packages
+  become: true
+  ansible.builtin.package:
+    name:
+      - nyx
+    state: present
+  notify: restart tor

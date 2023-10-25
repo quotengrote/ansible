@@ -1,2 +1,0 @@
----
-  zfs_extra_arc_max_size: "8589934592" #in Bytes

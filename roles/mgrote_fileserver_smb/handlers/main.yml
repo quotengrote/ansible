@@ -1,0 +1,15 @@
+---
+- name: restart smbd
+  become: true
+  ansible.builtin.systemd:
+    name: smbd
+    enabled: true
+    state: restarted
+
+- name: set samba passwords
+  become: true
+  ansible.builtin.shell: "printf '{{ item.password }}\n{{ item.password }}\n' | smbpasswd -a {{ item.name }}" # noqa no-changed-when risky-shell-pipe
+  #pipefail: https://blog.christophersmart.com/2019/09/28/using-pipefail-with-shell-module-in-ansible/
+  with_items:
+    - "{{ smb_users }}"
+  no_log: true

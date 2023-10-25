@@ -1,4 +1,4 @@
 ---
 - hosts: dokuwiki
   roles:
-    - { role: mgrote.dokuwiki, tags: "dokuwiki" }
+    - { role: mgrote_dokuwiki, tags: "dokuwiki" }

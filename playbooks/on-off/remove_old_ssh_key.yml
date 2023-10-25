@@ -1,10 +1,10 @@
 ---
 - hosts: all
-  become: yes
+  become: true
 
   tasks:
     - name: Set authorized key taken from file
-      become: yes
+      become: true
       ansible.posix.authorized_key:
         user: ansible-user
         state: present

@@ -1,6 +1,6 @@
 ---
-  - hosts: all:!pve:!pbs
-    roles:
-      - { role: oefenweb.ufw, # Regeln werden in den Group/Host-Vars gesetzt
-          tags: "ufw",
-          become: true}
+- hosts: all:!pve:!pbs
+  roles:
+    - { role: oefenweb.ufw, # Regeln werden in den Group/Host-Vars gesetzt
+        tags: "ufw",
+        become: true}

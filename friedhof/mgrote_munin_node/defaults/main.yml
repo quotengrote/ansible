@@ -1,0 +1,33 @@
+---
+munin_user_group: root # group to which the user belongs
+munin_node_log: /var/log/munin/munin-node.log
+munin_node_pid: /var/run/munin/munin-node.pid
+munin_node_plugin_timeout: 60 # in sec
+munin_node_global_timeout: 900 # in sec
+munin_node_host_name: '' # Set this if the client doesn't report the correct hostname
+munin_node_allowed_ips: # A list of addresses that are allowed to connect Munin requires IPs be added as regular expressions.
+  - '^127\.0\.0\.1$'
+  - '^::1$'
+munin_node_allowed_cidrs: [192.168.2.0/24] # A list of addresses that are allowed to connect
+munin_node_denied_cidrs: [] # a list of addresses that are not allowed to connect
+munin_node_bind_host: "0.0.0.0" # bind to interface
+munin_node_bind_port: "4949" # bind to port
+munin_node_log_level: 4 # Loglevel
+
+# Plugin configuration options (the key is the plugin heading, items within will
+# be options for the plugin).
+# Source and destination of munin plugins.
+munin_plugin_src_path: /usr/share/munin/plugins/
+munin_plugin_dest_path: /etc/munin/plugins/
+munin_plugin_conf_dest_path: /etc/munin/plugin-conf.d/
+#  munin_node_plugins: #plugins to install
+#    - name: docker_volumes # name
+#      src: https://git.mgrote.net/mg/mirror-munin-contrib/raw/branch/master/plugins/docker/docker_ #src
+#      config_file_name: /etc/munin/plugin-conf.d/docker # where to put plugin config
+    # content of config
+#      config: |
+#        user root
+#        env.DOCKER_HOST unix://run/docker.sock
+
+#  munin_node_disabled_plugins: # remove plugins from running config
+#    - name: meminfo

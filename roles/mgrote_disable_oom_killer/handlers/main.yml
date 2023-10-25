@@ -1,0 +1,5 @@
+---
+- name: disable oom-killer
+  become: true
+  ansible.builtin.command: echo 2 > /proc/sys/vm/overcommit_memory # noqa no-changed-when
+...

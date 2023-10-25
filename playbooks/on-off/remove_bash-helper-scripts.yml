@@ -2,7 +2,7 @@
 - hosts: all
   tasks:
     - name: bash-helper-scripts-mgrote deinstallieren
-      become: yes
+      become: true
       ansible.builtin.package:
         name: bash-helper-scripts-mgrote
         state: absent

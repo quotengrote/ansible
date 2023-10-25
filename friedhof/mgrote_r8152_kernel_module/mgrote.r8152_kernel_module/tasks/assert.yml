@@ -1,0 +1,20 @@
+---
+- name: check if module is installed - folder
+  become: true
+  ansible.builtin.stat:
+    path: "/lib/modules/r8152"
+  register: folder_exists
+
+- name: check if module is installed - lsmod
+  become: true
+  ansible.builtin.shell: lsmod
+  register: module_in_lsmod
+  changed_when: false # sorgt dafür das der Task nie als "changed" angezeigt wird
+
+- name: include install-tasks
+  ansible.builtin.include_tasks: doing.yml
+  when: (module_in_lsmod.stdout.find('r8152') == -1) and (folder_exists.stat.exists == false)
+
+- name: include dkms-tasks
+  ansible.builtin.include_tasks: dkms.yml
+  when: (module_in_lsmod.stdout.find('r8152') == -1) and (folder_exists.stat.exists == false)

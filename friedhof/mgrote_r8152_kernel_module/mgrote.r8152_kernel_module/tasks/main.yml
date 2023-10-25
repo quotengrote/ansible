@@ -1,0 +1,4 @@
+---
+- name: include assert-tasks
+  ansible.builtin.include_tasks: assert.yml
+  when: r8152_module_needed

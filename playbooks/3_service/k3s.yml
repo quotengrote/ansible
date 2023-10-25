@@ -2,9 +2,9 @@
 - hosts: k3s
   roles:
     - { role: PyratLabs.k3s, tags: "k3s" }
-    - { role: mgrote.k8s_autocompletion, tags: "autocomp" }
+    - { role: mgrote_k8s_autocompletion, tags: "autocomp" }
     - { role: pandemonium1986.ansible-role-k9s, tags: "k9s", become: true }
-    - { role: mgrote.fluxcd, tags: "flux", become: true }
-    - { role: mgrote.k8s_misc, tags: "misc", become: true }
-    - { role: mgrote.sealed-secrets, tags: "sealed-secrets", become: true }
+    - { role: mgrote_fluxcd, tags: "flux", become: true }
+    - { role: mgrote_k8s_misc, tags: "misc", become: true }
+    - { role: mgrote_sealed_secrets, tags: "sealed-secrets", become: true }
     - { role: geerlingguy.helm, tags: "helm", become: true }

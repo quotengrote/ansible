@@ -1,0 +1,7 @@
+---
+- name: restart_f2b
+  become: true
+  ansible.builtin.systemd:
+    name: fail2ban
+    enabled: true
+    state: restarted

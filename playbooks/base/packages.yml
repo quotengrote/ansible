@@ -1,6 +1,6 @@
 ---
-  - hosts: all
-    serial: 3
-    roles:
-      - { role: mgrote.apt_manage_packages, tags: "install"}
-      - { role: mgrote.exa, tags: "exa"}
+- hosts: all
+  serial: 3
+  roles:
+    - { role: mgrote_apt_manage_packages, tags: "install"}
+    - { role: mgrote_exa, tags: "exa"}

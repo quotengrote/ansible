@@ -1,0 +1,28 @@
+---
+- name: systemctl daemon-reload
+  become: true
+  ansible.builtin.systemd:
+    daemon_reload: true
+
+- name: systemctl enable units
+  become: true
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: true
+    masked: false
+  with_items:
+    - media-restic.automount
+    - media-restic.mount
+    - restic.service
+    - restic.timer
+    - restic_mail.service
+
+- name: systemctl start units
+  become: true
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    state: restarted
+    enabled: true
+  with_items:
+    - restic.timer
+  notify: systemctl daemon-reload

@@ -1,6 +1,0 @@
----
-  - name: Limit ZFS Memory Usage
-    become: yes
-    ansible.builtin.copy:
-      dest: /etc/modprobe.d/zfs.conf
-      content: options zfs zfs_arc_max={{ zfs_extra_arc_max_size }}

@@ -1,34 +1,29 @@
 ---
-  - hosts: all
-    gather_facts: false
-    max_fail_percentage: 20%
-    roles:
-      - { role: robertdebock.bootstrap, tags: "bootstrap", become: yes}
-      - { role: mgrote.users, tags: "user", become: yes}
-      - { role: mgrote.r8152_kernel_module }
-      - { role: mgrote.apt_manage_sources, tags: "apt_sources" }
-      - { role: mgrote.qemu_guest_agent }
-      - { role: mgrote.apt_update_packages, tags: "updates"}
-    post_tasks:
-      - name: Change user password
-        become: true
-        user:
-          name: mg
-          update_password: always
-          password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
+- hosts: all
+  gather_facts: false
+  roles:
+    - { role: robertdebock.bootstrap, tags: "bootstrap", become: true}
+    - { role: mgrote_users, tags: "user", become: true}
+    - { role: mgrote_apt_manage_sources, tags: "apt_sources" }
+    - { role: mgrote_qemu_guest_agent }
+    - { role: mgrote_apt_update_packages, tags: "updates"}
+  post_tasks:
+    - name: Change user password
+      become: true
+      ansible.builtin.user:
+        name: mg
+        update_password: always
+        password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
 
-
-    vars:
-      ### reobertdebock.bootstrap
-      bootstrap_user: mg
-      bootstrap_wait_for_host: no
-      bootstrap_timeout: 1
-      ### ansible
-      ansible_user: "mg"
-      ansible_password: hallowelt
-      ansible_become_password: hallowelt
-      ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
-
-
+  vars:
+    ### reobertdebock.bootstrap
+    bootstrap_user: mg
+    bootstrap_wait_for_host: false
+    bootstrap_timeout: 1
+    ### ansible
+    ansible_user: "mg"
+    ansible_password: hallowelt
+    ansible_become_password: hallowelt
+    ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
 
 # Nach dem ersten durchlaufen ist keine Anmeldung mehr per Passwort & ssh möglich. Damit scheitert auch der Versuch das Playbook ein zweites mal durchlaufen zu lassen.

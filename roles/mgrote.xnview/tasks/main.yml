@@ -1,5 +1,0 @@
----
-  - name: download and install xnview
-    become: true
-    apt:
-      deb: "{{ xnview_deb_url }}"

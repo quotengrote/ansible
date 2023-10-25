@@ -162,8 +162,8 @@ filesystem:
             returned: success
             type: list
             sample:
-                - /dev/sda1
-                - /dev/sdb1
+               - /dev/sda1
+               - /dev/sdb1
         default_subvolume:
             description: The ID of the filesystem's default subvolume.
             returned: success and if filesystem is mounted

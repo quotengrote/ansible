@@ -1,220 +1,220 @@
 ---
-  ### wird in vielen Rollen verwendet
-  ssh_public_key_mg: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKL8opSQ0rWVw9uCfbuiqmXq188OP4xh66MBTO3zV5jo heimserver_mg_v3
-  empfaenger_mail: michael.grote@posteo.de
-  file_header: |
-    #----------------------------------------------------------------#
-    #              This file is managed with ansible!                #
-    #----------------------------------------------------------------#
-  ### mgrote.restic
-  restic_user: root
-  restic_group: restic
-  restic_conf_dir: /etc/restic
-  restic_exclude: |
-        ._*
-        desktop.ini
-        .Trash-*
-        **/**cache***/**
-        **/**Cache***/**
-        **/**AppData***/**
-        # https://github.com/restic/restic/issues/1005
-        # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
-  restic_mount_timeout: "10 min"
-  restic_failure_delay: "30 s"
-  restic_schedule: "0/6:00" # alle 6 Stunden
-  restic_folders_to_backup: "/" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
-  restic_repository: "//fileserver3.grote.lan/restic"
-  restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
-  restic_mount_user: restic
-  restic_mount_password: "{{ lookup('keepass', 'fileserver_smb_user_restic', 'password') }}"
-  restic_fail_mail: "{{ empfaenger_mail }}"
-  ### mgrote.user
-  users:
-    - username: mg
-      password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
-      update_password: always
-      groups: ssh, sudo
-      state: present
-      public_ssh_key: "{{ ssh_public_key_mg }}"
-      allow_sudo: true
-      allow_passwordless_sudo: true
-    - username: ansible-user
-      password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
-      update_password: always
-      groups: ssh, sudo
-      state: present
-      public_ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcBwOjanQV6sFWaTetqpl20SVe3aRzGjKbsp7hKkDCE mg@irantu
-      allow_sudo: true
-      allow_passwordless_sudo: true
+### wird in vielen Rollen verwendet
+ssh_public_key_mg: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKL8opSQ0rWVw9uCfbuiqmXq188OP4xh66MBTO3zV5jo heimserver_mg_v3
+empfaenger_mail: michael.grote@posteo.de
+file_header: |
+  #----------------------------------------------------------------#
+  #              This file is managed with ansible!                #
+  #----------------------------------------------------------------#
+### mgrote.restic
+restic_user: root
+restic_group: restic
+restic_conf_dir: /etc/restic
+restic_exclude: |
+      ._*
+      desktop.ini
+      .Trash-*
+      **/**cache***/**
+      **/**Cache***/**
+      **/**AppData***/**
+      # https://github.com/restic/restic/issues/1005
+      # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
+restic_mount_timeout: "10 min"
+restic_failure_delay: "30 s"
+restic_schedule: "0/6:00" # alle 6 Stunden
+restic_folders_to_backup: "/" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
+restic_repository: "//fileserver3.grote.lan/restic"
+restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
+restic_mount_user: restic
+restic_mount_password: "{{ lookup('keepass', 'fileserver_smb_user_restic', 'password') }}"
+restic_fail_mail: "{{ empfaenger_mail }}"
+### mgrote.user
+users:
+  - username: mg
+    password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
+    update_password: always
+    groups: ssh, sudo
+    state: present
+    public_ssh_key: "{{ ssh_public_key_mg }}"
+    allow_sudo: true
+    allow_passwordless_sudo: true
+  - username: ansible-user
+    password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
+    update_password: always
+    groups: ssh, sudo
+    state: present
+    public_ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcBwOjanQV6sFWaTetqpl20SVe3aRzGjKbsp7hKkDCE mg@irantu
+    allow_sudo: true
+    allow_passwordless_sudo: true
 
-  ### mgrote.dotfiles
-  dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles
-  dotfiles_repo_path: /home/mg/dotfiles
-  dotfiles_files:
-    - repo_path: "{{ dotfiles_repo_path}}/.vimrc"
-      local_path: "/home/mg/.vimrc"
-    - repo_path: "{{ dotfiles_repo_path}}/.tmux.conf"
-      local_path: "/home/mg/.tmux.conf"
-    - repo_path: "{{ dotfiles_repo_path}}/.gitconfig"
-      local_path: "/home/mg/.gitconfig"
-  dotfiles_owner: mg
-  ### jnv.unattended_upgrades
-  unattended_mail: "{{ empfaenger_mail }}"
-  unattended_mail_only_on_error: true
-  unattended_syslog_enable: true
-  unattended_origins_patterns:
-    - 'origin=Ubuntu,archive=${distro_codename}-security'
-    - 'o=Ubuntu,a=${distro_codename}-updates'
-  ### mgrote.ntp_chrony_client
-  ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
-  ntp_chrony_driftfile_directory: "/var/lib/chrony" # Ordner für das driftfile
-  ntp_chrony_servers: # welche Server sollen befragt werden
-    - address: ptbtime1.ptb.de
-      options: iburst #optionaler parameter
-  ntp_chrony_user: _chrony # Nutzer + Gruppe für den Dienst
-  ntp_chrony_group: _chrony # Nutzer + Gruppe für den Dienst
-  ntp_chrony_logging: false
+### mgrote.dotfiles
+dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles
+dotfiles_repo_path: /home/mg/dotfiles
+dotfiles_files:
+  - repo_path: "{{ dotfiles_repo_path }}/.vimrc"
+    local_path: "/home/mg/.vimrc"
+  - repo_path: "{{ dotfiles_repo_path }}/.tmux.conf"
+    local_path: "/home/mg/.tmux.conf"
+  - repo_path: "{{ dotfiles_repo_path }}/.gitconfig"
+    local_path: "/home/mg/.gitconfig"
+dotfiles_owner: mg
+### jnv.unattended_upgrades
+unattended_mail: "{{ empfaenger_mail }}"
+unattended_mail_only_on_error: true
+unattended_syslog_enable: true
+unattended_origins_patterns:
+  - 'origin=Ubuntu,archive=${distro_codename}-security'
+  - 'o=Ubuntu,a=${distro_codename}-updates'
+### mgrote.ntp_chrony_client
+ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
+ntp_chrony_driftfile_directory: "/var/lib/chrony" # Ordner für das driftfile
+ntp_chrony_servers: # welche Server sollen befragt werden
+  - address: ptbtime1.ptb.de
+    options: iburst #optionaler parameter
+ntp_chrony_user: _chrony # Nutzer + Gruppe für den Dienst
+ntp_chrony_group: _chrony # Nutzer + Gruppe für den Dienst
+ntp_chrony_logging: false
 
-  ### mgrote.postfix
-  postfix_absender_mailadresse: info@mgrote.net
-  postfix_absender_passwort: "{{ lookup('keepass', 'postfix_absender_passwort', 'password') }}"
-  postfix_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24"
-  postfix_mail_nach_cronjob: false
-  postfix_smtp_server: smtp.strato.de
-  postfix_smtp_server_port: 587
-  postfix_smtp_use_tls: "yes"
-  ### mgrote.tmux
-  tmux_conf_destination: "/home/mg/.tmux.conf"
-  tmux_bashrc_destination: "/home/mg/.bashrc"
-  tmux_standardsession_name: "default"
-  ### mgrote.fail2ban
-  f2b_bantime: 300
-  f2b_findtime: 300
-  f2b_maxretry: 5
-  f2b_destemail: "{{ empfaenger_mail }}"
-  f2b_sender: "{{ postfix_absender_mailadresse }}"
-  ### oefenweb.ufw
-  ufw_rules:
-    - rule: allow
-      to_port: 22
-      protocol: tcp
-      comment: 'ssh'
-      from_ip: 0.0.0.0/0
-  ufw_default_incoming_policy: deny
-  ufw_default_outgoing_policy: allow
-  ### mgrote.apt_manage_packages
-  apt_packages_common:
-    - locales
-    - python3
-    - build-essential
-    - htop
-    - git
-    - dnsutils
-    - mc
-    - cifs-utils
-    - haveged #https://www.linux-magazin.de/ausgaben/2011/09/einfuehrung2/
-    - ca-certificates
-    - netdiscover
-    - tree
-    - curl
-    - whois
-    - logrotate
-    - ncdu
-    - net-tools
-    - apt-transport-https
-    - neofetch
-    - moreutils
-    - acl
-    - vim
-    - rsync
-    - at
-    - ripgrep
-    - iotop
-    - pwgen
-    - keychain
-  apt_packages_physical:
-    - s-tui
-    - smartmontools
-    - lm-sensors
-    - ethtool
-  apt_packages_vm:
-    - qemu-guest-agent
-    - open-vm-tools
-  apt_packages_absent:
-    - nano
-    - snapd
-    - ubuntu-advantage-tools
-  apt_packages_internet:
-    - http://docker10.grote.lan:3344/bash-helper-scripts-mgrote-latest.deb
+### mgrote.postfix
+postfix_absender_mailadresse: info@mgrote.net
+postfix_absender_passwort: "{{ lookup('keepass', 'postfix_absender_passwort', 'password') }}"
+postfix_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24"
+postfix_mail_nach_cronjob: false
+postfix_smtp_server: smtp.strato.de
+postfix_smtp_server_port: 587
+postfix_smtp_use_tls: "yes"
+### mgrote.tmux
+tmux_conf_destination: "/home/mg/.tmux.conf"
+tmux_bashrc_destination: "/home/mg/.bashrc"
+tmux_standardsession_name: "default"
+### mgrote.fail2ban
+f2b_bantime: 300
+f2b_findtime: 300
+f2b_maxretry: 5
+f2b_destemail: "{{ empfaenger_mail }}"
+f2b_sender: "{{ postfix_absender_mailadresse }}"
+### oefenweb.ufw
+ufw_rules:
+  - rule: allow
+    to_port: 22
+    protocol: tcp
+    comment: 'ssh'
+    from_ip: 0.0.0.0/0
+ufw_default_incoming_policy: deny
+ufw_default_outgoing_policy: allow
+### mgrote.apt_manage_packages
+apt_packages_common:
+  - locales
+  - python3
+  - build-essential
+  - htop
+  - git
+  - dnsutils
+  - mc
+  - cifs-utils
+  - haveged #https://www.linux-magazin.de/ausgaben/2011/09/einfuehrung2/
+  - ca-certificates
+  - netdiscover
+  - tree
+  - curl
+  - whois
+  - logrotate
+  - ncdu
+  - net-tools
+  - apt-transport-https
+  - neofetch
+  - moreutils
+  - acl
+  - vim
+  - rsync
+  - at
+  - ripgrep
+  - iotop
+  - pwgen
+  - keychain
+apt_packages_physical:
+  - s-tui
+  - smartmontools
+  - lm-sensors
+  - ethtool
+apt_packages_vm:
+  - qemu-guest-agent
+  - open-vm-tools
+apt_packages_absent:
+  - nano
+  - snapd
+  - ubuntu-advantage-tools
+apt_packages_internet:
+  - http://docker10.grote.lan:3344/bash-helper-scripts-mgrote-latest.deb
 
-  ### mgrote.zfs_sanoid
-  sanoid_templates:
-    - name: '31tage'
-      keep_hourly: '24'                        # Aufheben (Stunde)
-      keep_daily: '31'                         # Aufheben (Tage)
-      keep_monthly: '3'                        # Aufheben (Monate)
-      keep_yearly: '0'                         # Aufheben (Jahre)
-      frequently: '16'                         # Aufheben (Minuten)
-      frequent_period: '15'                    # Intervall (alle 5 Minuten)
-      autosnap: 'yes'                          # Automatisches erstellen von Snapshots
-      autoprune: 'yes'
-    - name: '14tage'
-      keep_hourly: '24'
-      keep_daily: '14'
-      keep_monthly: '0'
-      keep_yearly: '0'
-      frequently: '16'
-      frequent_period: '15'
-      autosnap: 'yes'
-      autoprune: 'yes'
-    - name: '3tage'
-      keep_hourly: '24'
-      keep_daily: '7'
-      keep_monthly: '0'
-      keep_yearly: '0'
-      frequently: '16'
-      frequent_period: '15'
-      autosnap: 'yes'
-      autoprune: 'yes'
-    - name: '3monate'
-      keep_hourly: '24'
-      keep_daily: '7'
-      keep_monthly: '3'
-      keep_yearly: '0'
-      frequently: '16'
-      frequent_period: '15'
-      autosnap: 'yes'
-      autoprune: 'yes'
-    - name: 'pve3tage'
-      keep_hourly: '72'
-      keep_daily: '5'
-      keep_monthly: '0'
-      keep_yearly: '0'
-      frequently: '16'
-      frequent_period: '15'
-      autosnap: 'yes'
-      autoprune: 'yes'
+### mgrote.zfs_sanoid
+sanoid_templates:
+  - name: '31tage'
+    keep_hourly: '24'                        # Aufheben (Stunde)
+    keep_daily: '31'                         # Aufheben (Tage)
+    keep_monthly: '3'                        # Aufheben (Monate)
+    keep_yearly: '0'                         # Aufheben (Jahre)
+    frequently: '16'                         # Aufheben (Minuten)
+    frequent_period: '15'                    # Intervall (alle 5 Minuten)
+    autosnap: 'yes'                          # Automatisches erstellen von Snapshots
+    autoprune: 'yes'
+  - name: '14tage'
+    keep_hourly: '24'
+    keep_daily: '14'
+    keep_monthly: '0'
+    keep_yearly: '0'
+    frequently: '16'
+    frequent_period: '15'
+    autosnap: 'yes'
+    autoprune: 'yes'
+  - name: '3tage'
+    keep_hourly: '24'
+    keep_daily: '7'
+    keep_monthly: '0'
+    keep_yearly: '0'
+    frequently: '16'
+    frequent_period: '15'
+    autosnap: 'yes'
+    autoprune: 'yes'
+  - name: '3monate'
+    keep_hourly: '24'
+    keep_daily: '7'
+    keep_monthly: '3'
+    keep_yearly: '0'
+    frequently: '16'
+    frequent_period: '15'
+    autosnap: 'yes'
+    autoprune: 'yes'
+  - name: 'pve3tage'
+    keep_hourly: '72'
+    keep_daily: '5'
+    keep_monthly: '0'
+    keep_yearly: '0'
+    frequently: '16'
+    frequent_period: '15'
+    autosnap: 'yes'
+    autoprune: 'yes'
 
-  ### mgrote.zfs_sanoid
-  sanoid_deb_url: http://docker10.grote.lan:3344/sanoid_3.0.4.deb
+### mgrote.zfs_sanoid
+sanoid_deb_url: http://docker10.grote.lan:3344/sanoid_3.0.4.deb
 
-  # Ansible Variablen
-  ### User
-  ansible_user: "ansible-user"
-  ### SSH
-  ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
-  ### python3
-  # https://docs.ansible.com/ansible/latest/reference_appendices/python_3_support.html
-  ansible_python_interpreter: "/usr/bin/python3"
+# Ansible Variablen
+### User
+ansible_user: "ansible-user"
+### SSH
+ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
+### python3
+# https://docs.ansible.com/ansible/latest/reference_appendices/python_3_support.html
+ansible_python_interpreter: "/usr/bin/python3"
 
-  # Ansible Plugin Variablen
-  ### Keepass
-  # https://github.com/viczem/ansible-keepass
-  keepass_dbx: "./keepass_db.kdbx"
-  keepass_psw: !vault |
-          $ANSIBLE_VAULT;1.1;AES256
-          62383737623066396239383336646164616537646630653964313532383130343533346561633039
-          3437306134656535353438666165376332633064383135650a636537626662656130376537633164
-          61613132326536666466636632363866393066656236303766333338356337396338376266346631
-          6364336331623539300a313562303161373631613734313938346666376239613333333363376236
-          38363035376662353135333332363431343833656666643036326234656166643531
+# Ansible Plugin Variablen
+### Keepass
+# https://github.com/viczem/ansible-keepass
+keepass_dbx: "./keepass_db.kdbx"
+keepass_psw: !vault |
+        $ANSIBLE_VAULT;1.1;AES256
+        62383737623066396239383336646164616537646630653964313532383130343533346561633039
+        3437306134656535353438666165376332633064383135650a636537626662656130376537633164
+        61613132326536666466636632363866393066656236303766333338356337396338376266346631
+        6364336331623539300a313562303161373631613734313938346666376239613333333363376236
+        38363035376662353135333332363431343833656666643036326234656166643531

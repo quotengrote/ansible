@@ -1,9 +1,0 @@
----
-  - name: template /etc/dnsmasq.conf
-    become: yes
-    ansible.builtin.template:
-      src: dnsmasq.conf.j2
-      dest: /etc/dnsmasq.conf
-      owner: "{{ dnsmasq_user }}"
-      group: "{{ dnsmasq_user_group }}"
-    notify: restart dnsmasq

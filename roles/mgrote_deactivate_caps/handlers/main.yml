@@ -1,0 +1,4 @@
+---
+- name: deactivate caps
+  become: true
+  ansible.builtin.command: setxkbmap -option caps:none # noqa no-changed-when

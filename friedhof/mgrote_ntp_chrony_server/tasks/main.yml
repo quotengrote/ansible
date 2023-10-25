@@ -1,0 +1,59 @@
+---
+- name: mask systemd-timesyncd service
+  become: true
+  ansible.builtin.systemd:
+    name: systemd-timesyncd
+    state: stopped
+    masked: true
+
+- name: gather package facts
+  become: true
+  ansible.builtin.package_facts:
+    manager: auto
+
+- name: stop and mask ntp service
+  become: true
+  ansible.builtin.systemd:
+    name: ntp
+    masked: true
+    state: stopped
+  when: "'ntp' in ansible_facts.packages"
+
+- name: install chrony packages
+  become: true
+  ansible.builtin.package:
+    name:
+      - chrony
+    state: present
+  notify: restart_chrony
+
+- name: copy chrony config
+  become: true
+  ansible.builtin.template:
+    src: chrony.conf.j2
+    dest: /etc/chrony/chrony.conf
+    mode: "0755"
+  notify: restart_chrony
+
+- name: copy logrotate config
+  become: true
+  ansible.builtin.template:
+    src: logrotate_chrony
+    dest: /etc/logrotate.d/chrony
+    owner: root
+    group: root
+    mode: "0644"
+- name: Create chrony driftfile folder
+  become: true
+  ansible.builtin.file:
+    state: directory
+    path: "{{ ntp_chrony_driftfile_directory }}"
+    mode: "0755"
+    owner: "{{ ntp_chrony_user }}"
+    group: "{{ ntp_chrony_group }}"
+  notify: restart_chrony
+
+- name: set timezone to {{ ntp_chrony_timezone }}
+  become: true
+  community.general.timezone:
+    name: "{{ ntp_chrony_timezone }}"

@@ -1,0 +1,47 @@
+---
+- name: install packages
+  become: true
+  ansible.builtin.package:
+    name:
+      - polybar
+      - lm-sensors
+      - brightnessctl
+      - inotify-tools
+      - yad # polybar popup-calendar
+      - xdotool # polybar popup-calendar
+      - wmctrl # für polybar windows-list # https://github.com/aroma1994/polybar-windows
+    state: present
+
+- name: checkout siji font
+  become: true
+  ansible.builtin.git:
+    repo: "{{ polybar_siji_repo }}"
+    dest: "{{ polybar_siji_local }}"
+  register: gitcheckout
+
+- name: create siji dir
+  become: true
+  ansible.builtin.file:
+    path:
+      - "{{ polybar_siji_fonts_dir }}"
+    state: directory
+
+- name: install siji-font
+  become: true
+  ansible.builtin.shell: "{{ polybar_siji_local }}/install.sh -d {{ polybar_siji_fonts_dir }}"
+  args:
+    chdir: "{{ polybar_siji_local }}"
+    creates: /home/mg/.fonts
+  when: gitcheckout.changed
+
+- name: remove bitmap-file
+  become: true
+  ansible.builtin.file:
+    path: /etc/fonts/conf.d/70-no-bitmaps.conf
+    state: absent
+  when: gitcheckout.changed
+
+- name: update fc-cache
+  become: true
+  ansible.builtin.shell: fc-cache
+  when: gitcheckout.changed

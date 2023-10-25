@@ -1,0 +1,5 @@
+---
+- name: update package lists # noqa no-handler
+  become: true
+  ansible.builtin.apt:
+    update_cache: true

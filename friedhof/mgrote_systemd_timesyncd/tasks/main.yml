@@ -1,0 +1,56 @@
+---
+- name: gather package facts
+  become: true
+  ansible.builtin.package_facts:
+    manager: auto
+
+# deaktiviere andere ntp-implementationen
+- name: stop and mask ntp service
+  become: true
+  ansible.builtin.systemd:
+    name: ntp
+    masked: true
+    state: stopped
+    enabled: false
+  when: "'ntp' in ansible_facts.packages"
+
+- name: stop and mask chrony service
+  become: true
+  ansible.builtin.systemd:
+    name: chrony
+    masked: true
+    state: stopped
+    enabled: false
+  when: "'chrony' in ansible_facts.packages"
+
+- name: install systemd-timesyncd
+  become: true
+  ansible.builtin.package:
+    name:
+      - systemd-timesyncd
+    state: present
+
+- name: template systemd-timesyncd config
+  become: true
+  ansible.builtin.template:
+    src: "timesyncd.conf.j2"
+    dest: "/etc/systemd/timesyncd.conf"
+    mode: "0644"
+    owner: root
+    group: root
+  notify: restart systemd-timesyncd.service
+
+- name: activate systemd-timesyncd service (not within containers like lxc)
+  become: true
+  ansible.builtin.systemd:
+    name: systemd-timesyncd
+    masked: false
+    state: started
+    enabled: true
+  when: not ansible_facts['virtualization_type'] == "lxc"
+  tags: test
+
+- name: set timezone to {{ ntp_timesyncd_timezone }}
+  become: true
+  community.general.timezone:
+    name: "{{ ntp_timesyncd_timezone }}"

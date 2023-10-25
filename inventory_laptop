@@ -1,5 +1,0 @@
-all:
-  children:
-    laptop:
-      hosts:
-        t410.grote.lan:

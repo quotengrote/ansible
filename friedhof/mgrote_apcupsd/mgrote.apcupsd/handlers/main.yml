@@ -1,0 +1,10 @@
+---
+- name: restart_apcupsd #wird aufgerufen wenn apcupsd.conf_kopieren nach aenderungen den status "changed hat"
+  become: true
+  ansible.builtin.systemd:
+    name: apcupsd
+    state: restarted
+    enabled: true
+
+- name: apc_access_mail
+  ansible.builtin.shell: /usr/sbin/apcaccess | mail -s "{{ ansible_hostname }}" {{ empfaenger_mail }}

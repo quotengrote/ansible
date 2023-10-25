@@ -1,0 +1,26 @@
+---
+- name: check which users exist
+  become: true
+  ansible.builtin.command: "proxmox-backup-manager user list --output-format json"
+  register: users
+  changed_when: false
+
+- name: ensure users exist # noqa no-changed-when
+  become: true
+  ansible.builtin.command: "proxmox-backup-manager user create {{ item.name }}@{{ item.realm }}"
+  loop: "{{ pbs_users }}"
+  when: "item.name not in users.stdout"
+
+- name: check again which users exist
+  become: true
+  ansible.builtin.command: "proxmox-backup-manager user list --output-format json"
+  register: users
+  changed_when: false
+
+- name: ensure user password
+  become: true
+  ansible.builtin.command: "proxmox-backup-manager user update {{ item.name }}@{{ item.realm }} --password {{ item.password }} --expire 0"
+  loop: "{{ pbs_users }}"
+  when: "item.name in users.stdout"
+  changed_when: false
+  no_log: true

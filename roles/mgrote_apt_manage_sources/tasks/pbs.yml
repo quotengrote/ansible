@@ -1,0 +1,14 @@
+---
+- name: check if pbs-no-subscription repo keys exists
+  become: true
+  ansible.builtin.stat:
+    path: "{{ manage_sources_pbs_apt_repo_key_path }}"
+  register: pbs_no_subscription_repo_keys
+
+- name: add pbs-no-subscription repo keys
+  become: true
+  ansible.builtin.apt_key:
+    url: "{{ manage_sources_pbs_apt_repo_key_url }}"
+    state: present
+  notify: update package lists
+  when: not pbs_no_subscription_repo_keys.stat.exists

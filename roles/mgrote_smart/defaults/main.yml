@@ -1,0 +1,6 @@
+---
+# path to smartctl
+smart_smartctl_path: "/usr/sbin/smartctl"
+# under which user the script is run
+smart_user_group: "root"
+smart_user: "smart"

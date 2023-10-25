@@ -1,7 +1,0 @@
----
-  - name: restart smartmontools
-    become: yes
-    systemd:
-      name: smartmontools
-      state: restarted
-      enabled: yes

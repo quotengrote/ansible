@@ -1,0 +1,15 @@
+---
+- name: install obsf packages
+  become: true
+  ansible.builtin.package:
+    name:
+      - obfs4proxy
+    state: present
+  notify: restart tor
+
+- name: templating torrc
+  become: true
+  ansible.builtin.template:
+    src: "bridge_torrc"
+    dest: "/etc/tor/torrc"
+  notify: restart tor

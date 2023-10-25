@@ -1,0 +1,7 @@
+---
+- name: restart tor
+  become: true
+  ansible.builtin.systemd:
+    name: tor
+    enabled: true
+    state: restarted

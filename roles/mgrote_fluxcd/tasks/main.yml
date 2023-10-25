@@ -1,0 +1,93 @@
+---
+- name: include user tasks
+  ansible.builtin.include_tasks: user.yml
+
+- name: check if flux is installed
+  ansible.builtin.command: which flux
+  changed_when: false
+  failed_when: flux_installed.rc not in [0,1]
+  register: flux_installed
+
+- name: download flux binary
+  ansible.builtin.unarchive:
+    src: "{{ flux_download_url }}"
+    dest: "{{ flux_path_bin }}"
+    mode: "0755"
+    owner: "{{ flux_user }}"
+    group: "{{ flux_user_group }}"
+    remote_src: true
+    creates: "{{ flux_path_bin }}/flux"
+  when: flux_installed.rc not in [ 0 ]
+
+- name: install bash-completion packages
+  become: true
+  ansible.builtin.package:
+    name: bash-completion
+    state: present
+
+- name: activate autocompletion for flux
+  become: true
+  ansible.builtin.shell:
+    cmd: "set -o pipefail && flux completion bash | sudo tee /etc/bash_completion.d/flux"
+    executable: /bin/bash
+  args:
+    creates: /etc/bash_completion.d/flux
+
+- name: install flux
+  # der ganze block nur auf einem host
+  run_once: true
+  when: ansible_host == flux_install_host
+  block:
+    - name: ensure .ssh directory exists
+      ansible.builtin.file:
+        path: "{{ flux_path_ssh_dir }}"
+        owner: "{{ flux_user }}"
+        group: "{{ flux_user_group }}"
+        mode: "0400"
+        state: directory
+
+    - name: check if OpenSSH keypair exists
+      ansible.builtin.stat:
+        path: "{{ flux_path_ssh_dir }}/{{ flux_path_ssh_id_file }}"
+      register: ssh_exist
+
+    - name: generate SSH keypair
+      community.crypto.openssh_keypair:
+        path: "{{ flux_path_ssh_dir }}/{{ flux_path_ssh_id_file }}"
+        owner: "{{ flux_user }}"
+        group: "{{ flux_user_group }}"
+        mode: "0400"
+        type: "{{ flux_ssh_key_format }}"
+      when: not ssh_exist.stat.exists
+      register: create_ssh_key
+
+    - name: get publickey
+      ansible.builtin.command: cat "{{ flux_path_ssh_dir }}/{{ flux_path_ssh_id_file }}.pub" # noqa no-handler no-changed-when
+      when: create_ssh_key.changed
+      register: ssh_public_key
+
+    - name: show publickey # noqa no-handler
+      ansible.builtin.debug:
+        msg: "{{ ssh_public_key.stdout }}"
+      when: create_ssh_key.changed
+
+    - name: copy publickey to gitea as deploy-key WITH write-permissions! # noqa no-handler no-changed-when
+      ansible.builtin.pause:
+        prompt: "Make sure the key is saved!"
+      when: create_ssh_key.changed
+
+    - name: set permissions for $kubeconfig
+      ansible.builtin.file:
+        path: "{{ kubeconfig }}"
+        owner: root
+        group: root
+        mode: "0640"
+
+    - name: template bootstrap script
+      ansible.builtin.template:
+        src: bootstrap.sh
+        dest: "{{ flux_homedir }}/bootstrap.sh"
+        mode: "0544"
+        owner: "{{ flux_user }}"
+        group: "{{ flux_user_group }}"
+      notify: flux install

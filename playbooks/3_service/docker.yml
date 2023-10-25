@@ -1,9 +1,9 @@
 ---
 - hosts: docker
   roles:
-    - { role: mgrote.systemd-resolved, tags: "dns", become: true }
+    - { role: mgrote_systemd_resolved, tags: "dns", become: true }
     - { role: geerlingguy.pip, tags: "pip", become: true }
     - { role: geerlingguy.docker, tags: "docker", become: true }
     - { role: gantsign.ctop, tags: "ctop", become: true }
-    - { role: mgrote.set_permissions, tags: "perm", become: true }
-    - { role: mgrote.docker-compose-inline, tags: "compose", become: true }
+    - { role: mgrote_set_permissions, tags: "perm", become: true }
+    - { role: mgrote_docker_compose_inline, tags: "compose", become: true }

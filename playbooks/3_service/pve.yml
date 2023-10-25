@@ -1,21 +1,15 @@
 ---
 - hosts: pve
   roles:
-    - { role: mgrote.zfs_packages, tags: "zfs_packages" }
-    - { role: mgrote.zfs_arc_mem, tags: "zfs_arc_mem" }
-    - { role: mgrote.zfs_manage_datasets, tags: "datasets" }
-    - { role: mgrote.zfs_scrub, tags: "zfs_scrub" }
-    - { role: mgrote.zfs_zed, tags: "zfs_zed" }
-    - { role: mgrote.zfs_health, tags: "zfs_health" }
-    - { role: mgrote.zfs_sanoid,
-        tags: "sanoid" }
-    - { role: mgrote.smart, tags: "smart" }
-    - { role: mgrote.postfix, tags: "postfix" }
-    - { role: mgrote.cv4pve-autosnap,
-        tags: "cv4pve" }
-    - { role: mgrote.r8152_kernel_module,
-        tags: "r8152" }
-    - { role: mgrote.proxmox_bind_mounts,
-        tags: "bindmounts" }
-    - { role: mgrote.proxmox_lxc_profiles, tags: "lxc-profile" }
-    - { role: mgrote.pbs_pve_integration, tags: "pbs" }
+    - { role: mgrote_zfs_packages, tags: "zfs_packages" }
+    - { role: mgrote_zfs_arc_mem, tags: "zfs_arc_mem" }
+    - { role: mgrote_zfs_manage_datasets, tags: "datasets" }
+    - { role: mgrote_zfs_scrub, tags: "zfs_scrub" }
+    - { role: mgrote_zfs_zed, tags: "zfs_zed" }
+    - { role: mgrote_zfs_health, tags: "zfs_health" }
+    - { role: mgrote_zfs_sanoid, tags: "sanoid" }
+    - { role: mgrote_smart, tags: "smart" }
+    - { role: mgrote_cv4pve_autosnap, tags: "cv4pve" }
+    - { role: mgrote_proxmox_bind_mounts, tags: "bindmounts" }
+    - { role: mgrote_proxmox_lxc_profiles, tags: "lxc-profile" }
+    - { role: mgrote_pbs_pve_integration, tags: "pbs" }

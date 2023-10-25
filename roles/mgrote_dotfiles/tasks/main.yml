@@ -1,0 +1,57 @@
+---
+- name: install acl package
+  become: true
+  ansible.builtin.package:
+    name: acl
+    state: present
+
+- name: check if repo exists
+  ansible.builtin.stat:
+    path: "{{ dotfiles_repo_path }}"
+  register: repo_exists
+
+- name: set safe directory
+  become: true
+  ansible.builtin.command: # noqa command-instead-of-module
+    cmd: git config --global --add safe.directory "{{ dotfiles_repo_path }}"
+  changed_when: false
+
+- name: stash changes
+  ansible.builtin.command: git stash # noqa command-instead-of-module no-handler
+  args:
+    chdir: "{{ dotfiles_repo_path }}"
+  changed_when: false
+  when: repo_exists.stat.exists
+
+- name: Ensure dotfiles repository is cloned locally.
+  ansible.builtin.git:
+    repo: "{{ dotfiles_repo_url }}"
+    dest: "{{ dotfiles_repo_path }}"
+    depth: 1
+    version: "{{ dotfiles_repo_branch }}"
+  notify: set owner recursive for repo
+
+- name: Ensure needed dirs exist.
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: directory
+    owner: "{{ dotfiles_owner }}"
+    group: "{{ dotfiles_owner }}"
+    mode: "0644"
+  with_items: "{{ dotfiles_dirs }}"
+
+- name: Link dotfiles into home folder
+  ansible.builtin.file:
+    src: "{{ item.repo_path }}"
+    dest: "{{ item.local_path }}"
+    state: link
+    force: true
+    owner: "{{ dotfiles_owner }}"
+    group: "{{ dotfiles_owner }}"
+  with_items: "{{ dotfiles_files }}"
+
+- name: add .bash_extra to .bashrc
+  ansible.builtin.lineinfile:
+    path: /home/{{ dotfiles_owner }}/.bashrc
+    line: "source {{ dotfiles_repo_path }}/.bash_extra"
+    state: present

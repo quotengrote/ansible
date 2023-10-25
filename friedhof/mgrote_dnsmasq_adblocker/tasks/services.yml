@@ -1,0 +1,18 @@
+---
+- name: stop systemd-resolved service
+  ansible.builtin.systemd:
+    name: systemd-resolved
+    state: stopped
+
+- name: mask systemd-resolved service
+  ansible.builtin.systemd:
+    name: systemd-resolved
+    masked: true
+    state: stopped
+
+- name: template /etc/resolv.conf
+  ansible.builtin.template:
+    src: resolv.conf.j2
+    dest: /etc/resolv.conf
+    backup: true
+  notify: restart dnsmasq

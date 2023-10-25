@@ -1,0 +1,7 @@
+---
+- name: restart_apache2
+  become: true
+  ansible.builtin.systemd:
+    name: apache2
+    state: restarted
+    enabled: true

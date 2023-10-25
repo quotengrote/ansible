@@ -1,65 +1,66 @@
 ---
-  ### mrlesmithjr.ansible-manage-lvm
-  lvm_groups:
-   - vgname: vg_docker
-     disks:
-       - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1
-     create: true
-     lvnames:
-       - lvname: lv_docker
-         size: +100%FREE
-         create: true
-         filesystem: xfs
-         mount: true
-         mntp: /var/lib/docker
-  manage_lvm: true
-  pvresize_to_max: true
-  ### mgrote.restic
-  restic_folders_to_backup: "/ /var/lib/docker" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
-  ### mgrote.user
-  users:
-    - username: mg
-      password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
-      update_password: always
-      groups: ssh, sudo, docker
-      state: present
-      public_ssh_key: "{{ ssh_public_key_mg }}"
-      allow_sudo: true
-      allow_passwordless_sudo: true
-    - username: docker-user
-      password: "{{ lookup('keepass', 'docker-user_linux_password_hash', 'password') }}"
-      update_password: always
-      groups: ssh, sudo, docker
-      state: present
-      allow_sudo: true
-      allow_passwordless_sudo: true
-      uid: "5000"
-    - username: ansible-user
-      password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
-      update_password: always
-      groups: ssh, sudo
-      state: present
-      public_ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcBwOjanQV6sFWaTetqpl20SVe3aRzGjKbsp7hKkDCE mg@irantu
-      allow_sudo: true
-      allow_passwordless_sudo: true
-  ### geerlingguy.docker
-  docker_users:
-    - mg
-    - docker-user
+### mrlesmithjr.ansible-manage-lvm
+lvm_groups:
+  - vgname: vg_docker
+    disks:
+      - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1
+    create: true
+    lvnames:
+      - lvname: lv_docker
+        size: +100%FREE
+        create: true
+        filesystem: xfs
+        mount: true
+        mntp: /var/lib/docker
+manage_lvm: true
+pvresize_to_max: true
+### mgrote.restic
+restic_folders_to_backup: "/ /var/lib/docker" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
+### mgrote.user
+users:
+  - username: mg
+    password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
+    update_password: always
+    groups: ssh, sudo, docker
+    state: present
+    public_ssh_key: "{{ ssh_public_key_mg }}"
+    allow_sudo: true
+    allow_passwordless_sudo: true
+  - username: docker-user
+    password: "{{ lookup('keepass', 'docker-user_linux_password_hash', 'password') }}"
+    update_password: always
+    groups: ssh, sudo, docker
+    state: present
+    allow_sudo: true
+    allow_passwordless_sudo: true
+    uid: "5000"
+  - username: ansible-user
+    password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
+    update_password: always
+    groups: ssh, sudo
+    state: present
+    public_ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcBwOjanQV6sFWaTetqpl20SVe3aRzGjKbsp7hKkDCE mg@irantu
+    allow_sudo: true
+    allow_passwordless_sudo: true
 
-  ### mgrote.docker-compose-deploy
-  docker_compose_base_dir: /home/docker-user
+### geerlingguy.docker
+docker_users:
+  - mg
+  - docker-user
 
-  ### mgrote.apt_manage_sources
-  repos_override: # mit docker-repos
-    - deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
-    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} main restricted"
-    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates main restricted"
-    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} universe"
-    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates universe"
-    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} multiverse"
-    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates multiverse"
-    - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-backports main restricted universe multiverse"
-    - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release }}-security main restricted"
-    - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release }}-security universe"
-    - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release }}-security multiverse"
+### mgrote.docker-compose-deploy
+docker_compose_base_dir: /home/docker-user
+
+### mgrote.apt_manage_sources
+repos_override: # mit docker-repos
+  - deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
+  - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} main restricted"
+  - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates main restricted"
+  - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} universe"
+  - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates universe"
+  - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} multiverse"
+  - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates multiverse"
+  - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-backports main restricted universe multiverse"
+  - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release }}-security main restricted"
+  - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release }}-security universe"
+  - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release }}-security multiverse"

@@ -1,0 +1,84 @@
+---
+- name: template unit-template
+  become: true
+  ansible.builtin.template:
+    src: zpool-scrub@.service.j2
+    dest: /etc/systemd/system/zpool-scrub@.service
+    owner: root
+    group: root
+    mode: "0644"
+  register: template_unit
+
+- name: template timer
+  become: true
+  ansible.builtin.template:
+    src: zpool-scrub@.timer.j2
+    dest: "/etc/systemd/system/zpool-scrub@{{ item.name }}.timer"
+    owner: root
+    group: root
+    mode: "0644"
+  loop: "{{ zfs_extra_zfs_pools }}"
+  register: template_timer
+
+- name: template mail.service
+  become: true
+  ansible.builtin.template:
+    src: zpool-scrub-mail.service.j2
+    dest: "/etc/systemd/system/zpool-scrub-mail.service"
+    owner: root
+    group: root
+    mode: "0644"
+  register: template_mail
+
+- name: systemctl daemon-reload
+  become: true
+  ansible.builtin.systemd:
+    daemon_reload: true
+  when:
+    - template_unit.changed
+    - template_timer.changed
+
+- name: systemctl enable units - timer
+  become: true
+  ansible.builtin.systemd:
+    name: "zpool-scrub@{{ item.name }}.timer"
+    enabled: true
+    masked: false
+  loop: "{{ zfs_extra_zfs_pools }}"
+  when:
+    - template_unit.changed
+    - template_timer.changed
+
+- name: systemctl enable units - mail
+  become: true
+  ansible.builtin.systemd:
+    name: "zpool-scrub-mail.service"
+    enabled: true
+    masked: false
+  when:
+    - template_mail
+
+- name: systemctl start units
+  become: true
+  ansible.builtin.systemd:
+    name: "zpool-scrub@{{ item.name }}.timer"
+    state: restarted
+    enabled: true
+  loop: "{{ zfs_extra_zfs_pools }}"
+  when:
+    - template_unit.changed
+    - template_timer.changed
+
+- name: remove old cronjobs
+  become: true
+  ansible.builtin.cron:
+    name: zfs-scrub - "{{ item.name }}"
+    state: absent
+  with_items: "{{ zfs_extra_zfs_pools }}"
+
+- name: remove proxmox system scrub job #https://forum.proxmox.com/threads/script-sequential-zfs-scrub-for-cron.25124/
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/cron.d/zfsutils-linux
+    state: absent
+    line: '24 0 8-14 * * root if [ $(date +\%w) -eq 0 ] && [ -x /usr/lib/zfs-linux/scrub ]; then /usr/lib/zfs-linux/scrub; fi'

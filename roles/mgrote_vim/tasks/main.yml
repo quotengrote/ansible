@@ -1,0 +1,38 @@
+---
+- name: install packages
+  become: true
+  ansible.builtin.package:
+    name:
+      - vim
+      - ripgrep
+    state: present
+
+- name: check if vundle is installed - folder
+  become: true
+  ansible.builtin.stat:
+    path: "{{ vim_vundle_path }}"
+  register: folder_exists
+
+
+- name: set safe directory # noqa command-instead-of-module
+  become: true
+  ansible.builtin.command:
+    cmd: git config --global --add safe.directory "{{ vim_vundle_path }}"
+  changed_when: false
+
+- name: Ensure repository is cloned locally.
+  ansible.builtin.git:
+    repo: "{{ vim_vundle_repo_url }}"
+    dest: "{{ vim_vundle_path }}"
+    depth: 1
+    version: master
+  notify: set owner recursive for repo
+
+#  - name: Vundle - PluginInstall
+#    ansible.builtin.shell: yes | vim -c PluginInstall -c qall
+#    args:
+#      chdir: /home/mg
+#    when:
+#      - (folder_exists.stat.exists == False) and ("ansible_facts['distribution'] == 'Ubuntu'")
+#    become: true
+#    become_user: mg

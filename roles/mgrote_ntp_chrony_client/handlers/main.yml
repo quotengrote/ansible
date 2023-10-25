@@ -1,0 +1,8 @@
+---
+- name: restart_chrony
+  become: true
+  ansible.builtin.systemd:
+    name: chrony
+    enabled: true
+    masked: false
+    state: restarted

@@ -1,0 +1,19 @@
+---
+- name: download blocklist(s)
+  ansible.builtin.get_url:
+    url: "{{ item.url }}"
+    dest: "/etc/dnsmasq.d/blocklists/{{ item.name }}"
+    owner: "{{ dnsmasq_user }}"
+    group: "{{ dnsmasq_user_group }}"
+  loop: "{{ dnsmasq_blocklists }}"
+  when: item.state == "present"
+  notify: restart dnsmasq
+  register: download
+
+- name: remove blocklist(s)
+  ansible.builtin.file:
+    path: "/etc/dnsmasq.d/blocklists/{{ item.name }}"
+    state: absent
+  loop: "{{ dnsmasq_blocklists }}"
+  when: item.state == "absent"
+  notify: restart dnsmasq

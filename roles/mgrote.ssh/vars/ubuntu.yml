@@ -1,6 +1,0 @@
----
-  ssh_permit_root_login: "no"
-  ssh_password_authentication: "no"
-  ssh_print_motd: "no"
-  ssh_print_lastlog: "no"
-  ssh_listen_port: "22"

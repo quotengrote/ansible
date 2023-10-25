@@ -6,6 +6,6 @@
 ---
 - hosts: fileserver
   roles:
-    - { role: mgrote.fileserver_smb, tags: "fileserver_smb" }
-    - { role: mgrote.youtubedl, tags: "youtubedl" }
-    - { role: mgrote.disable_oom_killer, tags: "oom" }
+    - { role: mgrote_fileserver_smb, tags: "fileserver_smb" }
+    - { role: mgrote_youtubedl, tags: "youtubedl" }
+    - { role: mgrote_disable_oom_killer, tags: "oom" }

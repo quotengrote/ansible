@@ -1,0 +1,64 @@
+---
+- name: set username and passwort - "{{ item.name }}"
+  ansible.builtin.set_fact:
+    login: "{{ item.repository_user  }}:{{ item.repository_user_password }}@"
+  when:
+    - item.repository_user is defined
+    - item.repository_user_password is defined
+
+- name: set dir - "{{ item.name }}"
+  ansible.builtin.set_fact:
+    project_dir: "{{ docker_compose_base_dir }}/{{ item.dir_name | default (item.name) }}"
+  when:
+    - docker_compose_base_dir is defined
+    - docker_compose_projects is defined
+
+- name: check if repo exists - "{{ item.name }}" (wenn der Task >30s dauert sind die Login-Daten falsch)
+  ansible.builtin.stat:
+    path: "{{ project_dir }}"
+  register: repo_exists
+
+- name: set safe directory
+  become: true
+  ansible.builtin.shell:
+    cmd: git config --global --add safe.directory "{{ project_dir }}"
+  changed_when: false
+
+- name: stash changes - "{{ item.name }}"
+  ansible.builtin.shell: git stash
+  args:
+    chdir: "{{ project_dir }}"
+  changed_when: false
+  when: repo_exists.stat.exists
+
+- name: clone repository - "{{ item.name }}"
+  ansible.builtin.git:
+    repo: "https://{{ login | default () }}{{ item.repository_url }}"
+    dest: "{{ project_dir }}"
+    version: "{{ item.git_branch | default ('master') }}"
+  register: repo
+
+- name: set owner recursive for repo
+  ansible.builtin.file:
+    path: "{{ project_dir }}"
+    owner: "{{ item.os_username }}"
+    group: "{{ item.os_username }}"
+    recurse: true
+  when: repo is changed
+
+- name: create networks - "{{ item.name }}"
+  ansible.builtin.shell: "docker network create {{ item.network_name }}" # erstelle network
+  when: "item.network_name is defined" # wenn network_name definiert ist
+  register: network_result # speichere ergebnis in var
+  changed_when: "network_result.rc == 0" # markiere tasks als changed when exit-code == 0
+  ignore_errors: true # ignoriere fehler
+
+- name: (re)start container - "{{ item.name }}"
+  ansible.builtin.shell: docker-compose down && docker-compose up -d
+  args:
+    chdir: "{{ project_dir }}"
+  when: repo.changed
+
+- name: unset username and passwort - "{{ item.name }}"
+  ansible.builtin.set_fact:
+    login: ""

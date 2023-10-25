@@ -6,7 +6,7 @@ services:
     restart: always
     volumes:
       - uploads:/usr/local/apache2/htdocs/
-      - "${PWD}/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro"
+      - "/docker/httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro"
     ports:
       - 3344:80
     labels:

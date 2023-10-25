@@ -1,0 +1,26 @@
+---
+- name: systemctl daemon-reload
+  become: true
+  ansible.builtin.systemd:
+    daemon_reload: true
+
+- name: systemctl enable units
+  become: true
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: true
+    masked: false
+  with_items:
+    - cv4pve.service
+    - cv4pve_mail.service
+    - cv4pve.timer
+
+- name: systemctl start units
+  become: true
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    state: restarted
+    enabled: true
+  with_items:
+    - cv4pve.timer
+  notify: systemctl daemon-reload

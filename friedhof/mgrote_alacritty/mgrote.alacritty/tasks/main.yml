@@ -1,0 +1,11 @@
+---
+- name: download binary
+  ansible.builtin.unarchive:
+    src: "{{ alacritty_url }}"
+    dest: /usr/local/bin
+    remote_src: true
+
+- name: set permissions
+  ansible.builtin.file:
+    path: /usr/local/bin/alacritty
+    mode: '0755'

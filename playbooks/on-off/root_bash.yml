@@ -1,8 +1,0 @@
----
-- hosts: all
-  tasks:
-    - name: ensure root has /bin/bash
-      become: true
-      ansible.builtin.user:
-        name: root
-        shell: /bin/bash

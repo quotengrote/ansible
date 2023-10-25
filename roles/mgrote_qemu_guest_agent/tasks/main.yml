@@ -1,0 +1,13 @@
+---
+- name: update apt cache
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: install packages
+  become: true
+  ansible.builtin.package:
+    name: qemu-guest-agent
+    state: present
+  when: ansible_virtualization_role == 'guest'
+  notify: reboot

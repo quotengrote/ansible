@@ -1,0 +1,7 @@
+---
+- name: restart smartmontools
+  become: true
+  ansible.builtin.systemd:
+    name: smartmontools
+    state: restarted
+    enabled: true

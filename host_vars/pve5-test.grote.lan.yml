@@ -1,232 +1,232 @@
 ---
-  # rpool ist unverschlüsselt als Boot-Medium
-  # der Speicherort fur die VMs ist verschlüsselt
-  # zfs create -o encryption=aes-256-gcm -o keyformat=passphrase rpool/vm
-  # entschlüsseln nach Boot mit: sudo zpool import -d /dev/disk/by-id/ -a && sudo zfs mount -a  -l
-  ## HDD_DATA_RAIDZ
-  ### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase hdd_data_raidz mirror /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi3 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
+# rpool ist unverschlüsselt als Boot-Medium
+# der Speicherort fur die VMs ist verschlüsselt
+# zfs create -o encryption=aes-256-gcm -o keyformat=passphrase rpool/vm
+# entschlüsseln nach Boot mit: sudo zpool import -d /dev/disk/by-id/ -a && sudo zfs mount -a  -l
+## HDD_DATA_RAIDZ
+### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase hdd_data_raidz mirror /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi3 /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2
 
-  # mgrote.zfs_manage_datasets
-  ### mgrote.zfs_extra
-  # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
-  zfs_datasets: # DatenPools werden hier nicht verwaltet
-    # rpool - System-Datasets
-    - dataset: rpool
-      state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
-      reservation: 1G
-      refreservation: 1G
-    - dataset: rpool/ROOT
-      state: present
-      refreservation: 1G
-    - dataset: rpool/ROOT/pve-1
-      state: present
-      refreservation: 1G
+# mgrote.zfs_manage_datasets
+### mgrote.zfs_extra
+# Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
+zfs_datasets: # DatenPools werden hier nicht verwaltet
+  # rpool - System-Datasets
+  - dataset: rpool
+    state: present
+    compression: zstd
+    sync: disabled
+    xattr: sa
+    dnodesize: auto
+    atime: on # noqa yaml[truthy]
+    snapdir: hidden
+    reservation: 1G
+    refreservation: 1G
+  - dataset: rpool/ROOT
+    state: present
+    refreservation: 1G
+  - dataset: rpool/ROOT/pve-1
+    state: present
+    refreservation: 1G
 
-    # rpool - VMs
-    - dataset: rpool/vm
-      state: present
-    - dataset: rpool/vm/zvol
-      state: present
-    - dataset: rpool/vm/lxc
-      state: present
-    # hdd_data_raidz
-    - dataset: hdd_data_raidz
-      state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
-      reservation: 1G
-    - dataset: hdd_data_raidz/papa_backup
-      state: present
-    - dataset: hdd_data_raidz/pve_backup
-      state: present
-      recordsize: 1M
-    - dataset: hdd_data_raidz/videos
-      state: present
-      recordsize: 1M
-    - dataset: hdd_data_raidz/music
-      state: present
-      recordsize: 1M
-    - dataset: hdd_data_raidz/tmp
-      state: present
-    - dataset: hdd_data_raidz/archiv
-      state: present
-    - dataset: hdd_data_raidz/bilder
-      state: present
-      recordsize: 1M
-    - dataset: hdd_data_raidz/hm
-      state: present
-    - dataset: hdd_data_raidz/scans
-      state: present
-    - dataset: hdd_data_raidz/restic
-      state: present
-    - dataset: hdd_data_raidz/backup
-      state: present
-    - dataset: hdd_data_raidz/buecher
-      state: present
-    - dataset: hdd_data_raidz/programme
-      state: present
-    - dataset: hdd_data_raidz/vm
-      state: present
+  # rpool - VMs
+  - dataset: rpool/vm
+    state: present
+  - dataset: rpool/vm/zvol
+    state: present
+  - dataset: rpool/vm/lxc
+    state: present
+  # hdd_data_raidz
+  - dataset: hdd_data_raidz
+    state: present
+    compression: zstd
+    sync: disabled
+    xattr: sa
+    dnodesize: auto
+    atime: on # noqa yaml[truthy]
+    snapdir: hidden
+    reservation: 1G
+  - dataset: hdd_data_raidz/papa_backup
+    state: present
+  - dataset: hdd_data_raidz/pve_backup
+    state: present
+    recordsize: 1M
+  - dataset: hdd_data_raidz/videos
+    state: present
+    recordsize: 1M
+  - dataset: hdd_data_raidz/music
+    state: present
+    recordsize: 1M
+  - dataset: hdd_data_raidz/tmp
+    state: present
+  - dataset: hdd_data_raidz/archiv
+    state: present
+  - dataset: hdd_data_raidz/bilder
+    state: present
+    recordsize: 1M
+  - dataset: hdd_data_raidz/hm
+    state: present
+  - dataset: hdd_data_raidz/scans
+    state: present
+  - dataset: hdd_data_raidz/restic
+    state: present
+  - dataset: hdd_data_raidz/backup
+    state: present
+  - dataset: hdd_data_raidz/buecher
+    state: present
+  - dataset: hdd_data_raidz/programme
+    state: present
+  - dataset: hdd_data_raidz/vm
+    state: present
 
-  zfs_extra_arc_max_size: "1073741824" # 1GB in Bytes
-  zfs_extra_zfs_pools:
-    - name: "rpool"
-      systemd_timer_schedule: "*-01,04,07,10-01 23:00" # jeden ersten eines jeden Quartals
-    - name: "hdd_data_raidz"
-      systemd_timer_schedule: "*-01,04,07,10-01 23:00"
+zfs_extra_arc_max_size: "1073741824" # 1GB in Bytes
+zfs_extra_zfs_pools:
+  - name: "rpool"
+    systemd_timer_schedule: "*-01,04,07,10-01 23:00" # jeden ersten eines jeden Quartals
+  - name: "hdd_data_raidz"
+    systemd_timer_schedule: "*-01,04,07,10-01 23:00"
 
-  ### mgrote.zfs_sanoid
-  sanoid_datasets:
-    - path: 'hdd_data_raidz/videos'
-      template: '3tage'
-      recursive: 'yes'
-      snapshots: true
-    - path: 'hdd_data_raidz/music'
-      template: '14tage'
-      recursive: 'yes'
-      snapshots: true
-    - path: 'hdd_data_raidz/papa_backup'
-      template: '14tage'
-      recursive: 'yes'
-      snapshots: true
-    - path: 'hdd_data_raidz/tmp'
-      template: '3tage'
-      recursive: 'yes'
-      snapshots: true
-    - path: 'hdd_data_raidz/pve_backup'
-      template: '3tage'
-      recursive: 'yes'
-      snapshots: true
-    - path: 'hdd_data_raidz/archiv'
-      template: '14tage'
-      recursive: 'yes'
-      snapshots: true
-    - path: hdd_data_raidz/bilder
-      recursive: 'no'
-      snapshots: true
-      template: '14tage'
-    - path: hdd_data_raidz/hm
-      recursive: 'no'
-      snapshots: true
-      template: '14tage'
-    - path: hdd_data_raidz/scans
-      recursive: 'no'
-      snapshots: true
-      template: '3tage'
-    - path: hdd_data_raidz/backup
-      recursive: 'no'
-      snapshots: true
-      template: '31tage'
-    - path: hdd_data_raidz/restic
-      recursive: 'no'
-      snapshots: true
-      template: '3tage'
-    - path: hdd_data_raidz/programme
-      recursive: 'no'
-      snapshots: true
-      template: '14tage'
-    - path: hdd_data_raidz/buecher
-      recursive: 'no'
-      snapshots: true
-      template: '14tage'
-    - path: hdd_data_raidz/vm
-      recursive: 'no'
-      snapshots: true
-      template: 'pve3tage'
-    - path: rpool
-      recursive: 'no'
-      snapshots: true
-      template: 'pve3tage'
-    - path: rpool/ROOT
-      recursive: 'no'
-      snapshots: true
-      template: 'pve3tage'
-    - path: rpool/ROOT/pve-1
-      recursive: 'no'
-      snapshots: true
-      template: '3tage'
+### mgrote.zfs_sanoid
+sanoid_datasets:
+  - path: 'hdd_data_raidz/videos'
+    template: '3tage'
+    recursive: 'yes'
+    snapshots: true
+  - path: 'hdd_data_raidz/music'
+    template: '14tage'
+    recursive: 'yes'
+    snapshots: true
+  - path: 'hdd_data_raidz/papa_backup'
+    template: '14tage'
+    recursive: 'yes'
+    snapshots: true
+  - path: 'hdd_data_raidz/tmp'
+    template: '3tage'
+    recursive: 'yes'
+    snapshots: true
+  - path: 'hdd_data_raidz/pve_backup'
+    template: '3tage'
+    recursive: 'yes'
+    snapshots: true
+  - path: 'hdd_data_raidz/archiv'
+    template: '14tage'
+    recursive: 'yes'
+    snapshots: true
+  - path: hdd_data_raidz/bilder
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: '14tage'
+  - path: hdd_data_raidz/hm
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: '14tage'
+  - path: hdd_data_raidz/scans
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: '3tage'
+  - path: hdd_data_raidz/backup
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: '31tage'
+  - path: hdd_data_raidz/restic
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: '3tage'
+  - path: hdd_data_raidz/programme
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: '14tage'
+  - path: hdd_data_raidz/buecher
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: '14tage'
+  - path: hdd_data_raidz/vm
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: 'pve3tage'
+  - path: rpool
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: 'pve3tage'
+  - path: rpool/ROOT
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: 'pve3tage'
+  - path: rpool/ROOT/pve-1
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: '3tage'
 
-  ### mgrote.cv4pve-autosnap
-  cv4pve_api_user: root@pam!cv4pve-autosnap
-  cv4pve_api_token: "{{ lookup('keepass', 'cv4pve_api_token', 'password') }}"
-  cv4pve_vmid: all
-  cv4pve_keep_snapshots: 5
-  cv4pve_dl_link: "https://github.com/Corsinvest/cv4pve-autosnap/releases/download/v1.10.0/cv4pve-autosnap-linux-x64.zip"
+### mgrote.cv4pve-autosnap
+cv4pve_api_user: root@pam!cv4pve-autosnap
+cv4pve_api_token: "{{ lookup('keepass', 'cv4pve_api_token', 'password') }}"
+cv4pve_vmid: all
+cv4pve_keep_snapshots: 5
+cv4pve_dl_link: "https://github.com/Corsinvest/cv4pve-autosnap/releases/download/v1.10.0/cv4pve-autosnap-linux-x64.zip"
 
-  ### mgrote.proxmox_bind_mounts
-  pve_bind_mounts:
-    - vmid: 100
-      mp_nr: 0
-      mp_path_host: /hdd_data_raidz/videos
-      mp_path_guest: /shares_videos
-    - vmid: 100
-      mp_nr: 2
-      mp_path_host: /hdd_data_raidz/pve_backup
-      mp_path_guest: /shares_pve_backup
-    - vmid: 100
-      mp_nr: 3
-      mp_path_host: /hdd_data_raidz/papa_backup
-      mp_path_guest: /shares_papa_backup
-    - vmid: 100
-      mp_nr: 4
-      mp_path_host: /hdd_data_raidz/music
-      mp_path_guest: /shares_music
-    - vmid: 100
-      mp_nr: 5
-      mp_path_host: /hdd_data_raidz/tmp
-      mp_path_guest: /shares_tmp
-    - vmid: 100
-      mp_nr: 6
-      mp_path_host: /hdd_data_raidz/archiv
-      mp_path_guest: /shares_archiv
-    - vmid: 100
-      mp_nr: 7
-      mp_path_host: /hdd_data_raidz/bilder
-      mp_path_guest: /shares_bilder
-    - vmid: 100
-      mp_nr: 8
-      mp_path_host: /hdd_data_raidz/hm
-      mp_path_guest: /shares_hm
-    - vmid: 100
-      mp_nr: 9
-      mp_path_host: /hdd_data_raidz/scans
-      mp_path_guest: /shares_scans
-    - vmid: 100
-      mp_nr: 10
-      mp_path_host: /hdd_data_raidz/restic
-      mp_path_guest: /shares_restic
-    - vmid: 100
-      mp_nr: 12
-      mp_path_host: /hdd_data_raidz/backup
-      mp_path_guest: /shares_backup
-    - vmid: 100
-      mp_nr: 14
-      mp_path_host: /hdd_data_raidz/buecher
-      mp_path_guest: /shares_buecher
-    - vmid: 100
-      mp_nr: 15
-      mp_path_host: /hdd_data_raidz/programme
-      mp_path_guest: /shares_programme
-    - vmid: 100
-      mp_nr: 16
-      mp_path_host: /hdd_data_raidz/vm
-      mp_path_guest: /shares_vm
+### mgrote.proxmox_bind_mounts
+pve_bind_mounts:
+  - vmid: 100
+    mp_nr: 0
+    mp_path_host: /hdd_data_raidz/videos
+    mp_path_guest: /shares_videos
+  - vmid: 100
+    mp_nr: 2
+    mp_path_host: /hdd_data_raidz/pve_backup
+    mp_path_guest: /shares_pve_backup
+  - vmid: 100
+    mp_nr: 3
+    mp_path_host: /hdd_data_raidz/papa_backup
+    mp_path_guest: /shares_papa_backup
+  - vmid: 100
+    mp_nr: 4
+    mp_path_host: /hdd_data_raidz/music
+    mp_path_guest: /shares_music
+  - vmid: 100
+    mp_nr: 5
+    mp_path_host: /hdd_data_raidz/tmp
+    mp_path_guest: /shares_tmp
+  - vmid: 100
+    mp_nr: 6
+    mp_path_host: /hdd_data_raidz/archiv
+    mp_path_guest: /shares_archiv
+  - vmid: 100
+    mp_nr: 7
+    mp_path_host: /hdd_data_raidz/bilder
+    mp_path_guest: /shares_bilder
+  - vmid: 100
+    mp_nr: 8
+    mp_path_host: /hdd_data_raidz/hm
+    mp_path_guest: /shares_hm
+  - vmid: 100
+    mp_nr: 9
+    mp_path_host: /hdd_data_raidz/scans
+    mp_path_guest: /shares_scans
+  - vmid: 100
+    mp_nr: 10
+    mp_path_host: /hdd_data_raidz/restic
+    mp_path_guest: /shares_restic
+  - vmid: 100
+    mp_nr: 12
+    mp_path_host: /hdd_data_raidz/backup
+    mp_path_guest: /shares_backup
+  - vmid: 100
+    mp_nr: 14
+    mp_path_host: /hdd_data_raidz/buecher
+    mp_path_guest: /shares_buecher
+  - vmid: 100
+    mp_nr: 15
+    mp_path_host: /hdd_data_raidz/programme
+    mp_path_guest: /shares_programme
+  - vmid: 100
+    mp_nr: 16
+    mp_path_host: /hdd_data_raidz/vm
+    mp_path_guest: /shares_vm
 
-  # mgrote.pbs_pve_integration
-  pve_pbs_datastore:
-    - name: pbs
-      server: 192.168.2.18
-      datastore: zfs_backup
-      username: user_pve5-test@pbs
-      password: "{{ lookup('keepass', 'pbs_pve_user-test', 'password') }}"
-      fingerprint: "38:53:f6:1e:99:99:76:78:c4:00:dd:90:1a:89:47:56:97:4e:f3:62:01:d2:2c:76:ba:f8:55:be:f8:05:d1:7a"
+# mgrote.pbs_pve_integration
+pve_pbs_datastore:
+  - name: pbs
+    server: 192.168.2.18
+    datastore: zfs_backup
+    username: user_pve5-test@pbs
+    password: "{{ lookup('keepass', 'pbs_pve_user-test', 'password') }}"
+    fingerprint: "38:53:f6:1e:99:99:76:78:c4:00:dd:90:1a:89:47:56:97:4e:f3:62:01:d2:2c:76:ba:f8:55:be:f8:05:d1:7a"

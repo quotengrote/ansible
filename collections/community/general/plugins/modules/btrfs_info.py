@@ -50,8 +50,8 @@ filesystems:
             description: A list of devices assigned to the filesystem.
             type: list
             sample:
-                - /dev/sda1
-                - /dev/sdb1
+               - /dev/sda1
+               - /dev/sdb1
         default_subvolume:
             description: The id of the filesystem's default subvolume.
             type: int

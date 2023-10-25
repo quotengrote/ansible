@@ -1,0 +1,6 @@
+---
+dokuwiki_install_path: /var/www/dokuwiki # wohin soll dokuwiki installiert werden
+dokuwiki_download_url: https://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz # wo soll dokuwiki heruntergeladen werden
+dokuwiki_version_name: 2020-07-29 "Hogfather" # aus /var/www/dokuwiki/VERSION # welche Version, damit wird abgeglichen ob das Archiv heruntergeladen werden muss
+dokuwiki_user: www-data # dokuwiki nutzer
+dokuwiki_group: www-data # dokuwiki gruppe

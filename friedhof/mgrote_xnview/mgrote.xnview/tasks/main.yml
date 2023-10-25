@@ -1,0 +1,5 @@
+---
+- name: download and install xnview
+  become: true
+  ansible.builtin.apt:
+    deb: "{{ xnview_deb_url }}"

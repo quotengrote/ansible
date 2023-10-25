@@ -1,0 +1,7 @@
+---
+- name: acng_starten_aktivieren
+  become: true
+  ansible.builtin.systemd:
+    name: apt-cacher-ng
+    enabled: true
+    state: restarted

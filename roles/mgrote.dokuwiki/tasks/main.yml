@@ -1,7 +1,0 @@
----
-  - name: include install tasks
-    include_tasks: install.yml
-  - name: include apache2 tasks
-    include_tasks: apache2.yml
-  - name: include dokuwiki tasks
-    include_tasks: dokuwiki.yml

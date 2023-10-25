@@ -1,9 +1,0 @@
----
-  - name: kopiere zed.rc
-    become: yes
-    ansible.builtin.template:
-      owner: root
-      mode: 0600
-      src: zed.rc
-      dest: /etc/zfs/zed.d/zed.rc
-    notify: testmail

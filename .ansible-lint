@@ -3,6 +3,8 @@ skip_list:
   - yaml[line-length]
   - name[casing]
   - yaml[comments]
+  - name[play]
+  - var-naming[no-role-prefix]
 quiet: true
 exclude_paths:
   - .cache/ # implicit unless exclude_paths is defined in config
@@ -22,3 +24,5 @@ exclude_paths:
   - roles/robertdebock.bootstrap
   - roles/PyratLabs.k3s
   - .gitlab-ci.yml
+  - friedhof/
+  - playbooks/on-off

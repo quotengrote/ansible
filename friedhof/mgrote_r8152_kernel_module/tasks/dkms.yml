@@ -1,0 +1,34 @@
+---
+- name: dkms add
+  become: true
+  ansible.builtin.shell: dkms add -m r8125 -v "{{ r8152_version }}"
+  args:
+    chdir: "{{ r8152_src_dir }}"
+
+- name: dkms build
+  become: true
+  ansible.builtin.shell: dkms build -m r8125 -v "{{ r8152_version }}"
+  args:
+    chdir: "{{ r8152_src_dir }}"
+
+- name: dkms install
+  become: true
+  ansible.builtin.shell: dkms install -m r8125 -v "{{ r8152_version }}"
+  args:
+    chdir: "{{ r8152_src_dir }}"
+
+- name: depmod -a
+  become: true
+  ansible.builtin.shell: depmod -a
+  args:
+    chdir: "{{ r8152_src_dir }}"
+
+- name: update initramfs
+  become: true
+  ansible.builtin.shell: update-initramfs -u
+  args:
+    chdir: "{{ r8152_src_dir }}"
+
+- name: reboot
+  ansible.builtin.reboot:
+    reboot_timeout: 120

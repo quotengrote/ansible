@@ -1,0 +1,2 @@
+---
+zfs_extra_path_zpool: "/usr/sbin/zpool"

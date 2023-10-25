@@ -1,0 +1,17 @@
+---
+- name: gather service facts
+  ansible.builtin.service_facts:
+
+- name: set DynamicUser=no
+  ansible.builtin.blockinfile:
+    path: /etc/systemd/system/fwupd-refresh.service.d/override.conf
+    block: |
+      [Service]
+      DynamicUser=no
+    create: true
+    mode: "0644"
+    owner: root
+    group: root
+  when:
+    - "not fwupd_dynamic_user and 'fwupd-refresh.service' in services"
+  notify: systemctl daemon-reload

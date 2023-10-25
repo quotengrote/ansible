@@ -1,9 +1,0 @@
----
-  ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
-  ntp_chrony_driftfile_directory: "/var/lib/chrony" # Ordner für das driftfile
-  ntp_chrony_servers: # welche Server sollen befragt werden
-    - address: ptbtime1.ptb.de
-      options: iburst #optionaler parameter
-  ntp_chrony_user: _chrony # Nutzer + Gruppe für den Dienst
-  ntp_chrony_group: _chrony # Nutzer + Gruppe für den Dienst
-  ntp_chrony_logging: false

@@ -1,0 +1,9 @@
+---
+- name: install zfs-tools-packages
+  become: true
+  ansible.builtin.package:
+    name:
+      - zfsutils
+      - zfs-initramfs
+      - zfs-zed
+    state: present

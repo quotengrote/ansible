@@ -1,4 +1,0 @@
----
-  - name: include assert-tasks
-    include_tasks: assert.yml
-    when: r8152_module_needed == true

@@ -1,4 +1,4 @@
 ---
-  - hosts: all
-    roles:
-      - { role: mgrote.users, tags: "user", become: yes }
+- hosts: all
+  roles:
+    - { role: mgrote_users, tags: "user", become: true }

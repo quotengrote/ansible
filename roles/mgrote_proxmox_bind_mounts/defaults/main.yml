@@ -1,0 +1,3 @@
+---
+lists_merged: # Liste muss leer existieren damit sie "germerged" werden kann, für Liste welche VMs zu rebooten sind
+  - ''

@@ -1,4 +1,4 @@
 ---
-  - hosts: all
-    roles:
-      - { role: mgrote.ntp_chrony_client, tags: "ntp"}
+- hosts: all
+  roles:
+    - { role: mgrote_ntp_chrony_client, tags: "ntp"}

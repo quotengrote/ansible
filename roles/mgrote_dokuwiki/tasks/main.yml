@@ -1,0 +1,7 @@
+---
+- name: include install tasks
+  ansible.builtin.include_tasks: install.yml
+- name: include apache2 tasks
+  ansible.builtin.include_tasks: apache2.yml
+- name: include dokuwiki tasks
+  ansible.builtin.include_tasks: dokuwiki.yml

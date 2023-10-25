@@ -1,0 +1,14 @@
+---
+- name: install bash-completion packages
+  become: true
+  ansible.builtin.package:
+    name: bash-completion
+    state: present
+
+- name: activate autocompletion for kubectl
+  become: true
+  ansible.builtin.shell:
+    cmd: "set -o pipefail && kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl"
+    executable: /bin/bash
+  args:
+    creates: /etc/bash_completion.d/kubectl

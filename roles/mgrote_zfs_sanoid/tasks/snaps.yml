@@ -1,0 +1,49 @@
+---
+- name: Generate Sanoid Configuration
+  become: true
+  ansible.builtin.template:
+    src: sanoid.conf.j2
+    dest: "/etc/sanoid/sanoid.conf"
+    owner: "{{ sanoid_user }}"
+    group: "{{ sanoid_user_group }}"
+    mode: "0400"
+
+- name: template sanoid_mail.service
+  become: true
+  ansible.builtin.template:
+    src: "sanoid_mail.service.j2"
+    dest: /etc/systemd/system/sanoid_mail.service
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - systemctl daemon-reload
+
+- name: add sanoid_mail.service to sanoid.service
+  become: true
+  ansible.builtin.blockinfile:
+    create: true
+    mode: "0644"
+    owner: root
+    group: root
+    path: /lib/systemd/system/sanoid.service.d/override.conf
+    block: |
+      [Unit]
+      OnFailure = sanoid_mail.service
+  notify:
+    - systemctl daemon-reload
+
+- name: set timer
+  become: true
+  ansible.builtin.blockinfile:
+    create: true
+    mode: "0644"
+    owner: root
+    group: root
+    path: /lib/systemd/system/sanoid.timer.d/override.conf
+    block: |
+      [Timer]
+      OnCalendar = {{ sanoid_timer }}
+  when: sanoid_timer is defined
+  notify:
+    - systemctl daemon-reload

@@ -1,0 +1,52 @@
+---
+- name: include vars (ubuntu) (determined by "ansible_distribution")
+  ansible.builtin.include_vars:
+    file: ubuntu.yaml
+  when:
+    - ansible_distribution == 'Ubuntu'
+
+- name: include vars (mint) (determined by "ansible_distribution")
+  ansible.builtin.include_vars:
+    file: mint.yaml
+  when:
+    - ansible_distribution == 'Linux Mint'
+
+- name: include vars (pve) (determined by group)
+  ansible.builtin.include_vars:
+    file: pve.yaml
+  when:
+    - "'pve' in group_names"
+
+- name: include vars (pbs) (determined by group)
+  ansible.builtin.include_vars:
+    file: pbs.yaml
+  when:
+    - "'pbs' in group_names"
+
+- name: ensure /etc/apt/sources.list.d/ is absent
+  become: true
+  ansible.builtin.file:
+    path: /etc/apt/sources.list.d/
+    state: absent
+
+- name: include preparation tasks (pbs) (determined by group)
+  ansible.builtin.include_tasks: pbs.yml
+  when:
+    - "'pbs' in group_names"
+
+- name: include preparation tasks (pve) (determined by group)
+  ansible.builtin.include_tasks: pve.yml
+  when:
+    - "'pve' in group_names"
+
+- name: template sources.list
+  become: true
+  ansible.builtin.template:
+    src: sources.j2
+    dest: "{{ repo_sources_file }}"
+    mode: "0644"
+    owner: root
+    group: root
+  notify: update package lists
+  when:
+    - repos is defined

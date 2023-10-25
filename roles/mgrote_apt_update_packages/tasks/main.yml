@@ -1,0 +1,10 @@
+---
+- name: update apt cache
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: update installed packages
+  become: true
+  ansible.builtin.package:
+    upgrade: dist

@@ -1,4 +1,4 @@
 ---
-  - hosts: all
-    roles:
-      - { role: mgrote.vim, tags: "vim", become: true }
+- hosts: all
+  roles:
+    - { role: mgrote_vim, tags: "vim", become: true }

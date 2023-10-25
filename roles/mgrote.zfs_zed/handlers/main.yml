@@ -1,3 +1,0 @@
----
-  - name: testmail
-    shell: echo "zed ist eingerichtet" | mail -s "{{ ansible_hostname }} - zed" {{ empfaenger_mail }}

@@ -1,0 +1,11 @@
+---
+r8152_filename: r8152.53.56-2.15.0
+r8152_packages:
+  - pve-headers
+  - build-essential
+  - make
+r8152_reboot_timeout: 90
+r8152_pre_reboot_delay: 120
+r8152_post_reboot_delay: 60
+r8152_module_needed: false
+r8152_safekeeping_reboot_delay: 12

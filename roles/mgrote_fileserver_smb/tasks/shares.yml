@@ -1,0 +1,24 @@
+---
+- name: ensure smb share directories exist
+  become: true
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: directory
+    mode: "0777"
+  loop: "{{ smb_shares }}"
+  notify: set samba passwords
+
+- name: template share configuration
+  become: true
+  ansible.builtin.template:
+    src: smb.conf.j2
+    dest: /etc/samba/smb.conf
+    validate: 'testparm -s %s'
+    mode: "0644"
+    owner: root
+    group: root
+  with_items:
+    - "{{ smb_shares }}"
+  notify:
+    - restart smbd
+    - set samba passwords

@@ -1,0 +1,16 @@
+---
+- name: include systemctl tasks
+  ansible.builtin.include_tasks: systemctl.yml
+
+- name: include base tasks
+  ansible.builtin.include_tasks: base.yml
+  
+- name: include fortune tasks
+  ansible.builtin.include_tasks: fortune.yml
+  when:
+    - motd_wetter_aktiv
+
+- name: include weather tasks
+  ansible.builtin.include_tasks: weather.yml
+  when:
+    - motd_wetter_aktiv

@@ -1,7 +1,0 @@
----
-  lists_merged: # Liste muss leer existieren damit sie "germerged" werden kann, für Liste welche VMs zu rebooten sind
-    - ''
-
-# lxc_apparmor_profiles:
-#   - vmid: 555
-#     apparmor_profile: unconfined

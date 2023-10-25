@@ -1,4 +1,4 @@
 ---
-  - hosts: all
-    roles:
-      - { role: mgrote.dotfiles, become: true, tags: "dotfiles" }
+- hosts: all
+  roles:
+    - { role: mgrote_dotfiles, become: true, tags: "dotfiles" }

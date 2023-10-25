@@ -5,7 +5,7 @@
     lvm_groups:
       - vgname: my_vg
         disks:
-          - /dev/vdb
+         - /dev/vdb
         create: true
     manage_lvm: true
   tasks:

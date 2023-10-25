@@ -1,0 +1,13 @@
+---
+- name: remove snapd package
+  become: true
+  ansible.builtin.package:
+    name: snapd
+    state: absent
+    purge: true
+
+- name: remove /var/cache/snapd/
+  become: true
+  ansible.builtin.file:
+    path: /var/cache/snapd/
+    state: absent

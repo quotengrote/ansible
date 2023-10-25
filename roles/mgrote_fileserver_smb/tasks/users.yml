@@ -1,0 +1,18 @@
+---
+- name: ensure group exist
+  become: true
+  ansible.builtin.group:
+    name: smb_users
+    state: present
+
+- name: configure linux-users
+  become: true
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    group: smb_users
+    state: "{{ item.state | default('present') }}"
+    remove: "{{ item.remove_dir | default('false') }}"
+    create_home: false
+  loop: "{{ smb_users }}"
+  no_log: true
+  notify: set samba passwords

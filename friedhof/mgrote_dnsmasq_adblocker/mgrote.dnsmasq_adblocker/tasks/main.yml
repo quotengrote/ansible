@@ -1,0 +1,12 @@
+---
+- name: include install tasks
+  ansible.builtin.include_tasks: install.yml
+
+- name: include configuration tasks
+  ansible.builtin.include_tasks: config.yml
+
+- name: include systemd tasks
+  ansible.builtin.include_tasks: services.yml
+
+- name: include blocklist tasks
+  ansible.builtin.include_tasks: blocklist.yml

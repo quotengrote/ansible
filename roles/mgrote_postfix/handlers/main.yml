@@ -1,0 +1,21 @@
+---
+- name: hash_sasl_passwd  # noqa no-changed-when
+  become: true
+  ansible.builtin.command: /usr/sbin/postmap hash:/etc/postfix/sasl_passwd
+
+- name: hash_sender_canonical # noqa no-changed-when
+  become: true
+  ansible.builtin.command: /usr/sbin/postmap hash:/etc/postfix/sender_canonical
+
+- name: postfix_reload
+  become: true
+  ansible.builtin.systemd:
+    name: postfix
+    enabled: true
+    state: restarted
+  notify: postfix_testmail
+
+- name: postfix_testmail # noqa no-changed-when
+  ansible.builtin.shell:
+    cmd: "set -o pipefail && echo 'postfix ist eingerichtet' | mail -s '{{ ansible_hostname }} - postfix' {{ empfaenger_mail }}"
+    executable: /bin/bash

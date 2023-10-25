@@ -1,167 +1,168 @@
 ---
-  # pbs_*
-  pbs_datastores:
-    - name: zfs_backup
-      path: /backup/pbs_data
-      gc_schedule: "sat 19:00"
+# pbs_*
+pbs_datastores:
+  - name: zfs_backup
+    path: /backup/pbs_data
+    gc_schedule: "sat 19:00"
 
-  pbs_prune_jobs:
-    - name: standard
-      schedule: "sat 18:15"
-      store: zfs_backup
-      keep_last: 3
-      keep_hourly: 24
-      keep_daily: 7
-      keep_weekly: 2
+pbs_prune_jobs:
+  - name: standard
+    schedule: "sat 18:15"
+    store: zfs_backup
+    keep_last: 3
+    keep_hourly: 24
+    keep_daily: 7
+    keep_weekly: 2
 
-  pbs_permissions:
-    - user: user_pve5-test@pbs
-      datastore: zfs_backup
-      role: DatastoreBackup
+pbs_permissions:
+  - user: user_pve5-test@pbs
+    datastore: zfs_backup
+    role: DatastoreBackup
 
-  pbs_users:
-    - name: user_pve5
-      password: "{{ lookup('keepass', 'pbs_pve_user', 'password') }}"
-      realm: pbs
-    - name: user_pve5-test
-      password: "{{ lookup('keepass', 'pbs_pve_user-test', 'password') }}"
-      realm: pbs
-  # rpool ist unverschlüsselt als Boot-Medium
-  # entschlüsseln nach Boot mit: sudo zpool import -d /dev/disk/by-id/ -a && sudo zfs mount -a  -l
+pbs_users:
+  - name: user_pve5
+    password: "{{ lookup('keepass', 'pbs_pve_user', 'password') }}"
+    realm: pbs
+  - name: user_pve5-test
+    password: "{{ lookup('keepass', 'pbs_pve_user-test', 'password') }}"
+    realm: pbs
+# rpool ist unverschlüsselt als Boot-Medium
+# entschlüsseln nach Boot mit: sudo zpool import -d /dev/disk/by-id/ -a && sudo zfs mount -a  -l
 
-  ## backup
-  ### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase backup /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1
+## backup
+### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase backup /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1
 
-  # mgrote.zfs_manage_datasets
-  ### mgrote.zfs_extra
-  # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
-  zfs_datasets: # DatenPools werden hier nicht verwaltet
-    # rpool - System-Datasets
-    - dataset: rpool
-      state: present
-      compression: zstd
-      sync: disabled
-      xattr: sa
-      dnodesize: auto
-      atime: on
-      snapdir: hidden
-      reservation: 1G
-      refreservation: 1G
-    - dataset: rpool/ROOT
-      state: present
-      refreservation: 1G
-    - dataset: rpool/ROOT/pbs-1
-      state: present
-      refreservation: 1G
-    # backup-pool
-    - dataset: backup/pbs_data
-      state: present
-      quota: 10GB
-    - dataset: backup/pve5
-      state: present
-      canmount: off
-  # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
-  zfs_extra_arc_max_size: "1073741824" # 1GB in Bytes
-  zfs_extra_zfs_pools:
-    - name: "rpool"
-      systemd_timer_schedule: "*-01,04,07,10-01 23:00" # jeden ersten eines jeden Quartals
-    - name: "backup"
-      systemd_timer_schedule: "*-01,04,07,10-01 23:00"
+# mgrote.zfs_manage_datasets
+### mgrote.zfs_extra
+# Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
+zfs_datasets: # DatenPools werden hier nicht verwaltet
+  # rpool - System-Datasets
+  - dataset: rpool
+    state: present
+    compression: zstd
+    sync: disabled
+    xattr: sa
+    dnodesize: auto
+    atime: on # noqa yaml[truthy]
+    snapdir: hidden
+    reservation: 1G
+    refreservation: 1G
+  - dataset: rpool/ROOT
+    state: present
+    refreservation: 1G
+  - dataset: rpool/ROOT/pbs-1
+    state: present
+    refreservation: 1G
+  # backup-pool
+  - dataset: backup/pbs_data
+    state: present
+    quota: 10GB
+  - dataset: backup/pve5
+    state: present
+    canmount: off # noqa yaml[truthy]
+# Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
+zfs_extra_arc_max_size: "1073741824" # 1GB in Bytes
+zfs_extra_zfs_pools:
+  - name: "rpool"
+    systemd_timer_schedule: "*-01,04,07,10-01 23:00" # jeden ersten eines jeden Quartals
+  - name: "backup"
+    systemd_timer_schedule: "*-01,04,07,10-01 23:00"
 
-  ### mgrote.zfs_sanoid
-  sanoid_snaps_enable: true
-  ## syncoid
-  sanoid_syncoid_destination_host: false
-  sanoid_syncoid_ssh_privkey: "{{ lookup('keepass', 'sanoid_syncoid_private_key', 'notes') }}"
-  sanoid_syncoid_timer: '*-*-* *:00:00' # jede Stunde
-  sanoid_syncoid_bwlimit: 30m # 30MB/s
-  sanoid_syncoid_datasets_sync:
-    - source_host: pve5.grote.lan
-      destination_mount_check: backup
-      destination_dataset: backup/pve5/pve_backup
-      source_dataset: hdd_data_raidz/pve_backup
+### mgrote.zfs_sanoid
+sanoid_snaps_enable: true
 
-    - source_host: pve5.grote.lan
-      destination_mount_check: backup
-      destination_dataset: backup/pve5/videos
-      source_dataset: hdd_data_raidz/videos
+## syncoid
+sanoid_syncoid_destination_host: false
+sanoid_syncoid_ssh_privkey: "{{ lookup('keepass', 'sanoid_syncoid_private_key', 'notes') }}"
+sanoid_syncoid_timer: '*-*-* *:00:00' # jede Stunde
+sanoid_syncoid_bwlimit: 30m # 30MB/s
+sanoid_syncoid_datasets_sync:
+  - source_host: pve5.grote.lan
+    destination_mount_check: backup
+    destination_dataset: backup/pve5/pve_backup
+    source_dataset: hdd_data_raidz/pve_backup
 
-    - source_host: pve5.grote.lan
-      destination_mount_check: backup
-      destination_dataset: backup/pve5/music
-      source_dataset: hdd_data_raidz/music
+  - source_host: pve5.grote.lan
+    destination_mount_check: backup
+    destination_dataset: backup/pve5/videos
+    source_dataset: hdd_data_raidz/videos
 
-    - source_host: pve5.grote.lan
-      destination_mount_check: backup
-      destination_dataset: backup/pve5/tmp
-      source_dataset: hdd_data_raidz/tmp
+  - source_host: pve5.grote.lan
+    destination_mount_check: backup
+    destination_dataset: backup/pve5/music
+    source_dataset: hdd_data_raidz/music
 
-    - source_host: pve5.grote.lan
-      destination_mount_check: backup
-      destination_dataset: backup/pve5/archiv
-      source_dataset: hdd_data_raidz/archiv
+  - source_host: pve5.grote.lan
+    destination_mount_check: backup
+    destination_dataset: backup/pve5/tmp
+    source_dataset: hdd_data_raidz/tmp
 
-    - source_host: pve5.grote.lan
-      destination_mount_check: backup
-      destination_dataset: backup/pve5/bilder
-      source_dataset: hdd_data_raidz/bilder
+  - source_host: pve5.grote.lan
+    destination_mount_check: backup
+    destination_dataset: backup/pve5/archiv
+    source_dataset: hdd_data_raidz/archiv
 
-    - source_host: pve5.grote.lan
-      destination_mount_check: backup
-      destination_dataset: backup/pve5/hm
-      source_dataset: hdd_data_raidz/hm
+  - source_host: pve5.grote.lan
+    destination_mount_check: backup
+    destination_dataset: backup/pve5/bilder
+    source_dataset: hdd_data_raidz/bilder
 
-    - source_host: pve5.grote.lan
-      destination_mount_check: backup
-      destination_dataset: backup/pve5/scans
-      source_dataset: hdd_data_raidz/scans
+  - source_host: pve5.grote.lan
+    destination_mount_check: backup
+    destination_dataset: backup/pve5/hm
+    source_dataset: hdd_data_raidz/hm
 
-    - source_host: pve5.grote.lan
-      destination_mount_check: backup
-      destination_dataset: backup/pve5/restic
-      source_dataset: hdd_data_raidz/restic
+  - source_host: pve5.grote.lan
+    destination_mount_check: backup
+    destination_dataset: backup/pve5/scans
+    source_dataset: hdd_data_raidz/scans
 
-    - source_host: pve5.grote.lan
-      destination_mount_check: backup
-      destination_dataset: backup/pve5/backup
-      source_dataset: hdd_data_raidz/backup
+  - source_host: pve5.grote.lan
+    destination_mount_check: backup
+    destination_dataset: backup/pve5/restic
+    source_dataset: hdd_data_raidz/restic
 
-    - source_host: pve5.grote.lan
-      destination_mount_check: backup
-      destination_dataset: backup/pve5/buecher
-      source_dataset: hdd_data_raidz/buecher
+  - source_host: pve5.grote.lan
+    destination_mount_check: backup
+    destination_dataset: backup/pve5/backup
+    source_dataset: hdd_data_raidz/backup
 
-    - source_host: pve5.grote.lan
-      destination_mount_check: backup
-      destination_dataset: backup/pve5/programme
-      source_dataset: hdd_data_raidz/programme
+  - source_host: pve5.grote.lan
+    destination_mount_check: backup
+    destination_dataset: backup/pve5/buecher
+    source_dataset: hdd_data_raidz/buecher
 
-    - source_host: pve5.grote.lan
-      destination_mount_check: backup
-      destination_dataset: backup/pve5/vm
-      source_dataset: hdd_data_raidz/vm
+  - source_host: pve5.grote.lan
+    destination_mount_check: backup
+    destination_dataset: backup/pve5/programme
+    source_dataset: hdd_data_raidz/programme
 
-  # sanoid
-  sanoid_datasets:
-    ### rpool
-    - path: rpool
-      recursive: 'no'
-      snapshots: true
-      template: 'pve3tage'
-    - path: rpool/ROOT
-      recursive: 'no'
-      snapshots: true
-      template: 'pve3tage'
-    - path: rpool/ROOT/pbs-1
-      recursive: 'no'
-      snapshots: true
-      template: 'pve3tage'
-    ### backup
-    - path: backup
-      recursive: 'no'
-      snapshots: true
-      template: '14tage'
-    - path: backup/pbs_data
-      recursive: 'no'
-      snapshots: true
-      template: '14tage'
+  - source_host: pve5.grote.lan
+    destination_mount_check: backup
+    destination_dataset: backup/pve5/vm
+    source_dataset: hdd_data_raidz/vm
+
+# sanoid
+sanoid_datasets:
+  ### rpool
+  - path: rpool
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: 'pve3tage'
+  - path: rpool/ROOT
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: 'pve3tage'
+  - path: rpool/ROOT/pbs-1
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: 'pve3tage'
+  ### backup
+  - path: backup
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: '14tage'
+  - path: backup/pbs_data
+    recursive: 'no' # noqa yaml[truthy]
+    snapshots: true
+    template: '14tage'

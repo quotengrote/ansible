@@ -1,0 +1,29 @@
+---
+- name: install packages
+  ansible.builtin.apt:
+    name: munin-node
+    state: present
+  notify:
+    - munin-node-configure --shell
+    - munin-node-configure --shell - 2
+
+- name: create directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    group: root
+    mode: "0644"
+  loop:
+    - /etc/munin
+    - /etc/munin/plugin-conf.d
+    - /etc/munin/plugins
+
+- name: Copy munin-node configuration.
+  ansible.builtin.template:
+    src: munin-node.conf.j2
+    dest: /etc/munin/munin-node.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart munin-node

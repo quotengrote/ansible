@@ -21,8 +21,8 @@ http:
     service_dokuwiki:
       loadBalancer:
         servers:
-        - url: "http://dokuwiki2.grote.lan/"
+          - url: "http://dokuwiki2.grote.lan/"
     service_gitea:
       loadBalancer:
         servers:
-        - url: "http://gitea.grote.lan:3000/"
+          - url: "http://gitea.grote.lan:3000/"

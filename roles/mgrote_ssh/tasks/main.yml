@@ -1,0 +1,10 @@
+---
+- name: include ubuntu tasks (determined by "ansible_distribution")
+  ansible.builtin.include_tasks: ubuntu.yml
+  when:
+    - ansible_distribution == 'Ubuntu'
+
+- name: include proxmox tasks (determined by group)
+  ansible.builtin.include_tasks: pve.yml
+  when:
+    - "'proxmox' in group_names"

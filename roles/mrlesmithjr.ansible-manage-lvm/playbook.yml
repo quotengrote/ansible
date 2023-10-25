@@ -4,8 +4,8 @@
     lvm_groups:
       - vgname: test-vg
         disks:
-          - /dev/sdb
-          - /dev/sdc
+         - /dev/sdb
+         - /dev/sdc
         create: true
         lvnames:
           - lvname: test_1

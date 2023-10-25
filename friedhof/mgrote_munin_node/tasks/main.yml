@@ -1,0 +1,11 @@
+---
+- name: include install-tasks
+  ansible.builtin.include_tasks: install.yml
+- name: include user tasks
+  ansible.builtin.include_tasks: user.yml
+- name: include plugin-tasks
+  ansible.builtin.include_tasks: additional.yml
+  when: munin_node_plugins is defined
+- name: include remove-tasks
+  ansible.builtin.include_tasks: remove.yml
+  when: munin_node_disabled_plugins is defined

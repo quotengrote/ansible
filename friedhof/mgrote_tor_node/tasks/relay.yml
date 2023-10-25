@@ -1,0 +1,7 @@
+---
+- name: templating torrc
+  become: true
+  ansible.builtin.template:
+    src: "relay_torrc"
+    dest: "/etc/tor/torrc"
+  notify: restart tor

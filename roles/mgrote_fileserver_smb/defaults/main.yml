@@ -1,0 +1,107 @@
+---
+# Global SMB options
+## "smb_global_options" = dict
+## -option: "smbd option name" <-- value
+##  value: "smbd value" <-- value
+## neue Optionen konnen einfach angehangen werden bzw. alte entfernt werden
+smb_global_options:
+  - option: min protocol
+    value: "SMB2_02"
+  - option: client min protocol
+    value: "SMB2_02"
+  - option: client max protocol
+    value: "SMB3_00"
+  - option: log level
+    value: "1"
+  - option: log file
+    value: "/var/log/samba/log"
+  - option: max log size
+    value: "1000"
+  - option: logging
+    value: "syslog"
+  - option: panic action
+    value: "/usr/share/samba/panic-action_%d"
+  - option: passdb backend
+    value: "tdbsam"
+  - option: obey pam restrictions
+    value: "no"
+  - option: unix password sync
+    value: "no"
+  - option: passwd program
+    value: "/usr/bin/passwd_%u"
+  - option: passwd chat
+    value: '*Enter\snew\s*\spassword:*_%n\n_*Retype\snew\s*\spassword:*_%n\n_*password\supdated\ssuccessfully*_.'
+  - option: pam password change
+    value: "yes"
+  - option: guest account
+    value: "nobody"
+  - option: load printers
+    value: "no"
+  - option: unix extensions
+    value: "yes"
+  - option: wide links
+    value: "no"
+  - option: create mask
+    value: "0777"
+  - option: directory mask
+    value: "0777"
+  - option: map to guest
+    value: "Bad User"
+  - option: use sendfile
+    value: "yes"
+  - option: aio read size
+    value: "16384"
+  - option: aio write size
+    value: "16384"
+  - option: local master
+    value: "yes"
+  - option: time server
+    value: "no"
+  - option: wins support
+    value: "no"
+  - option: acl allow execute always
+    value: "yes"
+  - option: force user
+    value: "root"
+  - option: force group
+    value: "users"
+  - option: workgroup
+    value: WORKGROUP
+  - option: server string
+    value: "%h_server"
+
+# packages
+smb_packages:
+  - samba
+  - cifs-utils
+  - samba-common
+  - samba-common-bin
+  - samba-vfs-modules
+
+# zfs-snapshots einbinden
+## als <Pfad>\.zfs\snapshot einbinden
+## sorgt dafur das statt "A0KDC9~F" die Ordnernamen als "autosnap_2021-11-04_23÷59÷02_daily" angezeigt werden
+## https://www.samba.org/samba/docs/current/man-html/vfs_catia.8.html
+# aktiv?
+smb_enable_snapshots_dir: true
+# welche Character/zeichen-Ersetzungen soll catia ausführen
+smb_catia_mappings: "0x3a:0xf7" # ersetzt ":" durch "÷"
+
+# als Windows-Shattenkopien einbinden
+## https://www.samba.org/samba/docs/current/man-html/vfs_shadow_copy2.8.html
+## BUG: Windows sieht die Schattenkopien, kann die Ausgewählte Datei aber nicht öffnen wenn sie seit dem Snapshot gelöscht wurde, vmtl da Windows nicht den kompletten Snapshot-Pfad verwendet
+## Format ist passend fur sanoid-Snapshots
+# aktiv?
+smb_enable_snapshots_shadow: false
+# wo liegen die Snapshots
+smb_shadow_snapdir: ".zfs/snapshot"
+# Sortierung
+smb_shadow_sort: "desc"
+# Datumsformat der Snapshots
+smb_shadow_format: "_%Y-%m-%d_%H:%M:%S"
+# Snapshot-Präfix
+smb_shadow_snapprefix: "^autosnap"
+# Snapshot-"Trenner"
+smb_shadow_delimiter: "_"
+# zeitformat Snapshots
+smb_shadow_localtime: "no"

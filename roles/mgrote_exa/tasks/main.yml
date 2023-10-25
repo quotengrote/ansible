@@ -1,0 +1,10 @@
+---
+- name: download & extract exa
+  become: true
+  ansible.builtin.unarchive:
+    src: "{{ exa_url }}"
+    dest: /usr/local/
+    remote_src: true
+    owner: root
+    group: root
+    mode: "0755"

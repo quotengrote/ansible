@@ -1,0 +1,14 @@
+---
+dependencies:
+  - role: mgrote_postfix
+galaxy_info:
+  author: mgrote
+  description: installs apcupsd
+  min_ansible_version: 2.0
+  license: GPLv3
+  platforms:
+    - name: Proxmox
+      versions:
+        - all
+  galaxy_tags:
+    - system

@@ -1,5 +1,4 @@
 ---
 - hosts: gitea
   roles:
-    - { role: mgrote.postfix, tags: "postfix" }
     - { role: l3d.gitea, tags: "gitea", become: true }

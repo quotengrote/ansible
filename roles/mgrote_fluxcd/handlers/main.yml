@@ -1,0 +1,6 @@
+---
+- name: flux install
+  ansible.builtin.command: "{{ flux_homedir }}/bootstrap.sh" # noqa no-changed-when
+  become_user: "{{ flux_user }}"
+  become: true
+...

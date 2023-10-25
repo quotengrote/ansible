@@ -1,0 +1,6 @@
+---
+- name: ensure packages are installed
+  become: true
+  ansible.builtin.package:
+    name: "{{ smb_packages }}"
+    state: present

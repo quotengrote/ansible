@@ -1,0 +1,15 @@
+---
+- name: restart munin-node
+  ansible.builtin.service:
+    name: munin-node
+    state: restarted
+
+- name: munin-node-configure --shell # noqa ignore-errors
+  ansible.builtin.command: munin-node-configure --shell
+  register: output_conf
+  changed_when: "output_conf.rc != 0"
+  ignore_errors: true # ignoriere fehler
+
+- name: munin-node-configure --shell - 2 # noqa ignore-errors
+  ansible.builtin.command: munin-node-configure --shell --families=contrib,auto | sh -x
+  ignore_errors: true # ignoriere fehler

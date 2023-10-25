@@ -1,0 +1,25 @@
+---
+- name: systemctl daemon-reload
+  become: true
+  ansible.builtin.systemd:
+    daemon_reload: true
+
+- name: systemctl enable units
+  become: true
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: true
+    masked: false
+  with_items:
+    - sm_fan_control.service
+    - sm_fan_control.timer
+
+- name: systemctl start units
+  become: true
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    state: restarted
+    enabled: true
+  with_items:
+    - sm_fan_control.timer
+  notify: systemctl daemon-reload

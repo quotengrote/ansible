@@ -1,6 +1,0 @@
----
-- hosts: testeinzeln
-  become: yes
-  roles:
-    - { role: mgrote.postfix, tags: "postfix" }
-    - { role: mgrote.fail2ban, tags: "f2b" }

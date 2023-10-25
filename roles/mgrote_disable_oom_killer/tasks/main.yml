@@ -1,0 +1,8 @@
+---
+- name: disable oom-killer in sysctl.conf (works after a reboot)
+  become: true
+  ansible.builtin.blockinfile:
+    path: /etc/sysctl.conf
+    block: |
+      vm.oom-kill = 0
+  notify: disable oom-killer

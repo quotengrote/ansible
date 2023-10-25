@@ -1,121 +1,121 @@
 ---
-  ### PROXMOX
-  # fileserver3 ist ein LXC-Container; der Container ist "privileged" damit der Bind-Mount die richtigen Rechte bekommt
+### PROXMOX
+# fileserver3 ist ein LXC-Container; der Container ist "privileged" damit der Bind-Mount die richtigen Rechte bekommt
 
-  ### oefenweb.ufw
-  ufw_rules:
-    - rule: allow
-      to_port: 22
-      protocol: tcp
-      comment: 'ssh'
-      from_ip: 0.0.0.0/0
-    - rule: allow
-      to_port: 445
-      comment: 'smb'
-      from_ip: 0.0.0.0/0
-    - rule: allow
-      to_port: 139
-      comment: 'smb'
-      from_ip: 0.0.0.0/0
+### oefenweb.ufw
+ufw_rules:
+  - rule: allow
+    to_port: 22
+    protocol: tcp
+    comment: 'ssh'
+    from_ip: 0.0.0.0/0
+  - rule: allow
+    to_port: 445
+    comment: 'smb'
+    from_ip: 0.0.0.0/0
+  - rule: allow
+    to_port: 139
+    comment: 'smb'
+    from_ip: 0.0.0.0/0
 
-  ### mgrote.apt_manage_packages
-  apt_packages_internet:
-    - http://docker10.grote.lan:3344/bash-helper-scripts-mgrote-latest.deb
+### mgrote.apt_manage_packages
+apt_packages_internet:
+  - http://docker10.grote.lan:3344/bash-helper-scripts-mgrote-latest.deb
 
-  ### mgrote.youtubedl
-  ytdl_dl_url: "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp"
-  ytdl_timer: "Tue,Sat 03:00"
-  ytdl_bin_path: /usr/local/bin/yt-dlp
-  ytdl_active: true
-  ytdl_video_urls:
-      - https://www.youtube.com/c/KurzgesagtDE/videos # Kurzgesagt - Deutsch
-      - https://www.youtube.com/c/inanutshell/videos # Kurzgesagt - Englisch
-      - https://www.youtube.com/c/MartinSonneborn/videos #martin sonneborn
-      - https://www.youtube.com/c/100SekundenPhysik/videos #100 sekunden physik
-      - https://www.youtube.com/c/Handwerkskunst/videos #swr handwerkskunst kanal
-      - https://www.youtube.com/c/PracticalEngineeringChannel/videos # pracrical engineering
-      - https://www.youtube.com/channel/UC0vFIgkGrbmfxKVhZ2hgMeg/videos #gaby weber
-      - https://www.youtube.com/playlist?list=PLPM-eyPokAWNhhDNO4YzC5cGRwuI2ykwE # music
-      - https://www.youtube.com/playlist?list=PLPM-eyPokAWNnDxuyX131R5wkl8fzvu7D # lost and found
-      - https://www.youtube.com/playlist?list=PLPM-eyPokAWPmStfh37roJge-JuLfgma0 # lost and found 2
-      - https://www.youtube.com/playlist?list=PLcpuu5BzmasC7cI-B713EY3xdpWrLhDdH #Japan Day in the Life Series by Paolo fromTOKYO
-      - https://www.youtube.com/playlist?list=PLlQWnS27jXh9gX1kvMT1frhzvFnDgP_8M # arte die großen mythen
-      - https://www.youtube.com/playlist?list=PLrMX9ct-uNyOKfDG0WrRd6fQsB21MzorZ # JoBlo - Videos - WTF HAPPENED TO THIS MOVIE?!
-      - https://www.youtube.com/playlist?list=PLrMX9ct-uNyOt0Z-iqBGuyiZU9pFJyvD5 # JoBlo - Videos - THE MOVIE THAT ALMOST WAS
-      - https://www.youtube.com/playlist?list=PLrMX9ct-uNyMNMZgSkxRdNh2xa8GEZQn4 # JoBlo - Videos - WTF HAPPENED TO THIS CELEBRITY?!
-      - https://www.youtube.com/watch?v=TowKvEJcYDw&list=PLlQWnS27jXh9aEp7hl54xrk5CgiVbvMBy # arte - zu Tisch in...
-      - https://www.youtube.com/playlist?list=PLs4hTtftqnlAkiQNdWn6bbKUr-P1wuSm0 # jimmy kimmel mean tweets
-      - https://www.youtube.com/tomstantonengineering
-      - https://www.youtube.com/@liamcarps #englandvideos ironisch
-  ytdl_podcast_urls:
-      - https://sternengeschichten.podigee.io/feed/aac # Sternengeschichten
-      - https://feeds.br.de/radiowissen/feed.xml # BR2 RadioWissen
+### mgrote.youtubedl
+ytdl_dl_url: "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp"
+ytdl_timer: "Tue,Sat 03:00"
+ytdl_bin_path: /usr/local/bin/yt-dlp
+ytdl_active: true
+ytdl_video_urls:
+  - https://www.youtube.com/c/KurzgesagtDE/videos # Kurzgesagt - Deutsch
+  - https://www.youtube.com/c/inanutshell/videos # Kurzgesagt - Englisch
+  - https://www.youtube.com/c/MartinSonneborn/videos #martin sonneborn
+  - https://www.youtube.com/c/100SekundenPhysik/videos #100 sekunden physik
+  - https://www.youtube.com/c/Handwerkskunst/videos #swr handwerkskunst kanal
+  - https://www.youtube.com/c/PracticalEngineeringChannel/videos # pracrical engineering
+  - https://www.youtube.com/channel/UC0vFIgkGrbmfxKVhZ2hgMeg/videos #gaby weber
+  - https://www.youtube.com/playlist?list=PLPM-eyPokAWNhhDNO4YzC5cGRwuI2ykwE # music
+  - https://www.youtube.com/playlist?list=PLPM-eyPokAWNnDxuyX131R5wkl8fzvu7D # lost and found
+  - https://www.youtube.com/playlist?list=PLPM-eyPokAWPmStfh37roJge-JuLfgma0 # lost and found 2
+  - https://www.youtube.com/playlist?list=PLcpuu5BzmasC7cI-B713EY3xdpWrLhDdH #Japan Day in the Life Series by Paolo fromTOKYO
+  - https://www.youtube.com/playlist?list=PLlQWnS27jXh9gX1kvMT1frhzvFnDgP_8M # arte die großen mythen
+  - https://www.youtube.com/playlist?list=PLrMX9ct-uNyOKfDG0WrRd6fQsB21MzorZ # JoBlo - Videos - WTF HAPPENED TO THIS MOVIE?!
+  - https://www.youtube.com/playlist?list=PLrMX9ct-uNyOt0Z-iqBGuyiZU9pFJyvD5 # JoBlo - Videos - THE MOVIE THAT ALMOST WAS
+  - https://www.youtube.com/playlist?list=PLrMX9ct-uNyMNMZgSkxRdNh2xa8GEZQn4 # JoBlo - Videos - WTF HAPPENED TO THIS CELEBRITY?!
+  - https://www.youtube.com/watch?v=TowKvEJcYDw&list=PLlQWnS27jXh9aEp7hl54xrk5CgiVbvMBy # arte - zu Tisch in...
+  - https://www.youtube.com/playlist?list=PLs4hTtftqnlAkiQNdWn6bbKUr-P1wuSm0 # jimmy kimmel mean tweets
+  - https://www.youtube.com/tomstantonengineering
+  - https://www.youtube.com/@liamcarps #englandvideos ironisch
+ytdl_podcast_urls:
+  - https://sternengeschichten.podigee.io/feed/aac # Sternengeschichten
+  - https://feeds.br.de/radiowissen/feed.xml # BR2 RadioWissen
 
-  ytdl_video_output: "/shares_videos/Youtube/%(uploader)s/%(title)s-%(id)s.%(ext)s" # Videos werden jetzt IMMEr nach "Uploader/Name.ext" geschrieben
+ytdl_video_output: "/shares_videos/Youtube/%(uploader)s/%(title)s-%(id)s.%(ext)s" # Videos werden jetzt IMMEr nach "Uploader/Name.ext" geschrieben
 
-  ytdl_podcast_output: "/shares_music/Podcasts/%(playlist)s/%(id)s.%(ext)s"
-  ytdl_video_log_output: "/shares_videos/Youtube/archive-youtube.log"
-  ytdl_podcast_log_output: "/shares_music/Podcasts/archive-podcast.log"
-  ytdl_youtube_username: "{{ lookup('keepass', 'youtubedl_youtube_login', 'username') }}"
-  ytdl_youtube_password: "{{ lookup('keepass', 'youtubedl_youtube_login', 'password') }}"
-  ytdl_conf_dir: "/etc/youtubedl" #ohne / am ende
-  ytdl_download_limit: "10000K"
+ytdl_podcast_output: "/shares_music/Podcasts/%(playlist)s/%(id)s.%(ext)s"
+ytdl_video_log_output: "/shares_videos/Youtube/archive-youtube.log"
+ytdl_podcast_log_output: "/shares_music/Podcasts/archive-podcast.log"
+ytdl_youtube_username: "{{ lookup('keepass', 'youtubedl_youtube_login', 'username') }}"
+ytdl_youtube_password: "{{ lookup('keepass', 'youtubedl_youtube_login', 'password') }}"
+ytdl_conf_dir: "/etc/youtubedl" #ohne / am ende
+ytdl_download_limit: "10000K"
 
-  ### mgrote.smb_fileserver
-  smb_shares:
-    - name: 'videos'
-      path: '/shares_videos'
-      users_ro: 'kodi'
-      users_rw: 'michaelgrote win10'
-    - name: 'scans'
-      path: '/shares_scans'
-      users_ro: ' michaelgrote'
-      users_rw: 'brother_ads2700w'
-    - name: 'papa_backup'
-      path: '/shares_papa_backup'
-      users_ro: 'michaelgrote'
-      users_rw: 'win10'
-    - name: 'backup'
-      path: '/shares_backup'
-      users_ro: ''
-      users_rw: 'win10 michaelgrote'
-    - name: 'archiv'
-      path: '/shares_archiv'
-      users_ro: ''
-      users_rw: 'michaelgrote win10'
-    - name: 'hm'
-      path: '/shares_hm'
-      users_ro: ''
-      users_rw: 'michaelgrote win10'
-    - name: 'musik'
-      path: '/shares_music'
-      users_ro: 'navidrome kodi  '
-      users_rw: 'win10 michaelgrote'
-    - name: 'tmp'
-      path: '/shares_tmp'
-      users_ro: 'win10'
-      users_rw: 'kodi win10 michaelgrote'
-    - name: 'bilder'
-      path: '/shares_bilder'
-      users_ro: 'photoprism'
-      users_rw: ' michaelgrote win10'
-    - name: 'proxmox'
-      path: '/shares_pve_backup'
-      users_ro: 'michaelgrote'
-      users_rw: 'pve win10'
-    - name: 'restic'
-      path: '/shares_restic'
-      users_ro: ''
-      users_rw: ' restic win10 michaelgrote'
-    - name: 'buecher'
-      path: '/shares_buecher'
-      users_ro: ''
-      users_rw: 'michaelgrote win10'
-    - name: 'programme'
-      path: '/shares_programme'
-      users_ro: ''
-      users_rw: 'michaelgrote win10'
-    - name: 'vm'
-      path: '/shares_vm'
-      users_ro: ''
-      users_rw: 'michaelgrote'
+### mgrote.smb_fileserver
+smb_shares:
+  - name: 'videos'
+    path: '/shares_videos'
+    users_ro: 'kodi'
+    users_rw: 'michaelgrote win10'
+  - name: 'scans'
+    path: '/shares_scans'
+    users_ro: ' michaelgrote'
+    users_rw: 'brother_ads2700w'
+  - name: 'papa_backup'
+    path: '/shares_papa_backup'
+    users_ro: 'michaelgrote'
+    users_rw: 'win10'
+  - name: 'backup'
+    path: '/shares_backup'
+    users_ro: ''
+    users_rw: 'win10 michaelgrote'
+  - name: 'archiv'
+    path: '/shares_archiv'
+    users_ro: ''
+    users_rw: 'michaelgrote win10'
+  - name: 'hm'
+    path: '/shares_hm'
+    users_ro: ''
+    users_rw: 'michaelgrote win10'
+  - name: 'musik'
+    path: '/shares_music'
+    users_ro: 'navidrome kodi  '
+    users_rw: 'win10 michaelgrote'
+  - name: 'tmp'
+    path: '/shares_tmp'
+    users_ro: 'win10'
+    users_rw: 'kodi win10 michaelgrote'
+  - name: 'bilder'
+    path: '/shares_bilder'
+    users_ro: 'photoprism'
+    users_rw: ' michaelgrote win10'
+  - name: 'proxmox'
+    path: '/shares_pve_backup'
+    users_ro: 'michaelgrote'
+    users_rw: 'pve win10'
+  - name: 'restic'
+    path: '/shares_restic'
+    users_ro: ''
+    users_rw: ' restic win10 michaelgrote'
+  - name: 'buecher'
+    path: '/shares_buecher'
+    users_ro: ''
+    users_rw: 'michaelgrote win10'
+  - name: 'programme'
+    path: '/shares_programme'
+    users_ro: ''
+    users_rw: 'michaelgrote win10'
+  - name: 'vm'
+    path: '/shares_vm'
+    users_ro: ''
+    users_rw: 'michaelgrote'

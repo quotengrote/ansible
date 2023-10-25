@@ -1,0 +1,36 @@
+---
+- name: install packages
+  become: true
+  ansible.builtin.package:
+    name:
+      - ipmitool
+    state: present
+
+- name: template sm_fan_control.service
+  become: true
+  ansible.builtin.template:
+    src: sm_fan_control.service.j2
+    dest: /etc/systemd/system/sm_fan_control.service
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - systemctl daemon-reload
+
+- name: template sm_fan_control.timer
+  become: true
+  ansible.builtin.template:
+    src: sm_fan_control.timer.j2
+    dest: /etc/systemd/system/sm_fan_control.timer
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - systemctl daemon-reload
+
+- name: systemctl start sm_fan_control.timer
+  become: true
+  ansible.builtin.systemd:
+    name: sm_fan_control.timer
+    state: started
+    enabled: true

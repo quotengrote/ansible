@@ -1,0 +1,7 @@
+MINIO_ROOT_USER="{{ minio_root_user }}"
+MINIO_VOLUMES="{{ minio_volumes_base_dir }}"
+MINIO_OPTS="-C {{ minio_config_dir }} --address {{ minio_fqdn }}:{{ minio_port }} --console-address :{{ minio_console_port }}"
+MINIO_ROOT_PASSWORD="{{ minio_root_password }}"
+
+MINIO_SERVER_URL="{{ minio_server_url }}"
+MINIO_BROWSER_REDIRECT_URL="{{ minio_browser_redirect_url}}"

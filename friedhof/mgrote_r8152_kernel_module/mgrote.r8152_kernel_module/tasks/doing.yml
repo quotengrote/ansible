@@ -1,0 +1,36 @@
+---
+- name: install needed packages
+  become: true
+  ansible.builtin.package:
+    name: "{{ r8152_packages }}"
+    state: present
+
+- name: add reboot(for safekeeping)
+  become: true
+  ansible.builtin.shell: shutdown -r "{{ r8152_safekeeping_reboot_delay }}"
+
+- name: update apt cache
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: updated installed packages
+  become: true
+  ansible.builtin.package:
+    upgrade: dist
+
+- name: create dirs
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - "{{ r8152_src_dir }}"
+
+- name: copy and extract archive
+  become: true
+  ansible.builtin.unarchive:
+    src: "{{ r8152_filename }}"
+    dest: "{{ r8152_src_dir }}"
+    mode: a+x
+    extra_opts: [--strip-components=1] # entfernt die erste Ebene des Archives
+    remote_src: false #datei liegt also auf dem ansible-controller

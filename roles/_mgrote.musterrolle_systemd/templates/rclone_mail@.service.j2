@@ -1,8 +1,0 @@
-{{ file_header | default () }}
-
-[Unit]
-Description=Send a Mail in case of an error in sanoid.service.
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash -c '/bin/systemctl status rclone_%i.service | mail -s "[ERROR] rclone - %i" {{ empfaenger_mail }}'

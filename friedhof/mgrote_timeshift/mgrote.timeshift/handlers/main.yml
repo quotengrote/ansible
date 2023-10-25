@@ -1,0 +1,4 @@
+---
+- name: create snapshot
+  become: true
+  ansible.builtin.shell: "/usr/bin/timeshift --scripted --create"

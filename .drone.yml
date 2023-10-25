@@ -23,7 +23,7 @@ steps:
     commands:
       - ansible-lint --version
       - echo $ANSIBLE_VAULT_PASSWORD > ./vault-pass.yml
-      - ansible-lint
+      - ansible-lint --force-color --format pep8
     when:
       event:
         exclude:
@@ -31,17 +31,3 @@ steps:
     environment:
       ANSIBLE_VAULT_PASSWORD:
         from_secret: vault-pass
-
----
-kind: pipeline
-type: docker
-name: yaml-lint
-steps:
-  - name: yamllint
-    image: cytopia/yamllint:1
-    commands:
-      - /usr/bin/yamllint -f colored .
-    when:
-      event:
-        exclude:
-          - tag

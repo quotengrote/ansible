@@ -1,0 +1,5 @@
+---
+- name: testmail # noqa no-changed-when
+  ansible.builtin.shell:
+    cmd: "set -o pipefail && echo 'zed ist eingerichtet' | mail -s '{{ ansible_hostname }} - zed' '{{ empfaenger_mail }}'"
+    executable: /bin/bash

@@ -1,8 +1,8 @@
 ---
-  - hosts: all
-    roles:
-      - { role: mrlesmithjr.ansible-manage-lvm,
-          tags: "lvm",
-          become: true,
-          when: manage_lvm == true and manage_lvm is defined }
-          # $manage_lvm gehört zu dieser Rolle, wird aber extra abgefragt um das PLaybook zu "aktivieren"
+- hosts: all
+  roles:
+    - { role: mrlesmithjr.ansible-manage-lvm,
+        tags: "lvm",
+        become: true,
+        when: manage_lvm == true and manage_lvm is defined }
+        # $manage_lvm gehört zu dieser Rolle, wird aber extra abgefragt um das PLaybook zu "aktivieren"

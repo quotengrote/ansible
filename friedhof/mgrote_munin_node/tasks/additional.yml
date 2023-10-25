@@ -1,0 +1,37 @@
+---
+- name: download additional plugins
+  ansible.builtin.get_url:
+    url: "{{ item.src }}"
+    dest: "{{ munin_plugin_src_path }}{{ item.name }}"
+    mode: '0755'
+  loop: "{{ munin_node_plugins }}"
+  notify: restart munin-node
+  no_log: true
+  check_mode: false # damit werden auch im check-mode die Plugins heruntergeladen, sonst schlägt der nächste Task fehl
+
+- name: enable additional plugins
+  ansible.builtin.file:
+    src: "{{ munin_plugin_src_path }}{{ item.name }}"
+    dest: "{{ munin_plugin_dest_path }}{{ item.name }}"
+    state: link
+  notify: restart munin-node
+  loop: "{{ munin_node_plugins }}"
+  no_log: true
+
+- name: copy additional plugin-config
+  ansible.builtin.copy:
+    content: "{{ item.config }}"
+    dest: "{{ munin_plugin_conf_dest_path }}{{ item.name }}"
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart munin-node
+  loop: "{{ munin_node_plugins }}"
+  when: item.config is defined
+  no_log: true
+
+- name: Ensure munin-node is running.
+  ansible.builtin.service:
+    name: munin-node
+    state: started
+    enabled: true

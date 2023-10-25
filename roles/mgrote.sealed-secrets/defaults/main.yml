@@ -1,8 +1,0 @@
----
-  sealed_secrets_homedir: /home/sealed_secrets
-  sealed_secrets_user_group: sealed_secrets
-  sealed_secrets_user: sealed_secrets
-  kubeseal_download_url: "https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.1/kubeseal-0.19.1-linux-amd64.tar.gz"
-  kubeseal_path_bin: /usr/local/sbin
-  kubeconfig: /etc/rancher/k3s/k3s.yaml
-  sealed_secrets_keepass_entry_name: "{{ lookup('keepass', 'k3s-sealed-secrets-private-key', 'notes') }}" # mit kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml >main.key holen

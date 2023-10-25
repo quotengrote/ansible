@@ -1,0 +1,29 @@
+---
+- name: include user tasks
+  ansible.builtin.include_tasks: user.yml
+
+- name: ensure smartmontools are installed
+  become: true
+  ansible.builtin.package:
+    name: smartmontools
+    state: present
+
+- name: template smartmontools config
+  become: true
+  ansible.builtin.template:
+    src: "smartmontools"
+    dest: "/etc/default/smartmontools"
+    owner: "{{ smart_user }}"
+    group: "{{ smart_user_group }}"
+    mode: "0644"
+  notify: restart smartmontools
+
+- name: template smartd.conf
+  become: true
+  ansible.builtin.template:
+    src: "smartd.conf"
+    dest: "/etc/smartd.conf"
+    owner: "{{ smart_user }}"
+    group: "{{ smart_user_group }}"
+    mode: "0644"
+  notify: restart smartmontools

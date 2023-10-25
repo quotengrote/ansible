@@ -1,0 +1,75 @@
+---
+- name: include user tasks
+  ansible.builtin.include_tasks: user.yml
+
+
+- name: create directories
+  become: true
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ cv4pve_user }}"
+    group: "{{ cv4pve_user_group }}"
+    mode: "0644"
+  loop:
+    - '/tmp/cv4pve'
+    - '/usr/local/bin/cv4pve'
+
+- name: download archives
+  become: true
+  ansible.builtin.get_url:
+    url: "{{ cv4pve_dl_link }}"
+    dest: /tmp/cv4pve/cv4pve-autosnap-linux-x64.zip
+    mode: '0775'
+    owner: "{{ cv4pve_user }}"
+    group: "{{ cv4pve_user_group }}"
+
+- name: extract archives
+  become: true
+  ansible.builtin.unarchive:
+    src: /tmp/cv4pve/cv4pve-autosnap-linux-x64.zip
+    dest: /usr/local/bin/cv4pve
+    remote_src: true
+    mode: a+x
+    owner: "{{ cv4pve_user }}"
+    group: "{{ cv4pve_user_group }}"
+
+- name: template cv4pve.service
+  become: true
+  ansible.builtin.template:
+    src: cv4pve.service.j2
+    dest: /etc/systemd/system/cv4pve.service
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - systemctl daemon-reload
+
+- name: template cv4pve_mail.service
+  become: true
+  ansible.builtin.template:
+    src: cv4pve_mail.service.j2
+    dest: /etc/systemd/system/cv4pve_mail.service
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - systemctl daemon-reload
+
+- name: template cv4pve.timer
+  become: true
+  ansible.builtin.template:
+    src: cv4pve.timer.j2
+    dest: /etc/systemd/system/cv4pve.timer
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - systemctl daemon-reload
+
+- name: systemctl start cv4pve.timer
+  become: true
+  ansible.builtin.systemd:
+    name: cv4pve.timer
+    state: started
+    enabled: true

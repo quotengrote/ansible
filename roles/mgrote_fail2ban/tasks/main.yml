@@ -1,0 +1,22 @@
+---
+- name: install fail2ban-packages
+  become: true
+  ansible.builtin.package:
+    name: fail2ban
+    state: present
+
+- name: copy jail.local
+  become: true
+  ansible.builtin.template:
+    src: jail.local
+    dest: /etc/fail2ban/jail.local
+    mode: "0750"
+  notify: restart_f2b
+
+- name: copy sendmail-common.local
+  become: true
+  ansible.builtin.template:
+    src: sendmail-common.local
+    dest: /etc/fail2ban/action.d/sendmail-common.local
+    mode: "0750"
+  notify: restart_f2b

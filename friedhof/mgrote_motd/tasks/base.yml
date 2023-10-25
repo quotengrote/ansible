@@ -1,0 +1,70 @@
+---
+#  - name: install packages
+#    become: true
+#    ansible.builtin.package:
+#      name:
+#        - update-motd
+#      state: present
+#    when: "ansible_facts['distribution'] == 'Ubuntu'"
+
+- name: remove default packages
+  become: true
+  ansible.builtin.package:
+    name:
+      - motd-news-config
+    state: absent
+
+- name: 'remove unwanted motd messages'
+  become: true
+  ansible.builtin.file:
+    path: '/etc/update-motd.d/{{ item }}'
+    state: absent
+  with_items:
+    - 00-header
+    - 10-help-text
+    - 10-uname
+    - 50-motd-news
+    - 80-livepatch
+    - 50-landscape-sysinfo
+    - 51-cloudguest
+    - 99-esm
+    - 00-ansible
+    - 20-facts
+    - 90-updates
+    - 91-reboot
+    - 90-updates-available
+    - 91-release-upgrade
+
+- name: delete "no warranty" - Message
+  become: true
+  ansible.builtin.file:
+    path: /etc/motd
+    state: absent
+
+- name: setup new motd
+  become: true
+  ansible.builtin.template:
+    src: '{{ item }}'
+    dest: '/etc/update-motd.d/{{ item }}'
+    owner: root
+    group: root
+    mode: "0755"
+  with_items:
+    - 00-ansible-mgrote
+    - 20-facts-mgrote
+    - 90-updates-mgrote
+    - 91-reboot-mgrote
+
+- name: delete fortune
+  become: true
+  ansible.builtin.file:
+    path: /etc/update-motd.d/05-fortune-mgrote
+    state: absent
+  when: falset motd_fortune_aktiv
+
+- name: delete Wetter
+  become: true
+  ansible.builtin.file:
+    path: '/etc/update-motd.d/10-wetter-mgrote'
+    state: absent
+  when: falset motd_wetter_aktiv

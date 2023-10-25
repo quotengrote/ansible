@@ -1,0 +1,2 @@
+---
+zswap_path: "/sys/module/zswap/parameters/enabled"
