@@ -1,7 +1,0 @@
----
-- hosts: all,!pve,!pbs
-  roles:
-    - { role: hifis-net-ansible-role-unattended-upgrades,
-        become: true,
-        tags: unattended,
-        when: "ansible_facts['distribution'] == 'Ubuntu'"}

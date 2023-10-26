@@ -1,5 +1,0 @@
----
-- hosts: all
-  roles:
-    - { role: mgrote_ssh,
-        tags: "ssh"}

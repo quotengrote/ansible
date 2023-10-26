@@ -1,7 +1,0 @@
----
-- hosts: all
-  roles:
-    - role: mgrote_fwupd_settings
-      become: true
-      tags: fwupd
-      when: "ansible_facts['distribution'] == 'Ubuntu'"

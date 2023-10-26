@@ -1,4 +1,0 @@
----
-- hosts: all
-  roles:
-    - { role: mgrote_fail2ban, tags: "f2b" }

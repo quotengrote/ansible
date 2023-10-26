@@ -2,11 +2,17 @@
 - hosts: all
   gather_facts: false
   roles:
-    - { role: robertdebock-ansible-role-bootstrap, tags: "bootstrap", become: true}
-    - { role: mgrote_users, tags: "user", become: true}
-    - { role: mgrote_apt_manage_sources, tags: "apt_sources" }
-    - { role: mgrote_qemu_guest_agent }
-    - { role: mgrote_apt_update_packages, tags: "updates"}
+    - role: robertdebock-ansible-role-bootstrap
+      tags: "bootstrap"
+      become: true
+    - role: mgrote_apt_manage_sources
+      tags: "apt_sources"
+    - role: mgrote_qemu_guest_agent
+    - role: mgrote_apt_update_packages
+      tags: "updates"
+    - role: mgrote_users
+      tags: "user"
+      become: true
 
   post_tasks:
     - name: Change user password
@@ -26,5 +32,16 @@
     ansible_password: hallowelt
     ansible_become_password: hallowelt
     ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
+    ### mgrote.user
+    users:
+      - username: ansible-user
+        password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
+        update_password: always
+        groups: ssh, sudo
+        state: present
+        public_ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcBwOjanQV6sFWaTetqpl20SVe3aRzGjKbsp7hKkDCE mg@irantu
+        allow_sudo: true
+        allow_passwordless_sudo: true
+
 
 # Nach dem ersten durchlaufen ist keine Anmeldung mehr per Passwort & ssh möglich. Damit scheitert auch der Versuch das Playbook ein zweites mal durchlaufen zu lassen.

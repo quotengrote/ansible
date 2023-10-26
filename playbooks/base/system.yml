@@ -1,0 +1,22 @@
+---
+- hosts: all
+  roles:
+    - role: mgrote_ntp_chrony_client
+      tags: "ntp"
+    - role: mgrote_postfix
+      tags: "postfix"
+    - role: mgrote_restic
+      tags: "restic"
+    - role: mgrote_fail2ban
+      tags: "f2b"
+    - role: mgrote_fwupd_settings
+      become: true
+      tags: fwupd
+      when: "ansible_facts['distribution'] == 'Ubuntu'"
+    - role: mrlesmithjr-ansible-manage-lvm
+      tags: "lvm"
+      become: true
+      when: manage_lvm == true and manage_lvm is defined
+      # $manage_lvm gehört zu dieser Rolle, wird aber extra abgefragt um das PLaybook zu "aktivieren"
+    - role: mgrote_ssh
+      tags: "ssh"

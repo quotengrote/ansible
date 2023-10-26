@@ -1,4 +1,10 @@
 ---
 - hosts: all
+  become: true
   roles:
-    - { role: mgrote_users, tags: "user", become: true }
+    - role: mgrote_users
+      tags: "user"
+    - role: mgrote_dotfiles
+      tags: "dotfiles"
+    - role: mgrote_vim
+      tags: "vim"
