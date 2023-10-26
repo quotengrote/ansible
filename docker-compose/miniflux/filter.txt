@@ -69,6 +69,7 @@ heise.de::Mac & i Extra:
 heise.de::Missing Link
 heise.de::Mittwoch
 heise.de::Montag
+heise.de::Die Bilder der Woche
 heise.de::Podcast
 heise.de::Podcast "Die Hupe"
 heise.de::Podcast "Die Produktwerker"
@@ -184,6 +185,16 @@ stadt-bremerhaven.de::Sky Ticket
 stadt-bremerhaven.de::Twitter
 stadt-bremerhaven.de::WM 2022
 stadt-bremerhaven.de::eFootball
+sueddeutsche.de::Ajax
+sueddeutsche.de::DFB-
+sueddeutsche.de::St. Pauli
+sueddeutsche.de::Hoeneß:
+sueddeutsche.de::2. Liga:
+sueddeutsche.de::Schalke
+sueddeutsche.de::CB-Funk-Podcast
+sueddeutsche.de::Kinderfußball
+sueddeutsche.de::Podcast "Lanz & Precht"
+sueddeutsche.de::NBA:
 sueddeutsche.de::"Ich bin ein Star"
 sueddeutsche.de::"Tatort"
 sueddeutsche.de::-Spiel
