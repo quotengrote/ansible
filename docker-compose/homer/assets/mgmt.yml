@@ -46,7 +46,7 @@ services:
         url: "http://docker10.grote.lan:8081"
         target: "_blank"
         subtitle: "Reverse Proxy"
-      - name: "Unifi Controller"
+      - name: "Unifi Network Application"
         logo: "assets/icons/ubiquiti.png"
         url: "https://docker10.grote.lan:8443"
         target: "_blank"

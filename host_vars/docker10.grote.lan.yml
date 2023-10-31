@@ -26,6 +26,9 @@ compose_dir_permissions: "755"
 compose_dest_basedir: "/docker"
 compose_src_basedir: "{{ inventory_dir }}/docker-compose"
 compose_files:
+  - name: registry
+    state: present
+    network: traefik
   - name: homer
     state: present
   - name: drone
@@ -35,7 +38,7 @@ compose_files:
     network: traefik
   - name: httpd
     state: present
-  - name: unifi-controller
+  - name: unifi-network-application
     state: present
   - name: miniflux
     state: present
@@ -50,13 +53,10 @@ compose_files:
     state: present
   - name: routeros-config-export
     state: present
-  - name: registry
-    state: present
-    network: traefik
   - name: mail-relay
     state: present
     network: mail-relay
-    
+
 ### oefenweb.ufw
 ufw_rules:
   - rule: allow
