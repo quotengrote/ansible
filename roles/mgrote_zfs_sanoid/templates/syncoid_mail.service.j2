@@ -5,4 +5,4 @@ Description=Send a Mail for sanoid service after error or success sanoid.service
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c '/usr/bin/journalctl -u syncoid.service -n 20| mail -s "syncoid - %H" {{ empfaenger_mail }}'
+ExecStart=/bin/bash -c '/usr/bin/journalctl -u syncoid.service -n 20| mail -s "syncoid - %H" {{ my_mail }}'

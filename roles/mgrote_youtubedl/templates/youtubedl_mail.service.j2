@@ -5,4 +5,4 @@ Description=Send a Mail in case of an error in youtubedl.service.
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c '/bin/systemctl status youtubedl.service | mail -s "[ERROR] youtubedl" {{ empfaenger_mail }}'
+ExecStart=/bin/bash -c '/bin/systemctl status youtubedl.service | mail -s "[ERROR] youtubedl" {{ my_mail }}'

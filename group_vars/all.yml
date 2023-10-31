@@ -1,11 +1,13 @@
 ---
 ### wird in vielen Rollen verwendet
 ssh_public_key_mg: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKL8opSQ0rWVw9uCfbuiqmXq188OP4xh66MBTO3zV5jo heimserver_mg_v3
-empfaenger_mail: michael.grote@posteo.de
+my_mail: info@mgrote.net # wird von Strato an info@mgrote.net weitergeleitet, direkter Versand an Posteo geht warum auch immer nicht, Einstellung bei Strato: "Mail -> Verwaltung -> info@mgrote.net -> Filterreglen verwalten"
+# Ticket bei Posteo ist offen
 file_header: |
   #----------------------------------------------------------------#
   #              This file is managed with ansible!                #
   #----------------------------------------------------------------#
+
 ### mgrote.restic
 restic_user: root
 restic_group: restic
@@ -27,7 +29,8 @@ restic_repository: "//fileserver3.grote.lan/restic"
 restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
 restic_mount_user: restic
 restic_mount_password: "{{ lookup('keepass', 'fileserver_smb_user_restic', 'password') }}"
-restic_fail_mail: "{{ empfaenger_mail }}"
+restic_fail_mail: "{{ my_mail }}"
+
 ### mgrote.user
 users:
   - username: mg
@@ -58,13 +61,15 @@ dotfiles_files:
   - repo_path: "{{ dotfiles_repo_path }}/.gitconfig"
     local_path: "/home/mg/.gitconfig"
 dotfiles_owner: mg
+
 ### jnv.unattended_upgrades
-unattended_mail: "{{ empfaenger_mail }}"
+unattended_mail: "{{ my_mail }}"
 unattended_mail_only_on_error: true
 unattended_syslog_enable: true
 unattended_origins_patterns:
   - 'origin=Ubuntu,archive=${distro_codename}-security'
   - 'o=Ubuntu,a=${distro_codename}-updates'
+
 ### mgrote.ntp_chrony_client
 ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
 ntp_chrony_driftfile_directory: "/var/lib/chrony" # Ordner für das driftfile
@@ -76,23 +81,21 @@ ntp_chrony_group: _chrony # Nutzer + Gruppe für den Dienst
 ntp_chrony_logging: false
 
 ### mgrote.postfix
-postfix_absender_mailadresse: info@mgrote.net
-postfix_absender_passwort: "{{ lookup('keepass', 'postfix_absender_passwort', 'password') }}"
-postfix_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24"
-postfix_mail_nach_cronjob: false
-postfix_smtp_server: smtp.strato.de
-postfix_smtp_server_port: 587
-postfix_smtp_use_tls: "yes"
+postfix_smtp_server: docker10.grote.lan
+postfix_smtp_server_port: 1025
+
 ### mgrote.tmux
 tmux_conf_destination: "/home/mg/.tmux.conf"
 tmux_bashrc_destination: "/home/mg/.bashrc"
 tmux_standardsession_name: "default"
+
 ### mgrote.fail2ban
 f2b_bantime: 300
 f2b_findtime: 300
 f2b_maxretry: 5
-f2b_destemail: "{{ empfaenger_mail }}"
-f2b_sender: "{{ postfix_absender_mailadresse }}"
+f2b_destemail: "{{ my_mail }}"
+f2b_sender: info@mgrote.net
+
 ### oefenweb.ufw
 ufw_rules:
   - rule: allow
@@ -102,6 +105,7 @@ ufw_rules:
     from_ip: 0.0.0.0/0
 ufw_default_incoming_policy: deny
 ufw_default_outgoing_policy: allow
+
 ### mgrote.apt_manage_packages
 apt_packages_common:
   - locales

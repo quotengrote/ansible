@@ -1,2 +1,0 @@
-{{ file_header | default () }}
-{{ postfix_smtp_server }} {{ postfix_absender_mailadresse }}:{{ postfix_absender_passwort }}

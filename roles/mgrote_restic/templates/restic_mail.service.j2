@@ -5,4 +5,4 @@ Description=Send a Mail in case of an error in restic.service.
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c '/bin/systemctl status restic.service | mail -s "[ERROR] restic - %H" {{ empfaenger_mail }}'
+ExecStart=/bin/bash -c '/bin/systemctl status restic.service | mail -s "[ERROR] restic - %H" {{ my_mail }}'

@@ -53,7 +53,10 @@ compose_files:
   - name: registry
     state: present
     network: traefik
-
+  - name: mail-relay
+    state: present
+    network: mail-relay
+    
 ### oefenweb.ufw
 ufw_rules:
   - rule: allow

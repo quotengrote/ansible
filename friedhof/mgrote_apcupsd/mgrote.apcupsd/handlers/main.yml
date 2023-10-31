@@ -7,4 +7,4 @@
     enabled: true
 
 - name: apc_access_mail
-  ansible.builtin.shell: /usr/sbin/apcaccess | mail -s "{{ ansible_hostname }}" {{ empfaenger_mail }}
+  ansible.builtin.shell: /usr/sbin/apcaccess | mail -s "{{ ansible_hostname }}" {{ my_mail }}

@@ -5,4 +5,4 @@ Description=Send a Mail in case of an error in cv4pve.service.
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c '/bin/systemctl status cv4pve.service | mail -s "[ERROR] cv4pve - %H" {{ empfaenger_mail }}'
+ExecStart=/bin/bash -c '/bin/systemctl status cv4pve.service | mail -s "[ERROR] cv4pve - %H" {{ my_mail }}'

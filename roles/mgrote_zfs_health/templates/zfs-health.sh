@@ -42,7 +42,7 @@ fi
 
 if [ "$problems" -ne 0 ]; then
   logger $emailSubject
-        echo -e "$emailSubject \n\n\n `/sbin/zpool list` \n\n\n `/sbin/zpool status`" | mail -s "$emailSubject" {{ empfaenger_mail }}
+        echo -e "$emailSubject \n\n\n `/sbin/zpool list` \n\n\n `/sbin/zpool status`" | mail -s "$emailSubject" {{ my_mail }}
 fi
 
 ### EOF ###

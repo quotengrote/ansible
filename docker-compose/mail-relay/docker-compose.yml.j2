@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+    postfix:
+      image: registry.mgrote.net/postfix:master
+      container_name: mail-relay
+      restart: always
+      labels:
+        com.centurylinklabs.watchtower.enable: true
+      ports:
+          - 1025:25
+      environment:
+        SMTP_SERVER: smtp.strato.de
+        SMTP_USERNAME: info@mgrote.net
+        SMTP_PASSWORD: {{ lookup('keepass', 'strato_smtp_password', 'password') }}
+        SERVER_HOSTNAME: mgrote.net
+        # DEBUG: "yes" # literal
+        ALWAYS_ADD_MISSING_HEADERS: "no" # literal
+        OVERWRITE_FROM: info@mgrote.net
+        # LOG_SUBJECT: "yes" # literal
+        INET_PROTOCOL: ipv4
+      networks:
+        - mail-relay
+
+######## Networks ########
+networks:
+  mail-relay:
+    external: true

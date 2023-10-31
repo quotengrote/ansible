@@ -16,7 +16,7 @@
 # Email will only be sent if ZED_EMAIL_ADDR is defined.
 # Disabled by default; uncomment to enable.
 #
-ZED_EMAIL_ADDR="{{ empfaenger_mail }}"
+ZED_EMAIL_ADDR="{{ my_mail }}"
 
 ##
 # Name or path of executable responsible for sending notifications via email;

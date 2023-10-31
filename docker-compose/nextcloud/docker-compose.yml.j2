@@ -11,8 +11,8 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - db:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: {{ lookup('keepass', 'nextcloud_mysql_root_password', 'password') }}
+      MYSQL_PASSWORD: {{ lookup('keepass', 'nextcloud_mysql_password', 'password') }}
       MYSQL_DATABASE: nextcloud
       MYSQL_USER: nextcloud
       MYSQL_INITDB_SKIP_TZINFO: 1
@@ -29,7 +29,7 @@ services:
     networks:
       - intern
     restart: unless-stopped
-    command: redis-server --requirepass ${REDIS_HOST_PASSWORD}
+    command: redis-server --requirepass {{ lookup('keepass', 'nextcloud_redis_host_password', 'password') }}
     labels:
       com.centurylinklabs.watchtower.enable: true
 
@@ -52,7 +52,7 @@ services:
 
 ######## Nextcloud ########
   nextcloud-app:
-    image: nextcloud:${NC_MAJOR_VERSION}
+    image: nextcloud:27
     container_name: nextcloud-app
     restart: unless-stopped
     depends_on:
@@ -60,18 +60,18 @@ services:
       - nextcloud-redis
     environment:
         REDIS_HOST: nextcloud-redis
-        REDIS_HOST_PASSWORD: ${REDIS_HOST_PASSWORD}
+        REDIS_HOST_PASSWORD: {{ lookup('keepass', 'nextcloud_redis_host_password', 'password') }}
         MYSQL_DATABASE: nextcloud
         MYSQL_USER: nextcloud
-        MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        MYSQL_PASSWORD: {{ lookup('keepass', 'nextcloud_mysql_password', 'password') }}
         MYSQL_HOST: nextcloud-db
         NEXTCLOUD_TRUSTED_DOMAINS: "nextcloud.mgrote.net"
-        SMTP_HOST: smtp.strato.de
-        SMTP_SECURE: tls
-        SMTP_PORT: 587
-        SMTP_AUTHTYPE: LOGIN
+        SMTP_HOST: mail-relay
+        #SMTP_SECURE: tls
+        SMTP_PORT: 25
+        #SMTP_AUTHTYPE: LOGIN
         SMTP_NAME: info@mgrote.net
-        SMTP_PASSWORD: ${SMTP_PASSWORD}
+        #SMTP_PASSWORD: {{ lookup('keepass', 'strato_smtp_password', 'password') }}
         MAIL_FROM_ADDRESS: info@mgrote.net
         PHP_MEMORY_LIMIT: 1024M
         PHP_UPLOAD_LIMIT: 10G
@@ -87,6 +87,7 @@ services:
     networks:
       - intern
       - traefik
+      - mail-relay
     labels:
       com.centurylinklabs.watchtower.enable: true
       com.centurylinklabs.watchtower.depends-on: nextcloud-redis,nextcloud-db
@@ -113,6 +114,8 @@ networks:
   intern:
     driver: bridge
   traefik:
+    external: true
+  mail-relay:
     external: true
 ######## Volumes ########
 volumes:

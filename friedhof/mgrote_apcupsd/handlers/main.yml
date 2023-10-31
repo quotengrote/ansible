@@ -8,5 +8,5 @@
 
 - name: apc_access_mail
   ansible.builtin.shell:
-    cmd: set -o pipefail && /usr/sbin/apcaccess | mail -s "{{ ansible_hostname }}" {{ empfaenger_mail }}
+    cmd: set -o pipefail && /usr/sbin/apcaccess | mail -s "{{ ansible_hostname }}" {{ my_mail }}
     executable: /bin/bash
