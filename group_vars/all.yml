@@ -135,6 +135,7 @@ apt_packages_common:
   - iotop
   - pwgen
   - keychain
+  - fwupd
 apt_packages_physical:
   - s-tui
   - smartmontools
