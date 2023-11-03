@@ -18,6 +18,7 @@ services:
         #OVERWRITE_FROM: info@mgrote.net
         # LOG_SUBJECT: "yes" # literal
         INET_PROTOCOL: ipv4
+        SMTP_GENERIC_MAP: "/.*/ info@mgrote.net"
       networks:
         - mail-relay
 
