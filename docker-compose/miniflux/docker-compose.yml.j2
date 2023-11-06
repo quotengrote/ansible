@@ -71,44 +71,9 @@ services:
       com.centurylinklabs.watchtower.enable: true
       com.centurylinklabs.watchtower.depends-on: mf-frontend
 
-######## RSS-Bridge ########
-  rssbridge:
-    container_name: "mf-bridge"
-    image: rssbridge/rss-bridge:latest
-    restart: always
-    environment:
-      TZ: Europe/Berlin
-    volumes:
-      - ./whitelist.txt:/app/whitelist.txt
-    networks:
-      - intern
-    ports: #um neue Feeds einzufügen
-      - 3001:80
-    labels:
-      com.centurylinklabs.watchtower.enable: true
-
-######## changedetection ########
-  changedetection.io:
-    image: ghcr.io/dgtlmoon/changedetection.io
-    container_name: mf-changedetection.io
-    hostname: changedetection.io
-    volumes:
-      - changedetection-data:/datastore
-    environment:
-      PORT: 5000
-      BASE_URL: http://docker10.grote.lan:5000
-    ports:
-      - 5000:5000
-    restart: always
-    networks:
-      - intern
-    labels:
-      com.centurylinklabs.watchtower.enable: true
-
 ######## Volumes ########
 volumes:
   db:
-  changedetection-data:
 ######## Networks ########
 networks:
   traefik:
