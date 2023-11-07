@@ -1,0 +1,13 @@
+---
+kind: pipeline
+type: docker
+name: gitleaks
+steps:
+  gitleaks:
+    image: zricethezav/gitleaks:latest
+    commands:
+      - gitleaks detect --no-git --verbose --source $CI_WORKSPACE
+    when:
+      event:
+        exclude:
+          - tag

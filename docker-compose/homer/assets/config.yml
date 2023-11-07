@@ -33,14 +33,14 @@ services:
 #      - name: "Weather"
 #        location: "Burg" # your location.
 #        locationId: "2941501" # OpenWeatherMap city ID.
-#        apiKey: "c1ec4c040abfa80b991c72d48b49d4a0" # insert your own API key here. Request one from https://o#penweathermap.org/api. # key deactiviert
+#        apiKey: "c1ec4c040abfa80b991c72d48b49d4a0" # insert your own API key here. Request one from https://o#penweathermap.org/api. # key deactiviert #gitleaks:allow
 #        units: "metric" # units to display temperature. Can be one of: metric, imperial, kelvin. Defaults to kelvin.
 #        background: "none" # choose which type of background you want behind the image. Can be one of: square, cicle, none. Defaults to none.
 #        type: "OpenWeather"
 #      - name: "Weather"
 #        location: "Magdeburg"
 #        locationId: "2874545"
-#        apiKey: "c1ec4c040abfa80b991c72d48b49d4a0"
+#        apiKey: "c1ec4c040abfa80b991c72d48b49d4a0" #gitleaks:allow
 #        units: "metric"
 #        background: "none"
 #        type: "OpenWeather"

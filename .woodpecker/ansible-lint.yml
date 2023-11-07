@@ -1,0 +1,19 @@
+---
+kind: pipeline
+type: docker
+name: ansible-lint
+depends_on:
+  - gitleaks
+steps:
+  ansible-lint:
+    image: quay.io/ansible/creator-ee
+    commands:
+      - ansible-lint --version
+      - echo $VAULT-PASS > ./vault-pass.yml # nach des Secret in Großschreibung
+      - ansible-galaxy install -r requirements.yml
+      - ansible-lint --force-color --format pep8
+    when:
+      event:
+        exclude:
+          - tag
+    secret: [vault-pass] #dieses Secret darf verwendet werden

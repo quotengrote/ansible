@@ -1,0 +1,57 @@
+# https://woodpecker-ci.org/docs/administration/setup
+version: '3'
+
+services:
+  woodpecker-server:
+    container_name: woodpecker-server
+    image: woodpeckerci/woodpecker-server:latest
+    ports:
+      - 8000:8000
+    volumes:
+      - server-data:/var/lib/woodpecker/
+    environment:
+      WOODPECKER_OPEN: false
+      WOODPECKER_HOST: http://docker10.grote.lan:8000
+      WOODPECKER_GITEA: true
+      WOODPECKER_GITEA_URL: https://git.mgrote.net
+      WOODPECKER_GITEA_CLIENT: {{ lookup('keepass', 'woodpecker-oauth2-client-id', 'password') }}
+      WOODPECKER_GITEA_SECRET: {{ lookup('keepass', 'woodpecker-oauth2-client-secret', 'password') }}
+      WOODPECKER_AGENT_SECRET: {{ lookup('keepass', 'woodpecker-agent-secret', 'password') }}
+      WOODPECKER_ADMIN: mg
+      WOODPECKER_LOG_LEVEL: info
+      WOODPECKER_DEBUG_PRETTY: true
+
+    labels:
+      com.centurylinklabs.watchtower.enable: true
+
+  woodpecker-agent:
+    container_name: woodpecker-agent
+    image: woodpeckerci/woodpecker-agent:latest
+    command: agent
+    restart: always
+    depends_on:
+      - woodpecker-server
+    ports:
+      - 3032:3000
+    volumes:
+      - agent-config:/etc/woodpecker
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      WOODPECKER_SERVER: woodpecker-server:9000
+      WOODPECKER_AGENT_SECRET: {{ lookup('keepass', 'woodpecker-agent-secret', 'password') }}
+      WOODPECKER_MAX_WORKFLOWS: 4
+      WOODPECKER_DEBUG_PRETTY: true
+      WOODPECKER_LOG_LEVEL: info
+      WOODPECKER_HEALTHCHECK: true
+      WOODPECKER_BACKEND: docker
+    labels:
+      com.centurylinklabs.watchtower.enable: true
+
+volumes:
+  server-data:
+  agent-config:
+
+# git.mgrote.net -> Settings -> Applications -> woodpecker
+# WOODPECKER_GITEA_CLIENT: {{ lookup('keepass', 'woodpecker-oauth2-client-id', 'password') }}
+# WOODPECKER_GITEA_SECRET: {{ lookup('keepass', 'woodpecker-oauth2-client-secret', 'password') }}
+# Redirect URL: http://docker10.grote.lan:8000/authorize

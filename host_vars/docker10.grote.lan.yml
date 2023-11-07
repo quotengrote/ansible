@@ -31,8 +31,6 @@ compose_files:
     network: traefik
   - name: homer
     state: present
-  - name: drone
-    state: present
   - name: nextcloud
     state: present
     network: traefik
@@ -56,6 +54,8 @@ compose_files:
   - name: mail-relay
     state: present
     network: mail-relay
+  - name: woodpecker
+    state: present
 
 ### oefenweb.ufw
 ufw_rules:
