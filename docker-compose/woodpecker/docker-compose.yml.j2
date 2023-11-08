@@ -11,7 +11,7 @@ services:
       - server-data:/var/lib/woodpecker/
     environment:
       WOODPECKER_OPEN: false
-      WOODPECKER_HOST: http://docker10.grote.lan:8000
+      WOODPECKER_HOST: https://ci.mgrote.net
       WOODPECKER_GITEA: true
       WOODPECKER_GITEA_URL: https://git.mgrote.net
       WOODPECKER_GITEA_CLIENT: {{ lookup('keepass', 'woodpecker-oauth2-client-id', 'password') }}
@@ -20,9 +20,24 @@ services:
       WOODPECKER_ADMIN: mg
       WOODPECKER_LOG_LEVEL: info
       WOODPECKER_DEBUG_PRETTY: true
-
+    networks:
+      - intern
+      - traefik
     labels:
       com.centurylinklabs.watchtower.enable: true
+
+      traefik.http.routers.woodpecker.rule: Host(`ci.mgrote.net`)
+      traefik.enable: true
+      traefik.http.routers.woodpecker.tls: true
+      traefik.http.routers.woodpecker.tls.certresolver: resolver_letsencrypt
+      traefik.http.routers.woodpecker.entrypoints: entry_https
+      traefik.http.services.woodpecker.loadbalancer.server.port: 8000
+
+      traefik.http.routers.woodpecker.middlewares: woodpecker-ipwhitelist
+
+      traefik.http.middlewares.woodpecker-ipwhitelist.ipwhitelist.sourcerange: 192.168.2.0/24
+      traefik.http.middlewares.woodpecker-ipwhitelist.ipwhitelist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipwhitelist/#ipstrategydepth
+
 
   woodpecker-agent:
     container_name: woodpecker-agent
@@ -46,6 +61,9 @@ services:
       WOODPECKER_BACKEND: docker
     labels:
       com.centurylinklabs.watchtower.enable: true
+    networks:
+      - intern
+
 
 volumes:
   server-data:
@@ -54,4 +72,11 @@ volumes:
 # git.mgrote.net -> Settings -> Applications -> woodpecker
 # WOODPECKER_GITEA_CLIENT: {{ lookup('keepass', 'woodpecker-oauth2-client-id', 'password') }}
 # WOODPECKER_GITEA_SECRET: {{ lookup('keepass', 'woodpecker-oauth2-client-secret', 'password') }}
-# Redirect URL: http://docker10.grote.lan:8000/authorize
+# Redirect URL: https://ci.mgrote.net/authorize
+
+######## Networks ########
+networks:
+  traefik:
+    external: true
+  intern:
+    driver: bridge
