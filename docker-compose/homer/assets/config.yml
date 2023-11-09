@@ -73,6 +73,11 @@ services:
         url: "https://audio.mgrote.net/mg"
         target: "_blank"
         subtitle: "Audio-Streaming"
+      - name: "Photoprism"
+        logo: "assets/icons/photoprism.svg"
+        url: "http://docker10.grote.lan:2342"
+        target: "_blank"
+        subtitle: "Bildersammlung"
 
   - name: "Web"
     icon: "fas fa-cloud"

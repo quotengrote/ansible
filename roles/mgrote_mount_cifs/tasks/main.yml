@@ -4,6 +4,7 @@
   ansible.builtin.package:
     name: cifs-utils
     state: present
+  when: cifs_mounts is defined
 
 - name: create mount directory
   become: true
@@ -13,6 +14,7 @@
     mode: "0777"
   loop: "{{ cifs_mounts }}"
   no_log: true
+  when: cifs_mounts is defined
 
 - name: create credential-file
   become: true
@@ -24,13 +26,14 @@
     mode: '0400'
   loop: "{{ cifs_mounts }}"
   no_log: true
+  when: cifs_mounts is defined
 
 - name: mount cifs volumes
   become: true
   ansible.posix.mount:
     src: "{{ item.src }}"
     path: "{{ item.dest }}"
-    opts: credentials=/root/.smb_passwords_{{ item.name }},domain={{ item.domain }},uid={{ item.uid | default('1000') }},gid={{ item.gid | default('1000') }}"
+    opts: credentials=/root/.smb_passwords_{{ item.name }},domain={{ item.domain }},uid={{ item.uid | default('1000') }},gid={{ item.gid | default('1000') }}{{ item.extra_opts | default(omit) }}"
     state: "{{ item.state }}"
     fstype: "{{ item.type }}"
     backup: true
@@ -38,4 +41,4 @@
     passno: "0"
   loop: "{{ cifs_mounts }}"
   no_log: true
-  notify: reboot
+  when: cifs_mounts is defined

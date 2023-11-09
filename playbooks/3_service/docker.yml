@@ -2,6 +2,7 @@
 - hosts: docker
   roles:
     - { role: mgrote_systemd_resolved, tags: "dns", become: true }
+    - { role: mgrote_mount_cifs, tags: "cifs", become: true }
     - { role: geerlingguy-ansible-role-pip, tags: "pip", become: true }
     - { role: geerlingguy-ansible-role-docker, tags: "docker", become: true }
     - { role: gantsign-ansible-role-ctop, tags: "ctop", become: true }

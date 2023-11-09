@@ -10,3 +10,4 @@ cifs_mounts:
     domain: grote.lan
     uid: 1000
     gid: 1000
+    # optional: extra_opts: ",ro" # komma am Anfang ist notwendig weil die Option hinten angehangen wird
