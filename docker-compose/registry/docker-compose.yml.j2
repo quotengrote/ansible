@@ -36,7 +36,7 @@ services:
       com.centurylinklabs.watchtower.depends-on: oci-registry-redis
       com.centurylinklabs.watchtower.enable: true
 
-    # registry aufräumen: docker exec -it oci-registry /bin/registry garbage-collect [--dry-run] --delete-untagged=true /etc/docker/registry/config.yml
+    # registry aufräumen: docker exec -it oci-registry /bin/registry garbage-collect --delete-untagged=true /etc/docker/registry/config.yml
 
     # testen mit:
     # docker pull ubuntu
