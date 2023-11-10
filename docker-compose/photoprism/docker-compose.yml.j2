@@ -59,7 +59,7 @@ services:
     # Uncomment and edit the following line to set a specific user / group id (native):
     user: "5000:5000"
     volumes:
-      - "/mnt/fileserver3_photoprism_bilder_ro:/photoprism/originals/:ro"
+      - /mnt/fileserver3_photoprism_bilder_ro:/photoprism/originals/:ro
       - "storage:/photoprism/storage"
     labels:
       com.centurylinklabs.watchtower.enable: true

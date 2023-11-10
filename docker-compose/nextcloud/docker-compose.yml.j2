@@ -40,10 +40,10 @@ services:
     restart: unless-stopped
     network_mode: none
     depends_on:
-    - nextcloud-app
+      - nextcloud-app
     volumes:
-    - /var/run/docker.sock:/var/run/docker.sock:ro
-    - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /etc/localtime:/etc/localtime:ro
     environment:
       NEXTCLOUD_CONTAINER_NAME: nextcloud-app
       NEXTCLOUD_CRON_MINUTE_INTERVAL: 1

@@ -48,7 +48,9 @@
   ansible.builtin.command: "docker network create {{ item.network }}" # erstelle network
   register: network_result # speichere ergebnis in var
   changed_when: "network_result.rc == 0" # markiere tasks als changed when exit-code == 0
-  ignore_errors: true # ignoriere fehler
+  failed_when:
+    - "not 'Error response from daemon: network with name' in network_result.stderr"
+    - "not network_result.rc == 0"
   loop: "{{ compose_files }}"
   when:
     - item.state == "present"
