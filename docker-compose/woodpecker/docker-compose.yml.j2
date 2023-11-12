@@ -3,6 +3,7 @@ version: '3'
 
 services:
   woodpecker-server:
+    restart: always
     container_name: woodpecker-server
     image: woodpeckerci/woodpecker-server:latest
     ports:

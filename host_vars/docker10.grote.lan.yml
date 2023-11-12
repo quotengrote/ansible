@@ -73,6 +73,9 @@ compose_files:
     network: traefik
   - name: photoprism
     state: present
+  - name: whoami
+    state: absent
+    network: traefik_test
 
 ### oefenweb.ufw
 ufw_rules:

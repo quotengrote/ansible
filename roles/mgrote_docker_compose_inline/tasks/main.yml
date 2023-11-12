@@ -9,7 +9,7 @@
     group: "{{ compose_group }}"
 
 # https://codeutility.org/ansible-can-the-templates-module-handle-multiple-templates-directories-stack-overflow/
-- name: copy all directories recursively
+- name: ensure all directories exists
   ansible.builtin.file:
     dest: "{{ compose_dest_basedir }}/{{ item | replace(compose_src_basedir + '/', '') }}"
     state: directory
@@ -18,7 +18,7 @@
     group: "{{ compose_group }}"
   with_items: "{{ lookup('pipe', 'find '+ compose_src_basedir +'/ -type d').split('\n') }}"
 
-- name: copy all files recursively (can take a long time)
+- name: ensure all files exists (can take a long time)
   ansible.builtin.copy:
     mode: "{{ compose_file_permissions }}"
     owner: "{{ compose_owner }}"
@@ -28,7 +28,7 @@
   with_items: "{{ lookup('pipe', 'find '+ compose_src_basedir +'/  -type f -not -name *.j2 ').split('\n') }}"
   no_log: true
 
-- name: copy templates files recursively
+- name: ensure templated files exists
   ansible.builtin.template:
     mode: "{{ compose_file_permissions }}"
     owner: "{{ compose_owner }}"
@@ -36,24 +36,18 @@
     src: "{{ item }}"
     dest: "{{ compose_dest_basedir }}/{{ item | replace(compose_src_basedir + '/', '') | replace('.j2', '') }}"
   with_items: "{{ lookup('pipe', 'find '+ compose_src_basedir +'/ -type f -name *.j2').split('\n') }}"
-  register: copy_template
   no_log: true
 
-#  - name: print $copy_template
-#    ansible.builtin.debug:
-#      var: copy_template
-
-- name: create networks
+- name: Ensure needed networks exists
   become: true
-  ansible.builtin.command: "docker network create {{ item.network }}" # erstelle network
-  register: network_result # speichere ergebnis in var
-  changed_when: "network_result.rc == 0" # markiere tasks als changed when exit-code == 0
-  failed_when:
-    - "not 'Error response from daemon: network with name' in network_result.stderr"
-    - "not network_result.rc == 0"
+  community.docker.docker_network:
+    name: "{{ item.network }}"
+    state: present
+    internal: false
+    enable_ipv6: false
+    driver: bridge
   loop: "{{ compose_files }}"
   when:
-    - item.state == "present"
     - item.network is defined
 
 - name: (re)start container
@@ -78,16 +72,15 @@
     - item.state == "absent"
   ignore_errors: true # noqa ignore-errors
 
-- name: remove old networks
+- name: Ensure old networks are absent
   become: true
-  ansible.builtin.command: "docker network remove {{ item.network }}" # erstelle network
-  register: network_result # speichere ergebnis in var
-  changed_when: "network_result.rc == 0" # markiere tasks als changed when exit-code == 0
-  ignore_errors: true # noqa ignore-errors
+  community.docker.docker_network:
+    name: "{{ item.network }}"
+    state: absent
   loop: "{{ compose_files }}"
   when:
-    - item.state == "absent"
     - item.network is defined
+    - item.state == "absent"
 
 - name: remove old docker-compose files & directories
   become: true

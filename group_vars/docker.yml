@@ -14,8 +14,10 @@ lvm_groups:
         mntp: /var/lib/docker
 manage_lvm: true
 pvresize_to_max: true
+
 ### mgrote.restic
 restic_folders_to_backup: "/ /var/lib/docker" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
+
 ### mgrote.user
 users:
   - username: mg
@@ -47,6 +49,8 @@ users:
 docker_users:
   - mg
   - docker-user
+docker_install_compose: true
+docker_add_repo: false # erstelle kein Repo-Eintrag unter /etc/apt/sources.list.d/, steht explizit unter "repos_override"
 
 ### mgrote.docker-compose-deploy
 docker_compose_base_dir: /home/docker-user
