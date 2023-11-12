@@ -100,7 +100,7 @@ ZED_SCRUB_AFTER_RESILVER=1
 ##
 # The syslog tag for marking zed events.
 #
-#ZED_SYSLOG_TAG="zed"
+ZED_SYSLOG_TAG="zed"
 
 ##
 # Which set of event subclasses to log
