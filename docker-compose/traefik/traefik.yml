@@ -31,8 +31,14 @@ certificatesResolvers:
       tlsChallenge: true
 
 log:
-  level: DEBUG
+  level: INFO
 
 api:
   insecure: true
   dashboard: true # unter Port 8081 erreichbar
+
+#experimental:
+#  plugins:
+#    ldapAuth:
+#      moduleName: "github.com/wiltonsr/ldapAuth"
+#      version: "v0.1.4"

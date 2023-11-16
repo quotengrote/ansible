@@ -2,7 +2,7 @@ version: '3'
 services:
 ######## traefik ########
   traefik:
-    container_name: "traefik"
+    container_name: traefik
     image: traefik:latest
     restart: always
     volumes:
@@ -21,19 +21,40 @@ services:
       TZ: Europe/Berlin
     labels:
       com.centurylinklabs.watchtower.enable: true
-      # hier sind gemeinsame middlewares defniert und zu einer chain zusammengefasst
-      # CAVE: die Reihenfolge innerhalb von Chains/von Middlewares ist wichtig
-      # Aufbau: traefik.http.middlewares.<NAME>.chain.middlewares: middleware1,middleware2,middleware3
-      # diese kann dann direkt eingebunden werden:
-      # Beispiel: XXXXX
-      # beim Einsatz von nforwardauth:
-      # Beispiel: YYYYY
+
+######## nforwardauth ########
+  nforwardauth:
+    image: nosduco/nforwardauth:v1
+    container_name: traefik-nforwardauth
+    environment:
+      TOKEN_SECRET: {{ lookup('keepass', 'nforwardauth_token_secret', 'password') }}
+      AUTH_HOST: auth.mgrote.net
+    labels:
+      traefik.enable: true
+      traefik.http.routers.nforwardauth.rule: Host(`auth.mgrote.net`)
+
+      traefik.http.middlewares.nforwardauth.forwardauth.address: http://nforwardauth:3000
+
+      traefik.http.services.nforwardauth.loadbalancer.server.port: 3000
+      traefik.http.routers.nforwardauth.tls: true
+      traefik.http.routers.nforwardauth.tls.certresolver: resolver_letsencrypt
+      traefik.http.routers.nforwardauth.entrypoints: entry_https
+
+      com.centurylinklabs.watchtower.depends-on: traefik
+      com.centurylinklabs.watchtower.enable: true
+    volumes:
+      - "./passwd:/passwd:ro" # Mount local passwd file at /passwd as read only
+    networks:
+      - traefik
 
 ######## Networks ########
 networks:
   traefik:
     external: true
-
 ######## Volumes ########
 volumes:
   acme_data:
+
+
+# passwd
+# echo "<user>:$(mkpasswd -m sha-512 <password>)"

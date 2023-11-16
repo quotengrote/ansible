@@ -63,7 +63,7 @@ services:
         subtitle: "Container-Registry"
       - name: "Woodpecker"
         logo: "assets/icons/woodpecker.svg"
-        url: "http://docker10.grote.lan:8000"
+        url: "https://ci.mgrote.net"
         target: "_blank"
         subtitle: "CI/CD"
 

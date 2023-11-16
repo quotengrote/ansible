@@ -76,6 +76,12 @@ compose_files:
   - name: whoami
     state: absent
     network: traefik_test
+  - name: wiki
+    state: present
+    network: traefik
+  - name: lldap
+    state: absent
+    network: ldap
 
 ### oefenweb.ufw
 ufw_rules:

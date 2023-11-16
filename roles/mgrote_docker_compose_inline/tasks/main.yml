@@ -37,6 +37,7 @@
     dest: "{{ compose_dest_basedir }}/{{ item | replace(compose_src_basedir + '/', '') | replace('.j2', '') }}"
   with_items: "{{ lookup('pipe', 'find '+ compose_src_basedir +'/ -type f -name *.j2').split('\n') }}"
   no_log: true
+  register: copy_template
 
 - name: Ensure needed networks exists
   become: true

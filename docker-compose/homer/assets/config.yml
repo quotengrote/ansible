@@ -78,6 +78,11 @@ services:
         url: "http://docker10.grote.lan:2342"
         target: "_blank"
         subtitle: "Bildersammlung"
+      - name: "Wiki"
+        logo: "assets/icons/mkdocs.png"
+        url: "http://wiki2.mgrote.net" # noch ändern
+        target: "_blank"
+        subtitle: "Wiki"
 
   - name: "Web"
     icon: "fas fa-cloud"

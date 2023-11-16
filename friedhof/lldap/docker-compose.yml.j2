@@ -1,0 +1,73 @@
+version: "3"
+services:
+######## App ########
+  lldap:
+    image: nitnelave/lldap:stable
+    container_name: lldap-app
+    restart: always
+    ports:
+      # For LDAP
+      - "3890:3890"
+      # For the web front-end
+      - "17170:17170"
+    networks:
+      - intern
+      - traefik
+      - mail-relay
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - "lldap:/data"
+    environment:
+      UID: 1000
+      GID: 1000
+      LLDAP_HTTP_PORT: 17170
+      LLDAP_HTTP_URL: http://docker10.grote.lan:17170
+      LLDAP_KEY_SEED: ganz_lang
+      LLDAP_VERBOSE: true
+      LLDAP_JWT_SECRET: jwt_secret
+      LLDAP_LDAP_BASE_DN: dc=grote,dc=lan
+      LLDAP_USER_DN: admin
+      LLDAP_LDAP_USER_PASS: user_pass_geheim
+      LLDAP_DATABASE_URL: mysql://lldap-db-user:mysql_password@lldap-db/lldap
+      LLDAP_SMTP_OPTIONS__ENABLE_PASSWORD_reset: true
+      LLDAP_SMTP_OPTIONS__FROM: "LLDAP Admin <info@mgrote.net>"
+      LLDAP_SMTP_OPTIONS__REPLY_TO: "Do not reply <info@mgrote.net>"
+      LLDAP_SMTP_OPTIONS__SERVER: mail-relay
+      LLDAP_SMTP_OPTIONS__PORT: 25
+      LLDAP_SMTP_OPTIONS__SMTP_ENCRYPTION: NONE
+      LLDAP_SMTP_OPTIONS__USER: info@mgrote.net
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+      - com.centurylinklabs.watchtower.depends-on=lldap-db
+######## DB ########
+  lldap-db:
+    image: mariadb:10
+    container_name: lldap-db
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql_root_password
+      - MYSQL_PASSWORD=mysql_password
+      - MYSQL_DATABASE=lldap
+      - MYSQL_USER=lldap-db-user
+      - MYSQL_INITDB_SKIP_TZINFO=1
+    networks:
+      - intern
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+######## Volumes ########
+volumes:
+  lldap:
+  db:
+######## Networks ########
+networks:
+  intern:
+  traefik:
+    external: true
+  mail-relay:
+    external: true
