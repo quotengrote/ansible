@@ -24,6 +24,7 @@ services:
 
 ######## nforwardauth ########
   nforwardauth:
+    restart: always
     image: nosduco/nforwardauth:v1
     container_name: traefik-nforwardauth
     environment:

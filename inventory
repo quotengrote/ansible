@@ -12,13 +12,10 @@ all:
     docker:
       hosts:
         docker10.grote.lan:
-    k3s:
-      hosts:
-        k3s4.grote.lan:
     vmtest:
       hosts:
         vm-test-2204.grote.lan:
-        #pbs-test.grote.lan:
+        pbs-test.grote.lan:
         pve5-test.grote.lan:
     pve:
       hosts:
@@ -44,7 +41,6 @@ all:
         gitea.grote.lan:
         docker10.grote.lan:
         pbs.grote.lan:
-        k3s4.grote.lan:
     test:
       hosts:
         vm-test-2204.grote.lan:
