@@ -82,10 +82,6 @@ services:
       - data:/var/www/html/data
     networks:
       - intern
-#    ports:
-#      - 80:80
-    networks:
-      - intern
       - traefik
       - mail-relay
     labels:

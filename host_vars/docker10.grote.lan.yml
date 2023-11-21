@@ -74,6 +74,8 @@ compose_files:
   - name: wiki
     state: present
     network: traefik
+  - name: statping-ng
+    state: present
 
 ### oefenweb.ufw
 ufw_rules:
