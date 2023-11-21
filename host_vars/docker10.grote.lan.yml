@@ -43,8 +43,6 @@ compose_files:
   - name: registry
     state: present
     network: traefik
-  - name: homer
-    state: present
   - name: nextcloud
     state: present
     network: traefik
@@ -73,15 +71,9 @@ compose_files:
     network: traefik
   - name: photoprism
     state: present
-  - name: whoami
-    state: absent
-    network: traefik_test
   - name: wiki
     state: present
     network: traefik
-  - name: lldap
-    state: absent
-    network: ldap
 
 ### oefenweb.ufw
 ufw_rules:
