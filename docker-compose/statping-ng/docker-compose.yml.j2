@@ -17,6 +17,8 @@ services:
       - 8083:8080
     networks:
       - mail-relay
+    labels:
+      com.centurylinklabs.watchtower.enable: true
 
 volumes:
   statping_data:
