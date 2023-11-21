@@ -2,13 +2,6 @@
 http:
 ###### router #####
   routers:
-    router_dokuwiki:
-      rule: "Host(`dokuwiki.mgrote.net`,`wiki.mgrote.net`)"
-      service: "service_dokuwiki"
-      entrypoints:
-        - entry_https
-      tls:
-        certresolver: resolver_letsencrypt
     router_gitea:
       rule: "Host(`git.mgrote.net`)"
       service: "service_gitea"
@@ -18,10 +11,6 @@ http:
         certresolver: resolver_letsencrypt
 ###### services #####
   services:
-    service_dokuwiki:
-      loadBalancer:
-        servers:
-          - url: "http://dokuwiki2.grote.lan/"
     service_gitea:
       loadBalancer:
         servers:

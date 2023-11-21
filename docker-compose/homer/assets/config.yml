@@ -63,11 +63,6 @@ services:
         url: "https://nextcloud.mgrote.net"
         target: "_blank"
         subtitle: "Cloud"
-      - name: "DokuWiki"
-        logo: "assets/icons/dokuwiki.png"
-        url: "http://dokuwiki2.grote.lan"
-        target: "_blank"
-        subtitle: "Wiki"
       - name: "Navidrome"
         logo: "assets/icons/navidrome.png"
         url: "https://audio.mgrote.net/mg"
@@ -80,7 +75,7 @@ services:
         subtitle: "Bildersammlung"
       - name: "Wiki"
         logo: "assets/icons/mkdocs.png"
-        url: "http://wiki2.mgrote.net" # noch ändern
+        url: "http://wiki.mgrote.net"
         target: "_blank"
         subtitle: "Wiki"
 

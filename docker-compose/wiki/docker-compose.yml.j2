@@ -14,7 +14,7 @@ services:
       # dieser Verzeichnis wird direkt in der wiki ci gemountet
       # und die daten werden dort reingeschrieben
     labels:
-      traefik.http.routers.wiki.rule: Host(`wiki2.mgrote.net`)
+      traefik.http.routers.wiki.rule: Host(`wiki.mgrote.net`)
       traefik.enable: true
       traefik.http.routers.wiki.tls: true
       traefik.http.routers.wiki.tls.certresolver: resolver_letsencrypt

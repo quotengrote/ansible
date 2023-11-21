@@ -1,8 +1,5 @@
 all:
   children:
-    dokuwiki:
-      hosts:
-        dokuwiki2.grote.lan:
     fileserver:
       hosts:
         fileserver3.grote.lan:
@@ -41,7 +38,6 @@ all:
 
     production:
       hosts:
-        dokuwiki2.grote.lan:
         fileserver3.grote.lan:
         ansible2.grote.lan:
         pve5.grote.lan:

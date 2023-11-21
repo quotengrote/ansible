@@ -28,6 +28,6 @@ restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 
 # nutzer für den share
 restic_mount_user: restic
 # passwort für den mount
-restic_mount_password: "unsafe_password"
+restic_mount_password: "unsafe_password" #gitleaks:allow
 # where to send in case of an error
 restic_fail_mail: x@y.de
