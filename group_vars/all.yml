@@ -7,6 +7,9 @@ file_header: |
   #              This file is managed with ansible!                #
   #----------------------------------------------------------------#
 
+### mgrote_netplan
+netplan_configure: true
+
 ### mgrote.restic
 restic_user: root
 restic_group: restic

@@ -1,0 +1,27 @@
+---
+- name: Install netplan
+  become: true
+  ansible.builtin.apt:
+    name:
+      - netplan.io
+    state: present
+
+- name: Template netplan-config
+  become: true
+  ansible.builtin.template:
+    src: 10_config.yml.j2
+    dest: /etc/netplan/00-installer-config.yaml
+    owner: root
+    group: root
+    mode: '0400'
+  notify: netplan apply
+
+- name: Ensure default config is absent
+  become: true
+  ansible.builtin.file:
+    path: "/etc/netplan/{{ item }}"
+    state: absent
+  notify: netplan apply
+  loop:
+    - 10_config.yml
+    - 01-netcfg.yaml

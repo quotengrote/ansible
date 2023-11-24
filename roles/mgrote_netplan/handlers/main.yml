@@ -1,0 +1,4 @@
+---
+- name: netplan apply # noqa no-changed-when
+  become: true
+  ansible.builtin.command: netplan apply

@@ -20,3 +20,5 @@
       # $manage_lvm gehört zu dieser Rolle, wird aber extra abgefragt um das PLaybook zu "aktivieren"
     - role: mgrote_ssh
       tags: "ssh"
+    - role: mgrote_netplan
+      tags: "netplan"

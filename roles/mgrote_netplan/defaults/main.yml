@@ -1,0 +1,2 @@
+---
+netplan_configure: false # this role dos nothing if this variable is false or the os is not ubuntu

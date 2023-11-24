@@ -13,6 +13,8 @@
     - role: mgrote_users
       tags: "user"
       become: true
+    - role: mgrote_netplan
+      tags: "netplan"
 
   post_tasks:
     - name: Change user password

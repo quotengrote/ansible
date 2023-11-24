@@ -1,0 +1,6 @@
+---
+- name: Include tasks only when the OS is Ubuntu
+  ansible.builtin.include_tasks: netplan.yml
+  when:
+    - "'Ubuntu' in ansible_distribution"
+    - netplan_configure is true

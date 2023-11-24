@@ -1,4 +1,7 @@
 ---
+### mgrote_netplan
+netplan_configure: false
+
 ### mgrote.restic
 restic_folders_to_backup: "/ /etc/pve"
 
