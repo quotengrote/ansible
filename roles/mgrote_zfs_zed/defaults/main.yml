@@ -1,0 +1,6 @@
+---
+zed_time_bettween_warning_s: 3600 # in seconds
+zed_mail_to: "{{ my_mail }}"
+zed_notify_verbosity: "1" # If set to 0, suppress notification if the pool is healthy. If set to 1, send notification regardless of pool health.
+zed_notify_data: 1 # Send notifications for 'ereport.fs.zfs.data' events. Disabled by default, any non-empty value will enable the feature.
+zed_scrub_after_resilver: 1 # Run a scrub after every resilver. Disabled by default, 1 to enable and 0 to disable.

@@ -1,9 +1,10 @@
 ---
-- name: kopiere zed.rc
+- name: Template "zed.rc"
   become: true
   ansible.builtin.template:
     owner: root
+    group: root
     mode: "0600"
-    src: zed.rc
+    src: zed.rc.j2
     dest: /etc/zfs/zed.d/zed.rc
-  notify: testmail
+  notify: Restart zfs-zed.service

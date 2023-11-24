@@ -1,5 +1,8 @@
 ---
-- name: testmail # noqa no-changed-when
-  ansible.builtin.shell:
-    cmd: "set -o pipefail && echo 'zed ist eingerichtet' | mail -s '{{ ansible_hostname }} - zed' '{{ my_mail }}'"
-    executable: /bin/bash
+- name: Restart zfs-zed.service
+  become: true
+  ansible.builtin.systemd:
+    name: "zfs-zed.service"
+    enabled: true
+    masked: false
+    state: restarted

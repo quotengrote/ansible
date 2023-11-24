@@ -6,7 +6,6 @@
     - { role: mgrote_zfs_manage_datasets, tags: "datasets" }
     - { role: mgrote_zfs_scrub, tags: "zfs_scrub" }
     - { role: mgrote_zfs_zed, tags: "zfs_zed" }
-    - { role: mgrote_zfs_health, tags: "zfs_health" }
     - { role: mgrote_zfs_sanoid, tags: "sanoid" }
     - { role: mgrote_smart, tags: "smart" }
     - { role: mgrote_cv4pve_autosnap, tags: "cv4pve" }
