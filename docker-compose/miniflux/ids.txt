@@ -8,11 +8,8 @@
 272 Richtersicht
 287 top scoring links : SCPDeclassified
 302 1lumen.com
-238 9to5Linux
 317 Anonleaks
 357 apenwarr
-334 APNIC Blog
-240 Arms Control Wonk
 321 Astral Codex Ten
 387 Augen geradeaus!
 242 Augen geradeaus!
@@ -25,12 +22,10 @@
 195 But a Jape
 380 but she's a girl...
 245 Cabin Porn
-246 Caschys Blog
 206 Channelate
 322 Chefkoch.de: Rezepte des Tages
 247 Chris Custom Works
 248 Colossal
-227 ComputerBase
 209 Danby Draws Comics
 315 Dave's Tech Reviews
 249 DevOps Dudes - Medium
@@ -47,12 +42,9 @@
 254 Fefes Blog
 255 Finanztip.de
 390 Freifall Xpress
-228 Golem.de
 371 GoodBearComics©2021
 369 Graphography
 303 Grizzly's Reviews
-338 Hardwareluxx RSS Feed
-226 heise online News
 215 Invisible Bread
 368 IPng Networks
 356 ipSpace.net Blog Posts
@@ -86,7 +78,6 @@
 270 Outdoormesser.net
 345 Pid Eins
 363 Pizza Cake Comics
-271 Planet 3DNow!
 223 Poorly Drawn Lines
 342 PortugueseGeese
 305 Posteo.de - Aktuelles
@@ -114,7 +105,6 @@ Scribbles
 280 Stories by Erez Zukerman on Medium
 355 Stories by Pinterest Engineering on Medium
 296 Switch And Click
-230 tagesschau.de - Die Nachrichten der ARD
 281 Techniktagebuch
 282 The Bartleby
 301 The GitHub Blog
@@ -126,7 +116,6 @@ Scribbles
 364 Things in Squares
 286 Thomas Baart
 295 Toonhole
-231 Topthemen - SZ.de
 310 Updates from the Tor Project
 202 VectorBelly
 293 War Is Boring
