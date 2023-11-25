@@ -1,7 +1,7 @@
 version: '3'
 services:
   miniflux:
-    container_name: "mf-frontend"
+    container_name: "mf-app"
     image: miniflux/miniflux:latest
     restart: always
     depends_on:
@@ -46,25 +46,30 @@ services:
     labels:
       com.centurylinklabs.watchtower.enable: true
 
-  miniflux-cleanup:
-    image: knrdl/miniflux-cleanup
-    container_name: mf-cleanup
+  miniflux-filter:
+    image: tborychowski/miniflux-filter:latest
+    container_name: miniflux-filter
     restart: always
     environment:
-      MINIFLUX_URL: http://miniflux:8080
-      CRONJOB_INTERVAL: 10s
-      DEFAULT_USERNAME: mg
+      - TZ=Europe/Berlin
+      # if not present - there will be no auth
+      # - ADMIN_PASSWORD=admin1
+      # ERROR, WARNING, INFO, DEBUG
+      - LOG_LEVEL=DEBUG
     ports:
-      - "8084:8080"
+      - "5020:80"
+    volumes:
+      - filter:/var/www/html/store
     networks:
       - intern
     labels:
       com.centurylinklabs.watchtower.enable: true
-      com.centurylinklabs.watchtower.depends-on: mf-frontend
+      com.centurylinklabs.watchtower.depends-on: miniflux
 
 ######## Volumes ########
 volumes:
   db:
+  filter:
 ######## Networks ########
 networks:
   traefik:
