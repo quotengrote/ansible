@@ -27,7 +27,7 @@ restic_mount_timeout: "10 min"
 restic_failure_delay: "30 s"
 restic_schedule: "0/6:00" # alle 6 Stunden
 restic_folders_to_backup: "/" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
-restic_repository: "//fileserver3.grote.lan/restic"
+restic_repository: "//fileserver3.mgrote.net/restic"
 restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
 restic_mount_user: restic
 restic_mount_password: "{{ lookup('keepass', 'fileserver_smb_user_restic', 'password') }}"
@@ -83,7 +83,7 @@ ntp_chrony_group: _chrony # Nutzer + Gruppe für den Dienst
 ntp_chrony_logging: false
 
 ### mgrote.postfix
-postfix_smtp_server: docker10.grote.lan
+postfix_smtp_server: docker10.mgrote.net
 postfix_smtp_server_port: 1025
 
 ### mgrote.tmux
@@ -152,7 +152,7 @@ apt_packages_absent:
   - snapd
   - ubuntu-advantage-tools
 apt_packages_internet:
-  - http://docker10.grote.lan:3344/bash-helper-scripts-mgrote-latest.deb
+  - http://docker10.mgrote.net:3344/bash-helper-scripts-mgrote-latest.deb
 
 ### mgrote.zfs_sanoid
 sanoid_templates:
@@ -203,7 +203,7 @@ sanoid_templates:
     autoprune: 'yes'
 
 ### mgrote.zfs_sanoid
-sanoid_deb_url: http://docker10.grote.lan:3344/sanoid_3.0.4.deb
+sanoid_deb_url: http://docker10.mgrote.net:3344/sanoid_3.0.4.deb
 
 # Ansible Variablen
 ### User

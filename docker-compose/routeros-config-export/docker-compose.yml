@@ -3,7 +3,7 @@ services:
   routeros-config-export:
     container_name: routeros-config-export
     restart: always
-    image: registry.mgrote.net/oxidized-selfmade:checkr
+    image: registry.mgrote.net/oxidized-selfmade:check
     volumes:
       - ./key_rb5009:/key_rb5009:ro
       - ./key_hex:/key_hex:ro
@@ -11,9 +11,9 @@ services:
       - ./deploy_token:/deploy_token:ro
     environment:
       DEVICES: |-
-              rb5009.grote.lan,routeros-config-backup,/key_rb5009
-              hex.grote.lan,routeros-config-backup,/key_hex
-              crs305.grote.lan,routeros-config-backup,/key_crs305
+              rb5009.mgrote.net,routeros-config-backup,/key_rb5009
+              hex.mgrote.net,routeros-config-backup,/key_hex
+              crs305.mgrote.net,routeros-config-backup,/key_crs305
       GIT_REPO_BRANCH: "master"
       GIT_REPO_URL: "ssh://gitea@gitea.grote.lan:2222/mg/routeros-configs.git"
       GIT_REPO_DEPLOY_KEY: "/deploy_token"

@@ -14,4 +14,4 @@ http:
     service_gitea:
       loadBalancer:
         servers:
-          - url: "http://gitea.grote.lan:3000/"
+          - url: "http://gitea.mgrote.net:3000/"

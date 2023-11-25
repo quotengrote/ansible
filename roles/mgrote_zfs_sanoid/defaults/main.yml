@@ -4,7 +4,7 @@ sanoid_timer: '*-*-* *:00/5'
 ### when should syncoid be run
 sanoid_syncoid_timer: '*-*-* *:00:00'
 ### where to download the package
-sanoid_deb_url: http://docker10.grote.lan:3344/sanoid_3.0.0.deb
+sanoid_deb_url: http://docker10.mgrote.net:3344/sanoid_3.0.0.deb
 
 #  ### "Default" Datasets
 #  sanoid_datasets: # dictionary
@@ -46,7 +46,7 @@ sanoid_user_group: sanoid
 
 ### mgrote.sanoid
 #sanoid_syncoid_datasets_sync:
-#  - source_host: pve5.grote.lan
+#  - source_host: pve5.mgrote.net
 #    source_dataset: hdd_data_raidz/tmp
 #    destination_mount_check: hdd_data_raidz/tmp  # zielpool
 #    destination_dataset: backup/pve5/tmp

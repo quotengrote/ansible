@@ -4,10 +4,10 @@ cifs_mounts:
     type: cifs
     state: absent
     dest: /pve_backup_mount
-    src: //fileserver3.grote.lan/proxmox
+    src: //fileserver3.mgrote.net/proxmox
     user: pve
     password: XXXXXXXXXXXXXXX
-    domain: grote.lan
+    domain: mgrote.net
     uid: 1000
     gid: 1000
     # optional: extra_opts: ",ro" # komma am Anfang ist notwendig weil die Option hinten angehangen wird

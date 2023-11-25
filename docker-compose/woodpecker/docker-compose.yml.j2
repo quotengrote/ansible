@@ -13,7 +13,7 @@ services:
     environment:
       WOODPECKER_OPEN: false
       WOODPECKER_HOST: https://ci.mgrote.net
-      WOODPECKER_WEBHOOK_HOST: http://docker10.grote.lan:8000
+      WOODPECKER_WEBHOOK_HOST: http://docker10.mgrote.net:8000
       WOODPECKER_GITEA: true
       WOODPECKER_GITEA_URL: https://git.mgrote.net
       WOODPECKER_GITEA_CLIENT: {{ lookup('keepass', 'woodpecker-oauth2-client-id', 'password') }}

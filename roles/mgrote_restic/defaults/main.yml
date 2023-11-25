@@ -21,7 +21,7 @@ restic_failure_delay: "30 s"
 restic_schedule: "*:0/2"
 # welche ordner sollen gesichert werden
 restic_folders_to_backup: "/usr/local /etc /root /var/www /home"
-# smb-share mit dem repository: z.B. "//fileserver3.grote.lan/restic"
+# smb-share mit dem repository: z.B. "//fileserver3.mgrote.net/restic"
 restic_repository: "//fileserver.domain/restic"
 # password für das repo
 restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"

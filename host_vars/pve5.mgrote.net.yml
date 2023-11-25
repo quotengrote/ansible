@@ -236,7 +236,7 @@ pve_bind_mounts:
 # mgrote.pbs_pve_integration
 pve_pbs_datastore:
   - name: pbs
-    server: pbs.grote.lan
+    server: pbs.mgrote.net
     datastore: zfs_backup
     username: user_pve5@pbs
     password: "{{ lookup('keepass', 'pbs_pve_user', 'password') }}"

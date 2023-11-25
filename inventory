@@ -2,47 +2,47 @@ all:
   children:
     fileserver:
       hosts:
-        fileserver3.grote.lan:
+        fileserver3.mgrote.net:
     lxc:
       hosts:
-        fileserver3.grote.lan:
+        fileserver3.mgrote.net:
     ansible:
       hosts:
-        ansible2.grote.lan:
+        ansible2.mgrote.net:
     docker:
       hosts:
-        docker10.grote.lan:
+        docker10.mgrote.net:
     vmtest:
       hosts:
-        vm-test-2204.grote.lan:
-        pbs-test.grote.lan:
-        pve5-test.grote.lan:
+        vm-test-2204.mgrote.net:
+        pbs-test.mgrote.net:
+        pve5-test.mgrote.net:
     pve:
       hosts:
-        pve5.grote.lan:
-        pve5-test.grote.lan:
+        pve5.mgrote.net:
+        pve5-test.mgrote.net:
     pbs:
       hosts:
-        pbs.grote.lan:
-        pbs-test.grote.lan:
+        pbs.mgrote.net:
+        pbs-test.mgrote.net:
     physical:
       hosts:
-        pve5.grote.lan:
-        pbs.grote.lan:
+        pve5.mgrote.net:
+        pbs.mgrote.net:
     gitea:
       hosts:
-        gitea.grote.lan:
+        gitea.mgrote.net:
 
     production:
       hosts:
-        fileserver3.grote.lan:
-        ansible2.grote.lan:
-        pve5.grote.lan:
-        gitea.grote.lan:
-        docker10.grote.lan:
-        pbs.grote.lan:
+        fileserver3.mgrote.net:
+        ansible2.mgrote.net:
+        pve5.mgrote.net:
+        gitea.mgrote.net:
+        docker10.mgrote.net:
+        pbs.mgrote.net:
     test:
       hosts:
-        vm-test-2204.grote.lan:
-        pve5-test.grote.lan:
-        pbs-test.grote.lan:
+        vm-test-2204.mgrote.net:
+        pve5-test.mgrote.net:
+        pbs-test.mgrote.net:

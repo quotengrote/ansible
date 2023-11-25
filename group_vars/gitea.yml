@@ -74,7 +74,7 @@ gitea_db_type: sqlite3
 gitea_db_path: "{{ gitea_home }}/data/gitea.db" # for sqlite3
 
 gitea_ssh_listen: 0.0.0.0
-gitea_ssh_domain: gitea.grote.lan
+gitea_ssh_domain: gitea.mgrote.net
 gitea_ssh_port: 2222
 gitea_start_ssh: true
 
@@ -95,7 +95,7 @@ gitea_fail2ban_jail_bantime: 600
 # wird für drone benötigt, sonst wird der Webhook nicht "gesendet"
 gitea_extra_config: |
   [webhook]
-  ALLOWED_HOST_LIST = *.grote.lan
+  ALLOWED_HOST_LIST = *.mgrote.net
 
 gitea_backup_on_upgrade: false
 gitea_backup_location: "{{ gitea_home }}/backups/"

@@ -21,10 +21,10 @@ cifs_mounts:
     type: cifs
     state: present
     dest: /mnt/fileserver3_photoprism_bilder_ro
-    src: //fileserver3.grote.lan/bilder
+    src: //fileserver3.mgrote.net/bilder
     user: photoprism
     password: "{{ lookup('keepass', 'fileserver_smb_user_photoprism', 'password') }}"
-    domain: grote.lan
+    domain: mgrote.net
     uid: 5000
     gid: 5000
     extra_opts: ",ro" # komma am Anfang ist notwendig weil die Option hinten angehangen wird
