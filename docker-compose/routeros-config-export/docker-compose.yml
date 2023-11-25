@@ -3,7 +3,7 @@ services:
   routeros-config-export:
     container_name: routeros-config-export
     restart: always
-    image: registry.mgrote.net/oxidized-selfmade:master
+    image: registry.mgrote.net/oxidized-selfmade:check # wieder ändern!
     volumes:
       - ./key_rb5009:/key_rb5009:ro
       - ./key_hex:/key_hex:ro
