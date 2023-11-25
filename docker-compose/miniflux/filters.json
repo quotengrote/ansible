@@ -167,7 +167,7 @@
         "feed_id": "227",
         "feed_title": "computerbase.de",
         "field": "title",
-        "match": "Fu\\u00dfball"
+        "match": "Fußball"
     },
     {
         "id": "0000000000018",
@@ -217,7 +217,7 @@
         "feed_id": "227",
         "feed_title": "computerbase.de",
         "field": "title",
-        "match": "Wochenr\\u00fcck- und Ausblick:"
+        "match": "Wochenrück- und Ausblick:"
     },
     {
         "id": "0000000000023",
@@ -297,7 +297,7 @@
         "feed_id": "228",
         "feed_title": "golem.de",
         "field": "title",
-        "match": "Fu\\u00dfball"
+        "match": "Fußball"
     },
     {
         "id": "0000000000032",
@@ -397,7 +397,7 @@
         "feed_id": "228",
         "feed_title": "golem.de",
         "field": "title",
-        "match": "Wochenr\\u00fcckblick"
+        "match": "Wochenrückblick"
     },
     {
         "id": "0000000000042",
@@ -407,7 +407,7 @@
         "feed_id": "228",
         "feed_title": "golem.de",
         "field": "title",
-        "match": "in aller K\\u00fcrze"
+        "match": "in aller Kürze"
     },
     {
         "id": "0000000000043",
@@ -627,7 +627,7 @@
         "feed_id": "226",
         "feed_title": "heise.de",
         "field": "title",
-        "match": "Fu\\u00dfball-WM"
+        "match": "Fußball-WM"
     },
     {
         "id": "0000000000065",
@@ -727,17 +727,7 @@
         "feed_id": "226",
         "feed_title": "heise.de",
         "field": "title",
-        "match": "Podcast \"Die Hupe\""
-    },
-    {
-        "id": "0000000000075",
-        "created": "2023-11-25 12:45:01",
-        "updated": "2023-11-25 12:45:01",
-        "filtered_count": 0,
-        "feed_id": "226",
-        "feed_title": "heise.de",
-        "field": "title",
-        "match": "Podcast \"Die Produktwerker\""
+        "match": "Podcast"
     },
     {
         "id": "0000000000076",
@@ -857,7 +847,7 @@
         "feed_id": "226",
         "feed_title": "heise.de",
         "field": "title",
-        "match": "c\\u2019t-Webinar:"
+        "match": "c't-Webinar:"
     },
     {
         "id": "0000000000088",
@@ -878,16 +868,6 @@
         "feed_title": "heise.de",
         "field": "title",
         "match": "heise meets"
-    },
-    {
-        "id": "0000000000090",
-        "created": "2023-11-25 12:45:01",
-        "updated": "2023-11-25 12:45:01",
-        "filtered_count": 0,
-        "feed_id": "226",
-        "feed_title": "heise.de",
-        "field": "title",
-        "match": "heise meets\\u2026"
     },
     {
         "id": "0000000000091",
@@ -1047,7 +1027,7 @@
         "feed_id": "320",
         "feed_title": "mdr.de",
         "field": "title",
-        "match": "#MDRkl\\u00e4rt:"
+        "match": "#MDRklärt:"
     },
     {
         "id": "0000000000108",
@@ -1097,7 +1077,7 @@
         "feed_id": "320",
         "feed_title": "mdr.de",
         "field": "title",
-        "match": "Fu\\u00dfball"
+        "match": "Fußball"
     },
     {
         "id": "0000000000113",
@@ -1177,17 +1157,7 @@
         "feed_id": "320",
         "feed_title": "mdr.de",
         "field": "title",
-        "match": "Podcast \"digital Leben\""
-    },
-    {
-        "id": "0000000000121",
-        "created": "2023-11-25 12:45:01",
-        "updated": "2023-11-25 12:45:01",
-        "filtered_count": 0,
-        "feed_id": "320",
-        "feed_title": "mdr.de",
-        "field": "title",
-        "match": "Podcast \"digital Leben\":"
+        "match": "Podcast"
     },
     {
         "id": "0000000000122",
@@ -1338,16 +1308,6 @@
         "feed_title": "planet3dnow.de",
         "field": "title",
         "match": "FurMark"
-    },
-    {
-        "id": "0000000000139",
-        "created": "2023-11-25 12:45:01",
-        "updated": "2023-11-25 12:45:01",
-        "filtered_count": 0,
-        "feed_id": "271",
-        "feed_title": "planet3dnow.de",
-        "field": "title",
-        "match": "GPU\\u2011Z"
     },
     {
         "id": "0000000000140",
@@ -1657,7 +1617,7 @@
         "feed_id": "246",
         "feed_title": "stadt-bremerhaven.de",
         "field": "title",
-        "match": "Cloud-Gaming-R\\u00fcckblick"
+        "match": "Cloud-Gaming-Rückblick"
     },
     {
         "id": "0000000000173",
@@ -1767,7 +1727,7 @@
         "feed_id": "246",
         "feed_title": "stadt-bremerhaven.de",
         "field": "title",
-        "match": "R\\u00fcckblick"
+        "match": "Rückblick"
     },
     {
         "id": "0000000000184",
@@ -1847,7 +1807,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Hoene\\u00df:"
+        "match": "Hoeneß:"
     },
     {
         "id": "0000000000192",
@@ -1887,7 +1847,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Kinderfu\\u00dfball"
+        "match": "KinderFußball"
     },
     {
         "id": "0000000000196",
@@ -1897,7 +1857,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Podcast \"Lanz & Precht\""
+        "match": "Podcast Lanz & Precht"
     },
     {
         "id": "0000000000197",
@@ -1917,7 +1877,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "\"Ich bin ein Star\""
+        "match": "Ich bin ein Star"
     },
     {
         "id": "0000000000199",
@@ -1927,7 +1887,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "\"Tatort\""
+        "match": "Tatort"
     },
     {
         "id": "0000000000200",
@@ -1957,7 +1917,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "1. FC K\\u00f6ln"
+        "match": "1. FC Köln"
     },
     {
         "id": "0000000000203",
@@ -1967,7 +1927,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "1. FC N\\u00fcrnberg"
+        "match": "1. FC Nürnberg"
     },
     {
         "id": "0000000000204",
@@ -1987,7 +1947,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "1860 M\\u00fcnchen"
+        "match": "1860 München"
     },
     {
         "id": "0000000000206",
@@ -2147,7 +2107,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Ausw\\u00e4rtstor"
+        "match": "Auswärtstor"
     },
     {
         "id": "0000000000222",
@@ -2158,16 +2118,6 @@
         "feed_title": "sueddeutsche.de",
         "field": "title",
         "match": "BVB"
-    },
-    {
-        "id": "0000000000223",
-        "created": "2023-11-25 12:45:01",
-        "updated": "2023-11-25 12:45:01",
-        "filtered_count": 0,
-        "feed_id": "231",
-        "feed_title": "sueddeutsche.de",
-        "field": "title",
-        "match": "Bar\\u00e7a"
     },
     {
         "id": "0000000000224",
@@ -2517,7 +2467,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Deutsche Fu\\u00dfball Liga"
+        "match": "Deutsche Fußball Liga"
     },
     {
         "id": "0000000000259",
@@ -2657,7 +2607,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Eisb\\u00e4ren Berlin"
+        "match": "Eisbären Berlin"
     },
     {
         "id": "0000000000273",
@@ -2747,7 +2697,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Er\\u00f6ffnungsspiel"
+        "match": "Eröffnungsspiel"
     },
     {
         "id": "0000000000282",
@@ -2937,7 +2887,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Fu\\u00dfball in England:"
+        "match": "Fußball in England:"
     },
     {
         "id": "0000000000301",
@@ -2947,7 +2897,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Fu\\u00dfball-EM"
+        "match": "Fußball-EM"
     },
     {
         "id": "0000000000302",
@@ -2957,7 +2907,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Fu\\u00dfball-Verband"
+        "match": "Fußball-Verband"
     },
     {
         "id": "0000000000303",
@@ -2967,7 +2917,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Fu\\u00dfball-WM"
+        "match": "Fußball-WM"
     },
     {
         "id": "0000000000304",
@@ -2977,7 +2927,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Fu\\u00dfball-Weltmeister"
+        "match": "Fußball-Weltmeister"
     },
     {
         "id": "0000000000305",
@@ -2987,7 +2937,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Fu\\u00dfball-Weltmeister"
+        "match": "Fußball-Weltmeister"
     },
     {
         "id": "0000000000306",
@@ -2997,7 +2947,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Fu\\u00dfball-Weltmeisterschaft"
+        "match": "Fußball-Weltmeisterschaft"
     },
     {
         "id": "0000000000307",
@@ -3007,7 +2957,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Fu\\u00dfball:"
+        "match": "Fußball:"
     },
     {
         "id": "0000000000308",
@@ -3017,7 +2967,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Fu\\u00dfballerinnen"
+        "match": "Fußballerinnen"
     },
     {
         "id": "0000000000309",
@@ -3027,7 +2977,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Fu\\u00dfballern"
+        "match": "Fußballern"
     },
     {
         "id": "0000000000310",
@@ -3037,7 +2987,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Fu\\u00dfballtorwart"
+        "match": "Fußballtorwart"
     },
     {
         "id": "0000000000311",
@@ -3047,7 +2997,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Fu\\u00dfballverband"
+        "match": "Fußballverband"
     },
     {
         "id": "0000000000312",
@@ -3058,16 +3008,6 @@
         "feed_title": "sueddeutsche.de",
         "field": "title",
         "match": "Galopp"
-    },
-    {
-        "id": "0000000000313",
-        "created": "2023-11-25 12:45:01",
-        "updated": "2023-11-25 12:45:01",
-        "filtered_count": 0,
-        "feed_id": "231",
-        "feed_title": "sueddeutsche.de",
-        "field": "title",
-        "match": "Gerard L\\u00f3pez"
     },
     {
         "id": "0000000000314",
@@ -3167,7 +3107,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Heldenfu\\u00dfball"
+        "match": "HeldenFußball"
     },
     {
         "id": "0000000000324",
@@ -3240,16 +3180,6 @@
         "match": "Hockey-WM"
     },
     {
-        "id": "0000000000331",
-        "created": "2023-11-25 12:45:01",
-        "updated": "2023-11-25 12:45:01",
-        "filtered_count": 0,
-        "feed_id": "231",
-        "feed_title": "sueddeutsche.de",
-        "field": "title",
-        "match": "Ibrahimovi\\u0107"
-    },
-    {
         "id": "0000000000332",
         "created": "2023-11-25 12:45:01",
         "updated": "2023-11-25 12:45:01",
@@ -3277,7 +3207,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Joachim L\\u00f6w"
+        "match": "Joachim Löw"
     },
     {
         "id": "0000000000335",
@@ -3527,7 +3457,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "L\\u00e4nderspiel"
+        "match": "Länderspiel"
     },
     {
         "id": "0000000000360",
@@ -3588,16 +3518,6 @@
         "feed_title": "sueddeutsche.de",
         "field": "title",
         "match": "Markus Weinzierl"
-    },
-    {
-        "id": "0000000000366",
-        "created": "2023-11-25 12:45:01",
-        "updated": "2023-11-25 12:45:01",
-        "filtered_count": 0,
-        "feed_id": "231",
-        "feed_title": "sueddeutsche.de",
-        "field": "title",
-        "match": "Mbapp\\u00e9"
     },
     {
         "id": "0000000000367",
@@ -3757,7 +3677,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Niklas S\\u00fcle:"
+        "match": "Niklas Süle:"
     },
     {
         "id": "0000000000383",
@@ -4167,7 +4087,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "SZ-Kolumne \"Bester Dinge\":"
+        "match": "SZ-Kolumne Bester Dinge:"
     },
     {
         "id": "0000000000424",
@@ -4177,7 +4097,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "SZ-Kolumne \"Mitten in ...\":"
+        "match": "SZ-Kolumne Mitten in ...:"
     },
     {
         "id": "0000000000425",
@@ -4207,7 +4127,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "SZ-Podcast \"Und nun zum Sport\":"
+        "match": "SZ-Podcast Und nun zum Sport:"
     },
     {
         "id": "0000000000428",
@@ -4397,7 +4317,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "St\\u00fcrmer"
+        "match": "Stürmer"
     },
     {
         "id": "0000000000447",
@@ -4477,7 +4397,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Tatort M\\u00fcnchen:"
+        "match": "Tatort München:"
     },
     {
         "id": "0000000000455",
@@ -4537,7 +4457,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Thomas M\\u00fcller"
+        "match": "Thomas Müller"
     },
     {
         "id": "0000000000461",
@@ -4597,7 +4517,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Torh\\u00fcter"
+        "match": "Torhüter"
     },
     {
         "id": "0000000000467",
@@ -4657,7 +4577,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "T\\u00fcrkg\\u00fcc\\u00fc M\\u00fcnchen"
+        "match": "Türkgücü München"
     },
     {
         "id": "0000000000473",
@@ -4697,7 +4617,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "Uli Hoene\\u00df"
+        "match": "Uli Hoeneß"
     },
     {
         "id": "0000000000477",
@@ -4997,7 +4917,7 @@
         "feed_id": "231",
         "feed_title": "sueddeutsche.de",
         "field": "title",
-        "match": "\\u00fcckenkemper"
+        "match": "ückenkemper"
     },
     {
         "id": "0000000000507",
@@ -5087,7 +5007,7 @@
         "feed_id": "230",
         "feed_title": "tagesschau.de",
         "field": "title",
-        "match": "Bayern M\\u00fcnchen"
+        "match": "Bayern München"
     },
     {
         "id": "0000000000516",
@@ -5337,7 +5257,7 @@
         "feed_id": "230",
         "feed_title": "tagesschau.de",
         "field": "title",
-        "match": "Fu\\u00dfball"
+        "match": "Fußball"
     },
     {
         "id": "0000000000541",
@@ -5347,7 +5267,7 @@
         "feed_id": "230",
         "feed_title": "tagesschau.de",
         "field": "title",
-        "match": "Fu\\u00dfball-Bundesliga"
+        "match": "Fußball-Bundesliga"
     },
     {
         "id": "0000000000542",
@@ -5357,7 +5277,7 @@
         "feed_id": "230",
         "feed_title": "tagesschau.de",
         "field": "title",
-        "match": "Fu\\u00dfball-EM"
+        "match": "Fußball-EM"
     },
     {
         "id": "0000000000543",
@@ -5477,7 +5397,7 @@
         "feed_id": "230",
         "feed_title": "tagesschau.de",
         "field": "title",
-        "match": "Langl\\u00e4uf"
+        "match": "Langläuf"
     },
     {
         "id": "0000000000555",
