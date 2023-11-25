@@ -1,18 +1,7 @@
-9to5linux.com::9to5Linux Weekly Roundup:
-apnic.net::Podcast
-astralcodexten.substack.com::Open Thread
-augengeradeaus.net::Sicherheitshalber der Podcast
-axios.com::Axios on HBO
-axios.com::PGA
-axios.com::football
-computerbase.de::Adrenalin 2020 Edition
-computerbase.de::Adrenalin 2021 Edition
 computerbase.de::CB-Funk
-computerbase.de::CB-Funk-Podcast
-computerbase.de::Community-Umfrage
-computerbase.de::Community: Fotowettbewerb
+computerbase.de::Community
 computerbase.de::Elon Musk
-computerbase.de::Fotowettbewerb:
+computerbase.de::Fotowettbewerb
 computerbase.de::Fussball
 computerbase.de::Fußball
 computerbase.de::Screenshot-Wettbewerb
@@ -21,9 +10,7 @@ computerbase.de::Twitter
 computerbase.de::WM
 computerbase.de::Wochenrück- und Ausblick:
 computerbase.de::wettbewerb
-facebook.com::Bridge returned error
 golem.de::(g+)
-golem.de::Anzeige
 golem.de::Aus dem Verlag:
 golem.de::Elon Musk
 golem.de::Fifa
@@ -101,7 +88,6 @@ heise.de::t uplink
 heise.de::t zockt
 heise.de::uplink
 heise.de::zockt
-instagram.com::Bridge returned error
 ipspace.net::Built.fm
 ipspace.net::Podcast
 mdr.de::#MDRklärt:
@@ -122,8 +108,6 @@ mdr.de::Podcast "digital Leben":
 mdr.de::Podcast:
 mdr.de::Podcastserie
 mdr.de::Schwimmen:
-mf-bridge::Bridge encountered an unexpected situation
-mf-bridge::Bridge returned error 401
 monkeyuser.com::AdLitteram
 netzpolitik.org::KW
 netzpolitik.org::NPP

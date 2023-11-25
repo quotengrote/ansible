@@ -1,0 +1,6152 @@
+[
+    {
+        "id": "0000000000001",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "9to5linux.com",
+        "field": "title",
+        "match": "9to5Linux Weekly Roundup:"
+    },
+    {
+        "id": "0000000000002",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "apnic.net",
+        "field": "title",
+        "match": "Podcast"
+    },
+    {
+        "id": "0000000000003",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "astralcodexten.substack.com",
+        "field": "title",
+        "match": "Open Thread"
+    },
+    {
+        "id": "0000000000004",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "augengeradeaus.net",
+        "field": "title",
+        "match": "Sicherheitshalber der Podcast"
+    },
+    {
+        "id": "0000000000005",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "axios.com",
+        "field": "title",
+        "match": "Axios on HBO"
+    },
+    {
+        "id": "0000000000006",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "axios.com",
+        "field": "title",
+        "match": "PGA"
+    },
+    {
+        "id": "0000000000007",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "axios.com",
+        "field": "title",
+        "match": "football"
+    },
+    {
+        "id": "0000000000008",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "Adrenalin 2020 Edition"
+    },
+    {
+        "id": "0000000000009",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "Adrenalin 2021 Edition"
+    },
+    {
+        "id": "0000000000010",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "CB-Funk"
+    },
+    {
+        "id": "0000000000011",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "CB-Funk-Podcast"
+    },
+    {
+        "id": "0000000000012",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "Community-Umfrage"
+    },
+    {
+        "id": "0000000000013",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "Community: Fotowettbewerb"
+    },
+    {
+        "id": "0000000000014",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "Elon Musk"
+    },
+    {
+        "id": "0000000000015",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "Fotowettbewerb:"
+    },
+    {
+        "id": "0000000000016",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "Fussball"
+    },
+    {
+        "id": "0000000000017",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "Fu\u00dfball"
+    },
+    {
+        "id": "0000000000018",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "Screenshot-Wettbewerb"
+    },
+    {
+        "id": "0000000000019",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "Sonntagsfrage:"
+    },
+    {
+        "id": "0000000000020",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "Twitter"
+    },
+    {
+        "id": "0000000000021",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "WM"
+    },
+    {
+        "id": "0000000000022",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "Wochenr\u00fcck- und Ausblick:"
+    },
+    {
+        "id": "0000000000023",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "computerbase.de",
+        "field": "title",
+        "match": "wettbewerb"
+    },
+    {
+        "id": "0000000000024",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "facebook.com",
+        "field": "title",
+        "match": "Bridge returned error"
+    },
+    {
+        "id": "0000000000025",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "(g+)"
+    },
+    {
+        "id": "0000000000026",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Anzeige"
+    },
+    {
+        "id": "0000000000027",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Aus dem Verlag:"
+    },
+    {
+        "id": "0000000000028",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Elon Musk"
+    },
+    {
+        "id": "0000000000029",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Fifa"
+    },
+    {
+        "id": "0000000000030",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Fussball"
+    },
+    {
+        "id": "0000000000031",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Fu\u00dfball"
+    },
+    {
+        "id": "0000000000032",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Golem Karrierewelt"
+    },
+    {
+        "id": "0000000000033",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "In eigener Sache"
+    },
+    {
+        "id": "0000000000034",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Marvel"
+    },
+    {
+        "id": "0000000000035",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "PODCAST BESSER WISSEN:"
+    },
+    {
+        "id": "0000000000036",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Podcast"
+    },
+    {
+        "id": "0000000000037",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Sonst noch was?"
+    },
+    {
+        "id": "0000000000038",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Star Trek:"
+    },
+    {
+        "id": "0000000000039",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Tech Talks:"
+    },
+    {
+        "id": "0000000000040",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Twitter"
+    },
+    {
+        "id": "0000000000041",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "Wochenr\u00fcckblick"
+    },
+    {
+        "id": "0000000000042",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "in aller K\u00fcrze"
+    },
+    {
+        "id": "0000000000043",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "golem.de",
+        "field": "title",
+        "match": "kurznews"
+    },
+    {
+        "id": "0000000000044",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "hardwareluxx.de",
+        "field": "title",
+        "match": "Der Hardwareluxx-Webwatch:"
+    },
+    {
+        "id": "0000000000045",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "hardwareluxx.de",
+        "field": "title",
+        "match": "Die Artikel unserer Partner"
+    },
+    {
+        "id": "0000000000046",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "hardwareluxx.de",
+        "field": "title",
+        "match": "Unsere Artikel der letzten Woche"
+    },
+    {
+        "id": "0000000000047",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "#TGIQF"
+    },
+    {
+        "id": "0000000000048",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "#heiseshow"
+    },
+    {
+        "id": "0000000000049",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Anzeige"
+    },
+    {
+        "id": "0000000000050",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Auslegungssache"
+    },
+    {
+        "id": "0000000000051",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Bit-Rauschen"
+    },
+    {
+        "id": "0000000000052",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Bit-Rauschen, der Prozessor-Podcast"
+    },
+    {
+        "id": "0000000000053",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Desinfec"
+    },
+    {
+        "id": "0000000000054",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Die Bilder der Woche"
+    },
+    {
+        "id": "0000000000055",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Die Bilder der Woche (KW"
+    },
+    {
+        "id": "0000000000056",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Die Highlights bei"
+    },
+    {
+        "id": "0000000000057",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Die Produktwerker"
+    },
+    {
+        "id": "0000000000058",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Dienstag"
+    },
+    {
+        "id": "0000000000059",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Dienstag:"
+    },
+    {
+        "id": "0000000000060",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Elon Musk"
+    },
+    {
+        "id": "0000000000061",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "FIFA"
+    },
+    {
+        "id": "0000000000062",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Ferris Talk"
+    },
+    {
+        "id": "0000000000063",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Freitag"
+    },
+    {
+        "id": "0000000000064",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Fu\u00dfball-WM"
+    },
+    {
+        "id": "0000000000065",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Heise spielt"
+    },
+    {
+        "id": "0000000000066",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Heise-Konferenz"
+    },
+    {
+        "id": "0000000000067",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Kurz informiert:"
+    },
+    {
+        "id": "0000000000068",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Mac & i Extra:"
+    },
+    {
+        "id": "0000000000069",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Missing Link"
+    },
+    {
+        "id": "0000000000070",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Mittwoch"
+    },
+    {
+        "id": "0000000000071",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Montag"
+    },
+    {
+        "id": "0000000000072",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Die Bilder der Woche"
+    },
+    {
+        "id": "0000000000073",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Podcast"
+    },
+    {
+        "id": "0000000000074",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Podcast \"Die Hupe\""
+    },
+    {
+        "id": "0000000000075",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Podcast \"Die Produktwerker\""
+    },
+    {
+        "id": "0000000000076",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "SoftwareArchitekTOUR"
+    },
+    {
+        "id": "0000000000077",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Sonderheft"
+    },
+    {
+        "id": "0000000000078",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "TGIQF"
+    },
+    {
+        "id": "0000000000079",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Tech2go-Podcast:"
+    },
+    {
+        "id": "0000000000080",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "TechStage"
+    },
+    {
+        "id": "0000000000081",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "TechStage |"
+    },
+    {
+        "id": "0000000000082",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Twitter"
+    },
+    {
+        "id": "0000000000083",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "WM 2022"
+    },
+    {
+        "id": "0000000000084",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Was war. Was wird."
+    },
+    {
+        "id": "0000000000085",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "Zugriff auf alle Inhalte von heise+"
+    },
+    {
+        "id": "0000000000086",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "c't <webdev>"
+    },
+    {
+        "id": "0000000000087",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "c\u2019t-Webinar:"
+    },
+    {
+        "id": "0000000000088",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "heise Jobs IT Tag"
+    },
+    {
+        "id": "0000000000089",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "heise meets"
+    },
+    {
+        "id": "0000000000090",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "heise meets\u2026"
+    },
+    {
+        "id": "0000000000091",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "heise+"
+    },
+    {
+        "id": "0000000000092",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "heise-Angebot:"
+    },
+    {
+        "id": "0000000000093",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "heiseshow"
+    },
+    {
+        "id": "0000000000094",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "iX-Workshop"
+    },
+    {
+        "id": "0000000000095",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "samstag"
+    },
+    {
+        "id": "0000000000096",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "sonntag"
+    },
+    {
+        "id": "0000000000097",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "t 3003"
+    },
+    {
+        "id": "0000000000098",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "t Fotografie"
+    },
+    {
+        "id": "0000000000099",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "t Fotografie-Wettbewerb"
+    },
+    {
+        "id": "0000000000100",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "t uplink"
+    },
+    {
+        "id": "0000000000101",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "t zockt"
+    },
+    {
+        "id": "0000000000102",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "uplink"
+    },
+    {
+        "id": "0000000000103",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "heise.de",
+        "field": "title",
+        "match": "zockt"
+    },
+    {
+        "id": "0000000000104",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "instagram.com",
+        "field": "title",
+        "match": "Bridge returned error"
+    },
+    {
+        "id": "0000000000105",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "ipspace.net",
+        "field": "title",
+        "match": "Built.fm"
+    },
+    {
+        "id": "0000000000106",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "ipspace.net",
+        "field": "title",
+        "match": "Podcast"
+    },
+    {
+        "id": "0000000000107",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "#MDRkl\u00e4rt:"
+    },
+    {
+        "id": "0000000000108",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Basketball"
+    },
+    {
+        "id": "0000000000109",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "DFB"
+    },
+    {
+        "id": "0000000000110",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "DFB-Pokal"
+    },
+    {
+        "id": "0000000000111",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Fussball"
+    },
+    {
+        "id": "0000000000112",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Fu\u00dfball"
+    },
+    {
+        "id": "0000000000113",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Hallescher FC"
+    },
+    {
+        "id": "0000000000114",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Leichtathletik:"
+    },
+    {
+        "id": "0000000000115",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Link des Audios"
+    },
+    {
+        "id": "0000000000116",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Link des Videos"
+    },
+    {
+        "id": "0000000000117",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Livestream"
+    },
+    {
+        "id": "0000000000118",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Para-WM"
+    },
+    {
+        "id": "0000000000119",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Pferdesport:"
+    },
+    {
+        "id": "0000000000120",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Podcast \"digital Leben\""
+    },
+    {
+        "id": "0000000000121",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Podcast \"digital Leben\":"
+    },
+    {
+        "id": "0000000000122",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Podcast:"
+    },
+    {
+        "id": "0000000000123",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Podcastserie"
+    },
+    {
+        "id": "0000000000124",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mdr.de",
+        "field": "title",
+        "match": "Schwimmen:"
+    },
+    {
+        "id": "0000000000125",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mf-bridge",
+        "field": "title",
+        "match": "Bridge encountered an unexpected situation"
+    },
+    {
+        "id": "0000000000126",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "mf-bridge",
+        "field": "title",
+        "match": "Bridge returned error 401"
+    },
+    {
+        "id": "0000000000127",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "monkeyuser.com",
+        "field": "title",
+        "match": "AdLitteram"
+    },
+    {
+        "id": "0000000000128",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "netzpolitik.org",
+        "field": "title",
+        "match": "KW"
+    },
+    {
+        "id": "0000000000129",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "netzpolitik.org",
+        "field": "title",
+        "match": "NPP"
+    },
+    {
+        "id": "0000000000130",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "netzpolitik.org",
+        "field": "title",
+        "match": "WM"
+    },
+    {
+        "id": "0000000000131",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "AIDA64 Version"
+    },
+    {
+        "id": "0000000000132",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Blender"
+    },
+    {
+        "id": "0000000000133",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "CrystalDiskInfo"
+    },
+    {
+        "id": "0000000000134",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "CrystalDiskMark"
+    },
+    {
+        "id": "0000000000135",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "DesktopOK"
+    },
+    {
+        "id": "0000000000136",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Display Driver Uninstaller (DDU)"
+    },
+    {
+        "id": "0000000000137",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "FreeCommander XE"
+    },
+    {
+        "id": "0000000000138",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "FurMark"
+    },
+    {
+        "id": "0000000000139",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "GPU\u2011Z"
+    },
+    {
+        "id": "0000000000140",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "HWiNFO64"
+    },
+    {
+        "id": "0000000000141",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "KiTTY"
+    },
+    {
+        "id": "0000000000142",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "LibreOffice 7"
+    },
+    {
+        "id": "0000000000143",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "MC Extractor"
+    },
+    {
+        "id": "0000000000144",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Media Player Classic"
+    },
+    {
+        "id": "0000000000145",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "NVCleanstall v"
+    },
+    {
+        "id": "0000000000146",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Neue Downloads der KW"
+    },
+    {
+        "id": "0000000000147",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Notepad++"
+    },
+    {
+        "id": "0000000000148",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Nvidia GeForce-Treiber"
+    },
+    {
+        "id": "0000000000149",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "PowerToys v"
+    },
+    {
+        "id": "0000000000150",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Prime95"
+    },
+    {
+        "id": "0000000000151",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Process Lasso"
+    },
+    {
+        "id": "0000000000152",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Quick CPU"
+    },
+    {
+        "id": "0000000000153",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Radeon Software Adrenalin"
+    },
+    {
+        "id": "0000000000154",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Rufus"
+    },
+    {
+        "id": "0000000000155",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Ryzen Master"
+    },
+    {
+        "id": "0000000000156",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Sysinternals Suite"
+    },
+    {
+        "id": "0000000000157",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "System Information Viewer Version"
+    },
+    {
+        "id": "0000000000158",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "SystemRescue"
+    },
+    {
+        "id": "0000000000159",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Thunderbird"
+    },
+    {
+        "id": "0000000000160",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "Universal Media Server"
+    },
+    {
+        "id": "0000000000161",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "WinRAR"
+    },
+    {
+        "id": "0000000000162",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "WinSCP"
+    },
+    {
+        "id": "0000000000163",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "ZenTimings"
+    },
+    {
+        "id": "0000000000164",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "planet3dnow.de",
+        "field": "title",
+        "match": "paint.net"
+    },
+    {
+        "id": "0000000000165",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "portuguesegeese.com",
+        "field": "title",
+        "match": "portuguesegeese.com"
+    },
+    {
+        "id": "0000000000166",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "reddit.com",
+        "field": "title",
+        "match": "UEFA"
+    },
+    {
+        "id": "0000000000167",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stackoverflow.blog",
+        "field": "title",
+        "match": "Podcast"
+    },
+    {
+        "id": "0000000000168",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stackoverflow.blog",
+        "field": "title",
+        "match": "The Overflow"
+    },
+    {
+        "id": "0000000000169",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "(Werbung)"
+    },
+    {
+        "id": "0000000000170",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "Basketball-WM"
+    },
+    {
+        "id": "0000000000171",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "Bundesliga"
+    },
+    {
+        "id": "0000000000172",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "Cloud-Gaming-R\u00fcckblick"
+    },
+    {
+        "id": "0000000000173",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "DAZN"
+    },
+    {
+        "id": "0000000000174",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "Disney+"
+    },
+    {
+        "id": "0000000000175",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "Eishockey"
+    },
+    {
+        "id": "0000000000176",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "Elon Musk"
+    },
+    {
+        "id": "0000000000177",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "FIFA"
+    },
+    {
+        "id": "0000000000178",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "FUSSBALL"
+    },
+    {
+        "id": "0000000000179",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "Formel 1"
+    },
+    {
+        "id": "0000000000180",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "Immer wieder sonntags KW"
+    },
+    {
+        "id": "0000000000181",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "MagentaSport"
+    },
+    {
+        "id": "0000000000182",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "Podcast"
+    },
+    {
+        "id": "0000000000183",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "R\u00fcckblick"
+    },
+    {
+        "id": "0000000000184",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "Sky Ticket"
+    },
+    {
+        "id": "0000000000185",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "Twitter"
+    },
+    {
+        "id": "0000000000186",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "WM 2022"
+    },
+    {
+        "id": "0000000000187",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "stadt-bremerhaven.de",
+        "field": "title",
+        "match": "eFootball"
+    },
+    {
+        "id": "0000000000188",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Ajax"
+    },
+    {
+        "id": "0000000000189",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "DFB-"
+    },
+    {
+        "id": "0000000000190",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "St. Pauli"
+    },
+    {
+        "id": "0000000000191",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Hoene\u00df:"
+    },
+    {
+        "id": "0000000000192",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "2. Liga:"
+    },
+    {
+        "id": "0000000000193",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Schalke"
+    },
+    {
+        "id": "0000000000194",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "CB-Funk-Podcast"
+    },
+    {
+        "id": "0000000000195",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Kinderfu\u00dfball"
+    },
+    {
+        "id": "0000000000196",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Podcast \"Lanz & Precht\""
+    },
+    {
+        "id": "0000000000197",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "NBA:"
+    },
+    {
+        "id": "0000000000198",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "\"Ich bin ein Star\""
+    },
+    {
+        "id": "0000000000199",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "\"Tatort\""
+    },
+    {
+        "id": "0000000000200",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "-Spiel"
+    },
+    {
+        "id": "0000000000201",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "1. FC Kaiserslautern:"
+    },
+    {
+        "id": "0000000000202",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "1. FC K\u00f6ln"
+    },
+    {
+        "id": "0000000000203",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "1. FC N\u00fcrnberg"
+    },
+    {
+        "id": "0000000000204",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "1. FC Union"
+    },
+    {
+        "id": "0000000000205",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "1860 M\u00fcnchen"
+    },
+    {
+        "id": "0000000000206",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "1:1"
+    },
+    {
+        "id": "0000000000207",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "2. Liga"
+    },
+    {
+        "id": "0000000000208",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "3. Liga"
+    },
+    {
+        "id": "0000000000209",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "ATP Finals"
+    },
+    {
+        "id": "0000000000210",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "ATP-"
+    },
+    {
+        "id": "0000000000211",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Achtelfinale"
+    },
+    {
+        "id": "0000000000212",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Afrika-Cup:"
+    },
+    {
+        "id": "0000000000213",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Alonso:"
+    },
+    {
+        "id": "0000000000214",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Alphonso Davies"
+    },
+    {
+        "id": "0000000000215",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "American Football:"
+    },
+    {
+        "id": "0000000000216",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Amos Pieper"
+    },
+    {
+        "id": "0000000000217",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Arminia Bielefeld:"
+    },
+    {
+        "id": "0000000000218",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Athlet"
+    },
+    {
+        "id": "0000000000219",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Australian Open"
+    },
+    {
+        "id": "0000000000220",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Australian Open:"
+    },
+    {
+        "id": "0000000000221",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Ausw\u00e4rtstor"
+    },
+    {
+        "id": "0000000000222",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "BVB"
+    },
+    {
+        "id": "0000000000223",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Bar\u00e7a"
+    },
+    {
+        "id": "0000000000224",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Baseball"
+    },
+    {
+        "id": "0000000000225",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Basketball"
+    },
+    {
+        "id": "0000000000226",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Basketball-WM"
+    },
+    {
+        "id": "0000000000227",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Bayern"
+    },
+    {
+        "id": "0000000000228",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Belenenses"
+    },
+    {
+        "id": "0000000000229",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Berlinale"
+    },
+    {
+        "id": "0000000000230",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Biathlon"
+    },
+    {
+        "id": "0000000000231",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Boateng"
+    },
+    {
+        "id": "0000000000232",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Bobfahr"
+    },
+    {
+        "id": "0000000000233",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Borussia"
+    },
+    {
+        "id": "0000000000234",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Borussia Dortmund"
+    },
+    {
+        "id": "0000000000235",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Borussia Dortmund:"
+    },
+    {
+        "id": "0000000000236",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Bundesliga"
+    },
+    {
+        "id": "0000000000237",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Bundestrainer"
+    },
+    {
+        "id": "0000000000238",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Carlos Alcaraz"
+    },
+    {
+        "id": "0000000000239",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Champions League:"
+    },
+    {
+        "id": "0000000000240",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Champions-League"
+    },
+    {
+        "id": "0000000000241",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Chelsea"
+    },
+    {
+        "id": "0000000000242",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Claudio Pizarro"
+    },
+    {
+        "id": "0000000000243",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Claudio Pizarro:"
+    },
+    {
+        "id": "0000000000244",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Conference League"
+    },
+    {
+        "id": "0000000000245",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Conference-League"
+    },
+    {
+        "id": "0000000000246",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "DFB"
+    },
+    {
+        "id": "0000000000247",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "DFB-Elf"
+    },
+    {
+        "id": "0000000000248",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "DFB-Frauen:"
+    },
+    {
+        "id": "0000000000249",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "DFB-Pokal"
+    },
+    {
+        "id": "0000000000250",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "DFB:"
+    },
+    {
+        "id": "0000000000251",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "DFL"
+    },
+    {
+        "id": "0000000000252",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "DFL-Supercup"
+    },
+    {
+        "id": "0000000000253",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Daniil Medwedew"
+    },
+    {
+        "id": "0000000000254",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Darts"
+    },
+    {
+        "id": "0000000000255",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Darts-WM:"
+    },
+    {
+        "id": "0000000000256",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Davis Cup"
+    },
+    {
+        "id": "0000000000257",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Derby"
+    },
+    {
+        "id": "0000000000258",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Deutsche Fu\u00dfball Liga"
+    },
+    {
+        "id": "0000000000259",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Deutsche Nationalmannschaft"
+    },
+    {
+        "id": "0000000000260",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Deutsche U21:"
+    },
+    {
+        "id": "0000000000261",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Djokovic"
+    },
+    {
+        "id": "0000000000262",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Dressur-Weltmeister"
+    },
+    {
+        "id": "0000000000263",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Dritte Liga:"
+    },
+    {
+        "id": "0000000000264",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Drittliga"
+    },
+    {
+        "id": "0000000000265",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Dschungelcamp"
+    },
+    {
+        "id": "0000000000266",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "EM-Aus"
+    },
+    {
+        "id": "0000000000267",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "EM:"
+    },
+    {
+        "id": "0000000000268",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "ESC-Finale"
+    },
+    {
+        "id": "0000000000269",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "ESC-Vorentscheid"
+    },
+    {
+        "id": "0000000000270",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Eintracht"
+    },
+    {
+        "id": "0000000000271",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Eintracht Frankfurt"
+    },
+    {
+        "id": "0000000000272",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Eisb\u00e4ren Berlin"
+    },
+    {
+        "id": "0000000000273",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Eishockey"
+    },
+    {
+        "id": "0000000000274",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Eishockey-WM:"
+    },
+    {
+        "id": "0000000000275",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Eishockey:"
+    },
+    {
+        "id": "0000000000276",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Eiskunstl"
+    },
+    {
+        "id": "0000000000277",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Eisschnelllauf"
+    },
+    {
+        "id": "0000000000278",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Elfmeter"
+    },
+    {
+        "id": "0000000000279",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Emil Forsberg"
+    },
+    {
+        "id": "0000000000280",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Englisches Nationalteam:"
+    },
+    {
+        "id": "0000000000281",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Er\u00f6ffnungsspiel"
+    },
+    {
+        "id": "0000000000282",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Euroleague"
+    },
+    {
+        "id": "0000000000283",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Europa League"
+    },
+    {
+        "id": "0000000000284",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Europa-League"
+    },
+    {
+        "id": "0000000000285",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Europameister"
+    },
+    {
+        "id": "0000000000286",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Europapokal"
+    },
+    {
+        "id": "0000000000287",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "European Championships"
+    },
+    {
+        "id": "0000000000288",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Eurovision Song Contest"
+    },
+    {
+        "id": "0000000000289",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Eurovision Song Contest:"
+    },
+    {
+        "id": "0000000000290",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "FC Augsburg"
+    },
+    {
+        "id": "0000000000291",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "FC Barcelona"
+    },
+    {
+        "id": "0000000000292",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "FC Chelsea:"
+    },
+    {
+        "id": "0000000000293",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "FC Sevilla"
+    },
+    {
+        "id": "0000000000294",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fifa"
+    },
+    {
+        "id": "0000000000295",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fifa:"
+    },
+    {
+        "id": "0000000000296",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Formel 1"
+    },
+    {
+        "id": "0000000000297",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Frankfurt"
+    },
+    {
+        "id": "0000000000298",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "French Open"
+    },
+    {
+        "id": "0000000000299",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fussball"
+    },
+    {
+        "id": "0000000000300",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fu\u00dfball in England:"
+    },
+    {
+        "id": "0000000000301",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fu\u00dfball-EM"
+    },
+    {
+        "id": "0000000000302",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fu\u00dfball-Verband"
+    },
+    {
+        "id": "0000000000303",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fu\u00dfball-WM"
+    },
+    {
+        "id": "0000000000304",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fu\u00dfball-Weltmeister"
+    },
+    {
+        "id": "0000000000305",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fu\u00dfball-Weltmeister"
+    },
+    {
+        "id": "0000000000306",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fu\u00dfball-Weltmeisterschaft"
+    },
+    {
+        "id": "0000000000307",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fu\u00dfball:"
+    },
+    {
+        "id": "0000000000308",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fu\u00dfballerinnen"
+    },
+    {
+        "id": "0000000000309",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fu\u00dfballern"
+    },
+    {
+        "id": "0000000000310",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fu\u00dfballtorwart"
+    },
+    {
+        "id": "0000000000311",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Fu\u00dfballverband"
+    },
+    {
+        "id": "0000000000312",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Galopp"
+    },
+    {
+        "id": "0000000000313",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Gerard L\u00f3pez"
+    },
+    {
+        "id": "0000000000314",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Gladbach"
+    },
+    {
+        "id": "0000000000315",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Glasgow Rangers"
+    },
+    {
+        "id": "0000000000316",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Golf:"
+    },
+    {
+        "id": "0000000000317",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Guardiola"
+    },
+    {
+        "id": "0000000000318",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "HSV-Verteidiger"
+    },
+    {
+        "id": "0000000000319",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Hamburger SV"
+    },
+    {
+        "id": "0000000000320",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Handball-EM:"
+    },
+    {
+        "id": "0000000000321",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Handball-WM"
+    },
+    {
+        "id": "0000000000322",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Hannover 96:"
+    },
+    {
+        "id": "0000000000323",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Heldenfu\u00dfball"
+    },
+    {
+        "id": "0000000000324",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Hertha BSC"
+    },
+    {
+        "id": "0000000000325",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Hertha BSC:"
+    },
+    {
+        "id": "0000000000326",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Hinspiel"
+    },
+    {
+        "id": "0000000000327",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Hochspring"
+    },
+    {
+        "id": "0000000000328",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Hockey"
+    },
+    {
+        "id": "0000000000329",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Hockey-EM"
+    },
+    {
+        "id": "0000000000330",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Hockey-WM"
+    },
+    {
+        "id": "0000000000331",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Ibrahimovi\u0107"
+    },
+    {
+        "id": "0000000000332",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Infantino"
+    },
+    {
+        "id": "0000000000333",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Inter Mailand"
+    },
+    {
+        "id": "0000000000334",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Joachim L\u00f6w"
+    },
+    {
+        "id": "0000000000335",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Jugendwort des Jahres"
+    },
+    {
+        "id": "0000000000336",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Julian Nagelsmann"
+    },
+    {
+        "id": "0000000000337",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Juve"
+    },
+    {
+        "id": "0000000000338",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Kevin Trapp"
+    },
+    {
+        "id": "0000000000339",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Klopp"
+    },
+    {
+        "id": "0000000000340",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Klosterhalfen"
+    },
+    {
+        "id": "0000000000341",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Kolumne"
+    },
+    {
+        "id": "0000000000342",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Kroos"
+    },
+    {
+        "id": "0000000000343",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "LIV Tour"
+    },
+    {
+        "id": "0000000000344",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "La Boum:"
+    },
+    {
+        "id": "0000000000345",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "La Liga"
+    },
+    {
+        "id": "0000000000346",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Lazio Rom"
+    },
+    {
+        "id": "0000000000347",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Leichtathletik"
+    },
+    {
+        "id": "0000000000348",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Leichtathletik"
+    },
+    {
+        "id": "0000000000349",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Leichtathletik-WM"
+    },
+    {
+        "id": "0000000000350",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Leichtathletik-WM:"
+    },
+    {
+        "id": "0000000000351",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Leichtathletik-Weltmeisterschaft"
+    },
+    {
+        "id": "0000000000352",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Leichtathletik:"
+    },
+    {
+        "id": "0000000000353",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Leon Draisaitl"
+    },
+    {
+        "id": "0000000000354",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Leverkusen"
+    },
+    {
+        "id": "0000000000355",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Lewandowski"
+    },
+    {
+        "id": "0000000000356",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Lewis Hamilton"
+    },
+    {
+        "id": "0000000000357",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Linda Dallmann"
+    },
+    {
+        "id": "0000000000358",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Los Angeles Lakers"
+    },
+    {
+        "id": "0000000000359",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "L\u00e4nderspiel"
+    },
+    {
+        "id": "0000000000360",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "ManCity"
+    },
+    {
+        "id": "0000000000361",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "ManUnited"
+    },
+    {
+        "id": "0000000000362",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Manchester City"
+    },
+    {
+        "id": "0000000000363",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Manchester United"
+    },
+    {
+        "id": "0000000000364",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Mancini"
+    },
+    {
+        "id": "0000000000365",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Markus Weinzierl"
+    },
+    {
+        "id": "0000000000366",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Mbapp\u00e9"
+    },
+    {
+        "id": "0000000000367",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Messi"
+    },
+    {
+        "id": "0000000000368",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Miroslav Klose"
+    },
+    {
+        "id": "0000000000369",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Monza"
+    },
+    {
+        "id": "0000000000370",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Mourinho"
+    },
+    {
+        "id": "0000000000371",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Musiala"
+    },
+    {
+        "id": "0000000000372",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "NBA"
+    },
+    {
+        "id": "0000000000373",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "NFL"
+    },
+    {
+        "id": "0000000000374",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Nadal"
+    },
+    {
+        "id": "0000000000375",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Nationalmannschaft"
+    },
+    {
+        "id": "0000000000376",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Nationalspieler"
+    },
+    {
+        "id": "0000000000377",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Nationalteam"
+    },
+    {
+        "id": "0000000000378",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Nations League"
+    },
+    {
+        "id": "0000000000379",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Netzkolumne"
+    },
+    {
+        "id": "0000000000380",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Neujahrsspringen"
+    },
+    {
+        "id": "0000000000381",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Neymar"
+    },
+    {
+        "id": "0000000000382",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Niklas S\u00fcle:"
+    },
+    {
+        "id": "0000000000383",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Nordische Ski-WM"
+    },
+    {
+        "id": "0000000000384",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "OSC Lille"
+    },
+    {
+        "id": "0000000000385",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Olympia"
+    },
+    {
+        "id": "0000000000386",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Olympia 2022:"
+    },
+    {
+        "id": "0000000000387",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Olympia-Ticker:"
+    },
+    {
+        "id": "0000000000388",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Olympia:"
+    },
+    {
+        "id": "0000000000389",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Olympische Spiele:"
+    },
+    {
+        "id": "0000000000390",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Olympische Winterspiele:"
+    },
+    {
+        "id": "0000000000391",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Olympischen Spielen:"
+    },
+    {
+        "id": "0000000000392",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "PSV Eindhoven"
+    },
+    {
+        "id": "0000000000393",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Paralympics:"
+    },
+    {
+        "id": "0000000000394",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Paris Saint-Germain"
+    },
+    {
+        "id": "0000000000395",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Pep Guardiola"
+    },
+    {
+        "id": "0000000000396",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Pferdesport"
+    },
+    {
+        "id": "0000000000397",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Playoffs"
+    },
+    {
+        "id": "0000000000398",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Podcast-Tipps"
+    },
+    {
+        "id": "0000000000399",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Podcasts-Tipps im"
+    },
+    {
+        "id": "0000000000400",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Pokal-Sieg"
+    },
+    {
+        "id": "0000000000401",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Pokalspiel"
+    },
+    {
+        "id": "0000000000402",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Polizeiruf 110"
+    },
+    {
+        "id": "0000000000403",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Prantls Blick:"
+    },
+    {
+        "id": "0000000000404",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Premier"
+    },
+    {
+        "id": "0000000000405",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Qualifikationsspiel"
+    },
+    {
+        "id": "0000000000406",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "RB Leipzig"
+    },
+    {
+        "id": "0000000000407",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "RB Leipzig:"
+    },
+    {
+        "id": "0000000000408",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Raducanu"
+    },
+    {
+        "id": "0000000000409",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Rangnick"
+    },
+    {
+        "id": "0000000000410",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Real Madrid"
+    },
+    {
+        "id": "0000000000411",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Reit-WM"
+    },
+    {
+        "id": "0000000000412",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Reiten"
+    },
+    {
+        "id": "0000000000413",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Relegation"
+    },
+    {
+        "id": "0000000000414",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Rennrodl"
+    },
+    {
+        "id": "0000000000415",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Robin Gosens"
+    },
+    {
+        "id": "0000000000416",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Rodel-"
+    },
+    {
+        "id": "0000000000417",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Rodeln:"
+    },
+    {
+        "id": "0000000000418",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Ronaldo"
+    },
+    {
+        "id": "0000000000419",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Rudern"
+    },
+    {
+        "id": "0000000000420",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "SC Freiburg"
+    },
+    {
+        "id": "0000000000421",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "ST. Pauli"
+    },
+    {
+        "id": "0000000000422",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "SZ-Audioreihe"
+    },
+    {
+        "id": "0000000000423",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "SZ-Kolumne \"Bester Dinge\":"
+    },
+    {
+        "id": "0000000000424",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "SZ-Kolumne \"Mitten in ...\":"
+    },
+    {
+        "id": "0000000000425",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "SZ-Plus-Abonnenten lesen auch"
+    },
+    {
+        "id": "0000000000426",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "SZ-Podcast"
+    },
+    {
+        "id": "0000000000427",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "SZ-Podcast \"Und nun zum Sport\":"
+    },
+    {
+        "id": "0000000000428",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Schach-WM"
+    },
+    {
+        "id": "0000000000429",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Schalke"
+    },
+    {
+        "id": "0000000000430",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Schiedsrichter"
+    },
+    {
+        "id": "0000000000431",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Schwimm-WM"
+    },
+    {
+        "id": "0000000000432",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Schwimmen:"
+    },
+    {
+        "id": "0000000000433",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Serien des Monats"
+    },
+    {
+        "id": "0000000000434",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Ski alpin"
+    },
+    {
+        "id": "0000000000435",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Ski alpin:"
+    },
+    {
+        "id": "0000000000436",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Ski-WM"
+    },
+    {
+        "id": "0000000000437",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Ski-Weltcup"
+    },
+    {
+        "id": "0000000000438",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Ski-Weltverband"
+    },
+    {
+        "id": "0000000000439",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Ski-nordisch-WM:"
+    },
+    {
+        "id": "0000000000440",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Skilanglauf"
+    },
+    {
+        "id": "0000000000441",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Skirenn"
+    },
+    {
+        "id": "0000000000442",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Skispringen"
+    },
+    {
+        "id": "0000000000443",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Slalomfahr"
+    },
+    {
+        "id": "0000000000444",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Stanley Cup"
+    },
+    {
+        "id": "0000000000445",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Stimmen zum Spiel"
+    },
+    {
+        "id": "0000000000446",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "St\u00fcrmer"
+    },
+    {
+        "id": "0000000000447",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Super Bowl"
+    },
+    {
+        "id": "0000000000448",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Super Bowl Sunday:"
+    },
+    {
+        "id": "0000000000449",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Super League"
+    },
+    {
+        "id": "0000000000450",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Supercup"
+    },
+    {
+        "id": "0000000000451",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Supercup live"
+    },
+    {
+        "id": "0000000000452",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "TSG Hoffenheim"
+    },
+    {
+        "id": "0000000000453",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Tabellenspitze"
+    },
+    {
+        "id": "0000000000454",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Tatort M\u00fcnchen:"
+    },
+    {
+        "id": "0000000000455",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Tatort aus"
+    },
+    {
+        "id": "0000000000456",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Team-WM"
+    },
+    {
+        "id": "0000000000457",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Teamspringen"
+    },
+    {
+        "id": "0000000000458",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Tennis"
+    },
+    {
+        "id": "0000000000459",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Tennis:"
+    },
+    {
+        "id": "0000000000460",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Thomas M\u00fcller"
+    },
+    {
+        "id": "0000000000461",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Three Lions:"
+    },
+    {
+        "id": "0000000000462",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Timo Boll"
+    },
+    {
+        "id": "0000000000463",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Tischtennis WM:"
+    },
+    {
+        "id": "0000000000464",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Toni Kroos"
+    },
+    {
+        "id": "0000000000465",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Tore"
+    },
+    {
+        "id": "0000000000466",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Torh\u00fcter"
+    },
+    {
+        "id": "0000000000467",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Tottenham"
+    },
+    {
+        "id": "0000000000468",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Transfermarkt"
+    },
+    {
+        "id": "0000000000469",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Trikots"
+    },
+    {
+        "id": "0000000000470",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Tuchel"
+    },
+    {
+        "id": "0000000000471",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Turn-WM"
+    },
+    {
+        "id": "0000000000472",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "T\u00fcrkg\u00fcc\u00fc M\u00fcnchen"
+    },
+    {
+        "id": "0000000000473",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "U21-Europameisterschaft"
+    },
+    {
+        "id": "0000000000474",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "US Open"
+    },
+    {
+        "id": "0000000000475",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Ukrainisches Tagebuch"
+    },
+    {
+        "id": "0000000000476",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Uli Hoene\u00df"
+    },
+    {
+        "id": "0000000000477",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Union Berlin"
+    },
+    {
+        "id": "0000000000478",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Urs Fischer"
+    },
+    {
+        "id": "0000000000479",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "VfB"
+    },
+    {
+        "id": "0000000000480",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "VfB Stuttgart"
+    },
+    {
+        "id": "0000000000481",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "VfL"
+    },
+    {
+        "id": "0000000000482",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "VfL Wolfsburg"
+    },
+    {
+        "id": "0000000000483",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Vierschanzentournee"
+    },
+    {
+        "id": "0000000000484",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Viertelfinal"
+    },
+    {
+        "id": "0000000000485",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Viertelfinale"
+    },
+    {
+        "id": "0000000000486",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Volleyball-WM:"
+    },
+    {
+        "id": "0000000000487",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Vuskovic"
+    },
+    {
+        "id": "0000000000488",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "WM-"
+    },
+    {
+        "id": "0000000000489",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "WM-Kader"
+    },
+    {
+        "id": "0000000000490",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "WM-Qualifikation"
+    },
+    {
+        "id": "0000000000491",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "WM-Silber"
+    },
+    {
+        "id": "0000000000492",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "WM-Ticket"
+    },
+    {
+        "id": "0000000000493",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "WM-Titel"
+    },
+    {
+        "id": "0000000000494",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "WM:"
+    },
+    {
+        "id": "0000000000495",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Weitspr"
+    },
+    {
+        "id": "0000000000496",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Werder"
+    },
+    {
+        "id": "0000000000497",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Wiegman"
+    },
+    {
+        "id": "0000000000498",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Wimbledon"
+    },
+    {
+        "id": "0000000000499",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Wintersport:"
+    },
+    {
+        "id": "0000000000500",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "Zlatan"
+    },
+    {
+        "id": "0000000000501",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "leute:"
+    },
+    {
+        "id": "0000000000502",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "quoted."
+    },
+    {
+        "id": "0000000000503",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "torwart"
+    },
+    {
+        "id": "0000000000504",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "zweite Liga"
+    },
+    {
+        "id": "0000000000505",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "zweiten Liga"
+    },
+    {
+        "id": "0000000000506",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "sueddeutsche.de",
+        "field": "title",
+        "match": "\u00fcckenkemper"
+    },
+    {
+        "id": "0000000000507",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "11KM"
+    },
+    {
+        "id": "0000000000508",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Achtelfinale"
+    },
+    {
+        "id": "0000000000509",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Alpine-Super-Kombination:"
+    },
+    {
+        "id": "0000000000510",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "American Football:"
+    },
+    {
+        "id": "0000000000511",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Auslandspodcast"
+    },
+    {
+        "id": "0000000000512",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "BVB"
+    },
+    {
+        "id": "0000000000513",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Bahnrad"
+    },
+    {
+        "id": "0000000000514",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Basketball"
+    },
+    {
+        "id": "0000000000515",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Bayern M\u00fcnchen"
+    },
+    {
+        "id": "0000000000516",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Biathl"
+    },
+    {
+        "id": "0000000000517",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Boateng"
+    },
+    {
+        "id": "0000000000518",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Bremer SV"
+    },
+    {
+        "id": "0000000000519",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Bundesliga"
+    },
+    {
+        "id": "0000000000520",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Bundesliga:"
+    },
+    {
+        "id": "0000000000521",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Carlsen"
+    },
+    {
+        "id": "0000000000522",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Champions League"
+    },
+    {
+        "id": "0000000000523",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "DFB"
+    },
+    {
+        "id": "0000000000524",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "DFB-Bundesgericht"
+    },
+    {
+        "id": "0000000000525",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Darts-"
+    },
+    {
+        "id": "0000000000526",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Darts-WM:"
+    },
+    {
+        "id": "0000000000527",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Dressurreit"
+    },
+    {
+        "id": "0000000000528",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "EM:"
+    },
+    {
+        "id": "0000000000529",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "ESC-Finale"
+    },
+    {
+        "id": "0000000000530",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Eintracht"
+    },
+    {
+        "id": "0000000000531",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Eishockey-WM:"
+    },
+    {
+        "id": "0000000000532",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Eishockey:"
+    },
+    {
+        "id": "0000000000533",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "European Championships"
+    },
+    {
+        "id": "0000000000534",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Eurovision Song Contest"
+    },
+    {
+        "id": "0000000000535",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Fashion Week"
+    },
+    {
+        "id": "0000000000536",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Football"
+    },
+    {
+        "id": "0000000000537",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Formel 1:"
+    },
+    {
+        "id": "0000000000538",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Formel-1"
+    },
+    {
+        "id": "0000000000539",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Freiwasser-"
+    },
+    {
+        "id": "0000000000540",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Fu\u00dfball"
+    },
+    {
+        "id": "0000000000541",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Fu\u00dfball-Bundesliga"
+    },
+    {
+        "id": "0000000000542",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Fu\u00dfball-EM"
+    },
+    {
+        "id": "0000000000543",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Gladbach"
+    },
+    {
+        "id": "0000000000544",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Halbfinale"
+    },
+    {
+        "id": "0000000000545",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Handball-EM:"
+    },
+    {
+        "id": "0000000000546",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Handball:"
+    },
+    {
+        "id": "0000000000547",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Hertha BSC"
+    },
+    {
+        "id": "0000000000548",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Hockey"
+    },
+    {
+        "id": "0000000000549",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Hoffenheim"
+    },
+    {
+        "id": "0000000000550",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Klippenspring"
+    },
+    {
+        "id": "0000000000551",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Klosterhalfen"
+    },
+    {
+        "id": "0000000000552",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Kostic"
+    },
+    {
+        "id": "0000000000553",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Langlauf"
+    },
+    {
+        "id": "0000000000554",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Langl\u00e4uf"
+    },
+    {
+        "id": "0000000000555",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Leichtathletik-WM:"
+    },
+    {
+        "id": "0000000000556",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Live:"
+    },
+    {
+        "id": "0000000000557",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Liveblog"
+    },
+    {
+        "id": "0000000000558",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Livestream"
+    },
+    {
+        "id": "0000000000559",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Mehrkamp"
+    },
+    {
+        "id": "0000000000560",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Nationalmannschaft"
+    },
+    {
+        "id": "0000000000561",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Nationaltrainer"
+    },
+    {
+        "id": "0000000000562",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Nepomnjaschtschi"
+    },
+    {
+        "id": "0000000000563",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Neujahrsspringen"
+    },
+    {
+        "id": "0000000000564",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Neymar"
+    },
+    {
+        "id": "0000000000565",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Nordische Kombination:"
+    },
+    {
+        "id": "0000000000566",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Olympia-"
+    },
+    {
+        "id": "0000000000567",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Olympia:"
+    },
+    {
+        "id": "0000000000568",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Olympische Winterspiele:"
+    },
+    {
+        "id": "0000000000569",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Olympischen Winterspiele:"
+    },
+    {
+        "id": "0000000000570",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Paralympics"
+    },
+    {
+        "id": "0000000000571",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Podcast"
+    },
+    {
+        "id": "0000000000572",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Podcast 11KM"
+    },
+    {
+        "id": "0000000000573",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Profisport"
+    },
+    {
+        "id": "0000000000574",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "RKI meldet"
+    },
+    {
+        "id": "0000000000575",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Remis"
+    },
+    {
+        "id": "0000000000576",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Riesenslalom:"
+    },
+    {
+        "id": "0000000000577",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Rodel-"
+    },
+    {
+        "id": "0000000000578",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Schach-WM:"
+    },
+    {
+        "id": "0000000000579",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Schalke"
+    },
+    {
+        "id": "0000000000580",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Schwimm-EM"
+    },
+    {
+        "id": "0000000000581",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Schwimm-WM:"
+    },
+    {
+        "id": "0000000000582",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Ski Alpin:"
+    },
+    {
+        "id": "0000000000583",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Ski-WM"
+    },
+    {
+        "id": "0000000000584",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Skispring"
+    },
+    {
+        "id": "0000000000585",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Sondersendung:"
+    },
+    {
+        "id": "0000000000586",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Springreiter"
+    },
+    {
+        "id": "0000000000587",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Sprintstaffel"
+    },
+    {
+        "id": "0000000000588",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Stefan Kuntz"
+    },
+    {
+        "id": "0000000000589",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Tabellenspitze"
+    },
+    {
+        "id": "0000000000590",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Tennis"
+    },
+    {
+        "id": "0000000000591",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Trainerwechsel"
+    },
+    {
+        "id": "0000000000592",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Tuchel"
+    },
+    {
+        "id": "0000000000593",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "UEFA"
+    },
+    {
+        "id": "0000000000594",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Verstappen"
+    },
+    {
+        "id": "0000000000595",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Viererbob"
+    },
+    {
+        "id": "0000000000596",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Vierschanzentournee"
+    },
+    {
+        "id": "0000000000597",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Viertelfinale"
+    },
+    {
+        "id": "0000000000598",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Volleyball-WM"
+    },
+    {
+        "id": "0000000000599",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "WM-Auftakt"
+    },
+    {
+        "id": "0000000000600",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "WM-Finale:"
+    },
+    {
+        "id": "0000000000601",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "WM-Gold"
+    },
+    {
+        "id": "0000000000602",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "WM-Qualifikation"
+    },
+    {
+        "id": "0000000000603",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "WM-Viertelfinale"
+    },
+    {
+        "id": "0000000000604",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Wasserspringen:"
+    },
+    {
+        "id": "0000000000605",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Weitsprung"
+    },
+    {
+        "id": "0000000000606",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Weltcup"
+    },
+    {
+        "id": "0000000000607",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Weltcup-Sieg"
+    },
+    {
+        "id": "0000000000608",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Weltmeister"
+    },
+    {
+        "id": "0000000000609",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Werders"
+    },
+    {
+        "id": "0000000000610",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Zukunftspodcast"
+    },
+    {
+        "id": "0000000000611",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "tagesschau.de",
+        "field": "title",
+        "match": "Zweierbob:"
+    },
+    {
+        "id": "0000000000612",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "theguardian.com",
+        "field": "title",
+        "match": "Guardiola"
+    },
+    {
+        "id": "0000000000613",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "theguardian.com",
+        "field": "title",
+        "match": "Manchester United"
+    },
+    {
+        "id": "0000000000614",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "theycantalk.com",
+        "field": "title",
+        "match": "Tinyview"
+    },
+    {
+        "id": "0000000000615",
+        "created": "2023-11-25 12:45:01",
+        "updated": "2023-11-25 12:45:01",
+        "filtered_count": 0,
+        "feed_id": "321",
+        "feed_title": "toonhole.com",
+        "field": "title",
+        "match": "Bernai"
+    }
+]

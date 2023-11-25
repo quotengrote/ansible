@@ -1,0 +1,140 @@
+221 Mr. Lovenstein
+365 Otterly Human
+344 Recent Writing - Mark Story
+285 The New Stack
+208 CommitStrip
+346 ADHDinos
+325 NetworkProfile.org
+272 Richtersicht
+287 top scoring links : SCPDeclassified
+302 1lumen.com
+238 9to5Linux
+317 Anonleaks
+357 apenwarr
+334 APNIC Blog
+240 Arms Control Wonk
+321 Astral Codex Ten
+387 Augen geradeaus!
+242 Augen geradeaus!
+304 Austin's Nerdy Things
+243 Axios
+244 bit-booster
+382 Blog on Dalton Durst
+326 bundeswehr-journal
+375 Burg Theater - Aktuelles
+195 But a Jape
+380 but she's a girl...
+245 Cabin Porn
+246 Caschys Blog
+206 Channelate
+322 Chefkoch.de: Rezepte des Tages
+247 Chris Custom Works
+248 Colossal
+227 ComputerBase
+209 Danby Draws Comics
+315 Dave's Tech Reviews
+249 DevOps Dudes - Medium
+250 Die Gewissensfrage - SZ-Magazin
+376 Discord Blog
+300 Dwarf Fortress Development Log
+251 EleFacts
+309 Everyday Commentary
+253 Experiencing Technology
+360 Explosm.net
+343 extrafabulouscomics
+213 Extra Ordinary
+354 False Knees
+254 Fefes Blog
+255 Finanztip.de
+390 Freifall Xpress
+228 Golem.de
+371 GoodBearComics©2021
+369 Graphography
+303 Grizzly's Reviews
+338 Hardwareluxx RSS Feed
+226 heise online News
+215 Invisible Bread
+368 IPng Networks
+356 ipSpace.net Blog Posts
+389 irq5.io
+216 Jake Likes Onions
+348 Janes news RSS
+308 Jorge Israel Peña
+257 Josef Adamčík
+217 Joy of Tech (RSS Feed)
+258 Keyboard Builders' Digest
+386 Knot Handcrafted Knives
+336 kofler.info
+335 Krebs on Security
+260 Last Place Comics
+297 Last Place Comics
+261 law blog
+262 Lexikaliker
+263 lxkr
+219 Mandatory Roller Coaster
+264 Masterzen&#39;s Blog
+352 Michael Stapelbergs Website
+265 MikroTik blog
+267 MonkeyUser
+220 Moonbeard
+333 Munin Plugin Gallery
+222 Nedroid Picture Diary 2
+268 Netflix TechBlog - Medium
+269 Netzfrequenz.info
+229 netzpolitik.org
+318 News Desk: Breaking News, Reporting, and Political Analysis
+270 Outdoormesser.net
+345 Pid Eins
+363 Pizza Cake Comics
+271 Planet 3DNow!
+223 Poorly Drawn Lines
+342 PortugueseGeese
+305 Posteo.de - Aktuelles
+307 Posts on YetiOps
+381 Posts on λ ryan. himmelwright. net
+329 Recent Commits to contrib:master
+331 Recent Commits to xdripswift:master
+353 Release notes from sanoid
+330 Release notes from xdripswift
+340 Rühlemann's Blog
+320 Sachsen-Anhalt | Nachrichten, Videos, Audios und Fotos | MDR.DE
+385 Sarah's
+Scribbles
+196 Saturday Morning Breakfast Cereal
+273 scinexx | Das Wissensmagazin
+274 ServeTheHome
+275 Shady Characters
+276 SPARTANAT
+277 splitkb.com Blog - Everything split keyboard.
+294 Stack Overflow Blog
+378 Stadtmagazin DATEs
+278 stallmer
+197 sticky comics
+279 Stories by Dane Bulat on Medium
+280 Stories by Erez Zukerman on Medium
+355 Stories by Pinterest Engineering on Medium
+296 Switch And Click
+230 tagesschau.de - Die Nachrichten der ARD
+281 Techniktagebuch
+282 The Bartleby
+301 The GitHub Blog
+370 The Jenkins
+388 The Life of Kenneth
+198 The Perry Bible Fellowship
+393 The War Zone | The Drive
+199 they can talk
+364 Things in Squares
+286 Thomas Baart
+295 Toonhole
+231 Topthemen - SZ.de
+310 Updates from the Tor Project
+202 VectorBelly
+293 War Is Boring
+358 Weberblog.net
+383 We're Out of Cornflakes
+290 Wikipedia - Beobachtungsliste [de]
+299 Windows Command Line
+203 Wumo
+204 xkcd
+291 Zak Reviews
+292 ZeroAir Reviews
