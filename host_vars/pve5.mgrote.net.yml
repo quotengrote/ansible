@@ -67,8 +67,6 @@ zfs_datasets: # DatenPools werden hier nicht verwaltet
   - dataset: hdd_data_raidz/bilder
     state: present
     recordsize: 1M
-  - dataset: hdd_data_raidz/hm
-    state: present
   - dataset: hdd_data_raidz/scans
     state: present
   - dataset: hdd_data_raidz/restic
@@ -121,10 +119,6 @@ sanoid_datasets:
     recursive: 'yes'
     snapshots: true
   - path: hdd_data_raidz/bilder
-    recursive: 'no' # noqa yaml[truthy]
-    snapshots: true
-    template: '14tage'
-  - path: hdd_data_raidz/hm
     recursive: 'no' # noqa yaml[truthy]
     snapshots: true
     template: '14tage'
@@ -204,10 +198,6 @@ pve_bind_mounts:
     mp_nr: 7
     mp_path_host: /hdd_data_raidz/bilder
     mp_path_guest: /shares_bilder
-  - vmid: 115
-    mp_nr: 8
-    mp_path_host: /hdd_data_raidz/hm
-    mp_path_guest: /shares_hm
   - vmid: 115
     mp_nr: 9
     mp_path_host: /hdd_data_raidz/scans
