@@ -17,7 +17,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - grafana-datasources.yml:/etc/grafana/provisioning/datasources/datasources.yaml
+      - ./grafana-datasources.yml:/etc/grafana/provisioning/datasources/datasources.yaml
     environment:
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
@@ -37,7 +37,7 @@ services:
     image:  grafana/promtail:latest
     container_name: promtail
     volumes:
-      - promtail.yaml:/etc/promtail/docker-config.yaml
+      - ./promtail.yaml:/etc/promtail/docker-config.yaml
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - /var/run/docker.sock:/var/run/docker.sock
     command: -config.file=/etc/promtail/docker-config.yaml
