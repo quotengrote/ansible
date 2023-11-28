@@ -109,11 +109,6 @@ sanoid_syncoid_datasets_sync:
 
   - source_host: pve5.mgrote.net
     destination_mount_check: backup
-    destination_dataset: backup/pve5/hm
-    source_dataset: hdd_data_raidz/hm
-
-  - source_host: pve5.mgrote.net
-    destination_mount_check: backup
     destination_dataset: backup/pve5/scans
     source_dataset: hdd_data_raidz/scans
 
