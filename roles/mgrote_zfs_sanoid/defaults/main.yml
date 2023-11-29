@@ -8,11 +8,11 @@ sanoid_deb_url: http://docker10.mgrote.net:3344/sanoid_3.0.0.deb
 
 #  ### "Default" Datasets
 #  sanoid_datasets: # dictionary
-#    - path: 'hdd_data_raidz/data' # path to dataset; without leading /
+#    - path: 'hdd_data/data' # path to dataset; without leading /
 #      template: 'fiveminutes' # name
 #      recursive: 'no' # recursive snapshotting
 #      snapshots: true # (de)activate; can be used to disable snapshotting of subdatasets if recursive is set
-#    - path: 'hdd_data_raidz/test'
+#    - path: 'hdd_data/test'
 #      snapshots: false # deaktiviert sanoid für das dataset
 #
 #  ### Templates
@@ -47,6 +47,6 @@ sanoid_user_group: sanoid
 ### mgrote_sanoid
 #sanoid_syncoid_datasets_sync:
 #  - source_host: pve5.mgrote.net
-#    source_dataset: hdd_data_raidz/tmp
-#    destination_mount_check: hdd_data_raidz/tmp  # zielpool
+#    source_dataset: hdd_data/tmp
+#    destination_mount_check: hdd_data/tmp  # zielpool
 #    destination_dataset: backup/pve5/tmp

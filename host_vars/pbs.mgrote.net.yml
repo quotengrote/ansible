@@ -75,62 +75,62 @@ sanoid_syncoid_datasets_sync:
   - source_host: 192.168.2.16 # pve5, weil pbs den fqdn nicht auflösen kann
     destination_mount_check: backup
     destination_dataset: backup/pve5/pve_backup
-    source_dataset: hdd_data_raidz/pve_backup
+    source_dataset: hdd_data/pve_backup
 
   - source_host: 192.168.2.16 # pve5, weil pbs den fqdn nicht auflösen kann
     destination_mount_check: backup
     destination_dataset: backup/pve5/videos
-    source_dataset: hdd_data_raidz/videos
+    source_dataset: hdd_data/videos
 
   - source_host: 192.168.2.16 # pve5, weil pbs den fqdn nicht auflösen kann
     destination_mount_check: backup
     destination_dataset: backup/pve5/music
-    source_dataset: hdd_data_raidz/music
+    source_dataset: hdd_data/music
 
   - source_host: 192.168.2.16 # pve5, weil pbs den fqdn nicht auflösen kann
     destination_mount_check: backup
     destination_dataset: backup/pve5/tmp
-    source_dataset: hdd_data_raidz/tmp
+    source_dataset: hdd_data/tmp
 
   - source_host: 192.168.2.16 # pve5, weil pbs den fqdn nicht auflösen kann
     destination_mount_check: backup
     destination_dataset: backup/pve5/archiv
-    source_dataset: hdd_data_raidz/archiv
+    source_dataset: hdd_data/archiv
 
   - source_host: 192.168.2.16 # pve5, weil pbs den fqdn nicht auflösen kann
     destination_mount_check: backup
     destination_dataset: backup/pve5/bilder
-    source_dataset: hdd_data_raidz/bilder
+    source_dataset: hdd_data/bilder
 
   - source_host: 192.168.2.16 # pve5, weil pbs den fqdn nicht auflösen kann
     destination_mount_check: backup
     destination_dataset: backup/pve5/scans
-    source_dataset: hdd_data_raidz/scans
+    source_dataset: hdd_data/scans
 
   - source_host: 192.168.2.16 # pve5, weil pbs den fqdn nicht auflösen kann
     destination_mount_check: backup
     destination_dataset: backup/pve5/restic
-    source_dataset: hdd_data_raidz/restic
+    source_dataset: hdd_data/restic
 
   - source_host: 192.168.2.16 # pve5, weil pbs den fqdn nicht auflösen kann
     destination_mount_check: backup
     destination_dataset: backup/pve5/backup
-    source_dataset: hdd_data_raidz/backup
+    source_dataset: hdd_data/backup
 
   - source_host: 192.168.2.16 # pve5, weil pbs den fqdn nicht auflösen kann
     destination_mount_check: backup
     destination_dataset: backup/pve5/buecher
-    source_dataset: hdd_data_raidz/buecher
+    source_dataset: hdd_data/buecher
 
   - source_host: 192.168.2.16 # pve5, weil pbs den fqdn nicht auflösen kann
     destination_mount_check: backup
     destination_dataset: backup/pve5/programme
-    source_dataset: hdd_data_raidz/programme
+    source_dataset: hdd_data/programme
 
   - source_host: 192.168.2.16 # pve5, weil pbs den fqdn nicht auflösen kann
     destination_mount_check: backup
     destination_dataset: backup/pve5/vm
-    source_dataset: hdd_data_raidz/vm
+    source_dataset: hdd_data/vm
 
 # sanoid
 sanoid_datasets:

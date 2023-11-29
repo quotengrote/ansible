@@ -18,6 +18,10 @@
   become: true
   ansible.builtin.command: "pct set {{ item.vmid }} -mp{{ item.mp_nr }} {{ item.mp_path_host }},mp={{ item.mp_path_guest }}"
   register: restart
+  changed_when:
+    - restart.rc == 25
+  failed_when:
+    - restart.rc != 25
   notify: restart lxc
   # füge bind-mount hinzu falls er fehlt, also rc ungleich 0
   # pro bind-mount
@@ -29,7 +33,7 @@
   # schreibe vm id in die Liste "reboot"
 - name: set reboot list # noqa no-handler var-naming[pattern]
   ansible.builtin.set_fact:
-    ansible.builtin.reboot:
+    reboot:
       - "{{ item.vmid }}"
   when: restart.changed
 

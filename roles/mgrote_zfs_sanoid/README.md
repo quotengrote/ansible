@@ -35,7 +35,7 @@ Es gibt 3 Funktionen:
 ---
   sanoid_snaps_enable: true
   sanoid_datasets:
-    - path: 'hdd_data_raidz/videos'
+    - path: 'hdd_data/videos'
       template: '31tage'
       recursive: 'yes'
       snapshots: true
@@ -76,8 +76,8 @@ Es gibt 3 Funktionen:
   sanoid_syncoid_datasets_sync:
     - source_host: host1.lan
       source_dataset: hdd_data_mirror
-      destination_mount_check: hdd_data_raidz/encrypted # Wenn dieses Dataset nicht gemountet ist(z.B. durch Verschlüsselung, dann bricht syncoid ab)
-      destination_dataset: hdd_data_raidz/encrypted/syncoid/zfs1
+      destination_mount_check: hdd_data/encrypted # Wenn dieses Dataset nicht gemountet ist(z.B. durch Verschlüsselung, dann bricht syncoid ab)
+      destination_dataset: hdd_data/encrypted/syncoid/zfs1
       skip_parent: false
   sanoid_syncoid_ssh_privkey: "{{ lookup('keepass', 'sanoid_syncoid_private_key', 'notes') }}"
   sanoid_syncoid_destination_host: true

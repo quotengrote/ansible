@@ -3,8 +3,8 @@
 # der Speicherort fur die VMs ist verschlüsselt
 # zfs create -o encryption=aes-256-gcm -o keyformat=passphrase rpool/vm
 # entschlüsseln nach Boot mit: sudo zpool import -d /dev/disk/by-id/ -a && sudo zfs mount -a  -l
-## HDD_DATA_RAIDZ
-### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase hdd_data_raidz mirror /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A27KFJDH /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A28LFJDH
+## hdd_data
+### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase hdd_data mirror /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A27KFJDH /dev/disk/by-id/ata-ST18000NM003D-3DL103_ZVTBSAYS
 
 # mgrote.zfs_manage_datasets
 ### mgrote_zfs_extra
@@ -39,8 +39,8 @@ zfs_datasets: # DatenPools werden hier nicht verwaltet
     state: present
   - dataset: rpool/data
     state: present
-  # hdd_data_raidz
-  - dataset: hdd_data_raidz
+  # hdd_data
+  - dataset: hdd_data
     state: present
     compression: zstd
     sync: disabled
@@ -49,42 +49,42 @@ zfs_datasets: # DatenPools werden hier nicht verwaltet
     atime: on # noqa yaml[truthy]
     snapdir: hidden
     reservation: 1G
-  - dataset: hdd_data_raidz/papa_backup
+  - dataset: hdd_data/papa_backup
     state: present
-  - dataset: hdd_data_raidz/pve_backup
-    state: present
-    recordsize: 1M
-  - dataset: hdd_data_raidz/videos
+  - dataset: hdd_data/pve_backup
     state: present
     recordsize: 1M
-  - dataset: hdd_data_raidz/music
+  - dataset: hdd_data/videos
     state: present
     recordsize: 1M
-  - dataset: hdd_data_raidz/tmp
-    state: present
-  - dataset: hdd_data_raidz/archiv
-    state: present
-  - dataset: hdd_data_raidz/bilder
+  - dataset: hdd_data/music
     state: present
     recordsize: 1M
-  - dataset: hdd_data_raidz/scans
+  - dataset: hdd_data/tmp
     state: present
-  - dataset: hdd_data_raidz/restic
+  - dataset: hdd_data/archiv
     state: present
-  - dataset: hdd_data_raidz/backup
+  - dataset: hdd_data/bilder
     state: present
-  - dataset: hdd_data_raidz/buecher
+    recordsize: 1M
+  - dataset: hdd_data/scans
     state: present
-  - dataset: hdd_data_raidz/programme
+  - dataset: hdd_data/restic
     state: present
-  - dataset: hdd_data_raidz/vm
+  - dataset: hdd_data/backup
+    state: present
+  - dataset: hdd_data/buecher
+    state: present
+  - dataset: hdd_data/programme
+    state: present
+  - dataset: hdd_data/vm
     state: present
 
 zfs_extra_arc_max_size: "8589934592" # 8GB in Bytes
 zfs_extra_zfs_pools:
   - name: "rpool"
     systemd_timer_schedule: "*-01,04,07,10-01 23:00" # jeden ersten eines jeden Quartals
-  - name: "hdd_data_raidz"
+  - name: "hdd_data"
     systemd_timer_schedule: "*-01,04,07,10-01 23:00"
 
 ### mgrote_zfs_sanoid
@@ -93,56 +93,56 @@ sanoid_snaps_enable: true
 sanoid_syncoid_source_host: true
 sanoid_syncoid_ssh_pubkey: "{{ lookup('keepass', 'sanoid_syncoid_public_key', 'notes') }}"
 sanoid_datasets:
-  ### hdd_data_raidz
-  - path: 'hdd_data_raidz/videos'
+  ### hdd_data
+  - path: 'hdd_data/videos'
     template: '3tage'
     recursive: 'yes'
     snapshots: true
-  - path: 'hdd_data_raidz/music'
+  - path: 'hdd_data/music'
     template: '14tage'
     recursive: 'yes'
     snapshots: true
-  - path: 'hdd_data_raidz/papa_backup'
+  - path: 'hdd_data/papa_backup'
     template: '14tage'
     recursive: 'yes'
     snapshots: true
-  - path: 'hdd_data_raidz/tmp'
+  - path: 'hdd_data/tmp'
     template: '3tage'
     recursive: 'yes'
     snapshots: true
-  - path: 'hdd_data_raidz/pve_backup'
+  - path: 'hdd_data/pve_backup'
     template: '3tage'
     recursive: 'yes'
     snapshots: true
-  - path: 'hdd_data_raidz/archiv'
+  - path: 'hdd_data/archiv'
     template: '14tage'
     recursive: 'yes'
     snapshots: true
-  - path: hdd_data_raidz/bilder
+  - path: hdd_data/bilder
     recursive: 'no' # noqa yaml[truthy]
     snapshots: true
     template: '14tage'
-  - path: hdd_data_raidz/scans
+  - path: hdd_data/scans
     recursive: 'no' # noqa yaml[truthy]
     snapshots: true
     template: '3tage'
-  - path: hdd_data_raidz/backup
+  - path: hdd_data/backup
     recursive: 'no' # noqa yaml[truthy]
     snapshots: true
     template: '31tage'
-  - path: hdd_data_raidz/restic
+  - path: hdd_data/restic
     recursive: 'no' # noqa yaml[truthy]
     snapshots: true
     template: '3tage'
-  - path: hdd_data_raidz/programme
+  - path: hdd_data/programme
     recursive: 'no' # noqa yaml[truthy]
     snapshots: true
     template: '14tage'
-  - path: hdd_data_raidz/buecher
+  - path: hdd_data/buecher
     recursive: 'no' # noqa yaml[truthy]
     snapshots: true
     template: '14tage'
-  - path: hdd_data_raidz/vm
+  - path: hdd_data/vm
     recursive: 'no' # noqa yaml[truthy]
     snapshots: true
     template: '3tage'
@@ -172,55 +172,55 @@ pve_bind_mounts:
   ### fileserver3
   - vmid: 115
     mp_nr: 0
-    mp_path_host: /hdd_data_raidz/videos
+    mp_path_host: /hdd_data/videos
     mp_path_guest: /shares_videos
   - vmid: 115
     mp_nr: 2
-    mp_path_host: /hdd_data_raidz/pve_backup
+    mp_path_host: /hdd_data/pve_backup
     mp_path_guest: /shares_pve_backup
   - vmid: 115
     mp_nr: 3
-    mp_path_host: /hdd_data_raidz/papa_backup
+    mp_path_host: /hdd_data/papa_backup
     mp_path_guest: /shares_papa_backup
   - vmid: 115
     mp_nr: 4
-    mp_path_host: /hdd_data_raidz/music
+    mp_path_host: /hdd_data/music
     mp_path_guest: /shares_music
   - vmid: 115
     mp_nr: 5
-    mp_path_host: /hdd_data_raidz/tmp
+    mp_path_host: /hdd_data/tmp
     mp_path_guest: /shares_tmp
   - vmid: 115
     mp_nr: 6
-    mp_path_host: /hdd_data_raidz/archiv
+    mp_path_host: /hdd_data/archiv
     mp_path_guest: /shares_archiv
   - vmid: 115
     mp_nr: 7
-    mp_path_host: /hdd_data_raidz/bilder
+    mp_path_host: /hdd_data/bilder
     mp_path_guest: /shares_bilder
   - vmid: 115
     mp_nr: 9
-    mp_path_host: /hdd_data_raidz/scans
+    mp_path_host: /hdd_data/scans
     mp_path_guest: /shares_scans
   - vmid: 115
     mp_nr: 10
-    mp_path_host: /hdd_data_raidz/restic
+    mp_path_host: /hdd_data/restic
     mp_path_guest: /shares_restic
   - vmid: 115
     mp_nr: 12
-    mp_path_host: /hdd_data_raidz/backup
+    mp_path_host: /hdd_data/backup
     mp_path_guest: /shares_backup
   - vmid: 115
     mp_nr: 14
-    mp_path_host: /hdd_data_raidz/buecher
+    mp_path_host: /hdd_data/buecher
     mp_path_guest: /shares_buecher
   - vmid: 115
     mp_nr: 15
-    mp_path_host: /hdd_data_raidz/programme
+    mp_path_host: /hdd_data/programme
     mp_path_guest: /shares_programme
   - vmid: 115
     mp_nr: 16
-    mp_path_host: /hdd_data_raidz/vm
+    mp_path_host: /hdd_data/vm
     mp_path_guest: /shares_vm
 
 # mgrote.pbs_pve_integration
