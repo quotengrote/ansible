@@ -62,7 +62,7 @@ blocky_custom_lookups: # optional
     ip: 192.168.3.239
   - name: pve5-test.mgrote.net
     ip: 192.168.2.17
-  - name: pve5.mgrote.net # bleibt im Router auch angelegt, weil wenn pve aus auch kein blocky ;-)
+  - name: pve5.mgrote.net # bleibt im Router auch angelegt, weil wenn pve aus ist, dann auch kein blocky ;-)
     ip: 192.168.2.16
   - name: rb5009.mgrote.net
     ip: 192.168.2.1
