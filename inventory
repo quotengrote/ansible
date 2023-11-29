@@ -6,6 +6,7 @@ all:
     blocky:
       hosts:
         blocky.mgrote.net:
+        blocky2.mgrote.net:
     lxc:
       hosts:
         fileserver3.mgrote.net:
@@ -45,6 +46,7 @@ all:
         docker10.mgrote.net:
         pbs.mgrote.net:
         blocky.mgrote.net:
+        blocky2.mgrote.net:
     test:
       hosts:
         vm-test-2204.mgrote.net:
