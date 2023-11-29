@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: remove files
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: absent
+      loop:
+        - /home/mg/.gitconfig
+        - /home/mg/.tmux.conf
+        - /home/mg/.vimrc
+        - /home/mg/dotfiles
+
+    - name: remove from .bashrc
+      ansible.builtin.lineinfile:
+        path: "{{ item }}"
+        state: absent
+        line: "source /home/mg/dotfiles/.bash_extra"
+      loop:
+        - /root/.bashrc
+        - /home/mg/.bashrc
