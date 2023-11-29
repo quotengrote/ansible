@@ -34,7 +34,7 @@
     ansible_password: hallowelt
     ansible_become_password: hallowelt
     ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
-    ### mgrote.user
+    ### mgrote_user
     users:
       - username: ansible-user
         password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"

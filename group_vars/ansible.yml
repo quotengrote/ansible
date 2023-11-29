@@ -9,6 +9,6 @@ pip_install_packages:
   - name: ansible
   - name: docker-compose
 
-### mgrote.apt_manage_packages
+### mgrote_apt_manage_packages
 apt_packages_extra:
   - sshpass

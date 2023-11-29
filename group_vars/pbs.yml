@@ -2,13 +2,13 @@
 ### mgrote_netplan
 netplan_configure: false
 
-### mgrote.postfix
+### mgrote_postfix
 postfix_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24 192.168.3.0/24"
 
-### mgrote.restic
+### mgrote_restic
 restic_folders_to_backup: "/ /etc/proxmox-backup"
 
-### mgrote.user
+### mgrote_user
 users:
   - username: root
     password: "{{ lookup('keepass', 'root_linux_password_hash_proxmox', 'password') }}"

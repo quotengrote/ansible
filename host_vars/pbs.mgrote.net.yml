@@ -29,7 +29,7 @@ pbs_users:
 ### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase backup /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A28LFJDH
 
 # mgrote.zfs_manage_datasets
-### mgrote.zfs_extra
+### mgrote_zfs_extra
 # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
 zfs_datasets: # DatenPools werden hier nicht verwaltet
   # rpool - System-Datasets
@@ -64,7 +64,7 @@ zfs_extra_zfs_pools:
   - name: "backup"
     systemd_timer_schedule: "*-01,04,07,10-01 23:00"
 
-### mgrote.zfs_sanoid
+### mgrote_zfs_sanoid
 sanoid_snaps_enable: true
 ## syncoid
 sanoid_syncoid_destination_host: true

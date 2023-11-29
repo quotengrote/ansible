@@ -44,7 +44,7 @@ sanoid_user_group: sanoid
 #sanoid_syncoid_ssh_privkey: "{{ lookup('keepass', 'sanoid_syncoid_private_key', 'notes') }}"
 #sanoid_syncoid_ssh_pubkey: "{{ lookup('keepass', 'sanoid_syncoid_public_key', 'notes') }}"
 
-### mgrote.sanoid
+### mgrote_sanoid
 #sanoid_syncoid_datasets_sync:
 #  - source_host: pve5.mgrote.net
 #    source_dataset: hdd_data_raidz/tmp

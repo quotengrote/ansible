@@ -18,7 +18,7 @@ ufw_rules:
     comment: 'smb'
     from_ip: 0.0.0.0/0
 
-### mgrote.fileserver_smb
+### mgrote_fileserver_smb
 smb_workgroup: WORKGROUP
 smb_min_protocol: "SMB2"
 smb_client_min_protocol: "SMB2"

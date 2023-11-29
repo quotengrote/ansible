@@ -2,10 +2,10 @@
 ### mgrote_netplan
 netplan_configure: false
 
-### mgrote.restic
+### mgrote_restic
 restic_folders_to_backup: "/ /etc/pve"
 
-### mgrote.user
+### mgrote_user
 users:
   - username: root
     password: "{{ lookup('keepass', 'root_linux_password_hash_proxmox', 'password') }}"
@@ -31,7 +31,7 @@ users:
     allow_sudo: true
     allow_passwordless_sudo: true
 
-### mgrote.apt_manage_packages
+### mgrote_apt_manage_packages
 apt_packages_extra:
   - ifupdown2
   - bmon

@@ -15,7 +15,7 @@ lvm_groups:
 manage_lvm: true
 pvresize_to_max: true
 
-### mgrote.restic
+### mgrote_restic
 restic_folders_to_backup: "/ /var/lib/gitea" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
 
 ### oefenweb.ufw

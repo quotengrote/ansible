@@ -1,5 +1,5 @@
 ---
-### mgrote.youtubedl
+### mgrote_youtubedl
 ytdl_dl_url: "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp"
 ytdl_timer: "Tue,Sat 03:00"
 ytdl_bin_path: /usr/local/bin/yt-dlp

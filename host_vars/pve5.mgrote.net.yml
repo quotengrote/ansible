@@ -7,7 +7,7 @@
 ### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase hdd_data_raidz mirror /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A27KFJDH /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A28LFJDH
 
 # mgrote.zfs_manage_datasets
-### mgrote.zfs_extra
+### mgrote_zfs_extra
 # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
 zfs_datasets: # DatenPools werden hier nicht verwaltet
   # rpool - System-Datasets
@@ -87,7 +87,7 @@ zfs_extra_zfs_pools:
   - name: "hdd_data_raidz"
     systemd_timer_schedule: "*-01,04,07,10-01 23:00"
 
-### mgrote.zfs_sanoid
+### mgrote_zfs_sanoid
 sanoid_snaps_enable: true
 ## enable sending snaps
 sanoid_syncoid_source_host: true
@@ -160,14 +160,14 @@ sanoid_datasets:
     snapshots: true
     template: 'pve3tage'
 
-### mgrote.cv4pve-autosnap
+### mgrote_cv4pve-autosnap
 cv4pve_api_user: root@pam!cv4pve-autosnap
 cv4pve_api_token: "{{ lookup('keepass', 'cv4pve_api_token', 'password') }}"
 cv4pve_vmid: all,-115
 cv4pve_keep_snapshots: 5
 cv4pve_dl_link: "https://github.com/Corsinvest/cv4pve-autosnap/releases/download/v1.14.7/cv4pve-autosnap-linux-x64.zip"
 
-### mgrote.proxmox_bind_mounts
+### mgrote_proxmox_bind_mounts
 pve_bind_mounts:
   ### fileserver3
   - vmid: 115

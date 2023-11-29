@@ -10,7 +10,7 @@ file_header: |
 ### mgrote_netplan
 netplan_configure: true
 
-### mgrote.restic
+### mgrote_restic
 restic_user: root
 restic_group: restic
 restic_conf_dir: /etc/restic
@@ -33,7 +33,7 @@ restic_mount_user: restic
 restic_mount_password: "{{ lookup('keepass', 'fileserver_smb_user_restic', 'password') }}"
 restic_fail_mail: "{{ my_mail }}"
 
-### mgrote.user
+### mgrote_user
 users:
   - username: mg
     password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
@@ -60,7 +60,7 @@ unattended_origins_patterns:
   - 'origin=Ubuntu,archive=${distro_codename}-security'
   - 'o=Ubuntu,a=${distro_codename}-updates'
 
-### mgrote.ntp_chrony_client
+### mgrote_ntp_chrony_client
 ntp_chrony_timezone: "Europe/Berlin" # Zeitzone in der sich der Computer befindet
 ntp_chrony_driftfile_directory: "/var/lib/chrony" # Ordner für das driftfile
 ntp_chrony_servers: # welche Server sollen befragt werden
@@ -70,16 +70,16 @@ ntp_chrony_user: _chrony # Nutzer + Gruppe für den Dienst
 ntp_chrony_group: _chrony # Nutzer + Gruppe für den Dienst
 ntp_chrony_logging: false
 
-### mgrote.postfix
+### mgrote_postfix
 postfix_smtp_server: docker10.mgrote.net
 postfix_smtp_server_port: 1025
 
-### mgrote.tmux
+### mgrote_tmux
 tmux_conf_destination: "/home/mg/.tmux.conf"
 tmux_bashrc_destination: "/home/mg/.bashrc"
 tmux_standardsession_name: "default"
 
-### mgrote.fail2ban
+### mgrote_fail2ban
 f2b_bantime: 300
 f2b_findtime: 300
 f2b_maxretry: 5
@@ -96,7 +96,7 @@ ufw_rules:
 ufw_default_incoming_policy: deny
 ufw_default_outgoing_policy: allow
 
-### mgrote.apt_manage_packages
+### mgrote_apt_manage_packages
 apt_packages_common:
   - locales
   - python3
@@ -142,7 +142,7 @@ apt_packages_absent:
 apt_packages_internet:
   - http://docker10.mgrote.net:3344/bash-helper-scripts-mgrote-latest.deb
 
-### mgrote.zfs_sanoid
+### mgrote_zfs_sanoid
 sanoid_templates:
   - name: '31tage'
     keep_hourly: '24'                        # Aufheben (Stunde)
@@ -190,7 +190,7 @@ sanoid_templates:
     autosnap: 'yes'
     autoprune: 'yes'
 
-### mgrote.zfs_sanoid
+### mgrote_zfs_sanoid
 sanoid_deb_url: http://docker10.mgrote.net:3344/sanoid_3.0.4.deb
 
 # Ansible Variablen

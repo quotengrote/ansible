@@ -29,10 +29,10 @@ cifs_mounts:
     gid: 5000
     extra_opts: ",ro" # komma am Anfang ist notwendig weil die Option hinten angehangen wird
 
-### mgrote.restic
+### mgrote_restic
 restic_folders_to_backup: "/ /var/lib/docker /mnt/oci-registry" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben
 
-### mgrote.docker-compose-inline
+### mgrote_docker-compose-inline
 compose_owner: "docker-user"
 compose_group: "docker-user"
 compose_file_permissions: "644"
