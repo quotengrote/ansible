@@ -1,0 +1,5 @@
+---
+- hosts: blocky
+  roles:
+    - { role: mgrote_systemd_resolved, tags: "resolved" }
+    - { role: mgrote_blocky, tags: "blocky" }

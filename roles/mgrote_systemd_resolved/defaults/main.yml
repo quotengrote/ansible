@@ -1,2 +1,2 @@
 ---
-nameserver: 192.168.2.1
+systemd_resolved_nameserver: 192.168.2.1

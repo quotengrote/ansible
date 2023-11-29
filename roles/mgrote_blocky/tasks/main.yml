@@ -1,0 +1,61 @@
+---
+- name: ensure group exists
+  become: true
+  ansible.builtin.group:
+    name: "{{ blocky_group }}"
+    state: present
+
+- name: ensure user exists
+  become: true
+  ansible.builtin.user:
+    name: "{{ blocky_user }}"
+    state: present
+    create_home: false
+
+- name: ensure binaries are installed
+  become: true
+  ansible.builtin.unarchive:
+    src: "{{ blocky_download_url }}"
+    dest: /usr/local/bin
+    remote_src: true
+    owner: "{{ blocky_user }}"
+    group: "{{ blocky_group }}"
+    mode: "0755"
+    exclude:
+      - LICENSE
+      - README.md
+  notify:
+    - set cap_net_bind_service
+    - restart service unit
+
+- name: ensure conf dir exists
+  become: true
+  ansible.builtin.file:
+    path: "{{ blocky_conf_dir }}"
+    state: directory
+    owner: "{{ blocky_user }}"
+    group: "{{ blocky_group }}"
+    mode: "0755"
+
+- name: template configuration
+  become: true
+  ansible.builtin.template:
+    src: "config.yml.j2"
+    dest: "{{ blocky_conf_dir }}/config.yml"
+    owner: "{{ blocky_user }}"
+    group: "{{ blocky_group }}"
+    mode: "0600"
+  notify:
+    - restart service unit
+
+- name: template service
+  become: true
+  ansible.builtin.template:
+    src: "blocky.service.j2"
+    dest: /etc/systemd/system/blocky.service
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - systemctl daemon-reload
+    - restart service unit

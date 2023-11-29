@@ -38,7 +38,7 @@ ytdl_youtube_password: "{{ lookup('keepass', 'youtubedl_youtube_login', 'passwor
 ytdl_conf_dir: "/etc/youtubedl" #ohne / am ende
 ytdl_download_limit: "10000K"
 
-### mgrote.fileserver_smb
+### mgrote_fileserver_smb
 smb_users:
   - name: 'restic'
     password: "{{ lookup('keepass', 'fileserver_smb_user_restic', 'password') }}"
@@ -47,7 +47,7 @@ smb_users:
   - name: 'kodi'
     password: "{{ lookup('keepass', 'fileserver_smb_user_kodi', 'password') }}"
   - name: 'michaelgrote'
-    password: "{{ lookup('keepass', 'fileserver_smb_user_mg', 'password') }}"
+    password: "{{ lookup('keepass', 'fileserver_smb_user_michaelgrote', 'password') }}"
   - name: 'navidrome'
     password: "{{ lookup('keepass', 'fileserver_smb_user_navidrome', 'password') }}"
   - name: 'docker'

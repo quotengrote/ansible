@@ -1,0 +1,15 @@
+{{ file_header | default () }}
+
+[Unit]
+Description=Blocky is a DNS proxy and ad-blocker for the local network written in Go.
+Requires=network.target
+Wants=nss-lookup.target
+Before=nss-lookup.target
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/blocky --config {{ blocky_conf_dir }}/config.yml
+
+[Install]
+WantedBy=multi-user.target

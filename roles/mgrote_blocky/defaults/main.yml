@@ -1,0 +1,68 @@
+---
+# Docs in config.yml and https://0xerr0r.github.io/blocky/configuration/
+
+blocky_user: blocky
+blocky_group: blocky
+blocky_version: v0.22
+blocky_arch: x86_64
+blocky_download_url: "https://github.com/0xERR0R/blocky/releases/download/{{ blocky_version }}/blocky_{{ blocky_version }}_Linux_{{ blocky_arch }}.tar.gz"
+blocky_conf_dir: /etc/blocky
+blocky_block_type: zeroIp
+blocky_block_ttl: 1m
+blocky_blacklists_strategy: failOnError
+blocky_local_upstream: 192.168.2.1
+blocky_prometheus: false
+blocky_fqdn_only: false
+blocky_port_dns: 53
+blocky_log_level: info
+blocky_dns_upstream:
+  - 9.9.9.9
+  - 1.1.1.1
+  - 8.8.8.8
+  - 5.9.164.112
+blocky_dns_blocklists:
+  - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+  - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  - http://sysctl.org/cameleon/hosts
+  - https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+#blocky_custom_lookups: # optional
+#  # Internet
+#  - name: wiki.mgrote.net
+#    ip: 192.168.2.43
+#  - name: audio.mgrote.net
+#    ip: 192.168.2.43
+#  - name: auth.mgrote.net
+#    ip: 192.168.2.43
+#  - name: ci.mgrote.net
+#    ip: 192.168.2.43
+#  - name: git.mgrote.net
+#    ip: 192.168.2.43
+#  - name: miniflux.mgrote.net
+#    ip: 192.168.2.43
+#  - name: nextcloud.mgrote.net
+#    ip: 192.168.2.43
+#  - name: registry.mgrote.net
+#    ip: 192.168.2.43
+#  # Intern
+#  - name: ads2700w.mgrote.net
+#    ip: 192.168.2.147
+#  - name: crs305.mgrote.net
+#    ip: 192.168.2.225
+#  - name: hex.mgrote.net
+#    ip: 192.168.3.144
+#  - name: pbs-test.mgrote.net
+#    ip: 192.168.2.18
+#  - name: pbs.mgrote.net
+#    ip: 192.168.3.239
+#  - name: pve5-test.mgrote.net
+#    ip: 192.168.2.17
+#  - name: pve5.mgrote.net # bleibt im Router auch angelegt, weil wenn pve aus auch kein blocky ;-)
+#    ip: 192.168.2.16
+#  - name: rb5009.mgrote.net
+#    ip: 192.168.2.1
+#  - name: fritz.box
+#    ip: 192.168.5.1
+#blocky_conditional_mapping: # optional
+#  - domain: mgrote.net
+#    resolver: 192.168.2.1
+#

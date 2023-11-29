@@ -52,18 +52,6 @@ users:
     allow_sudo: true
     allow_passwordless_sudo: true
 
-### mgrote.dotfiles
-dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles
-dotfiles_repo_path: /home/mg/dotfiles
-dotfiles_files:
-  - repo_path: "{{ dotfiles_repo_path }}/.vimrc"
-    local_path: "/home/mg/.vimrc"
-  - repo_path: "{{ dotfiles_repo_path }}/.tmux.conf"
-    local_path: "/home/mg/.tmux.conf"
-  - repo_path: "{{ dotfiles_repo_path }}/.gitconfig"
-    local_path: "/home/mg/.gitconfig"
-dotfiles_owner: mg
-
 ### jnv.unattended_upgrades
 unattended_mail: "{{ my_mail }}"
 unattended_mail_only_on_error: true

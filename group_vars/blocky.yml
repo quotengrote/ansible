@@ -1,0 +1,74 @@
+---
+### mgrote_systemd_resolved
+systemd_resolved_nameserver: 9.9.9.9
+
+### oefenweb.ufw
+ufw_rules:
+  - rule: allow
+    to_port: 22
+    protocol: tcp
+    comment: 'ssh'
+    from_ip: 0.0.0.0/0
+  - rule: allow
+    to_port: 53
+    comment: 'dns'
+    from_ip: 0.0.0.0/0
+
+### mgrote_blocky
+blocky_version: v0.22
+blocky_block_type: zeroIp
+blocky_local_upstream: 192.168.2.1
+blocky_conditional_mapping: # optional
+  - domain: mgrote.net
+    resolver: 192.168.2.1
+blocky_dns_upstream:
+  - 9.9.9.9
+  - 1.1.1.1
+  - 8.8.8.8
+  - 5.9.164.112
+blocky_dns_blocklists:
+  - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+  - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  - http://sysctl.org/cameleon/hosts
+  - https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+blocky_custom_lookups: # optional
+  # Internet
+  - name: wiki.mgrote.net
+    ip: 192.168.2.43
+  - name: audio.mgrote.net
+    ip: 192.168.2.43
+  - name: auth.mgrote.net
+    ip: 192.168.2.43
+  - name: ci.mgrote.net
+    ip: 192.168.2.43
+  - name: git.mgrote.net
+    ip: 192.168.2.43
+  - name: miniflux.mgrote.net
+    ip: 192.168.2.43
+  - name: nextcloud.mgrote.net
+    ip: 192.168.2.43
+  - name: registry.mgrote.net
+    ip: 192.168.2.43
+  # Intern
+  - name: ads2700w.mgrote.net
+    ip: 192.168.2.147
+  - name: crs305.mgrote.net
+    ip: 192.168.2.225
+  - name: hex.mgrote.net
+    ip: 192.168.3.144
+  - name: pbs-test.mgrote.net
+    ip: 192.168.2.18
+  - name: pbs.mgrote.net
+    ip: 192.168.3.239
+  - name: pve5-test.mgrote.net
+    ip: 192.168.2.17
+  - name: pve5.mgrote.net # bleibt im Router auch angelegt, weil wenn pve aus auch kein blocky ;-)
+    ip: 192.168.2.16
+  - name: rb5009.mgrote.net
+    ip: 192.168.2.1
+  - name: fritz.box
+    ip: 192.168.5.1
+
+### mgrote.apt_manage_packages
+apt_packages_internet:
+  - http://192.168.2.43:3344/bash-helper-scripts-mgrote-latest.deb

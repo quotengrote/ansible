@@ -18,10 +18,6 @@ ufw_rules:
     comment: 'smb'
     from_ip: 0.0.0.0/0
 
-### mgrote.apt_manage_packages
-apt_packages_internet:
-  - http://docker10.mgrote.net:3344/bash-helper-scripts-mgrote-latest.deb
-
 ### mgrote.fileserver_smb
 smb_workgroup: WORKGROUP
 smb_min_protocol: "SMB2"

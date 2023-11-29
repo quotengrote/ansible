@@ -68,3 +68,6 @@ repos_override: # mit docker-repos
   - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release }}-security main restricted"
   - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release }}-security universe"
   - "deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release }}-security multiverse"
+
+### mgrote_systemd_resolved
+systemd_resolved_nameserver: 192.168.2.37

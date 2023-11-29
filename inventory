@@ -3,6 +3,9 @@ all:
     fileserver:
       hosts:
         fileserver3.mgrote.net:
+    blocky:
+      hosts:
+        blocky.mgrote.net:
     lxc:
       hosts:
         fileserver3.mgrote.net:
@@ -41,6 +44,7 @@ all:
         gitea.mgrote.net:
         docker10.mgrote.net:
         pbs.mgrote.net:
+        blocky.mgrote.net:
     test:
       hosts:
         vm-test-2204.mgrote.net:
