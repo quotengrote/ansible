@@ -14,6 +14,15 @@ ufw_rules:
     comment: 'dns'
     from_ip: 0.0.0.0/0
 
+### mgrote_user_setup
+dotfiles_vim_vundle_repo_url: http://192.168.2.44:3000/mirrors/Vundle.vim.git
+dotfiles:
+  - user: mg
+    home: /home/mg
+  - user: root
+    home: /root
+dotfiles_repo_url: http://192.168.2.44:3000/mg/dotfiles
+
 ### mgrote_blocky
 blocky_version: v0.22
 blocky_block_type: zeroIp

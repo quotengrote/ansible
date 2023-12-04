@@ -7,6 +7,15 @@ file_header: |
   #              This file is managed with ansible!                #
   #----------------------------------------------------------------#
 
+### mgrote_user_setup
+dotfiles:
+  - user: mg
+    home: /home/mg
+  - user: root
+    home: /root
+dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles
+dotfiles_vim_vundle_repo_url: https://git.mgrote.net/mirrors/Vundle.vim.git
+
 ### mgrote_netplan
 netplan_configure: true
 

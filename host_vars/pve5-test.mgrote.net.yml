@@ -27,6 +27,7 @@ zfs_datasets: # DatenPools werden hier nicht verwaltet
   - dataset: rpool/ROOT/pve-1
     state: present
     refreservation: 1G
+    acltype: posix # https://docs.ansible.com/ansible-core/2.14/playbook_guide/playbooks_privilege_escalation.html#risks-of-becoming-an-unprivileged-user ; sonst kann die dotfiles-Rolle kein setfacl machen
 
   # rpool - VMs
   - dataset: rpool/vm
@@ -35,6 +36,7 @@ zfs_datasets: # DatenPools werden hier nicht verwaltet
     state: present
   - dataset: rpool/vm/lxc
     state: present
+
   # hdd_data
   - dataset: hdd_data
     state: present

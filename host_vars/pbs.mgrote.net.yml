@@ -49,6 +49,7 @@ zfs_datasets: # DatenPools werden hier nicht verwaltet
   - dataset: rpool/ROOT/pbs-1
     state: present
     refreservation: 10G
+    acltype: posix # https://docs.ansible.com/ansible-core/2.14/playbook_guide/playbooks_privilege_escalation.html#risks-of-becoming-an-unprivileged-user ; sonst kann die dotfiles-Rolle kein setfacl machen
   # backup-pool
   - dataset: backup/pbs_data
     state: present

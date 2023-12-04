@@ -1,0 +1,107 @@
+---
+- name: Ensure needed packages are installed
+  become: true
+  ansible.builtin.package:
+    name:
+      - acl
+      - git
+      - vim
+      - ripgrep
+      - tmux
+      - keychain
+    state: present
+
+- name: Ensure dotfiles-repository is cloned # noqa latest[git]
+  become: true
+  become_user: "{{ item.user }}"
+  ansible.builtin.git:
+    repo: "{{ dotfiles_repo_url }}"
+    dest: "{{ item.home }}/dotfiles"
+    clone: true
+    force: true
+    update: true
+  loop: "{{ dotfiles }}"
+  notify: Vundle - PluginInstall
+
+- name: Ensure dotfiles-repository has the correct permissions set
+  become: true
+  ansible.builtin.file:
+    path: "{{ item.home }}/dotfiles"
+    owner: "{{ item.user }}"
+    group: "{{ item.user }}"
+  loop: "{{ dotfiles }}"
+  notify: Vundle - PluginInstall
+
+- name: Link .vimrc
+  become: true
+  ansible.builtin.file:
+    src: "{{ item.home }}/dotfiles/.vimrc"
+    dest: "{{ item.home }}/.vimrc"
+    state: link
+    follow: false # https://github.com/ansible/ansible/issues/73143
+    force: true
+    owner: "{{ item.user }}"
+    group: "{{ item.user }}"
+  loop: "{{ dotfiles }}"
+
+- name: Link .tmux.conf
+  become: true
+  ansible.builtin.file:
+    src: "{{ item.home }}/dotfiles/.tmux.conf"
+    dest: "{{ item.home }}/.tmux.conf"
+    state: link
+    follow: false # https://github.com/ansible/ansible/issues/73143
+    force: true
+    owner: "{{ item.user }}"
+    group: "{{ item.user }}"
+  loop: "{{ dotfiles }}"
+
+- name: Link .gitconfig
+  become: true
+  ansible.builtin.file:
+    src: "{{ item.home }}/dotfiles/.gitconfig"
+    dest: "{{ item.home }}/.gitconfig"
+    state: link
+    follow: false # https://github.com/ansible/ansible/issues/73143
+    force: true
+    owner: "{{ item.user }}"
+    group: "{{ item.user }}"
+  loop: "{{ dotfiles }}"
+
+- name: add source .bash_extra to user .bashrc
+  become: true
+  ansible.builtin.lineinfile:
+    path: "{{ item.home }}/.bashrc"
+    line: "source {{ item.home }}/dotfiles/.bash_extra"
+    state: present
+  loop: "{{ dotfiles }}"
+
+- name: Ensure needed dirs exist
+  become: true
+  ansible.builtin.file:
+    state: directory
+    path: "{{ item.home }}/.vim/bundle/"
+    owner: "{{ item.user }}"
+    group: "{{ item.user }}"
+    mode: '0755'
+  loop: "{{ dotfiles }}"
+
+- name: Ensure vundle-repository is cloned
+  become: true
+  become_user: "{{ item.user }}"
+  ansible.builtin.git:
+    repo: "{{ dotfiles_vim_vundle_repo_url }}"
+    dest: "{{ item.home }}/.vim/bundle/Vundle.vim"
+    depth: 1
+    version: master
+  loop: "{{ dotfiles }}"
+  notify: Vundle - PluginInstall
+
+- name: Ensure vundle-repository has the correct permissions set
+  become: true
+  ansible.builtin.file:
+    path: "{{ item.home }}/.vim/bundle/Vundle.vim"
+    owner: "{{ item.user }}"
+    group: "{{ item.user }}"
+  loop: "{{ dotfiles }}"
+  notify: Vundle - PluginInstall

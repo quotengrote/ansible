@@ -1,0 +1,9 @@
+---
+dotfiles:
+    - user: mg
+      home: /home/mg
+    - user: root
+      home: /root
+
+dotfiles_vim_vundle_repo_url: https://git.mgrote.net/mirrors/Vundle.vim.git
+dotfiles_repo_url: https://git.mgrote.net/mg/dotfiles

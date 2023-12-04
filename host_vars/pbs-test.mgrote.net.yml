@@ -53,6 +53,8 @@ zfs_datasets: # DatenPools werden hier nicht verwaltet
   - dataset: rpool/ROOT/pbs-1
     state: present
     refreservation: 1G
+    acltype: posix # https://docs.ansible.com/ansible-core/2.14/playbook_guide/playbooks_privilege_escalation.html#risks-of-becoming-an-unprivileged-user ; sonst kann die dotfiles-Rolle kein setfacl machen
+
   # backup-pool
   - dataset: backup/pbs_data
     state: present
@@ -60,6 +62,7 @@ zfs_datasets: # DatenPools werden hier nicht verwaltet
   - dataset: backup/pve5
     state: present
     canmount: off # noqa yaml[truthy]
+
 # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
 zfs_extra_arc_max_size: "1073741824" # 1GB in Bytes
 zfs_extra_zfs_pools:

@@ -1,8 +1,8 @@
 ---
 - hosts: all
-  become: true
   roles:
     - role: mgrote_users
       tags: "user"
-    - role: mgrote_vim
-      tags: "vim"
+      become: true
+    - role: mgrote_user_setup
+      tags: "user_setup"

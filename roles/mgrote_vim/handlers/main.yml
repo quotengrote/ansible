@@ -1,7 +1,0 @@
----
-- name: set owner recursive for repo
-  ansible.builtin.file:
-    path: "{{ vim_homedir }}"
-    owner: mg
-    group: mg
-    recurse: true

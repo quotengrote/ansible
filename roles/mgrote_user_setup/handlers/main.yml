@@ -1,0 +1,9 @@
+---
+- name: Vundle - PluginInstall # noqa no-changed-when risky-shell-pipe
+  become: true
+  become_user: "{{ item.user }}"
+  ansible.builtin.shell: yes | vim -c PluginInstall -c qall
+  args:
+    chdir: "{{ item.home }}"
+  loop: "{{ dotfiles }}"
+...

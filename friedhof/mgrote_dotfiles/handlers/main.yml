@@ -1,8 +1,0 @@
----
-- name: set owner recursive for repo
-  ansible.builtin.file:
-    path: "{{ dotfiles_repo_path }}"
-    owner: "{{ dotfiles_owner }}"
-    group: "{{ dotfiles_owner }}"
-    recurse: true
-...
