@@ -67,6 +67,7 @@ services:
       NGINX_PROXY_PASS_URL: http://oci-registry:5000
       SHOW_CONTENT_DIGEST: true # https://github.com/Joxit/docker-registry-ui/issues/297
       SHOW_CATALOG_NB_TAGS: true
+      PULL_URL: registry.mgrote.net
     networks:
       - traefik
       - intern
