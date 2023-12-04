@@ -47,6 +47,7 @@ zfs_datasets: # DatenPools werden hier nicht verwaltet
     snapdir: hidden
     reservation: 1G
     refreservation: 1G
+    acltype: posix
   - dataset: rpool/ROOT
     state: present
     refreservation: 1G
