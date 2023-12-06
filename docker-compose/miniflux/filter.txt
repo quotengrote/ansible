@@ -44,6 +44,7 @@ golem.de::Wochenrückblick
 hardwareluxx.de::Der Hardwareluxx-Webwatch:
 hardwareluxx.de::Die Artikel unserer Partner
 hardwareluxx.de::Shopping Club
+hardwareluxx.de::KW
 heise.de::Anzeige
 heise.de::Auslegungssache
 heise.de::Bit-Rauschen
@@ -103,6 +104,7 @@ instagram.com::Bridge returned error
 ipspace.net::Built.fm
 ipspace.net::Podcast
 mdr.de::Basketball
+mdr.de::Volleyball
 mdr.de::DFB
 mdr.de::DFB-Pokal
 mdr.de::Fussball
@@ -120,8 +122,7 @@ mdr.de::Podcast "digital Leben"
 mdr.de::Podcast "digital Leben":
 mdr.de::Podcastserie
 mdr.de::Schwimmen:
-mf-bridge::Bridge encountered an unexpected situation
-mf-bridge::Bridge returned error 401
+falseknees.tumblr.com::Kneesvember
 monkeyuser.com::AdLitteram
 netzpolitik.org::KW
 netzpolitik.org::NPP
