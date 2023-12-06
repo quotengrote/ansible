@@ -1,5 +1,6 @@
 ---
 ### wird in vielen Rollen verwendet
+ansible_facts_parallel: true
 ssh_public_key_mg: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKL8opSQ0rWVw9uCfbuiqmXq188OP4xh66MBTO3zV5jo heimserver_mg_v3
 my_mail: michael.grote@posteo.de
 file_header: |
