@@ -6,6 +6,10 @@
 ## hdd_data
 ### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase hdd_data mirror /dev/disk/by-id/ata-TOSHIBA_MG09ACA18TE_Z1B0A27KFJDH /dev/disk/by-id/ata-ST18000NM003D-3DL103_ZVTBSAYS
 
+## hdd_data "neu"
+### sudo zpool create -o ashift=12 -o feature@encryption=enabled -O encryption=on -O keylocation=prompt -O keyformat=passphrase hdd_data /dev/disk/by-id/ata-ST18000NM003D-3DL103_ZVTBSAYS
+
+
 # mgrote.zfs_manage_datasets
 ### mgrote_zfs_extra
 # Variablen für mgrote.zfs_health/trim/scrub/zed/arc_mem/ sind zusammengefasst unter zfs_extra_*
@@ -54,6 +58,7 @@ zfs_datasets: # DatenPools werden hier nicht verwaltet
     atime: on # noqa yaml[truthy]
     snapdir: hidden
     reservation: 1G
+    acltype: posix # https://docs.ansible.com/ansible-core/2.14/playbook_guide/playbooks_privilege_escalation.html#risks-of-becoming-an-unprivileged-user ; sonst kann die dotfiles-Rolle kein setfacl machen
   - dataset: hdd_data/papa_backup
     state: present
   - dataset: hdd_data/pve_backup
