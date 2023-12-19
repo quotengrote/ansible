@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+
+    - name: update installed packages
+      ansible.builtin.package:
+        upgrade: dist
+      register: upgrade
+
+    - name: apt autoremove
+      ansible.builtin.apt:
+        autoremove: true
+        clean: yes
+
+    - name: reboot
+      ansible.builtin.reboot:
+      when: (upgrade.changed and (inventory_hostname != 'pve5.mgrote.net' and inventory_hostname != 'ansible2.mgrote.net'))
