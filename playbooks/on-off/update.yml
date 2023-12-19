@@ -19,3 +19,8 @@
     - name: reboot
       ansible.builtin.reboot:
       when: (upgrade.changed and (inventory_hostname != 'pve5.mgrote.net' and inventory_hostname != 'ansible2.mgrote.net'))
+
+    - name: Info
+      ansible.builtin.debug:
+        msg: Pool auf pbs.mgrote.net mounten!
+      when: (upgrade.changed and inventory_hostname = 'pbs.mgrote.net')
