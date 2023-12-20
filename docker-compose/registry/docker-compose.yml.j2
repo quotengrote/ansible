@@ -20,6 +20,12 @@ services:
       REGISTRY_REDIS_PASSWORD: {{ lookup('keepass', 'oci-registry-redis-pw', 'password') }}
       REGISTRY_STORAGE_DELETE_ENABLED: true
       REGISTRY_CATALOG_MAXENTRIES: 100000 # https://github.com/Joxit/docker-registry-ui/issues/306
+      # https://joxit.dev/docker-registry-ui/#using-cors
+      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Origin: '[https://registry.mgrote.net/ui/]'
+      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Methods: '[HEAD,GET,OPTIONS,DELETE]'
+      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Credentials: '[true]'
+      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Headers: '[Authorization,Accept,Cache-Control]'
+      REGISTRY_HTTP_HEADERS_Access-Control-Expose-Headers: '[Docker-Content-Digest]'
     labels:
       traefik.http.routers.registry.rule: Host(`registry.mgrote.net`)
       traefik.enable: true

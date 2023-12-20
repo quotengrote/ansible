@@ -122,3 +122,6 @@ volumes:
 ######## Doku ########
 # Telefonregion
 # docker exec --user www-data nextcloud-app php occ config:system:set default_phone_region --value="DE"
+# https://help.nextcloud.com/t/nextcloud-wont-load-any-mixed-content/13565/3
+# docker exec --user www-data nextcloud-app php occ config:system:set overwriteprotocol --value="https"
+# docker exec --user www-data nextcloud-app php occ config:system:set overwrite.cli.url --value="http://nextcloud.mgrote.net"
