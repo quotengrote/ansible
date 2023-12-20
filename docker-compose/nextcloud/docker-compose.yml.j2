@@ -21,6 +21,13 @@ services:
     labels:
       com.centurylinklabs.watchtower.enable: true
 
+  # Error
+  ## [ERROR] Incorrect definition of table mysql.column_stats: expected column 'histogram' at position 10 to have type longblob, found type varbinary(255).
+  ## [ERROR] Incorrect definition of table mysql.column_stats: expected column 'hist_type' at position 9 to have type enum('SINGLE_PREC_HB','DOUBLE_PREC_HB','JSON_HB'), found type enum('SINGLE_PREC_HB','DOUBLE_PREC_HB').
+  # Fix
+  ## docker exec nextcloud-db mysql nextcloud -p<MySQL-Root-Pw> -e "ALTER TABLE mysql.column_stats MODIFY histogram longblob;"
+  ## docker exec nextcloud-db mysql nextcloud -p<MySQL-Root-Pw> -e "ALTER TABLE mysql.column_stats MODIFY hist_type enum('SINGLE_PREC_HB','DOUBLE_PREC_HB','JSON_HB');"
+
 ######## Redis ########
   nextcloud-redis:
     image: redis:7-alpine
