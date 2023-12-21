@@ -1,0 +1,150 @@
+---
+version: '3'
+######## Services ########
+services:
+  # redis
+  vikunja-redis:
+    container_name: vikunja-redis
+    image: redis:7-alpine
+    restart: always
+    labels:
+      # watchtower
+      com.centurylinklabs.watchtower.enable: true
+    command: redis-server --requirepass {{ lookup('keepass', 'VIKUNJA_REDIS_PASSWORD', 'password') }}
+    networks:
+      - intern
+  # mysql
+  vikunja-db:
+    container_name: vikunja-db
+    image: mariadb:10
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: {{ lookup('keepass', 'VIKUNJA_MYSQL_ROOT_PASSWORD', 'password') }}
+      MYSQL_USER: vikunja
+      MYSQL_PASSWORD: {{ lookup('keepass', 'VIKUNJA_DATABASE_PASSWORD', 'password') }}
+      MYSQL_DATABASE: vikunja
+      MYSQL_INITDB_SKIP_TZINFO: 1
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - db:/var/lib/mysql
+    restart: always
+    labels:
+      # watchtower
+      com.centurylinklabs.watchtower.enable: true
+    networks:
+      - intern
+  # typesense
+  vikunja-typesense:
+    container_name: vikunja-typesense
+    image: typesense/typesense:0.25.1
+    restart: always
+    volumes:
+      - typesense:/data
+    labels:
+      # watchtower
+      com.centurylinklabs.watchtower.enable: true
+      com.centurylinklabs.watchtower.depends-on: vikunja-redis,vikunja-db,vikunja-api
+    networks:
+      - intern
+    environment:
+      TYPESENSE_API_KEY: {{ lookup('keepass', 'VIKUNJA_TYPESENSE_APIKEY', 'password') }}
+      TYPESENSE_ENABLE_CORS: true
+      TYPESENSE_DATA_DIR: /data
+  # frontend
+  vikunja-frontend:
+    container_name: vikunja-frontend
+    image: vikunja/frontend
+    labels:
+      # watchtower
+      com.centurylinklabs.watchtower.enable: true
+      com.centurylinklabs.watchtower.depends-on: vikunja-redis,vikunja-db,vikunja-api
+      # traefik
+      traefik.http.routers.vikunja.rule: Host(`todo.mgrote.net`)
+      traefik.enable: true
+      traefik.http.routers.vikunja.tls: true
+      traefik.http.routers.vikunja.tls.certresolver: resolver_letsencrypt
+      traefik.http.routers.vikunja.entrypoints: entry_https
+    networks:
+      - intern
+      - traefik
+      - mail-relay
+    restart: always
+  # api
+  vikunja-api:
+    restart: always
+    container_name: vikunja-api
+    image: vikunja/api
+    environment:
+      # https://vikunja.io/docs/config-options/#service
+      VIKUNJA_SERVICE_FRONTENDURL: https://todo.mgrote.net/
+      VIKUNJA_SERVICE_MAXITEMSPERPAGE: 100
+      VIKUNJA_SERVICE_ENABLEREGISTRATION: false
+      VIKUNJA_SERVICE_ENABLECALDAV: false
+      VIKUNJA_SERVICE_JWTSECRET: {{ lookup('keepass', 'VIKUNJA_SERVICE_JWTSECRET', 'password') }}
+      # https://vikunja.io/docs/config-options/#database
+      VIKUNJA_DATABASE_TYPE: mysql
+      VIKUNJA_DATABASE_USER: vikunja
+      VIKUNJA_DATABASE_PASSWORD: {{ lookup('keepass', 'VIKUNJA_DATABASE_PASSWORD', 'password') }}
+      VIKUNJA_DATABASE_HOST: vikunja-db
+      VIKUNJA_DATABASE_DATABASE: vikunja
+      # https://vikunja.io/docs/config-options/#redis
+      VIKUNJA_REDIS_ENABLED: 1
+      VIKUNJA_REDIS_HOST: 'vikunja-redis:6379'
+      VIKUNJA_REDIS_PASSWORD: {{ lookup('keepass', 'VIKUNJA_REDIS_PASSWORD', 'password') }}
+      # https://vikunja.io/docs/config-options/#typesense
+      VIKUNJA_TYPESENSE_ENABLED: true
+      VIKUNJA_TYPESENSE_URL: "http://vikunja-typesense:8108"
+      VIKUNJA_TYPESENSE_APIKEY: {{ lookup('keepass', 'VIKUNJA_TYPESENSE_APIKEY', 'password') }}
+      # https://vikunja.io/docs/config-options/#mailer
+      VIKUNJA_MAILER_ENABLED: true
+      VIKUNJA_MAILER_HOST: mail-relay
+      VIKUNJA_MAILER_PORT: 25
+      VIKUNJA_MAILER_SKIPTLSVERIFY: true
+      VIKUNJA_MAILER_FROMEMAIL: info@mgrote.net
+      # https://vikunja.io/docs/config-options/#log
+      VIKUNJA_LOG_ENABLED: true
+      VIKUNJA_LOG_STANDARD: stdout
+      VIKUNJA_LOG_LEVEL: INFO
+      VIKUNJA_LOG_DATABASE: off
+      VIKUNJA_LOG_DATABASELEVEL: warning
+      VIKUNJA_LOG_HTTP: stdout
+      VIKUNJA_LOG_EVENTS: off
+      VIKUNJA_LOG_EVENTSLEVEL: INFO
+      VIKUNJA_LOG_MAIL: on
+      VIKUNJA_LOG_MAILLEVEL: INFO
+    volumes:
+      - api:/app/vikunja/files
+    labels:
+      # watchtower
+      com.centurylinklabs.watchtower.enable: true
+      com.centurylinklabs.watchtower.depends-on: vikunja-redis,vikunja-db
+      # traefik
+      traefik.enable: true
+      traefik.http.routers.vikunja-api.tls.certresolver: resolver_letsencrypt
+      traefik.http.routers.vikunja-api.entrypoints: entry_https
+      traefik.http.routers.vikunja-api.rule: Host(`todo.mgrote.net`) && (PathPrefix(`/api/v1`) || PathPrefix(`/dav/`) || PathPrefix(`/.well-known/`))
+    networks:
+      - intern
+      - traefik
+      - mail-relay
+
+
+######## Volumes ########
+volumes:
+  typesense:
+  db:
+  api:
+
+
+######## Networks ########
+networks:
+  intern:
+    driver: bridge
+  traefik:
+    external: true
+  mail-relay:
+    external: true
+
+# Befehle ausführen
+## docker exec -it vikunja-api /app/vikunja/vikunja user create -e michael.grote@posteo.de -p passwort -u michaelgrote
