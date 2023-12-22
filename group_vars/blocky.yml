@@ -44,8 +44,6 @@ blocky_custom_lookups: # optional
   # Internet
   - name: wiki.mgrote.net
     ip: 192.168.2.43
-  - name: todo.mgrote.net
-    ip: 192.168.2.43
   - name: audio.mgrote.net
     ip: 192.168.2.43
   - name: auth.mgrote.net

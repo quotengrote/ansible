@@ -76,9 +76,6 @@ compose_files:
     network: traefik
   - name: statping-ng
     state: present
-  - name: vikunja
-    state: present
-    network: traefik
 
 ### oefenweb.ufw
 ufw_rules:
