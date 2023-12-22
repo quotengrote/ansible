@@ -35,3 +35,6 @@ ytdl_youtube_password: "{{ lookup('keepass', 'youtubedl_youtube_login', 'passwor
 ytdl_conf_dir: "/etc/youtubedl" #ohne / am ende
 ytdl_download_limit: "10000K"
 ytdl_active: false # damit werden die systemd-Units nicht angelegt
+
+ytdl_enable_video_download: true
+ytdl_enable_podcast_download: false

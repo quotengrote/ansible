@@ -24,19 +24,29 @@
     group: root
     mode: "0755"
 
-- name: template youtubedl config
+- name: template youtubedl video config
   become: true
   ansible.builtin.template:
-    src: "{{ item }}"
-    dest: "{{ ytdl_conf_dir }}/{{ item }}"
+    src: youtube.txt
+    dest: "{{ ytdl_conf_dir }}/youtube.txt"
     owner: root
     group: root
     mode: "0644"
   notify:
     - systemctl daemon-reload
-  loop:
-    - podcast.txt
-    - youtube.txt
+  when: ytdl_enable_video_download
+
+- name: template youtubedl podcast config
+  become: true
+  ansible.builtin.template:
+    src: podcast.txt
+    dest: "{{ ytdl_conf_dir }}/podcast.txt"
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - systemctl daemon-reload
+  when: ytdl_enable_podcast_download
 
 - name: template systemd services
   become: true
@@ -84,3 +94,22 @@
   notify:
     - systemctl daemon-reload
   when: ytdl_active
+
+- name: ensure youtubedl video config is absent
+  become: true
+  ansible.builtin.file:
+    state: absent
+    path: "{{ ytdl_conf_dir }}/youtube.txt"
+  notify:
+    - systemctl daemon-reload
+  when: not ytdl_enable_video_download
+
+- name: ensure youtubedl podcast config is absent
+  become: true
+  ansible.builtin.file:
+    state: absent
+    path: "{{ ytdl_conf_dir }}/podcast.txt"
+  notify:
+    - systemctl daemon-reload
+  when: not ytdl_enable_podcast_download
+...

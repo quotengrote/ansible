@@ -6,8 +6,12 @@ OnFailure=youtubedl_mail.service
 
 [Service]
 Type=oneshot
+{% if ytdl_enable_podcast_download is sameas true %}
 ExecStart=-{{ ytdl_bin_path }} --config-location  "{{ ytdl_conf_dir }}/podcast.txt"
+{% endif %}
+{% if ytdl_enable_video_download is sameas true %}
 ExecStart=-{{ ytdl_bin_path }} --config-location  "{{ ytdl_conf_dir }}/youtube.txt"
+{% endif %}
 Restart=on-failure
 RestartSec=10min
 
