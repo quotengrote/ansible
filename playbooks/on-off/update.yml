@@ -23,4 +23,4 @@
     - name: Info
       ansible.builtin.debug:
         msg: Pool auf pbs.mgrote.net mounten!
-      when: (upgrade.changed and inventory_hostname = 'pbs.mgrote.net')
+      when: (upgrade.changed and inventory_hostname == 'pbs.mgrote.net')
