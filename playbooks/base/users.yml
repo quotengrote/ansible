@@ -5,4 +5,6 @@
       tags: "user"
       become: true
     - role: mgrote_user_setup
-      tags: "user_setup"
+      tags:
+        - "user_setup"
+        - dotfiles
