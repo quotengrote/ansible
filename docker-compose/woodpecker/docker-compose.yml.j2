@@ -37,7 +37,7 @@ services:
 
       traefik.http.routers.woodpecker.middlewares: woodpecker-ipwhitelist
 
-      traefik.http.middlewares.woodpecker-ipwhitelist.ipwhitelist.sourcerange: 192.168.2.0/24
+      traefik.http.middlewares.woodpecker-ipwhitelist.ipwhitelist.sourcerange: "192.168.2.0/24,10.25.25.0/24"
       traefik.http.middlewares.woodpecker-ipwhitelist.ipwhitelist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipwhitelist/#ipstrategydepth
 
 
