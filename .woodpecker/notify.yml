@@ -15,7 +15,7 @@ steps:
       - echo $CI_PIPELINE_STATUS
       - |
         s-nail \
-        -s "CI: [$CI_PREV_PIPELINE_STATUS] $CI_REPO ($CI_COMMIT_BRANCH)" \
+        -s "CI: [$CI_PIPELINE_STATUS] $CI_REPO $CI_WORKFLOW_NAME" \
         -S mta=smtp://docker10.mgrote.net:1025 \
         -S smtp-auth=none \
         -S v15-compat \
@@ -24,7 +24,8 @@ steps:
         Repository: $CI_REPO
         Commit: $CI_COMMIT_SHA
         URL: $CI_PREV_PIPELINE_URL
-        Status: $CI_PREV_PIPELINE_STATUS
+        URL-Git: $CI_PIPELINE_FORGE_URL
+        Status: $CI_PIPELINE_STATUS
         EOF
     when:
       event: [push]
