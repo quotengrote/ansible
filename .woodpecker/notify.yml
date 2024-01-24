@@ -26,4 +26,4 @@ steps:
     when:
       event: [push]
 
-runs_on: [ success, failure ]
+runs_on: [ failure ]
