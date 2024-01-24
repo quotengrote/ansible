@@ -2,17 +2,18 @@
 depends_on:
   - gitleaks
   - ansible-lint
+runs_on:
+  - failure
 
 skip_clone: true
 
 steps:
-  notify:
-    name: notify
+  - name: notify
     image: registry.mgrote.net/allzweckcontainer:latest
     commands:
       - |
         s-nail \
-        -s "CI: [$CI_PIPELINE_STATUS] $CI_REPO $CI_WORKFLOW_NAME" \
+        -s "CI: [$CI_PIPELINE_STATUS] $CI_REPO" \
         -S mta=smtp://docker10.mgrote.net:1025 \
         -S smtp-auth=none \
         -S v15-compat \
@@ -25,6 +26,7 @@ steps:
         Status: $CI_PIPELINE_STATUS
         EOF
     when:
-      event: [push]
-
-runs_on: [ success, failure ]
+      event:
+        - push
+    runs_on:
+      - failure
