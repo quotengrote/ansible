@@ -19,7 +19,7 @@ steps:
     name: notify
     image: drillster/drone-email
     settings:
-      host: mail-relay
+      host: docker10.mgrote.net:1025
       from: ci@mgrote.net
       subject: "CI: Run failed! - $CI_REPO"
 #      body: |
