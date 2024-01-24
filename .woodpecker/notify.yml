@@ -18,7 +18,7 @@ steps:
         - info@mgrote.net
       evaluate: "build.status == 'failure' or prev_pipeline.status == 'failure'"
       content:
-        subject: "CI: [{{ pipeline.status }}] {{ repo.full_name }} ({{ commit.branch }}"
+        subject: "CI: [{{ prev_pipeline.status }}] {{ repo.full_name }} ({{ commit.branch }}"
         body: |
           {{ repo.full_name }}<br>
           {{ commit.sha }}<br>
