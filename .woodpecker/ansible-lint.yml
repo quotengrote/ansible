@@ -39,13 +39,3 @@ steps:
     when:
       status:
         - failure
-
-
-$CI_REPO
-$CI_REPO_DEFAULT_BRANCH
-$CI_COMMIT_SHA
-$CI_PIPELINE_NUMBER
-$CI_PIPELINE_URL
-$CI_WORKFLOW_NAME
-$CI_STEP_NAME
-$CI_STEP_STATUS
