@@ -23,7 +23,6 @@ steps:
       from:
         address: "ci@mgrote.net"
         name: "woodpecker"
-      evaluate: "build.status == 'failure' or prev_pipeline.status == 'failure'"
       recipients:
         - info@mgrote.net
       content:
@@ -34,3 +33,6 @@ steps:
           {{ commit.author_email }}<br>
       attachments:
         - log/*
+    when:
+      status:
+        - failure
