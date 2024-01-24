@@ -27,6 +27,3 @@ steps:
       event: [push]
 
 runs_on: [ success, failure ]
-
-# mail als extra file das immer getriggert wird
-# nutze allzweckcontainer mit mailx
