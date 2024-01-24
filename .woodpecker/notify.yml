@@ -21,12 +21,12 @@ steps:
         $CI_COMMIT_AUTHOR_EMAIL <<EOF
         Repository: $CI_REPO
         Commit: $CI_COMMIT_SHA
-        URL: $CI_PREV_PIPELINE_URL
+        URL: $CI_PIPELINE_URL
         URL-Git: $CI_PIPELINE_FORGE_URL
         Status: $CI_PIPELINE_STATUS
         EOF
     when:
       event:
         - push
-    runs_on:
-      - failure
+runs_on:
+  - failure

@@ -14,27 +14,3 @@ steps:
       event:
         exclude:
           - tag
-    secret: [vault-pass] #dieses Secret darf verwendet werden
-
-  - name: notify
-    image: registry.mgrote.net/allzweckcontainer:latest
-    commands:
-      - |
-        s-nail \
-        -s "CI: [$CI_PIPELINE_STATUS] $CI_REPO" \
-        -S mta=smtp://docker10.mgrote.net:1025 \
-        -S smtp-auth=none \
-        -S v15-compat \
-        -S from=ci@mgrote.net \
-        $CI_COMMIT_AUTHOR_EMAIL <<EOF
-        Repository: $CI_REPO
-        Commit: $CI_COMMIT_SHA
-        URL: $CI_PIPELINE_URL
-        URL-Git: $CI_PIPELINE_FORGE_URL
-        Status: $CI_PIPELINE_STATUS
-        EOF
-    when:
-      event:
-        - push
-runs_on:
-  - failure
