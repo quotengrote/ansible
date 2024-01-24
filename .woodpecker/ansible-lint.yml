@@ -1,7 +1,4 @@
 ---
-kind: pipeline
-type: docker
-name: ansible-lint
 depends_on:
   - gitleaks
 steps:
