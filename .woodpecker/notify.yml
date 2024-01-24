@@ -23,5 +23,7 @@ steps:
           {{ commit.sha }}<br>
           {{ pipeline.url }}<br>
           {{ step.status }}<br>
+    when:
+      event: [push]
 
 runs_on: [ success, failure ]
