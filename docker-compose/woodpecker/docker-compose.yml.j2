@@ -25,6 +25,7 @@ services:
     networks:
       - intern
       - traefik
+      - mail-relay
     labels:
       com.centurylinklabs.watchtower.enable: true
 
@@ -64,6 +65,7 @@ services:
     labels:
       com.centurylinklabs.watchtower.enable: true
     networks:
+      - mail-relay
       - intern
 
 
@@ -82,3 +84,5 @@ networks:
     external: true
   intern:
     driver: bridge
+  mail-relay:
+    external: true
