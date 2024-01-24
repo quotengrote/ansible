@@ -8,23 +8,21 @@ skip_clone: true
 steps:
   notify:
     name: notify
-    image: deblan/woodpecker-email
-    settings:
-      dsn: "smtp://docker10.mgrote.net:1025"
-      from:
-        address: "ci@mgrote.net"
-        name: "woodpecker"
-      recipients:
-        - info@mgrote.net
-      recipients_only: "false"
-      content:
-        subject: "CI: [{{ prev_pipeline.status }}] {{ repo.full_name }} ({{ commit.branch }}"
-        body: |
-          {{ repo.full_name }}<br>
-          {{ commit.sha }}<br>
-          {{ pipeline.url }}<br>
-          {{ step.status }}<br>
+    image: registry.mgrote.net/allzweckcontainer:latest
+    commands:
+      - |
+        s-nail -s "CI: [$CI_PIPELINE_STATUS] $CI_REPO ($CI_COMMIT_BRANCH" \
+        -S smtp=server:docker10.mgrote.net:1025 \
+        -S from=ci@mgrote.net info@mgrote.net <<EOF
+        $CI_REPO
+        $CI_COMMIT_SHA
+        $CI_PIPELINE_URL
+        $CI_STEP_STATUS
+        EOF
     when:
       event: [push]
 
 runs_on: [ success, failure ]
+
+# mail als extra file das immer getriggert wird
+# nutze allzweckcontainer mit mailx
