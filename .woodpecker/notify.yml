@@ -3,6 +3,8 @@ depends_on:
   - gitleaks
   - ansible-lint
 
+skip_clone: true
+
 steps:
   notify:
     name: notify
@@ -22,4 +24,4 @@ steps:
           {{ pipeline.url }}<br>
           {{ step.status }}<br>
 
-runs_on: [ failure ]
+runs_on: [ success, failure ]
