@@ -1,6 +1,7 @@
 ---
 depends_on:
   - gitleaks
+
 steps:
   ansible-lint:
     image: quay.io/ansible/creator-ee
