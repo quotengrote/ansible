@@ -21,7 +21,8 @@ steps:
     settings:
       host: docker10.mgrote.net:1025
       from: ci@mgrote.net
-      subject: "CI: Run failed! - $CI_REPO"
+      #subject: "CI: Run failed! - $CI_REPO"
+      subject: "test"
 #      body: |
 #        $CI_REPO
 #        $CI_REPO_DEFAULT_BRANCH
