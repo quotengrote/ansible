@@ -25,7 +25,6 @@ services:
     networks:
       - intern
       - traefik
-      - mail-relay
     labels:
       com.centurylinklabs.watchtower.enable: true
 
@@ -64,9 +63,7 @@ services:
       WOODPECKER_BACKEND: docker
     labels:
       com.centurylinklabs.watchtower.enable: true
-    networks:
-      - mail-relay
-      - intern
+    networks:      - intern
 
 
 volumes:
@@ -84,5 +81,3 @@ networks:
     external: true
   intern:
     driver: bridge
-  mail-relay:
-    external: true
