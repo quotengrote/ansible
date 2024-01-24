@@ -17,7 +17,7 @@ steps:
       recipients:
         - info@mgrote.net
       content:
-        subject: "[{{ pipeline.status }}] {{ repo.full_name }} ({{ commit.branch }}"
+        subject: "CI: [{{ pipeline.status }}] {{ repo.full_name }} ({{ commit.branch }}"
         body: |
           {{ repo.full_name }}<br>
           {{ commit.sha }}<br>
