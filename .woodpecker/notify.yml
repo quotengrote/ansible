@@ -16,6 +16,7 @@ steps:
         name: "woodpecker"
       recipients:
         - info@mgrote.net
+      evaluate: "build.status == 'failure' or prev_pipeline.status == 'failure'"
       content:
         subject: "CI: [{{ pipeline.status }}] {{ repo.full_name }} ({{ commit.branch }}"
         body: |
