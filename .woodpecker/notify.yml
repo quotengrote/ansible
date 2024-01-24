@@ -11,13 +11,17 @@ steps:
     image: registry.mgrote.net/allzweckcontainer:latest
     commands:
       - |
-        s-nail -s "CI: [$CI_PIPELINE_STATUS] $CI_REPO ($CI_COMMIT_BRANCH" \
-        -S smtp=server:docker10.mgrote.net:1025 \
-        -S from=ci@mgrote.net info@mgrote.net <<EOF
-        $CI_REPO
-        $CI_COMMIT_SHA
-        $CI_PIPELINE_URL
-        $CI_STEP_STATUS
+        s-nail \
+        -s "CI: [$CI_PIPELINE_STATUS] $CI_REPO ($CI_COMMIT_BRANCH)" \
+        -S mta=smtp://docker10.mgrote.net:1025 \
+        -S smtp-auth=none \
+        -S v15-compat \
+        -S from=ci@mgrote.net \
+        info@mgrote.net <<EOF
+        Repository: $CI_REPO
+        Commit: $CI_COMMIT_SHA
+        URL: $CI_PIPELINE_URL
+        Status: $CI_STEP_STATUS
         EOF
     when:
       event: [push]
