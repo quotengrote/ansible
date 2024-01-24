@@ -11,6 +11,8 @@ steps:
     image: registry.mgrote.net/allzweckcontainer:latest
     commands:
       - echo $CI_PREV_PIPELINE_URL # debug
+      - echo $CI_PIPELINE_PARENT
+      - echo $CI_PIPELINE_STATUS
       - |
         s-nail \
         -s "CI: [$CI_PREV_PIPELINE_STATUS] $CI_REPO ($CI_COMMIT_BRANCH)" \
@@ -18,7 +20,7 @@ steps:
         -S smtp-auth=none \
         -S v15-compat \
         -S from=ci@mgrote.net \
-        info@mgrote.net <<EOF
+        $CI_COMMIT_AUTHOR_EMAIL <<EOF
         Repository: $CI_REPO
         Commit: $CI_COMMIT_SHA
         URL: $CI_PREV_PIPELINE_URL
