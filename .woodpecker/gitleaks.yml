@@ -8,3 +8,15 @@ steps:
       event:
         exclude:
           - tag
+
+  notify:
+    name: notify
+    image: drillster/drone-email
+    settings:
+      host: smtp.some-server.com
+      username: foo
+      password: bar
+      from: drone@your-domain.com
+    when:
+      status:
+        - failure
