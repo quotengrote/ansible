@@ -25,6 +25,3 @@ steps:
         URL-Git: $CI_PIPELINE_FORGE_URL
         Status: $CI_PIPELINE_STATUS
         EOF
-    when:
-      event:
-        - push
