@@ -17,7 +17,7 @@ steps:
 
   notify:
     name: notify
-    image: deblan/woodpecker-email-php
+    image: deblan/woodpecker-email
     settings:
       dsn: "smtp://docker10.mgrote.net:1025"
       from:
