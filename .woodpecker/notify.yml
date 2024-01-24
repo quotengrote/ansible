@@ -28,5 +28,3 @@ steps:
     when:
       event:
         - push
-runs_on:
-  - failure
