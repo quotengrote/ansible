@@ -3,7 +3,7 @@ depends_on:
   - gitleaks
 
 steps:
-  -name: ansible-lint:
+  - name: ansible-lint:
     image: quay.io/ansible/creator-ee
     commands:
       - ansible-lint --version
