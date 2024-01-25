@@ -50,7 +50,7 @@ docker_users:
   - mg
   - docker-user
 docker_install_compose: true
-docker_add_repo: false # erstelle kein Repo-Eintrag unter /etc/apt/sources.list.d/, steht explizit unter "repos_override"
+docker_add_repo: true # erstelle kein Repo-Eintrag unter /etc/apt/sources.list.d/, steht explizit unter "repos_override"
 
 ### mgrote_docker-compose-deploy
 docker_compose_base_dir: /home/docker-user
