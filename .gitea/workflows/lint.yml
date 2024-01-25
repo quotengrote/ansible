@@ -12,3 +12,14 @@ jobs:
     steps:
       - name: gitleaks
         run: gitleaks detect --no-git --verbose --source $GITHUB_WORKSPACE
+
+  ansible-lint:
+    container:
+      image: quay.io/ansible/creator-ee
+      env:
+        VAULT-PASS: ${{ secrets.vault_pass }} # Repo-Secret
+    steps:
+      - ansible-lint --version
+      - echo $VAULT-PASS > ./vault-pass.yml # nach des Secret in Großschreibung
+      - ansible-galaxy install -r requirements.yml
+      - ansible-lint --force-color --format pep8
