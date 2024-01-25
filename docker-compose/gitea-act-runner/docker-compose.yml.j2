@@ -1,6 +1,7 @@
 version: '3'
 services:
   runner:
+    container_name: "gitea-act-runner"
     image: gitea/act_runner:latest
     restart: always
     volumes:
@@ -9,6 +10,9 @@ services:
     environment:
       GITEA_INSTANCE_URL: "https://git.mgrote.net"
       GITEA_RUNNER_REGISTRATION_TOKEN: {{ lookup('keepass', 'gitea_runner_token', 'password') }} # muss für jeden Runner neu generiert werden, wird nur einmal benötigt
+    labels:
+      com.centurylinklabs.watchtower.enable: true
+
 
 volumes:
   data:
