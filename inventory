@@ -15,7 +15,6 @@ all:
     docker:
       hosts:
         docker10.mgrote.net:
-        docker11.mgrote.net:
     vmtest:
       hosts:
         vm-test-2204.mgrote.net:
@@ -44,7 +43,6 @@ all:
         pve5.mgrote.net:
         gitea.mgrote.net:
         docker10.mgrote.net:
-        docker11.mgrote.net:
         pbs.mgrote.net:
         blocky.mgrote.net:
     test:

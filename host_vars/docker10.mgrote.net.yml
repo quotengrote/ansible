@@ -76,7 +76,9 @@ compose_files:
     network: traefik
   - name: statping-ng
     state: present
-
+  - name: gitea-act-runner
+    state: present
+    
 ### oefenweb.ufw
 ufw_rules:
   - rule: allow
