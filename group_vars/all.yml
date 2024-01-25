@@ -149,8 +149,6 @@ apt_packages_absent:
   - nano
   - snapd
   - ubuntu-advantage-tools
-apt_packages_internet:
-  - http://docker10.mgrote.net:3344/bash-helper-scripts-mgrote-latest.deb
 
 ### mgrote_zfs_sanoid
 sanoid_templates:

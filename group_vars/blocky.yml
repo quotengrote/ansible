@@ -78,9 +78,5 @@ blocky_custom_lookups: # optional
   - name: fritz.box
     ip: 192.168.5.1
 
-### mgrote_apt_manage_packages
-apt_packages_internet:
-  - http://192.168.2.43:3344/bash-helper-scripts-mgrote-latest.deb
-
 ### mgrote_restic
 restic_repository: "//192.168.2.54/restic"
