@@ -17,8 +17,7 @@ jobs:
       env:
         VAULT-PASS: ${{ secrets.vault_pass }} # Repo-Secret
     steps:
-      - run: pwd
       - run: ansible-lint --version
       - run: echo $VAULT-PASS > ./vault-pass.yml # nach des Secret in Großschreibung
-      - run: ansible-galaxy install -r requirements.yml
+      - run: ansible-galaxy install -r ./requirements.yml
       - run: ansible-lint --force-color --format pep8
