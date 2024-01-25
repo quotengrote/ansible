@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
+      - run: pwd
+      - run: ls -lah
       - name: gitleaks
         run: gitleaks detect --no-git --verbose --source $GITHUB_WORKSPACE
 
