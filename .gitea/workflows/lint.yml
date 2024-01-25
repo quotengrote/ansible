@@ -19,5 +19,7 @@ jobs:
     steps:
       - run: ansible-lint --version
       - run: echo $VAULT-PASS > ./vault-pass.yml # nach des Secret in Großschreibung
-      - run: ansible-galaxy install -r ./requirements.yml
+      - run: ls -lah
+
+      - run: ansible-galaxy install -r $GITHUB_WORKSPACE/requirements.yml
       - run: ansible-lint --force-color --format pep8
