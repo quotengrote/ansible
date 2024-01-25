@@ -1,0 +1,14 @@
+---
+name: lint
+on:
+  push
+
+jobs:
+  gitleaks:
+    container:
+      image: zricethezav/gitleaks:latest
+      env:
+        TEST_ENV: hallo
+    steps:
+      - name: gitleaks
+        run: gitleaks detect --no-git --verbose --source $GITHUB_WORKSPACE
