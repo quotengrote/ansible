@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+    - name: remove user
+      become: true
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: absent
+        remove: true
+      loop:
+        - drone
+        - drone-user
+
+    - name: Ensure dir is removed
+      become: true
+      ansible.builtin.file:
+        path: /home/drone
+        state: absent
