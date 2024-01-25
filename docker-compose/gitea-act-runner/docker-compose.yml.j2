@@ -1,34 +1,14 @@
 version: '3'
 services:
-  httpd-registry:
-    container_name: "httpd-registry"
-    image: httpd:bullseye
+  runner:
+    image: gitea/act_runner:latest
     restart: always
     volumes:
-      - uploads:/usr/local/apache2/htdocs/
-      - "{{ compose_dest_basedir }}/httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro"
-    ports:
-      - 3344:80
-    labels:
-      com.centurylinklabs.watchtower.enable: true
-
-  python-api-server:
-    container_name: httpd-api
-    image: registry.mgrote.net/python-api-server:latest
-    restart: always
-    ports:
-      - "5040:5000"
-    volumes:
-      - uploads:/uploads
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      # FLASK_DEBUG: 1 # for debugging
-      # FLASK_APP: app # for debugging
-      MAX_CONTENT_LENGTH: 500
-      UPLOAD_DIRECTORY: /uploads
-      AUTH_TOKEN: {{ lookup('keepass', 'httpd-api-server-token', 'password') }}
-      ENABLE_WEBSERVER: false
-    labels:
-      com.centurylinklabs.watchtower.enable: true
+      GITEA_INSTANCE_URL: "https://git.mgrote.net"
+      GITEA_RUNNER_REGISTRATION_TOKEN: {{ lookup('keepass', 'gitea_runner_token', 'password') }}
 
 volumes:
-  uploads:
+  data:
