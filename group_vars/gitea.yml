@@ -96,6 +96,7 @@ gitea_fail2ban_jail_bantime: 600
 gitea_extra_config: |
   [webhook]
   ALLOWED_HOST_LIST = *.mgrote.net
-
+  [actions]
+  ENABLED=true
 gitea_backup_on_upgrade: false
 gitea_backup_location: "{{ gitea_home }}/backups/"
