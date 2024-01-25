@@ -57,7 +57,7 @@ docker_compose_base_dir: /home/docker-user
 
 ### mgrote_apt_manage_sources
 repos_override: # mit docker-repos
-  - deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
+#  - deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
   - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} main restricted"
   - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates main restricted"
   - "deb http://de.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} universe"
