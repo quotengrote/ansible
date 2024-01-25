@@ -1,0 +1,45 @@
+---
+### mrlesmithjr.ansible-manage-lvm
+lvm_groups:
+  - vgname: vg_docker
+    disks:
+      - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi1
+    create: true
+    lvnames:
+      - lvname: docker
+        size: +100%FREE
+        create: true
+        filesystem: xfs
+        mount: true
+        mntp: /var/lib/docker
+manage_lvm: true
+pvresize_to_max: true
+
+### mgrote_restic
+restic_folders_to_backup: "/ /var/lib/docker" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben
+
+### mgrote_docker-compose-inline
+compose_owner: "docker-user"
+compose_group: "docker-user"
+compose_file_permissions: "644"
+compose_dir_permissions: "755"
+compose_dest_basedir: "/docker"
+compose_src_basedir: "{{ inventory_dir }}/docker-compose"
+compose_files:
+  - name: gitea-act-runner
+    state: present
+
+### oefenweb.ufw
+ufw_rules:
+  - rule: allow
+    to_port: 22
+    protocol: tcp
+    comment: 'ssh'
+    from_ip: 0.0.0.0/0
+  # docker network inspect $(docker network ls -q)|grep -E "IPv(4|6)A" | grep -v \"\" | sort -h
+  - rule: allow
+    from_ip: 192.168.0.0/16
+    comment: 'docker networks'
+  - rule: allow
+    from_ip: 172.0.0.0/8
+    comment: 'docker networks'
