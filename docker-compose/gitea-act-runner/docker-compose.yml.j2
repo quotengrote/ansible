@@ -8,7 +8,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       GITEA_INSTANCE_URL: "https://git.mgrote.net"
-      GITEA_RUNNER_REGISTRATION_TOKEN: {{ lookup('keepass', 'gitea_runner_token', 'password') }}
+      GITEA_RUNNER_REGISTRATION_TOKEN: {{ lookup('keepass', 'gitea_runner_token', 'password') }} # muss für jeden Runner neu generiert werden, wird nur einmal benötigt
 
 volumes:
   data:
