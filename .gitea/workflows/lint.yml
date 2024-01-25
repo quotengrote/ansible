@@ -13,6 +13,7 @@ jobs:
     container:
       image: zricethezav/gitleaks:latest
     steps:
+      - run: ls -lah
       - name: gitleaks
         run: gitleaks detect --no-git --verbose --source $GITHUB_WORKSPACE
 
