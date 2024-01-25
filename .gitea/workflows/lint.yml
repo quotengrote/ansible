@@ -4,6 +4,11 @@ on:
   push
 
 jobs:
+  clone:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+
   gitleaks:
     container:
       image: zricethezav/gitleaks:latest
@@ -21,5 +26,5 @@ jobs:
       - run: echo $VAULT-PASS > ./vault-pass.yml # nach des Secret in Großschreibung
       - run: ls -lah
 
-      - run: ansible-galaxy install -r $GITHUB_WORKSPACE/requirements.yml
+      - run: ansible-galaxy install -r ./requirements.yml
       - run: ansible-lint --force-color --format pep8
