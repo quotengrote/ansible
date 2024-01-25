@@ -7,8 +7,6 @@ jobs:
   gitleaks:
     container:
       image: zricethezav/gitleaks:latest
-      env:
-        TEST_ENV: hallo
     steps:
       - name: gitleaks
         run: gitleaks detect --no-git --verbose --source $GITHUB_WORKSPACE
@@ -19,6 +17,7 @@ jobs:
       env:
         VAULT-PASS: ${{ secrets.vault_pass }} # Repo-Secret
     steps:
+      - run: pwd
       - run: ansible-lint --version
       - run: echo $VAULT-PASS > ./vault-pass.yml # nach des Secret in Großschreibung
       - run: ansible-galaxy install -r requirements.yml
