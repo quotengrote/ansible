@@ -4,14 +4,15 @@ on:
   push
 
 jobs:
+  clone:
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
   gitleaks:
     container:
       image: zricethezav/gitleaks:latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
-      - run: pwd
-      - run: ls -lah
       - name: gitleaks
         run: gitleaks detect --no-git --verbose --source $GITHUB_WORKSPACE
 
@@ -21,8 +22,6 @@ jobs:
       env:
         VAULT-PASS: ${{ secrets.vault_pass }} # Repo-Secret
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
       - run: ansible-lint --version
       - run: echo $VAULT-PASS > ./vault-pass.yml # nach des Secret in Großschreibung
       - run: ls -lah
