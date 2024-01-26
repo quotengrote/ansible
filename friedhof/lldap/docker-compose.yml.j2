@@ -2,7 +2,7 @@ version: "3"
 services:
 ######## App ########
   lldap:
-    image: nitnelave/lldap:stable@sha256:f0f5d92cd6c6dca9415993cfc57919f0618e87090b323a98c1536975860fa45a
+    image: nitnelave/lldap:stable
     container_name: lldap-app
     restart: always
     ports:
@@ -42,7 +42,7 @@ services:
       - com.centurylinklabs.watchtower.depends-on=lldap-db
 ######## DB ########
   lldap-db:
-    image: mariadb:10.6.15:10
+    image: mariadb:10.6.14
     container_name: lldap-db
     restart: always
     volumes:

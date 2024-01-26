@@ -56,7 +56,7 @@ services:
     environment:
       WOODPECKER_SERVER: woodpecker-server:9000
       WOODPECKER_AGENT_SECRET: "{{ lookup('keepass', 'woodpecker-agent-secret', 'password') }}"
-      WOODPECKER_MAX_WORKFLOWS: 4
+      WOODPECKER_MAX_WORKFLOWS: 20
       WOODPECKER_DEBUG_PRETTY: true
       WOODPECKER_LOG_LEVEL: info
       WOODPECKER_HEALTHCHECK: true
