@@ -3,7 +3,7 @@ services:
   oci-registry:
     restart: always
     container_name: oci-registry
-    image: registry:2
+    image: registry:2.8.2
     volumes:
       - oci:/var/lib/registry
       - ./htpasswd:/auth/htpasswd
@@ -51,7 +51,7 @@ services:
     # docker pull registry.mgrote.net/myfirstimage
 
   oci-registry-redis:
-    image: redis:7
+    image: redis:7.0.15
     container_name: oci-registry-redis
     networks:
       - intern

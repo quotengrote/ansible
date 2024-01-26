@@ -66,7 +66,7 @@ services:
       com.centurylinklabs.watchtower.depends-on: photoprism-db
 
   mariadb:
-    image: mariadb:10
+    image: mariadb:10.6.15:10
     container_name: photoprism-db
     restart: always
     security_opt:

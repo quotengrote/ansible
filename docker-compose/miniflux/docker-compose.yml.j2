@@ -36,7 +36,7 @@ services:
 ######## PostGreSQL ########
   db:
     container_name: "mf-db"
-    image: postgres:13
+    image: postgres:13.12:13.12
     restart: always
     environment:
       POSTGRES_USER: miniflux

@@ -42,7 +42,7 @@ services:
       - com.centurylinklabs.watchtower.depends-on=lldap-db
 ######## DB ########
   lldap-db:
-    image: mariadb:10@sha256:692856b1f36a6e824ff8b8e78929643c90faa5f0931d74425eed52b09e8ac37b
+    image: mariadb:10.6.15:10
     container_name: lldap-db
     restart: always
     volumes:
