@@ -3,7 +3,7 @@ services:
   watchtower:
     restart: always
     container_name: watchtower
-    image: containrrr/watchtower:1.7.0
+    image: containrrr/watchtower:1.7.1@sha256:6dd50763bbd632a83cb154d5451700530d1e44200b268a4e9488fefdfcf2b038
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
