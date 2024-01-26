@@ -5,8 +5,6 @@
       tags: "ntp"
     - role: mgrote_postfix
       tags: "postfix"
-    - role: mgrote_restic
-      tags: "restic"
     - role: mgrote_fail2ban
       tags: "f2b"
     - role: mgrote_fwupd_settings

@@ -1,0 +1,78 @@
+---
+- hosts: all
+  tasks:
+    - name: ensure group exists
+      become: true
+      ansible.builtin.group:
+        name: restic
+        state: absent
+
+    - name: install restic-packages
+      become: true
+      ansible.builtin.package:
+        name:
+          - restic
+        state: absent
+
+    - name: create "/etc/restic"
+      become: true
+      ansible.builtin.file:
+        path: "/etc/restic"
+        state: absent
+
+    - name: systemctl start restic.timer
+      become: true
+      ansible.builtin.systemd:
+        name: restic.timer
+        state: stopped
+        enabled: false
+
+
+    - name: systemctl enable units
+      become: true
+      ansible.builtin.systemd:
+        name: "{{ item }}"
+        enabled: false
+        masked: true
+      with_items:
+        - media-restic.automount
+        - media-restic.mount
+        - restic.service
+        - restic.timer
+        - restic_mail.service
+
+    - name: template restic.mount
+      become: true
+      ansible.builtin.file:
+        state: absent
+        path: /etc/systemd/system/media-restic.mount # media-restic == /media/restic
+
+    - name: template restic.automount
+      become: true
+      ansible.builtin.file:
+        path: /etc/systemd/system/media-restic.automount
+        state: absent
+
+    - name: template restic.service
+      become: true
+      ansible.builtin.file:
+        path: /etc/systemd/system/restic.service
+        state: absent
+
+    - name: template restic.timer
+      become: true
+      ansible.builtin.file:
+        path: /etc/systemd/system/restic.timer
+        state: absent
+
+    - name: template restic_mail.service
+      become: true
+      ansible.builtin.file:
+        path: /etc/systemd/system/restic_mail.service
+        state: absent
+
+    - name: template restic_mail.service
+      become: true
+      ansible.builtin.file:
+        path: /etc/systemd/system/media-restic.automount
+        state: absent
