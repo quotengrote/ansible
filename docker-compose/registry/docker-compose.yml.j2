@@ -3,7 +3,7 @@ services:
   oci-registry:
     restart: always
     container_name: oci-registry
-    image: "registry:2.8.2@sha256:bcece5dd3d4b6189e13e7ac71b2ccbc2aae649365f0c589852d687efeba6b290"
+    image: "registry:2.8.3@sha256:0a182cb82c93939407967d6d71d6caf11dcef0e5689c6afe2d60518e3b34ab86"
     volumes:
       - oci:/var/lib/registry
       - ./htpasswd:/auth/htpasswd
