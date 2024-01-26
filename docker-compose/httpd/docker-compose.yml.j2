@@ -2,7 +2,7 @@ version: '3'
 services:
   httpd-registry:
     container_name: "httpd-registry"
-    image: "httpd:2.4.57"
+    image: "httpd:2.4.57@sha256:5201524443f9026753e25540a44495b7f6e6ca706c71208bb3a5f2daac205c31"
     restart: always
     volumes:
       - uploads:/usr/local/apache2/htdocs/
@@ -14,7 +14,7 @@ services:
 
   python-api-server:
     container_name: httpd-api
-    image: "registry.mgrote.net/python-api-server:latest"
+    image: "registry.mgrote.net/python-api-server:latest@sha256:524c567f4003699fc450a04650b1988e387e4735f1b0800c72328c9115a414be"
     restart: always
     ports:
       - "5040:5000"

@@ -19,7 +19,7 @@ version: '3.5'
 services:
   photoprism:
     # Use photoprism/photoprism:preview instead for testing preview builds:
-    image: "photoprism/photoprism:231128"
+    image: "photoprism/photoprism:231128@sha256:cf45026f3381b13cc638ed556d1f717340267d1a832794380f49998fd3a899c8"
     container_name: photoprism-frontend
     restart: always
     security_opt:
@@ -66,7 +66,7 @@ services:
       com.centurylinklabs.watchtower.depends-on: photoprism-db
 
   mariadb:
-    image: "mariadb:10.6.15"
+    image: "mariadb:10.6.15@sha256:e22328f4d7147c2488d0e104277861be14321b3e39e91df4d90cc9a8aee9c362"
     container_name: photoprism-db
     restart: always
     security_opt:

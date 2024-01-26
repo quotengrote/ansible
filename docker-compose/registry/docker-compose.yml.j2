@@ -3,7 +3,7 @@ services:
   oci-registry:
     restart: always
     container_name: oci-registry
-    image: "registry:2.8.2"
+    image: "registry:2.8.2@sha256:bcece5dd3d4b6189e13e7ac71b2ccbc2aae649365f0c589852d687efeba6b290"
     volumes:
       - oci:/var/lib/registry
       - ./htpasswd:/auth/htpasswd
@@ -51,7 +51,7 @@ services:
     # docker pull registry.mgrote.net/myfirstimage
 
   oci-registry-redis:
-    image: "redis:7.0.15"
+    image: "redis:7.0.15@sha256:5372f3076d8e9822ce6ab55f3336b3b0f05c2d6ea927522669b83e10e91d9205"
     container_name: oci-registry-redis
     networks:
       - intern
@@ -65,7 +65,7 @@ services:
   oci-registry-ui:
     restart: always
     # url: registry.mgrote.net/ui/index.html
-    image: "joxit/docker-registry-ui:2.5.5"
+    image: "joxit/docker-registry-ui:2.5.5@sha256:1cf12d4b2d647f0a3860b6e4ccf1fccbf73e219e217ab580d8a4d3891d3f1e28"
     container_name: oci-registry-ui
     environment:
       DELETE_IMAGES: true

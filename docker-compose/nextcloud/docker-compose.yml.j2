@@ -2,7 +2,7 @@ version: '3.3'
 services:
 ######## Datenbank ########
   nextcloud-db:
-    image: "mariadb:10.6.15"
+    image: "mariadb:10.6.15@sha256:e22328f4d7147c2488d0e104277861be14321b3e39e91df4d90cc9a8aee9c362"
     container_name: nextcloud-db
     command: --transaction-isolation=READ-COMMITTED --log-bin=ROW --innodb_read_only_compressed=OFF
     restart: unless-stopped
@@ -30,7 +30,7 @@ services:
 
 ######## Redis ########
   nextcloud-redis:
-    image: "redis:7.0.15"
+    image: "redis:7.0.15@sha256:5372f3076d8e9822ce6ab55f3336b3b0f05c2d6ea927522669b83e10e91d9205"
     container_name: nextcloud-redis
     hostname: nextcloud-redis
     networks:
@@ -43,7 +43,7 @@ services:
 ######## cron ########
   nextcloud-cron:
     container_name: nextcloud-cron
-    image: "registry.mgrote.net/nextcloud-cronjob:master"
+    image: "registry.mgrote.net/nextcloud-cronjob:master@sha256:9836e31f1cfed9e60c16d4f5926a8ca89a184e431d0b2ed7ebf4a21706560ec2"
     restart: unless-stopped
     network_mode: none
     depends_on:
@@ -59,7 +59,7 @@ services:
 
 ######## Nextcloud ########
   nextcloud-app:
-    image: "nextcloud:27.1.5"
+    image: "nextcloud:27.1.5@sha256:4fdf4eefe53da7677749d8efeff6bc697da753dd3ce37843385d10498ace5ffe"
     container_name: nextcloud-app
     restart: unless-stopped
     depends_on:
