@@ -61,11 +61,10 @@ gitea_repo_indexer_enabled: true
 
 gitea_mailer_enabled: true
 gitea_mailer_skip_verify: false
-gitea_mailer_tls_enabled: true
-gitea_mailer_host: smtp.strato.de:465
-gitea_mailer_from: info@mgrote.net
-gitea_mailer_user: "info@mgrote.net"
-gitea_mailer_password: "{{ lookup('keepass', 'strato_smtp_password', 'password') }}"
+gitea_mailer_tls_enabled: false
+gitea_mailer_host: docker10.mgrote.net:1025
+gitea_mailer_from: gitea@mgrote.net
+gitea_mailer_user: "gitea@mgrote.net"
 gitea_mailer_type: smtp
 
 gitea_default_branch: 'master'

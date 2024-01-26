@@ -2,7 +2,7 @@
 version: "2.1"
 services:
   unifi-network-application:
-    image: lscr.io/linuxserver/unifi-network-application:8.0.28-ls27
+    image: "lscr.io/linuxserver/unifi-network-application:8.0.28-ls27"
     container_name: unifi-network-application
     environment:
       PUID: 1000
@@ -41,7 +41,7 @@ services:
     # 1. mongo
     # 2. db.getSiblingDB("unifidb").createUser({user: "unifiuser", pwd: "GEHEIM", roles: [{role: "dbOwner", db: "unifidb"}, {role: "dbOwner", db: "unifidb_stat"}]});
     # https://discourse.linuxserver.io/t/cant-connect-to-mongodb-for-unifi-network-application/8166
-    image: docker.io/mongo:6.0.13
+    image: "docker.io/mongo:6.0.13"
     container_name: unifi-db
     volumes:
       - db-data:/data/db
