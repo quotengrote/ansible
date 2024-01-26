@@ -15,3 +15,4 @@ roles/oefenweb-ansible-ufw
 roles/pandemonium1986-ansible-role-k9s
 roles/pyratlabs-ansible-role-gitea
 collections/
+plugins/lookup/__pycache__/
