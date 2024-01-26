@@ -11,7 +11,7 @@ services:
       environment:
         SMTP_SERVER: smtp.strato.de
         SMTP_USERNAME: info@mgrote.net
-        SMTP_PASSWORD: {{ lookup('keepass', 'strato_smtp_password', 'password') }}
+        SMTP_PASSWORD: "{{ lookup('keepass', 'strato_smtp_password', 'password') }}"
         SERVER_HOSTNAME: mgrote.net
         # DEBUG: "yes" # literal
         ALWAYS_ADD_MISSING_HEADERS: "no" # literal

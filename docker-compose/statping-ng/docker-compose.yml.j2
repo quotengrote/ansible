@@ -11,7 +11,7 @@ services:
       DB_CONN: sqlite
       ALLOW_REPORT: false
       ADMIN_USER: statadmin
-      ADMIN_PASSWORD: {{ lookup('keepass', 'statping_admin_password', 'password') }}
+      ADMIN_PASSWORD: "{{ lookup('keepass', 'statping_admin_password', 'password') }}"
       SAMPLE_DATA: false
     ports:
       - 8083:8080

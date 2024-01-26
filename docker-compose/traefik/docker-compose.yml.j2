@@ -28,7 +28,7 @@ services:
     image: "nosduco/nforwardauth:v1.3.4"
     container_name: traefik-nforwardauth
     environment:
-      TOKEN_SECRET: {{ lookup('keepass', 'nforwardauth_token_secret', 'password') }}
+      TOKEN_SECRET: "{{ lookup('keepass', 'nforwardauth_token_secret', 'password') }}"
       AUTH_HOST: auth.mgrote.net
     labels:
       traefik.enable: true

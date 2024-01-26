@@ -16,9 +16,9 @@ services:
       WOODPECKER_WEBHOOK_HOST: http://docker10.mgrote.net:8000
       WOODPECKER_GITEA: true
       WOODPECKER_GITEA_URL: https://git.mgrote.net
-      WOODPECKER_GITEA_CLIENT: {{ lookup('keepass', 'woodpecker-oauth2-client-id', 'password') }}
-      WOODPECKER_GITEA_SECRET: {{ lookup('keepass', 'woodpecker-oauth2-client-secret', 'password') }}
-      WOODPECKER_AGENT_SECRET: {{ lookup('keepass', 'woodpecker-agent-secret', 'password') }}
+      WOODPECKER_GITEA_CLIENT: "{{ lookup('keepass', 'woodpecker-oauth2-client-id', 'password') }}"
+      WOODPECKER_GITEA_SECRET: "{{ lookup('keepass', 'woodpecker-oauth2-client-secret', 'password') }}"
+      WOODPECKER_AGENT_SECRET: "{{ lookup('keepass', 'woodpecker-agent-secret', 'password') }}"
       WOODPECKER_ADMIN: mg
       WOODPECKER_LOG_LEVEL: info
       WOODPECKER_DEBUG_PRETTY: true
@@ -55,7 +55,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       WOODPECKER_SERVER: woodpecker-server:9000
-      WOODPECKER_AGENT_SECRET: {{ lookup('keepass', 'woodpecker-agent-secret', 'password') }}
+      WOODPECKER_AGENT_SECRET: "{{ lookup('keepass', 'woodpecker-agent-secret', 'password') }}"
       WOODPECKER_MAX_WORKFLOWS: 4
       WOODPECKER_DEBUG_PRETTY: true
       WOODPECKER_LOG_LEVEL: info
@@ -72,8 +72,8 @@ volumes:
   agent-config:
 
 # git.mgrote.net -> Settings -> Applications -> woodpecker
-# WOODPECKER_GITEA_CLIENT: {{ lookup('keepass', 'woodpecker-oauth2-client-id', 'password') }}
-# WOODPECKER_GITEA_SECRET: {{ lookup('keepass', 'woodpecker-oauth2-client-secret', 'password') }}
+# WOODPECKER_GITEA_CLIENT: "{{ lookup('keepass', 'woodpecker-oauth2-client-id', 'password') }}"
+# WOODPECKER_GITEA_SECRET: "{{ lookup('keepass', 'woodpecker-oauth2-client-secret', 'password') }}"
 # Redirect URL: https://ci.mgrote.net/authorize
 
 ######## Networks ########

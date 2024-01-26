@@ -17,7 +17,7 @@ services:
       TZ: Europe/Berlin
       REGISTRY_AUTH: none
       REGISTRY_REDIS_ADDR: oci-registry-redis:6379
-      REGISTRY_REDIS_PASSWORD: {{ lookup('keepass', 'oci-registry-redis-pw', 'password') }}
+      REGISTRY_REDIS_PASSWORD: "{{ lookup('keepass', 'oci-registry-redis-pw', 'password') }}"
       REGISTRY_STORAGE_DELETE_ENABLED: true
       REGISTRY_CATALOG_MAXENTRIES: 100000 # https://github.com/Joxit/docker-registry-ui/issues/306
       # https://joxit.dev/docker-registry-ui/#using-cors
@@ -57,7 +57,7 @@ services:
       - intern
     restart: always
     environment:
-      REDIS_PASSWORD: {{ lookup('keepass', 'oci-registry-redis-pw', 'password') }}
+      REDIS_PASSWORD: "{{ lookup('keepass', 'oci-registry-redis-pw', 'password') }}"
       MAXMEMORY POLICY: allkeys-lru
     labels:
       com.centurylinklabs.watchtower.enable: true

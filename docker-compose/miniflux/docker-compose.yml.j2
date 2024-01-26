@@ -8,11 +8,11 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_URL: postgres://miniflux:{{ lookup('keepass', 'miniflux_postgres_password', 'password') }}@mf-db/miniflux?sslmode=disable
+      DATABASE_URL: "postgres://miniflux:{{ lookup('keepass', 'miniflux_postgres_password', 'password') }}"@mf-db/miniflux?sslmode=disable
       RUN_MIGRATIONS: 1
 #      CREATE_ADMIN: 1
 #      ADMIN_USERNAME: adminmf
-#      ADMIN_PASSWORD: {{ lookup('keepass', 'miniflux_admin_password', 'password') }}
+#      ADMIN_PASSWORD: "{{ lookup('keepass', 'miniflux_admin_password', 'password') }}"
       WORKER_POOL_SIZE: 10
       POLLING_FREQUENCY: 10
       CLEANUP_ARCHIVE_UNREAD_DAYS: -1
@@ -40,7 +40,7 @@ services:
     restart: always
     environment:
       POSTGRES_USER: miniflux
-      POSTGRES_PASSWORD: {{ lookup('keepass', 'miniflux_postgres_password', 'password') }}
+      POSTGRES_PASSWORD: "{{ lookup('keepass', 'miniflux_postgres_password', 'password') }}"
       TZ: Europe/Berlin
     volumes:
       - db:/var/lib/postgresql/data
@@ -57,7 +57,7 @@ services:
     restart: always
     environment:
       TZ: Europe/Berlin
-      MF_AUTH_TOKEN: {{ lookup('keepass', 'miniflux_auth_token', 'password') }}
+      MF_AUTH_TOKEN: "{{ lookup('keepass', 'miniflux_auth_token', 'password') }}"
       MF_API_URL: https://miniflux.mgrote.net/v1
       MF_SLEEP: 600
       #MF_DEBUG: 1

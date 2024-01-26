@@ -9,7 +9,7 @@ services:
       PGID: 1000
       TZ: Etc/UTC
       MONGO_USER: unifiuser
-      MONGO_PASS: {{ lookup('keepass', 'unifi-mongodb-pass', 'password') }}
+      MONGO_PASS: "{{ lookup('keepass', 'unifi-mongodb-pass', 'password') }}"
       MONGO_HOST: unifi-db
       MONGO_PORT: 27017
       MONGO_DBNAME: unifidb

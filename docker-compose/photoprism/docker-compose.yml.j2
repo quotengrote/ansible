@@ -76,10 +76,10 @@ services:
     volumes: # Don't remove permanent storage for index database files!
       - "database:/var/lib/mysql"
     environment:
-      MYSQL_ROOT_PASSWORD: {{ lookup('keepass', 'photoprism_mysql_root_password', 'password') }}
+      MYSQL_ROOT_PASSWORD: "{{ lookup('keepass', 'photoprism_mysql_root_password', 'password') }}"
       MYSQL_DATABASE: photoprism
       MYSQL_USER: photoprism
-      MYSQL_PASSWORD: {{ lookup('keepass', 'photoprism_database_password', 'password') }}
+      MYSQL_PASSWORD: "{{ lookup('keepass', 'photoprism_database_password', 'password') }}"
     labels:
       com.centurylinklabs.watchtower.enable: true
 

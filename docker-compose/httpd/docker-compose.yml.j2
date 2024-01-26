@@ -25,7 +25,7 @@ services:
       # FLASK_APP: app # for debugging
       MAX_CONTENT_LENGTH: 500
       UPLOAD_DIRECTORY: /uploads
-      AUTH_TOKEN: {{ lookup('keepass', 'httpd-api-server-token', 'password') }}
+      AUTH_TOKEN: "{{ lookup('keepass', 'httpd-api-server-token', 'password') }}"
       ENABLE_WEBSERVER: false
     labels:
       com.centurylinklabs.watchtower.enable: true
