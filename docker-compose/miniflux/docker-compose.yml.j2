@@ -3,7 +3,7 @@ services:
 ######## Miniflux ########
   miniflux:
     container_name: "mf-frontend"
-    image: miniflux/miniflux:latest
+    image: ghcr.io/miniflux/miniflux:2.0.51
     restart: always
     depends_on:
       - db

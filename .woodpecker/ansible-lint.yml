@@ -7,7 +7,6 @@ steps:
     commands:
       - ansible-lint --version
       - echo $${VAULTPASS} > ./vault-pass.yml # nach des Secret in Großschreibung
-      - cat ./vault-pass.yml #debug
       - ansible-galaxy install -r requirements.yml
       - ansible-lint --force-color --format pep8
     when:
@@ -16,4 +15,4 @@ steps:
           - tag
     secrets:
       - source: vault-pass # name des Secrets in Woodpecker/GUI
-        target: vaultpass # lower-case Name der variable zur Verwendung in dem CI-File, wird dann so genutzt $${VAULTPASS}
+        target: vaultpass # lower-case Name der Variable zur Verwendung in dem CI-File, wird dann so genutzt $${VAULTPASS}
