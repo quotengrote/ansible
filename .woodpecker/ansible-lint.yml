@@ -1,7 +1,4 @@
 ---
-kind: pipeline
-type: docker
-name: ansible-lint
 depends_on:
   - gitleaks
 steps:
@@ -9,11 +6,14 @@ steps:
     image: quay.io/ansible/creator-ee
     commands:
       - ansible-lint --version
-      - echo $VAULT-PASS > ./vault-pass.yml # nach des Secret in Großschreibung
+      - echo $${VAULTPASS} > ./vault-pass.yml # nach des Secret in Großschreibung
+      - cat ./vault-pass.yml #debug
       - ansible-galaxy install -r requirements.yml
       - ansible-lint --force-color --format pep8
     when:
       event:
         exclude:
           - tag
-    secret: [vault-pass] #dieses Secret darf verwendet werden
+    secrets:
+      - source: vault-pass # name des Secrets in Woodpecker/GUI
+        target: vaultpass # lower-case Name der variable zur Verwendung in dem CI-File, wird dann so genutzt $${VAULTPASS}

@@ -1,0 +1,16 @@
+---
+- name: ensure etckeeper is installed
+  become: true
+  ansible.builtin.package:
+    name:
+      - etckeeper
+      - git
+    state: present
+    install_recommends: false
+
+- name: ensure repository is initialized
+  ansible.builtin.command: etckeeper init
+  args:
+    chdir: /etc/
+    creates: /etc/.etckeeper
+...

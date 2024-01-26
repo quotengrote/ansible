@@ -3,6 +3,8 @@
   roles:
     - role: mgrote_ntp_chrony_client
       tags: "ntp"
+    - role: mgrote_etckeeper
+      tags: "etckeeper"
     - role: mgrote_postfix
       tags: "postfix"
     - role: mgrote_fail2ban
