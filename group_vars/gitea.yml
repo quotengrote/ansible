@@ -18,6 +18,11 @@ pvresize_to_max: true
 ### mgrote_restic
 restic_folders_to_backup: "/ /var/lib/gitea" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
 
+### mgrote_apt_manage_packages
+apt_packages_extra:
+  - fail2ban
+
+
 ### oefenweb.ufw
 ufw_rules:
   - rule: allow
@@ -38,7 +43,8 @@ ufw_rules:
 
 ### l3d.gitea
 # config liegt in /etc/gitea/gitea.ini
-gitea_version: "1.21.0"
+gitea_version: "1.21.4"
+gitea_fork: "gitea"
 gitea_app_name: "Gitea"
 gitea_user: "gitea"
 gitea_home: "/var/lib/gitea"
@@ -55,17 +61,16 @@ gitea_disable_gravatar: true
 gitea_enable_captcha: true
 gitea_only_allow_external_registration: false
 gitea_enable_notify_mail: true
+gitea_autowatch_on_change: true
 gitea_force_private: false
 gitea_oauth2_enabled: true
 gitea_repo_indexer_enabled: true
 
 gitea_mailer_enabled: true
-gitea_mailer_skip_verify: false
-gitea_mailer_tls_enabled: false
-gitea_mailer_host: docker10.mgrote.net:1025
-gitea_mailer_from: gitea@mgrote.net
-gitea_mailer_user: "gitea@mgrote.net"
-gitea_mailer_type: smtp
+gitea_mailer_protocol: smtp
+gitea_mailer_smtp_addr: docker10.mgrote.net
+gitea_mailer_smtp_port: 1025
+gitea_mailer_from: "gitea@mgrote.net"
 
 gitea_default_branch: 'master'
 
@@ -98,3 +103,7 @@ gitea_extra_config: |
 
 gitea_backup_on_upgrade: false
 gitea_backup_location: "{{ gitea_home }}/backups/"
+
+submodules_versioncheck: true
+gitea_log_systemd: true
+gitea_log_level: "Info"
