@@ -8,7 +8,7 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_URL: "postgres://miniflux:{{ lookup('keepass', 'miniflux_postgres_password', 'password') }}"@mf-db/miniflux?sslmode=disable
+      DATABASE_URL: "postgres://miniflux:{{ lookup('keepass', 'miniflux_postgres_password', 'password') }}@mf-db/miniflux?sslmode=disable"
       RUN_MIGRATIONS: 1
 #      CREATE_ADMIN: 1
 #      ADMIN_USERNAME: adminmf
