@@ -22,7 +22,6 @@ restic_folders_to_backup: "/ /var/lib/gitea" # --one-file-system ist gesetzt, al
 apt_packages_extra:
   - fail2ban
 
-
 ### oefenweb.ufw
 ufw_rules:
   - rule: allow
