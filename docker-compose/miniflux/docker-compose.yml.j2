@@ -3,7 +3,7 @@ services:
 ######## Miniflux ########
   miniflux:
     container_name: "mf-frontend"
-    image: "ghcr.io/miniflux/miniflux:2.0.51"
+    image: "ghcr.io/miniflux/miniflux:2.0.51@sha256:9f3bca6a95428c04c8fb54ee723a5f69b9e419b0bf5dfd7a4d70dfb0414d60f1"
     restart: always
     depends_on:
       - db
@@ -36,7 +36,7 @@ services:
 ######## PostGreSQL ########
   db:
     container_name: "mf-db"
-    image: "postgres:16.0"
+    image: "postgres:16.0@sha256:a80d0c1b119cf3d6bab27f72782f16e47ab8534ced937fa813ec2ab26e1fd81e"
     restart: always
     environment:
       POSTGRES_USER: miniflux
@@ -61,7 +61,7 @@ services:
       MF_API_URL: https://miniflux.mgrote.net/v1
       MF_SLEEP: 600
       #MF_DEBUG: 1
-    image: "registry.mgrote.net/miniflux-filter:latest"
+    image: "registry.mgrote.net/miniflux-filter:latest@sha256:092837cb04bc7f5531f4f8047ae3d13ee862f3709dcd22f8af75a621341edcfd"
     volumes:
       - ./filter.txt:/data/filter.txt
     networks:
