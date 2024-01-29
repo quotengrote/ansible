@@ -1,0 +1,26 @@
+---
+steps:
+  gitleaks:
+    image: zricethezav/gitleaks:v8.18.1@sha256:6945c62ca019ead32bc337ab0c9fd055e98d82961765d38b7ccccc84dae95d0f
+    commands:
+      - gitleaks detect --no-git --verbose --source $CI_WORKSPACE
+    when:
+      event:
+        exclude:
+          - tag
+
+  shellcheck:
+    image: registry.mgrote.net/allzweckcontainer
+    commands:
+      - |
+        find . -type f -not -path './.git/*' -not -path './collections/*' -not -path './friedhof/*' -exec file {} \; | while IFS= read -r line; do
+          if echo "$line" | grep -q "shell script"; then
+            file_path=$(echo "$line" | awk -F':' '{print $1}')
+            shellcheck "$file_path"
+          fi
+        done
+    when:
+      event:
+        exclude:
+          - tag
+...
