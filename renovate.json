@@ -4,7 +4,4 @@
     "config:recommended"
   ],
   "ignorePaths": ["**/friedhof/**"],
-  "pip_requirements": {
-    "fileMatch": ["group_vars/ansible.yml"]
-  }
 }

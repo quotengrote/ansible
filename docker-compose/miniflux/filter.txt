@@ -30,6 +30,7 @@ golem.de::Fussball
 golem.de::Fußball
 golem.de::(g+)
 golem.de::Golem Karrierewelt
+www.thedrive.com::Bunker Talk:
 golem.de::in aller Kürze
 golem.de::In eigener Sache
 golem.de::kurznews
@@ -166,6 +167,7 @@ reddit.com::UEFA
 stackoverflow.blog::Podcast
 stackoverflow.blog::The Overflow
 tagesschau.de::11KM
+tagesschau.de::11KM-Podcast
 tagesschau.de::Achtelfinale
 tagesschau.de::Alpine-Super-Kombination:
 tagesschau.de::American Football:
