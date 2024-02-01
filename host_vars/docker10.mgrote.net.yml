@@ -69,8 +69,6 @@ compose_files:
   - name: woodpecker
     state: present
     network: traefik
-  - name: photoprism
-    state: present
   - name: wiki
     state: present
     network: traefik

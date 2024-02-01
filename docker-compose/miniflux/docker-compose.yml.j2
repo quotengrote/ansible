@@ -6,9 +6,9 @@ services:
     image: "ghcr.io/miniflux/miniflux:2.0.51@sha256:9f3bca6a95428c04c8fb54ee723a5f69b9e419b0bf5dfd7a4d70dfb0414d60f1"
     restart: always
     depends_on:
-      - db
+      - mf-db16
     environment:
-      DATABASE_URL: "postgres://miniflux:{{ lookup('keepass', 'miniflux_postgres_password', 'password') }}@mf-db/miniflux?sslmode=disable"
+      DATABASE_URL: "postgres://miniflux:{{ lookup('keepass', 'miniflux_postgres_password', 'password') }}@mf-db16/miniflux?sslmode=disable"
       RUN_MIGRATIONS: 1
 #      CREATE_ADMIN: 1
 #      ADMIN_USERNAME: adminmf
@@ -30,20 +30,20 @@ services:
       traefik.http.services.miniflux.loadbalancer.server.port: 8080
 
       com.centurylinklabs.watchtower.enable: true
-      com.centurylinklabs.watchtower.depends-on: mf-db
+      com.centurylinklabs.watchtower.depends-on: mf-db16
 
-
-######## PostGreSQL ########
-  db:
-    container_name: "mf-db"
+######## Postgres ########
+  mf-db16:
+    container_name: "mf-db16"
     image: "postgres:16.0@sha256:a80d0c1b119cf3d6bab27f72782f16e47ab8534ced937fa813ec2ab26e1fd81e"
     restart: always
     environment:
       POSTGRES_USER: miniflux
       POSTGRES_PASSWORD: "{{ lookup('keepass', 'miniflux_postgres_password', 'password') }}"
       TZ: Europe/Berlin
+      POSTGRES_HOST_AUTH_METHOD: "md5" # Workaround beim Migration von 13 -> 16; https://eelkevdbos.medium.com/upgrade-postgresql-with-docker-compose-99d995e464 ;
     volumes:
-      - db:/var/lib/postgresql/data
+      - db16:/var/lib/postgresql/data
     networks:
       - intern
     labels:
@@ -72,7 +72,7 @@ services:
 
 ######## Volumes ########
 volumes:
-  db:
+  db16:
 ######## Networks ########
 networks:
   traefik:
