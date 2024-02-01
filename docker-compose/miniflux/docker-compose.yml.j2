@@ -21,6 +21,8 @@ services:
     networks:
       - intern
       - traefik
+    healthcheck:
+      test: ["CMD", "/usr/bin/miniflux", "-healthcheck", "auto"]
     labels:
       traefik.http.routers.miniflux.rule: Host(`miniflux.mgrote.net`)
       traefik.enable: true
@@ -46,6 +48,10 @@ services:
       - db16:/var/lib/postgresql/data
     networks:
       - intern
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "miniflux"]
+      interval: 10s
+      start_period: 30s
     labels:
       com.centurylinklabs.watchtower.enable: true
 

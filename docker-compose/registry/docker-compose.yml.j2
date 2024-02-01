@@ -13,6 +13,11 @@ services:
     depends_on:
       - oci-registry-ui
       - oci-registry-redis
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:5000/v2/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
     environment:
       TZ: Europe/Berlin
       REGISTRY_AUTH: none
@@ -61,6 +66,11 @@ services:
       MAXMEMORY POLICY: allkeys-lru
     labels:
       com.centurylinklabs.watchtower.enable: true
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   oci-registry-ui:
     restart: always
@@ -77,6 +87,11 @@ services:
     networks:
       - traefik
       - intern
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
     labels:
       traefik.http.routers.registry-ui.rule: Host(`registry.mgrote.net`)&&PathPrefix(`/ui`) # mache unter /ui erreichbar, damit wird demPfad dieser Prefix hinzugefügt, die Anwendung "hört" dort abrer nicht
       traefik.http.routers.registry-ui.middlewares: registry-ui-strip-prefix,registry-ui-ipwhitelist # also entferne den Prefix danach wieder

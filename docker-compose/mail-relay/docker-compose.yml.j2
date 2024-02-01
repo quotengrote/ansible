@@ -1,25 +1,30 @@
 version: '3.3'
 services:
-    postfix:
-      image: "registry.mgrote.net/postfix:master@sha256:fa2af0bc8edacfff05be461370c1591d480ae48ce3027a8322f80dba950cb9a7"
-      container_name: mail-relay
-      restart: always
-      labels:
-        com.centurylinklabs.watchtower.enable: true
-      ports:
-          - 1025:25
-      environment:
-        SMTP_SERVER: smtp.strato.de
-        SMTP_USERNAME: info@mgrote.net
-        SMTP_PASSWORD: "{{ lookup('keepass', 'strato_smtp_password', 'password') }}"
-        SERVER_HOSTNAME: mgrote.net
-        # DEBUG: "yes" # literal
-        ALWAYS_ADD_MISSING_HEADERS: "no" # literal
-        # LOG_SUBJECT: "yes" # literal
-        INET_PROTOCOL: ipv4
-        SMTP_GENERIC_MAP: "/.*/ info@mgrote.net"
-      networks:
-        - mail-relay
+  postfix:
+    image: "registry.mgrote.net/postfix:master@sha256:fa2af0bc8edacfff05be461370c1591d480ae48ce3027a8322f80dba950cb9a7"
+    container_name: mail-relay
+    restart: always
+    labels:
+      com.centurylinklabs.watchtower.enable: true
+    ports:
+        - 1025:25
+    environment:
+      SMTP_SERVER: smtp.strato.de
+      SMTP_USERNAME: info@mgrote.net
+      SMTP_PASSWORD: "{{ lookup('keepass', 'strato_smtp_password', 'password') }}"
+      SERVER_HOSTNAME: mgrote.net
+      # DEBUG: "yes" # literal
+      ALWAYS_ADD_MISSING_HEADERS: "no" # literal
+      # LOG_SUBJECT: "yes" # literal
+      INET_PROTOCOL: ipv4
+      SMTP_GENERIC_MAP: "/.*/ info@mgrote.net"
+    networks:
+      - mail-relay
+    healthcheck:
+      test: ["CMD", "sh", "-c", "echo 'EHLO localhost' | nc -w 1 localhost 25 | grep -q '220 '"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 ######## Networks ########
 networks:

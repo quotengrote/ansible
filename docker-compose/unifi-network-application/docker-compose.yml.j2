@@ -34,6 +34,11 @@ services:
     networks:
       - mail-relay
       - unifi-internal
+    healthcheck:
+      test: ["CMD", "curl", "-f", "--insecure", "https://localhost:8443"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   unifi-db:
     # Starte Container OHNE init-script
@@ -52,6 +57,11 @@ services:
       com.centurylinklabs.watchtower.enable: true
     networks:
       - unifi-internal
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.stats().ok"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 ######## Volumes ########
 volumes:
