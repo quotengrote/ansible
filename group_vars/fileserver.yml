@@ -23,4 +23,5 @@ smb_workgroup: WORKGROUP
 smb_min_protocol: "SMB2"
 smb_client_min_protocol: "SMB2"
 smb_client_max_protocol: "SMB3_11"
-smb_enable_snapshots_dir: false
+smb_enable_snapshots_dir: true
+smb_enable_snapshots_shadow: true

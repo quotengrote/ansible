@@ -11,15 +11,16 @@
 ##======================= catia =======================
 vfs objects = catia
 catia: mappings = {{ smb_catia_mappings }}
-{% elif smb_enable_snapshots_shadow is sameas true and smb_enable_snapshots_dir is sameas false %}
+{% elif smb_enable_snapshots_dir is sameas false and smb_enable_snapshots_shadow is sameas true %}
 ##======================= shadow_copy2 =======================
-vfs objects = {{ smb_shadow_vfs_objects }}
+vfs objects = shadow_copy2
 shadow: snapdir = {{ smb_shadow_snapdir }}
 shadow: sort = {{ smb_shadow_sort }}
 shadow: format = {{ smb_shadow_format }}
 shadow: snapprefix = {{ smb_shadow_snapprefix }}
 shadow: delimiter = {{ smb_shadow_delimiter }}
 shadow: localtime = {{ smb_shadow_localtime }}
+shadow: snapdirseverywhere = yes
 {% elif smb_enable_snapshots_shadow is sameas true and smb_enable_snapshots_dir is sameas true %}
 #======================= vfs objects =======================
 vfs objects = shadow_copy2, catia
