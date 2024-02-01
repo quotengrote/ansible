@@ -83,16 +83,16 @@ smb_packages:
 ## sorgt dafur das statt "A0KDC9~F" die Ordnernamen als "autosnap_2021-11-04_23÷59÷02_daily" angezeigt werden
 ## https://www.samba.org/samba/docs/current/man-html/vfs_catia.8.html
 # aktiv?
-smb_enable_snapshots_dir: true
+smb_enable_snapshots_dir: false
 # welche Character/zeichen-Ersetzungen soll catia ausführen
 smb_catia_mappings: "0x3a:0xf7" # ersetzt ":" durch "÷"
 
 # als Windows-Shattenkopien einbinden
 ## https://www.samba.org/samba/docs/current/man-html/vfs_shadow_copy2.8.html
 ## BUG: Windows sieht die Schattenkopien, kann die Ausgewählte Datei aber nicht öffnen wenn sie seit dem Snapshot gelöscht wurde, vmtl da Windows nicht den kompletten Snapshot-Pfad verwendet
-## Format ist passend fur sanoid-Snapshots
+## Format ist passend für sanoid-Snapshots
 # aktiv?
-smb_enable_snapshots_shadow: false
+smb_enable_snapshots_shadow: true
 # wo liegen die Snapshots
 smb_shadow_snapdir: ".zfs/snapshot"
 # Sortierung
@@ -104,4 +104,4 @@ smb_shadow_snapprefix: "^autosnap"
 # Snapshot-"Trenner"
 smb_shadow_delimiter: "_"
 # zeitformat Snapshots
-smb_shadow_localtime: "no"
+smb_shadow_localtime: "yes"

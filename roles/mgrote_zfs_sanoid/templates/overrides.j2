@@ -1,0 +1,6 @@
+{{ file_header | default () }}
+
+[Unit]
+OnFailure = sanoid_mail.service
+[Service]
+Environment=TZ=Europe/Berlin

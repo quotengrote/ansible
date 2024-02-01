@@ -19,17 +19,14 @@
   notify:
     - systemctl daemon-reload
 
-- name: add sanoid_mail.service to sanoid.service
+- name: add overrides (sanoid_mail + TZ)
   become: true
-  ansible.builtin.blockinfile:
-    create: true
+  ansible.builtin.template:
+    src: "overrides.j2"
     mode: "0644"
     owner: root
     group: root
-    path: /lib/systemd/system/sanoid.service.d/override.conf
-    block: |
-      [Unit]
-      OnFailure = sanoid_mail.service
+    dest: /lib/systemd/system/sanoid.service.d/override.conf
   notify:
     - systemctl daemon-reload
 

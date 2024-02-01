@@ -24,7 +24,7 @@ shadow: localtime = {{ smb_shadow_localtime }}
 #======================= vfs objects =======================
 vfs objects = shadow_copy2, catia
 ##======================= catia =======================
-catia: mappings = {{ smb_catia_mappings }}
+catia:mappings = {{ smb_catia_mappings }}
 ##======================= shadow_copy2 =======================
 shadow: snapdir = {{ smb_shadow_snapdir }}
 shadow: sort = {{ smb_shadow_sort }}
@@ -32,6 +32,7 @@ shadow: format = {{ smb_shadow_format }}
 shadow: snapprefix = {{ smb_shadow_snapprefix }}
 shadow: delimiter = {{ smb_shadow_delimiter }}
 shadow: localtime = {{ smb_shadow_localtime }}
+shadow: snapdirseverywhere = yes
 {% endif %}
 
 
