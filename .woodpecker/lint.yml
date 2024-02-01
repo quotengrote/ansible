@@ -1,7 +1,7 @@
 ---
 steps:
   gitleaks:
-    image: zricethezav/gitleaks:v8.18.1@sha256:6945c62ca019ead32bc337ab0c9fd055e98d82961765d38b7ccccc84dae95d0f
+    image: zricethezav/gitleaks:v8.18.2@sha256:eadfe256fa18d6a78a717abc9ed454c8e03865d1c46d627bca83977f4424901a
     commands:
       - gitleaks detect --no-git --verbose --source $CI_WORKSPACE
     when:
