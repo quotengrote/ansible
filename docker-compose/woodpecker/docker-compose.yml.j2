@@ -35,10 +35,10 @@ services:
       traefik.http.routers.woodpecker.entrypoints: entry_https
       traefik.http.services.woodpecker.loadbalancer.server.port: 8000
 
-      traefik.http.routers.woodpecker.middlewares: woodpecker-ipwhitelist
+      traefik.http.routers.woodpecker.middlewares: woodpecker-ipallowlist
 
-      traefik.http.middlewares.woodpecker-ipwhitelist.ipwhitelist.sourcerange: "192.168.2.0/24,10.25.25.0/24"
-      traefik.http.middlewares.woodpecker-ipwhitelist.ipwhitelist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipwhitelist/#ipstrategydepth
+      traefik.http.middlewares.woodpecker-ipallowlist.ipallowlist.sourcerange: "192.168.2.0/24,10.25.25.0/24"
+      traefik.http.middlewares.woodpecker-ipallowlist.ipallowlist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipallowlist/#ipstrategydepth
 
 
   woodpecker-agent:

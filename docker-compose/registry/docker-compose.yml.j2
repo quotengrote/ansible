@@ -39,10 +39,10 @@ services:
       traefik.http.routers.registry.entrypoints: entry_https
       traefik.http.services.registry.loadbalancer.server.port: 5000
 
-      traefik.http.routers.registry.middlewares: registry-ipwhitelist
+      traefik.http.routers.registry.middlewares: registry-ipallowlist
 
-      traefik.http.middlewares.registry-ipwhitelist.ipwhitelist.sourcerange: 192.168.2.0/24,10.25.25.0/24,192.168.48.0/24,172.18.0.0/16 # .48. ist Docker
-      traefik.http.middlewares.registry-ipwhitelist.ipwhitelist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipwhitelist/#ipstrategydepth
+      traefik.http.middlewares.registry-ipallowlist.ipallowlist.sourcerange: 192.168.2.0/24,10.25.25.0/24,192.168.48.0/24,172.18.0.0/16 # .48. ist Docker
+      traefik.http.middlewares.registry-ipallowlist.ipallowlist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipallowlist/#ipstrategydepth
 
       com.centurylinklabs.watchtower.depends-on: oci-registry-redis
       com.centurylinklabs.watchtower.enable: true
@@ -94,7 +94,7 @@ services:
       retries: 3
     labels:
       traefik.http.routers.registry-ui.rule: Host(`registry.mgrote.net`)&&PathPrefix(`/ui`) # mache unter /ui erreichbar, damit wird demPfad dieser Prefix hinzugefügt, die Anwendung "hört" dort abrer nicht
-      traefik.http.routers.registry-ui.middlewares: registry-ui-strip-prefix,registry-ui-ipwhitelist # also entferne den Prefix danach wieder
+      traefik.http.routers.registry-ui.middlewares: registry-ui-strip-prefix,registry-ui-ipallowlist # also entferne den Prefix danach wieder
       traefik.http.middlewares.registry-ui-strip-prefix.stripprefix.prefixes: /ui # hier ist die Middleware definiert
       traefik.enable: true
       traefik.http.routers.registry-ui.tls: true
@@ -102,8 +102,8 @@ services:
       traefik.http.routers.registry-ui.entrypoints: entry_https
       traefik.http.services.registry-ui.loadbalancer.server.port: 80
 
-      traefik.http.middlewares.registry-ui-ipwhitelist.ipwhitelist.sourcerange: 192.168.2.0/24,10.25.25.0/24 # .48. ist Docker
-      traefik.http.middlewares.registry-ui-ipwhitelist.ipwhitelist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipwhitelist/#ipstrategydepth
+      traefik.http.middlewares.registry-ui-ipallowlist.ipallowlist.sourcerange: 192.168.2.0/24,10.25.25.0/24 # .48. ist Docker
+      traefik.http.middlewares.registry-ui-ipallowlist.ipallowlist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipallowlist/#ipstrategydepth
 
 
       com.centurylinklabs.watchtower.depends-on: oci-registry-redis,oci-registry
