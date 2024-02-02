@@ -2,7 +2,7 @@ version: '3'
 services:
   httpd-registry:
     container_name: "httpd-registry"
-    image: "httpd:2.4.58@sha256:ad01c94aa4ee2a03eba75c84c1e485f62d29d119792c4ed59e66c5b63ae5c91f"
+    image: "registry.mgrote.net/httpd:master"
     restart: always
     volumes:
       - uploads:/usr/local/apache2/htdocs/
@@ -11,6 +11,11 @@ services:
       - 3344:80
     labels:
       com.centurylinklabs.watchtower.enable: true
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   python-api-server:
     container_name: httpd-api
