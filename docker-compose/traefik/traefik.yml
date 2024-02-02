@@ -37,6 +37,8 @@ api:
   insecure: true
   dashboard: true # unter Port 8081 erreichbar
 
+ping: {} # für healthcheck
+
 #experimental:
 #  plugins:
 #    ldapAuth:

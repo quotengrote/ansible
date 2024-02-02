@@ -18,6 +18,16 @@ services:
       MYSQL_INITDB_SKIP_TZINFO: 1
     networks:
       - intern
+    healthcheck:
+      interval: 30s
+      retries: 3
+      test:
+        [
+          "CMD",
+          "healthcheck.sh",
+          "--connect",
+        ]
+      timeout: 30s
     labels:
       com.centurylinklabs.watchtower.enable: true
 
@@ -39,6 +49,11 @@ services:
     command: "redis-server --requirepass {{ lookup('keepass', 'nextcloud_redis_host_password', 'password') }}"
     labels:
       com.centurylinklabs.watchtower.enable: true
+    healthcheck:
+      test: ["CMD", "redis-cli", "--pass", "{{ lookup('keepass', 'nextcloud_redis_host_password', 'password') }}", "--no-auth-warning", "ping"]
+      interval: 5s
+      timeout: 2s
+      retries: 3
 
 ######## cron ########
   nextcloud-cron:
@@ -91,6 +106,11 @@ services:
       - intern
       - traefik
       - mail-relay
+    healthcheck:
+      test: ["CMD", "curl", "-f", "--insecure", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
     labels:
       com.centurylinklabs.watchtower.enable: true
       com.centurylinklabs.watchtower.depends-on: nextcloud-redis,nextcloud-db
