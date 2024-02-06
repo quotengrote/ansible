@@ -60,7 +60,7 @@ compose_files:
     state: present
     network: traefik
   - name: watchtower
-    state: present
+    state: absent
   - name: routeros-config-export
     state: present
   - name: mail-relay

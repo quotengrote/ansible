@@ -28,9 +28,6 @@ services:
       - 6789:6789 #optional
       - 5514:5514/udp #optional
     restart: always
-    labels:
-      com.centurylinklabs.watchtower.enable: true
-      com.centurylinklabs.watchtower.depends-on: unifi-db
     networks:
       - mail-relay
       - unifi-internal
@@ -53,8 +50,6 @@ services:
     restart: always
     environment:
       MARIADB_AUTO_UPGRADE: "1"
-    labels:
-      com.centurylinklabs.watchtower.enable: true
     networks:
       - unifi-internal
     healthcheck:

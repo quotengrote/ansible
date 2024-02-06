@@ -4,8 +4,6 @@ services:
     image: "registry.mgrote.net/postfix:master@sha256:40295c98aaf8736a0b5dced79df48caf8bf717019629a6c2147c5b10e64f6eba"
     container_name: mail-relay
     restart: always
-    labels:
-      com.centurylinklabs.watchtower.enable: true
     ports:
         - 1025:25
     environment:

@@ -26,8 +26,6 @@ services:
       - intern
       - traefik
     labels:
-      com.centurylinklabs.watchtower.enable: true
-
       traefik.http.routers.woodpecker.rule: Host(`ci.mgrote.net`)
       traefik.enable: true
       traefik.http.routers.woodpecker.tls: true
@@ -61,8 +59,6 @@ services:
       WOODPECKER_LOG_LEVEL: info
       WOODPECKER_HEALTHCHECK: true
       WOODPECKER_BACKEND: docker
-    labels:
-      com.centurylinklabs.watchtower.enable: true
     networks:
       - intern
 

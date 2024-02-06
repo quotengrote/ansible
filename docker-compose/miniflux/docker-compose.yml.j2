@@ -31,9 +31,6 @@ services:
       traefik.http.routers.miniflux.entrypoints: entry_https
       traefik.http.services.miniflux.loadbalancer.server.port: 8080
 
-      com.centurylinklabs.watchtower.enable: true
-      com.centurylinklabs.watchtower.depends-on: mf-db16
-
 ######## Postgres ########
   mf-db16:
     container_name: "mf-db16"
@@ -52,8 +49,6 @@ services:
       test: ["CMD", "pg_isready", "-U", "miniflux"]
       interval: 10s
       start_period: 30s
-    labels:
-      com.centurylinklabs.watchtower.enable: true
 
 ######## Miniflux-Filter ########
   mf-filter:
@@ -72,9 +67,6 @@ services:
       - ./filter.txt:/data/filter.txt
     networks:
       - intern
-    labels:
-      com.centurylinklabs.watchtower.enable: true
-      com.centurylinklabs.watchtower.depends-on: mf-frontend
 
 ######## Volumes ########
 volumes:

@@ -44,9 +44,6 @@ services:
       traefik.http.middlewares.registry-ipallowlist.ipallowlist.sourcerange: 192.168.2.0/24,10.25.25.0/24,192.168.48.0/24,172.18.0.0/16 # .48. ist Docker
       traefik.http.middlewares.registry-ipallowlist.ipallowlist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipallowlist/#ipstrategydepth
 
-      com.centurylinklabs.watchtower.depends-on: oci-registry-redis
-      com.centurylinklabs.watchtower.enable: true
-
     # registry aufräumen: docker exec -it oci-registry /bin/registry garbage-collect --delete-untagged=true /etc/docker/registry/config.yml
 
     # testen mit:
@@ -64,8 +61,6 @@ services:
     environment:
       REDIS_PASSWORD: "{{ lookup('keepass', 'oci-registry-redis-pw', 'password') }}"
       MAXMEMORY POLICY: allkeys-lru
-    labels:
-      com.centurylinklabs.watchtower.enable: true
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 30s
@@ -104,11 +99,6 @@ services:
 
       traefik.http.middlewares.registry-ui-ipallowlist.ipallowlist.sourcerange: 192.168.2.0/24,10.25.25.0/24 # .48. ist Docker
       traefik.http.middlewares.registry-ui-ipallowlist.ipallowlist.ipstrategy.depth: 0 # https://doc.traefik.io/traefik/middlewares/http/ipallowlist/#ipstrategydepth
-
-
-      com.centurylinklabs.watchtower.depends-on: oci-registry-redis,oci-registry
-      com.centurylinklabs.watchtower.enable: true
-
 
 ######## Networks ########
 networks:

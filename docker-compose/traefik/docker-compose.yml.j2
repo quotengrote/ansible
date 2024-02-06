@@ -19,8 +19,6 @@ services:
       - "2222:2222" # SSH
     environment:
       TZ: Europe/Berlin
-    labels:
-      com.centurylinklabs.watchtower.enable: true
     healthcheck:
       test: ["CMD", "traefik", "healthcheck", "--ping"]
       interval: 30s
@@ -45,9 +43,6 @@ services:
       traefik.http.routers.nforwardauth.tls: true
       traefik.http.routers.nforwardauth.tls.certresolver: resolver_letsencrypt
       traefik.http.routers.nforwardauth.entrypoints: entry_https
-
-      com.centurylinklabs.watchtower.depends-on: traefik
-      com.centurylinklabs.watchtower.enable: true
     volumes:
       - "./passwd:/passwd:ro" # Mount local passwd file at /passwd as read only
     networks:

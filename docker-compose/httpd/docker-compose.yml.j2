@@ -9,8 +9,6 @@ services:
       - "{{ compose_dest_basedir }}/httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro"
     ports:
       - 3344:80
-    labels:
-      com.centurylinklabs.watchtower.enable: true
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
       interval: 30s
@@ -32,8 +30,6 @@ services:
       UPLOAD_DIRECTORY: /uploads
       AUTH_TOKEN: "{{ lookup('keepass', 'httpd-api-server-token', 'password') }}"
       ENABLE_WEBSERVER: false
-    labels:
-      com.centurylinklabs.watchtower.enable: true
 
 volumes:
   uploads:

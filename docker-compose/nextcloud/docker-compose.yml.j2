@@ -28,8 +28,6 @@ services:
           "--connect",
         ]
       timeout: 30s
-    labels:
-      com.centurylinklabs.watchtower.enable: true
 
   # Error
   ## [ERROR] Incorrect definition of table mysql.column_stats: expected column 'histogram' at position 10 to have type longblob, found type varbinary(255).
@@ -47,8 +45,6 @@ services:
       - intern
     restart: unless-stopped
     command: "redis-server --requirepass {{ lookup('keepass', 'nextcloud_redis_host_password', 'password') }}"
-    labels:
-      com.centurylinklabs.watchtower.enable: true
     healthcheck:
       test: ["CMD", "redis-cli", "--pass", "{{ lookup('keepass', 'nextcloud_redis_host_password', 'password') }}", "--no-auth-warning", "ping"]
       interval: 5s
@@ -69,8 +65,6 @@ services:
     environment:
       NEXTCLOUD_CONTAINER_NAME: nextcloud-app
       NEXTCLOUD_CRON_MINUTE_INTERVAL: 1
-    labels:
-      com.centurylinklabs.watchtower.enable: true
 
 ######## Nextcloud ########
   nextcloud-app:
@@ -112,9 +106,6 @@ services:
       timeout: 10s
       retries: 3
     labels:
-      com.centurylinklabs.watchtower.enable: true
-      com.centurylinklabs.watchtower.depends-on: nextcloud-redis,nextcloud-db
-
       traefik.http.routers.nextcloud.rule: Host(`nextcloud.mgrote.net`)
       traefik.enable: true
       traefik.http.routers.nextcloud.tls: true
