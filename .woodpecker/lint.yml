@@ -5,9 +5,7 @@ steps:
     commands:
       - gitleaks detect --no-git --verbose --source $CI_WORKSPACE
     when:
-      event:
-        exclude:
-          - tag
+      - evaluate: 'CI_COMMIT_AUTHOR_EMAIL != "renovate@mgrote.net"'
 
   shellcheck:
     image: registry.mgrote.net/allzweckcontainer@sha256:2623b8487e29abc93fa6d65282323baed54fd8f034c5aea3be4fd71293db69bb
@@ -20,7 +18,5 @@ steps:
           fi
         done
     when:
-      event:
-        exclude:
-          - tag
+      - evaluate: 'CI_COMMIT_AUTHOR_EMAIL != "renovate@mgrote.net"'
 ...

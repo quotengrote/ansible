@@ -11,10 +11,9 @@ steps:
       - echo $${VAULTPASS} > ./vault-pass.yml # nach des Secret in Großschreibung
       - ansible-galaxy install -r requirements.yml
       - ansible-lint --force-color --format pep8
-    when:
-      event:
-        exclude:
-          - tag
     secrets:
       - source: vault-pass # name des Secrets in Woodpecker/GUI
         target: vaultpass # lower-case Name der Variable zur Verwendung in dem CI-File, wird dann so genutzt $${VAULTPASS}
+    when:
+      - evaluate: 'CI_COMMIT_AUTHOR_EMAIL != "renovate@mgrote.net"'
+...

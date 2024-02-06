@@ -5,6 +5,5 @@ steps:
     commands:
       - gitleaks detect --no-git --verbose --source $CI_WORKSPACE
     when:
-      event:
-        exclude:
-          - tag
+      - evaluate: 'CI_COMMIT_AUTHOR_EMAIL != "renovate@mgrote.net"'
+...
