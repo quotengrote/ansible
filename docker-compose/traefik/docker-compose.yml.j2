@@ -3,7 +3,7 @@ services:
 ######## traefik ########
   traefik:
     container_name: traefik
-    image: "traefik:v3.0@sha256:81a73de0d19b6d61eb1f1e413d48835fe3c412f5ed3d9750dc3dab5c93519445"
+    image: "traefik:v3.0"
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -28,7 +28,7 @@ services:
 ######## nforwardauth ########
   nforwardauth:
     restart: always
-    image: "nosduco/nforwardauth:v1.4.0@sha256:16e38db002d27758bdc53c70ba12113d84158c758efe930c97c6e9e2bf612a5d"
+    image: "nosduco/nforwardauth:v1.4.0"
     container_name: traefik-nforwardauth
     environment:
       TOKEN_SECRET: "{{ lookup('keepass', 'nforwardauth_token_secret', 'password') }}"

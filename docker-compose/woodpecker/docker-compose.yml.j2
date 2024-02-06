@@ -5,7 +5,7 @@ services:
   woodpecker-server:
     restart: always
     container_name: woodpecker-server
-    image: "woodpeckerci/woodpecker-server:v2.3.0@sha256:50b4d16adae91a9be2d73efb093c8a5df43bde228e416efcd71620822478d4a1"
+    image: "woodpeckerci/woodpecker-server:v2.3.0"
     ports:
       - 8000:8000
     volumes:
@@ -41,7 +41,7 @@ services:
 
   woodpecker-agent:
     container_name: woodpecker-agent
-    image: "woodpeckerci/woodpecker-agent:v2.3.0@sha256:d64898cf9cfa5ae735e904dc421baf6fa1f36df24800793d8f4a455ba964e65f"
+    image: "woodpeckerci/woodpecker-agent:v2.3.0"
     command: agent
     restart: always
     depends_on:
