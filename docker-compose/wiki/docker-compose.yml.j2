@@ -2,7 +2,7 @@ version: '3'
 services:
   wiki-webserver:
     container_name: wiki-webserver
-    image: "registry.mgrote.net/httpd:master"
+    image: "registry.mgrote.net/httpd:master@sha256:4e99b75f28d06cc2fde76b9679119c7a757a2a80176ce5987898cc7f421f48f8"
     restart: always
     networks:
       - traefik

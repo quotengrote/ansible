@@ -3,7 +3,7 @@ services:
 ######## traefik ########
   traefik:
     container_name: traefik
-    image: "traefik:v3.0"
+    image: "traefik:v3.0@sha256:81a73de0d19b6d61eb1f1e413d48835fe3c412f5ed3d9750dc3dab5c93519445"
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
