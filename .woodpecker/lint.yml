@@ -10,7 +10,7 @@ steps:
           - tag
 
   shellcheck:
-    image: registry.mgrote.net/allzweckcontainer@sha256:f8ca4352976dff1f1506a09a3f1d1b13d8db743b94a3b42b8523665a92afd730
+    image: registry.mgrote.net/allzweckcontainer@sha256:d5c3e533b1fc02b4a074f85c32e234ca266e9a3e00a03280ce0185b654bf60c1
     commands:
       - |
         find . -type f -not -path './.git/*' -not -path './collections/*' -not -path './friedhof/*' -exec file {} \; | while IFS= read -r line; do
