@@ -5,7 +5,7 @@ depends_on:
 
 steps:
   ansible-lint:
-    image: quay.io/ansible/creator-ee@sha256:90298d88bc38f057e199523b8143c2c4cf9c159547ef93cf62d8861390c5600a
+    image: quay.io/ansible/creator-ee:v0.22.0
     commands:
       - ansible-lint --version
       - echo $${VAULTPASS} > ./vault-pass.yml # nach des Secret in Großschreibung

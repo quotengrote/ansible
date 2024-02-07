@@ -3,7 +3,7 @@ services:
   routeros-config-export:
     container_name: routeros-config-export
     restart: always
-    image: "registry.mgrote.net/routeros-config-export:v1.0.116@sha256:49ae7f9746178744c7315e3164b1fd9a49e00f4fb3a0e79abbad2fb7817402ab"
+    image: "registry.mgrote.net/routeros-config-export:v1.0.116"
     volumes:
       - ./key_rb5009:/key_rb5009:ro
       - ./key_hex:/key_hex:ro

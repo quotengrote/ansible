@@ -1,14 +1,14 @@
 ---
 steps:
   gitleaks:
-    image: zricethezav/gitleaks:v8.18.2@sha256:eadfe256fa18d6a78a717abc9ed454c8e03865d1c46d627bca83977f4424901a
+    image: zricethezav/gitleaks:v8.18.2
     commands:
       - gitleaks detect --no-git --verbose --source $CI_WORKSPACE
     when:
       - evaluate: 'CI_COMMIT_AUTHOR_EMAIL != "renovate@mgrote.net"'
 
   shellcheck:
-    image: registry.mgrote.net/allzweckcontainer@sha256:2623b8487e29abc93fa6d65282323baed54fd8f034c5aea3be4fd71293db69bb
+    image: registry.mgrote.net/allzweckcontainer
     commands:
       - |
         find . -type f -not -path './.git/*' -not -path './collections/*' -not -path './friedhof/*' -exec file {} \; | while IFS= read -r line; do
