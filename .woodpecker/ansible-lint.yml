@@ -1,7 +1,6 @@
 ---
 depends_on:
   - gitleaks
-  - lint
 
 steps:
   ansible-lint:
