@@ -73,7 +73,7 @@ compose_files:
     state: present
     network: traefik
   - name: statping-ng
-    state: present
+    state: absent
 
 ### oefenweb.ufw
 ufw_rules:
