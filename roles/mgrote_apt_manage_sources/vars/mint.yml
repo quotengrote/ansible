@@ -1,9 +1,8 @@
 ---
 # Repositories
 repos:
-  - "deb http://packages.linuxmint.com vera main upstream import backport"
-  - "deb http://archive.ubuntu.com/ubuntu {{ ansible_distribution_release }} main restricted universe multiverse"
-  - "deb http://archive.ubuntu.com/ubuntu {{ ansible_distribution_release }}-updates main restricted universe multiverse"
-  - "deb http://archive.ubuntu.com/ubuntu {{ ansible_distribution_release }}-backports main restricted universe multiverse"
-  - "deb http://security.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-security main restricted universe multiverse"
-  - "deb http://archive.canonical.com/ubuntu/ {{ ansible_distribution_release }} partner"
+  - "deb http://packages.linuxmint.com victoria main upstream import backport"
+  - "deb http://de.archive.ubuntu.com/ubuntu jammy main restricted universe multiverse" # TODO
+  - "deb http://de.archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse"
+  - "deb http://de.archive.ubuntu.com/ubuntu jammy-security main restricted universe multiverse"
+  - "deb http://de.archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse"
