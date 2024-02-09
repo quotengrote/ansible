@@ -32,6 +32,7 @@ all:
       hosts:
         pve5.mgrote.net:
         pbs.mgrote.net:
+        irantu.mgrote.net:
     gitea:
       hosts:
         gitea.mgrote.net:
@@ -39,6 +40,7 @@ all:
     production:
       hosts:
         fileserver3.mgrote.net:
+        irantu.mgrote.net:
         ansible2.mgrote.net:
         pve5.mgrote.net:
         gitea.mgrote.net:
