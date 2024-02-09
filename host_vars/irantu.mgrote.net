@@ -24,4 +24,5 @@ apt_packages_extra:
   - sshpass
   - ansible
   - linux-oem-22.04c
-
+  - vlc
+  - rofi
