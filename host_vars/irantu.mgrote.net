@@ -26,3 +26,22 @@ apt_packages_extra:
   - linux-oem-22.04c
   - vlc
   - rofi
+
+### mgrote_user
+users:
+  - username: mg
+    password: "{{ lookup('keepass', 'mg_irantu_hash', 'password') }}"
+    update_password: always
+    groups: ssh, sudo
+    state: present
+    public_ssh_key: "{{ ssh_public_key_mg }}"
+    allow_sudo: true
+    allow_passwordless_sudo: true
+  - username: ansible-user
+    password: "{{ lookup('keepass', 'ansible_user_linux_password_hash', 'password') }}"
+    update_password: always
+    groups: ssh, sudo
+    state: present
+    public_ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcBwOjanQV6sFWaTetqpl20SVe3aRzGjKbsp7hKkDCE mg@irantu
+    allow_sudo: true
+    allow_passwordless_sudo: true
