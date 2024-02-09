@@ -1,0 +1,27 @@
+---
+### oefenweb.ufw
+ufw_rules:
+  - rule: allow
+    to_port: 22
+    protocol: tcp
+    comment: 'ssh'
+    from_ip: 0.0.0.0/0
+ufw_default_incoming_policy: deny
+ufw_default_outgoing_policy: allow
+
+### apt_install_packages
+apt_packages_extra:
+  - qemu
+  - virt-manager
+  - tmux
+  - keychain
+  - jq
+  - vim
+  - cifs-utils
+  - nextcloud-desktop
+  - keepassxc
+  - openssh-server
+  - sshpass
+  - ansible
+    linux-oem-22.04b
+
