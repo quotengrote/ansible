@@ -20,29 +20,6 @@ dotfiles_vim_vundle_repo_url: https://git.mgrote.net/mirrors/Vundle.vim.git
 ### mgrote_netplan
 netplan_configure: true
 
-### mgrote_restic
-restic_user: root
-restic_group: restic
-restic_conf_dir: /etc/restic
-restic_exclude: |
-      ._*
-      desktop.ini
-      .Trash-*
-      **/**cache***/**
-      **/**Cache***/**
-      **/**AppData***/**
-      # https://github.com/restic/restic/issues/1005
-      # https://forum.restic.net/t/exclude-syntax-confusion/1531/12
-restic_mount_timeout: "10 min"
-restic_failure_delay: "30 s"
-restic_schedule: "0/6:00" # alle 6 Stunden
-restic_folders_to_backup: "/" # --one-file-system ist gesetzt, also werden weitere Dateisysteme nicht eingeschlossen, es sei denn sie werden hier explizit angegeben; https://restic.readthedocs.io/en/latest/040_backup.html#excluding-files
-restic_repository: "//fileserver3.mgrote.net/restic"
-restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"
-restic_mount_user: restic
-restic_mount_password: "{{ lookup('keepass', 'fileserver_smb_user_restic', 'password') }}"
-restic_fail_mail: "{{ my_mail }}"
-
 ### mgrote_user
 users:
   - username: mg
@@ -83,11 +60,6 @@ ntp_chrony_logging: false
 ### mgrote_postfix
 postfix_smtp_server: docker10.mgrote.net
 postfix_smtp_server_port: 1025
-
-### mgrote_tmux
-tmux_conf_destination: "/home/mg/.tmux.conf"
-tmux_bashrc_destination: "/home/mg/.bashrc"
-tmux_standardsession_name: "default"
 
 ### mgrote_fail2ban
 f2b_bantime: 300
