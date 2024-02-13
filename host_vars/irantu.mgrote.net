@@ -26,6 +26,7 @@ apt_packages_extra:
   - linux-oem-22.04c
   - vlc
   - rofi
+  - wireguard
 
 ### mgrote_user
 users:
