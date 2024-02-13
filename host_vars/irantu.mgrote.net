@@ -27,6 +27,7 @@ apt_packages_extra:
   - vlc
   - rofi
   - wireguard
+  - wine
 
 ### mgrote_user
 users:
