@@ -5,10 +5,8 @@
     name:
       - wireguard
     state: present
-
-- name: Ensure resolvconf is configured
-  become: true
-  ansible.builtin.command: ln -s /usr/bin/resolvectl /usr/local/bin/resolvconf
+  notify:
+    - Ensure resolvconf is configured
 
 - name: Ensure profiles are templated
   become: true
