@@ -1,0 +1,4 @@
+---
+- hosts: laptop
+  roles:
+    - { role: mgrote_wireguard, tags: "wireguard", become: true }

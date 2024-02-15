@@ -33,6 +33,9 @@ all:
         pve5.mgrote.net:
         pbs.mgrote.net:
         irantu.mgrote.net:
+    laptop:
+      hosts:
+        irantu.mgrote.net:
     gitea:
       hosts:
         gitea.mgrote.net:
