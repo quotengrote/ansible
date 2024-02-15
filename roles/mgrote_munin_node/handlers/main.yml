@@ -10,6 +10,6 @@
   changed_when: "output_conf.rc != 0"
   ignore_errors: true # ignoriere fehler
 
-- name: munin-node-configure --shell - 2 # noqa ignore-errors
+- name: munin-node-configure --shell - 2 # noqa ignore-errors no-changed-when
   ansible.builtin.command: munin-node-configure --shell --families=contrib,auto | sh -x
   ignore_errors: true # ignoriere fehler

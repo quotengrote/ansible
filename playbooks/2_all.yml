@@ -3,3 +3,4 @@
 - ansible.builtin.import_playbook: base/system.yml
 - ansible.builtin.import_playbook: base/users.yml
 - ansible.builtin.import_playbook: base/ufw.yml
+- ansible.builtin.import_playbook: base/monitoring.yml

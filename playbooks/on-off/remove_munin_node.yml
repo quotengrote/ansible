@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Ensure packages are absent
+      become: yes
+      ansible.builtin.apt:
+        autoremove: yes
+        autoclean: yes
+        purge: yes
+        name:
+          - munin-node
+        state: absent
+
+    - name: Ensure directories are absent
+      become: yes
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: absent
+      loop:
+        - /usr/share/munin
+        - /etc/munin

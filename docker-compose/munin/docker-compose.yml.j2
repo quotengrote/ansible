@@ -1,0 +1,42 @@
+version: '3'
+services:
+  munin:
+    container_name: "munin-master"
+    image: registry.mgrote.net/munin-server:v1.1.64
+    restart: always
+    environment:
+      MAILCONTACT: michael.grote@posteo.de
+      MAILSERVER: mail-relay
+      MAILPORT: 25
+      MAILFROM: munin@mgrote.net
+      MAILUSER: munin@mgrote.net
+      MAILNAME: Munin
+      MAILDOMAIN: mgrote.net
+      TZ: Europe/Berlin
+      CRONDELAY: 5
+      NODES: |
+        fileserver3.mgrote.net:fileserver3.mgrote.net
+        ansible2.mgrote.net:ansible2.mgrote.net
+        pve5.mgrote.net:pve5.mgrote.net
+        gitea.mgrote.net:gitea.mgrote.net
+        docker10.mgrote.net:docker10.mgrote.net
+        pbs.mgrote.net:pbs.mgrote.net
+        blocky.mgrote.net:blocky.mgrote.net
+      # z.B.
+      # computer-test.mgrote.net.test:192.68.2.4
+      # computer.mgrote.net:computer.mgrote.net
+    volumes:
+      - db:/var/lib/munin
+      - logs:/var/log/munin
+      - cache:/var/cache/munin
+    ports:
+      - 1234:80
+
+volumes:
+  db:
+  logs:
+  cache:
+
+networks:
+  mail-relay:
+    external: true

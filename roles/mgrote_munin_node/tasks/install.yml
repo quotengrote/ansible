@@ -13,7 +13,7 @@
     state: directory
     owner: root
     group: root
-    mode: "0644"
+    mode: "0755"
   loop:
     - /etc/munin
     - /etc/munin/plugin-conf.d
@@ -25,5 +25,5 @@
     dest: /etc/munin/munin-node.conf
     owner: root
     group: root
-    mode: "0644"
+    mode: "0755"
   notify: restart munin-node
