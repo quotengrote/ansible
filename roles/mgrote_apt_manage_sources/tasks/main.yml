@@ -7,7 +7,7 @@
 
 - name: include vars (mint) (determined by "ansible_distribution")
   ansible.builtin.include_vars:
-    file: mint.yml
+    file: mint.yaml
   when:
     - ansible_distribution == 'Linux Mint'
 
