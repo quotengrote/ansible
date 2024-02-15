@@ -47,3 +47,21 @@ users:
     public_ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJcBwOjanQV6sFWaTetqpl20SVe3aRzGjKbsp7hKkDCE mg@irantu
     allow_sudo: true
     allow_passwordless_sudo: true
+
+### mgrote.wireguard
+wireguard_profiles:
+  - name: wg0
+    privatekey: "{{ lookup('keepass', 'wireguard_irantu_private_key', 'password') }}"
+    address: 10.25.25.4/24
+    dns: 192.168.2.37
+    publickey: yUDu0ReEz6CjFW6Ecoh2oN/eAGRtVQP38Bu5hJnv1w0=
+    allowedips: 192.168.2.0/24, 192.168.3.0/24
+    endpoint: mgrote.net:13231
+  - name: wg1
+    privatekey: "{{ lookup('keepass', 'wireguard_irantu_private_key', 'password') }}"
+    address: 10.25.25.4/24
+    dns: 192.168.2.37
+    publickey: yUDu0ReEz6CjFW6Ecoh2oN/eAGRtVQP38Bu5hJnv1w0=
+    allowedips: 0.0.0.0/0
+    endpoint: mgrote.net:13231
+...
