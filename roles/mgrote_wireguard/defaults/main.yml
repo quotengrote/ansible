@@ -1,0 +1,11 @@
+---
+wireguard_conf_dir: /etc/wireguard
+#wireguard_profiles:
+#  - name: wg0
+#    privatekey:
+#    address:
+#    dns:
+#    publickey:
+#    allowedips:
+#    endpoint:
+...
