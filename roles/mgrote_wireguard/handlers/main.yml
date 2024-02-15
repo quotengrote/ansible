@@ -1,5 +1,5 @@
 ---
-- name: Ensure resolvconf is configured
+- name: Ensure resolvconf is configured # noqa no-changed-when
   become: true
   ansible.builtin.command: ln -s /usr/bin/resolvectl /usr/local/bin/resolvconf
 ...
