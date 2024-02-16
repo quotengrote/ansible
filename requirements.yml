@@ -1,8 +1,16 @@
 collections:
-  - git+https://git.mgrote.net/ansible-collections-mirrors/community.general
-  - git+https://git.mgrote.net/ansible-collections-mirrors/community.crypto
-  - git+https://git.mgrote.net/ansible-collections-mirrors/ansible.posix
-  - git+https://git.mgrote.net/ansible-collections-mirrors/community.docker
+  - name: community.general
+    version: "8.3.0"
+    source: git+https://git.mgrote.net/ansible-collections-mirrors/community.general
+  - name: community.crypto
+    version: "2.17.1"
+    source: git+https://git.mgrote.net/ansible-collections-mirrors/community.crypto
+  - name: ansible.posix
+    version: "1.5.4"
+    source: git+https://git.mgrote.net/ansible-collections-mirrors/ansible.posix
+  - name: community.docker
+    version: "3.7.0"
+    source: git+https://git.mgrote.net/ansible-collections-mirrors/community.docker
 roles:
   - src: https://git.mgrote.net/ansible-roles-mirrors/pyratlabs-ansible-role-k3s
     scm: git
