@@ -1,5 +1,10 @@
 {{ file_header | default () }}
 upstreams:
+  init:
+    # Configure startup behavior.
+    # accepted: blocking, failOnError, fast
+    # default: blocking
+    strategy: fast
   groups:
     default:
 {% for item in blocky_dns_upstream %}
@@ -7,9 +12,6 @@ upstreams:
 {% endfor %}
   strategy: parallel_best
   timeout: 2s
-
-# optional: If true, blocky will fail to start unless at least one upstream server per group is reachable. Default: false
-startVerifyUpstream: true
 
 # optional: Determines how blocky will create outgoing connections. This impacts both upstreams, and lists.
 # accepted: dual, v4, v6
@@ -47,17 +49,18 @@ blocking:
     downloads:
       # optional: timeout for list download (each url). Use large values for big lists or slow internet connections
       # default: 5s
-      timeout: 5s
+      timeout: 60s
       # optional: Maximum download attempts
       # default: 3
-      attempts: 3
+      attempts: 5
       # optional: Time between the download attempts
       # default: 500ms
-      cooldown: 500ms
+      cooldown: 10s
     # optional: Maximum number of lists to process in parallel.
     # default: 4
-    concurrency: 4
-    # optional: if failOnError, application startup will fail if at least one list can't be downloaded/opened
+    concurrency: 16
+    # Configure startup behavior.
+    # accepted: blocking, failOnError, fast
     # default: blocking
     strategy: {{ blocky_blacklists_strategy | default ("blocking") }}
     # Number of errors allowed in a list before it is considered invalid.
@@ -119,7 +122,7 @@ caching:
   prefetching: true
   # prefetch track time window (in duration format)
   # default: 120
-  prefetchExpires: 120
+  prefetchExpires: 2h
   # name queries threshold for prefetch
   # default: 5
   prefetchThreshold: 5
