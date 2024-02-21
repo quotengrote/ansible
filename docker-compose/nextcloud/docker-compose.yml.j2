@@ -2,7 +2,7 @@ version: '3.3'
 services:
 ######## Datenbank ########
   nextcloud-db:
-    image: "mariadb:11.2.3"
+    image: "mariadb:11.3.2"
     container_name: nextcloud-db
     command: --transaction-isolation=READ-COMMITTED --log-bin=ROW --innodb_read_only_compressed=OFF
     restart: unless-stopped
