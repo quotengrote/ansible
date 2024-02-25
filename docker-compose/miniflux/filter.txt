@@ -21,6 +21,8 @@ computerbase.de::Twitter
 computerbase.de::wettbewerb
 computerbase.de::WM
 computerbase.de::Wochenrück- und Ausblick:
+computerbase.de::Xbox Game Pass
+computerbase.de::GeForce
 facebook.com::Bridge returned error
 golem.de::Anzeige
 golem.de::Aus dem Verlag:
@@ -104,6 +106,8 @@ heise.de::Zugriff auf alle Inhalte von heise+
 instagram.com::Bridge returned error
 ipspace.net::Built.fm
 ipspace.net::Podcast
+mdr.de::Schwimm-WM
+mdr.de::DSV
 mdr.de::Basketball
 mdr.de::Volleyball
 mdr.de::DFB
@@ -276,3 +280,5 @@ theguardian.com::Guardiola
 theguardian.com::Manchester United
 theycantalk.com::Tinyview
 toonhole.com::Bernai
+www.army-technology.com::who are the leaders
+www.army-technology.com::files patent
