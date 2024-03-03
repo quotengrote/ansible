@@ -17,6 +17,8 @@ services:
     depends_on:
       - keycloak-db
     container_name: keycloak-app
+    volumes:
+      - keycloak:/opt/keycloak/data
     networks:
       - intern
       - auth
@@ -41,6 +43,7 @@ services:
 ######## Volumes ########
 volumes:
   db16:
+  keycloak:
 ######## Networks ########
 networks:
   traefik:
@@ -53,3 +56,4 @@ networks:
 # healtchecks
 # verison gesetzt
 # dashbaord
+# start-dev umstellen
