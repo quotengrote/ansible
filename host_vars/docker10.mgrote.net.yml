@@ -74,7 +74,7 @@ compose_files:
     state: present
   - name: whoami
     state: present
-    networks: auth
+    network: auth
 
 ### oefenweb.ufw
 ufw_rules:
