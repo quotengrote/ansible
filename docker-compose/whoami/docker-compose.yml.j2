@@ -7,11 +7,7 @@ services:
     ports:
       - "4421:80"
     networks:
-      whoami:
-        aliases:
-          - whoami.localtest.me
-      keycloak: {}
-      oauth2-proxy: {}
+      auth:
 
 # This docker-compose file can be used to bring up an example instance of oauth2-proxy
 # for manual testing and exploration of features.
@@ -38,7 +34,6 @@ services:
     networks:
       auth:
     depends_on:
-      - whoami
       - keycloak
 
   keycloak:
