@@ -2,7 +2,7 @@ version: '3'
 services:
   Keycloak:
     image: quay.io/keycloak/keycloak:22.0.5
-    command: ['start', '--hostname', 'keycloak-app']
+    command: ['start']
     environment:
       KC_DB_PASSWORD: password
       KC_DB_URL_HOST: keycloak-db
@@ -10,6 +10,8 @@ services:
 
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: password
+
+      KC_HOSTNAME: keycloak-app
     ports:
       - "8089:8080" # Externe-Portnummer:Interne-Portnummer
     depends_on:
