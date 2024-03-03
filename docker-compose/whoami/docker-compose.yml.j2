@@ -21,7 +21,7 @@ services:
 #
 # Access http://oauth2-proxy.localtest.me:4180 to initiate a login cycle using user=admin@example.com, password=password
 # Access http://keycloak.localtest.me:9080 with the same credentials to check out the settings
-  oauth2-proxy:
+    oauth2-proxy:
     container_name: oauth2-proxy
     image: quay.io/oauth2-proxy/oauth2-proxy:v7.6.0
     command: --config /oauth2-proxy.cfg
@@ -37,7 +37,7 @@ services:
       - keycloak
 
   keycloak:
-    container_name: keycloak
+    container_name: keycloak-app
     image: jboss/keycloak:10.0.0
     hostname: keycloak
     command:
@@ -51,12 +51,30 @@ services:
         '-Dkeycloak.migration.strategy=IGNORE_EXISTING'
       ]
     environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: postgres
+      DB_DATABASE: keycloak
+      DB_USER: keycloak
+      DB_SCHEMA: public
+      DB_PASSWORD: password
       KEYCLOAK_USER: admin@example.com
       KEYCLOAK_PASSWORD: password
     ports:
       - 9080:9080/tcp
     networks:
       auth:
+      depends_on:
+        - keycloak-db
+        
+  keycloak-db:
+    image: postgres
+    container_name: keycloak-db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: password
 
 networks:
   traefik:
