@@ -63,9 +63,9 @@ services:
       - 9080:9080/tcp
     networks:
       auth:
-      depends_on:
-        - keycloak-db
-        
+    depends_on:
+      - keycloak-db
+
   keycloak-db:
     image: postgres
     container_name: keycloak-db
