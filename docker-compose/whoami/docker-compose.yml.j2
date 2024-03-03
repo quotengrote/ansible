@@ -70,9 +70,12 @@ services:
           - keycloak.localtest.me
 
 networks:
+  traefik:
+    external: true
   whoami: {}
   keycloak: {}
   oauth2-proxy: {}
+
 
 # todo
 # prufen ob dier uzielcontsainer alle netwzwerke rbaucht
