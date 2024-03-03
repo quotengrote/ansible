@@ -72,6 +72,8 @@ compose_files:
     network: traefik
   - name: lldap
     state: present
+  - name: whoami
+    state: present
 
 ### oefenweb.ufw
 ufw_rules:
