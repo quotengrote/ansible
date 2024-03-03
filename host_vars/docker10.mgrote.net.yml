@@ -59,8 +59,6 @@ compose_files:
   - name: navidrome
     state: present
     network: traefik
-  - name: watchtower
-    state: absent
   - name: routeros-config-export
     state: present
   - name: mail-relay
@@ -72,8 +70,8 @@ compose_files:
   - name: wiki
     state: present
     network: traefik
-  - name: statping-ng
-    state: absent
+  - name: lldap
+    state: present
 
 ### oefenweb.ufw
 ufw_rules:

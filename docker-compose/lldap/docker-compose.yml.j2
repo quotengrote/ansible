@@ -2,7 +2,7 @@ version: "3"
 services:
 ######## App ########
   lldap:
-    image: nitnelave/lldap:stable
+    image: nitnelave/lldap:v0.5.0
     container_name: lldap-app
     restart: always
     ports:
@@ -37,9 +37,7 @@ services:
       LLDAP_SMTP_OPTIONS__PORT: 25
       LLDAP_SMTP_OPTIONS__SMTP_ENCRYPTION: NONE
       LLDAP_SMTP_OPTIONS__USER: info@mgrote.net
-    labels:
-      - com.centurylinklabs.watchtower.enable=true
-      - com.centurylinklabs.watchtower.depends-on=lldap-db
+
 ######## DB ########
   lldap-db:
     image: mariadb:10.6.14
@@ -57,8 +55,6 @@ services:
       - MYSQL_INITDB_SKIP_TZINFO=1
     networks:
       - intern
-    labels:
-      - com.centurylinklabs.watchtower.enable=true
 
 ######## Volumes ########
 volumes:
@@ -71,3 +67,6 @@ networks:
     external: true
   mail-relay:
     external: true
+
+# ToDo
+# Secrets
