@@ -1,6 +1,8 @@
 9to5linux.com::9to5Linux Weekly Roundup:
 apnic.net::Podcast
+apnic.net::Event Wrap
 astralcodexten.substack.com::Open Thread
+astralcodexten.substack.com::Book Review Contest
 augengeradeaus.net::Sicherheitshalber der Podcast
 axios.com::Axios on HBO
 axios.com::football
