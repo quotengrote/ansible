@@ -34,53 +34,7 @@ services:
     networks:
       auth:
     depends_on:
-      - keycloak
-
-  keycloak:
-    container_name: keycloak-app
-    image: jboss/keycloak:10.0.0
-    hostname: keycloak
-    command:
-      [
-        '-b',
-        '0.0.0.0',
-        '-Djboss.socket.binding.port-offset=1000',
-        '-Dkeycloak.migration.action=import',
-        '-Dkeycloak.migration.provider=dir',
-        '-Dkeycloak.migration.dir=/realm-config',
-        '-Dkeycloak.migration.strategy=IGNORE_EXISTING'
-      ]
-    environment:
-      DB_VENDOR: POSTGRES
-      DB_ADDR: keycloak-db
-      DB_DATABASE: keycloak
-      DB_USER: keycloak
-      DB_SCHEMA: public
-      DB_PASSWORD: password
-      KEYCLOAK_USER: admin@example.com
-      KEYCLOAK_PASSWORD: password
-    ports:
-      - 9080:9080/tcp
-    networks:
-      auth:
-    depends_on:
-      - keycloak-db
-
-  keycloak-db:
-    image: postgres
-    container_name: keycloak-db
-    volumes:
-      - keycloak-db_data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_DB: keycloak
-      POSTGRES_USER: keycloak
-      POSTGRES_PASSWORD: password
-    networks:
-      auth:
-
-######## Volumes ########
-volumes:
-  keycloak-db_data:
+      - keycloak-app
 ######## Networks ########
 networks:
   traefik:
@@ -91,3 +45,4 @@ networks:
 # todo
 # prufen ob dier uzielcontsainer alle netwzwerke rbaucht
 # healtchecks
+# verison gesetzt

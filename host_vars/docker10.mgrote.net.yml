@@ -75,7 +75,9 @@ compose_files:
   - name: whoami
     state: present
     network: auth
-
+  - name: keycloak
+    state: present
+    network: auth
 ### oefenweb.ufw
 ufw_rules:
   - rule: allow
