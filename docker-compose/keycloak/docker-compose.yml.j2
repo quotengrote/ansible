@@ -2,7 +2,7 @@ version: '3'
 services:
   Keycloak:
     image: quay.io/keycloak/keycloak:22.0.5
-    command: ['start']
+    command: ['start', '--hostname', 'keycloak-app']
     environment:
       KC_DB: postgres
       KC_DB_URL_DATABASE: keycloak
@@ -33,7 +33,7 @@ services:
     volumes:
       - db16:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "postgres"]
+      test: ["CMD", "pg_isready", "-U", "keycloak"]
       interval: 10s
       start_period: 30s
     networks:
