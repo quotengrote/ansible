@@ -36,9 +36,7 @@ services:
     ports:
       - 4180:4180/tcp
     networks:
-      keycloak: {}
-      whoami: {}
-      oauth2-proxy: {}
+      auth:
     depends_on:
       - whoami
       - keycloak
@@ -65,17 +63,13 @@ services:
     ports:
       - 9080:9080/tcp
     networks:
-      keycloak:
-        aliases:
-          - keycloak.localtest.me
+      auth:
 
 networks:
   traefik:
     external: true
-  whoami: {}
-  keycloak: {}
-  oauth2-proxy: {}
-
+  auth:
+    external: true
 
 # todo
 # prufen ob dier uzielcontsainer alle netwzwerke rbaucht
