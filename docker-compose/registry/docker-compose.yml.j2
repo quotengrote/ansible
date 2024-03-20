@@ -11,7 +11,6 @@ services:
       - traefik
       - intern
     depends_on:
-      - oci-registry-ui
       - oci-registry-redis
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:5000/v2/"]
@@ -79,6 +78,8 @@ services:
       SHOW_CONTENT_DIGEST: true # https://github.com/Joxit/docker-registry-ui/issues/297
       SHOW_CATALOG_NB_TAGS: true
       PULL_URL: registry.mgrote.net
+    depends_on:
+      - oci-registry
     networks:
       - traefik
       - intern

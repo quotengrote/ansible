@@ -74,6 +74,7 @@ services:
     depends_on:
       - nextcloud-db
       - nextcloud-redis
+      - nextcloud-cron
     environment:
         REDIS_HOST: nextcloud-redis
         REDIS_HOST_PASSWORD: "{{ lookup('keepass', 'nextcloud_redis_host_password', 'password') }}"
