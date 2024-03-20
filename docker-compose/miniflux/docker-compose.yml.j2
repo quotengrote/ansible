@@ -3,7 +3,7 @@ services:
 ######## Miniflux ########
   miniflux:
     container_name: "mf-frontend"
-    image: "ghcr.io/miniflux/miniflux:2.0.51"
+    image: "ghcr.io/miniflux/miniflux:2.1.1"
     restart: always
     depends_on:
       - mf-db16
@@ -62,7 +62,7 @@ services:
       MF_API_URL: https://miniflux.mgrote.net/v1
       MF_SLEEP: 600
       #MF_DEBUG: 1
-    image: "registry.mgrote.net/miniflux-filter:v1.1.91"
+    image: "registry.mgrote.net/miniflux-filter:v1.1.94"
     volumes:
       - ./filter.txt:/data/filter.txt
     networks:

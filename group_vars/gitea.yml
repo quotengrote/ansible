@@ -47,8 +47,8 @@ ufw_rules:
 
 ### l3d.gitea
 # config liegt in /etc/gitea/gitea.ini
-gitea_version: "1.21.5"
-gitea_fork: "gitea"
+gitea_version: "1.21.7-0"
+gitea_fork: "forgejo"
 gitea_app_name: "Gitea"
 gitea_user: "gitea"
 gitea_home: "/var/lib/gitea"
