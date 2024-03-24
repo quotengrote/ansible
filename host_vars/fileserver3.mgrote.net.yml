@@ -23,7 +23,6 @@ ytdl_video_urls:
   - https://www.youtube.com/watch?v=TowKvEJcYDw&list=PLlQWnS27jXh9aEp7hl54xrk5CgiVbvMBy # arte - zu Tisch in...
   - https://www.youtube.com/playlist?list=PLs4hTtftqnlAkiQNdWn6bbKUr-P1wuSm0 # jimmy kimmel mean tweets
   - https://www.youtube.com/tomstantonengineering
-  - https://www.youtube.com/@liamcarps #englandvideos ironisch
 
 ytdl_video_output: "/shares_videos/Youtube/%(uploader)s/%(title)s-%(id)s.%(ext)s" # Videos werden jetzt IMMER nach "Uploader/Name.ext" geschrieben
 
