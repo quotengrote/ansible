@@ -4,11 +4,7 @@ collections:
   - git+https://git.mgrote.net/ansible-collections-mirrors/ansible.posix
   - git+https://git.mgrote.net/ansible-collections-mirrors/community.docker
 roles:
-  - src: https://git.mgrote.net/ansible-roles-mirrors/pyratlabs-ansible-role-k3s
-    scm: git
   - src: https://git.mgrote.net/ansible-roles-mirrors/robertdebock-ansible-role-bootstrap
-    scm: git
-  - src: https://git.mgrote.net/ansible-roles-mirrors/pandemonium1986-ansible-role-k9s
     scm: git
   - src: https://git.mgrote.net/ansible-roles-mirrors/oefenweb-ansible-ufw
     scm: git
@@ -19,8 +15,6 @@ roles:
   - src: https://git.mgrote.net/ansible-roles-mirrors/geerlingguy-ansible-role-pip
     scm: git
   - src: https://git.mgrote.net/ansible-roles-mirrors/geerlingguy-ansible-role-nfs
-    scm: git
-  - src: https://git.mgrote.net/ansible-roles-mirrors/geerlingguy-ansible-role-helm
     scm: git
   - src: https://git.mgrote.net/ansible-roles-mirrors/geerlingguy-ansible-role-docker
     scm: git
