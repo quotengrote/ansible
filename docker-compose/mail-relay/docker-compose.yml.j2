@@ -19,7 +19,7 @@ services:
     networks:
       - mail-relay
     healthcheck:
-      test: ["CMD", "sh", "-c", "echo 'EHLO localhost' | nc -w 1 localhost 25 | grep -q '220 '"]
+      test: ["CMD", "sh", "-c", "echo 'EHLO localhost' | nc -w 1 127.0.0.1 25 | grep -q '220 '"]
       interval: 30s
       timeout: 10s
       retries: 3
