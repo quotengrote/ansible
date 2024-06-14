@@ -1,7 +1,7 @@
 ---
 steps:
   gitleaks:
-    image: zricethezav/gitleaks:v8.18.2
+    image: zricethezav/gitleaks:v8.18.4
     commands:
       - gitleaks detect --no-git --verbose --source $CI_WORKSPACE
     when:
